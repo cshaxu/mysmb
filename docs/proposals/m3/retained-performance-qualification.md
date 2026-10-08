@@ -248,3 +248,61 @@ slot-row composition but only 2.01ms in DAC/device submission. A future
 candidate must reduce the DOS16 compositor’s repeated row/span/address work
 while preserving the shared PPU’s exact completed pixels. Replacing MySMB
 with DOS4GW or importing the historical source remains rejected.
+
+### S1 mechanism comparison: the remaining gap is not only word size
+
+The contained source inspection now establishes the actual DOS-side work
+models.  This is a source-structure comparison, not a claim that the public
+0.2 source is byte-identical to the owner's historical executable.
+
+| layer | historical NESticle DOS source | current MySMB DOS16 selected presenter | consequence |
+| --- | --- | --- | --- |
+| Working target | A conventional contiguous software `screen` allocation. | The retained scene occupies the VGA's four unchained planes as a 512-by-480 scrollable cache. | NESticle pays RAM writes then one sequential transfer; MySMB saves conventional RAM but must address VGA plane bytes during composition. |
+| Static background | Dirty nametable tiles refresh a RAM cache; every visible section then performs clipped cached blits into `screen`. | Changed background tiles update the retained VGA cache; this is already the comparable useful cache. | Neither product needs to redraw a complete static tile field each frame.  Duplicating the cache is not a candidate. |
+| Moving sprites | All 64 entries are traversed each frame by flat-32 assembly into contiguous RAM. | Old and new sprite coverage is marked, affected 8-by-8 background tiles are reconstructed, then each sprite is drawn through four VGA planes. | Both retain full moving-object semantics, but MySMB incurs per-plane selection and non-contiguous VGA writes on the hot path. |
+| Fixed HUD | It is naturally part of the RAM background blit. | The current path restores the prior 32-row HUD, prepares and packs the next 32 rows, then commits it plane by plane every frame. | MySMB has an irreducible current fixed work floor of 8,192 bytes restored plus 8,192 bytes committed, excluding PPU extraction and packing. |
+| Final publication | In non-VESA Mode 13h the historical DOS source copies the completed buffer in one 64,000-byte `memcpy` to VGA. | The selected presenter writes its individual background/HUD/sprite changes directly to the visible A000 aperture. | Direct writes explain visible transient flicker; they also replace one linear transfer with many short writes and VGA-port state changes. |
+| Instruction model | Flat 32-bit registers and specialized assembly tile/sprite loops. | Real-mode 16-bit C plus small copy assembly; retained overlay paths perform far address arithmetic, clipping, transparency and plane selection in C. | Flat 32-bit code is a real advantage, but it compounds the larger difference in write granularity and memory layout. |
+
+The most important correction to the earlier hypothesis is therefore: **DOS4GW
+and 32-bit registers help, but do not by themselves explain the observed gap.**
+The two programs choose different cost models.  MySMB's low-memory retained
+strategy moves less bulk data than a complete 64KiB Mode-13 copy, but it
+replaces that copy with expensive per-tile/per-plane composition on a 16-bit
+VGA aperture.  The earlier one-surface probe shows that merely adding the
+NESticle-style RAM surface and retaining the current composition costs more;
+it does not invalidate the analysis above because that probe did not remove
+the current fine-grained overlay work.
+
+This ranks the lawful next candidates without changing ROM or shared PPU
+semantics:
+
+1. Measure the selected retained presenter's actual per-frame counts: changed
+   background tiles, fixed-HUD bytes, old/new sprite-covered tiles, plane
+   selections and VGA bytes.  This identifies whether HUD or sprite repair is
+   the dominant live workload.
+2. If sprite repair dominates, replace only the DOS16 physical inner loop with
+   a pre-packed, plane-contiguous sprite/tile writer.  It must consume the
+   same PPU-selected slots, preserve order, clipping and transparency, and
+   remain wholly under `platform/dos16`.
+3. If the fixed HUD dominates, cache its already PPU-selected packed form and
+   avoid restore/repack/commit when its viewport, palette slots and tiles are
+   unchanged.  The PPU still produces the same output; only redundant physical
+   writes disappear.
+4. Separately qualify a presentation-only back-buffer or page-handoff route
+   only if it can remove visible-A000 tearing within the conventional-memory
+   budget and beat the measured retained route.  The existing 61,440-byte
+   naive surface-plus-copy experiment remains rejected; this is not approval
+   to reintroduce it unchanged.
+
+The source also gives a bounded cost model for the selected MySMB physical
+path.  On a frame with the sprite-zero HUD split it always restores and
+rewrites 32 rows in four planes: **16,384 VGA bytes** before sprite repair.
+Each changed background cache tile writes 128 VGA bytes because the retained
+512-by-480 scroll surface stores two vertical copies.  Each marked 8-by-8
+sprite-repair tile writes 64 bytes; a visible sprite then issues up to 64
+transparent-tested byte stores and four plane selections.  The exact live
+counts are still unmeasured, but these fixed units show why a small number of
+sprites can cost materially more than their pixel count suggests on a 486:
+the work is split across byte stores, far address calculations and VGA
+sequencer changes rather than one linear memory stream.

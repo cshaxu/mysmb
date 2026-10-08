@@ -51,3 +51,13 @@ slot-copy owner and identical final A000 bytes, its fixed-3000 cost was
 address table recovered only 0.169ms/frame of that extra cost. This confines
 the next performance investigation to composition/cache work, rather than a
 RAM compose-and-copy rewrite; it does not establish a 16-versus-32-bit cause.
+
+The S1 source comparison has now ruled out the simpler explanation that
+NESticle merely avoids moving sprites or that word size alone explains the
+gap. Its DOS source redraws sprites every frame, but uses contiguous RAM
+composition and one final Mode-13 bulk transfer. MySMB's selected retained
+path instead maintains a 512-by-480 unchained VGA cache and performs fixed-HUD
+restore/repack, tile repair and per-plane sprite stores directly in visible
+VRAM. This both explains the observed transient flicker and identifies the
+next measurement: live counts for HUD, damage, sprite repair and VGA-plane
+work before selecting one narrowly scoped DOS16 physical-inner-loop candidate.
