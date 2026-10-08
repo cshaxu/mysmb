@@ -1930,3 +1930,15 @@ Changing the period to 20ms would run the game at about 50Hz; skipping root
 steps would change original frame, input and timer semantics. A future
 asynchronous presentation design would need its own ownership and cadence
 contract; it is outside T34 and is not an optimization adopted here.
+
+### S3 P45 Current-Root A-Only Receipt
+
+A product-shaped diagnostic compiles the current DOS root with the same
+25,580-byte root allocation as P43, then reports its workspace state after
+six normal root steps. It is a build-only diagnostic below the ignored build
+tree and is not a product replacement. Under the unchanged 384KiB FIT arena
+it reports `decoded=1,packed=0,byteCache=0,near=1`: A-only is now directly
+observed for the current root. Its MCB record includes the same rounded
+25,616-byte root block. This closes the A-only ambiguity from P44 but does
+not establish zero-cache or B-only; B-only still requires controlled failure
+of the distinct near-heap A allocation after B succeeds.

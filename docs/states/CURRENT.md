@@ -36,10 +36,11 @@ explicitly in TODO rather than asserted complete.
   MCB trace at 501KiB retains root plus B (compact background) and A, but has
   no C allocation; at 502KiB it additionally retains C. C is requested only
   after both A and B exist, therefore 502KiB is the current observed A+B+C
-  threshold and 501KiB the adjacent observed A+B-only route. The remaining
-  low-memory matrix still needs an explicit A-only/no-cache product receipt
-  and a controlled B-only allocation-failure receipt; neither is inferred
-  from the adjacent thresholds. The owner-suggested 20ms "do not build while
+  threshold and 501KiB the adjacent observed A+B-only route. P45's current
+  root probe at 384KiB records A-only directly (`decoded=1,packed=0,
+  byteCache=0,near=1`). The remaining low-memory matrix needs zero-cache and
+  a controlled B-only allocation-failure receipt; neither is inferred from
+  the adjacent thresholds. The owner-suggested 20ms "do not build while
   publishing" candidate is rejected for the current architecture: publication
   is synchronous before the next root step, the existing period is about
   16.67ms, and skipping game ticks would change ROM-frame/input/timer
