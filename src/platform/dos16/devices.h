@@ -8,6 +8,11 @@ void mysmb_dos16_devices_close(void);
 void mysmb_dos16_devices_input(struct mysmb_io_input *input);
 /* Native256x240 chain4 row-major view;never accepts a scaled/plane frame. */
 int mysmb_dos16_devices_present_band(const struct mysmb_io_video_band *band);
+/* Borrow the native chain-4 destination for one validated logical band.
+ * The caller may write the original 256-wide color indices directly, then
+ * still calls present_band to complete the ordinary synchronous contract. */
+mysmb_io_u8 MYSMB_IO_FAR *mysmb_dos16_devices_direct_band(mysmb_io_u16 first,
+    mysmb_io_u16 rows);
 void mysmb_dos16_devices_wait(void);
 void mysmb_dos16_devices_after_load(void);
 void mysmb_dos16_devices_resume_clock(void);

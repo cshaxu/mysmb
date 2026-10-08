@@ -230,10 +230,21 @@ int mysmb_dos16_devices_present_band(const struct mysmb_io_video_band *band)
     if(!video_ready || text_mode || !band || !band->pixels || !band->rows ||
         band->first>=240U || band->rows>16U || band->rows>240U-band->first)return 0;
     video=(unsigned char far *)0xa0000000UL;
+    /* A composition root may have written this exact logical band directly
+     * to the chain-4 aperture. Keep the same synchronous ownership and
+     * validation contract without copying it onto itself. */
+    if(band->pixels==video+band->first*256U)return 1;
     /* Chain4 handles the plane selector/address from each CPU byte address.
      * Every band fits both segments;last source pixel is A000:EFFF. */
     copy_plane_dwords(video+band->first*256U,band->pixels,band->rows*256U);
     return 1;
+}
+mysmb_io_u8 MYSMB_IO_FAR *mysmb_dos16_devices_direct_band(mysmb_io_u16 first,
+    mysmb_io_u16 rows)
+{
+    if(!video_ready || text_mode || !rows || first>=240U || rows>16U ||
+        rows>240U-first)return 0;
+    return (mysmb_io_u8 MYSMB_IO_FAR *)0xa0000000UL+first*256U;
 }
 void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
 {

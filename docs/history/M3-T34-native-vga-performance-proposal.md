@@ -1979,3 +1979,42 @@ proxy-driven Enter edge terminates the reference before a game-frame route is
 available, and the binary exposes no internal publisher accounting. It is
 therefore evidence of reference availability and startup only; it supplies no
 equal-budget speed ratio or submission-time comparison.
+
+### S3 P48 Direct Native-Band Platform Experiment Admission
+
+P47 isolates a fixed RAM-to-VGA copy after every PPU-generated 16-row band.
+P48 may remove only that duplicate copy. The DOS16 root will request the
+existing synchronous PPU slot-row producer to write its same 256-by-16 source
+indices directly into the corresponding `A000:` chain-4 range, and the DOS16
+device publisher will recognize that already-written range instead of copying
+it again. Palette order, all fifteen row ranges, framebuffer slot contents,
+mode transitions and PPU/game sources remain unchanged. The existing
+root-owned allocation remains for text/snapshot storage; P48 introduces no
+full-frame allocation or cache.
+
+Before any product delivery, an ignored fixture must compare buffered and
+direct output for every 256x240 pixel, exercise graphics/text restoration and
+confirm exactly 61,440 bytes across fifteen ordered bands. The DOS16 product
+then needs original-toolchain build/link, focused x86/x64 regressions, DOSBox
+route and refreshed three artifacts. This is a platform-copy experiment, not
+a claim of physical 486 performance or a change to shared PPU semantics.
+
+### S3 P48 Direct Native-Band Result
+
+The DOS16 root now asks the same synchronous PPU slot-row producer to target
+the matching chain-4 band only while graphics mode is owned by the device. The
+device recognizes that exact destination range as already submitted; the
+ordinary RAM band remains the transition/test fallback. No shared PPU/core/game
+writer, cache choice, palette sequence, band order, frame count or DOSBox
+setting changed.
+
+The original-toolchain native device probe writes the same deterministic
+256-by-240 pattern through buffered and direct paths. Both compare as zero
+mismatches over 61,440 pixels; direct output totals 61,440 bytes across fifteen
+bands, and two graphics/text round trips restore the original video mode. A
+bounded 384KiB route reaches title, input, Tab text/graphics and Escape return.
+The current x86/x64 focused suites pass. Sixteen stable direct A+B+C publication
+samples average 18,368 PIT ticks (about 15.394ms), compared with P47 buffered
+A+B+C's 24,441 ticks (about 20.484ms), a 5.090ms/24.85% reduction. These are
+DOSBox diagnostics only and do not establish physical 486SX cadence or an
+equal-budget reference ratio.

@@ -43,6 +43,19 @@ explicitly in TODO rather than asserted complete.
   route has no game-frame accounting and Enter terminates it, so no fair
   reference ratio is claimed.
 
+- T34 S3 P48 implements the DOS16-only synchronous direct-band path while
+  preserving the PPU slot-row producer, palette, band order and 256x240
+  pixels. The original-toolchain native device probe writes a patterned full
+  frame through both buffered and direct paths: each has zero mismatches over
+  61,440 pixels, the direct path covers exactly 61,440 bytes in fifteen bands,
+  and two text/graphics round trips restore the original display mode. The
+  same current root passes the bounded 384KiB title/input/Tab/Escape route;
+  x86 and x64 focused host suites pass. The sixteen-frame A+B+C publication
+  median is 18,368 PIT ticks (about 15.394ms), versus P47's buffered 24,441
+  ticks (about 20.484ms): 5.090ms or 24.85% lower. This is DOSBox-only
+  descriptive timing, not a physical 486SX cadence claim. No core/PPU/game,
+  cache, frameskip, DOSBox-setting or Windows behavior changed.
+
 - T34 S3 P44 restores the product DOSBox receipt chain and binds the current
   cache boundary to the P43 product. At 384KiB, the full route reaches title,
   input, graphics/text switch, synchronous P/O and Escape return. The product

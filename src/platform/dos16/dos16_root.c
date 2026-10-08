@@ -3,6 +3,7 @@
 #ifdef MYSMB_DOS16_TARGET
 #include <dos.h>
 #include <malloc.h>
+#include "platform/dos16/devices.h"
 #include "platform/dos16/palette_expand.h"
 #include "platform/dos16/nibble_expand.h"
 
@@ -68,13 +69,31 @@ static int read_rows(void *context,mysmb_io_u16 first,mysmb_io_u16 rows,
     struct mysmb_io_video_band *band)
 {
     struct mysmb_dos16_root *root=(struct mysmb_dos16_root *)context;
+#ifdef MYSMB_DOS16_TARGET
+    mysmb_u8 MYSMB_IO_FAR *pixels;
+#endif
     if(band==0)return 0;
+#ifdef MYSMB_DOS16_TARGET
+    /* DOS graphics owns this aperture only while its device is in graphics
+     * mode. The PPU still generates the same logical 256-pixel rows; the
+     * ordinary RAM band remains the safe fallback for tests and transitions. */
+    pixels=mysmb_dos16_devices_direct_band(first,rows);
+    if(!pixels)pixels=root->ppu_frame.pixels;
+    if(!(root->present_palette_rows?
+        mysmb_ppu_frame_slot_rows(&root->ppu_view,pixels,
+            root->video_storage_bytes,first,rows):
+        mysmb_ppu_frame_rows(&root->ppu_view,pixels,
+            root->video_storage_bytes,first,rows)))return 0;
+    band->pixels=pixels;
+#else
     if(!(root->present_palette_rows?
         mysmb_ppu_frame_slot_rows(&root->ppu_view,root->ppu_frame.pixels,
             root->video_storage_bytes,first,rows):
         mysmb_ppu_frame_rows(&root->ppu_view,root->ppu_frame.pixels,
             root->video_storage_bytes,first,rows)))return 0;
-    band->pixels=root->ppu_frame.pixels;band->first=first;band->rows=rows;
+    band->pixels=root->ppu_frame.pixels;
+#endif
+    band->first=first;band->rows=rows;
     return 1;
 }
 
