@@ -1,29 +1,29 @@
 # Project Status
 
-**Active: M3 T34 S5, NESticle PPU-strategy comparative audit.**
+**Active: M3 T34 S6, band-local OAM schedule decision gate.**
 
-## M3 T34 S5 Packet
+## M3 T34 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Comparative audit continuation after closed S4; S5 is owner-directed and read-only. |
-| Admission And Approval | Owner accepts S4 and directs a comparison of NESticle's PPU/display strategy to identify further MySMB performance opportunities. |
-| Objective | Establish a bounded, evidence-backed strategy comparison: work decomposition, dirty/update policy, pixel format/expansion, cache representation, and VGA publication path; classify each resulting MySMB candidate by shared or DOS-only ownership, expected cost, memory impact and ROM/PPU-semantic risk. |
-| Non-goals | No implementation, third-party source/code/table import, runtime dependency, DOS4GW/new driver, helper process, DOSBox setting change, ROM-node certification, or unmeasured performance claim. |
-| Reference Baseline | S4 owner acceptance: run16 text colors now work through standard VGA attributes; current DOS product 324953B. Existing S3 P48/P58/P59/P60 measurements remain route-scoped, and the NESticle performance ratio remains unproved. |
-| Candidate Proposal | [T34 native-VGA proposal](../history/M3-T34-native-vga-performance-proposal.md#s5-admission-nesticle-ppu-strategy-comparative-audit). |
-| Files And ABI Surface | Read-only inspection of retained local reference material below ignored `build/` plus current `src/ppu/`, `src/io/`, `src/platform/dos16/` and their tests. Expected product change: 0 lines, 0 bytes. |
-| Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. Reference material is conceptual comparison evidence only and cannot be imported or linked. |
-| Verification | Reproduce the current PPU cost inventory; hash/list any local reference inputs without tracking them; review strategy evidence against current source and existing receipts; publish a finite candidate table with explicit accept/defer/reject disposition. No product build is required unless source changes. |
+| Identifier Mode | Implementation decision gate after closed S5 comparative audit. |
+| Admission And Approval | S5 completes the owner-directed NESticle strategy comparison and transfers its sole bounded shared-PPU candidate to S6. |
+| Objective | Measure whether a 15-band OAM schedule can remove redundant sprite-band rejection work while preserving the current PPU output exactly. Retain it only if a material whole-compositor saving is measured. |
+| Non-goals | No ROM/game change, PPU-visible semantic change, background-cache redesign, VESA/DOS4GW/runtime change, frameskip, display-mode change, platform policy change, third-party import, or unmeasured optimization claim. |
+| Reference Baseline | S5 finds direct indexed 256x240 presentation already implements the compatible external NESticle strategy. Current direct publication remains distinct from shared PPU composition. |
+| Candidate Proposal | [T34 native-VGA proposal](../history/M3-T34-native-vga-performance-proposal.md#s5-closure-and-s6-admission-band-local-oam-schedule-measurement). |
+| Files And ABI Surface | Expected shared changes only: `src/ppu/frame.c`, `src/ppu/frame.h`, and focused PPU tests. Estimated 80--140 C lines and no more than 120 workspace bytes; actual code change may be zero if the gate rejects it. |
+| Applicable Rules | Execution,Documentation,Architecture,Coding,source policy; System Architecture and Source Layout. Shared PPU owns scheduling; platforms remain passive sinks. |
+| Verification | Byte-identical 61,440-pixel focused PPU comparisons, sprite-0/order/priority guards, separate whole-compositor and publication timing, then focused x86/x64 suites. Build/package all three targets only if product code is retained. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
-| Asset Needs | The owner-supplied NESticle archive is read-only conceptual comparison material. It may only be copied into ignored `build/` from the already retained local MySMB reference input; no extraction/import from external locations, product linkage or redistribution. Owner-local SMB1 ROM remains local. |
-| Reporting Requirements | Before every S report objective,components/code and memory estimates;after report actual changes,scoped results,candidate dispositions and total/local node/edge counts. Do not infer hardware cadence/LCD filling from emulator captures. |
-| Stop Conditions | Any candidate requiring reference-code import, changing original PPU/game semantics, unbounded memory, or an unsupported hardware assumption is rejected or deferred rather than implemented. |
-| Exit Criteria | A complete comparison matrix and finite next-S implementation plan exist, with each candidate tied to current source ownership and measurement method. |
-| Original Owner Request | Close S4, then admit S5 to compare NESticle PPU strategy and find further performance work. |
-| Similar-Issue Sweep | Compare update granularity, tile/attribute invalidation, palette expansion, sprite composition, staging/copy surfaces, VGA display mode and presentation cadence; distinguish shared optimizations from DOS-only physical output. |
+| Asset Needs | None. The closed S5 reference result is recorded as a hash and conclusions only; S6 uses project-owned PPU tests and ignored measurement outputs. |
+| Reporting Requirements | Before each report state candidate objective, shared components and maximum 120-byte cost; after report measured result, actual retained code/memory, exact PPU evidence, and total/local node/edge counters. |
+| Stop Conditions | Reject/remove the candidate if it changes any output byte/order rule, requires more than 120 bytes, lacks a material measured composition saving, or shifts work into a platform owner. |
+| Exit Criteria | The candidate is either rejected with measurement evidence or retained with exact-frame proof, targeted regressions, current platform-purity evidence and, only if product code changes, current three-target artifacts. |
+| Original Owner Request | Close S4, admit S5 to compare NESticle PPU strategy and identify further game-performance work. |
+| Similar-Issue Sweep | Account separately for global OAM range trimming, each band intersection decision, OAM order, sprite-0 split behavior, sprite priority and publication so a scheduler cannot hide an output change. |
 
-T34 S1/S2/S3/S4 are closed. S5 is a bounded comparative audit. T32/S9
+T34 S1/S2/S3/S4/S5 are closed. S6 is the only active T34 subtask. T32/S9
 remains suspended; T19 audio and M2 final certification remain queued. T33
 broader gallery debt is recorded explicitly in TODO rather than asserted complete.
 

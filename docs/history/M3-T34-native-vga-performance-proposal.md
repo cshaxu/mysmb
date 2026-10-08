@@ -2238,3 +2238,87 @@ source or product change is authorized by this audit alone.  Its exit is a
 complete candidate matrix and a successor implementation plan whose each
 proposal preserves original PPU/game semantics and has a bounded measurement
 method.
+
+### S5 P1 NESticle PPU-Strategy Comparative Audit Result
+
+S5 examined the retained owner-supplied NESticle package only as conceptual,
+read-only material.  The retained package hash is
+`00f5b3fa3a8ba3e23d86d8feae36ec3684b43495aa62b63864e816b022c8fb47`.
+It contains an executable and user documentation, not source.  No binary
+disassembly, source recovery, table extraction, code import, runtime import,
+or performance-ratio claim is made here.
+
+The reference documentation exposes these display choices: fullscreen
+256x224 VGA, 256x240 fallback VGA, VESA linear/banked variants, optional
+vsync, optional frameskip, and Pentium-oriented timing/copy switches.  It
+also declares a DOS4GW/large-memory runtime.  It does not expose a
+publisher-stage timer, dirty-region algorithm, internal PPU cache, or a
+noninteractive game-frame counter.  Therefore those private implementation
+details are explicitly unknown rather than inferred from an executable.
+
+Current MySMB has already retained the compatible core of the externally
+observable strategy.  The shared PPU emits exactly 256x240 indexed pixels;
+the DOS16 root asks it for fifteen ordered 16-row bands; the native VGA
+adapter maps each band directly to the matching `A000:` chain-4 range.  The
+direct path writes exactly 61,440 logical source bytes and avoids the former
+RAM-to-VGA duplicate copy.  Palette shadowing avoids unchanged DAC writes.
+The PPU already invalidates only changed background tiles and dependent
+attribute rows, decodes CHR once per source change, and composes the
+status-bar split, scrolling, masks, sprite priority, and OAM order in the
+shared owner.
+
+| Candidate | Comparative finding | MySMB owner | Memory / semantic effect | S5 disposition |
+| --- | --- | --- | --- | --- |
+| Indexed 256x240 direct submission | The reference exposes a 256x240 VGA mode. MySMB already has exact indexed 256x240 direct-band publication. | `ppu` plus `platform/dos16` physical sink | Existing 61,440-byte output; no new memory. | Retained; no change. |
+| 256x224 output | The reference offers it as an optional mode. It omits 4,096 source pixels (16 NES rows). | Would affect shared frame contract | Loses visible PPU output and cannot preserve the exact HUD/world frame. | Rejected. |
+| Frameskip or a 20ms supersession rule | The reference documents frameskip; MySMB runs one translated tick then synchronous publication. | Root/pacing, not PPU | Drops presented/ticked ROM frames or changes cadence/input/timer behavior. | Rejected. |
+| VESA, DOS4GW, linear/banked display runtime | The reference permits these host/runtime choices. | `platform/dos16` | Requires a different DOS runtime/memory model, more memory, and assumptions outside DOS 5/486SX real mode. | Rejected. |
+| Pentium FPU-copy or RDTSC special path | The reference documents Pentium-only choices. | `platform/dos16` | The 486SX target has neither a usable FPU assumption nor RDTSC. | Rejected. |
+| Extra display page / full staging surface | A page-flip surface is not established by the reference documentation. The current sink already receives the final band directly. | `platform/dos16` | At least another 61,440 bytes without reducing shared composition. | Rejected. |
+| Whole-frame dirty rectangles | NES scrolling, sprites, split scroll, priority and palette changes can affect broad regions. | Shared `ppu` | Would require a retained-display correctness model and possibly a full retained surface; no safe proof route currently exists. | Deferred; no unbounded rewrite. |
+| Additional background generation map | Current slot preparation compares name-table and dependent attribute bytes before refreshing a tile. | Shared `ppu` | A bitmap/generation tracker adds state and writer coupling; cost is unprofiled. | Deferred unless a profile proves this path material. |
+| Band-local OAM schedule | Current frame begin narrows a global OAM prefix/suffix, then each of fifteen bands rejects sprites outside that band. | Shared `ppu` | A 15-by-64-bit mask is 120 bytes. It can retain original descending OAM order and does not alter pixels if proven. | Candidate for bounded measurement. |
+
+The only finite successor worth measuring is the band-local OAM schedule.  It
+must first be tested as a shared PPU equivalence experiment: derive the
+fifteen masks from the same OAM range and preserve sprite-0, priority, and
+descending OAM order; compare all 61,440 pixels against the current
+compositor over the existing focused cases; then measure whole PPU frame cost
+separately from DOS VGA publication.  The candidate may be abandoned with no
+product change if its measured saving is not material.  A 120-byte schedule
+cannot plausibly explain or close a multi-fold emulator performance gap, so
+S5 does not promise such a result.
+
+The retained direct-band measurement remains the material result: it removed
+the duplicate publication copy by about 5.090ms in its bounded DOSBox
+publisher interval.  No equal-budget NESticle comparison exists, and no S5
+finding changes that limitation.  The T34 cache policy remains B then A then
+C; its route-scoped evidence is unchanged.  S5 changes no product source,
+ROM node, control edge, artifact, or platform configuration.
+
+### S5 Closure And S6 Admission: Band-Local OAM Schedule Measurement
+
+S5 closes with zero ROM scope, expected matches and actual matches.  Its
+comparison result is complete: all externally established NESticle display
+choices are either already present in MySMB or rejected as incompatible with
+the DOS5/486SX and exact-PPU contract.  The only bounded candidate transferred
+from its matrix is a shared PPU band-local OAM schedule.
+
+S6 owns a decision-gated experiment, not a promised optimization.  It may
+change only the shared PPU frame workspace and frame composition path, with a
+maximum 120-byte 15-by-64-bit schedule and an estimated 80--140 C lines plus
+focused tests.  It must retain the current sprite-0 behavior, descending OAM
+order, priority/mask outcomes, scanline split, all 61,440 output pixels and
+every platform sink.  No game, ROM translation, `io`, Win32, DOS16 device,
+cache policy, presentation cadence or third-party material may change.
+
+The first S6 step is a controlled A/B measurement of the existing shared
+compositor against a schedule candidate.  It must report separately the
+whole-frame composition cost and publication cost; direct VGA output is not
+an acceptable proxy for composition.  It must also perform byte-for-byte
+frame comparisons over the focused PPU cases.  If the candidate does not
+produce a material measured saving, S6 removes it and closes with no product
+change.  If it does, S6 completes the ordinary x86/x64 focused tests and the
+DOS16 build/package route before any refreshed artifacts are reported.  This
+task has zero ROM scope, expected matches and actual matches; it cannot alter
+the historic 1992/1992 node or 4260/4261 feasible-control counts.
