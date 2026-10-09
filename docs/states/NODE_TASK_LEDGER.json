@@ -9423,17 +9423,17 @@
           "technicalReceipt": "Closed in commit 655e8b23: DOS16 compact-VRAM double-page presenter accepted; zero ROM-node and edge scope."
         },
         {
-          "id": "M3 T39 S7",
+          "id": "M3 T39 S8",
           "state": "active",
           "evidence": [
             "docs/proposals/m3/retained-performance-qualification.md"
           ],
           "recordKinds": [
-            "dos16-deadline-driven-frame-skip"
+            "dos16-nesticle-style-ram-composition"
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Active: logical ticks and audio continue while late DOS16 video composition is skipped; zero ROM-node and edge scope."
+          "technicalReceipt": "Active: DOS16 RAM composition foundation follows independently derived NESticle architecture; zero ROM-node and edge scope."
         }
       ]
     }
@@ -1004613,7 +1004613,7 @@
       "evidence": "docs/proposals/m3/retained-performance-qualification.md"
     },
     {
-      "subtask": "M3 T39 S7",
+      "subtask": "M3 T39 S8",
       "kind": "implementation",
       "scope": [],
       "baseline": 1992,
@@ -1006619,3 +1006619,4 @@
     }
   ]
 }
+

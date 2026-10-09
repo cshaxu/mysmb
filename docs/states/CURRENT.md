@@ -1,31 +1,30 @@
 # Project Status
 
-**Active: M3 T39 S7. DOS16 deadline-driven frame skipping.**
+**Active: M3 T39 S8. NESticle-style DOS16 RAM composition foundation.**
 
-## M3 T39 S7 Packet
+## M3 T39 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation of M3 T39 after accepted S6 compact VGA pages. |
-| Admission And Approval | Owner directed frameskip as the default DOS16 policy: every tick continues, late video does not. |
-| Objective | Catch up overdue DOS16 logical ticks by skipping only late video composition/submission. |
-| Scope | `src/platform/dos16/{main_dos16,dos16_root,devices}.c`, `src/platform/win32/main_win32.c`, shared neutral pacing helpers, focused tests and ignored timing evidence. |
-| Non-goals | No shared game/PPU/ROM change, frameskip setting, DOS4GW, helper, persistent DOSBox setting or input change. |
-| Reference Baseline | S6 compact presenter: 252,787 PIT ticks/frame on its warm-cache route; DOS pacing presently discards long missed-deadline debt. |
-| Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md#s7-admission----dos16-deadline-driven-frame-skipping). |
-| Files And ABI Surface | DOS root optional presentation predicate and DOS device/PIT pacing only. |
-| Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
-| Expected Markers | ROM scope[], expectedMatches[], actualMatches[], new0; historical 1992/1992 unchanged. |
-| Asset Needs | Existing local DOS toolchain, DOSBox and product inputs only. |
-| Stop Conditions | Any skipped path changes game/frame/audio state, advances a different input tick, leaks a platform condition to shared code, or fails to catch up late debt. |
-| Verification | Deterministic state twin, pacing debt unit test, focused x86/x64 tests, DOS16 link/run, platform purity and timing counters. |
-| Exit Criteria | Default DOS16 deadline skip is accepted only when state-identical logical ticks continue and late video is demonstrably skipped/caught up. |
-| ROM scope | `[]`; zero nodes and zero control edges. Historical markers unchanged. |
-| Reporting | Report logical ticks, submitted/skipped frames, state-equality route, pace behavior, artifacts and next-S state. |
-| Reporting Requirements | State route count, late-debt model, code/artifact state and explicit successor status. |
-| Original Owner Request | Always skip video frames that are already too late; keep machine/game ticks moving. |
-| Similar-Issue Sweep | Snapshot redraw, title/text paths, audio submission, startup guard, input, wait/debt accounting and retained/direct presenters. |
-
+| Identifier Mode | Continuation of open M3 T39 after S7 rejection. |
+| Admission And Approval | Owner directed: rebuild the DOS16 presenter around NESticle-style dirty RAM surfaces, contiguous composition and final VGA submission. |
+| Objective | Establish the DOS16 RAM-composition foundation while preserving one shared translated game and PPU semantics. |
+| Scope | `src/platform/dos16`, DOS composition root, neutral presentation contracts only when required; focused tests and ignored timing evidence. |
+| Non-goals | No core/ROM logic, shared PPU decisions, Win32/text behavior, DOS4GW, third-party import, helper process or persistent DOSBox change. |
+| Reference Baseline | S7: 601 root steps, 2 submitted/596 skipped graphical steps; gate rejected as a performance solution. |
+| Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md#s8-admission----nesticle-style-ram-composition-foundation). |
+| Files And ABI Surface | DOS16 presentation storage, presenter binding and neutral presentation views only. |
+| Applicable Rules | Execution, Architecture, Coding and source policy. |
+| Expected Markers | ROM scope[]; expectedMatches[], actualMatches[], new0; historical 1992/1992 unchanged. |
+| Asset Needs | Existing local DOS toolchain, DOSBox and owner-local ROM only. |
+| Stop Conditions | Any shared-game/PPU behavior change, output mismatch, memory-budget failure, third-party import, or no measurable whole-route improvement. |
+| Verification | Exact PPU-output oracle, dirty/cache composition receipts, focused x86/x64 tests, DOS16 link/run, platform purity, fixed-route timing and memory receipt. |
+| Exit Criteria | A bounded RAM-composition foundation is accepted only with exact output, documented memory ownership and measurable route improvement; otherwise reject without frameskip substitution. |
+| ROM scope | `[]`; zero nodes and zero control edges. |
+| Reporting | Report RAM/VGA sizes, dirty work, composition/final-copy timing, exact route coverage, artifacts and successor state. |
+| Reporting Requirements | State submitted frame count separately from logical ticks; never substitute skipped frames for speed evidence. |
+| Original Owner Request | Rebuild MySMB DOS presenter according to NESticle's architecture without copying its code. |
+| Similar-Issue Sweep | Background tile invalidation, scroll seams, HUD split, sprite priority/opacity, palette changes, transition/full invalidation, text mode and output fallback. |
 ## M3 T39 S6 Archived Packet
 
 | Field | Required record |
@@ -77,3 +76,4 @@ for a separately admitted successor candidate.
 ### T39 S4 -- sprite-repair plane-batching decision
 
 S4 changed no product code or artifact. S3's stable route had twelve repair tiles and five sprite tiles per frame. Even eliminating all associated plane selections scales to at most about 1.03 percent from S2's measured 1.88-percent result for removing 124 HUD selects. It cannot meet the 20-percent threshold, so the device rewrite was rejected. The quantified decision is retained in the [T39 proposal](../proposals/m3/retained-performance-qualification.md#s4-decision----reject-sprite-repair-plane-batching).
+

@@ -690,3 +690,39 @@ test proving late debt is carried until catch-up; focused x86/x64 tests,
 platform-purity, DOS16 link/run and refreshed artifacts.  The DOS route must
 record logical ticks, submitted frames and skipped frames separately.  A
 skipped frame is never counted as a PPU or ROM-equivalence difference.
+
+## S7 closure -- frame gate is rejected as a performance solution
+
+S7 preserved logical game/input/audio work while skipping stale video.  Its
+current-product fixed-3000 DOSBox probe ran 601 root steps: 598 graphical-gate
+steps, two submitted images and 596 dropped images.  The average root cost was
+21,127 PIT ticks; dropped steps averaged 12,001 ticks.  This proves the gate
+cannot make the selected presenter playable: it exposes the cost but cannot
+reduce it.  No product change is accepted from S7; the experimental timing
+sources were removed.  The next S replaces the DOS16 presentation architecture,
+not the translated game or shared PPU decision layer.
+
+## S8 admission -- NESticle-style RAM composition foundation
+
+The owner directs MySMB DOS16 presentation to adopt the independently derived
+NESticle organization: dirty 8-by-8 background RAM surfaces, a contiguous RAM
+screen composition target, ordered background/sprite/foreground composition,
+and one final contiguous VGA submission.  This is an independently implemented
+architecture; no third-party code, data, tables, assembly or binary is copied.
+
+S8 first establishes the product-owned DOS16 storage and neutral contracts for
+the RAM surfaces, then proves exact pixels against the existing shared PPU view
+on title, split HUD, scrolling, palette, priority and OAM routes.  It may alter
+only `platform/dos16`, the DOS composition root and neutral presentation
+contracts needed by both implementations.  It may not alter core, PPU decision
+semantics, game/audio/input timing, Win32, text mode, ROM resources or add
+DOS4GW.  The memory receipt must separately state mandatory memory, optional
+A/B/C caches and peak conventional usage; failure to fit the owner's ordinary
+memory budget rejects or reduces the DOS16 layout before product selection.
+
+The first P is a contained product-structure implementation plus exact oracle
+and fixed-cycle measurement.  It must report separate dirty-background,
+RAM-screen composition and final-VGA costs.  Acceptance requires a real DOS16
+MZ link/run, host tests, exact existing PPU-output oracle, no shared-game
+change, refreshed three local artifacts for source changes, and a measurable
+whole-route improvement.  A failed foundation is not hidden by frame skipping.
