@@ -557,6 +557,11 @@ static void mysmb_win32_step(HWND window)
         ++steps;
         elapsed = now.QuadPart - g_last_tick.QuadPart;
     } while (elapsed >= frame_period && steps < 4U);
+    /* Logical ticks and audio above always run.  If their bounded catch-up
+     * batch still missed this display deadline, publishing an already stale
+     * frame only delays the next useful state. */
+    QueryPerformanceCounter(&now);
+    if(now.QuadPart-g_last_tick.QuadPart>=frame_period)return;
     mysmb_win32_update_title(window);
     /* Retain remaining logical-frame debt. The next batch still returns to
      * the message pump after at most four updates;no game ticks are dropped. */

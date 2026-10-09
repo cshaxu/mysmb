@@ -9,8 +9,8 @@
 | Identifier Mode | Continuation of M3 T39 after accepted S6 compact VGA pages. |
 | Admission And Approval | Owner directed frameskip as the default DOS16 policy: every tick continues, late video does not. |
 | Objective | Catch up overdue DOS16 logical ticks by skipping only late video composition/submission. |
-| Scope | `src/platform/dos16/{main_dos16,dos16_root,devices}.c`, DOS pacing, focused tests and ignored timing evidence. |
-| Non-goals | No shared game/PPU/ROM change, Win32 change, frameskip setting, DOS4GW, helper, persistent DOSBox setting or input change. |
+| Scope | `src/platform/dos16/{main_dos16,dos16_root,devices}.c`, `src/platform/win32/main_win32.c`, shared neutral pacing helpers, focused tests and ignored timing evidence. |
+| Non-goals | No shared game/PPU/ROM change, frameskip setting, DOS4GW, helper, persistent DOSBox setting or input change. |
 | Reference Baseline | S6 compact presenter: 252,787 PIT ticks/frame on its warm-cache route; DOS pacing presently discards long missed-deadline debt. |
 | Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md#s7-admission----dos16-deadline-driven-frame-skipping). |
 | Files And ABI Surface | DOS root optional presentation predicate and DOS device/PIT pacing only. |

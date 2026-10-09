@@ -676,13 +676,13 @@ composition and submission whenever the tick is already late for the next
 translated game state, input sampling, ordered audio construction and PPU
 state writes, while allowing intermediate visible frames to be discarded.
 
-S7 owns only the DOS16 composition root and DOS PIT pacing adapter.  It may
-add a neutral, optional `should_present` hook from the DOS root to its device
-adapter and alter only DOS pacing's missed-deadline behavior so that a late
-display is followed by catch-up ticks rather than discarding the entire time
-debt.  It must not alter shared core/PPU code, Win32, text scene ownership,
-ROM timing logic, input mapping, persistent DOSBox settings, add a helper or
-use DOS4GW.  Save/load may force one redraw after restoration.
+S7 owns the platform composition roots and their host clocks.  Both DOS16 and
+Win32 apply the same neutral rule: after every logical tick/catch-up batch,
+omit video composition/submission when the display deadline is already past.
+DOS uses PIT and Win32 uses QPC; the host clock is the only platform-specific
+part.  It must not alter shared core/PPU code, text scene ownership, ROM
+timing logic, input mapping, persistent DOSBox settings, add a helper or use
+DOS4GW.  Save/load may force one redraw after restoration.
 
 Acceptance requires a deterministic root test proving that skipped output
 does not change game/frame state, input or audio frame construction; a pacing
