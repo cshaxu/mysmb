@@ -6,6 +6,9 @@ int main(void)
     if (mysmb_io_pacing_remaining(&clock,1030UL)!=70UL) return 1;
     if (mysmb_io_pacing_remaining(&clock,1107UL)!=0UL || clock.last!=1100UL) return 2;
     if (mysmb_io_pacing_remaining(&clock,1140UL)!=60UL) return 3;
+    if (!mysmb_io_pacing_late(&clock,1200UL)) return 4;
+    mysmb_io_pacing_advance(&clock,1200UL);
+    if (clock.last!=1200UL || mysmb_io_pacing_late(&clock,1250UL)) return 5;
     if (mysmb_io_pacing_remaining(&clock,1700UL)!=0UL || clock.last!=1700UL) return 4;
     if (mysmb_io_pacing_remaining(&clock,1720UL)!=80UL) return 5;
     mysmb_io_pacing_initialize(&clock,0xfffffff0UL,32UL);

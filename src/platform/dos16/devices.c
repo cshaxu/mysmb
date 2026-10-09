@@ -17,6 +17,8 @@ static unsigned char old_rows;
 static unsigned char old_font;
 static unsigned short old_cursor;
 static unsigned char video_ready;
+/* DOS binds this shared deadline to a frame-dropping policy.  Other hosts may
+ * retain ordinary pacing without binding a video gate. */
 static struct mysmb_io_pacing pacing;
 static unsigned char opened;
 static unsigned char text_mode;
@@ -706,7 +708,13 @@ void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *fra
 
 void mysmb_dos16_devices_wait(void)
 {
-    while (mysmb_io_pacing_remaining(&pacing,timer_stamp())!=0UL) { }
+    unsigned long now;
+    do {now=timer_stamp();} while(!mysmb_io_pacing_late(&pacing,now));
+    mysmb_io_pacing_advance(&pacing,now);
+}
+int mysmb_dos16_devices_should_present(void)
+{
+    return !mysmb_io_pacing_late(&pacing,timer_stamp());
 }
 void mysmb_dos16_devices_after_load(void)
 {

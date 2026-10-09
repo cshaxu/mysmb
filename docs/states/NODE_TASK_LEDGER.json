@@ -9411,7 +9411,7 @@
         },
         {
           "id": "M3 T39 S6",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/retained-performance-qualification.md"
           ],
@@ -9420,7 +9420,20 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Active: DOS16-only compact-VRAM double-page implementation; zero ROM-node and edge scope."
+          "technicalReceipt": "Closed in commit 655e8b23: DOS16 compact-VRAM double-page presenter accepted; zero ROM-node and edge scope."
+        },
+        {
+          "id": "M3 T39 S7",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/retained-performance-qualification.md"
+          ],
+          "recordKinds": [
+            "dos16-deadline-driven-frame-skip"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Active: logical ticks and audio continue while late DOS16 video composition is skipped; zero ROM-node and edge scope."
         }
       ]
     }
@@ -1004600,7 +1004613,7 @@
       "evidence": "docs/proposals/m3/retained-performance-qualification.md"
     },
     {
-      "subtask": "M3 T39 S6",
+      "subtask": "M3 T39 S7",
       "kind": "implementation",
       "scope": [],
       "baseline": 1992,

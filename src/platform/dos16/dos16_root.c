@@ -36,6 +36,7 @@ static int initialize(struct mysmb_dos16_root *root,
     root->present_rows=0;root->video_storage_bytes=storage_bytes;
     root->present_palette_rows=0;
     root->present_retained=0;
+    root->should_present=0;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;root->resume_clock=0;
     root->text_workspace=0;root->text_frame=0;root->set_mode=0;
     root->present_text=0;root->text_mode=0U;
@@ -119,6 +120,9 @@ void mysmb_dos16_root_bind_retained(struct mysmb_dos16_root *root,
 {
     if(root)root->present_retained=present;
 }
+void mysmb_dos16_root_bind_video_gate(struct mysmb_dos16_root *root,
+    int (*should_present)(void *))
+{if(root)root->should_present=should_present;}
 
 void mysmb_dos16_root_bind_text(struct mysmb_dos16_root *root,
     struct mysmb_text_scene_workspace MYSMB_IO_FAR *workspace,
@@ -271,7 +275,8 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
     if (mysmb_game_startup_step(&root->game,1U)==0U) return;
     mysmb_game_io_input(&decoded,&input);
     mysmb_game_tick(&root->game,&input,&root->game_frame);
-    present_current(root);
+    if(root->should_present==0 ||
+        root->should_present(root->hooks.context))present_current(root);
     mysmb_game_io_audio(&root->game,&root->audio_frame);
     if (root->hooks.submit_audio!=0)
         root->audio_available=root->hooks.submit_audio(root->hooks.context,&root->audio_frame);

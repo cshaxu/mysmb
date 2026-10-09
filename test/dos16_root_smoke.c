@@ -1,7 +1,7 @@
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/keyboard.h"
 #include <string.h>
-struct host { unsigned calls; unsigned audio_calls; mysmb_io_u8 requests; };
+struct host { unsigned calls; unsigned audio_calls; unsigned gate; mysmb_io_u8 requests; };
 static unsigned mode_allowed,text_calls;
 static int mode(void *context,mysmb_io_u8 text)
 {(void)context;(void)text;return mode_allowed;}
@@ -16,6 +16,31 @@ static mysmb_io_u8 audio(void *context, const struct mysmb_io_audio_frame *frame
     if (frame->write_count<=MYSMB_IO_AUDIO_WRITE_CAPACITY)
         ++((struct host *)context)->audio_calls;
     return MYSMB_IO_AUDIO_UNAVAILABLE;
+}
+static int late_gate(void *context)
+{
+    struct host *host=(struct host *)context;
+    return host->gate++>=4U;
+}
+static int frameskip_state(void)
+{
+    static struct mysmb_dos16_root skipped,visible;
+    struct mysmb_dos16_hooks hooks;
+    struct host a,b;
+    unsigned i;
+    memset(&a,0,sizeof(a));memset(&b,0,sizeof(b));
+    hooks.read_input=read_input;hooks.present_video=present;hooks.submit_audio=audio;
+    hooks.context=&a;
+    if(!mysmb_dos16_root_initialize(&skipped,&hooks))return 50;
+    mysmb_dos16_root_bind_video_gate(&skipped,late_gate);
+    hooks.context=&b;
+    if(!mysmb_dos16_root_initialize(&visible,&hooks))return 51;
+    for(i=0U;i<12U;++i) {mysmb_dos16_root_step(&skipped);mysmb_dos16_root_step(&visible);}
+    if(a.calls>=b.calls || a.audio_calls!=b.audio_calls ||
+        skipped.game.frame_number!=visible.game.frame_number ||
+        memcmp(skipped.game.ram,visible.game.ram,sizeof(skipped.game.ram)))return 52;
+    mysmb_dos16_root_shutdown(&skipped);mysmb_dos16_root_shutdown(&visible);
+    return 0;
 }
 static int failed_text_recovery(void)
 {
@@ -102,6 +127,7 @@ int main(void)
     struct mysmb_dos16_keyboard keyboard;
     struct mysmb_io_input input;
     struct host host;
+    if(frameskip_state())return 49;
     mysmb_dos16_keyboard_initialize(&keyboard);
     mysmb_dos16_keyboard_scan(&keyboard,0x20U);
     mysmb_dos16_keyboard_scan(&keyboard,0x24U);

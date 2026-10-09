@@ -667,3 +667,26 @@ retained background/apply/overlay checks.  The focused suite passed on both
 x86 and x64 hosts, platform-purity passed, and the actual MZ linked and ran
 under an unmodified standard-VGA DOSBox invocation without an immediate exit.
 The three target artifacts were refreshed after the source acceptance.
+
+## S7 admission -- DOS16 deadline-driven frame skipping
+
+The owner directs DOS16 to retain every logical game tick but to omit video
+composition and submission whenever the tick is already late for the next
+60Hz deadline.  This is an explicit presentation policy change: it preserves
+translated game state, input sampling, ordered audio construction and PPU
+state writes, while allowing intermediate visible frames to be discarded.
+
+S7 owns only the DOS16 composition root and DOS PIT pacing adapter.  It may
+add a neutral, optional `should_present` hook from the DOS root to its device
+adapter and alter only DOS pacing's missed-deadline behavior so that a late
+display is followed by catch-up ticks rather than discarding the entire time
+debt.  It must not alter shared core/PPU code, Win32, text scene ownership,
+ROM timing logic, input mapping, persistent DOSBox settings, add a helper or
+use DOS4GW.  Save/load may force one redraw after restoration.
+
+Acceptance requires a deterministic root test proving that skipped output
+does not change game/frame state, input or audio frame construction; a pacing
+test proving late debt is carried until catch-up; focused x86/x64 tests,
+platform-purity, DOS16 link/run and refreshed artifacts.  The DOS route must
+record logical ticks, submitted frames and skipped frames separately.  A
+skipped frame is never counted as a PPU or ROM-equivalence difference.

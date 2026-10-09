@@ -39,6 +39,8 @@ static void read_input(void *context, struct mysmb_io_input *input)
     (void)context;
     mysmb_dos16_devices_input(input);
 }
+static int should_present(void *context)
+{(void)context;return mysmb_dos16_devices_should_present();}
 static int present_rows(void *context,const struct mysmb_io_palette_video_source *indexed)
 {
     mysmb_io_u16 first;
@@ -87,6 +89,7 @@ static int initialize(void)
     if (!mysmb_dos16_root_initialize_palette_rows(&root,&hooks,
         (mysmb_io_u16)sizeof(struct runtime_storage),present_rows)) return 0;
     mysmb_dos16_root_bind_clock(&root,resume_clock);
+    mysmb_dos16_root_bind_video_gate(&root,should_present);
     /* Graphics borrows4096 bytes and submits them directly.  Text and the
      * single on-demand snapshot transaction occupy disjoint suffixes of the
      * same required root allocation; no scaled or planar scratch is needed. */

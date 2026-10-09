@@ -5,6 +5,19 @@ void mysmb_io_pacing_initialize(struct mysmb_io_pacing *pacing,
     pacing->last=now&0xffffffffUL;
     pacing->period=period;
 }
+int mysmb_io_pacing_late(const struct mysmb_io_pacing *pacing,unsigned long now)
+{
+    unsigned long elapsed=(now-pacing->last)&0xffffffffUL;
+    return pacing->period!=0UL && pacing->period<=0x7fffffffUL &&
+        elapsed>=pacing->period;
+}
+void mysmb_io_pacing_advance(struct mysmb_io_pacing *pacing,unsigned long now)
+{
+    unsigned long elapsed=(now-pacing->last)&0xffffffffUL;
+    if(pacing->period==0UL || pacing->period>0x7fffffffUL)return;
+    if(elapsed>0x7fffffffUL)pacing->last=now&0xffffffffUL;
+    else pacing->last=(pacing->last+pacing->period)&0xffffffffUL;
+}
 unsigned long mysmb_io_pacing_remaining(struct mysmb_io_pacing *pacing,
     unsigned long now)
 {

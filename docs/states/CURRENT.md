@@ -1,8 +1,32 @@
 # Project Status
 
-**Active: M3 T39 S6 closure review. DOS16 compact-VRAM double-page presenter integration is accepted; no successor S is admitted yet.**
+**Active: M3 T39 S7. DOS16 deadline-driven frame skipping.**
 
-## M3 T39 S6 Packet
+## M3 T39 S7 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | Continuation of M3 T39 after accepted S6 compact VGA pages. |
+| Admission And Approval | Owner directed frameskip as the default DOS16 policy: every tick continues, late video does not. |
+| Objective | Catch up overdue DOS16 logical ticks by skipping only late video composition/submission. |
+| Scope | `src/platform/dos16/{main_dos16,dos16_root,devices}.c`, DOS pacing, focused tests and ignored timing evidence. |
+| Non-goals | No shared game/PPU/ROM change, Win32 change, frameskip setting, DOS4GW, helper, persistent DOSBox setting or input change. |
+| Reference Baseline | S6 compact presenter: 252,787 PIT ticks/frame on its warm-cache route; DOS pacing presently discards long missed-deadline debt. |
+| Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md#s7-admission----dos16-deadline-driven-frame-skipping). |
+| Files And ABI Surface | DOS root optional presentation predicate and DOS device/PIT pacing only. |
+| Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
+| Expected Markers | ROM scope[], expectedMatches[], actualMatches[], new0; historical 1992/1992 unchanged. |
+| Asset Needs | Existing local DOS toolchain, DOSBox and product inputs only. |
+| Stop Conditions | Any skipped path changes game/frame/audio state, advances a different input tick, leaks a platform condition to shared code, or fails to catch up late debt. |
+| Verification | Deterministic state twin, pacing debt unit test, focused x86/x64 tests, DOS16 link/run, platform purity and timing counters. |
+| Exit Criteria | Default DOS16 deadline skip is accepted only when state-identical logical ticks continue and late video is demonstrably skipped/caught up. |
+| ROM scope | `[]`; zero nodes and zero control edges. Historical markers unchanged. |
+| Reporting | Report logical ticks, submitted/skipped frames, state-equality route, pace behavior, artifacts and next-S state. |
+| Reporting Requirements | State route count, late-debt model, code/artifact state and explicit successor status. |
+| Original Owner Request | Always skip video frames that are already too late; keep machine/game ticks moving. |
+| Similar-Issue Sweep | Snapshot redraw, title/text paths, audio submission, startup guard, input, wait/debt accounting and retained/direct presenters. |
+
+## M3 T39 S6 Archived Packet
 
 | Field | Required record |
 | --- | --- |

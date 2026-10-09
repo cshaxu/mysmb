@@ -15,6 +15,9 @@ int mysmb_dos16_devices_present_band(const struct mysmb_io_video_band *band);
 mysmb_io_u8 MYSMB_IO_FAR *mysmb_dos16_devices_direct_band(mysmb_io_u16 first,
     mysmb_io_u16 rows);
 void mysmb_dos16_devices_wait(void);
+/* Default DOS presentation policy: logical work continues while a late
+ * display frame is dropped. */
+int mysmb_dos16_devices_should_present(void);
 void mysmb_dos16_devices_after_load(void);
 void mysmb_dos16_devices_resume_clock(void);
 int mysmb_dos16_devices_mode(mysmb_io_u8 text);
