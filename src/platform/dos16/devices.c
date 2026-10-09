@@ -722,8 +722,13 @@ void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *fra
 void mysmb_dos16_devices_wait(void)
 {
     unsigned long now;
-    do {now=timer_stamp();} while(!mysmb_io_pacing_late(&pacing,now));
-    mysmb_io_pacing_advance(&pacing,now);
+    /* A skipped late frame must discard its missed-deadline backlog before
+     * the next tick.  Advancing only one period here leaves the clock late
+     * forever after a multi-period presentation stall, which turns the game
+     * loop into an unbounded fast-forward.  The shared pacing primitive keeps
+     * ordinary fractional lateness but rebases a missed-frame backlog. */
+    do {now=timer_stamp();}
+    while(mysmb_io_pacing_remaining(&pacing,now)!=0UL);
 }
 int mysmb_dos16_devices_should_present(void)
 {

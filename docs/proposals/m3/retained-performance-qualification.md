@@ -756,3 +756,24 @@ This is evidence that the new physical model warrants full-route measurement,
 not a claim about gameplay root-step timing.  The next P must add the bounded
 post-Start whole-route receipt and report whether optional RAM allocation was
 actually retained; no frame-skip result can substitute for it.
+
+## S8 P2 -- DOS16 late-deadline recovery
+
+The faster RAM presenter exposed a defect in the DOS physical clock adapter.
+When a presentation took two or more frame periods, the gate correctly omitted
+the stale image, but `mysmb_dos16_devices_wait` advanced the deadline by only
+one period.  The next tick therefore remained late, was omitted again, and
+waited zero time indefinitely.  The symptom is uncontrolled fast-forward in
+DOSBox; it is unrelated to translated game timing or PPU decisions.
+
+The adapter now waits through `mysmb_io_pacing_remaining`, the existing neutral
+clock primitive that retains ordinary fractional lateness and rebases a
+multi-period missed-frame backlog.  Logical ticks, input sampling and audio
+construction remain unchanged; only DOS's physical wait recovery changes.
+Focused host pacing, RAM compositor, PPU overlay, compact overlay and DOS root
+smokes pass.  The actual DOS16 MZ links through DOS LINK 3.65 and remains alive
+for five seconds in an unchanged standard-VGA DOSBox launch at `core=normal`,
+`cycles=fixed 3000`; both Windows product self-tests also pass after packaging.
+The refreshed DOS executable is `350,077B`.  Owner play testing is still the
+acceptance evidence for visible 60Hz pace; this P does not claim a new
+whole-route performance measurement or close S8.
