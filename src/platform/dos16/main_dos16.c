@@ -3,6 +3,7 @@
 #include "platform/dos16/snapshot_replace.h"
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/devices.h"
+#include "platform/dos16/ram_compositor.h"
 #include "core/area.h"
 #include <stdio.h>
 #include <malloc.h>
@@ -60,6 +61,14 @@ static int present_retained(void *context,const struct mysmb_ppu_frame_view *vie
     (void)context;mysmb_dos16_devices_palette(palette);
     return mysmb_dos16_devices_retained_frame(view);
 }
+static int present_ram(void *context,const struct mysmb_ppu_frame_view *view,
+    const mysmb_io_u8 MYSMB_IO_FAR *palette,mysmb_io_u8 MYSMB_IO_FAR *screen)
+{
+    (void)context;
+    if(!mysmb_dos16_ram_composite(view,screen,MYSMB_IO_VIDEO_PIXELS))return 0;
+    mysmb_dos16_devices_palette(palette);
+    return mysmb_dos16_devices_present_screen(screen);
+}
 static mysmb_io_u8 submit_audio(void *context, const struct mysmb_io_audio_frame *frame)
 {
     (void)context;
@@ -115,6 +124,7 @@ static int initialize(void)
     /* S18's current-background sprite-union presenter passed physical VGA
      * readback before it is selected here. The root retains Chain-4 as the
      * synchronous fallback if this device-only presenter declines a frame. */
+    mysmb_dos16_root_bind_ram(&root,present_ram);
     mysmb_dos16_root_bind_retained(&root,present_retained);
     /* Synchronous presenters are exclusive. Graphics rebuilds every band on
      * return from text;only the root owns and frees this shared allocation. */

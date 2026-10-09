@@ -726,3 +726,33 @@ RAM-screen composition and final-VGA costs.  Acceptance requires a real DOS16
 MZ link/run, host tests, exact existing PPU-output oracle, no shared-game
 change, refreshed three local artifacts for source changes, and a measurable
 whole-route improvement.  A failed foundation is not hidden by frame skipping.
+
+## S8 P1 result -- RAM composition foundation
+
+P1 introduces an optional DOS16 256-by-240, one-byte-per-selected-pixel RAM
+screen (`61,440B`) after the established B/A/C cache choices.  The shared PPU
+remains the exclusive owner of scroll selection, status split, palette choice,
+OAM ordering, priority and transparency.  The DOS16 RAM compositor obtains the
+PPU-selected background rows, overlays only the PPU-authorized sprite slots,
+and makes one contiguous Chain-4 VGA submission.  If the optional allocation
+or presenter is unavailable, the existing compact VGA presenter remains the
+fallback.  No core, shared PPU decision, Win32 or text code changed.
+
+The focused byte oracle covers title/split, non-zero scroll, masked sprites,
+background-priority sprites, top/bottom clipping and palette-slot values.  It
+compares every byte of the new RAM surface with `mysmb_ppu_frame_slot_rows`;
+all four cases pass.  The DOS16 product linked as an MZ via the historical
+DOS LINK 3.65 compatibility route and remained alive at title for five seconds
+in an unchanged DOSBox standard-VGA run at `core=normal`, `cycles=fixed 3000`.
+The product MZ is 350,093B.  Its link receipt estimates 378,208B mandatory
+load allocation; B+A+C+RAM screen can request 194,560B more, so P1 retains the
+existing allocation fallback rather than claim a stock-memory fit before the
+runtime receipt.
+
+A synthetic, warmed, identical-PPU-view fixed-3000 DOSBox probe measured 16
+completed presentation operations: compact VGA `267,964` PIT ticks per frame;
+RAM compose plus one contiguous commit `48,934` ticks per frame (5.48x faster).
+This is evidence that the new physical model warrants full-route measurement,
+not a claim about gameplay root-step timing.  The next P must add the bounded
+post-Start whole-route receipt and report whether optional RAM allocation was
+actually retained; no frame-skip result can substitute for it.

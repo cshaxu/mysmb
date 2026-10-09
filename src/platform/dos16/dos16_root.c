@@ -36,6 +36,7 @@ static int initialize(struct mysmb_dos16_root *root,
     root->present_rows=0;root->video_storage_bytes=storage_bytes;
     root->present_palette_rows=0;
     root->present_retained=0;
+    root->ram_screen=0;root->ram_screen_attempted=0U;root->present_ram=0;
     root->should_present=0;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;root->resume_clock=0;
     root->text_workspace=0;root->text_frame=0;root->set_mode=0;
@@ -120,6 +121,12 @@ void mysmb_dos16_root_bind_retained(struct mysmb_dos16_root *root,
 {
     if(root)root->present_retained=present;
 }
+void mysmb_dos16_root_bind_ram(struct mysmb_dos16_root *root,
+    int (*present)(void *,const struct mysmb_ppu_frame_view *,
+        const mysmb_io_u8 MYSMB_IO_FAR *,mysmb_io_u8 MYSMB_IO_FAR *))
+{
+    if(root)root->present_ram=present;
+}
 void mysmb_dos16_root_bind_video_gate(struct mysmb_dos16_root *root,
     int (*should_present)(void *))
 {if(root)root->should_present=should_present;}
@@ -190,6 +197,12 @@ static void present_current(struct mysmb_dos16_root *root)
                 root->ppu_workspace.bg,MYSMB_PPU_BACKGROUND_BYTES,
                 (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_SECOND_BYTES),
                 MYSMB_PPU_BACKGROUND_SECOND_BYTES);
+        /* This optional platform surface comes after the B/A/C cache policy.
+         * Allocation failure keeps the compact VGA presentation path intact. */
+        root->ram_screen_attempted=1U;
+        if(root->present_ram && optional_far_block_fits(MYSMB_IO_VIDEO_PIXELS))
+            root->ram_screen=(mysmb_io_u8 MYSMB_IO_FAR *)
+                _fmalloc(MYSMB_IO_VIDEO_PIXELS);
         if(root->present_palette_rows){
             mysmb_ppu_frame_nibble_bind(&root->ppu_workspace,mysmb_dos16_nibble_expand);
             mysmb_ppu_frame_slot_rows_bind(&root->ppu_workspace,mysmb_dos16_slot_rows_copy);
@@ -207,6 +220,10 @@ static void present_current(struct mysmb_dos16_root *root)
         if(root->present_palette_rows)
             mysmb_ppu_frame_palette(&root->game.ppu,root->video_palette);
         mysmb_ppu_frame_begin(&root->game.ppu,&root->ppu_workspace,&root->ppu_view);
+        if(root->present_ram && root->ram_screen && root->present_ram(root->hooks.context,
+            &root->ppu_view,root->video_palette,root->ram_screen)) {
+            mysmb_ppu_frame_end(&root->ppu_view);return;
+        }
         if(root->present_retained && root->present_retained(root->hooks.context,
             &root->ppu_view,root->video_palette)) {
             mysmb_ppu_frame_end(&root->ppu_view);return;
@@ -296,6 +313,8 @@ void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
     }
     root->ppu_cache_near=0U;
     mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,0);
+    if(root->ram_screen)_ffree(root->ram_screen);
+    root->ram_screen=0;root->ram_screen_attempted=0U;
     _ffree(root->ppu_frame.pixels);
     root->ppu_frame.pixels=0;
 #endif

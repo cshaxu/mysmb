@@ -735,6 +735,11 @@ target_link_libraries(mysmb_dos16_compact_vga_layout_smoke PRIVATE mysmb_dos16_c
 add_executable(mysmb_dos16_compact_overlay_smoke test/dos16_compact_overlay_smoke.c)
 target_link_libraries(mysmb_dos16_compact_overlay_smoke PRIVATE
     mysmb_dos16_retained_background mysmb_dos16_compact_vga_layout)
+add_library(mysmb_dos16_ram_compositor STATIC src/platform/dos16/ram_compositor.c)
+target_include_directories(mysmb_dos16_ram_compositor PUBLIC src)
+target_link_libraries(mysmb_dos16_ram_compositor PUBLIC mysmb_ppu_frame)
+add_executable(mysmb_dos16_ram_compositor_smoke test/dos16_ram_compositor_smoke.c)
+target_link_libraries(mysmb_dos16_ram_compositor_smoke PRIVATE mysmb_dos16_ram_compositor)
 add_library(mysmb_dos16_root STATIC src/platform/dos16/dos16_root.c src/platform/dos16/keyboard.c src/platform/dos16/pit_clock.c src/platform/dos16/slot_copy.c)
 target_include_directories(mysmb_dos16_root PUBLIC src)
 target_link_libraries(mysmb_dos16_root PUBLIC mysmb_core mysmb_game_io mysmb_io_color mysmb_game_snapshot mysmb_text_elements)
@@ -1376,6 +1381,7 @@ add_test(NAME mysmb.dos16-retained-apply-smoke COMMAND mysmb_dos16_retained_appl
 add_test(NAME mysmb.dos16-retained-overlay-smoke COMMAND mysmb_dos16_retained_overlay_smoke)
 add_test(NAME mysmb.dos16-compact-vga-layout-smoke COMMAND mysmb_dos16_compact_vga_layout_smoke)
 add_test(NAME mysmb.dos16-compact-overlay-smoke COMMAND mysmb_dos16_compact_overlay_smoke)
+add_test(NAME mysmb.dos16-ram-compositor-smoke COMMAND mysmb_dos16_ram_compositor_smoke)
 add_test(NAME mysmb.dos16-root-smoke COMMAND mysmb_dos16_root_smoke)
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)

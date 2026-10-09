@@ -27,6 +27,7 @@ static unsigned char text_colors[16];
 static mysmb_io_u8 palette_shadow[MYSMB_IO_VIDEO_PALETTE_COLORS],palette_valid;
 static unsigned char retained_mode;
 static unsigned char compact_mode,compact_page;
+static unsigned char ram_mode;
 struct retained_viewport {mysmb_io_u8 table,x,y;};
 struct retained_sprite_backup {mysmb_io_u8 x,y,active,pixels[64];};
 /* Bounded transient coverage only: 32*256 fixed-HUD bytes plus at most
@@ -568,7 +569,7 @@ int mysmb_dos16_devices_mode(mysmb_io_u8 text)
     text=(mysmb_io_u8)(text!=0U);
     if(text==text_mode)return 1;
     if(try_mode(text)) {
-        text_mode=text;retained_mode=0U;compact_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
+        text_mode=text;retained_mode=0U;compact_mode=0U;ram_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
         return 1;
     }
     /* A failed BIOS setup may already have changed the physical mode. */
@@ -620,7 +621,7 @@ int mysmb_dos16_devices_open(void)
     registers.h.ah=3U;registers.h.bh=0U;
     int86(0x10,&registers,&registers);old_cursor=registers.x.cx;
     if(!try_mode(0U)) {restore_video();return 0;}
-    text_mode=0U;retained_mode=0U;compact_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;video_ready=1U;
+    text_mode=0U;retained_mode=0U;compact_mode=0U;ram_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;video_ready=1U;
     mysmb_dos16_keyboard_initialize(&keyboard);
     old_keyboard=_dos_getvect(9U);
     _dos_setvect(9U,keyboard_interrupt);
@@ -633,7 +634,7 @@ void mysmb_dos16_devices_close(void)
 {
     if (opened==0U) return;
     _dos_setvect(9U,old_keyboard);
-    restore_video();opened=video_ready=text_mode=retained_mode=compact_mode=retained_hud_valid=retained_sprite_count=0U;
+    restore_video();opened=video_ready=text_mode=retained_mode=compact_mode=ram_mode=retained_hud_valid=retained_sprite_count=0U;
 }
 
 void mysmb_dos16_devices_input(struct mysmb_io_input *input)
@@ -679,6 +680,18 @@ int mysmb_dos16_devices_present_band(const struct mysmb_io_video_band *band)
     /* Chain4 handles the plane selector/address from each CPU byte address.
      * Every band fits both segments;last source pixel is A000:EFFF. */
     copy_plane_dwords(video+band->first*256U,band->pixels,band->rows*256U);
+    return 1;
+}
+int mysmb_dos16_devices_present_screen(const mysmb_io_u8 MYSMB_IO_FAR *screen)
+{
+    unsigned char far *video;
+    if(!video_ready || text_mode || !screen)return 0;
+    if(!ram_mode) {
+        vga_native_rows();ram_mode=1U;retained_mode=0U;compact_mode=0U;
+        retained_hud_valid=0U;retained_sprite_count=0U;
+    }
+    video=(unsigned char far *)0xa0000000UL;
+    copy_plane_dwords(video,screen,MYSMB_IO_VIDEO_PIXELS);
     return 1;
 }
 mysmb_io_u8 MYSMB_IO_FAR *mysmb_dos16_devices_direct_band(mysmb_io_u16 first,

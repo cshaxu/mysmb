@@ -41,6 +41,10 @@ struct mysmb_dos16_root {
     int (*present_palette_rows)(void *,const struct mysmb_io_palette_video_source *);
     int (*present_retained)(void *,const struct mysmb_ppu_frame_view *,
         const mysmb_io_u8 MYSMB_IO_FAR *);
+    mysmb_io_u8 MYSMB_IO_FAR *ram_screen;
+    mysmb_io_u8 ram_screen_attempted;
+    int (*present_ram)(void *,const struct mysmb_ppu_frame_view *,
+        const mysmb_io_u8 MYSMB_IO_FAR *,mysmb_io_u8 MYSMB_IO_FAR *);
     int (*should_present)(void *);
     mysmb_io_u8 video_palette[MYSMB_IO_VIDEO_PALETTE_COLORS];
 };
@@ -59,6 +63,9 @@ int mysmb_dos16_root_initialize_palette_rows(struct mysmb_dos16_root *root,
 void mysmb_dos16_root_bind_retained(struct mysmb_dos16_root *root,
     int (*present)(void *,const struct mysmb_ppu_frame_view *,
         const mysmb_io_u8 MYSMB_IO_FAR *));
+void mysmb_dos16_root_bind_ram(struct mysmb_dos16_root *root,
+    int (*present)(void *,const struct mysmb_ppu_frame_view *,
+        const mysmb_io_u8 MYSMB_IO_FAR *,mysmb_io_u8 MYSMB_IO_FAR *));
 void mysmb_dos16_root_bind_video_gate(struct mysmb_dos16_root *root,
     int (*should_present)(void *));
 void mysmb_dos16_root_step(struct mysmb_dos16_root *root);
