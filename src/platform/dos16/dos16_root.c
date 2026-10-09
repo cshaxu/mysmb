@@ -167,22 +167,25 @@ static void present_current(struct mysmb_dos16_root *root)
         root->text_mode=0U;
     }
 #ifdef MYSMB_DOS16_TARGET
-    /* Allocate only after normal root/text/snapshot initialization. This
-     * optional buffer must never displace required product storage. */
+    /* Allocate only after normal root/text/snapshot initialization.
+     * Derived presentation storage must never displace required root storage. */
     if(!root->ppu_cache_attempted) {
         root->ppu_cache_attempted=1U;
-        /* Preserve the compact background tier before spending memory on CHR.
-         * The shared compositor supports packed backgrounds with raw CHR. */
-        /* Do not make the compact tier walk a fragmented far heap when DOS
-         * already reports that no single conventional block can fit it. */
-        background=optional_far_block_fits(MYSMB_PPU_BACKGROUND_BYTES) ?
-            (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES) : 0;
+        /* D is required before any derived cache: without its contiguous
+         * composition surface the compact VGA path is not playable. */
+        root->ram_screen_attempted=1U;
+        if(root->present_ram && optional_far_block_fits(MYSMB_IO_VIDEO_PIXELS))
+            root->ram_screen=(mysmb_u8 MYSMB_IO_FAR *)
+                _fmalloc(MYSMB_IO_VIDEO_PIXELS);
         /* Reuse the primary-block reserve before requesting another DOS block.
          * Preserve allocation provenance for the matching shutdown operation. */
         near_cache=(mysmb_u8 __near *)_nmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
         root->ppu_cache_near=(mysmb_io_u8)(near_cache!=0);
         decoded=near_cache?(mysmb_u8 __far *)near_cache:
             (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
+        /* B is the compact two-nametable background required behind D. */
+        background=decoded && optional_far_block_fits(MYSMB_PPU_BACKGROUND_BYTES) ?
+            (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES) : 0;
         mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,decoded);
         mysmb_ppu_frame_background_bind(&root->ppu_workspace,
             background,
@@ -191,18 +194,12 @@ static void present_current(struct mysmb_dos16_root *root)
          * compact background tier and decoded CHR tier were retained.  If
          * decoded CHR fails, preserve the compact tier and do not spend a
          * second background block. */
-        if(root->ppu_workspace.bg && decoded &&
+        if(root->ram_screen && root->ppu_workspace.bg && decoded &&
             optional_far_block_fits(MYSMB_PPU_BACKGROUND_SECOND_BYTES))
             mysmb_ppu_frame_background_byte_bind(&root->ppu_workspace,
                 root->ppu_workspace.bg,MYSMB_PPU_BACKGROUND_BYTES,
                 (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_SECOND_BYTES),
                 MYSMB_PPU_BACKGROUND_SECOND_BYTES);
-        /* This optional platform surface comes after the B/A/C cache policy.
-         * Allocation failure keeps the compact VGA presentation path intact. */
-        root->ram_screen_attempted=1U;
-        if(root->present_ram && optional_far_block_fits(MYSMB_IO_VIDEO_PIXELS))
-            root->ram_screen=(mysmb_io_u8 MYSMB_IO_FAR *)
-                _fmalloc(MYSMB_IO_VIDEO_PIXELS);
         if(root->present_palette_rows){
             mysmb_ppu_frame_nibble_bind(&root->ppu_workspace,mysmb_dos16_nibble_expand);
             mysmb_ppu_frame_slot_rows_bind(&root->ppu_workspace,mysmb_dos16_slot_rows_copy);
@@ -214,6 +211,15 @@ static void present_current(struct mysmb_dos16_root *root)
                     mysmb_dos16_palette_expand,pairs);
             }
         }
+    }
+#endif
+#ifdef MYSMB_DOS16_TARGET
+    /* D+A+B are mandatory for graphical DOS presentation. */
+    if(root->present_ram && (!root->ram_screen || !root->ppu_workspace.decoded ||
+        !root->ppu_workspace.bg)) {
+        failure.buttons=0U;failure.buttons2=0U;failure.requests=MYSMB_IO_REQUEST_EXIT;
+        mysmb_io_control_input(&root->control,&failure);
+        return;
     }
 #endif
     if(root->present_rows) {

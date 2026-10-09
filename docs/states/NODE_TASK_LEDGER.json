@@ -9339,7 +9339,7 @@
     },
     {
       "id": "M3 T39",
-      "state": "active",
+      "state": "closed",
       "evidence": [
         "docs/proposals/m3/retained-performance-qualification.md"
       ],
@@ -9424,7 +9424,7 @@
         },
         {
           "id": "M3 T39 S8",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/retained-performance-qualification.md"
           ],
@@ -9433,7 +9433,7 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Active: DOS16 RAM composition foundation follows independently derived NESticle architecture; zero ROM-node and edge scope."
+          "technicalReceipt": "Closed: owner accepted usable DOS16 RAM-composition baseline. D/A/B are mandatory, C optional; exact overlay and focused host/DOS link checks pass. Runtime tier receipt deferred to queued DOS16 RAM presenter memory-tier qualification."
         }
       ]
     }
@@ -1006614,7 +1006614,7 @@
       "expectedMatches": [],
       "actualMatches": [],
       "maximumComplete": 1992,
-      "state": "active",
+      "state": "closed",
       "evidence": "docs/proposals/m3/retained-performance-qualification.md"
     }
   ]

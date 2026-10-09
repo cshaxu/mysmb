@@ -800,3 +800,22 @@ and passes an unchanged standard-VGA DOSBox five-second launch.  Both native
 Windows self-tests pass after packaging.  Owner play testing remains required
 to qualify perceived motion and visual cadence, and S8 remains open for its
 separate whole-route timing and allocation receipt.
+
+
+## S8 closure — usable RAM-composition baseline
+
+The owner accepted the current DOS16 product as a usable baseline.  The final
+allocation policy is D then A then B then C: the 61,440-byte RAM composition
+surface (D), 8,192-byte decoded CHR cache (A), and 63,488-byte packed
+background cache (B) are required for graphical presentation.  The 61,440-byte
+byte-background upgrade (C) is requested only after those three allocations
+succeed.  Missing D, A, or B requests clean application exit instead of
+falling back to the compact presenter that owner testing found non-playable.
+
+The exact PPU overlay oracle, focused DOS root/RAM compositor/pacing tests,
+DOS16 MZ link, and unchanged standard-VGA DOSBox launch pass.  The P1 synthetic
+presenter probe remains 267,964 compact ticks versus 48,934 RAM-composition
+ticks; it is not an end-to-end performance-parity claim.  No ROM node, control
+edge, shared game, shared PPU, text, or Win32 behavior changed.  Actual runtime
+allocation receipts and a matched whole-route ABD-versus-ABCD cost comparison
+are deferred to [DOS16 RAM presenter memory-tier qualification](dos16-ram-presenter-memory-tiers.md).

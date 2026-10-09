@@ -1,6 +1,21 @@
 # Project Status
 
-**Active: M3 T39 S8. NESticle-style DOS16 RAM composition foundation.**
+**No active S. M3 T39 closed after the owner accepted S8's usable DOS16 RAM-composition baseline.**
+
+## Latest Closure — M3 T39 S8
+
+The owner accepted the DOS16 build as a usable baseline. The selected policy is
+**D → A → B → C**: the 61,440-byte RAM screen (D), 8,192-byte decoded CHR
+cache (A), and 63,488-byte packed background cache (B) are mandatory for
+DOS graphics; the 61,440-byte byte-background cache (C) is optional. Failure
+to retain D/A/B exits instead of silently falling back to the non-playable
+compact presenter.
+
+The focused host tests and exact PPU overlay oracle pass; the linked DOS MZ
+survived the standard-VGA DOSBox launch. The 5.48x result is a synthetic
+presenter probe, not a performance-parity claim. Runtime memory receipts and
+a matched ABD-versus-ABCD route comparison are transferred to the queued
+[RAM presenter memory-tier qualification](../proposals/m3/dos16-ram-presenter-memory-tiers.md).
 
 ## M3 T39 S8 Packet
 

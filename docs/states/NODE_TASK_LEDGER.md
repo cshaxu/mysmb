@@ -4016,4 +4016,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T39 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/retained-performance-qualification.md) |
 | M3 T39 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/retained-performance-qualification.md) |
 | M3 T39 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/retained-performance-qualification.md) |
-| M3 T39 S8 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/retained-performance-qualification.md) |
+| M3 T39 S8 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/retained-performance-qualification.md) |
