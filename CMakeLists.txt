@@ -728,6 +728,13 @@ add_executable(mysmb_dos16_retained_apply_smoke test/dos16_retained_apply_smoke.
 target_link_libraries(mysmb_dos16_retained_apply_smoke PRIVATE mysmb_dos16_retained_background)
 add_executable(mysmb_dos16_retained_overlay_smoke test/dos16_retained_overlay_smoke.c)
 target_link_libraries(mysmb_dos16_retained_overlay_smoke PRIVATE mysmb_dos16_retained_background)
+add_library(mysmb_dos16_compact_vga_layout STATIC src/platform/dos16/compact_vga_layout.c)
+target_include_directories(mysmb_dos16_compact_vga_layout PUBLIC src)
+add_executable(mysmb_dos16_compact_vga_layout_smoke test/dos16_compact_vga_layout_smoke.c)
+target_link_libraries(mysmb_dos16_compact_vga_layout_smoke PRIVATE mysmb_dos16_compact_vga_layout)
+add_executable(mysmb_dos16_compact_overlay_smoke test/dos16_compact_overlay_smoke.c)
+target_link_libraries(mysmb_dos16_compact_overlay_smoke PRIVATE
+    mysmb_dos16_retained_background mysmb_dos16_compact_vga_layout)
 add_library(mysmb_dos16_root STATIC src/platform/dos16/dos16_root.c src/platform/dos16/keyboard.c src/platform/dos16/pit_clock.c src/platform/dos16/slot_copy.c)
 target_include_directories(mysmb_dos16_root PUBLIC src)
 target_link_libraries(mysmb_dos16_root PUBLIC mysmb_core mysmb_game_io mysmb_io_color mysmb_game_snapshot mysmb_text_elements)
@@ -1367,6 +1374,8 @@ add_test(NAME mysmb.ppu-sprite-overlay-smoke COMMAND mysmb_ppu_sprite_overlay_sm
 add_test(NAME mysmb.dos16-retained-background-smoke COMMAND mysmb_dos16_retained_background_smoke)
 add_test(NAME mysmb.dos16-retained-apply-smoke COMMAND mysmb_dos16_retained_apply_smoke)
 add_test(NAME mysmb.dos16-retained-overlay-smoke COMMAND mysmb_dos16_retained_overlay_smoke)
+add_test(NAME mysmb.dos16-compact-vga-layout-smoke COMMAND mysmb_dos16_compact_vga_layout_smoke)
+add_test(NAME mysmb.dos16-compact-overlay-smoke COMMAND mysmb_dos16_compact_overlay_smoke)
 add_test(NAME mysmb.dos16-root-smoke COMMAND mysmb_dos16_root_smoke)
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)

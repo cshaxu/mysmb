@@ -1,6 +1,6 @@
 # Project Status
 
-**Active: M3 T39 S6. DOS16 compact-VRAM double-page presenter integration.**
+**Active: M3 T39 S6 closure review. DOS16 compact-VRAM double-page presenter integration is accepted; no successor S is admitted yet.**
 
 ## M3 T39 S6 Packet
 
@@ -25,6 +25,21 @@
 | Reporting Requirements | State route count, frame count, retained-mode status, counter categories, code/artifact status and explicit next-S state. |
 | Original Owner Request | Improve DOS16 speed through evidence-led work; implement the proven compact-VRAM page candidate without changing shared semantics. |
 | Similar-Issue Sweep | Visible A000 writes, latch modes, CRTC pages, horizontal panning, vertical wrap, retained background, HUD, repair and sprites. |
+
+## M3 T39 S6 Closure Record
+
+The accepted device-only route uses 249,600 of 262,144 VGA bytes and adds zero
+conventional-memory allocation.  Its original per-slot HUD addressing made the
+first product route slow; the similar-issue sweep found the same avoidable
+address recomputation only in compact HUD output.  Replacing it with
+plane-major row spans produced 252,787 PIT ticks/frame in the warm-cache
+product route, 25.3 percent below the 338,395-tick reference and 15.3 percent
+below the matched 298,397-tick legacy route.  No shared game, PPU, text or
+Win32 production hit exists.  Exhaustive compact-layout coverage, the
+canonical-PPU overlay oracle, retained background/apply/overlay tests,
+platform purity, both host focused suites and a DOS16 MZ DOSBox launch pass.
+All three packaged target artifacts were refreshed.  T39 remains open only
+for a separately admitted successor candidate.
 
 ## Current Technical Baseline
 

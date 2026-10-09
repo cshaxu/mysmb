@@ -1,4 +1,5 @@
 #include "platform/dos16/devices.h"
+#include "platform/dos16/compact_vga_layout.h"
 #include "platform/dos16/retained_background.h"
 #include "platform/dos16/keyboard.h"
 #include "platform/dos16/pit_clock.h"
@@ -23,6 +24,7 @@ static unsigned short text_rows=25U;
 static unsigned char text_colors[16];
 static mysmb_io_u8 palette_shadow[MYSMB_IO_VIDEO_PALETTE_COLORS],palette_valid;
 static unsigned char retained_mode;
+static unsigned char compact_mode,compact_page;
 struct retained_viewport {mysmb_io_u8 table,x,y;};
 struct retained_sprite_backup {mysmb_io_u8 x,y,active,pixels[64];};
 /* Bounded transient coverage only: 32*256 fixed-HUD bytes plus at most
@@ -194,6 +196,150 @@ static void vga_retained_viewport(mysmb_io_u8 table,mysmb_io_u8 x,mysmb_io_u8 y)
     vga_register(0x3d4,12,(unsigned char)(start>>8U));
     vga_register(0x3d4,13,(unsigned char)start);
     (void)inp(0x3da);outp(0x3c0,19);outp(0x3c0,(unsigned char)(source&7U));outp(0x3c0,0x20);
+}
+
+/* Compact layout: one 512-by-240 cache period followed by two 264-by-240
+ * composition pages.  The pages are never visible while being assembled.
+ * All coordinates below are already PPU-selected output coordinates. */
+static void vga_compact_rows(void)
+{
+    unsigned char protect;
+    vga_register(0x3c4,0,1);outp(0x3c2,0xe3);vga_register(0x3c4,4,6);
+    outp(0x3d4,17);protect=(unsigned char)inp(0x3d5);
+    vga_register(0x3d4,17,(unsigned char)(protect&0x7fU));
+    vga_register(0x3d4,1,63);vga_register(0x3d4,2,64);
+    vga_register(0x3d4,6,13);vga_register(0x3d4,7,62);
+    vga_register(0x3d4,9,65);vga_register(0x3d4,16,234);
+    vga_register(0x3d4,17,44);vga_register(0x3d4,18,223);
+    /* CRTC offset is word-addressed.  A compact page row is 66 bytes per
+     * plane, so its display stride is 33 words. */
+    vga_register(0x3d4,19,33);vga_register(0x3d4,20,64);
+    vga_register(0x3d4,21,231);vga_register(0x3d4,22,6);
+    vga_register(0x3d4,23,0xa3);vga_register(0x3d4,24,255);
+    vga_register(0x3d4,12,(unsigned char)(MYSMB_DOS16_COMPACT_PAGE_A>>9U));
+    vga_register(0x3d4,13,(unsigned char)(MYSMB_DOS16_COMPACT_PAGE_A>>1U));
+    (void)inp(0x3da);outp(0x3c0,19);outp(0x3c0,0);outp(0x3c0,0x20);
+    vga_register(0x3ce,5,0);vga_register(0x3c4,2,15);vga_register(0x3c4,0,3);
+}
+
+static void vga_compact_viewport(mysmb_io_u8 page,mysmb_io_u8 pan)
+{
+    mysmb_io_u16 base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
+        MYSMB_DOS16_COMPACT_PAGE_B);
+    mysmb_io_u16 start=(mysmb_io_u16)(base>>1U);
+    vga_register(0x3d4,12,(unsigned char)(start>>8U));
+    vga_register(0x3d4,13,(unsigned char)start);
+    (void)inp(0x3da);outp(0x3c0,19);outp(0x3c0,(unsigned char)(pan&7U));outp(0x3c0,0x20);
+}
+
+static int vga_compact_tile(void *context,mysmb_io_u8 plane,mysmb_io_u8 table,
+    mysmb_io_u8 row,mysmb_io_u8 column,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+{
+    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    mysmb_io_u16 base,y,x;
+    (void)context;
+    if(!slots || table>=2U || row>=30U || column>=32U)return 0;
+    if(retained_tile_plane!=plane) {
+        vga_retained_plane(plane);retained_tile_plane=plane;
+    }
+    x=(mysmb_io_u16)table*256U+(mysmb_io_u16)column*8U;
+    base=(mysmb_io_u16)((mysmb_io_u16)row*8U*
+        MYSMB_DOS16_COMPACT_CACHE_STRIDE+(x>>2U));
+    for(y=0U;y<8U;++y) {
+        video[base+y*MYSMB_DOS16_COMPACT_CACHE_STRIDE]=slots[y*8U+plane];
+        video[base+y*MYSMB_DOS16_COMPACT_CACHE_STRIDE+1U]=slots[y*8U+4U+plane];
+    }
+    return 1;
+}
+
+/* VGA write mode 1 writes the latches loaded by the source read to every
+ * plane at once.  It moves the complete four-plane row without a RAM frame
+ * or one sequencer pass per plane. */
+static int vga_compact_copy_viewport(const struct retained_viewport *view,
+    mysmb_io_u8 page)
+{
+    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    mysmb_io_u16 row,source,target,i;
+    mysmb_io_u8 first,second;
+    volatile unsigned char loaded;
+    target=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:MYSMB_DOS16_COMPACT_PAGE_B);
+    vga_register(0x3c4,2,15);vga_register(0x3ce,5,0x41U);
+    for(row=0U;row<MYSMB_DOS16_COMPACT_PAGE_HEIGHT;++row) {
+        if(!mysmb_dos16_compact_viewport_row(view->table,view->x,view->y,
+            (mysmb_io_u8)row,&source,&first,&second))goto failed;
+        for(i=0U;i<first;++i) {
+            loaded=video[source+i];video[target+row*MYSMB_DOS16_COMPACT_PAGE_STRIDE+i]=loaded;
+        }
+        for(i=0U;i<second;++i) {
+            loaded=video[i];video[target+row*MYSMB_DOS16_COMPACT_PAGE_STRIDE+first+i]=loaded;
+        }
+    }
+    vga_register(0x3ce,5,0);return 1;
+failed:
+    vga_register(0x3ce,5,0);return 0;
+}
+
+static mysmb_io_u16 compact_page_offset(mysmb_io_u8 page,mysmb_io_u8 pan,
+    mysmb_io_u8 x,mysmb_io_u8 y)
+{
+    mysmb_io_u16 base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
+        MYSMB_DOS16_COMPACT_PAGE_B);
+    return (mysmb_io_u16)(base+(mysmb_io_u16)y*MYSMB_DOS16_COMPACT_PAGE_STRIDE+
+        (((mysmb_io_u16)pan+x)>>2U));
+}
+
+static void compact_write_slots(mysmb_io_u8 page,mysmb_io_u8 pan,
+    mysmb_io_u8 x,mysmb_io_u8 y,mysmb_io_u8 width,mysmb_io_u8 rows,
+    const mysmb_io_u8 MYSMB_IO_FAR *slots,mysmb_io_u8 transparent)
+{
+    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    mysmb_io_u16 py,i;
+    mysmb_io_u8 plane,first,logical;
+    if(!slots)return;
+    for(plane=0U;plane<4U;++plane) {
+        first=(mysmb_io_u8)((plane+4U-((pan+x)&3U))&3U);vga_retained_plane(plane);
+        for(py=0U;py<rows;++py)for(i=first;i<width;i=(mysmb_io_u16)(i+4U)) {
+            logical=(mysmb_io_u8)i;
+            if(!transparent || slots[py*8U+logical]!=255U)
+                video[compact_page_offset(page,pan,(mysmb_io_u8)(x+logical),
+                    (mysmb_io_u8)(y+py))]=slots[py*8U+logical];
+        }
+    }
+}
+
+static void compact_write_hud(mysmb_io_u8 page,mysmb_io_u8 pan,
+    const mysmb_io_u8 MYSMB_IO_FAR *slots)
+{
+    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    mysmb_io_u16 base,y,i,offset;
+    mysmb_io_u8 plane,first;
+    if(!slots)return;
+    base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
+        MYSMB_DOS16_COMPACT_PAGE_B);
+    for(plane=0U;plane<4U;++plane) {
+        first=(mysmb_io_u8)((plane+4U-(pan&3U))&3U);vga_retained_plane(plane);
+        offset=(mysmb_io_u16)((pan+first)>>2U);
+        for(y=0U;y<32U;++y) {
+            volatile unsigned char far *target=video+base+
+                y*MYSMB_DOS16_COMPACT_PAGE_STRIDE+offset;
+            const mysmb_io_u8 MYSMB_IO_FAR *source=slots+y*256U+first;
+            for(i=0U;i<64U;++i)target[i]=source[i*4U];
+        }
+    }
+}
+
+struct compact_sprite_context {mysmb_io_u8 page,pan;};
+static int compact_draw_sprite(void *context,mysmb_io_u8 sprite,mysmb_io_u8 x,
+    mysmb_io_u8 y,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+{
+    struct compact_sprite_context *draw=(struct compact_sprite_context *)context;
+    mysmb_io_u8 width=8U,rows=8U;
+    (void)sprite;
+    if(!draw || !slots)return 0;
+    if((mysmb_io_u16)x+width>256U)width=(mysmb_io_u8)(256U-x);
+    if((mysmb_io_u16)y+rows>240U)rows=(mysmb_io_u8)(240U-y);
+    compact_write_slots(draw->page,draw->pan,x,y,width,rows,slots,1U);
+    return 1;
 }
 static void retained_viewport_from(const struct mysmb_ppu_scene_viewport *source,
     struct retained_viewport *target)
@@ -420,7 +566,7 @@ int mysmb_dos16_devices_mode(mysmb_io_u8 text)
     text=(mysmb_io_u8)(text!=0U);
     if(text==text_mode)return 1;
     if(try_mode(text)) {
-        text_mode=text;retained_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
+        text_mode=text;retained_mode=0U;compact_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
         return 1;
     }
     /* A failed BIOS setup may already have changed the physical mode. */
@@ -472,7 +618,7 @@ int mysmb_dos16_devices_open(void)
     registers.h.ah=3U;registers.h.bh=0U;
     int86(0x10,&registers,&registers);old_cursor=registers.x.cx;
     if(!try_mode(0U)) {restore_video();return 0;}
-    text_mode=0U;retained_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;video_ready=1U;
+    text_mode=0U;retained_mode=0U;compact_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;video_ready=1U;
     mysmb_dos16_keyboard_initialize(&keyboard);
     old_keyboard=_dos_getvect(9U);
     _dos_setvect(9U,keyboard_interrupt);
@@ -485,7 +631,7 @@ void mysmb_dos16_devices_close(void)
 {
     if (opened==0U) return;
     _dos_setvect(9U,old_keyboard);
-    restore_video();opened=video_ready=text_mode=retained_mode=retained_hud_valid=retained_sprite_count=0U;
+    restore_video();opened=video_ready=text_mode=retained_mode=compact_mode=retained_hud_valid=retained_sprite_count=0U;
 }
 
 void mysmb_dos16_devices_input(struct mysmb_io_input *input)
@@ -585,7 +731,7 @@ int mysmb_dos16_devices_retained_background(const struct mysmb_ppu_frame_view *v
 /* The PPU selects every pixel. DOS merely restores its former transient
  * coverage, applies cache-provided background changes, then records/draws
  * the current fixed HUD and descending OAM overlays. */
-int mysmb_dos16_devices_retained_frame(const struct mysmb_ppu_frame_view *view)
+static int retained_frame_legacy(const struct mysmb_ppu_frame_view *view)
 {
     struct mysmb_ppu_scene_viewport source;
     struct retained_viewport viewport;
@@ -620,6 +766,44 @@ int mysmb_dos16_devices_retained_frame(const struct mysmb_ppu_frame_view *view)
 fallback:
     vga_native_rows();retained_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
     return 0;
+}
+
+/* A complete compact page is built before its CRTC start address changes.
+ * This replaces the legacy visible-page restore/repaint path but consumes the
+ * same immutable PPU view and changed-tile feed. */
+int mysmb_dos16_devices_retained_frame(const struct mysmb_ppu_frame_view *view)
+{
+    struct mysmb_ppu_scene_viewport source;
+    struct retained_viewport viewport;
+    struct compact_sprite_context sprites;
+    static mysmb_io_u8 MYSMB_IO_FAR sprite_slots[64];
+    mysmb_io_u8 page,pan;
+    if(!video_ready || text_mode || !mysmb_ppu_frame_scene_viewport(view,&source) ||
+        !source.background_enabled)return 0;
+    if(!compact_mode) {
+        vga_compact_rows();compact_mode=1U;compact_page=0U;
+    }
+    retained_tile_plane=0xffU;
+    if(!mysmb_dos16_retained_background_apply_planes(view,vga_compact_tile,0))goto fallback;
+    retained_viewport_from(&source,&viewport);
+    page=(mysmb_io_u8)(compact_page^1U);
+    if(!vga_compact_copy_viewport(&viewport,page))goto fallback;
+    pan=(mysmb_io_u8)(viewport.x&7U);
+    if(source.fixed_top) {
+        if(!mysmb_ppu_frame_background_rows(view,retained_hud_slots,
+            sizeof(retained_hud_slots),0U,32U))goto fallback;
+        compact_write_hud(page,pan,retained_hud_slots);
+    }
+    sprites.page=page;sprites.pan=pan;
+    if(!mysmb_ppu_frame_sprite_tiles(view,sprite_slots,sizeof(sprite_slots),
+        compact_draw_sprite,&sprites))goto fallback;
+    vga_compact_viewport(page,pan);compact_page=page;retained_mode=0U;
+    return 1;
+fallback:
+    /* The neutral row presenter remains the safe output fallback.  It will
+     * reconfigure the adapter through its ordinary native-row path. */
+    compact_mode=0U;retained_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
+    return retained_frame_legacy(view);
 }
 
 mysmb_io_u8 mysmb_dos16_devices_audio(const struct mysmb_io_audio_frame *frame)

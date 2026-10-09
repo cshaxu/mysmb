@@ -638,3 +638,32 @@ panning and vertical wrap; exact retained-frame output comparison on actual PPU
 frames; a DOS16 MZ build/run; and a matched fixed-cycle measurement showing at
 least 20 percent improvement from the 338,395-tick steady presenter baseline.
 Otherwise S6 removes the candidate path and records a rejection.
+
+## S6 result -- accepted compact-VRAM double-page presenter
+
+S6 accepts the DOS16-only compact VGA route.  It retains one 512-by-240
+background period and uses two 264-by-240 composition pages, for 62,400 bytes
+per VGA plane (249,600 bytes total), leaving 12,544 bytes of the standard
+256KiB aperture unused.  It adds no conventional-memory allocation and does
+not change the shared core, PPU view, cadence, palette selection or OAM order.
+
+The initial complete-page copy was not accepted on its first implementation:
+the warm cache route measured 425,886 PIT ticks/frame.  The cause was confined
+to the DOS HUD commit: it recomputed a far VGA address for every HUD slot.
+S6 changed that adapter-only loop to the same plane-major, row-span shape as
+the accepted retained HUD path.  The same fixed `normal`, `cycles=3000`
+product fixture then measured 252,787 PIT ticks/frame across four warm-cache
+frames (the preceding first frame rebuilt all 7,680 plane-tile writes).  The
+old retained route on that exact fixture measured 298,397 ticks/frame.  The
+accepted route is therefore 15.3 percent faster on the paired fixture and
+25.3 percent below the 338,395-tick S2 accepted reference, clearing S6's
+20-percent requirement.
+
+Exactness evidence consists of exhaustive page/layout coverage for both
+scene pages, all 256 horizontal origins, all 240 vertical origins and all 240
+output rows; a four-frame canonical-PPU overlay oracle covering split HUD,
+OAM order, scroll phases and bottom-to-top vertical wrap; and the established
+retained background/apply/overlay checks.  The focused suite passed on both
+x86 and x64 hosts, platform-purity passed, and the actual MZ linked and ran
+under an unmodified standard-VGA DOSBox invocation without an immediate exit.
+The three target artifacts were refreshed after the source acceptance.
