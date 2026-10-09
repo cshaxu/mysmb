@@ -544,3 +544,73 @@ reduction. No implementation, byte oracle, target rebuild or executable
 refresh is justified. The next owner is S5's separate buffered-composition
 feasibility decision; it may not revive the rejected 61,440-byte naive RAM
 surface without a new measured cost model.
+
+## S5 result -- compact-VRAM display-page candidate is feasible for implementation
+
+S5 did not change product source or refresh an executable. It first corrected
+the proposed memory model: the current retained cache is **512 by 480**, not
+512 by 240. It stores the two horizontal nametables and a second vertical copy
+so CRTC scrolling can expose any 240-row viewport directly. That uses 61,440
+bytes in each of the four VGA planes (245,760 bytes total), leaving no room for
+a display page. Consequently, two display pages cannot simply be added to the
+current surface.
+
+There is nevertheless a different, bounded device-only candidate. The current
+retained-tile address function makes both vertical copies identical. Therefore a
+composition path can retain one 512-by-240 name-table period, assemble a
+scrolled viewport in software, and make the vertical wrap explicit while
+preserving the same selected PPU tile slots. Its VGA layout is:
+
+| region | bytes per plane | all four planes |
+| --- | ---: | ---: |
+| 512-by-240 retained background | 30,720 | 122,880 |
+| hidden composition page A, 264-by-240 | 15,840 | 63,360 |
+| hidden composition page B, 264-by-240 | 15,840 | 63,360 |
+| total | 62,400 | 249,600 |
+| unused VGA capacity | 3,136 | 12,544 |
+
+The eight-pixel margin in each 264-pixel page is required for CRTC horizontal
+panning; a nominal 256-by-240 page is not enough to prove all scroll phases.
+The design consumes **no new conventional memory**. It is distinct from the
+rejected conventional-RAM surface: all source, composition and display pages
+stay in the existing 256KiB VGA aperture.
+
+An ignored DOS16 MZ microbenchmark built with the product toolchain tested the
+only hardware assumption that matters before an implementation: VGA latch
+copying in graphics-controller write mode 1. It filled each source plane with a
+different pattern, copied it, read every destination plane back, and required
+zero mismatches. The viewport case used a 66-byte-per-plane destination row,
+240 rows, source stride 128, a nonzero source column, and a vertical wrap. It
+also had zero mismatches. At the same DOSBox normal, fixed 3000 diagnostic
+setting used for relative device probes, the 16-sample totals were:
+
+| operation | PIT ticks / sample | relation to 338,395-tick retained presenter baseline |
+| --- | ---: | ---: |
+| four-plane CPU VGA copy of a 256-by-240 page | 431,674 | 127.6% |
+| contiguous latch copy | 119,056 | 35.2% |
+| wrapped, strided 264-by-240 latch viewport copy | 143,551 | 42.4% |
+| CRTC page-start update | 41 ticks | negligible |
+
+The benchmark rejects ordinary CPU VGA-to-VGA copy, but it establishes the
+latch path as a bounded candidate: the necessary wrapped viewport transfer uses
+less than half of the current measured retained presenter interval before the
+destination-only HUD and sprite work is added. It can eliminate visible-page
+restore and repair writes, and a CRTC start-address swap makes the completed
+page visible atomically; this directly addresses tearing/flicker.
+
+This is **not** a product performance claim yet. A later implementation S must
+prove all of the following before it replaces the retained path:
+
+1. compose a page from actual PPU frame slots at every horizontal phase and
+   vertical wrap, then compare final pixels and VGA register state against the
+   current retained oracle;
+2. retain fixed-top HUD and OAM ordering exactly while writing only the hidden
+   page;
+3. compare steady, transition, title, water/castle and dense-sprite routes
+   against the 338,395-tick reference; and
+4. keep the 249,600-byte VGA layout within the standard 256KiB aperture with
+   no conventional-memory allocation or shared PPU/game change.
+
+S5 therefore closes as **feasible for a separate implementation S**, not as an
+accepted optimization. The private fixture, MZ binary, DOSBox configuration and
+result files remain below ignored build/m3-t39-s5/.
