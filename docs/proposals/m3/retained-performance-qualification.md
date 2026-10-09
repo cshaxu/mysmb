@@ -614,3 +614,27 @@ prove all of the following before it replaces the retained path:
 S5 therefore closes as **feasible for a separate implementation S**, not as an
 accepted optimization. The private fixture, MZ binary, DOSBox configuration and
 result files remain below ignored build/m3-t39-s5/.
+
+## S6 admission -- compact-VRAM double-page integration
+
+The owner approved implementation after S5. S6 owns only the DOS16 device
+adapter and project-owned tests. It may replace the current 512-by-480 retained
+VGA arrangement with a 512-by-240 background period plus two 264-by-240
+composition pages, using VGA latch mode 1 for the wrapped viewport copy and a
+CRTC handoff only after the hidden page is complete. The 264-pixel row includes
+the necessary panning margin; its 249,600-byte total must remain within the
+standard 256KiB VGA aperture.
+
+The exact PPU frame view remains the only source of background, fixed HUD and
+OAM slots. S6 may reorganize their physical VGA writes, but it cannot change
+their order, palette, clipping, scroll, cadence, state, or shared API. It must
+preserve the existing presenter as a fallback until final-pixel and VGA-state
+comparison passes. There is no conventional-memory allocation, no Win32/text/
+core/PPU change, no DOSBox configuration change, and no refresh of three
+product artifacts unless product source passes acceptance.
+
+Acceptance requires all of: exhaustive page-layout coverage for horizontal
+panning and vertical wrap; exact retained-frame output comparison on actual PPU
+frames; a DOS16 MZ build/run; and a matched fixed-cycle measurement showing at
+least 20 percent improvement from the 338,395-tick steady presenter baseline.
+Otherwise S6 removes the candidate path and records a rejection.

@@ -1,30 +1,30 @@
 # Project Status
 
-**Active: M3 T39 S5. DOS16 buffered-composition feasibility decision.**
+**Active: M3 T39 S6. DOS16 compact-VRAM double-page presenter integration.**
 
-## M3 T39 S5 Packet
+## M3 T39 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation of M3 T39 after closed S4 rejection. |
-| Admission And Approval | Owner approved the S1?S5 evidence-led DOS16 performance sequence. S4 rejected repair-plane batching from measured return. |
-| Objective | Determine whether a presentation-only visible-page, retrace handoff or compact composition arrangement can reduce visible-A000 tearing and materially improve DOS16 cadence within the conventional-memory policy. |
-| Scope | Read-only DOS16 device/VGA-memory feasibility research and proposal/ledger evidence. No product source change is admitted. |
-| Non-goals | Do not change game/PPU semantics, cadence, dimensions, RAM cache policy, persistent DOSBox configuration, introduce DOS4GW, frameskip or a helper process. Do not repeat the rejected naive 61,440-byte RAM surface. |
-| Reference Baseline | The current retained path has exact physical output but writes overlays directly to visible A000. The rejected naive RAM surface measured 11.983ms/frame versus 6.971ms/frame direct split-A000. S2/S3 reject micro-batching as a material speed path. |
-| Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md#s5----buffered-composition-feasibility-re-evaluation). |
-| Files And ABI Surface | Ignored research/probe material and tracked governance records only. |
+| Identifier Mode | Continuation of M3 T39 after S5 found a compact-VRAM latch-copy candidate. |
+| Admission And Approval | Owner approved implementation after the S5 feasibility result. |
+| Objective | Implement a DOS16-only compact 512-by-240 retained cache with two hidden 264-by-240 VGA composition pages, then decide by exact output and matched timing whether it can replace the direct-visible retained presenter. |
+| Scope | `src/platform/dos16/devices.c`, `retained_background.[ch]`, DOS16-only tests and ignored probe material. |
+| Non-goals | Do not change game/PPU semantics, cadence, dimensions, shared IO, Win32, text presentation, persistent DOSBox configuration, DOS4GW, frameskip or a helper process. |
+| Reference Baseline | The current retained presenter has exact output and a 338,395-tick steady presenter interval. S5's wrapped latch viewport copy is 143,551 ticks in the same diagnostic environment. |
+| Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md#s5-result----compact-vram-display-page-candidate-is-feasible-for-implementation). |
+| Files And ABI Surface | DOS16 device implementation and focused owned tests; ignored owner-local DOS toolchain, DOSBox and probe material. |
 | Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
 | Expected Markers | ROM scope[], expectedMatches[], actualMatches[], new0; historical 1992/1992 unchanged. |
 | Asset Needs | Existing owner-local DOS toolchain, DOSBox and current product inputs only. |
-| Stop Conditions | Reject any option requiring an unmeasured full RAM surface, changing shared semantics, unbounded conventional memory, unavailable VGA memory, or a synthetic visual claim. |
-| Verification | Establish VGA page/address feasibility, exact final-pixel boundary, conventional-memory accounting and a matched cadence comparison only if a bounded candidate exists. Run ledger and documentation validation. |
-| Exit Criteria | Explicit feasible/rejected decision with memory, timing and pixel-equivalence constraints; any implementation requires a later S. |
+| Stop Conditions | Revert/reject on a pixel, palette, OAM-order or VGA-state difference; any conventional-memory allocation; >256KiB VGA requirement; or no material matched timing improvement. |
+| Verification | Exhaustive scroll/panning layout test, retained-frame byte oracle on actual PPU frames, focused DOS16 build/run and fixed-cycle matched timing against the current retained route. Run ledger and documentation validation. |
+| Exit Criteria | Compact path accepted only with exact final output and at least 20-percent retained-presenter improvement; otherwise preserve/restore current path and record the rejection. |
 | ROM scope | `[]`; zero nodes and zero control edges. Historical markers unchanged. |
-| Reporting | Report VGA capacity, memory cost, tear/cadence mechanism, feasible candidate or rejection and resulting implementation state. |
+| Reporting | Report page/cache capacity, conventional-memory delta, exactness route/frame count, before/after timing, artifact state and acceptance/rejection. |
 | Reporting Requirements | State route count, frame count, retained-mode status, counter categories, code/artifact status and explicit next-S state. |
-| Original Owner Request | Improve DOS16 speed through evidence-led work; prioritize HUD batching, phase census, sprite repair decision and only then composition buffering. |
-| Similar-Issue Sweep | Visible A000 writes, retrace, display pages, retained background, RAM surfaces, HUD, repair and sprite paths. |
+| Original Owner Request | Improve DOS16 speed through evidence-led work; implement the proven compact-VRAM page candidate without changing shared semantics. |
+| Similar-Issue Sweep | Visible A000 writes, latch modes, CRTC pages, horizontal panning, vertical wrap, retained background, HUD, repair and sprites. |
 
 ## Current Technical Baseline
 
