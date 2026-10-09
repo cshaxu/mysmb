@@ -66,9 +66,9 @@ for a separately admitted successor candidate.
 
 ## Current Technical Baseline
 - S8 P1 adds optional 61,440B RAM composition and one contiguous Chain-4 transfer; exact slot oracle passes and the matched synthetic presenter probe is 5.48x faster. Full post-Start root timing and runtime allocation receipt remain open.
-- S8 P2 repairs DOS16 deadline recovery: a multi-period late frame now discards
-  stale pacing debt before the next logical tick, rather than permanently
-  bypassing the 60Hz wait. The change is limited to the DOS PIT adapter; a
+- S8 P3 repairs DOS16 deadline recovery: a late composition now runs the
+  missing logical ticks without publishing their stale images, then resumes at
+  the next 60Hz deadline. The change is limited to the DOS PIT adapter; a
   manual DOSBox pace check remains required.
 
 - S1 found a NESticle-style flat 32-bit RAM screen is a different model, not an importable DOS16 dependency.

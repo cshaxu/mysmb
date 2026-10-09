@@ -20,6 +20,10 @@ static unsigned char video_ready;
 /* DOS binds this shared deadline to a frame-dropping policy.  Other hosts may
  * retain ordinary pacing without binding a video gate. */
 static struct mysmb_io_pacing pacing;
+/* The current logical tick may compose only when it was reached at its
+ * scheduled deadline.  Catch-up ticks preserve game/audio/input timing but
+ * leave their already-stale images unpublished. */
+static unsigned char present_due=1U;
 static unsigned char opened;
 static unsigned char text_mode;
 static unsigned short text_rows=25U;
@@ -626,6 +630,7 @@ int mysmb_dos16_devices_open(void)
     old_keyboard=_dos_getvect(9U);
     _dos_setvect(9U,keyboard_interrupt);
     mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);
+    present_due=1U;
     opened=1U;
     return 1;
 }
@@ -721,27 +726,37 @@ void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *fra
 
 void mysmb_dos16_devices_wait(void)
 {
-    unsigned long now;
-    /* A skipped late frame must discard its missed-deadline backlog before
-     * the next tick.  Advancing only one period here leaves the clock late
-     * forever after a multi-period presentation stall, which turns the game
-     * loop into an unbounded fast-forward.  The shared pacing primitive keeps
-     * ordinary fractional lateness but rebases a missed-frame backlog. */
-    do {now=timer_stamp();}
-    while(mysmb_io_pacing_remaining(&pacing,now)!=0UL);
+    unsigned long now,elapsed;
+    /* Move one logical deadline at a time.  If composition made this tick
+     * late, following root steps catch up game/input/audio state without
+     * composing stale images.  Rebasing here slows the game to the renderer.
+     * The signed-half-range check also treats the BIOS midnight reset as a
+     * new clock origin rather than a catch-up burst. */
+    now=timer_stamp();
+    elapsed=(now-pacing.last)&0xffffffffUL;
+    if(elapsed>0x7fffffffUL)pacing.last=now;
+    pacing.last=(pacing.last+pacing.period)&0xffffffffUL;
+    now=timer_stamp();
+    elapsed=(now-pacing.last)&0xffffffffUL;
+    if(elapsed<=0x7fffffffUL) {present_due=0U;return;}
+    do {
+        now=timer_stamp();
+        elapsed=(now-pacing.last)&0xffffffffUL;
+    } while(elapsed>0x7fffffffUL);
+    present_due=1U;
 }
 int mysmb_dos16_devices_should_present(void)
 {
-    return !mysmb_io_pacing_late(&pacing,timer_stamp());
+    return present_due!=0U;
 }
 void mysmb_dos16_devices_after_load(void)
 {
     palette_valid=0U;
     _disable();mysmb_dos16_keyboard_after_load(&keyboard);_enable();
-    mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);
+    mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);present_due=1U;
 }
 void mysmb_dos16_devices_resume_clock(void)
-{mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);}
+{mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);present_due=1U;}
 
 int mysmb_dos16_devices_retained_background(const struct mysmb_ppu_frame_view *view)
 {

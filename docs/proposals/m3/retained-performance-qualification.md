@@ -777,3 +777,26 @@ for five seconds in an unchanged standard-VGA DOSBox launch at `core=normal`,
 The refreshed DOS executable is `350,077B`.  Owner play testing is still the
 acceptance evidence for visible 60Hz pace; this P does not claim a new
 whole-route performance measurement or close S8.
+
+## S8 P3 -- DOS16 logical catch-up instead of renderer-paced simulation
+
+Owner testing showed that P2 removed uncontrolled fast-forward but rebased the
+logical deadline after every multi-period composition.  Since the RAM path can
+still consume roughly 41ms in its synthetic presenter probe, that made one
+logical game tick wait for each slow presentation and visibly slowed motion.
+
+The DOS adapter now advances exactly one 60Hz logical deadline per root step.
+If the physical renderer consumed one or more following deadlines, it marks
+the subsequent root steps as video-skipped while they continue to read input,
+run the unchanged translated game tick and construct audio.  It waits only
+after those ticks reach the next future deadline, then permits one current
+image to compose.  A BIOS clock discontinuity re-establishes the schedule
+without a catch-up burst.  This is the same policy already used by the Win32
+bounded catch-up loop: retain game time, discard only stale display work.
+
+No core, ROM, PPU, audio, input mapping, text or Win32 source changed.  The
+focused host suites remain green; the updated DOS LINK 3.65 MZ is `350,255B`
+and passes an unchanged standard-VGA DOSBox five-second launch.  Both native
+Windows self-tests pass after packaging.  Owner play testing remains required
+to qualify perceived motion and visual cadence, and S8 remains open for its
+separate whole-route timing and allocation receipt.
