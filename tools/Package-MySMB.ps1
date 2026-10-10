@@ -2,6 +2,8 @@ param(
     [Parameter(Mandatory = $true)][string]$Dos16Executable,
     [Parameter(Mandatory = $true)][string]$Win32Executable,
     [Parameter(Mandatory = $true)][string]$Win64Executable,
+    [Parameter(Mandatory = $true)][string]$Win32BuildDirectory,
+    [Parameter(Mandatory = $true)][string]$Win64BuildDirectory,
     [string]$OutputDirectory = ''
 )
 
@@ -46,12 +48,29 @@ function Assert-PeMachine([string]$Path, [UInt16]$ExpectedMachine, [string]$Labe
     }
 }
 
+function Assert-LocalResourceBuild([string]$BuildDirectory, [string]$Label) {
+    $cache = Join-Path $BuildDirectory 'CMakeCache.txt'
+    $ninja = Join-Path $BuildDirectory 'build.ninja'
+    Require-File $cache "$Label CMake cache"
+    Require-File $ninja "$Label build manifest"
+    $cacheText = [System.IO.File]::ReadAllText($cache)
+    $ninjaText = [System.IO.File]::ReadAllText($ninja)
+    if ($cacheText -notmatch '(?m)^MYSMB_ROM_PATH:FILEPATH=.+') {
+        throw "$Label was not configured with owner-local ROM resources"
+    }
+    if ($ninjaText -notmatch 'MYSMB_LOCAL_TITLE=1') {
+        throw "$Label does not bind owner-local title resources"
+    }
+}
+
 Require-File $Dos16Executable 'DOS executable'
 Require-File $Win32Executable 'Win32 executable'
 Require-File $Win64Executable 'Win64 executable'
 Assert-DosMz $Dos16Executable
 Assert-PeMachine $Win32Executable 0x014c 'Win32 executable'
 Assert-PeMachine $Win64Executable 0x8664 'Win64 executable'
+Assert-LocalResourceBuild $Win32BuildDirectory 'Win32 build'
+Assert-LocalResourceBuild $Win64BuildDirectory 'Win64 build'
 
 New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
 Copy-Item -LiteralPath $Dos16Executable -Destination (Join-Path $OutputDirectory 'mysmb16.exe') -Force
