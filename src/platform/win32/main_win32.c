@@ -222,7 +222,10 @@ static void mysmb_win32_switch_presenter(HWND window,int activate)
     g_switching=1U;
     mysmb_win32_keyboard_clear_game(&g_keyboard);
     if(!g_text_mode) {
-        if(mysmb_win32_text_console_open_profile(&g_console,window,25U)) {
+        if(g_console.opened && !mysmb_win32_text_console_resume(&g_console))
+            mysmb_win32_text_console_close(&g_console);
+        if((g_console.opened ||
+            mysmb_win32_text_console_open_profile(&g_console,window,25U))) {
             g_text_mode=1U;
             if(activate) {
                 ShowWindow(window,SW_HIDE);
@@ -234,7 +237,10 @@ static void mysmb_win32_switch_presenter(HWND window,int activate)
         }
     } else {
         g_text_mode=0U;
-        mysmb_win32_text_console_close(&g_console);
+        /* Normal Tab keeps the established console session. A real device
+         * loss alone closes it; the next Tab must not guess a shell parent. */
+        if(g_text_failed || !mysmb_win32_text_console_suspend(&g_console))
+            mysmb_win32_text_console_close(&g_console);
         if(activate) {ShowWindow(window,SW_SHOW);SetForegroundWindow(window);}
     }
     g_switching=0U;
@@ -515,7 +521,7 @@ static void mysmb_win32_step(HWND window)
     }
     if(g_toggle_request && !g_console_thread) {
         g_toggle_request=0U;
-        if(g_text_mode || mysmb_win32_start_in_text())
+        if(g_text_mode || g_console.opened || mysmb_win32_start_in_text())
             mysmb_win32_switch_presenter(window,1);
         else mysmb_win32_console_begin(window);
     }

@@ -434,6 +434,7 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     unsigned int i;
     WORD key;
     unsigned char pressed;
+    HANDLE retained_input=NULL,retained_output=NULL;
     int result;
     (void)previous;(void)command;(void)show;
     mysmb_win32_enable_dpi();
@@ -491,7 +492,11 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
             mysmb_win32_shortcut(window,VK_TAB,0U);
             mysmb_win32_shortcut(window,VK_TAB,1U);
             input_only_step(window);owned_focus=window;
-            if(g_text_mode || g_console.opened || g_console.borrowed)return 83;
+            if(g_text_mode || !g_console.opened || !g_console.suspended ||
+                !g_console.borrowed)return 83;
+            if(!retained_input) {
+                retained_input=g_console.input;retained_output=g_console.output;
+            } else if(retained_input!=g_console.input || retained_output!=g_console.output)return 133;
             {
                 RECT resized;
                 SetWindowPos(window,NULL,0,0,672,633,SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE);
@@ -584,18 +589,18 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     mysmb_win32_shortcut(window,'P',0U);g_snapshot_requests=0U;
     mysmb_win32_shortcut(window,'O',1U);
     if(g_snapshot_requests!=MYSMB_IO_REQUEST_LOAD)return 16;
+    retained_input=g_console.input;retained_output=g_console.output;
     g_toggle_request=0U;mysmb_win32_switch_presenter(window,0);owned_focus=window;
-    if(g_text_mode || g_console.opened || g_focus_pause.pending ||
+    if(g_text_mode || !g_console.opened || !g_console.suspended || g_focus_pause.pending ||
         memcmp(&saved_game,&g_game,sizeof(g_game)) ||
         memcmp(&saved_audio,&g_audio_output,sizeof(g_audio_output)) ||
         memcmp(saved_pixels,g_pixels,sizeof(g_pixels)))return 17;
-    /* An existing attachment makes AllocConsole fail without changing state. */
-    if(!AllocConsole())return 18;
-    ShowWindow(GetConsoleWindow(),SW_HIDE);
+    /* A normal resume retains exact handles without a new attachment. */
     mysmb_win32_switch_presenter(window,0);
-    if(g_text_mode || g_console.opened ||
-        memcmp(&saved_game,&g_game,sizeof(g_game)) ||
-        memcmp(&saved_audio,&g_audio_output,sizeof(g_audio_output)))return 19;
+    if(!g_text_mode || g_console.suspended || retained_input!=g_console.input ||
+        retained_output!=g_console.output)return 18;
+    mysmb_win32_switch_presenter(window,0);
+    if(g_text_mode || !g_console.opened || !g_console.suspended)return 19;
     FreeConsole();
     mysmb_win32_switch_presenter(window,0);
     if(!g_text_mode)return 20;

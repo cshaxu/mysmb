@@ -199,6 +199,29 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     console->focused=1U;
     return 1;
 }
+int mysmb_win32_text_console_suspend(struct mysmb_win32_text_console *console)
+{
+    if(!console || !console->opened)return 0;
+    /* Keep the actual console attachment, screen buffer and handles alive.
+     * Parent-shell discovery is initial-launch policy, never resume policy. */
+    if(console->input && console->input!=INVALID_HANDLE_VALUE)
+        (void)FlushConsoleInputBuffer(console->input);
+    if(console->window_usable)(void)ShowWindow(console->window,SW_HIDE);
+    console->focused=0U;console->suspended=1U;
+    return 1;
+}
+int mysmb_win32_text_console_resume(struct mysmb_win32_text_console *console)
+{
+    DWORD input_mode,output_mode;
+    if(!console || !console->opened ||
+        !console->input || console->input==INVALID_HANDLE_VALUE ||
+        !console->output || console->output==INVALID_HANDLE_VALUE ||
+        !GetConsoleMode(console->input,&input_mode) ||
+        !GetConsoleMode(console->output,&output_mode) ||
+        !SetConsoleActiveScreenBuffer(console->output))return 0;
+    console->focused=1U;console->suspended=0U;
+    return 1;
+}
 void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
 {
     if(!console->opened)return;
@@ -243,7 +266,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
     console->opened=0U;console->window=NULL;
     console->input=console->output=NULL;
     console->shell_output=NULL;console->shell_title=NULL;
-    console->borrowed=console->mode_saved=console->focused=0U;console->geometry_pending=console->output_failures=0U;
+    console->borrowed=console->mode_saved=console->focused=console->suspended=0U;console->geometry_pending=console->output_failures=0U;
 }
 /* Resize is an optional geometry operation,never a device-loss signal.
  * Apply font/geometry only after a settled change,not on every video frame. */

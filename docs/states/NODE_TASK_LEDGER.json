@@ -9436,6 +9436,28 @@
           "technicalReceipt": "Closed: owner accepted usable DOS16 RAM-composition baseline. D/A/B are mandatory, C optional; exact overlay and focused host/DOS link checks pass. Runtime tier receipt deferred to queued DOS16 RAM presenter memory-tier qualification."
         }
       ]
+    },
+    {
+      "id": "M3 T40",
+      "state": "active",
+      "evidence": [
+        "docs/proposals/m3/win32-console-session-identity.md"
+      ],
+      "subtasks": [
+        {
+          "id": "M3 T40 S1",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/win32-console-session-identity.md"
+          ],
+          "recordKinds": [
+            "win32-console-session-identity"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "P1 delivered: normal Tab retains and resumes the established Win32 console object; x86/x64 handle-identity fixtures and focused tests pass. Owner live RDP/Terminal acceptance remains pending; zero ROM-node and edge scope."
+        }
+      ]
     }
   ],
   "futurePackages": [
@@ -1006616,6 +1006638,18 @@
       "maximumComplete": 1992,
       "state": "closed",
       "evidence": "docs/proposals/m3/retained-performance-qualification.md"
+    },
+    {
+      "subtask": "M3 T40 S1",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "active",
+      "evidence": "docs/proposals/m3/win32-console-session-identity.md"
     }
   ]
 }

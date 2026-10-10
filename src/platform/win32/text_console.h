@@ -10,7 +10,7 @@ struct mysmb_win32_text_console {
     WINDOWPLACEMENT shell_placement;
     CONSOLE_SCREEN_BUFFER_INFO shell_info;
     HWND window;
-    unsigned char opened,borrowed,mode_saved,focused,window_usable,vt_output,font_changed,geometry_usable;
+    unsigned char opened,borrowed,mode_saved,focused,suspended,window_usable,vt_output,font_changed,geometry_usable;
     CONSOLE_FONT_INFOEX shell_font,effective_font;
     COORD observed_view;
     unsigned short output_failures;
@@ -28,6 +28,9 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
 int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *console,
     HWND owner,unsigned short rows);
 void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console);
+/* A normal presenter switch retains the already-open console session. */
+int mysmb_win32_text_console_suspend(struct mysmb_win32_text_console *console);
+int mysmb_win32_text_console_resume(struct mysmb_win32_text_console *console);
 enum mysmb_win32_console_result {
     MYSMB_WIN32_CONSOLE_LOST=0, MYSMB_WIN32_CONSOLE_READY=1,
     MYSMB_WIN32_CONSOLE_DEFER=2
