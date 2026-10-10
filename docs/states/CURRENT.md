@@ -10,14 +10,14 @@
 | Admission And Approval | Owner directed repair: retain the actual attached console session across Tab text/window switches; parent-shell discovery is forbidden on resume. |
 | Objective | Make graphical/text presenter switching resume the first successful Win32 console object rather than detach and heuristically attach a new shell console. |
 | Scope | `src/platform/win32` console lifecycle and composition root; focused platform tests and product build evidence. |
-| Non-goals | No game/ROM/PPU/IO/text semantics, DOS16, process creation, host console configuration, or new shell-name exception. |
-| Reference Baseline | The existing close path calls `FreeConsole`; later Tab calls `mysmb_win32_start_in_text`, which searches `cmd.exe`/PowerShell parents and may attach a different console. |
+| Non-goals | No game/ROM/PPU/IO/text semantics, DOS16, product process creation, or host console configuration. |
+| Reference Baseline | The existing close path calls `FreeConsole`; later Tab calls `mysmb_win32_start_in_text`, which used a shell-name whitelist before attaching a different console. |
 | Candidate Proposal | [Win32 console-session identity](../proposals/m3/win32-console-session-identity.md). |
 | Files And ABI Surface | Win32 console object, root presenter switching and project-owned Win32 lifecycle fixtures only. |
 | Applicable Rules | Execution, Architecture, Coding and Documentation rules. |
 | Expected Markers | ROM scope `[]`; expectedMatches `[]`; actualMatches `[]`; new `0`; historical `1992/1992` unchanged. |
 | Asset Needs | Existing local Win32 and DOS16 toolchains; no ROM or third-party input beyond the normal local product build. |
-| Stop Conditions | Any launch-policy lookup on resume, changed shared behavior, new process, lost device cleanup, or inability to prove handle identity. |
+| Stop Conditions | Any parent/process-name policy lookup on resume, changed shared behavior, new product helper process, lost device cleanup, or inability to prove handle identity. |
 | Verification | Handle-identity and acquisition-count fixture for owned/borrowed cycles; existing text-switch, launch-policy and parent-console tests; x86/x64 builds, DOS16 link, platform purity and refreshed products. |
 | Exit Criteria | Repeated text -> graphics -> text cycles resume the same console object without `AttachConsole`/`AllocConsole` or parent-name discovery; genuine device loss and shutdown still close safely. |
 | ROM scope | `[]`; zero nodes and zero control edges. |

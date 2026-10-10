@@ -5,10 +5,11 @@
 After Tab switches text presentation to the graphical window, the product
 closes its current `mysmb_win32_text_console` and detaches with `FreeConsole`.
 A later Tab treats text entry as a new launch and re-runs launch policy, which
-identifies only `cmd.exe`, `powershell.exe`, or `pwsh.exe` parents before using
-`AttachConsole`. That heuristic is valid only for initial launch selection; it
-is incorrect for an already established console session and breaks arbitrary
-hosts, terminals and RDP paths.
+uses a `cmd.exe`/PowerShell parent-name whitelist before `AttachConsole`.
+That is an incorrect initial-launch policy: any parent with a usable console,
+regardless of executable name, must select text. It is also incorrect for an
+already established console session and breaks arbitrary hosts, terminals and
+RDP paths.
 
 ## Required behavior
 
@@ -21,7 +22,8 @@ may run on that resume path.
 
 Only process shutdown, an explicit device-loss recovery, or a failed initial
 open closes the object and releases the console attachment. Initial startup
-selection remains the sole permitted use of shell-name discovery.
+selects text solely by whether the direct parent owns a console that can be
+shared or attached; it never classifies a parent by executable name.
 
 ## S1: session-preserving Tab repair
 
@@ -34,14 +36,16 @@ selection remains the sole permitted use of shell-name discovery.
   text -> graphics -> text cycles retain the same input/output/screen-buffer
   handles and never invoke a second console acquisition.
 - Verify normal Escape/shutdown restores a borrowed shell exactly once.
+- Replace the initial `cmd`/PowerShell name whitelist with direct parent-console
+  detection, and prove a test executable with an arbitrary name starts its
+  child in text when it shares that console.
 
 ## Boundaries
 
 Only `src/platform/win32`, its platform tests and composition-root lifecycle
 may change. No original game/ROM logic, shared IO/text/PPU semantics, DOS16
-behavior, process creation, console-system configuration, or parent-name
-heuristic expansion is permitted. The repair receives no ROM nodes or control
-edges.
+behavior, product process creation, or console-system configuration is
+permitted. The repair receives no ROM nodes or control edges.
 
 ## Acceptance
 
@@ -61,8 +65,9 @@ and retains the existing CONIN handle, game output-screen-buffer handle and
 borrowed-shell restoration state.  Returning from graphics validates those
 same handles and reactivates the existing game buffer.  The root checks an
 already-open console before calling initial launch policy, so the resume path
-does not call shell-name discovery, `AttachConsole`, `AllocConsole` or the
-asynchronous acquisition thread.
+does not inspect a parent, call `AttachConsole`, `AllocConsole` or start the
+asynchronous acquisition thread. Initial startup accepts any direct parent
+with a shared or attachable console, without classifying its executable name.
 
 If resume validation fails, the existing device is closed and only then may the
 ordinary initial-open path run.  Thus device loss remains recoverable without

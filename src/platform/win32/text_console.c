@@ -107,7 +107,7 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     if(console->opened)return 1;
     console->rows=rows==25U?25U:50U;console->colors_valid=0U;
     if(!owner)return 0;
-    if(GetConsoleWindow()!=NULL) {
+    if(GetConsoleProcessList(processes,2U)!=0U) {
         if(!mysmb_win32_start_in_text())return 0;
         console->borrowed=GetConsoleProcessList(processes,2U)>1U?1U:0U;
     } else if(mysmb_win32_start_in_text() && AttachConsole(ATTACH_PARENT_PROCESS))
