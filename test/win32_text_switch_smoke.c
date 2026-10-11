@@ -160,7 +160,7 @@ static int presentation_clock_route(HWND window)
     struct mysmb_io_palette_video_frame video;
     LARGE_INTEGER before;
     LONGLONG period;
-    unsigned int i;
+    unsigned int i,cell_index;
     static unsigned char indices[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
     unsigned char palette[32];
     for(i=0U;i<32U;++i)palette[i]=(unsigned char)((i*7U)&63U);
@@ -431,7 +431,7 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     SMALL_RECT view;
     COORD size,origin;
     struct mysmb_input input;
-    unsigned int i;
+    unsigned int i,cell_index;
     WORD key;
     unsigned char pressed;
     HANDLE retained_input=NULL,retained_output=NULL;
@@ -495,6 +495,11 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
             input_only_step(window);owned_focus=window;
             if(g_text_mode || !g_console.opened || !g_console.suspended ||
                 !g_console.borrowed)return 83;
+            size.X=80;size.Y=25;origin.X=origin.Y=0;
+            view.Left=view.Top=0;view.Right=79;view.Bottom=24;
+            if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 135;
+            for(cell_index=0U;cell_index<2000U;++cell_index)
+                if(cells[cell_index].Char.UnicodeChar!=L' ' || cells[cell_index].Attributes!=0U)return 136;
             if(!retained_input) {
                 retained_input=g_console.input;retained_output=g_console.output;
             } else if(retained_input!=g_console.input || retained_output!=g_console.output)return 133;

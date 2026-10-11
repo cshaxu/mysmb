@@ -201,11 +201,25 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
 }
 int mysmb_win32_text_console_suspend(struct mysmb_win32_text_console *console)
 {
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    COORD origin={0,0};
+    DWORD cells,written;
     if(!console || !console->opened)return 0;
     /* Keep the actual console attachment, screen buffer and handles alive.
      * Parent-shell discovery is initial-launch policy, never resume policy. */
     if(console->input && console->input!=INVALID_HANDLE_VALUE)
         (void)FlushConsoleInputBuffer(console->input);
+    /* Return the borrowed console to its parent buffer before hiding it. The
+     * separate game buffer is blanked so no stale frame remains on re-show. */
+    if(console->borrowed && console->shell_output &&
+        console->shell_output!=INVALID_HANDLE_VALUE) {
+        if(!SetConsoleActiveScreenBuffer(console->shell_output))return 0;
+        if(!GetConsoleScreenBufferInfo(console->output,&info))return 0;
+        cells=(DWORD)(unsigned short)info.dwSize.X*(DWORD)(unsigned short)info.dwSize.Y;
+        if(!FillConsoleOutputCharacterW(console->output,L' ',cells,origin,&written) ||
+            written!=cells || !FillConsoleOutputAttribute(console->output,0U,cells,origin,&written) ||
+            written!=cells)return 0;
+    }
     if(console->window_usable)(void)ShowWindow(console->window,SW_HIDE);
     console->focused=0U;console->suspended=1U;
     return 1;

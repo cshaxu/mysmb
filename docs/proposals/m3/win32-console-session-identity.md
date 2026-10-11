@@ -20,6 +20,9 @@ borrowed object without freeing its handles or detaching. Graphics -> text
 resumes the same object and game screen buffer. A console allocated by MySMB
 from an initial graphical session closes when graphics resumes. No
 parent-process lookup or `AttachConsole` may run on the borrowed resume path.
+Before a borrowed console is hidden, its parent screen buffer is restored and
+the separate MySMB screen buffer is cleared; this preserves the parent while
+ensuring a stale game frame cannot reappear.
 
 Only process shutdown, an explicit device-loss recovery, or a failed initial
 open closes the object and releases the console attachment. Initial startup
@@ -42,6 +45,8 @@ shared or attached; it never classifies a parent by executable name.
   child in text when it shares that console.
 - Prove graphical -> temporary owned text -> graphical closes the owned console
   window and clears its device object, while borrowed cycles retain identity.
+- Prove borrowed text -> graphics restores the parent buffer and blanks every
+  cell of the retained MySMB game buffer before that host is hidden.
 
 ## Boundaries
 
@@ -92,3 +97,11 @@ root now closes the console object whenever it is not borrowed, which releases
 the owned console host before restoring the graphical window. The fixture
 asserts both a cleared device object and a destroyed owned-console HWND; it
 continues to prove borrowed handle identity separately.
+
+## S1 P3 borrowed-buffer clear
+
+Borrowed Tab suspension now reactivates the saved parent screen buffer, clears
+the retained MySMB game screen buffer to blank/default cells, then hides the
+host. This does not erase the parent shell contents. The borrowed fixture reads
+all 2,000 compact-frame cells from the retained game buffer after each switch
+and rejects any surviving glyph or attribute.
