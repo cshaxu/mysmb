@@ -1,0 +1,71 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": { "major": 3, "minor": 23, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "ninja-ccache-x64-release",
+      "displayName": "Ninja + ccache GCC x64 release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ninja-ccache-x64-release",
+      "environment": {
+        "CCACHE_BASEDIR": "${sourceDir}"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_C_COMPILER_LAUNCHER": "ccache",
+        "CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG",
+        "CMAKE_EXE_LINKER_FLAGS": "-static -static-libgcc",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "MYSMB_WIN32_ARCH": "x64",
+        "MYSMB_ROM_PATH": "$env{MYSMB_ROM_PATH}",
+        "MYSMB_ASM_PATH": "$env{MYSMB_ASM_PATH}",
+        "MYSMB_OPENNT_CL16": "$env{MYSMB_OPENNT_CL16}",
+        "MYSMB_DOS_RUNTIME_DIR": "$env{MYSMB_DOS_RUNTIME_DIR}"
+      }
+    },
+    {
+      "name": "ninja-ccache-x86-release",
+      "displayName": "Ninja + ccache GCC x86 release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ninja-ccache-x86-release",
+      "environment": {
+        "CCACHE_BASEDIR": "${sourceDir}"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_COMPILER": "i686-w64-mingw32-gcc",
+        "CMAKE_C_COMPILER_LAUNCHER": "ccache",
+        "CMAKE_C_FLAGS_RELEASE": "-O3 -DNDEBUG",
+        "CMAKE_EXE_LINKER_FLAGS": "-static -static-libgcc",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "MYSMB_WIN32_ARCH": "x86",
+        "MYSMB_ROM_PATH": "$env{MYSMB_ROM_PATH}",
+        "MYSMB_ASM_PATH": "$env{MYSMB_ASM_PATH}",
+        "MYSMB_OPENNT_CL16": "$env{MYSMB_OPENNT_CL16}",
+        "MYSMB_DOS_RUNTIME_DIR": "$env{MYSMB_DOS_RUNTIME_DIR}"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "build-x64", "configurePreset": "ninja-ccache-x64-release", "jobs": 8 },
+    { "name": "build-x86", "configurePreset": "ninja-ccache-x86-release", "jobs": 8 },
+    { "name": "win32-x64", "configurePreset": "ninja-ccache-x64-release", "targets": ["mysmb_win32"], "jobs": 8 },
+    { "name": "win32-x86", "configurePreset": "ninja-ccache-x86-release", "targets": ["mysmb_win32"], "jobs": 8 },
+    { "name": "dos16", "configurePreset": "ninja-ccache-x64-release", "targets": ["mysmb_opennt16_dos"], "jobs": 8 }
+  ],
+  "testPresets": [
+    {
+      "name": "test-x64",
+      "configurePreset": "ninja-ccache-x64-release",
+      "output": { "outputOnFailure": true },
+      "execution": { "jobs": 8 }
+    },
+    {
+      "name": "test-x86",
+      "configurePreset": "ninja-ccache-x86-release",
+      "output": { "outputOnFailure": true },
+      "execution": { "jobs": 8 }
+    }
+  ]
+}
