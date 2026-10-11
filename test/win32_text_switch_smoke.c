@@ -435,6 +435,7 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     WORD key;
     unsigned char pressed;
     HANDLE retained_input=NULL,retained_output=NULL;
+    HWND owned_console_window=NULL;
     int result;
     (void)previous;(void)command;(void)show;
     mysmb_win32_enable_dpi();
@@ -589,19 +590,20 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     mysmb_win32_shortcut(window,'P',0U);g_snapshot_requests=0U;
     mysmb_win32_shortcut(window,'O',1U);
     if(g_snapshot_requests!=MYSMB_IO_REQUEST_LOAD)return 16;
-    retained_input=g_console.input;retained_output=g_console.output;
+    owned_console_window=g_console.window;
     g_toggle_request=0U;mysmb_win32_switch_presenter(window,0);owned_focus=window;
-    if(g_text_mode || !g_console.opened || !g_console.suspended || g_focus_pause.pending ||
+    if(g_text_mode || g_console.opened || g_focus_pause.pending ||
         memcmp(&saved_game,&g_game,sizeof(g_game)) ||
         memcmp(&saved_audio,&g_audio_output,sizeof(g_audio_output)) ||
         memcmp(saved_pixels,g_pixels,sizeof(g_pixels)))return 17;
-    /* A normal resume retains exact handles without a new attachment. */
+    /* A graphical launch owns its temporary console, so Tab back closes its
+     * host window instead of retaining an invisible orphan. */
+    for(i=0U;i<20U && IsWindow(owned_console_window);++i)Sleep(10U);
+    if(IsWindow(owned_console_window))return 134;
     mysmb_win32_switch_presenter(window,0);
-    if(!g_text_mode || g_console.suspended || retained_input!=g_console.input ||
-        retained_output!=g_console.output)return 18;
+    if(!g_text_mode || !g_console.opened || g_console.borrowed)return 18;
     mysmb_win32_switch_presenter(window,0);
-    if(g_text_mode || !g_console.opened || !g_console.suspended)return 19;
-    FreeConsole();
+    if(g_text_mode || g_console.opened)return 19;
     mysmb_win32_switch_presenter(window,0);
     if(!g_text_mode)return 20;
     {

@@ -237,9 +237,10 @@ static void mysmb_win32_switch_presenter(HWND window,int activate)
         }
     } else {
         g_text_mode=0U;
-        /* Normal Tab keeps the established console session. A real device
-         * loss alone closes it; the next Tab must not guess a shell parent. */
-        if(g_text_failed || !mysmb_win32_text_console_suspend(&g_console))
+        /* A borrowed parent console survives Tab for an identity-preserving
+         * return. A console allocated by this graphical session must close. */
+        if(g_text_failed || !g_console.borrowed ||
+            !mysmb_win32_text_console_suspend(&g_console))
             mysmb_win32_text_console_close(&g_console);
         if(activate) {ShowWindow(window,SW_SHOW);SetForegroundWindow(window);}
     }

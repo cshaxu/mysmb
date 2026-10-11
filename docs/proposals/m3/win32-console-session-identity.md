@@ -13,12 +13,13 @@ RDP paths.
 
 ## Required behavior
 
-The first successful text entry owns an explicit Win32 console-session object:
+Each borrowed text entry owns an explicit Win32 console-session object:
 its CONIN/CONOUT handles, game screen buffer, borrowed-shell restoration data
 and optional host window capabilities. Text -> graphics suspends and hides this
-object without freeing its handles or detaching. Graphics -> text resumes the
-same object and game screen buffer. No parent-process lookup or `AttachConsole`
-may run on that resume path.
+borrowed object without freeing its handles or detaching. Graphics -> text
+resumes the same object and game screen buffer. A console allocated by MySMB
+from an initial graphical session closes when graphics resumes. No
+parent-process lookup or `AttachConsole` may run on the borrowed resume path.
 
 Only process shutdown, an explicit device-loss recovery, or a failed initial
 open closes the object and releases the console attachment. Initial startup
@@ -39,6 +40,8 @@ shared or attached; it never classifies a parent by executable name.
 - Replace the initial `cmd`/PowerShell name whitelist with direct parent-console
   detection, and prove a test executable with an arbitrary name starts its
   child in text when it shares that console.
+- Prove graphical -> temporary owned text -> graphical closes the owned console
+  window and clears its device object, while borrowed cycles retain identity.
 
 ## Boundaries
 
@@ -49,13 +52,14 @@ permitted. The repair receives no ROM nodes or control edges.
 
 ## Acceptance
 
-Both x86 and x64 must demonstrate that an owned console and a borrowed console
-survive repeated graphical/text presentation switches using the same console
-object. The tests must reject a resume path that calls launch policy,
-`AttachConsole`, `AllocConsole`, or changes the object handle identity. Device
-loss and final shutdown retain their established close behavior. Product source
-changes require focused Win32 tests, platform-purity, x86/x64 builds, the
-unchanged DOS16 link, and refreshed local target artifacts.
+Both x86 and x64 must demonstrate that a borrowed console survives repeated
+graphical/text presentation switches using the same console object, while an
+owned console closes on graphics return. The tests must reject a borrowed
+resume path that calls launch policy, `AttachConsole`, `AllocConsole`, or
+changes the object handle identity. Device loss and final shutdown retain their
+established close behavior. Product source changes require focused Win32 tests,
+platform-purity, x86/x64 builds, the unchanged DOS16 link, and refreshed local
+target artifacts.
 
 ## S1 P1 delivery
 
@@ -74,8 +78,17 @@ ordinary initial-open path run.  Thus device loss remains recoverable without
 turning a normal presenter switch into a stale-handle reuse.  Process shutdown
 still closes the retained object once and restores the borrowed shell.
 
-The project-owned x86/x64 text-switch fixture passes with repeated borrowed and
-owned text -> graphics -> text cycles and now compares the retained input and
-output handles across each cycle.  Both native self-tests, launch-policy and
+The project-owned x86/x64 text-switch fixture passes with repeated borrowed
+text -> graphics -> text cycles and compares retained input/output handles
+across each cycle.  Both native self-tests, launch-policy and
 console-capability smoke tests, platform-purity, and the unchanged DOS16 MZ
 link pass.  Live RDP/Terminal interaction remains owner acceptance evidence.
+
+## S1 P2 owned-console closure
+
+A reported graphical launch -> Tab -> graphical return exposed that P1 had
+retained MySMB's temporary owned console just like a borrowed console. The
+root now closes the console object whenever it is not borrowed, which releases
+the owned console host before restoring the graphical window. The fixture
+asserts both a cleared device object and a destroyed owned-console HWND; it
+continues to prove borrowed handle identity separately.
