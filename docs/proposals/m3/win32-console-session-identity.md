@@ -105,3 +105,19 @@ the retained MySMB game screen buffer to blank/default cells, then hides the
 host. This does not erase the parent shell contents. The borrowed fixture reads
 all 2,000 compact-frame cells from the retained game buffer after each switch
 and rejects any surviving glyph or attribute.
+
+## S2: NTVDM64 run16 console-presentation audit
+
+The owner reports that `mysmb64.exe` has correct text colors when launched
+directly from `cmd.exe`, but its text mode has red bricks and a red area outside
+the intended frame when launched through NTVDM64 `run16`. S2 is read-only
+investigation across the MySMB Win32 console adapter and the owner-local NXVM
+NTVDM64/run16 implementation. It will establish the actual console device
+type, output mode, viewport/buffer dimensions, palette/VT capability and escape
+sequence interpretation in both launch routes.
+
+The audit must identify whether the discrepancy is caused by MySMB's terminal
+VT emitter, classic console palette path, run16's host setup, or a combination.
+It may add neutral diagnostics below `build/m3-t40-s2/`; it cannot alter game,
+ROM, text-scene or NTVDM64 source. Any product repair requires a subsequent
+explicit S2 P with a narrow host-adapter acceptance test.
