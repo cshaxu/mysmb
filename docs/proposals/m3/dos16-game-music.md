@@ -257,3 +257,14 @@ load/reset and Escape.
    conventional-memory cost; it adds no core/platform cross-dependency.
 5. Every changed platform decision has one owner-local test plus real DOS
    device-route evidence. Code changes refresh validated 16/32/64 artifacts.
+
+## Owner acceptance and archival
+
+The owner accepted closure of M3 T42 S4 on 2026-10-12.  The task retains the
+platform-only Sound Blaster implementation, DOS16 MZ build evidence, hardware
+route witness and actual-product DOSBox PCM receipt.  The absence of audible
+host output is recorded as a DOSBox/RDP host limitation: the installed mixer
+and Sound Blaster configuration are enabled, the actual product produces a
+non-silent mix, and the same host also lacked audible NESticle output.  This
+does not alter the safe silent fallback for a host with no Sound Blaster
+endpoint.  Generated build/probe/capture files are removed after acceptance.

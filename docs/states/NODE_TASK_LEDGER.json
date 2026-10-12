@@ -9535,10 +9535,10 @@
     },
     {
       "id": "M3 T42",
-      "state": "active",
+      "state": "closed",
       "evidence": [
         "docs/proposals/m3/dos16-game-music.md",
-        "docs/states/CURRENT.md"
+        "docs/history/M3-T42-dos16-game-music.md"
       ],
       "subtasks": [
         {
@@ -9585,17 +9585,17 @@
         },
         {
           "id": "M3 T42 S4",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/dos16-game-music.md",
-            "docs/states/CURRENT.md"
+            "docs/history/M3-T42-dos16-game-music.md"
           ],
           "recordKinds": [
             "dos16-integrated-music-route"
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Admitted real DOS Sound Blaster route validation for title/gameplay/effects, both presenters, reset and teardown."
+          "technicalReceipt": "Closed integrated route: actual product PCM reaches DOSBox after a normal Start transition; Sound Blaster absence remains safe and silent, while host-output audibility is recorded separately."
         }
       ]
     }
@@ -1010882,8 +1010882,8 @@
       "incomingComplete": [],
       "baseline": 0,
       "maximumComplete": 0,
-      "state": "active",
-      "evidence": "docs/proposals/m3/dos16-game-music.md"
+      "state": "closed",
+      "evidence": "docs/history/M3-T42-dos16-game-music.md"
     }
   ]
 }
