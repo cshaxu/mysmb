@@ -23,6 +23,16 @@
 | Original Owner Request | Audit and correct duplicate non-core paths, DOS/Win32 colour projections, VT capability architecture, code quality, cleanup and test closure. |
 | Similar-Issue Sweep | Rebuild every changed target; inspect every `platform/` include boundary, text palette projection, Win32 console source inclusion and product artifact source timestamp. |
 
+### Current S3 hold
+
+x86 and x64 have rebuilt and passed their complete 283-test matrices. The
+fixed DOS16 compiler completed all 174 object checks, but its fixed
+`tools/dos16/link16.exe` cannot start on this Windows host (`The system cannot
+execute the specified program`); the correctly formed `run16 --wait LINK.EXE
+@DOSLINK.RSP` fallback returns `ERROR_NOT_SUPPORTED` (50). No current DOS MZ
+executable or replacement `assets/mysmb16.exe` exists. This is a host toolchain
+blocker, not a passed DOS acceptance or a reason to substitute a stale product.
+
 ## Current Technical Baseline
 
 The Win32 text adapter has two projections of the same shared text frame.
