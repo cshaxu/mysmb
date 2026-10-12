@@ -9532,6 +9532,30 @@
           "technicalReceipt": "Owner accepted closure after target builds, full test matrices, DOS16 link/product, artifacts and governance gates; generated build evidence removed after acceptance."
         }
       ]
+    },
+    {
+      "id": "M3 T42",
+      "state": "active",
+      "evidence": [
+        "docs/proposals/m3/dos16-game-music.md",
+        "docs/states/CURRENT.md"
+      ],
+      "subtasks": [
+        {
+          "id": "M3 T42 S1",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/dos16-game-music.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "dos16-audio-backend-admission-audit"
+          ],
+          "canReceive": false,
+          "admissionRole": "audit",
+          "technicalReceipt": "Owner-approved zero-ROM-node audit of the existing shared audio-frame handoff and DOS16 physical audio backend design."
+        }
+      ]
     }
   ],
   "futurePackages": [
@@ -1010770,6 +1010794,18 @@
       "maximumComplete": 0,
       "state": "closed",
       "evidence": "docs/history/M3-T41-text-presentation-quality.md"
+    },
+    {
+      "subtask": "M3 T42 S1",
+      "kind": "audit",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "active",
+      "evidence": "docs/proposals/m3/dos16-game-music.md"
     }
   ]
 }
