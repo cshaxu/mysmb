@@ -7,6 +7,7 @@ static CONSOLE_SCREEN_BUFFER_INFO buffer;
 static CONSOLE_SCREEN_BUFFER_INFOEX palette;
 static CONSOLE_FONT_INFOEX effective;
 static CHAR_INFO written_cells[MYSMB_IO_TEXT_CELLS];
+static WCHAR vt_prefix[512],vt_output[MYSMB_IO_TEXT_CELLS*48U+1024U];
 static BOOL mode_probe(HANDLE h,LPDWORD mode)
 {if(lost && h==(HANDLE)2)return FALSE;*mode=ENABLE_VIRTUAL_TERMINAL_PROCESSING;return TRUE;}
 static BOOL buffer_probe(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFO out)
@@ -25,6 +26,8 @@ static COORD largest(HANDLE h)
 static DWORD probe_clock(void){return clock_value;}
 static BOOL cell_write(HANDLE h,const CHAR_INFO *cells,COORD size,COORD origin,PSMALL_RECT view)
 {(void)h;(void)size;(void)origin;if(write_error){SetLastError((DWORD)write_error);return FALSE;}CopyMemory(written_cells,cells,sizeof(written_cells));++cell_writes;if(partial)view->Bottom=20;return TRUE;}
+static BOOL vt_write(HANDLE h,const VOID *data,DWORD count,LPDWORD written,LPVOID reserved)
+{DWORD n=count<511U?count:511U;(void)h;(void)reserved;if(write_error){SetLastError((DWORD)write_error);return FALSE;}CopyMemory(vt_prefix,data,n*sizeof(WCHAR));vt_prefix[n]=0;*written=count;return TRUE;}
 static BOOL iconic(HWND window){(void)window;return minimized;}
 static BOOL zoom(HWND window){(void)window;return zoomed;}
 static BOOL probe_client(HWND window,LPRECT rect)
@@ -46,7 +49,7 @@ static BOOL set_size(HANDLE output,COORD size)
 #define GetCurrentConsoleFontEx font_get
 #define GetLargestConsoleWindowSize largest
 #define GetTickCount probe_clock
-#define WriteConsoleW forbidden_WriteConsoleW_RGB_stream
+#define WriteConsoleW vt_write
 #define WriteConsoleOutputW cell_write
 #include "../src/platform/win32/text_console.c"
 static struct mysmb_win32_text_console device;
@@ -149,5 +152,13 @@ int main(void)
  for(i=0U;i<16U;++i)scene.colors[i]=mysmb_io_color_text_rgb((mysmb_io_u8)i);
  for(i=0U;i<2000U;++i)
   CHECK(written_cells[i].Attributes==expected_attribute(&scene,i));
- puts("console capabilities: standard Console attributes, geometry and handle-loss checks");return 0;
+ /* A successful capability probe selects authored RGB VT output; its input
+  * frame remains unchanged from the standard-attribute fallback. */
+ device.vt_output=1U;device.terminal_output=vt_output;scene.source_colors=1U;
+ scene.rows=25U;buffer.srWindow.Bottom=24;scene.colors[0]=0x787cecUL;scene.colors[2]=0xeceeeeUL;
+ for(i=0U;i<2000U;++i){scene.cells[i].foreground=2U;scene.cells[i].background=0U;}
+ CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
+ CHECK(wcsncmp(vt_prefix,L"\x1b[0m",4U)==0);
+ CHECK(wcsstr(vt_prefix,L"38;2;236;238;238;48;2;120;124;236m")!=0);
+ puts("console capabilities: VT RGB and standard 16-colour API paths passed");return 0;
 }

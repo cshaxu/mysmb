@@ -233,3 +233,19 @@ standard sixteen-colour `WriteConsoleOutputW` mapping. The choice is solely the
 result of that buffer operation, never a process name, window title, launcher
 or run16 rule. Scope is the Win32 console adapter and its focused fixture; no
 shared text, game, ROM, DOS16, NTVDM64 or configuration code may change.
+### S3 P1 dual capability renderer
+
+P1 restores the earlier VT renderer as a capability-selected projection above
+S2's retained standard Console fallback. After the game output screen buffer is
+active, MySMB requests `ENABLE_VIRTUAL_TERMINAL_PROCESSING` on that exact
+buffer. Success allocates the terminal stream and emits the text frame's
+neutral RGB values with SGR foreground/background sequences. Failure allocates
+nothing and retains the S2 nearest-standard-colour `WriteConsoleOutputW`
+projection. The selection contains no launcher, process, window title or
+run16 condition.
+
+The focused fixture exercises the standard indexed fallback and an enabled-VT
+RGB result from the same 25-row source frame, including the exact expected RGB
+sequence. x86 and x64 focused capability and platform-purity tests pass. The
+Win32 x86/x64 artifacts are refreshed; the unchanged DOS16 artifact is
+retained. This remains a platform-only change with zero ROM nodes and edges.
