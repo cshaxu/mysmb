@@ -179,6 +179,15 @@ route now returns `BLASTER-DSP-DMA-IRQ` after two seconds of paced source-frame
 submissions.  This is a real device-route witness; audible title/effect and
 presenter transition acceptance remain open.
 
+**P8 source-audio join receipt (in progress).** `dos16_death_audio_smoke`
+now drives a real translated game audio route through `mysmb_audio_step`, its
+unchanged `mysmb_game_io_audio` frame, and the DOS integer renderer.  It
+proves expected non-silent/dead intervals across 180 source frames, while the
+separate DOSBox device witness proves that the same renderer's samples reach
+the DSP/DMA/IRQ sink.  The focused DOS audio, root and source-audio joins pass
+on both x86 and x64.  The remaining manual acceptance is audible title and
+effect playback in both DOS presenters, plus transition/load/Escape checks.
+
 ## Acceptance
 
 1. A detected Sound Blaster-compatible DOS device plays music and effects in

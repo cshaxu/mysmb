@@ -1906,6 +1906,15 @@ if(MYSMB_ROM_PATH)
         add_test(NAME mysmb.win32-death-audio-smoke
             COMMAND mysmb_win32_death_audio_smoke)
     endif()
+    add_executable(mysmb_dos16_death_audio_smoke
+        test/dos16_death_audio_smoke.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data>)
+    target_include_directories(mysmb_dos16_death_audio_smoke PRIVATE src
+        "${MYSMB_LOCAL_ROM_DIR}")
+    target_link_libraries(mysmb_dos16_death_audio_smoke PRIVATE
+        mysmb_core mysmb_game_io mysmb_dos16_audio)
+    add_test(NAME mysmb.dos16-death-audio-smoke
+        COMMAND mysmb_dos16_death_audio_smoke)
     add_executable(mysmb_local_frame_summary test/local_frame_summary.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>
         $<TARGET_OBJECTS:mysmb_local_title_data>)
