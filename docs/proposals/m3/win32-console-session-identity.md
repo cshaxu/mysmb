@@ -308,3 +308,16 @@ an owned console that accepts VT mode while retaining the fallback for a
 buffer that rejects it. A future active terminal query requires a separately
 isolated input transport and a newly admitted task; it cannot be added to the
 shared game-input channel.
+
+### S3 P5 pre-input terminal capability query
+
+P4 restored stability but owner acceptance showed that run16 still accepted the
+VT mode bit and therefore incorrectly selected RGB. P5 retains the Device
+Attributes capability test but moves its entire lifetime into text-device open:
+after raw console input is configured and before open returns control to the
+game loop, MySMB writes the query and waits at most 25 ms for a legal reply.
+Only that reply selects RGB. An absent reply frees the RGB stream and selects
+the standard indexed fallback. Every unrelated input record read during the
+bounded operation is returned to the Console input queue before game input can
+run. This mirrors the startup-negotiation shape used by Microsoft Edit without
+allowing a relay reply to impersonate a running-game Escape event.
