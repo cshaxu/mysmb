@@ -210,6 +210,16 @@ host. Making run16 audible requires a separately admitted NTVDM64 task to
 provide and register a Sound Blaster-compatible virtual device; it cannot be
 correctly implemented by adding a MySMB-only special case.
 
+**P11 gameplay-source join receipt (in progress).**
+`dos16_gameplay_audio_smoke` starts the normal translated title route with a
+single Start edge, runs 180 real `mysmb_game_tick` calls against the local
+area source, snapshots each unchanged shared audio frame, and sends it through
+the DOS integer renderer. It neither calls a music routine directly nor adds
+synthetic APU writes. The post-start route produces nonzero PCM energy after
+the transition to game mode on both x86 and x64. This complements the death
+music route and the target-built DSP/DMA/IRQ witness; audible DOSBox playback
+in graphics and text presenters remains the sole manual acceptance evidence.
+
 ## Acceptance
 
 1. A detected Sound Blaster-compatible DOS device plays music and effects in

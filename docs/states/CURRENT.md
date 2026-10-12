@@ -6,11 +6,11 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T42 S4 P10 — integrated DOS music route |
-| Admission And Approval | Owner approved M3 T42; P5 closed S3 and admitted S4. P6–P10 are corrective/evidence parts within S4. |
+| Identifier Mode | M3 T42 S4 P11 — integrated DOS music route |
+| Admission And Approval | Owner approved M3 T42; P5 closed S3 and admitted S4. P6–P11 are corrective/evidence parts within S4. |
 | Objective | Validate the completed DOS Sound Blaster route in both presenters and prove that music/effects, load/reset and teardown preserve shared game/audio semantics. |
 | Non-goals | No translated ROM/core/audio-command change; no Win32 renderer reuse; no floating point; no PC-speaker substitute; no imported driver, ROM asset or third-party source; no DOSBox configuration edit. |
-| Reference Baseline | P6 corrected PSP-to-environment discovery; P7 proves the DOSBox SB16 physical route; P8 proves translated source audio reaches the DOS renderer; P9 exercises its load reset; P10 records run16 as the no-device fallback host. |
+| Reference Baseline | P6 corrected PSP-to-environment discovery; P7 proves the DOSBox SB16 physical route; P8 proves translated source audio reaches the DOS renderer; P9 exercises its load reset; P10 records run16 as the no-device fallback host; P11 covers title-to-gameplay audio. |
 | Candidate Proposal | [M3 T42 proposal](../proposals/m3/dos16-game-music.md). |
 | Files And ABI Surface | DOS launcher/route evidence, `src/platform/dos16/dos_audio.*`, `devices.*`, platform-local tests and DOS build owner. The shared `mysmb_io_audio_frame` ABI stays read-only. |
 | Applicable Rules | Execution, Architecture, Coding, Documentation and source policy. |
