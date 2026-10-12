@@ -8,7 +8,7 @@
 | --- | --- |
 | Identifier Mode | Continuation of active M3 T40 after S2 closure. |
 | Admission And Approval | Owner directed: “你能支持both VT (64色）和非VT（16色）吗？这样有足够灵活度”。 |
-| Objective | Select VT-authored RGB output when the current output buffer accepts VT mode; otherwise preserve S2 standard 16-colour Console API output. |
+| Objective | Select VT-authored RGB only after the current output buffer accepts VT mode and completes a bounded pre-input Device Attributes reply; otherwise preserve S2 standard 16-colour Console API output. |
 | Scope | `src/platform/win32/text_console.*`, focused Win32 console tests, the S2 proposal record, packet and product artifacts. |
 | Non-goals | No game, ROM, PPU, shared IO/text-scene, DOS16, NTVDM64, host configuration, process-name or launcher-specific behavior. |
 | Reference Baseline | S2 closed with stable P2 session/geometry behavior and a standard Console `WriteConsoleOutputW` fallback that maps authored slots to fixed 16-colour attributes. |
@@ -18,7 +18,7 @@
 | Expected Markers | ROM scope `[]`; expectedMatches `[]`; actualMatches `[]`; new `0`; historical `1992/1992` unchanged. |
 | Asset Needs | Existing x86/x64 Win32 toolchains and retained DOS16 artifact; no ROM or third-party input. |
 | Stop Conditions | Any game/shared-IO/DOS16/NTVDM64 change, host setting, helper process, process-name detection, window-title detection, or change to P2 session/geometry semantics. |
-| Verification | Focused fixture proves successful VT output-mode negotiation selects authored RGB, while failed negotiation keeps standard indexed `CHAR_INFO`; x86/x64 builds and focused tests, platform purity, product self-tests and three target artifacts. |
+| Verification | Focused fixture proves a legal pre-input VT reply, including a relay-encoded `VK_ESCAPE` lead byte, selects authored RGB; non-reply input is restored and failed negotiation keeps standard indexed `CHAR_INFO`; x86/x64 builds and focused tests, platform purity, product self-tests and three target artifacts. |
 | Exit Criteria | Both paths consume the same neutral text frame; successful VT capability emits authored RGB, failed capability uses standard 16-colour Console API cells; no host identity policy exists and P2 session/geometry behavior remains intact. |
 | ROM scope | `[]`; zero nodes and zero control edges. |
 | Reporting | Report exact capability selection evidence, both output contracts, touched Win32-only files, build/test/artifact results and no ROM-equivalence credit. |

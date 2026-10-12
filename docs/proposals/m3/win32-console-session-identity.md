@@ -334,3 +334,16 @@ signal. `ms-edit` has a different input architecture and cannot be copied here
 without a separately designed input transport. Run16's RGB-versus-indexed
 rendering remains an NTVWM/NTCON adapter capability issue, not a justification
 to reintroduce unsafe game-input interception.
+
+### S3 P7 relay-encoded DA lead repair
+
+P6 identified why P5 still exited: CMD and run16 encode the Device Attributes
+reply's initial escape as a key-down `VK_ESCAPE` with a zero Unicode character.
+P7 restores the pre-input bounded probe but treats that record as an escape
+*candidate* only within its local DA parser. It is consumed only if the
+following records complete a legal CSI device-attributes reply; a lone Escape
+or malformed sequence is replayed unchanged to the game input owner. The
+focused fixture now covers both the relay-encoded valid reply and a genuine
+lone Escape. Thus the query can distinguish a relay that accepts a mode bit
+but gives no DA reply, without reviving the asynchronous input interception
+that caused the earlier Tab exits.
