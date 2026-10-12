@@ -9439,16 +9439,16 @@
     },
     {
       "id": "M3 T40",
-      "state": "active",
+      "state": "closed",
       "evidence": [
-        "docs/proposals/m3/win32-console-session-identity.md"
+        "docs/history/M3-T40-win32-console-session-identity.md"
       ],
       "subtasks": [
         {
           "id": "M3 T40 S1",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/win32-console-session-identity.md"
+            "docs/history/M3-T40-win32-console-session-identity.md"
           ],
           "recordKinds": [
             "win32-console-session-identity"
@@ -9461,7 +9461,7 @@
           "id": "M3 T40 S2",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/win32-console-session-identity.md"
+            "docs/history/M3-T40-win32-console-session-identity.md"
           ],
           "recordKinds": [
             "win32-standard-console-colors"
@@ -9472,16 +9472,16 @@
         },
         {
           "id": "M3 T40 S3",
-          "state": "active",
+          "state": "closed",
           "evidence": [
-            "docs/proposals/m3/win32-console-session-identity.md"
+            "docs/history/M3-T40-win32-console-session-identity.md"
           ],
           "recordKinds": [
             "win32-vt-capability-presentation"
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Owner-directed VT capability and standard Console API fallback; zero ROM-node and edge scope."
+          "technicalReceipt": "P1-P8 closed: normal/visible VT devices retain authored RGB; the hidden no-window 2x4 carrier uses indexed Console cells. No capability query reads game input. Owner accepted CMD, graphical Tab and run16 corpus; x86/x64 tests and artifacts pass; zero ROM-node and edge scope."
         }
       ]
     }
@@ -1006675,7 +1006675,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/win32-console-session-identity.md"
+      "evidence": "docs/history/M3-T40-win32-console-session-identity.md"
     },
     {
       "subtask": "M3 T40 S2",
@@ -1008680,7 +1008680,7 @@
       "baseline": 1992,
       "maximumComplete": 1992,
       "state": "closed",
-      "evidence": "docs/proposals/m3/win32-console-session-identity.md"
+      "evidence": "docs/history/M3-T40-win32-console-session-identity.md"
     },
     {
       "subtask": "M3 T40 S3",
@@ -1010684,8 +1010684,8 @@
       ],
       "baseline": 1992,
       "maximumComplete": 1992,
-      "state": "active",
-      "evidence": "docs/proposals/m3/win32-console-session-identity.md"
+      "state": "closed",
+      "evidence": "docs/history/M3-T40-win32-console-session-identity.md"
     }
   ]
 }

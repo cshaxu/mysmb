@@ -359,3 +359,27 @@ mode bit. A visible or normal-font Console that accepts VT retains RGB output.
 This is adapter capability selection based on the active device's geometry and
 font properties; it does not inspect a process, title, launcher, run16 name or
 shared game input. The fixture verifies both carrier and non-carrier paths.
+
+## S3 closure and T40 closure
+
+S3 closes at owner acceptance of the final P8 behavior corpus:
+
+| Entry/presentation route | Accepted behavior | Projection |
+| --- | --- | --- |
+| CMD direct start | Remains playable and does not exit during text entry. | RGB VT when its active output buffer accepts VT. |
+| Graphical start then Tab | Opens the owned text session without a flash/exit and remains switchable. | RGB VT for a normal or visible Console device. |
+| `run16` start | Remains alive and presents the same neutral 80-column text frame. | Standard indexed 16-colour `CHAR_INFO` for the hidden 2x4 carrier. |
+
+The final adapter reads no keyboard records for capability selection and emits
+no query; normal Escape remains the only text-input exit request. Both paths
+consume the same shared text frame. The focused fixture proves normal-font VT
+selection, 2x4 hidden-carrier fallback, source-colour mapping and frame output;
+x86/x64 builds, capability smoke, product self-tests and platform-purity all
+pass. The owner accepted the live three-route corpus. The unchanged DOS16
+artifact is retained (`282517CC0E08C3DE179B7954CB862348DACED4341A05C3F08A162D8DD239AD1E`);
+the refreshed x86/x64 artifacts are respectively
+`ABDD08CEE8A96DD6474878752592A9E1A4B0734E5133142206413D8107D285F6` and
+`ECF1E0639CE2F0A1C120131D09639A11B7BD55E338B7E9CFB2C9233113E9B604`.
+
+T40 closes with zero ROM nodes and zero ROM control edges. This is a Win32
+presentation-adapter closure, not ROM equivalence or DOS/NTVDM certification.
