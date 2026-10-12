@@ -16,7 +16,7 @@ int main(void)
     struct fake fake;
     struct mysmb_dos16_audio_renderer renderer;
     struct mysmb_io_audio_frame frame;
-    mysmb_io_u8 samples[MYSMB_DOS16_AUDIO_BLOCK_BYTES];
+    mygames_kvm_u8 samples[MYSMB_DOS16_AUDIO_BLOCK_BYTES];
     unsigned short count;
     unsigned ticks,total=0U,non_silent=0U;
     memset(&fake,0,sizeof(fake));

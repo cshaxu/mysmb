@@ -13,7 +13,7 @@ p.add_argument('rom', type=Path)
 p.add_argument('listing', type=Path)
 a = p.parse_args()
 b, previous = a.directory.resolve(), a.previous.resolve()
-build = (Path(__file__).resolve().parents[1] / 'build').resolve()
+build = (Path(__file__).resolve().parents[2] / 'build').resolve()
 assert b.is_relative_to(build) and previous.is_relative_to(build)
 rom = a.rom.read_bytes()
 assert rom[:4] == b'NES\x1a' and rom[4] == 2 and not rom[6] & 4

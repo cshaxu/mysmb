@@ -10,7 +10,7 @@ parser.add_argument('directory', type=Path)
 parser.add_argument('rom', type=Path)
 args = parser.parse_args()
 b = args.directory.resolve()
-assert b.is_relative_to((Path(__file__).resolve().parents[1]/'build').resolve())
+assert b.is_relative_to((Path(__file__).resolve().parents[2]/'build').resolve())
 rom = args.rom.read_bytes()
 assert rom[:4] == b'NES\x1a' and rom[4] == 2 and not rom[6] & 4
 lengths = {x: 2 for x in (0xb6,0xe9,0x69,0xa5,0xa9,0xa0,0xa2,0xa4,0xa6,0xc9,0xc0,

@@ -6,14 +6,14 @@
 app-mario/src/core/       all translated ROM logic,RAM,OAM/APU writers and observation receipts
 app-mario/src/text/       authored immutable scene/element consumers and receipt snapshot codec
 app-mario/src/ppu/        neutral addressed/visible state and read-only shared pixel compositor
-app-mario/src/io/         neutral controller/video/audio/text contracts and glyph IDs
+app-mario/src/io/         Mario controller/audio/save and app-local I/O contracts
 app-mario/src/app/        public game-to-IO composition glue; no gameplay/device policy
 app-mario/src/assets/     generated owner-local declarations; never tracked
 app-mario/src/validate/   test-only projections,owner-ROM reference and trace comparison
 app-mario/src/platform/   win32 and dos16 host adapters, pending S4/S5 extraction
 app-mario/src/main-*.c    one small composition root per host target
 app-mario/test/           Mario-owned unit and integration harnesses
-lib/                       reserved for admitted neutral/host extraction; empty in T43 S2
+lib/kvm/                   portable cells, palette/glyph algorithms, video and physical-event contracts
 tools/                     local generators and governance checks
 assets/                    ignored local package outputs: mysmb16.exe, mysmb32.exe, mysmb64.exe
 ```

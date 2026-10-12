@@ -4,7 +4,7 @@ from writable_tempdir import writable_temporary_directory
 
 
 def load_generator():
-    script = Path(__file__).parents[1] / "tools" / "smb_rom_codegen.py"
+    script = Path(__file__).parents[2] / "tools" / "smb_rom_codegen.py"
     spec = importlib.util.spec_from_file_location("smb_rom_codegen", script)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)

@@ -26,9 +26,9 @@
     "controlIdentitySha256": "4d6fced75017fcd0edd80f63223f45e7d14e1b4170af91f98937a0474c970669"
   },
   "sourceSnapshot": {
-    "CMakeLists.txt": "5d418737c7fa9084a3cd84d11dd6c7def0d4847db51435f4420739d7b334af39",
-    "app-mario/src/app/game_io.c": "430560c4e159f4ed067377b95d5449493191f2d8b1a5d0e8bb34ccfc169c5a1a",
-    "app-mario/src/app/game_io.h": "57bbbd0586bc55a5485952a422b22030c1e02501831687f411383849fc9acc3f",
+    "CMakeLists.txt": "1cb73eb0809838a427eeba41690eeef11d24915c72242118de49618cad19b200",
+    "app-mario/src/app/game_io.c": "e6fb0a01e420a20ea590c58f0f4729e2131606a61f21a691c45ec254021c27c9",
+    "app-mario/src/app/game_io.h": "a67e6ae2ea6d2f891344acb03de2786f8d124b027d7f271f1023702f11123234",
     "app-mario/src/core/area.c": "7553e1175c8871237f9fc9c4ec6d13134a6008d35bd89a7182400f9e62520341",
     "app-mario/src/core/area.h": "ae0e86079819b2e1bf3174c93d761eb68fa7e3374ff7cc560b15b6cf2db9062a",
     "app-mario/src/core/area/area_data.c": "19a05068087f1fc8594089a8616ae9adf00497811ad62ad93bfffe2783f0dd18",
@@ -194,43 +194,39 @@
     "app-mario/src/core/world/player_enemy_collision.c": "401dc837e37b5a805a4707a9bbbea05fee2dc6216511ba25c160d2de8bebacd5",
     "app-mario/src/core/world/powerup_collision.c": "6743aa7dda3fce06a4fea65b8b3d17946352203215f22b21e4cb558426796b5b",
     "app-mario/src/core/world/world.h": "90a2df7045c716c8f47bb94d130860b7102a68c895f83095f7a30a9a7c992ea1",
-    "app-mario/src/io/audio.h": "bec1f38fbef20d5a35810e542a21ed66b2c22dacfcffc5309e850d38a8259601",
-    "app-mario/src/io/color.c": "14c35c462e9157e61301bdad690d9a59fd9d8576a08c6dd8d7fe69028dfbdf94",
-    "app-mario/src/io/color.h": "4dc95276cf1c80c96437d011139410a8fa530feae4ea330938899278d2c52dad",
-    "app-mario/src/io/control.c": "d762267720a5b925099c4b3fd5dd58a38d1166c5564448e222a934e731e40f62",
-    "app-mario/src/io/control.h": "9664c58be2ac5aad397b34ca7278a3860cd6cd8e1200709353f4129bf8e519ef",
-    "app-mario/src/io/input.h": "ae80435ed81707ab8faa2dfd5a7a40b30ad49a2198dfde9e21080df7d1025dda",
+    "app-mario/src/io/audio.h": "19417ddc33f9fcff94bd423cbb296dcdad4db8ff3ddbbbeda40c76960c794597",
+    "app-mario/src/io/control.c": "5983bc5f81a97141efd6f312cf314f16bf092cbd79dbcf9e5ac4c133b400992b",
+    "app-mario/src/io/control.h": "b24eb5585163abcf48376ff63b163d7e6c62b7893938ff6dbb968052fe55e95c",
+    "app-mario/src/io/input.h": "8d163a533b3ca8039537f14de6746756452d97b2a8c6c6298e04737273ae0769",
     "app-mario/src/io/pacing.c": "68e43bcb7d8d743b17e5ffe726f71d6fc88feb60cc0683cb8cce892e056dd6d6",
     "app-mario/src/io/pacing.h": "c664b4def13afb086c89a3a30f7a31e689d9e5f2375e9457341619d33ad80cd1",
-    "app-mario/src/io/scale.c": "0e73b8875ee5c745b75bc21710ba26782d47d3c73a2e9a328a6330e106ecaa77",
-    "app-mario/src/io/scale.h": "ca4efdf35b684726a4ed51ca8ba41cd28c1a875134505d71286b0c23847a06bc",
-    "app-mario/src/io/types.h": "55dd06e69e76e332ea63b30220b8a1faa76c7133f2b933c7b5120549acbe9aea",
-    "app-mario/src/io/video.h": "b6be7ecfd0bbe77bacd5c43b343a150a7884b6803caba418c381930241359031",
-    "app-mario/src/platform/dos16/devices.c": "efac4b30e513e5984d726c8a0e413f6ec2d13a8b0ae7591d79bc45024c6e0aff",
-    "app-mario/src/platform/dos16/devices.h": "396ef4ddc9f68133df59223e5b5476100ba4fb41f9702dd10fc10c9d6775e480",
-    "app-mario/src/platform/dos16/dos16_root.c": "af721251b8917eb2f9f6b4a20476843d2d59e0ad63495053061b20f93cdb34bc",
-    "app-mario/src/platform/dos16/dos16_root.h": "70e72a7d573f828c46c8db4d6e57b938ccd5faf7432f03eba4a1f6ab9dda2bb0",
-    "app-mario/src/platform/dos16/keyboard.c": "744338c78230f9e7e9694c0a707c356c3faa3c103bd2403c3ae6255910c47a17",
-    "app-mario/src/platform/dos16/keyboard.h": "9ba7072d96c214892b415d03fb8494af8030f7b48af22f06ee0125791330cb70",
-    "app-mario/src/platform/dos16/main_dos16.c": "31de2c03dcda51104ec596762d8e8becb783ff54cea4a065fa9caecb8ba2ece9",
-    "app-mario/src/platform/dos16/pit_clock.c": "cded3c4d3f4e92bc710f3a3a9897b6887c47611eda5b31f94e3df73138bf7885",
-    "app-mario/src/platform/dos16/pit_clock.h": "60af45b8aec24c8e1745df1119ed9b6ef561f4bdc4e0d625d2dc0a0b6654779d",
+    "app-mario/src/io/scale.c": "075c4935addae96b08f42da932669657f1ef17501f09b6cb1d2d6010a7569110",
+    "app-mario/src/io/scale.h": "b0d2aac0fbd870619d47ceb9662811733977a8736df34361a98eea389110a9f9",
+    "app-mario/src/platform/dos16/devices.c": "a4a4a071a183977be9d581d551917f4c982cf75750cbc4add6e597472b6abf12",
+    "app-mario/src/platform/dos16/devices.h": "b95f6c7da39bfc39433554738cc1d0ec63b796f47ae591a1771d1ad4b9ca9811",
+    "app-mario/src/platform/dos16/dos16_root.c": "ae4f2e824891ef918428b814bc46f3444580c8d5694e8808a4c8d97feb36ea7b",
+    "app-mario/src/platform/dos16/dos16_root.h": "9c4cffa743da51cd1c3faefe69bab95c048c07c4574504a4604ef1625a7a86e3",
+    "app-mario/src/platform/dos16/keyboard.c": "70e868cc211cf7ceaafd8f3c88351e02783775ce0158a80bad515315a8d3baa1",
+    "app-mario/src/platform/dos16/keyboard.h": "fb879d4c0a9ad3925431ad20d5c4f6b7d34855b310d3043abc86d353d0bbde48",
+    "app-mario/src/platform/dos16/main_dos16.c": "41f626c385b3759a13b5da2288b13a4bb675e5332819997923c0bbdd5eb20ddc",
+    "app-mario/src/platform/dos16/pit_clock.c": "3c3f147817baa53c2aa3d7f8ff04f96ef1242b08e31848e2d458b74c79b66e85",
+    "app-mario/src/platform/dos16/pit_clock.h": "84ebc13bdf4696094c2f9183eaf52a3e1eb9c1755ad6f5cae1e9ae7dbaa48212",
     "app-mario/src/platform/win32/audio_output.c": "4bb62f8a2749e27d9fde46295f8022865257aa13d7bc432353e383575f88e60b",
     "app-mario/src/platform/win32/audio_output.h": "83c250acbe030b25c5b8177e2dfd73528573bdebac3baf506ec204d9a5a42481",
-    "app-mario/src/platform/win32/audio_renderer.c": "b74a63bb3193f35068ad415ce93fb254e6e3bb8367f237f48bd71bff80bc6898",
-    "app-mario/src/platform/win32/audio_renderer.h": "ce71cd54a63f2135906b884aab467a37cb2ffd3d32dbc26abc743b294c19ae09",
+    "app-mario/src/platform/win32/audio_renderer.c": "7188b862541450dd3ecfcf247198ede056bdafbc5af6de9b8e2eca069a69a70e",
+    "app-mario/src/platform/win32/audio_renderer.h": "b0d4e1bf4f241c4437a46df165a958ea9df74101a8a5002f4b43a2d94f4224d8",
     "app-mario/src/platform/win32/focus_pause.c": "3145d6c67c2330a2992ae22da3b85b3849a23dadd0e93a65cdc6904f73d3689d",
     "app-mario/src/platform/win32/focus_pause.h": "b9b565122cb56069057547c6f7c0f4755d9527f12dd76447275c3a372fde1fe5",
-    "app-mario/src/platform/win32/main_win32.c": "712e3741c912267b9be9222c1933c86ef68fa444384e4e5191ba7ca04110b27b",
-    "app-mario/src/ppu/frame.c": "45e5696569763ddde8bd8b12e5943d8e21592dbc1cf81a9c28242ab73344d394",
-    "app-mario/src/ppu/frame.h": "9e0e09152b7cd255433642a960cb794f6b5b045911a14f3f361d7ed2d2b0bcc4",
-    "app-mario/src/ppu/state.c": "f6642fc037c1c9676901081e30f0f9baa0fff5f80a01f62ae959886878410edf",
-    "app-mario/src/ppu/state.h": "2dee732c55a0278b3001946f74b7bddec673ce4ad50db217975074c40de0d79c",
+    "app-mario/src/platform/win32/main_win32.c": "b8b4b79cd31cbf95dfdb86f3a9ebab451140dd52fa94b415947ba33ef3f1c1c9",
+    "app-mario/src/ppu/frame.c": "fa1102b19a19a189e8ff342b0bbd2a793f644ea6a049dbe0df942ce050cb3da9",
+    "app-mario/src/ppu/frame.h": "78a2d123b0f50b1ba334d175c181c7327104e49c7149bc637166e1c478b218e1",
+    "app-mario/src/ppu/state.c": "106c9302f03898128127122775b578bac507ce59d1dff5839a132c6a2b831d5e",
+    "app-mario/src/ppu/state.h": "e476fe623d2b9221dba90cfdb76a28fa0f1af9b1a383d4a442ccf2ad00dc5ad5",
     "app-mario/src/validate/frame_snapshot.c": "a8ae0b5ac2fa2cf9c17f3c1583ec26f2313d4e62cef0eb515d7bdacb4e26f014",
     "app-mario/src/validate/frame_snapshot.h": "c8250a5405adc439b0942589e68b800f506b763d662c14e645a30af4a12d9fe4",
     "app-mario/src/validate/render.c": "ee804479bf11009b3d979c2cf8a3e7db15c6aefa2fd839b84a06f4976034f496",
     "app-mario/src/validate/render.h": "72138f7333dc2bef221b5bbfe539a3f98b65498c131c6f1c558f9008ef51c940",
-    "app-mario/CMakeLists.txt": "7b2cc612804fd7834c010474cbab5997694636a6e3a67a00e009e71b64a1b8d7"
+    "app-mario/CMakeLists.txt": "63bff7220a3323cc584203d2069cffa2b1bbea93a293f50cad147b7974bfd6f8"
   },
   "uses": [
     {
@@ -126616,6 +126612,25 @@
       "app-mario/src/platform/vga/vga_frame.c",
       "app-mario/src/platform/vga/vga_frame.h"
     ],
-    "semanticClaim": "Metadata reconciliation only; it does not create a new ROM-equivalence or final-certification claim."
+    "semanticClaim": "Metadata reconciliation only; it does not create a new ROM-equivalence or final-certification claim.",
+    "subsequentStructuralReceipts": [
+      {
+        "task": "M3 T43 S3",
+        "reason": "KVM interface ownership extraction; no translated ROM routine body, node or control edge changed.",
+        "removedSupersededPaths": [
+          "app-mario/src/io/color.c",
+          "app-mario/src/io/color.h",
+          "app-mario/src/io/types.h",
+          "app-mario/src/io/video.h"
+        ],
+        "semanticClaim": "Metadata reconciliation only; it does not create a new ROM-equivalence or final-certification claim."
+      },
+      {
+        "task": "M3 T43 S3",
+        "reason": "CMake target-dependency correction after KVM extraction; it restores complete direct-test header and link reachability without changing translated ROM routine bodies, nodes or control edges.",
+        "removedSupersededPaths": [],
+        "semanticClaim": "Metadata reconciliation only; it does not create a new ROM-equivalence or final-certification claim."
+      }
+    ]
   }
 }

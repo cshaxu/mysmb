@@ -3,7 +3,7 @@ import argparse,csv,json,subprocess,struct
 from pathlib import Path
 p=argparse.ArgumentParser(description=__doc__);p.add_argument('directory',type=Path);p.add_argument('rom',type=Path);args=p.parse_args()
 b=args.directory.resolve();rom=args.rom.read_bytes()
-assert b.is_relative_to((Path(__file__).resolve().parents[1]/'build').resolve())
+assert b.is_relative_to((Path(__file__).resolve().parents[2]/'build').resolve())
 assert rom[:4]==b'NES\x1a' and rom[4]==2 and not rom[6]&4
 read=lambda a,n:rom[16+a-0x8000:16+a-0x8000+n]
 assert read(0xbde8,14)==bytes([0xc1,0xc0,0x5f,0x60,0x55,0x56,0x57,0x58,0x59,0x5a,0x5b,0x5c,0x5d,0x5e])

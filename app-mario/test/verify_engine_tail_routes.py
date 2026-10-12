@@ -19,7 +19,7 @@ def main():
     parser.add_argument('directory', type=Path)
     args = parser.parse_args()
     directory = args.directory.resolve()
-    assert directory.is_relative_to((Path(__file__).resolve().parents[1]/'build').resolve())
+    assert directory.is_relative_to((Path(__file__).resolve().parents[2]/'build').resolve())
     excluded = set(range(8)) | set(range(256, 512)) | {0x778, 0x779}
     visits = set()
     branches = {}

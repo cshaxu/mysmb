@@ -6,10 +6,10 @@
 #define FRAME_SAMPLES 735U
 
 static void apu_write(struct mysmb_io_audio_frame *audio, unsigned int index,
-                      mysmb_io_u8 value)
+                      mygames_kvm_u8 value)
 {
     audio->registers[index] = value;
-    audio->writes[audio->write_count].index = (mysmb_io_u8)index;
+    audio->writes[audio->write_count].index = (mygames_kvm_u8)index;
     audio->writes[audio->write_count].value = value;
     audio->write_count++;
 }

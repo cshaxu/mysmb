@@ -11,7 +11,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('directory', type=Path)
     directory = parser.parse_args().directory.resolve()
-    assert directory.is_relative_to((Path(__file__).resolve().parents[1] / 'build').resolve())
+    assert directory.is_relative_to((Path(__file__).resolve().parents[2] / 'build').resolve())
     excluded = set(range(8)) | set(range(256, 512)) | {0x778, 0x779}
     visits = set()
     branches = {pc: [0, 0] for pc in (0xb7bb, 0xb7c3, 0xb7d3, 0xb7e4,

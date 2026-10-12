@@ -2,7 +2,7 @@
 
 void mysmb_dos16_keyboard_initialize(struct mysmb_dos16_keyboard *keyboard)
 {
-    mysmb_io_u16 i;
+    mygames_kvm_u16 i;
     for (i = 0U; i < 128U; ++i) {
         keyboard->down[i] = 0U;
         keyboard->extended[i] = 0U;
@@ -14,9 +14,9 @@ void mysmb_dos16_keyboard_initialize(struct mysmb_dos16_keyboard *keyboard)
 }
 
 void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
-                               mysmb_io_u8 scan)
+                               mygames_kvm_u8 scan)
 {
-    mysmb_io_u8 *keys;
+    mygames_kvm_u8 *keys;
     if (keyboard->pause_bytes != 0U) {
         --keyboard->pause_bytes;
         return;
@@ -33,7 +33,7 @@ void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
     keys = keyboard->prefix != 0U ? keyboard->extended : keyboard->down;
     if(keyboard->prefix==0U && (scan&0x7fU)==0x0fU)
         keyboard->pending_requests|=mysmb_io_control_toggle(&keyboard->shortcuts,
-            (mysmb_io_u8)((scan&0x80U)==0U),1U);
+            (mygames_kvm_u8)((scan&0x80U)==0U),1U);
     if (keyboard->prefix==0U && scan==1U)
         keyboard->pending_requests|=MYSMB_IO_REQUEST_EXIT;
     if(keyboard->prefix==0U && keys[scan&0x7fU]==0U){
@@ -45,10 +45,10 @@ void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
 }
 void mysmb_dos16_keyboard_after_load(struct mysmb_dos16_keyboard *keyboard)
 {
-    mysmb_io_u8 save,load,tab,exit;
+    mygames_kvm_u8 save,load,tab,exit;
     save=keyboard->down[0x19U];load=keyboard->down[0x18U];
     tab=keyboard->down[0x0fU];
-    exit=(mysmb_io_u8)(keyboard->pending_requests&MYSMB_IO_REQUEST_EXIT);
+    exit=(mygames_kvm_u8)(keyboard->pending_requests&MYSMB_IO_REQUEST_EXIT);
     mysmb_dos16_keyboard_initialize(keyboard);
     /* Held shortcut make repeats stay blocked until the physical break. */
     keyboard->down[0x19U]=save;keyboard->down[0x18U]=load;
@@ -60,7 +60,7 @@ void mysmb_dos16_keyboard_after_load(struct mysmb_dos16_keyboard *keyboard)
 void mysmb_dos16_keyboard_input(struct mysmb_dos16_keyboard *keyboard,
                                 struct mysmb_io_input *input)
 {
-    mysmb_io_u8 buttons;
+    mygames_kvm_u8 buttons;
     buttons = 0U;
     if (keyboard->down[0x1e] || keyboard->extended[0x4b]) buttons |= MYSMB_IO_BUTTON_LEFT;
     if (keyboard->down[0x20] || keyboard->extended[0x4d]) buttons |= MYSMB_IO_BUTTON_RIGHT;

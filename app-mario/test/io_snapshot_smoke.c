@@ -6,18 +6,18 @@
 
 static struct mysmb_io_snapshot source,decoded,unchanged;
 static struct mysmb_io_snapshot_cache cache;
-static mysmb_io_u8 file[MYSMB_SNAPSHOT_FILE_BYTES+1U];
-static mysmb_io_u8 legacy_crc[MYSMB_SNAPSHOT_LEGACY_FILE_BYTES-4U];
+static mygames_kvm_u8 file[MYSMB_SNAPSHOT_FILE_BYTES+1U];
+static mygames_kvm_u8 legacy_crc[MYSMB_SNAPSHOT_LEGACY_FILE_BYTES-4U];
 
 int main(void)
 {
     static const double values[]={0.0,1.0,-1.0,0.125,0.9999999999999999,
         -0.12345678912345678,DBL_MIN,DBL_MAX};
-    static const mysmb_io_u8 crc_fixture[]={'1','2','3','4','5','6','7','8','9'};
-    mysmb_io_u8 real[10],saved,other_fingerprint[16];
+    static const mygames_kvm_u8 crc_fixture[]={'1','2','3','4','5','6','7','8','9'};
+    mygames_kvm_u8 real[10],saved,other_fingerprint[16];
     double result;
     unsigned int i,bit;
-    mysmb_io_u16 pos;
+    mygames_kvm_u16 pos;
     if (MYSMB_SNAPSHOT_FILE_BYTES!=10035U ||
         MYSMB_SNAPSHOT_CORE_BYTES+MYSMB_SNAPSHOT_AUDIO_BYTES+
         MYSMB_SNAPSHOT_PRESENTATION_BYTES!=MYSMB_SNAPSHOT_PAYLOAD_BYTES)
@@ -39,8 +39,8 @@ int main(void)
     if (mysmb_snapshot_get_real(real,&result)) return 7;
     memset(&source,0,sizeof(source));
     for (pos=0U;pos<MYSMB_SNAPSHOT_CORE_BYTES;++pos)
-        source.payload[pos]=(mysmb_io_u8)(pos*37U+11U);
-    for (i=0U;i<16U;++i) source.fingerprint[i]=(mysmb_io_u8)(i+1U);
+        source.payload[pos]=(mygames_kvm_u8)(pos*37U+11U);
+    for (i=0U;i<16U;++i) source.fingerprint[i]=(mygames_kvm_u8)(i+1U);
     source.payload[MYSMB_SNAPSHOT_CORE_BYTES]=1U;
     for (i=0U;i<6U;++i)
         if (!mysmb_snapshot_put_real(source.payload+MYSMB_SNAPSHOT_CORE_BYTES+
@@ -54,7 +54,7 @@ int main(void)
     for (pos=0U;pos<MYSMB_SNAPSHOT_FILE_BYTES;++pos) {
         saved=file[pos];
         for (bit=0U;bit<(pos<36U ? 8U:1U);++bit) {
-            file[pos]=(mysmb_io_u8)(saved^(1U<<(pos<36U ? bit:pos%8U)));
+            file[pos]=(mygames_kvm_u8)(saved^(1U<<(pos<36U ? bit:pos%8U)));
             if (mysmb_snapshot_decode(file,MYSMB_SNAPSHOT_FILE_BYTES,
                 source.fingerprint,&decoded)==0 ||
                 memcmp(&decoded,&unchanged,sizeof(decoded))!=0) return 11;

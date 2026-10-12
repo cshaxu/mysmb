@@ -5,7 +5,7 @@ from writable_tempdir import writable_temporary_directory
 
 
 def load_module():
-    tool_dir = Path(__file__).parents[1] / "tools"
+    tool_dir = Path(__file__).parents[2] / "tools"
     if str(tool_dir) not in sys.path:
         sys.path.insert(0, str(tool_dir))
     script = tool_dir / "smb_boot_codegen.py"

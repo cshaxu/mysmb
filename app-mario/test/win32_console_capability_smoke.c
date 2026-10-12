@@ -19,7 +19,7 @@ int main(void)
     WCHAR output[256];
     static const WCHAR source_expected[]=L"\x1b[0m\x1b[?25l\x1b[1;1H\x1b[38;2;17;34;51;48;2;68;85;102mA";
     static const WCHAR canonical_expected[]=L"\x1b[0m\x1b[?25l\x1b[1;1H\x1b[38;2;255;255;85;48;2;0;0;170mB";
-    struct mysmb_io_text_frame frame;
+    struct mygames_kvm_text_frame frame;
 
     CHECK(mysmb_win32_console_rows(25U)==25U);
     CHECK(mysmb_win32_console_rows(50U)==50U);

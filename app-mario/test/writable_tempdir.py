@@ -9,7 +9,7 @@ import shutil
 
 @contextmanager
 def writable_temporary_directory(*, dir=None, prefix="tmp-"):
-    parent = Path(dir) if dir is not None else Path(__file__).resolve().parents[1] / "build"
+    parent = Path(dir) if dir is not None else Path(__file__).resolve().parents[2] / "build"
     parent.mkdir(parents=True, exist_ok=True)
     mode = 0o777 if os.name == "nt" else 0o700
     for _ in range(10):

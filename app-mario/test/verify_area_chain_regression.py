@@ -33,7 +33,7 @@ def main():
     parser.add_argument('--rom', required=True, type=Path)
     parser.add_argument('--asm', required=True, type=Path)
     args = parser.parse_args()
-    root = Path(__file__).resolve().parents[1]
+    root = Path(__file__).resolve().parents[2]
     build = (root/'build').resolve()
     output = args.output.resolve()
     assert output != build and output.is_relative_to(build), 'Output must be below build'

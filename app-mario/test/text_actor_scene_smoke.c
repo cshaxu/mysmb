@@ -1,13 +1,13 @@
-#include "io/text_glyph.h"
+#include "kvm/glyph.h"
 #include "text/actor_scene.h"
 #include "core/frame_root.h"
-#include "io/color.h"
+#include "kvm/color.h"
 #include <stdio.h>
 #include <string.h>
 
 static struct mysmb_text_actor_workspace actor_workspace;
 static struct mysmb_game game,before;
-static struct mysmb_io_text_frame frame,original;
+static struct mygames_kvm_text_frame frame,original;
 static unsigned char prg[0x8000U];
 static unsigned char opaque[500];
 #define CHECK(c) do {if(!(c)){fprintf(stderr,"scene check %d\n",__LINE__);return 1;}}while(0)
@@ -48,7 +48,7 @@ static int dynamic_words(void)
                     0U,0U,(unsigned char)(value-11U),1U,32U,5U,0U);
             }
             mysmb_game_submit_oam(&game);before=game;
-            CHECK(mysmb_text_elements_build(0,0U,(mysmb_io_u8)bg,&frame));
+            CHECK(mysmb_text_elements_build(0,0U,(mygames_kvm_u8)bg,&frame));
             CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
             CHECK(receipt.drawn==1U && receipt.unsupported==0U);
             CHECK(memcmp(&game,&before,sizeof(game))==0);
@@ -90,9 +90,9 @@ static int mushroom_colors(void)
         before=game;
         CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
         CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
-        cap=mysmb_io_color_text16(0x27U);
-        mark=mysmb_io_color_text16(identity==0U?0x16U:0x1aU);
-        stem=mysmb_io_color_text16(0x30U);
+        cap=mygames_kvm_color_text16(0x27U);
+        mark=mygames_kvm_color_text16(identity==0U?0x16U:0x1aU);
+        stem=mygames_kvm_color_text16(0x30U);
         CHECK(memcmp(&before,&game,sizeof(game))==0);
         if(identity==1U) {
             CHECK(frame.cells[20U*80U+27U].background==stem);
@@ -110,7 +110,7 @@ static int mushroom_colors(void)
             game.ppu.palette[0x13U+palette*4U]=0x16U;
             CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
             CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
-            CHECK(frame.cells[21U*80U+27U].background==mysmb_io_color_text16(0x16U));
+            CHECK(frame.cells[21U*80U+27U].background==mygames_kvm_color_text16(0x16U));
             continue;
         }
         CHECK(cap!=stem && mark!=cap);
@@ -125,12 +125,12 @@ static int mushroom_colors(void)
         CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
         CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
         /* A cap quantized to the sky uses the existing visible-ink fallback. */
-        CHECK(mysmb_io_color_text16(0x12U)==9U);
+        CHECK(mygames_kvm_color_text16(0x12U)==9U);
         CHECK(frame.cells[20U*80U+27U].foreground==mark);
         game.ppu.palette[0x13U+palette*4U]=0x1aU;
         CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
         CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
-        CHECK(frame.cells[20U*80U+27U].foreground==mysmb_io_color_text16(0x1aU));
+        CHECK(frame.cells[20U*80U+27U].foreground==mygames_kvm_color_text16(0x1aU));
     }
     return 0;
 }
@@ -146,9 +146,9 @@ static int retainer_details(void)
         game.ppu.palette[0x11U+p*4U]=0x16U;
         game.ppu.palette[0x12U+p*4U]=0x30U;
         game.ppu.palette[0x13U+p*4U]=0x27U;
-        red=mysmb_io_color_text16(0x16U);
-        white=mysmb_io_color_text16(0x30U);
-        skin=mysmb_io_color_text16(0x27U);
+        red=mygames_kvm_color_text16(0x16U);
+        white=mygames_kvm_color_text16(0x30U);
+        skin=mygames_kvm_color_text16(0x27U);
         mysmb_text_observer_enable(&game,1U);
         for(i=0U;i<6U;++i) {
             sprite((unsigned short)(8U+i),(unsigned char)(80U+(i%2U)*8U),
@@ -251,7 +251,7 @@ static int object_forms(void)
         /* Canonical palette roles must actually occur in the visible art. */
         if(forms[n][0]==6U || forms[n][0]==13U || forms[n][0]==8U || forms[n][0]==2U) {
             unsigned char color;
-            color=mysmb_io_color_text16(forms[n][0]==6U?0x27U:0x16U);
+            color=mygames_kvm_color_text16(forms[n][0]==6U?0x27U:0x16U);
             visible=0U;
             for(c=0U;c<4000U;++c)if(frame.cells[c].background==color ||
                 frame.cells[c].foreground==color)++visible;
@@ -287,8 +287,8 @@ int main(void)
     CHECK(receipt.drawn==1U && receipt.unsupported==0U);
     CHECK(receipt.unowned_sprites==0U);
     CHECK(memcmp(&game,&before,sizeof(game))==0);
-    CHECK(frame.cells[20U*80U+26U].character==MYSMB_IO_GLYPH_LOWER);
-    CHECK(frame.cells[20U*80U+26U].foreground==mysmb_io_color_text16(0x27U) &&
+    CHECK(frame.cells[20U*80U+26U].character==MYGAMES_KVM_GLYPH_LOWER);
+    CHECK(frame.cells[20U*80U+26U].foreground==mygames_kvm_color_text16(0x27U) &&
         frame.cells[20U*80U+26U].background==9U);
     CHECK(frame.cells[0U].background==9U);
     original=frame;
@@ -303,7 +303,7 @@ int main(void)
     game.ppu.visible_oam[32U+9U]=2U;
     CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
-    CHECK(frame.cells[20U*80U+29U].character==MYSMB_IO_GLYPH_LOWER);
+    CHECK(frame.cells[20U*80U+29U].character==MYGAMES_KVM_GLYPH_LOWER);
     CHECK(frame.cells[20U*80U+31U].character==' ');
 
     /* Unknown types remain explicit and do not paint a fabricated object. */
@@ -349,7 +349,7 @@ int main(void)
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
     CHECK(frame.cells[20U*80U+25U].character=='#');
     CHECK(frame.cells[20U*80U+37U].character=='#');
-    CHECK(frame.cells[20U*80U+37U].background==mysmb_io_color_text16(0x1aU));
+    CHECK(frame.cells[20U*80U+37U].background==mygames_kvm_color_text16(0x1aU));
     /* The winning behind-background entry also suppresses later sprites. */
     game.ram[0x0202U+8U*4U]=0x20U;
     mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_CHUNKS,

@@ -1,25 +1,25 @@
 #include "io/snapshot.h"
 #include <string.h>
 
-static const mysmb_io_u8 snapshot_magic[8] = {
+static const mygames_kvm_u8 snapshot_magic[8] = {
     'M', 'Y', 'S', 'M', 'B', 'S', 'A', 'V'
 };
 
-void mysmb_snapshot_put16(mysmb_io_u8 *bytes, mysmb_io_u16 value)
+void mysmb_snapshot_put16(mygames_kvm_u8 *bytes, mygames_kvm_u16 value)
 {
-    bytes[0]=(mysmb_io_u8)value;
-    bytes[1]=(mysmb_io_u8)(value>>8U);
+    bytes[0]=(mygames_kvm_u8)value;
+    bytes[1]=(mygames_kvm_u8)(value>>8U);
 }
-mysmb_io_u16 mysmb_snapshot_get16(const mysmb_io_u8 *bytes)
+mygames_kvm_u16 mysmb_snapshot_get16(const mygames_kvm_u8 *bytes)
 {
-    return (mysmb_io_u16)(bytes[0]|((mysmb_io_u16)bytes[1]<<8U));
+    return (mygames_kvm_u16)(bytes[0]|((mygames_kvm_u16)bytes[1]<<8U));
 }
-void mysmb_snapshot_put32(mysmb_io_u8 *bytes, unsigned long value)
+void mysmb_snapshot_put32(mygames_kvm_u8 *bytes, unsigned long value)
 {
     unsigned int i;
-    for (i=0U;i<4U;++i) {bytes[i]=(mysmb_io_u8)value;value>>=8U;}
+    for (i=0U;i<4U;++i) {bytes[i]=(mygames_kvm_u8)value;value>>=8U;}
 }
-unsigned long mysmb_snapshot_get32(const mysmb_io_u8 *bytes)
+unsigned long mysmb_snapshot_get32(const mygames_kvm_u8 *bytes)
 {
     unsigned long value;
     int i;
@@ -27,7 +27,7 @@ unsigned long mysmb_snapshot_get32(const mysmb_io_u8 *bytes)
     for (i=3;i>=0;--i) value=(value<<8U)|bytes[i];
     return value;
 }
-static unsigned long crc_add(unsigned long crc, mysmb_io_u8 value)
+static unsigned long crc_add(unsigned long crc, mygames_kvm_u8 value)
 {
     unsigned int bit;
     crc^=value;
@@ -35,27 +35,27 @@ static unsigned long crc_add(unsigned long crc, mysmb_io_u8 value)
         crc=(crc>>1U)^((crc&1UL)!=0UL ? 0xedb88320UL:0UL);
     return crc;
 }
-unsigned long mysmb_snapshot_crc(const mysmb_io_u8 *bytes, mysmb_io_u16 size)
+unsigned long mysmb_snapshot_crc(const mygames_kvm_u8 *bytes, mygames_kvm_u16 size)
 {
     unsigned long crc;
-    mysmb_io_u16 i;
+    mygames_kvm_u16 i;
     crc=0xffffffffUL;
     for (i=0U;i<size;++i) crc=crc_add(crc,bytes[i]);
     return crc^0xffffffffUL;
 }
-static unsigned long parts_crc(const mysmb_io_u8 *header,
-    const mysmb_io_u8 *payload,mysmb_io_u16 size)
+static unsigned long parts_crc(const mygames_kvm_u8 *header,
+    const mygames_kvm_u8 *payload,mygames_kvm_u16 size)
 {
     unsigned long crc;
-    mysmb_io_u16 i;
+    mygames_kvm_u16 i;
     crc=0xffffffffUL;
     for (i=0U;i<32U;++i) crc=crc_add(crc,header[i]);
     for (i=0U;i<size;++i) crc=crc_add(crc,payload[i]);
     return crc^0xffffffffUL;
 }
-int mysmb_snapshot_real_valid(const mysmb_io_u8 *bytes)
+int mysmb_snapshot_real_valid(const mygames_kvm_u8 *bytes)
 {
-    mysmb_io_u16 exponent;
+    mygames_kvm_u16 exponent;
     unsigned int i,bits;
     if (bytes[0]>1U) return 0;
     exponent=mysmb_snapshot_get16(bytes+1);
@@ -71,9 +71,9 @@ int mysmb_snapshot_real_valid(const mysmb_io_u8 *bytes)
         if ((bytes[3U+i/8U]&(1U<<(i%8U)))!=0U) return 0;
     return 1;
 }
-static int payload_valid(const mysmb_io_u8 *payload)
+static int payload_valid(const mygames_kvm_u8 *payload)
 {
-    const mysmb_io_u8 *audio;
+    const mygames_kvm_u8 *audio;
     unsigned int i;
     audio=payload+MYSMB_SNAPSHOT_CORE_BYTES;
     if (audio[0]>1U) return 0;
@@ -87,7 +87,7 @@ static int payload_valid(const mysmb_io_u8 *payload)
     return 1;
 }
 int mysmb_snapshot_encode_header(const struct mysmb_io_snapshot *snapshot,
-    mysmb_io_u8 *file)
+    mygames_kvm_u8 *file)
 {
     if (!payload_valid(snapshot->payload))
         return MYSMB_SNAPSHOT_INVALID;
@@ -100,9 +100,9 @@ int mysmb_snapshot_encode_header(const struct mysmb_io_snapshot *snapshot,
         MYSMB_SNAPSHOT_PAYLOAD_BYTES));
     return MYSMB_SNAPSHOT_OK;
 }
-mysmb_io_u16 mysmb_snapshot_header_payload(const mysmb_io_u8 *file)
+mygames_kvm_u16 mysmb_snapshot_header_payload(const mygames_kvm_u8 *file)
 {
-    mysmb_io_u16 version,payload;
+    mygames_kvm_u16 version,payload;
     version=mysmb_snapshot_get16(file+8);
     if(version!=1U && version!=2U)return 0U;
     payload=version==2U?MYSMB_SNAPSHOT_PAYLOAD_BYTES:MYSMB_SNAPSHOT_PRESENTATION_OFFSET;
@@ -111,8 +111,8 @@ mysmb_io_u16 mysmb_snapshot_header_payload(const mysmb_io_u8 *file)
         mysmb_snapshot_get32(file+12)!=payload)return 0U;
     return payload;
 }
-int mysmb_snapshot_check_parts(const mysmb_io_u8 *file,
-    const mysmb_io_u8 *payload,mysmb_io_u16 size,const mysmb_io_u8 *fingerprint)
+int mysmb_snapshot_check_parts(const mygames_kvm_u8 *file,
+    const mygames_kvm_u8 *payload,mygames_kvm_u16 size,const mygames_kvm_u8 *fingerprint)
 {
     if(!size || mysmb_snapshot_header_payload(file)!=size)return MYSMB_SNAPSHOT_INVALID;
     if(parts_crc(file,payload,size)!=mysmb_snapshot_get32(file+32))return MYSMB_SNAPSHOT_INTEGRITY;
@@ -121,7 +121,7 @@ int mysmb_snapshot_check_parts(const mysmb_io_u8 *file,
     return MYSMB_SNAPSHOT_OK;
 }
 int mysmb_snapshot_encode(const struct mysmb_io_snapshot *snapshot,
-    mysmb_io_u8 *file, mysmb_io_u16 size)
+    mygames_kvm_u8 *file, mygames_kvm_u16 size)
 {
     int result;
     if(size!=MYSMB_SNAPSHOT_FILE_BYTES)return MYSMB_SNAPSHOT_INVALID;
@@ -130,15 +130,15 @@ int mysmb_snapshot_encode(const struct mysmb_io_snapshot *snapshot,
     memcpy(file+MYSMB_SNAPSHOT_HEADER_BYTES,snapshot->payload,MYSMB_SNAPSHOT_PAYLOAD_BYTES);
     return MYSMB_SNAPSHOT_OK;
 }
-int mysmb_snapshot_decode(const mysmb_io_u8 *file, mysmb_io_u16 size,
-    const mysmb_io_u8 *fingerprint, struct mysmb_io_snapshot *snapshot)
+int mysmb_snapshot_decode(const mygames_kvm_u8 *file, mygames_kvm_u16 size,
+    const mygames_kvm_u8 *fingerprint, struct mysmb_io_snapshot *snapshot)
 {
-    mysmb_io_u16 payload,version;
+    mygames_kvm_u16 payload,version;
     int result;
     if (size!=MYSMB_SNAPSHOT_FILE_BYTES && size!=MYSMB_SNAPSHOT_LEGACY_FILE_BYTES)
         return MYSMB_SNAPSHOT_INVALID;
     version=size==MYSMB_SNAPSHOT_FILE_BYTES?2U:1U;
-    payload=(mysmb_io_u16)(size-MYSMB_SNAPSHOT_HEADER_BYTES);
+    payload=(mygames_kvm_u16)(size-MYSMB_SNAPSHOT_HEADER_BYTES);
     result=mysmb_snapshot_check_parts(file,file+MYSMB_SNAPSHOT_HEADER_BYTES,payload,fingerprint);
     if(result!=MYSMB_SNAPSHOT_OK)return result;
     memcpy(snapshot->fingerprint,file+16,16U);
@@ -163,7 +163,7 @@ void mysmb_snapshot_cache_publish(struct mysmb_io_snapshot_cache *cache,
     cache->published=completed;cache->valid=1U;
 }
 void mysmb_snapshot_cache_update(struct mysmb_io_snapshot_cache *cache,
-    const struct mysmb_io_snapshot *snapshot, mysmb_io_u8 running_boundary)
+    const struct mysmb_io_snapshot *snapshot, mygames_kvm_u8 running_boundary)
 {
     if (running_boundary!=0U) {
         cache->last_running=*snapshot;

@@ -2,6 +2,6 @@
 #define MYSMB_DOS16_PALETTE_EXPAND_H
 #include "io/palette_pairs.h"
 int mysmb_dos16_palette_expand(void *context,
-    const mysmb_io_u8 MYSMB_IO_FAR *packed,mysmb_io_u8 MYSMB_IO_FAR *pixels,
-    mysmb_io_u16 count,const mysmb_io_u8 MYSMB_IO_FAR *palette);
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *packed,mygames_kvm_u8 MYGAMES_KVM_FAR *pixels,
+    mygames_kvm_u16 count,const mygames_kvm_u8 MYGAMES_KVM_FAR *palette);
 #endif

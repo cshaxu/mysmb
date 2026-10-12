@@ -19,6 +19,8 @@ def object_for_source(source):
     normalized = source.replace("\\", "/")
     if "/local-rom/" in normalized:
         return Path(normalized).with_suffix(".obj").name
+    if "/lib/kvm/src/" in normalized:
+        return "kvm_" + Path(normalized).with_suffix(".obj").name
     return normalized.split("/src/", 1)[1].replace("/", "_")
 
 

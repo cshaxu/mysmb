@@ -1,7 +1,7 @@
 #ifndef MYSMB_IO_INPUT_H
 #define MYSMB_IO_INPUT_H
 
-#include "io/types.h"
+#include "kvm/types.h"
 
 /* Decoded controller bits, not host virtual keys or BIOS scan codes.
  * J means B, K means A; physical key decoding remains with each adapter. */
@@ -17,10 +17,10 @@ enum {
 };
 
 struct mysmb_io_input {
-    mysmb_io_u8 buttons;
-    mysmb_io_u8 buttons2;
+    mygames_kvm_u8 buttons;
+    mygames_kvm_u8 buttons2;
     /* Application requests are never passed to the NES controller image. */
-    mysmb_io_u8 requests;
+    mygames_kvm_u8 requests;
 };
 
 enum {

@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 
-static mysmb_io_u8 background[MYSMB_PPU_BACKGROUND_BYTES];
-static mysmb_io_u8 second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
-static mysmb_io_u8 chr[8192];
-static mysmb_io_u8 expected[MYSMB_IO_VIDEO_PIXELS],actual[MYSMB_IO_VIDEO_PIXELS];
+static mygames_kvm_u8 background[MYSMB_PPU_BACKGROUND_BYTES];
+static mygames_kvm_u8 second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
+static mygames_kvm_u8 chr[8192];
+static mygames_kvm_u8 expected[MYGAMES_KVM_VIDEO_PIXELS],actual[MYGAMES_KVM_VIDEO_PIXELS];
 
 static int frame(struct mysmb_ppu_state *state,struct mysmb_ppu_frame_workspace *work)
 {
@@ -23,10 +23,10 @@ int main(void)
 {
     struct mysmb_ppu_state state;
     struct mysmb_ppu_frame_workspace work;
-    mysmb_io_u16 i;
+    mygames_kvm_u16 i;
     memset(&state,0,sizeof(state));
-    for(i=0U;i<8192U;++i)chr[i]=(mysmb_io_u8)(i*13U+i/3U);
-    for(i=0U;i<2048U;++i)state.name_table[i/1024U][i&1023U]=(mysmb_io_u8)(i*7U);
+    for(i=0U;i<8192U;++i)chr[i]=(mygames_kvm_u8)(i*13U+i/3U);
+    for(i=0U;i<2048U;++i)state.name_table[i/1024U][i&1023U]=(mygames_kvm_u8)(i*7U);
     state.chr_data=chr;state.chr_data_size=sizeof(chr);state.visible_ppu_mask=30U;
     state.visible_ppu_name_table=1U;state.visible_scroll_x=19U;
     state.visible_scroll_y=23U;state.visible_sprite0_split=1U;
@@ -47,6 +47,6 @@ int main(void)
     state.visible_sprite0_split=1U;state.visible_ppu_name_table=1U;
     state.visible_scroll_x=252U;state.visible_scroll_y=239U;state.visible_oam[3]=250U;
     if(!frame(&state,&work))return 4;
-    printf("ram compositor frames=4 exact=1 bytes=%u\n",MYSMB_IO_VIDEO_PIXELS);
+    printf("ram compositor frames=4 exact=1 bytes=%u\n",MYGAMES_KVM_VIDEO_PIXELS);
     return 0;
 }

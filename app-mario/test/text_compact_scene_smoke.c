@@ -2,13 +2,13 @@
 #include "text/layout.h"
 #include "text/compact_elements.h"
 #include "core/frame_root.h"
-#include "io/color.h"
+#include "kvm/color.h"
 #include <stdio.h>
 #include <string.h>
 static struct mysmb_game game,before;
 static struct mysmb_text_scene_workspace workspace;
-static struct mysmb_io_text_frame frame;
-static struct mysmb_io_text_cell run_frames[3][2000];
+static struct mygames_kvm_text_frame frame;
+static struct mygames_kvm_text_cell run_frames[3][2000];
 static unsigned char prg[32768];
 #define CHECK(c) do {if(!(c)){fprintf(stderr,"compact check %d\n",__LINE__);return 1;}}while(0)
 int main(void)
@@ -17,13 +17,13 @@ int main(void)
     unsigned char colors[3]={4U,6U,8U},palette[32];
     unsigned short kind,pose,i,j,n,found,ar,br;
     for(i=0U;i<32U;++i)palette[i]=(unsigned char)((i%4U)==0U?0x22U:(i%4U)==1U?0x16U:(i%4U)==2U?0x27U:0x18U);
-    for(i=0U;i<64U;++i)CHECK(mysmb_io_color_text_nearest(mysmb_io_color_rgb((mysmb_io_u8)i))==mysmb_io_color_text16((mysmb_io_u8)i));
+    for(i=0U;i<64U;++i)CHECK(mygames_kvm_color_text_nearest(mygames_kvm_color_rgb((mygames_kvm_u8)i))==mygames_kvm_color_text16((mygames_kvm_u8)i));
     memset(&frame,0xa5,sizeof(frame));
     mysmb_text_frame_initialize(&frame,9U,25U,palette);
     CHECK(frame.rows==25U && frame.source_colors==1U);
-    CHECK(frame.colors[mysmb_text_contrast(&frame,0U)]==mysmb_io_color_rgb(0x30U));
+    CHECK(frame.colors[mysmb_text_contrast(&frame,0U)]==mygames_kvm_color_rgb(0x30U));
     CHECK(frame.cells[2000U].character==0xa5U);
-    for(i=0U;i<32U;++i)CHECK(frame.colors[mysmb_text_color(&frame,palette[i])]==mysmb_io_color_rgb(palette[i]));
+    for(i=0U;i<32U;++i)CHECK(frame.colors[mysmb_text_color(&frame,palette[i])]==mygames_kvm_color_rgb(palette[i]));
     n=0U;
     for(kind=0U;kind<46U;++kind)for(pose=0U;pose<(kind<=1U || kind==43U || kind==44U?17U:1U);++pose) {
         memset(&e,0,sizeof(e));e.kind=(unsigned char)kind;e.pose=(unsigned char)pose;e.x=80;e.y=96;

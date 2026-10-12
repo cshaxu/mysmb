@@ -6,7 +6,7 @@ original-ROM execution evidence.  It deliberately contains no ROM bytes.
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 
 
 def ordered(text, fragments):

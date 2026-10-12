@@ -1,9 +1,9 @@
-#include "io/text_glyph.h"
+#include "kvm/glyph.h"
 #include "text/background_scene.h"
 #include "text/elements.h"
 #include "text/caption_scene.h"
 #include "text/layout.h"
-#include "io/color.h"
+#include "kvm/color.h"
 
 /* Visual classifications of reviewed metatile positions, not gameplay IDs.
  * Graphics are read from the existing immutable resource binding. No CHR
@@ -139,7 +139,7 @@ static unsigned short inset(unsigned char k,unsigned short y,
     return 0U;
 }
 
-static void enqueue(struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
+static void enqueue(struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
     unsigned short n,unsigned char k,unsigned char p,unsigned short *tail)
 {
     if(w->visited[n]!=0U || family(w->kinds[n])!=family(k) || w->palettes[n]!=p)return;
@@ -152,11 +152,11 @@ static void enqueue(struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
 static unsigned char border(unsigned short x,unsigned short y,
     unsigned short width,unsigned short height)
 {
-    if(x==0U)return y==0U?MYSMB_IO_GLYPH_TOP_LEFT:
-        y+1U==height?MYSMB_IO_GLYPH_BOTTOM_LEFT:MYSMB_IO_GLYPH_VERTICAL;
-    if(x+1U==width)return y==0U?MYSMB_IO_GLYPH_TOP_RIGHT:
-        y+1U==height?MYSMB_IO_GLYPH_BOTTOM_RIGHT:MYSMB_IO_GLYPH_VERTICAL;
-    return y==0U || y+1U==height?MYSMB_IO_GLYPH_HORIZONTAL:' ';
+    if(x==0U)return y==0U?MYGAMES_KVM_GLYPH_TOP_LEFT:
+        y+1U==height?MYGAMES_KVM_GLYPH_BOTTOM_LEFT:MYGAMES_KVM_GLYPH_VERTICAL;
+    if(x+1U==width)return y==0U?MYGAMES_KVM_GLYPH_TOP_RIGHT:
+        y+1U==height?MYGAMES_KVM_GLYPH_BOTTOM_RIGHT:MYGAMES_KVM_GLYPH_VERTICAL;
+    return y==0U || y+1U==height?MYGAMES_KVM_GLYPH_HORIZONTAL:' ';
 }
 
 static unsigned char glyph(unsigned char k,unsigned short x,unsigned short y,
@@ -196,23 +196,23 @@ static unsigned char glyph(unsigned char k,unsigned short x,unsigned short y,
     }
     if(k==CLOUD || k==BUSH || k==HILL) {
         margin=inset(k,y,width,height);
-        if(y==0U)return MYSMB_IO_GLYPH_LOWER;
-        if(y+1U==height)return MYSMB_IO_GLYPH_UPPER;
-        if(x==margin)return MYSMB_IO_GLYPH_RIGHT;
-        if(x+margin+1U==width)return MYSMB_IO_GLYPH_LEFT;
+        if(y==0U)return MYGAMES_KVM_GLYPH_LOWER;
+        if(y+1U==height)return MYGAMES_KVM_GLYPH_UPPER;
+        if(x==margin)return MYGAMES_KVM_GLYPH_RIGHT;
+        if(x+margin+1U==width)return MYGAMES_KVM_GLYPH_LEFT;
         return ' ';
     }
     if(k==WATER)return y==0U?'~':' ';
     if(k==PIPE) {
         if(cap && y==0U)return border(x,0U,width,2U);
-        if(cap && height>3U && y==2U)return x==0U?MYSMB_IO_GLYPH_TEE_LEFT:
-            x+1U==width?MYSMB_IO_GLYPH_TEE_RIGHT:MYSMB_IO_GLYPH_HORIZONTAL;
-        return x==0U || x+1U==width?MYSMB_IO_GLYPH_VERTICAL:' ';
+        if(cap && height>3U && y==2U)return x==0U?MYGAMES_KVM_GLYPH_TEE_LEFT:
+            x+1U==width?MYGAMES_KVM_GLYPH_TEE_RIGHT:MYGAMES_KVM_GLYPH_HORIZONTAL;
+        return x==0U || x+1U==width?MYGAMES_KVM_GLYPH_VERTICAL:' ';
     }
     if(k==SIDE_PIPE) {
-        if(cap && x<2U)return MYSMB_IO_GLYPH_VERTICAL;
-        if(y==0U || y+1U==height)return MYSMB_IO_GLYPH_HORIZONTAL;
-        return x+1U==width?MYSMB_IO_GLYPH_VERTICAL:' ';
+        if(cap && x<2U)return MYGAMES_KVM_GLYPH_VERTICAL;
+        if(y==0U || y+1U==height)return MYGAMES_KVM_GLYPH_HORIZONTAL;
+        return x+1U==width?MYGAMES_KVM_GLYPH_VERTICAL:' ';
     }
     if(k==LEDGE)return y==0U?'=':' ';
     if(k==TRUNK)return x==0U || x+1U==width?'|':':';
@@ -234,8 +234,8 @@ static long first_cell(short position,long scale,long extent)
     return numerator>0L?(numerator+extent-1L)/extent:numerator/extent;
 }
 static void object(const struct mysmb_game *g,
-    struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,unsigned char k,
+    struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,unsigned char k,
     unsigned char palette,unsigned char cap,unsigned short minx,unsigned short miny,
     short left,short top,short right,short bottom)
 {
@@ -244,9 +244,9 @@ static void object(const struct mysmb_game *g,
     long dx,dy;
     unsigned short center_x,center_y,margin;
     unsigned char c,color,ink;
-    x0=first_cell(left,80L,256L);y0=first_cell(top,(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
-    x1=first_cell(right,80L,256L);y1=first_cell(bottom,(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
-    if(g->ppu.visible_sprite0_split!=0U && top>=32 && y0<(32L*MYSMB_IO_TEXT_FRAME_ROWS(frame)+239L)/240L)y0=(32L*MYSMB_IO_TEXT_FRAME_ROWS(frame)+239L)/240L;
+    x0=first_cell(left,80L,256L);y0=first_cell(top,(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240L);
+    x1=first_cell(right,80L,256L);y1=first_cell(bottom,(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240L);
+    if(g->ppu.visible_sprite0_split!=0U && top>=32 && y0<(32L*MYGAMES_KVM_TEXT_FRAME_ROWS(frame)+239L)/240L)y0=(32L*MYGAMES_KVM_TEXT_FRAME_ROWS(frame)+239L)/240L;
     if(x1<=x0 || y1<=y0)return;
     width=(unsigned short)(x1-x0);height=(unsigned short)(y1-y0);
     color=mysmb_text_color(frame,g->ppu.palette[palette*4U+
@@ -263,14 +263,14 @@ static void object(const struct mysmb_game *g,
     /* Visible centers fit in 16 bits. Keep signed origin differences long
      * until their nonnegative, short-origin domain has been established. */
     for(y=y0;y<y1;++y){
-      if(y<0L || y>=(long)MYSMB_IO_TEXT_FRAME_ROWS(frame))continue;
-      center_y=(unsigned short)(((unsigned short)y*240U+120U)/MYSMB_IO_TEXT_FRAME_ROWS(frame));
+      if(y<0L || y>=(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame))continue;
+      center_y=(unsigned short)(((unsigned short)y*240U+120U)/MYGAMES_KVM_TEXT_FRAME_ROWS(frame));
       if(g->ppu.visible_sprite0_split!=0U && center_y<32U)continue;
       dy=(long)center_y-top;if(dy<0L)continue;
       source_y=(unsigned short)(miny+(unsigned short)dy/16U);if(source_y>=15U)continue;
       margin=inset(k,(unsigned short)(y-y0),width,height);
       for(x=x0;x<x1;++x) {
-        if(x<0L || x>=80L || y<0L || y>=(long)MYSMB_IO_TEXT_FRAME_ROWS(frame))continue;
+        if(x<0L || x>=80L || y<0L || y>=(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame))continue;
         center_x=(unsigned short)(((unsigned short)x*256U+128U)/80U);
         if((g->ppu.visible_ppu_mask&2U)==0U && center_x<8U)continue;
         /* Only members of this connected component own cells. Bounds alone
@@ -308,8 +308,8 @@ static void object(const struct mysmb_game *g,
             frame->cells[cell].foreground=frame->source_colors?mysmb_text_contrast(frame,frame->cells[cell].background):6U;
             continue;
         }
-        if(c==MYSMB_IO_GLYPH_LOWER || c==MYSMB_IO_GLYPH_UPPER ||
-            c==MYSMB_IO_GLYPH_LEFT || c==MYSMB_IO_GLYPH_RIGHT) {
+        if(c==MYGAMES_KVM_GLYPH_LOWER || c==MYGAMES_KVM_GLYPH_UPPER ||
+            c==MYGAMES_KVM_GLYPH_LEFT || c==MYGAMES_KVM_GLYPH_RIGHT) {
             frame->cells[cell].foreground=color!=frame->cells[cell].background?
                 color:ink;
         } else {
@@ -321,8 +321,8 @@ static void object(const struct mysmb_game *g,
 }
 
 int mysmb_text_background_scene_build_profile(const struct mysmb_game *g,
-    struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
+    struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
     struct mysmb_text_background_receipt *receipt,unsigned short rows)
 {
     unsigned short i,row,col,head,tail,n,minx,maxx,miny,maxy;
@@ -335,7 +335,7 @@ int mysmb_text_background_scene_build_profile(const struct mysmb_game *g,
     receipt->recognized=receipt->unsupported=receipt->ambiguous=0U;
     receipt->objects=receipt->letters=0U;
     for(i=0U;i<500U;++i)w->opaque[i]=0U;
-    mysmb_text_frame_initialize(frame,mysmb_io_color_text16(g->ppu.palette[0]),rows,rows==25U?g->ppu.palette:0);
+    mysmb_text_frame_initialize(frame,mygames_kvm_color_text16(g->ppu.palette[0]),rows,rows==25U?g->ppu.palette:0);
     if((g->ppu.visible_ppu_mask&8U)==0U)return 1;
     for(i=0U;i<480U;++i) {
         row=i/32U;col=i%32U;table=(unsigned char)((col/16U)^(g->ppu.visible_ppu_name_table&1U));
@@ -377,7 +377,7 @@ int mysmb_text_background_scene_build_profile(const struct mysmb_game *g,
 }
 
 int mysmb_text_background_scene_build(const struct mysmb_game *g,
-    struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *f,
+    struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *f,
     struct mysmb_text_background_receipt *receipt)
 {return mysmb_text_background_scene_build_profile(g,w,f,receipt,50U);}

@@ -3,18 +3,18 @@
 #include <string.h>
 
 int mysmb_win32_audio_capture(const struct mysmb_win32_audio_renderer *r,
-    mysmb_io_u8 *bytes)
+    mygames_kvm_u8 *bytes)
 {
-    mysmb_io_u8 candidate[MYSMB_SNAPSHOT_AUDIO_BYTES];
-    mysmb_io_u8 *out;
+    mygames_kvm_u8 candidate[MYSMB_SNAPSHOT_AUDIO_BYTES];
+    mygames_kvm_u8 *out;
     unsigned int i;
     memset(candidate,0,sizeof(candidate));out=candidate;
     *out++=1U;memcpy(out,r->registers,24U);out+=24;*out++=r->enabled;
-#define WORD_ARRAY(field,count) for(i=0U;i<count;++i){mysmb_snapshot_put16(out,(mysmb_io_u16)r->field[i]);out+=2;}
+#define WORD_ARRAY(field,count) for(i=0U;i<count;++i){mysmb_snapshot_put16(out,(mygames_kvm_u16)r->field[i]);out+=2;}
 #define BYTE_ARRAY(field,count) for(i=0U;i<count;++i)*out++=r->field[i]
     WORD_ARRAY(length,4U);WORD_ARRAY(envelope_level,3U);WORD_ARRAY(envelope_divider,3U);
     WORD_ARRAY(pulse_timer,2U);WORD_ARRAY(sweep_divider,2U);
-    mysmb_snapshot_put16(out,(mysmb_io_u16)r->triangle_linear);out+=2;
+    mysmb_snapshot_put16(out,(mygames_kvm_u16)r->triangle_linear);out+=2;
     BYTE_ARRAY(envelope_start,3U);BYTE_ARRAY(sweep_reload,2U);*out++=r->triangle_reload;
     mysmb_snapshot_put16(out,r->noise_shift);out+=2;
 #undef WORD_ARRAY
@@ -27,10 +27,10 @@ int mysmb_win32_audio_capture(const struct mysmb_win32_audio_renderer *r,
     memcpy(bytes,candidate,sizeof(candidate));return 1;
 }
 int mysmb_win32_audio_restore(struct mysmb_win32_audio_renderer *renderer,
-    const mysmb_io_u8 *bytes)
+    const mygames_kvm_u8 *bytes)
 {
     struct mysmb_win32_audio_renderer candidate;
-    const mysmb_io_u8 *in;
+    const mygames_kvm_u8 *in;
     unsigned int i;
     if (bytes[0]>1U) return 0;
     if (bytes[0]==0U) {

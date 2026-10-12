@@ -9,7 +9,7 @@ int main(void)
 {
     struct mysmb_io_input decoded;
     struct mysmb_input input;
-    struct mysmb_io_video_frame video;
+    struct mygames_kvm_video_frame video;
     struct mysmb_io_audio_frame audio;
     unsigned int index;
 

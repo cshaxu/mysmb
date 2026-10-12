@@ -5,7 +5,7 @@ from writable_tempdir import writable_temporary_directory
 
 
 def main():
-    tool_dir = Path(__file__).parents[1] / "tools"
+    tool_dir = Path(__file__).parents[2] / "tools"
     sys.path.insert(0, str(tool_dir))
     spec = importlib.util.spec_from_file_location("smb_title_codegen", tool_dir / "smb_title_codegen.py")
     module = importlib.util.module_from_spec(spec)

@@ -13,7 +13,7 @@ def main():
     parser.add_argument('rom', type=Path)
     args = parser.parse_args()
     directory = args.directory.resolve()
-    assert directory.is_relative_to((Path(__file__).resolve().parents[1] / 'build').resolve())
+    assert directory.is_relative_to((Path(__file__).resolve().parents[2] / 'build').resolve())
     rom = args.rom.read_bytes()
     assert rom[:4] == b'NES\x1a' and rom[4] == 2 and not rom[6] & 4
     assert rom[16+0x39ba:16+0x39bc] == bytes((15, 7))

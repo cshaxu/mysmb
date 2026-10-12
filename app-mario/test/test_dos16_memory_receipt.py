@@ -7,7 +7,7 @@ import sys
 import shutil
 import uuid
 
-repo = Path(__file__).resolve().parents[1]
+repo = Path(__file__).resolve().parents[2]
 tool = repo / "tools/VerifyDos16Memory.py"
 valid_map = " 00000H 000FFH 00100H _DATA DATA\n 00100H 0017FH 00080H STACK STACK\n 0000:0 DGROUP\n"
 root = repo / "build" / ("memory-contract-" + uuid.uuid4().hex)

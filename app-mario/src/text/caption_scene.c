@@ -1,5 +1,5 @@
 #include "text/caption_scene.h"
-#include "io/color.h"
+#include "kvm/color.h"
 #include "text/layout.h"
 
 static unsigned char character(unsigned char tile)
@@ -24,12 +24,12 @@ static long first(short pixel,long scale,long extent)
 }
 
 static int cell(const struct mysmb_game *g,
-    struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,long x,long y,
+    struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,long x,long y,
     unsigned char c,unsigned char bg)
 {
     unsigned short i;
-    if(x<0L || x>=80L || y<0L || y>=(long)MYSMB_IO_TEXT_FRAME_ROWS(frame))return 0;
+    if(x<0L || x>=80L || y<0L || y>=(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame))return 0;
     if((g->ppu.visible_ppu_mask&2U)==0U && (x*256L+128L)/80L<8L)return 0;
     i=(unsigned short)(y*80L+x);
     frame->cells[i].character=c;
@@ -42,13 +42,13 @@ static int cell(const struct mysmb_game *g,
  * rows4..14. Match final writes,including overlaps,not the first RLE fill.
  * This interprets output declarations only;it does not execute game logic. */
 static int title_matches(const struct mysmb_game *g,
-    struct mysmb_text_background_workspace MYSMB_IO_FAR *w)
+    struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w)
 {
-    unsigned char MYSMB_IO_FAR *expected;
+    unsigned char MYGAMES_KVM_FAR *expected;
     unsigned short cursor,address,offset,index,count,bytes,i,matched;
     unsigned char control,value;
     if(g->title_data==0 || g->title_data_size==0U)return 0;
-    expected=(unsigned char MYSMB_IO_FAR *)w->queue;
+    expected=(unsigned char MYGAMES_KVM_FAR *)w->queue;
     for(i=0U;i<120U;++i)w->visited[i]=0U;
     cursor=matched=0U;
     while(cursor<g->title_data_size && g->title_data[cursor]!=0U) {
@@ -79,20 +79,20 @@ static int title_matches(const struct mysmb_game *g,
 }
 
 static void sign_line(const struct mysmb_game *g,
-    struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,long left,long right,long y,
+    struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,long left,long right,long y,
     const char *text,unsigned char bg)
 {
     unsigned short length,i;
-    if(g->ppu.visible_sprite0_split && (y*240L+120L)/(long)MYSMB_IO_TEXT_FRAME_ROWS(frame)<32L)return;
+    if(g->ppu.visible_sprite0_split && (y*240L+120L)/(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame)<32L)return;
     for(length=0U;text[length]!='\0';++length){}
     left+=(right-left-length)/2L;
     for(i=0U;i<length;++i)(void)cell(g,w,frame,left+i,y,(unsigned char)text[i],bg);
 }
 
 static int title_sign(const struct mysmb_game *g,
-    struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+    struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
 {
     long x,y,left,right,top,bottom;
     unsigned short part;
@@ -105,10 +105,10 @@ static int title_sign(const struct mysmb_game *g,
     attribute=g->ppu.name_table[0U][0x3c9U];palette=(unsigned char)(attribute&3U);
     bg=mysmb_text_color(frame,g->ppu.palette[palette*4U+2U]);
     for(part=0U;part<2U;++part) {
-    top=first((short)(32-(short)g->ppu.visible_scroll_y+part*240U),(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
-    bottom=first((short)(120-(short)g->ppu.visible_scroll_y+part*240U),(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
+    top=first((short)(32-(short)g->ppu.visible_scroll_y+part*240U),(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240L);
+    bottom=first((short)(120-(short)g->ppu.visible_scroll_y+part*240U),(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240L);
     for(y=top;y<bottom;++y)for(x=left;x<right;++x) {
-        if(g->ppu.visible_sprite0_split && (y*240L+120L)/(long)MYSMB_IO_TEXT_FRAME_ROWS(frame)<32L)continue;
+        if(g->ppu.visible_sprite0_split && (y*240L+120L)/(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame)<32L)continue;
         c=y==top || y+1L==bottom?'-':x==left || x+1L==right?'|':' ';
         if((y==top || y+1L==bottom) && (x==left || x+1L==right))c='+';
         (void)cell(g,w,frame,x,y,c,bg);
@@ -134,8 +134,8 @@ static int menu_token(const struct mysmb_game *g,unsigned short table,
 }
 
 unsigned short mysmb_text_caption_scene_draw(const struct mysmb_game *g,
-    struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+    struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
 {
     unsigned short row,col,table,offset,n,drawn,part,j;
     short line_rows[30];
@@ -160,13 +160,13 @@ unsigned short mysmb_text_caption_scene_draw(const struct mysmb_game *g,
         px=(short)(col*8U)-(short)g->ppu.visible_scroll_x;
         py=(short)(row*8U)-(short)g->ppu.visible_scroll_y;
         for(part=0U;part<2U;++part) {
-            x=first(px,80L,256L);y=first((short)(py+part*240U),(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
-            if(g->ppu.visible_sprite0_split && (y*240L+120L)/(long)MYSMB_IO_TEXT_FRAME_ROWS(frame)<32L)continue;
+            x=first(px,80L,256L);y=first((short)(py+part*240U),(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240L);
+            if(g->ppu.visible_sprite0_split && (y*240L+120L)/(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame)<32L)continue;
             if(menu_token(g,table,offset,tile)) {
                 drawn+=(unsigned short)cell(g,w,frame,x,y,'(',bg);
                 if(((x+1L)*256L+128L)/80L<(long)px+8L)
                     drawn+=(unsigned short)cell(g,w,frame,x+1L,y,')',bg);
-                if(((y+1L)*240L+120L)/(long)MYSMB_IO_TEXT_FRAME_ROWS(frame)<(long)py+part*240L+8L) {
+                if(((y+1L)*240L+120L)/(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame)<(long)py+part*240L+8L) {
                     drawn+=(unsigned short)cell(g,w,frame,x,y+1L,'/',bg);
                     if(((x+1L)*256L+128L)/80L<(long)px+8L)
                         drawn+=(unsigned short)cell(g,w,frame,x+1L,y+1L,'\\',bg);
@@ -191,7 +191,7 @@ unsigned short mysmb_text_caption_scene_draw(const struct mysmb_game *g,
     }
     if(g->ppu.visible_sprite0_split)for(row=0U;row<4U;++row)for(col=0U;col<32U;++col) {
         c=character(g->ppu.name_table[0U][row*32U+col]);if(c==0U)continue;
-        x=col*8UL*80UL/256UL;y=row*8UL*(unsigned long)MYSMB_IO_TEXT_FRAME_ROWS(frame)/240UL;
+        x=col*8UL*80UL/256UL;y=row*8UL*(unsigned long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame)/240UL;
         drawn+=(unsigned short)cell(g,w,frame,x,y,c,bg);
     }
     return drawn;

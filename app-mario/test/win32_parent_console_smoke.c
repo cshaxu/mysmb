@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "platform/win32/text_console.h"
 static struct mysmb_win32_text_console device;
-static struct mysmb_io_text_frame frame;
+static struct mygames_kvm_text_frame frame;
 static CHAR_INFO rendered[4000];
 /* Neutral fixture capture only;no ROM/game pixels enter this test. */
 static int capture_window(HWND window,const char *diagnostic)

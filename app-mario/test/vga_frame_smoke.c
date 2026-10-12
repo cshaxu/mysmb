@@ -1,21 +1,21 @@
 #include "io/planar_frame.h"
 #include <stdio.h>
 #include <string.h>
-static mysmb_io_u8 pixels[MYSMB_IO_VIDEO_PIXELS];
-static mysmb_io_u8 pages[4][MYSMB_VGA_PAGE_SIZE+2];
-static mysmb_io_u8 scratch[MYSMB_VGA_PAGE_SIZE+2];
+static mygames_kvm_u8 pixels[MYGAMES_KVM_VIDEO_PIXELS];
+static mygames_kvm_u8 pages[4][MYSMB_VGA_PAGE_SIZE+2];
+static mygames_kvm_u8 scratch[MYSMB_VGA_PAGE_SIZE+2];
 static unsigned char packed[5120+32],old[1280+32];
 static unsigned char encoded[5120+32];
 static unsigned short band_calls;
-static void row_encoder(const mysmb_io_u8 *source,mysmb_io_u8 *out,
-    mysmb_io_u16 stride)
+static void row_encoder(const mygames_kvm_u8 *source,mygames_kvm_u8 *out,
+    mygames_kvm_u16 stride)
 {
  unsigned short p,x;
  for(p=0U;p<4U;++p)for(x=0U;x<80U;++x)
-  out[p*stride+x]=(mysmb_io_u8)(source[(4U*x+p)*4U/5U]&63U);
+  out[p*stride+x]=(mygames_kvm_u8)(source[(4U*x+p)*4U/5U]&63U);
 }
-static void band_encoder(const mysmb_io_u8 *source,mysmb_io_u8 *out,
-    mysmb_io_u16 stride,mysmb_io_u16 rows,const mysmb_io_u16 *plan)
+static void band_encoder(const mygames_kvm_u8 *source,mygames_kvm_u8 *out,
+    mygames_kvm_u16 stride,mygames_kvm_u16 rows,const mygames_kvm_u16 *plan)
 {
  unsigned short row,p;
  ++band_calls;
@@ -26,17 +26,17 @@ static void band_encoder(const mysmb_io_u8 *source,mysmb_io_u8 *out,
   }else row_encoder(source+plan[row],out+row*80U,stride);
  }
 }
-static void native_encoder(const mysmb_io_u8 *source,mysmb_io_u8 *out,
-    mysmb_io_u16 stride,mysmb_io_u16 rows,const mysmb_io_u16 *plan)
+static void native_encoder(const mygames_kvm_u8 *source,mygames_kvm_u8 *out,
+    mygames_kvm_u16 stride,mygames_kvm_u16 rows,const mygames_kvm_u16 *plan)
 {
  unsigned short row,p,x;
  ++band_calls;
  for(row=0U;row<rows;++row)for(p=0U;p<4U;++p)for(x=0U;x<64U;++x)
-  out[p*stride+row*64U+x]=(mysmb_io_u8)(source[plan[row]+x*4U+p]&63U);
+  out[p*stride+row*64U+x]=(mygames_kvm_u8)(source[plan[row]+x*4U+p]&63U);
 }
 static int native_planes(void)
 {
- struct mysmb_io_video_band band;unsigned short first,rows,p,x,y,i;
+ struct mygames_kvm_video_band band;unsigned short first,rows,p,x,y,i;
  unsigned long count=0UL;
  for(rows=1U;rows<=16U;++rows)for(first=0U;first+rows<=240U;++first){
   band.first=first;band.rows=rows;band.pixels=pixels+first*256U;
@@ -62,7 +62,7 @@ static int native_planes(void)
 }
 static int four_planes(void)
 {
- struct mysmb_io_video_band band;unsigned short first,rows,p,x,y,sy,sx,i;
+ struct mygames_kvm_video_band band;unsigned short first,rows,p,x,y,sy,sx,i;
  unsigned long compared=0UL;
  for(i=0U;i<61440U;++i)pixels[i]=(unsigned char)((i*13U+i/256U)&255U);
  for(rows=1U;rows<=16U;++rows)for(first=0U;first+rows<=400U;++first){
@@ -110,10 +110,10 @@ static int four_planes(void)
 
 int main(void)
 {
-    struct mysmb_io_video_frame source;
+    struct mygames_kvm_video_frame source;
     struct mysmb_vga_frame frame;
     unsigned long i, offset, x, y, sx, sy,first,rows,batch;
-    for (i=0UL;i<MYSMB_IO_VIDEO_PIXELS;++i) pixels[i]=(mysmb_io_u8)((i*7UL+i/256UL)&255UL);
+    for (i=0UL;i<MYGAMES_KVM_VIDEO_PIXELS;++i) pixels[i]=(mygames_kvm_u8)((i*7UL+i/256UL)&255UL);
     for (i=0UL;i<4UL;++i) { pages[i][0]=0xa5U; pages[i][MYSMB_VGA_PAGE_SIZE+1]=0x5aU; }
     source.pixels=pixels;
     mysmb_vga_frame_initialize(&frame,pages[0]+1,pages[1]+1,pages[2]+1,pages[3]+1);
@@ -130,7 +130,7 @@ int main(void)
         for(i=0UL;i<4UL;++i)for(first=0UL;first<400UL;first+=batch) {
             rows=400UL-first;if(rows>batch)rows=batch;
             scratch[0]=0xa5U;scratch[rows*80UL+1UL]=0x5aU;
-            mysmb_vga_frame_build_rows(&source,(mysmb_io_u16)i,(mysmb_io_u16)first,(mysmb_io_u16)rows,scratch+1);
+            mysmb_vga_frame_build_rows(&source,(mygames_kvm_u16)i,(mygames_kvm_u16)first,(mygames_kvm_u16)rows,scratch+1);
             for(offset=0UL;offset<rows*80UL;++offset)
                 if(scratch[offset+1]!=pages[i][first*80UL+offset+1])return 3;
             if(scratch[0]!=0xa5U || scratch[rows*80UL+1]!=0x5aU)return 4;

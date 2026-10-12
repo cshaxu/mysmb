@@ -2,7 +2,7 @@
  * owner-ROM resources are linked. */
 #include "platform/dos16/devices.h"
 #include <dos.h>
-#include "io/text_glyph.h"
+#include "kvm/glyph.h"
 #include "text/elements.h"
 #include <stdio.h>
 
@@ -22,7 +22,7 @@ static int fail(int code)
 }
 int main(void)
 {
-    static struct mysmb_io_text_frame glyph_frame;
+    static struct mygames_kvm_text_frame glyph_frame;
     static const unsigned char glyph_ids[16]={
         0xb3U,0xc4U,0xdaU,0xbfU,0xc0U,0xd9U,0xc3U,0xb4U,
         0xc2U,0xc1U,0xc5U,0xdbU,0xdcU,0xdfU,0xddU,0xdeU};
@@ -55,12 +55,12 @@ int main(void)
     vector=_dos_getvect(9U);
     if(!mysmb_dos16_devices_open() || mode()!=0x13)return fail(2);
     if(!mysmb_dos16_devices_mode(1U) || mode()!=3 || rows()!=49)return fail(3);
-    for(i=0U;i<MYSMB_IO_TEXT_CELLS;++i) {
+    for(i=0U;i<MYGAMES_KVM_TEXT_CELLS;++i) {
         glyph_frame.cells[i].character=' ';
         glyph_frame.cells[i].foreground=15U;glyph_frame.cells[i].background=1U;
     }
     for(i=0U;i<16U;++i)
-        glyph_frame.colors[i]=mysmb_io_color_text_rgb((unsigned char)i);
+        glyph_frame.colors[i]=mygames_kvm_color_text_rgb((unsigned char)i);
     glyph_frame.colors[0]=0x001e74UL;
     glyph_frame.colors[1]=0xecb4b0UL;
     glyph_frame.colors[2]=0x4cd020UL;
@@ -68,8 +68,8 @@ int main(void)
     for(i=0U;i<16U;++i)glyph_frame.cells[i].character=glyph_ids[i];
     mysmb_dos16_devices_text(&glyph_frame);
     text=(volatile unsigned short far *)0xb8000000UL;
-    foreground=mysmb_io_color_text_nearest(glyph_frame.colors[15U]);
-    background=mysmb_io_color_text_nearest(glyph_frame.colors[1U]);
+    foreground=mygames_kvm_color_text_nearest(glyph_frame.colors[15U]);
+    background=mygames_kvm_color_text_nearest(glyph_frame.colors[1U]);
     for(i=0U;i<16U;++i)if(text[i]!=((unsigned short)glyph_ids[i]|(
         (unsigned short)foreground<<8U)|((unsigned short)background<<12U)))return fail(14);
     word.x=word.y=0;word.foreground=15U;word.background=15U;
@@ -80,8 +80,8 @@ int main(void)
             word.face_left=(unsigned char)facing;
             if(!mysmb_text_elements_build(&word,1U,(unsigned char)bg,&glyph_frame))return fail(15);
             mysmb_dos16_devices_text(&glyph_frame);
-            foreground=mysmb_io_color_text_nearest(glyph_frame.colors[15U]);
-            background=mysmb_io_color_text_nearest(glyph_frame.colors[(unsigned char)bg]);
+            foreground=mygames_kvm_color_text_nearest(glyph_frame.colors[15U]);
+            background=mygames_kvm_color_text_nearest(glyph_frame.colors[(unsigned char)bg]);
             for(j=0U;words[value][j]!='\0';++j)
                 if(text[j]!=((unsigned short)words[value][j]|(
                     (unsigned short)foreground<<8U)|((unsigned short)background<<12U)))return fail(16);

@@ -1,6 +1,6 @@
-#include "io/color.h"
+#include "kvm/color.h"
 
-unsigned long mysmb_io_color_rgb(mysmb_io_u8 index)
+unsigned long mygames_kvm_color_rgb(mygames_kvm_u8 index)
 {
     static const unsigned long colors[64] = {
         0x545454UL,0x001e74UL,0x081090UL,0x300088UL,0x440064UL,0x5c0030UL,0x540400UL,0x3c1800UL,0x202a00UL,0x083a00UL,0x004000UL,0x003c00UL,0x00323cUL,0,0,0,
@@ -18,11 +18,11 @@ static const unsigned long text_palette[16] = {
         0xff5555UL,0xff55ffUL,0xffff55UL,0xffffffUL
 };
 
-unsigned long mysmb_io_color_text_rgb(mysmb_io_u8 index)
+unsigned long mygames_kvm_color_text_rgb(mygames_kvm_u8 index)
 {
     return text_palette[index&15U];
 }
-mysmb_io_u8 mysmb_io_color_text_nearest(unsigned long rgb)
+mygames_kvm_u8 mygames_kvm_color_text_nearest(unsigned long rgb)
 {
     unsigned short i,best;
     long r,g,b;
@@ -35,14 +35,14 @@ mysmb_io_u8 mysmb_io_color_text_nearest(unsigned long rgb)
         d=(unsigned long)(r*r+g*g+b*b);
         if(d<minimum){minimum=d;best=i;}
     }
-    return (mysmb_io_u8)best;
+    return (mygames_kvm_u8)best;
 }
 
-mysmb_io_u8 mysmb_io_color_text16(mysmb_io_u8 index)
+mygames_kvm_u8 mygames_kvm_color_text16(mygames_kvm_u8 index)
 {
     /* Exact nearest entries for the immutable neutral palettes above.
      * The exhaustive IO contract checks aliases and first-entry ties. */
-    static const mysmb_io_u8 choices[64] = {
+    static const mygames_kvm_u8 choices[64] = {
         8U,1U,1U,1U,8U,4U,0U,0U,0U,0U,0U,0U,0U,0U,0U,0U,
         7U,1U,9U,9U,5U,5U,4U,6U,8U,2U,2U,2U,3U,0U,0U,0U,
         15U,9U,9U,13U,13U,13U,12U,6U,6U,10U,10U,10U,3U,8U,0U,0U,
@@ -51,18 +51,18 @@ mysmb_io_u8 mysmb_io_color_text16(mysmb_io_u8 index)
     return choices[index&63U];
 }
 
-void mysmb_io_color_text_attributes(const unsigned long *colors,
-    mysmb_io_u8 source_colors,mysmb_io_u8 attributes[16])
+void mygames_kvm_color_text_attributes(const unsigned long *colors,
+    mygames_kvm_u8 source_colors,mygames_kvm_u8 attributes[16])
 {
     unsigned short i;
     for(i=0U;i<16U;++i)
         attributes[i]=source_colors!=0U?
-            mysmb_io_color_text_nearest(colors[i]):(mysmb_io_u8)i;
+            mygames_kvm_color_text_nearest(colors[i]):(mygames_kvm_u8)i;
 }
 
-mysmb_io_u8 mysmb_io_color_text_contrast(mysmb_io_u8 background)
+mygames_kvm_u8 mygames_kvm_color_text_contrast(mygames_kvm_u8 background)
 {
-    static const mysmb_io_u8 choices[16] = {
+    static const mygames_kvm_u8 choices[16] = {
         15U,15U,15U,15U,15U,15U,15U,0U,15U,15U,0U,0U,0U,0U,0U,0U
     };
     return choices[background&15U];

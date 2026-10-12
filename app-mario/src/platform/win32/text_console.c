@@ -208,7 +208,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
     console->borrowed=console->mode_saved=console->focused=console->suspended=0U;console->geometry_pending=console->output_failures=0U;
 }
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
-    const struct mysmb_io_text_frame *frame)
+    const struct mygames_kvm_text_frame *frame)
 {
     int geometry;
     DWORD input_mode,output_mode;

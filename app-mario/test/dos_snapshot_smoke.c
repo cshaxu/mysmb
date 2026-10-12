@@ -14,24 +14,24 @@
 static struct mysmb_dos16_root root;
 static struct mysmb_dos16_root twin;
 static struct mysmb_text_scene_workspace workspace;
-static struct mysmb_io_text_frame text;
+static struct mygames_kvm_text_frame text;
 static struct mysmb_snapshot_store store;
 static struct mysmb_file_storage storage;
 static struct mysmb_io_snapshot expected,actual;
-struct host {unsigned int presents,resets,texts,modes,clocks;mysmb_io_u8 buttons,requests,fail;};
+struct host {unsigned int presents,resets,texts,modes,clocks;mygames_kvm_u8 buttons,requests,fail;};
 static void input(void *context,struct mysmb_io_input *out)
 {
     struct host *host=(struct host *)context;
     out->buttons=host->buttons;out->buttons2=0U;out->requests=host->requests;
     host->requests=0U;
 }
-static void present(void *context,const struct mysmb_io_video_frame *frame)
+static void present(void *context,const struct mygames_kvm_video_frame *frame)
 {if(frame->pixels)++((struct host *)context)->presents;}
 static void reset(void *context){++((struct host *)context)->resets;}
 static void resume_clock(void *context){++((struct host *)context)->clocks;}
-static int mode(void *context,mysmb_io_u8 value)
+static int mode(void *context,mygames_kvm_u8 value)
 {struct host *h=(struct host *)context;(void)value;++h->modes;return !h->fail;}
-static void text_present(void *context,const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+static void text_present(void *context,const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
 {if(frame)++((struct host *)context)->texts;}
 int main(int argc,char **argv)
 {
@@ -89,7 +89,7 @@ int main(int argc,char **argv)
     twin=root;twin.snapshot_store=0;memset(&twin_host,0,sizeof(twin_host));
     twin.hooks.context=&twin_host;
     for(i=0U;i<100U;++i) {
-        host.buttons=twin_host.buttons=(mysmb_io_u8)(i<40U?MYSMB_IO_BUTTON_RIGHT:0U);
+        host.buttons=twin_host.buttons=(mygames_kvm_u8)(i<40U?MYSMB_IO_BUTTON_RIGHT:0U);
         host.requests=(i==0U || i==30U || i==60U)?MYSMB_IO_REQUEST_TOGGLE:0U;
         mysmb_dos16_root_step(&root);mysmb_dos16_root_step(&twin);
         if(memcmp(&root.game,&twin.game,sizeof(root.game)) ||

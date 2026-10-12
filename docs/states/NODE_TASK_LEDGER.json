@@ -9637,7 +9637,7 @@
         },
         {
           "id": "M3 T43 S3",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/mygames-code-unification.md",
             "docs/states/CURRENT.md"
@@ -9647,7 +9647,21 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Admitted zero-node neutral KVM contract extraction; application-owned keyboard/mouse meaning remains outside lib/kvm."
+          "technicalReceipt": "Closed zero-node neutral KVM contract extraction: lib/kvm owns portable cells, palette/glyph algorithms, video and physical-event contracts; Mario app input mapping is the only command-binding owner."
+        },
+        {
+          "id": "M3 T43 S4",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "mygames-win32-host-extraction"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Admitted zero-node Win32 host extraction: the library will emit KVM physical events and presentation results only; Mario retains every command and game-state decision."
         }
       ]
     }
@@ -1010963,6 +1010977,18 @@
     },
     {
       "subtask": "M3 T43 S3",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+    },
+    {
+      "subtask": "M3 T43 S4",
       "kind": "implementation",
       "scope": [],
       "expectedMatches": [],

@@ -1,7 +1,7 @@
 #ifndef MYSMB_IO_AUDIO_H
 #define MYSMB_IO_AUDIO_H
 
-#include "io/types.h"
+#include "kvm/types.h"
 
 enum { MYSMB_IO_AUDIO_UNAVAILABLE=0, MYSMB_IO_AUDIO_AVAILABLE=1 };
 
@@ -9,8 +9,8 @@ enum { MYSMB_IO_AUDIO_UNAVAILABLE=0, MYSMB_IO_AUDIO_AVAILABLE=1 };
 #define MYSMB_IO_AUDIO_WRITE_CAPACITY 64U
 
 struct mysmb_io_audio_write {
-    mysmb_io_u8 index;
-    mysmb_io_u8 value;
+    mygames_kvm_u8 index;
+    mygames_kvm_u8 value;
 };
 
 /* Owned output snapshot for one logical tick. Writes retain source order,
@@ -19,11 +19,11 @@ struct mysmb_io_audio_write {
  * useful to synchronize a newly opened device, not a substitute for writes.
  * Physical synthesis state and device support remain adapter capabilities. */
 struct mysmb_io_audio_frame {
-    mysmb_io_u8 registers[MYSMB_IO_AUDIO_REGISTER_COUNT];
-    mysmb_io_u8 delta_counter_load;
-    mysmb_io_u8 channel_enable;
-    mysmb_io_u8 frame_counter;
-    mysmb_io_u8 write_count;
+    mygames_kvm_u8 registers[MYSMB_IO_AUDIO_REGISTER_COUNT];
+    mygames_kvm_u8 delta_counter_load;
+    mygames_kvm_u8 channel_enable;
+    mygames_kvm_u8 frame_counter;
+    mygames_kvm_u8 write_count;
     struct mysmb_io_audio_write writes[MYSMB_IO_AUDIO_WRITE_CAPACITY];
 };
 

@@ -8,7 +8,7 @@ from writable_tempdir import writable_temporary_directory
 
 
 def load_module():
-    path = Path(__file__).resolve().parents[1] / "tools" / "smb_listing_layout.py"
+    path = Path(__file__).resolve().parents[2] / "tools" / "smb_listing_layout.py"
     sys.path.insert(0, str(path.parent))
     spec = importlib.util.spec_from_file_location("smb_listing_layout", path)
     module = importlib.util.module_from_spec(spec)

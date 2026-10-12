@@ -14,14 +14,14 @@ int main(void)
     unsigned long buffered_bad=0UL,direct_bad=0UL,compared=0UL,direct_bytes=0UL;
     unsigned char far *storage,*video=(unsigned char far *)0xa0000000UL;
     unsigned char far *direct;
-    struct mysmb_io_video_band band;
-    struct mysmb_io_text_frame far *text;
+    struct mygames_kvm_video_band band;
+    struct mygames_kvm_text_frame far *text;
     union REGS r;
     unsigned char original,restored;
     FILE *f;
     r.h.ah=15U;int86(16,&r,&r);original=r.h.al;
     storage=(unsigned char far *)_fmalloc(8192U);
-    text=(struct mysmb_io_text_frame far *)_fmalloc(sizeof(*text));
+    text=(struct mygames_kvm_text_frame far *)_fmalloc(sizeof(*text));
     if(!storage || !text || !mysmb_dos16_devices_open())return 1;
     /* Exercise actual graphics/text/graphics mode ownership twice. */
     memset(text,0,sizeof(*text));text->rows=25U;

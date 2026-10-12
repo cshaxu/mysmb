@@ -19,7 +19,7 @@ static struct mysmb_snapshot_store *snapshot_store;
 static struct mysmb_file_storage snapshot_storage;
 struct text_storage {
     struct mysmb_text_scene_workspace workspace;
-    struct mysmb_io_text_frame frame;
+    struct mygames_kvm_text_frame frame;
 };
 /* Graphics borrows only the prefix of this root-owned allocation.  The
  * snapshot store begins after the exclusive text/row storage, so graphics
@@ -29,11 +29,11 @@ struct runtime_storage {
     struct mysmb_snapshot_store snapshot;
 };
 typedef char text_storage_fits_band[sizeof(struct text_storage)>=8192U &&
-    sizeof(struct text_storage)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
+    sizeof(struct text_storage)<=MYGAMES_KVM_VIDEO_PIXELS?1:-1];
 typedef char runtime_storage_fits_band[
-    sizeof(struct runtime_storage)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
-static struct runtime_storage MYSMB_IO_FAR *runtime_storage;
-static struct text_storage MYSMB_IO_FAR *text_storage;
+    sizeof(struct runtime_storage)<=MYGAMES_KVM_VIDEO_PIXELS?1:-1];
+static struct runtime_storage MYGAMES_KVM_FAR *runtime_storage;
+static struct text_storage MYGAMES_KVM_FAR *text_storage;
 
 static void read_input(void *context, struct mysmb_io_input *input)
 {
@@ -42,11 +42,11 @@ static void read_input(void *context, struct mysmb_io_input *input)
 }
 static int should_present(void *context)
 {(void)context;return mysmb_dos16_devices_should_present();}
-static int present_rows(void *context,const struct mysmb_io_palette_video_source *indexed)
+static int present_rows(void *context,const struct mygames_kvm_palette_video_source *indexed)
 {
-    mysmb_io_u16 first;
-    struct mysmb_io_video_band band;
-    const struct mysmb_io_video_source *source=&indexed->rows;
+    mygames_kvm_u16 first;
+    struct mygames_kvm_video_band band;
+    const struct mygames_kvm_video_source *source=&indexed->rows;
     (void)context;
     mysmb_dos16_devices_palette(indexed->master_colors);
     for(first=0U;first<MYSMB_PLANAR_NATIVE_HEIGHT;first+=MYSMB_VGA_BATCH_ROWS) {
@@ -56,20 +56,20 @@ static int present_rows(void *context,const struct mysmb_io_palette_video_source
     return 1;
 }
 static int present_retained(void *context,const struct mysmb_ppu_frame_view *view,
-    const mysmb_io_u8 MYSMB_IO_FAR *palette)
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *palette)
 {
     (void)context;mysmb_dos16_devices_palette(palette);
     return mysmb_dos16_devices_retained_frame(view);
 }
 static int present_ram(void *context,const struct mysmb_ppu_frame_view *view,
-    const mysmb_io_u8 MYSMB_IO_FAR *palette,mysmb_io_u8 MYSMB_IO_FAR *screen)
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *palette,mygames_kvm_u8 MYGAMES_KVM_FAR *screen)
 {
     (void)context;
-    if(!mysmb_dos16_ram_composite(view,screen,MYSMB_IO_VIDEO_PIXELS))return 0;
+    if(!mysmb_dos16_ram_composite(view,screen,MYGAMES_KVM_VIDEO_PIXELS))return 0;
     mysmb_dos16_devices_palette(palette);
     return mysmb_dos16_devices_present_screen(screen);
 }
-static mysmb_io_u8 submit_audio(void *context, const struct mysmb_io_audio_frame *frame)
+static mygames_kvm_u8 submit_audio(void *context, const struct mysmb_io_audio_frame *frame)
 {
     (void)context;
     return mysmb_dos16_devices_audio(frame);
@@ -80,9 +80,9 @@ static void reset_output(void *context)
 }
 static void resume_clock(void *context)
 {(void)context;mysmb_dos16_devices_resume_clock();}
-static int set_mode(void *context,mysmb_io_u8 text)
+static int set_mode(void *context,mygames_kvm_u8 text)
 {(void)context;return mysmb_dos16_devices_mode(text);}
-static void present_text(void *context,const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+static void present_text(void *context,const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
 {(void)context;mysmb_dos16_devices_text(frame);}
 /* Startup scratch expires before the game loop and its render/file calls.
  * The root/store copy hooks and file services;directory bytes are copied. */
@@ -103,7 +103,7 @@ static int initialize(void)
      * state has started before it succeeds. */
     if(!mysmb_dos16_devices_open())return 0;
     if (!mysmb_dos16_root_initialize_palette_rows(&root,&hooks,
-        (mysmb_io_u16)sizeof(struct runtime_storage),present_rows)) {
+        (mygames_kvm_u16)sizeof(struct runtime_storage),present_rows)) {
         mysmb_dos16_devices_close();return 0;
     }
     mysmb_dos16_root_bind_clock(&root,resume_clock);
@@ -111,7 +111,7 @@ static int initialize(void)
     /* Graphics borrows4096 bytes and submits them directly.  Text and the
      * single on-demand snapshot transaction occupy disjoint suffixes of the
      * same required root allocation; no scaled or planar scratch is needed. */
-    runtime_storage=(struct runtime_storage MYSMB_IO_FAR *)root.ppu_frame.pixels;
+    runtime_storage=(struct runtime_storage MYGAMES_KVM_FAR *)root.ppu_frame.pixels;
     text_storage=&runtime_storage->text;
     snapshot_store=&runtime_storage->snapshot;
 #ifdef MYSMB_LOCAL_TITLE

@@ -1,6 +1,6 @@
 #include "text/elements.h"
-#include "io/text_glyph.h"
-#include "io/color.h"
+#include "kvm/glyph.h"
+#include "kvm/color.h"
 #include "text/layout.h"
 #include <string.h>
 
@@ -8,8 +8,8 @@
  * tile lookup, pixel sampling or animation state machine is used here. */
 struct mysmb_text_art {
     const char *cells;
-    mysmb_io_u8 width;
-    mysmb_io_u8 height;
+    mygames_kvm_u8 width;
+    mygames_kvm_u8 height;
 };
 
 static const struct mysmb_text_art small[17] = {
@@ -144,7 +144,7 @@ static const struct mysmb_text_art scenery[15] = {
 };
 
 static const struct mysmb_text_art *art_for(
-    const struct mysmb_text_element MYSMB_IO_FAR *element)
+    const struct mysmb_text_element MYGAMES_KVM_FAR *element)
 {
     if(element->kind==MYSMB_TEXT_WINGED_KOOPA)return &winged[element->pose==1U?1U:0U];
     if(element->kind==MYSMB_TEXT_FIREBALL)return &fire_phases[element->pose];
@@ -180,12 +180,12 @@ static long project(short value, long scale, long extent)
     return product / extent;
 }
 
-static mysmb_io_u8 mirror(mysmb_io_u8 c)
+static mygames_kvm_u8 mirror(mygames_kvm_u8 c)
 {
-    return mysmb_io_text_glyph_mirror(c);
+    return mygames_kvm_text_glyph_mirror(c);
 }
 
-static int valid_element(const struct mysmb_text_element MYSMB_IO_FAR *e)
+static int valid_element(const struct mysmb_text_element MYGAMES_KVM_FAR *e)
 {
     return e != 0 && e->kind < MYSMB_TEXT_KIND_COUNT &&
         e->face_left <= 1U && e->foreground <= 15U && e->background <= 15U &&
@@ -208,18 +208,18 @@ static int valid_element(const struct mysmb_text_element MYSMB_IO_FAR *e)
 }
 
 int mysmb_text_element_draw(
-    const struct mysmb_text_element MYSMB_IO_FAR *element,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
-    mysmb_text_cell_filter filter, const void MYSMB_IO_FAR *context)
+    const struct mysmb_text_element MYGAMES_KVM_FAR *element,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    mysmb_text_cell_filter filter, const void MYGAMES_KVM_FAR *context)
 {
-    mysmb_io_u16 cell;
-    mysmb_io_u16 source;
-    mysmb_io_u8 row;
-    mysmb_io_u8 column;
-    mysmb_io_u8 glyph;
-    mysmb_io_u8 face_left;
-    mysmb_io_u8 row_left,row_right;
-    mysmb_io_u16 source_row;
+    mygames_kvm_u16 cell;
+    mygames_kvm_u16 source;
+    mygames_kvm_u8 row;
+    mygames_kvm_u8 column;
+    mygames_kvm_u8 glyph;
+    mygames_kvm_u8 face_left;
+    mygames_kvm_u8 row_left,row_right;
+    mygames_kvm_u16 source_row;
     long x;
     long y;
     long destination_x;
@@ -233,7 +233,7 @@ int mysmb_text_element_draw(
         x = project(element->x, 80L, 256L);
         y = project(element->y, 50L, 240L);
         for (row = 0U; row < art->height; ++row) {
-            source_row=(mysmb_io_u16)(((element->kind==MYSMB_TEXT_WINGED_KOOPA ||
+            source_row=(mygames_kvm_u16)(((element->kind==MYSMB_TEXT_WINGED_KOOPA ||
                 (element->kind>=MYSMB_TEXT_GOOMBA && element->kind<MYSMB_TEXT_JUMP_COIN &&
                  element->kind!=MYSMB_TEXT_EXPLOSION && element->kind!=MYSMB_TEXT_SPRING &&
                  element->kind!=MYSMB_TEXT_HAMMER)) &&
@@ -246,34 +246,34 @@ int mysmb_text_element_draw(
             for (column = 0U; column < art->width; ++column) {
                 destination_x = x + column;
                 if (destination_x < 0L || destination_x >= 80L) continue;
-                source = (mysmb_io_u16)(source_row +
+                source = (mygames_kvm_u16)(source_row +
                     (face_left != 0U ? art->width - 1U - column : column));
-                glyph = (mysmb_io_u8)art->cells[source];
+                glyph = (mygames_kvm_u8)art->cells[source];
                 if(glyph=='M' && (element->kind==MYSMB_TEXT_LUIGI_SMALL ||
                     element->kind==MYSMB_TEXT_LUIGI_LARGE))glyph='L';
                 if (source-source_row<row_left || source-source_row>=row_right)continue;
                 if (filter != 0 && !filter(context,
-                    (mysmb_io_u16)destination_x,
-                    (mysmb_io_u16)destination_y)) continue;
+                    (mygames_kvm_u16)destination_x,
+                    (mygames_kvm_u16)destination_y)) continue;
                 if (face_left != 0U) glyph = mirror(glyph);
                 if((element->kind==MYSMB_TEXT_WINGED_KOOPA ||
                     (element->kind>=MYSMB_TEXT_GOOMBA && element->kind<MYSMB_TEXT_JUMP_COIN &&
                      element->kind!=MYSMB_TEXT_EXPLOSION && element->kind!=MYSMB_TEXT_SPRING &&
                      element->kind!=MYSMB_TEXT_HAMMER)) && element->pose==MYSMB_TEXT_INVERTED) {
-                    glyph=mysmb_io_text_glyph_flip(glyph);
+                    glyph=mygames_kvm_text_glyph_flip(glyph);
                 }
-                cell = (mysmb_io_u16)(destination_y * 80L + destination_x);
+                cell = (mygames_kvm_u16)(destination_y * 80L + destination_x);
                 /* Half/full blocks carry authored silhouette color over the
                  * existing scene. Information overlays keep that background. */
                 if(element->kind==MYSMB_TEXT_SCORE || element->kind==MYSMB_TEXT_FLAG_SCORE) {
                     frame->cells[cell].character=glyph;
                     frame->cells[cell].foreground=element->background!=frame->cells[cell].background?
-                        element->background:mysmb_io_color_text_contrast(frame->cells[cell].background);
+                        element->background:mygames_kvm_color_text_contrast(frame->cells[cell].background);
                     continue;
                 }
-                if(glyph==MYSMB_IO_GLYPH_LOWER || glyph==MYSMB_IO_GLYPH_UPPER ||
-                    glyph==MYSMB_IO_GLYPH_LEFT || glyph==MYSMB_IO_GLYPH_RIGHT ||
-                    glyph==MYSMB_IO_GLYPH_FULL) {
+                if(glyph==MYGAMES_KVM_GLYPH_LOWER || glyph==MYGAMES_KVM_GLYPH_UPPER ||
+                    glyph==MYGAMES_KVM_GLYPH_LEFT || glyph==MYGAMES_KVM_GLYPH_RIGHT ||
+                    glyph==MYGAMES_KVM_GLYPH_FULL) {
                     frame->cells[cell].character=glyph;
                     frame->cells[cell].foreground=element->background!=frame->cells[cell].background?
                         element->background:element->foreground;
@@ -288,11 +288,11 @@ int mysmb_text_element_draw(
 }
 
 int mysmb_text_elements_build(
-    const struct mysmb_text_element MYSMB_IO_FAR *elements,
-    mysmb_io_u16 count, mysmb_io_u8 sky,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+    const struct mysmb_text_element MYGAMES_KVM_FAR *elements,
+    mygames_kvm_u16 count, mygames_kvm_u8 sky,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
 {
-    mysmb_io_u16 i;
+    mygames_kvm_u16 i;
     if (frame == 0 || sky > 15U || count > MYSMB_TEXT_ELEMENT_CAPACITY ||
         (count != 0U && elements == 0)) return 0;
     for (i=0U;i<count;++i) if (!valid_element(&elements[i])) return 0;

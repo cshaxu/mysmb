@@ -2,28 +2,28 @@
 #include <stdio.h>
 #include <string.h>
 
-static mysmb_io_u8 background[MYSMB_PPU_BACKGROUND_BYTES];
-static mysmb_io_u8 second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
-static mysmb_io_u8 chr[8192];
+static mygames_kvm_u8 background[MYSMB_PPU_BACKGROUND_BYTES];
+static mygames_kvm_u8 second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
+static mygames_kvm_u8 chr[8192];
 static void state(struct mysmb_ppu_state *s)
 {
-    mysmb_io_u16 i;
+    mygames_kvm_u16 i;
     memset(s,0,sizeof(*s));
     s->chr_data=chr;s->chr_data_size=sizeof(chr);s->visible_ppu_mask=10U;
     for(i=0U;i<2048U;++i)
-        s->name_table[i/1024U][i&1023U]=(mysmb_io_u8)(i*7U);
-    for(i=0U;i<8192U;++i)chr[i]=(mysmb_io_u8)(i*13U+i/7U);
+        s->name_table[i/1024U][i&1023U]=(mygames_kvm_u8)(i*7U);
+    for(i=0U;i<8192U;++i)chr[i]=(mygames_kvm_u8)(i*13U+i/7U);
 }
 static int check_tile(const struct mysmb_ppu_frame_view *view,
-    struct mysmb_ppu_state *state,mysmb_io_u8 table,mysmb_io_u8 row,
-    mysmb_io_u8 column)
+    struct mysmb_ppu_state *state,mygames_kvm_u8 table,mygames_kvm_u8 row,
+    mygames_kvm_u8 column)
 {
-    mysmb_io_u8 tile[64],rows[2048];
-    mysmb_io_u16 y,x;
+    mygames_kvm_u8 tile[64],rows[2048];
+    mygames_kvm_u16 y,x;
     if(!mysmb_ppu_frame_background_tile_slots(view,table,row,column,tile,sizeof(tile)))return 0;
     state->visible_ppu_name_table=table;
     state->visible_scroll_x=0U;state->visible_scroll_y=0U;
-    if(!mysmb_ppu_frame_slot_rows(view,rows,sizeof(rows),(mysmb_io_u16)row*8U,8U))return 0;
+    if(!mysmb_ppu_frame_slot_rows(view,rows,sizeof(rows),(mygames_kvm_u16)row*8U,8U))return 0;
     for(y=0U;y<8U;++y)for(x=0U;x<8U;++x)
         if(tile[y*8U+x]!=rows[y*256U+column*8U+x]) {
             printf("mismatch t%u r%u c%u y%u x%u %u/%u\n",(unsigned)table,
@@ -33,12 +33,12 @@ static int check_tile(const struct mysmb_ppu_frame_view *view,
         }
     return 1;
 }
-static int check_rect(const struct mysmb_ppu_frame_view *view,mysmb_io_u8 x,
-    mysmb_io_u8 y,mysmb_io_u8 width,mysmb_io_u8 height)
+static int check_rect(const struct mysmb_ppu_frame_view *view,mygames_kvm_u8 x,
+    mygames_kvm_u8 y,mygames_kvm_u8 width,mygames_kvm_u8 height)
 {
-    mysmb_io_u8 rows[2048],rect[64];
-    mysmb_io_u16 py,px;
-    if((mysmb_io_u16)width*height>sizeof(rect) ||
+    mygames_kvm_u8 rows[2048],rect[64];
+    mygames_kvm_u16 py,px;
+    if((mygames_kvm_u16)width*height>sizeof(rect) ||
         !mysmb_ppu_frame_background_rows(view,rows,sizeof(rows),y,height) ||
         !mysmb_ppu_frame_background_rect(view,rect,sizeof(rect),x,y,width,height))return 0;
     for(py=0U;py<height;++py)for(px=0U;px<width;++px)
@@ -52,7 +52,7 @@ int main(void)
     struct mysmb_ppu_frame_workspace w;
     struct mysmb_ppu_frame_view v;
     struct mysmb_ppu_scene_viewport viewport;
-    mysmb_io_u8 tile[64],guard[64],scene_rows[8192],expected_rows[8192];
+    mygames_kvm_u8 tile[64],guard[64],scene_rows[8192],expected_rows[8192];
     state(&s);mysmb_ppu_frame_workspace_bind(&w,0);
     mysmb_ppu_frame_background_byte_bind(&w,background,sizeof(background),second,sizeof(second));
     mysmb_ppu_frame_begin(&s,&w,&v);

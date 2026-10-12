@@ -5,7 +5,7 @@
 #include "platform/dos16/dos_audio.h"
 #include "smb1_local_rom.h"
 
-static unsigned int average_deviation(const mysmb_io_u8 *samples,unsigned short count)
+static unsigned int average_deviation(const mygames_kvm_u8 *samples,unsigned short count)
 {
     unsigned short index;
     unsigned long total=0UL;
@@ -19,7 +19,7 @@ int main(void)
     struct mysmb_game game;
     struct mysmb_io_audio_frame audio;
     struct mysmb_dos16_audio_renderer renderer;
-    mysmb_io_u8 samples[184];
+    mygames_kvm_u8 samples[184];
     unsigned short count;
     unsigned int frame,level;
 

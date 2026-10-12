@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_TEXT_ELEMENTS_H
 #define MYSMB_GAME_TEXT_ELEMENTS_H
 
-#include "io/video.h"
+#include "kvm/video.h"
 
 /* Presentation identities, not ROM object IDs or gameplay state. */
 #define MYSMB_TEXT_PLAYER_SMALL 0U
@@ -77,29 +77,29 @@
 struct mysmb_text_element {
     short x;
     short y;
-    mysmb_io_u8 kind;
-    mysmb_io_u8 pose;
-    mysmb_io_u8 face_left;
-    mysmb_io_u8 foreground;
-    mysmb_io_u8 background;
+    mygames_kvm_u8 kind;
+    mygames_kvm_u8 pose;
+    mygames_kvm_u8 face_left;
+    mygames_kvm_u8 foreground;
+    mygames_kvm_u8 background;
 };
 
 /* Optional read-only cell visibility predicate supplied by composition.
  * It may reject cells, but must not mutate the frame, source or game. */
-typedef int (*mysmb_text_cell_filter)(const void MYSMB_IO_FAR *context,
-    mysmb_io_u16 column, mysmb_io_u16 row);
+typedef int (*mysmb_text_cell_filter)(const void MYGAMES_KVM_FAR *context,
+    mygames_kvm_u16 column, mygames_kvm_u16 row);
 int mysmb_text_element_draw(
-    const struct mysmb_text_element MYSMB_IO_FAR *element,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
-    mysmb_text_cell_filter filter, const void MYSMB_IO_FAR *context);
+    const struct mysmb_text_element MYGAMES_KVM_FAR *element,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    mysmb_text_cell_filter filter, const void MYGAMES_KVM_FAR *context);
 
 /* Caller supplies visible elements in back-to-front order. Coordinates are
  * source pixels. This function never reads RAM/OAM or selects game actions.
  * Invalid input leaves output untouched. All buffers may live outside DGROUP.
  * Input and output storage must not overlap. */
 int mysmb_text_elements_build(
-    const struct mysmb_text_element MYSMB_IO_FAR *elements,
-    mysmb_io_u16 count, mysmb_io_u8 sky,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame);
+    const struct mysmb_text_element MYGAMES_KVM_FAR *elements,
+    mygames_kvm_u16 count, mygames_kvm_u8 sky,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame);
 
 #endif

@@ -8,22 +8,22 @@ static unsigned short audio_segment;
 static unsigned long audio_physical;
 static unsigned char far *audio_memory;
 static struct mysmb_dos16_audio_renderer renderer;
-static mysmb_io_u8 sample_scratch[184];
+static mygames_kvm_u8 sample_scratch[184];
 static volatile unsigned char block_free[MYSMB_DOS16_AUDIO_BLOCK_COUNT];
 static volatile unsigned char block_ready[MYSMB_DOS16_AUDIO_BLOCK_COUNT];
 static volatile unsigned char active_block,playing,vector_ready,pic_ready;
-static mysmb_io_u8 old_master_mask,old_slave_mask;
+static mygames_kvm_u8 old_master_mask,old_slave_mask;
 static unsigned char fill_block=0xffU;
 static unsigned short fill_count;
 static void (interrupt far *old_audio_vector)();
-static int dsp_write(mysmb_io_u8 value);
-static void dma_mask(mysmb_io_u8 mask);
+static int dsp_write(mygames_kvm_u8 value);
+static void dma_mask(mygames_kvm_u8 mask);
 static void stop_playback(void);
 
 static void pic_enable_irq(void)
 {
-    old_master_mask=(mysmb_io_u8)inp(0x21U);
-    old_slave_mask=(mysmb_io_u8)inp(0xa1U);
+    old_master_mask=(mygames_kvm_u8)inp(0x21U);
+    old_slave_mask=(mygames_kvm_u8)inp(0xa1U);
     if(audio.config.irq<8U)
         outp(0x21U,(unsigned int)(old_master_mask&~(1U<<audio.config.irq)));
     else {
@@ -173,7 +173,7 @@ void mysmb_dos16_audio_dos_after_load(void)
 int mysmb_dos16_audio_dos_prepared(void)
 { return audio.ready!=0U; }
 
-static int dsp_write(mysmb_io_u8 value)
+static int dsp_write(mygames_kvm_u8 value)
 {
     unsigned short attempt;
     for(attempt=0U;attempt<4096U;++attempt) {
@@ -184,7 +184,7 @@ static int dsp_write(mysmb_io_u8 value)
     return 0;
 }
 
-static void dma_mask(mysmb_io_u8 mask)
+static void dma_mask(mygames_kvm_u8 mask)
 { outp(0x0aU,(unsigned int)(mask|(audio.config.dma_channel&3U))); }
 
 static void stop_playback(void)
@@ -196,14 +196,14 @@ static void stop_playback(void)
     playing=0U;
 }
 
-static void dma_program(mysmb_io_u8 block)
+static void dma_program(mygames_kvm_u8 block)
 {
     static const unsigned short address_port[4]={0x00U,0x02U,0x04U,0x06U};
     static const unsigned short count_port[4]={0x01U,0x03U,0x05U,0x07U};
     static const unsigned short page_port[4]={0x87U,0x83U,0x81U,0x82U};
     unsigned long address=audio_physical+(unsigned long)block*MYSMB_DOS16_AUDIO_BLOCK_BYTES;
     unsigned short count=MYSMB_DOS16_AUDIO_BLOCK_BYTES-1U;
-    mysmb_io_u8 channel=audio.config.dma_channel;
+    mygames_kvm_u8 channel=audio.config.dma_channel;
     dma_mask(4U);outp(0x0cU,0U);
     outp(address_port[channel],(unsigned int)(address&0xffUL));
     outp(address_port[channel],(unsigned int)((address>>8U)&0xffUL));
@@ -213,14 +213,14 @@ static void dma_program(mysmb_io_u8 block)
     outp(0x0bU,(unsigned int)(0x44U|channel));dma_mask(0U);
 }
 
-static int start_block(mysmb_io_u8 block)
+static int start_block(mygames_kvm_u8 block)
 {
-    mysmb_io_u8 time_constant=(mysmb_io_u8)(256U-1000000UL/MYSMB_DOS16_AUDIO_SAMPLE_RATE);
+    mygames_kvm_u8 time_constant=(mygames_kvm_u8)(256U-1000000UL/MYSMB_DOS16_AUDIO_SAMPLE_RATE);
     if(!dsp_write(0xd1U) || !dsp_write(0x40U) || !dsp_write(time_constant))return 0;
     /* Program DMA before issuing the DSP transfer command: the DSP must
      * never consume the channel while its address/count registers are stale. */
     dma_program(block);
-    if(!dsp_write(0x14U) || !dsp_write((mysmb_io_u8)(MYSMB_DOS16_AUDIO_BLOCK_BYTES-1U)) ||
+    if(!dsp_write(0x14U) || !dsp_write((mygames_kvm_u8)(MYSMB_DOS16_AUDIO_BLOCK_BYTES-1U)) ||
         !dsp_write(7U)) {
         dma_mask(4U);return 0;
     }
@@ -229,10 +229,10 @@ static int start_block(mysmb_io_u8 block)
 
 static void interrupt far audio_interrupt(void)
 {
-    mysmb_io_u8 done,next;
+    mygames_kvm_u8 done,next;
     (void)inp((unsigned int)(audio.config.base_port+14U));
     done=active_block;playing=0U;block_free[done]=1U;
-    next=(mysmb_io_u8)(done^1U);
+    next=(mygames_kvm_u8)(done^1U);
     if(block_ready[next]) {
         block_ready[next]=0U;block_free[next]=0U;
         if(!start_block(next))block_free[next]=1U;
@@ -243,7 +243,7 @@ static void interrupt far audio_interrupt(void)
 
 static int ensure_playing(void)
 {
-    mysmb_io_u8 block;
+    mygames_kvm_u8 block;
     if(playing)return 1;
     for(block=0U;block<MYSMB_DOS16_AUDIO_BLOCK_COUNT;++block)if(block_ready[block]) {
         if(!vector_ready) {
@@ -259,9 +259,9 @@ static int ensure_playing(void)
     return 0;
 }
 
-mysmb_io_u8 mysmb_dos16_audio_dos_submit(const struct mysmb_io_audio_frame *frame)
+mygames_kvm_u8 mysmb_dos16_audio_dos_submit(const struct mysmb_io_audio_frame *frame)
 {
-    unsigned short count,offset,copy;mysmb_io_u8 block;
+    unsigned short count,offset,copy;mygames_kvm_u8 block;
     if(!audio.ready || !audio_memory || !frame)return MYSMB_IO_AUDIO_UNAVAILABLE;
     count=mysmb_dos16_audio_renderer_render(&renderer,frame,sample_scratch,sizeof(sample_scratch));
     if(!count)return MYSMB_IO_AUDIO_UNAVAILABLE;

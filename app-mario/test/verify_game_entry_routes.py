@@ -32,7 +32,7 @@ def main():
     parser.add_argument('directory', type=Path)
     parser.add_argument('--rom', type=Path, required=True)
     args = parser.parse_args()
-    root = Path(__file__).resolve().parents[1]
+    root = Path(__file__).resolve().parents[2]
     directory = args.directory.resolve()
     assert directory.is_relative_to((root/'build').resolve())
     rom = args.rom.read_bytes()

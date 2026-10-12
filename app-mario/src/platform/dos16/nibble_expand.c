@@ -1,7 +1,7 @@
 #include "platform/dos16/nibble_expand.h"
 #include "io/palette_expand.h"
-int mysmb_dos16_nibble_expand(const mysmb_io_u8 far *packed,
-    mysmb_io_u8 far *pixels,mysmb_io_u16 count)
+int mysmb_dos16_nibble_expand(const mygames_kvm_u8 far *packed,
+    mygames_kvm_u8 far *pixels,mygames_kvm_u16 count)
 {
     if(!packed || !pixels || count>256U || (count&1U))return 0;
     _asm {

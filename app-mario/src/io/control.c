@@ -4,8 +4,8 @@ void mysmb_io_control_initialize(struct mysmb_io_control *control)
     control->exit_requested=0U;
     control->toggle_held=0U;
 }
-mysmb_io_u8 mysmb_io_control_toggle(struct mysmb_io_control *control,
-    mysmb_io_u8 pressed,mysmb_io_u8 focused)
+mygames_kvm_u8 mysmb_io_control_toggle(struct mysmb_io_control *control,
+    mygames_kvm_u8 pressed,mygames_kvm_u8 focused)
 {
     if(pressed==0U){control->toggle_held=0U;return 0U;}
     if(focused==0U || control->toggle_held!=0U)return 0U;

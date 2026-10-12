@@ -49,7 +49,7 @@ for path in (root / "src" / "io").rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
         stdio_service = path.parent == root / "src" / "io" / "file" and include == "stdio.h"
-        if not include.startswith("io/") and include != "string.h" and not stdio_service:
+        if not include.startswith(("io/", "kvm/")) and include != "string.h" and not stdio_service:
             print(f"{path.relative_to(root)}: IO contract imports {include}")
             sys.exit(1)
     for token in ("struct mysmb_game", "HWND", "int86(", "waveOut", "->ram[",
@@ -60,7 +60,7 @@ for path in (root / "src" / "io").rglob("*.[ch]"):
 for path in (root / "src" / "ppu").rglob("*.[ch]"):
     text=path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)',text,re.M):
-        if not include.startswith(("ppu/", "io/")) and include != "string.h":
+        if not include.startswith(("ppu/", "io/", "kvm/")) and include != "string.h":
             print(f"{path.relative_to(root)}: PPU imports {include}")
             sys.exit(1)
     for token in ("struct mysmb_game", "->ram[", "HWND", "int86(", "waveOut"):
@@ -74,4 +74,16 @@ for path in (root / "src" / "core").rglob("*.[ch]"):
                 "app/", "validate/")) or include == "ppu/frame.h":
             print(f"{path.relative_to(root)}: core imports downstream {include}")
             sys.exit(1)
-print("platform, IO, PPU and core dependency purity: passed")
+repository = root.parents[1]
+kvm = repository / "lib" / "kvm"
+for path in kvm.rglob("*.[ch]"):
+    text = path.read_text(encoding="utf-8")
+    for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
+        if not include.startswith("kvm/"):
+            print(f"{path.relative_to(repository)}: KVM imports {include}")
+            sys.exit(1)
+    for token in ("MYSMB_", "mysmb_", "HWND", "int86(", "waveOut", "struct mysmb_game"):
+        if token in text:
+            print(f"{path.relative_to(repository)}: KVM leaks {token}")
+            sys.exit(1)
+print("platform, IO, PPU, core and KVM dependency purity: passed")

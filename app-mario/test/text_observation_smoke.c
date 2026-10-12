@@ -8,7 +8,7 @@
 #include "text/background_scene.h"
 #include "text/observer_snapshot.h"
 #include "app/game_snapshot.h"
-#include "io/color.h"
+#include "kvm/color.h"
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
@@ -22,7 +22,7 @@ static struct mysmb_text_actor_workspace actor_workspace;
 static struct mysmb_game observed,plain,before,restored;
 static struct mysmb_io_snapshot first,second;
 static struct mysmb_ppu_frame pixels1,pixels2;
-static struct mysmb_io_text_frame text,loaded_text;
+static struct mygames_kvm_text_frame text,loaded_text;
 static unsigned char snapshot_wire[MYSMB_SNAPSHOT_FILE_BYTES];
 static struct mysmb_text_background_workspace background;
 static struct mysmb_text_background_receipt caption_receipt;
@@ -389,7 +389,7 @@ static int palette_animation_case(void)
         CHECK(observed.ppu.palette[13U]==observed.area_prg[0x09c3U+i%6U]);
         before=observed;
         CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
-        expected=mysmb_io_color_text16(observed.ppu.palette[13U]);
+        expected=mygames_kvm_color_text16(observed.ppu.palette[13U]);
         colors|=(unsigned short)(1U<<expected);found_question=found_coin=0U;
         for(j=0U;j<4000U;++j)if(text.cells[j].character=='?' || text.cells[j].character=='$') {
             CHECK(text.cells[j].background==expected);
@@ -433,7 +433,7 @@ static int flag_words_case(void)
             x=observed.ppu.visible_oam[47U];y=(unsigned short)(observed.ppu.visible_oam[44U]+1U);
             first=(unsigned short)(((unsigned long)x*80UL+127UL)/256UL);
             row=(unsigned short)(((unsigned long)y*50UL+119UL)/240UL);
-            CHECK(mysmb_text_elements_build(0,0U,(mysmb_io_u8)bg,&text));
+            CHECK(mysmb_text_elements_build(0,0U,(mygames_kvm_u8)bg,&text));
             CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,0,&text,&receipt));
             CHECK(receipt.drawn==1U && receipt.unsupported==0U);
             for(j=0U;labels[score][j]!='\0';++j) {
@@ -445,7 +445,7 @@ static int flag_words_case(void)
             CHECK(mysmb_text_observer_snapshot_capture(&observed,snapshot_wire));
             restored=observed;mysmb_text_observer_invalidate(&restored);
             mysmb_text_observer_snapshot_restore(&restored,snapshot_wire);
-            CHECK(mysmb_text_elements_build(0,0U,(mysmb_io_u8)bg,&loaded_text));
+            CHECK(mysmb_text_elements_build(0,0U,(mygames_kvm_u8)bg,&loaded_text));
             CHECK(mysmb_text_actor_scene_draw(&restored,&actor_workspace,0,&loaded_text,&receipt));
             CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);++cases;
         }

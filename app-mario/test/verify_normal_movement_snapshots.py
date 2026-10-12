@@ -13,7 +13,7 @@ def main():
     parser.add_argument('prior', type=Path)
     parser.add_argument('rom', type=Path)
     args = parser.parse_args()
-    root = Path(__file__).resolve().parents[1] / 'build'
+    root = Path(__file__).resolve().parents[2] / 'build'
     directory, prior = args.directory.resolve(), args.prior.resolve()
     assert directory.is_relative_to(root.resolve())
     assert prior.is_relative_to(root.resolve())

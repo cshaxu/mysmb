@@ -14,7 +14,7 @@ def main():
     parser.add_argument('movement_prior', type=Path)
     parser.add_argument('rom', type=Path)
     args = parser.parse_args()
-    root = (Path(__file__).resolve().parents[1] / 'build').resolve()
+    root = (Path(__file__).resolve().parents[2] / 'build').resolve()
     directory = args.directory.resolve()
     background = args.background_prior.resolve()
     movement = args.movement_prior.resolve()

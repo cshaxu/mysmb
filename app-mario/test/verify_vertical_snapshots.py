@@ -10,7 +10,7 @@ p.add_argument('directory', type=Path)
 p.add_argument('rom', type=Path)
 a = p.parse_args()
 b = a.directory.resolve()
-assert b.is_relative_to((Path(__file__).resolve().parents[1] / 'build').resolve())
+assert b.is_relative_to((Path(__file__).resolve().parents[2] / 'build').resolve())
 rom = a.rom.read_bytes()
 assert rom[:4] == b'NES\x1a' and rom[4] == 2 and not rom[6] & 4
 nodes = dict(zip(

@@ -1,12 +1,12 @@
-#include "io/text_glyph.h"
+#include "kvm/glyph.h"
 #include "text/elements.h"
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
 
-static struct mysmb_io_text_frame frame;
-static struct mysmb_io_text_frame before;
-static struct mysmb_io_text_frame monochrome;
+static struct mygames_kvm_text_frame frame;
+static struct mygames_kvm_text_frame before;
+static struct mygames_kvm_text_frame monochrome;
 static struct mysmb_text_element elements[8];
 
 #define CHECK(condition) do { if (!(condition)) { \
@@ -54,18 +54,18 @@ int main(int argc, char **argv)
 
     /* Exhaustive byte domain and horizontal reflection contract. */
     for(i=0U;i<256U;++i) {
-        column=mysmb_io_text_glyph_unicode((mysmb_io_u8)i);
+        column=mygames_kvm_text_glyph_unicode((mygames_kvm_u8)i);
         if(i>=32U && i<=126U)CHECK(column==i);
         else if(column!=0U)CHECK(column>=0x2500U && column<=0x2590U);
-        CHECK(mysmb_io_text_glyph_mirror(mysmb_io_text_glyph_mirror((mysmb_io_u8)i))==i);
-        CHECK(mysmb_io_text_glyph_flip(mysmb_io_text_glyph_flip((mysmb_io_u8)i))==i);
+        CHECK(mygames_kvm_text_glyph_mirror(mygames_kvm_text_glyph_mirror((mygames_kvm_u8)i))==i);
+        CHECK(mygames_kvm_text_glyph_flip(mygames_kvm_text_glyph_flip((mygames_kvm_u8)i))==i);
     }
-    CHECK(mysmb_io_text_glyph_unicode(0U)==0U);
-    CHECK(mysmb_io_text_glyph_unicode(0x80U)==0U);
-    CHECK(mysmb_io_text_glyph_unicode(MYSMB_IO_GLYPH_TOP_LEFT)==0x250cU);
-    CHECK(mysmb_io_text_glyph_unicode(MYSMB_IO_GLYPH_UPPER)==0x2580U);
-    CHECK(mysmb_io_text_glyph_unicode(MYSMB_IO_GLYPH_LOWER)==0x2584U);
-    CHECK(mysmb_io_text_glyph_mirror(MYSMB_IO_GLYPH_TOP_LEFT)==MYSMB_IO_GLYPH_TOP_RIGHT);
+    CHECK(mygames_kvm_text_glyph_unicode(0U)==0U);
+    CHECK(mygames_kvm_text_glyph_unicode(0x80U)==0U);
+    CHECK(mygames_kvm_text_glyph_unicode(MYGAMES_KVM_GLYPH_TOP_LEFT)==0x250cU);
+    CHECK(mygames_kvm_text_glyph_unicode(MYGAMES_KVM_GLYPH_UPPER)==0x2580U);
+    CHECK(mygames_kvm_text_glyph_unicode(MYGAMES_KVM_GLYPH_LOWER)==0x2584U);
+    CHECK(mygames_kvm_text_glyph_mirror(MYGAMES_KVM_GLYPH_TOP_LEFT)==MYGAMES_KVM_GLYPH_TOP_RIGHT);
     memset(elements, 0, sizeof(elements));
     elements[0].kind = MYSMB_TEXT_PLAYER_SMALL;
     elements[0].foreground = 14U;
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
     original = elements[0];
     CHECK(mysmb_text_elements_build(elements, 1U, 9U, &frame));
     CHECK(memcmp(&original, elements, sizeof(original)) == 0);
-    CHECK(frame.cells[1].character == MYSMB_IO_GLYPH_LOWER);
+    CHECK(frame.cells[1].character == MYGAMES_KVM_GLYPH_LOWER);
     CHECK(frame.cells[1].background == 9U && frame.cells[1].foreground==4U);
     CHECK(frame.cells[0].background == 9U);
     CHECK(frame.cells[83].character == '>');
@@ -99,7 +99,7 @@ int main(int argc, char **argv)
     elements[1] = elements[0];
     elements[1].kind = MYSMB_TEXT_BRICK;
     CHECK(mysmb_text_elements_build(elements, 2U, 9U, &frame));
-    CHECK(frame.cells[0].character == MYSMB_IO_GLYPH_TOP_LEFT);
+    CHECK(frame.cells[0].character == MYGAMES_KVM_GLYPH_TOP_LEFT);
     before = frame;
     elements[1].kind = MYSMB_TEXT_KIND_COUNT;
     CHECK(!mysmb_text_elements_build(elements, 2U, 9U, &frame));
@@ -128,8 +128,8 @@ int main(int argc, char **argv)
      * final span,and preserves each supported sky foreground/background. */
     for(row=0U;row<16U;++row) {
         memset(&frame,0xa5,sizeof(frame));
-        CHECK(mysmb_text_elements_build(0,0U,(mysmb_io_u8)row,&frame));
-        for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
+        CHECK(mysmb_text_elements_build(0,0U,(mygames_kvm_u8)row,&frame));
+        for(column=0U;column<MYGAMES_KVM_TEXT_CELLS;++column) {
             CHECK(frame.cells[column].character==' ');
             CHECK(frame.cells[column].foreground==row);
             CHECK(frame.cells[column].background==row);
@@ -137,7 +137,7 @@ int main(int argc, char **argv)
     }
     /* Every authored pose/orientation is visible and color-independent. */
     for(i=0U;i<MYSMB_TEXT_KIND_COUNT;++i) {
-        elements[0].kind=(mysmb_io_u8)i;elements[0].x=64;elements[0].y=64;
+        elements[0].kind=(mygames_kvm_u8)i;elements[0].x=64;elements[0].y=64;
         for(row=0U;row<(i==MYSMB_TEXT_LUIGI_SMALL || i==MYSMB_TEXT_LUIGI_LARGE?
             MYSMB_TEXT_PLAYER_POSES:i==MYSMB_TEXT_WINGED_KOOPA?3U:
             i==MYSMB_TEXT_FIREBALL?2U:i==MYSMB_TEXT_EXPLOSION || i==MYSMB_TEXT_SPRING?3U:
@@ -146,9 +146,9 @@ int main(int argc, char **argv)
             i==MYSMB_TEXT_SCORE?11U:i==MYSMB_TEXT_JUMP_COIN?4U:
             i==MYSMB_TEXT_FLAG_SCORE?5U:i>=MYSMB_TEXT_VINE_LEAF?1U:i<2U?MYSMB_TEXT_PLAYER_POSES:
             i==MYSMB_TEXT_GOOMBA || i>=MYSMB_TEXT_GOOMBA_FLAT?3U:1U);++row) {
-            elements[0].pose=(mysmb_io_u8)row;
+            elements[0].pose=(mygames_kvm_u8)row;
             for(facing=0U;facing<2U;++facing) {
-                elements[0].face_left=(mysmb_io_u8)facing;
+                elements[0].face_left=(mygames_kvm_u8)facing;
                 CHECK(mysmb_text_elements_build(elements,1U,9U,&frame));
                 plain=elements[0];plain.foreground=15U;plain.background=0U;
                 CHECK(mysmb_text_elements_build(&plain,1U,0U,&monochrome));
@@ -158,8 +158,8 @@ int main(int argc, char **argv)
                         CHECK(frame.cells[13U*80U+20U+column].character==(unsigned char)label[column]);
                 }
                 ink=0U;
-                for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
-                    CHECK(mysmb_io_text_glyph_unicode(frame.cells[column].character)!=0U);
+                for(column=0U;column<MYGAMES_KVM_TEXT_CELLS;++column) {
+                    CHECK(mygames_kvm_text_glyph_unicode(frame.cells[column].character)!=0U);
                     CHECK(frame.cells[column].foreground<16U && frame.cells[column].background<16U);
                     CHECK(frame.cells[column].character==monochrome.cells[column].character);
                     if(frame.cells[column].character!=' ') {
@@ -203,17 +203,17 @@ int main(int argc, char **argv)
         }
     }
     for (i = 0U; i < 7U; ++i) {
-        elements[i].kind = (mysmb_io_u8)i;
+        elements[i].kind = (mygames_kvm_u8)i;
         elements[i].pose = 0U;
         elements[i].face_left = 0U;
         elements[i].x = (short)(i * 32U);
         elements[i].y = 96;
         elements[i].foreground = 15U;
-        elements[i].background = (mysmb_io_u8)(i + 1U);
+        elements[i].background = (mygames_kvm_u8)(i + 1U);
     }
     CHECK(mysmb_text_elements_build(elements, 7U, 9U, &frame));
-    for (i = 0U; i < MYSMB_IO_TEXT_CELLS; ++i) {
-        CHECK(mysmb_io_text_glyph_unicode(frame.cells[i].character)!=0U);
+    for (i = 0U; i < MYGAMES_KVM_TEXT_CELLS; ++i) {
+        CHECK(mygames_kvm_text_glyph_unicode(frame.cells[i].character)!=0U);
         CHECK(frame.cells[i].foreground < 16U && frame.cells[i].background < 16U);
     }
     if (argc == 2) {

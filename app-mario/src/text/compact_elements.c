@@ -1,6 +1,6 @@
 #include "text/compact_elements.h"
 #include "text/layout.h"
-#include "io/text_glyph.h"
+#include "kvm/glyph.h"
 
 /* Project-authored semantic half-cell art;digits select source palette roles.
  * This bank is independent of the retained50-row templates. */
@@ -164,8 +164,8 @@ static long project(short value,long scale,long extent)
     p=(long)value*scale;return p<0L?-((-p+extent-1L)/extent):p/extent;
 }
 int mysmb_text_compact_draw(const struct mysmb_text_element *e,
-    const mysmb_io_u8 colors[3],struct mysmb_io_text_frame MYSMB_IO_FAR *f,
-    mysmb_text_cell_filter filter,const void MYSMB_IO_FAR *context)
+    const mygames_kvm_u8 colors[3],struct mygames_kvm_text_frame MYGAMES_KVM_FAR *f,
+    mysmb_text_cell_filter filter,const void MYGAMES_KVM_FAR *context)
 {
     const struct compact_art *a;
     const char *text;
@@ -194,7 +194,7 @@ int mysmb_text_compact_draw(const struct mysmb_text_element *e,
             if(inverted){glyph=top;top=bottom;bottom=glyph;}
             if(top==0U && bottom==0U)continue;
             fg=bottom==0U?bg:colors[bottom-1U];
-            bg=top==0U?bg:colors[top-1U];glyph=top==bottom?' ':MYSMB_IO_GLYPH_LOWER;
+            bg=top==0U?bg:colors[top-1U];glyph=top==bottom?' ':MYGAMES_KVM_GLYPH_LOWER;
             /* Marks inhabit uniform colored cells;the two-color contract
              * never pretends a third ink can overlay a half-block. */
             if(top==bottom && top!=0U) {
@@ -215,11 +215,11 @@ int mysmb_text_compact_draw(const struct mysmb_text_element *e,
                 else if(e->kind==MYSMB_TEXT_MUSHROOM && row==0U && sx==2U){glyph='.';fg=colors[0U];}
                 else if(e->kind==MYSMB_TEXT_SPRING && row>0U && (sx==1U || sx==3U)){glyph=sx==1U?'/':'\\';fg=colors[2U];}
                 else if(e->kind==MYSMB_TEXT_BRICK){glyph=(row&1U)!=0U?'|':'-';fg=colors[0U];}
-                if(e->face_left!=0U)glyph=mysmb_io_text_glyph_mirror(glyph);
-                if(inverted)glyph=mysmb_io_text_glyph_flip(glyph);
+                if(e->face_left!=0U)glyph=mygames_kvm_text_glyph_mirror(glyph);
+                if(inverted)glyph=mygames_kvm_text_glyph_flip(glyph);
             }
         }
-        if(filter!=0 && !filter(context,(mysmb_io_u16)dx,(mysmb_io_u16)dy))continue;
+        if(filter!=0 && !filter(context,(mygames_kvm_u16)dx,(mygames_kvm_u16)dy))continue;
         f->cells[at].character=glyph;f->cells[at].foreground=fg;f->cells[at].background=bg;
     }
     return 1;

@@ -18,3 +18,7 @@ The concrete MySMB component map is [System Architecture](../design/ARCHITECTURE
 ## Source And Research Admission
 
 ROMs, disassemblies, translations, assets, traces, and third-party material require the [source and research policy](../etc/operations/policy/source-policy.md) before entry. Research never becomes an implementation dependency by default.
+
+## KVM boundary
+
+lib/kvm owns portable contracts and algorithms only. It must not include host APIs, reference a named application, or assign keyboard/mouse/game/menu semantics. Applications map raw physical events locally.

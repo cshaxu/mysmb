@@ -1,7 +1,7 @@
 #ifndef MYSMB_WIN32_TEXT_CONSOLE_H
 #define MYSMB_WIN32_TEXT_CONSOLE_H
 #include <windows.h>
-#include "io/video.h"
+#include "kvm/video.h"
 #include "platform/win32/text_console_policy.h"
 struct mysmb_win32_text_console {
     HANDLE input,output;
@@ -22,7 +22,7 @@ struct mysmb_win32_text_console {
     unsigned char colors_valid;
     unsigned long colors[16];
     unsigned char fallback_colors[16];
-    CHAR_INFO cells[MYSMB_IO_TEXT_CELLS];
+    CHAR_INFO cells[MYGAMES_KVM_TEXT_CELLS];
 };
 int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     HWND owner);
@@ -33,7 +33,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console);
 int mysmb_win32_text_console_suspend(struct mysmb_win32_text_console *console);
 int mysmb_win32_text_console_resume(struct mysmb_win32_text_console *console);
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
-    const struct mysmb_io_text_frame *frame);
+    const struct mygames_kvm_text_frame *frame);
 int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,
     WORD *key,WORD *scan,unsigned char *pressed);
 /* Returns0 without input,1 for a record,2 for a focus record (pressed=focus). */

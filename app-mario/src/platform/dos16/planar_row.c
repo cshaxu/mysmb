@@ -2,8 +2,8 @@
 /* 486SX real-mode DWORD bulk operations; addressing remains USE16.
  * Neutral row packing:borrow source/destination segments once, restore them
  * before returning to C. Plane stride is bounded by the validated caller. */
-void mysmb_dos16_pack_planar_row(const mysmb_io_u8 MYSMB_IO_FAR *source,
-    mysmb_io_u8 MYSMB_IO_FAR *pixels,mysmb_io_u16 stride)
+void mysmb_dos16_pack_planar_row(const mygames_kvm_u8 MYGAMES_KVM_FAR *source,
+    mygames_kvm_u8 MYGAMES_KVM_FAR *pixels,mygames_kvm_u16 stride)
 {
     _asm {
         push ds
@@ -147,11 +147,11 @@ plane_done:
 /* Native plane output:no scaling or repeated rows. Fixed word gathers
  * advance each plane sequentially;avoid per-group addressing/32-bit shifts.
  * The bounded code expansion trades instructions for no extra RAM. */
-void mysmb_dos16_pack_native_band(const mysmb_io_u8 MYSMB_IO_FAR *source,
-    mysmb_io_u8 MYSMB_IO_FAR *pixels,mysmb_io_u16 stride,mysmb_io_u16 rows,
-    const mysmb_io_u16 MYSMB_IO_FAR *plan)
+void mysmb_dos16_pack_native_band(const mygames_kvm_u8 MYGAMES_KVM_FAR *source,
+    mygames_kvm_u8 MYGAMES_KVM_FAR *pixels,mygames_kvm_u16 stride,mygames_kvm_u16 rows,
+    const mygames_kvm_u16 MYGAMES_KVM_FAR *plan)
 {
-    mysmb_io_u16 left,row_start;
+    mygames_kvm_u16 left,row_start;
     (void)plan;left=rows;
     _asm {
         push ds
@@ -240,10 +240,10 @@ native_done:
     }
 }
 /* One validated band plan is copied to SS before borrowing source DS. */
-void mysmb_dos16_pack_planar_band(const mysmb_io_u8 MYSMB_IO_FAR *source,mysmb_io_u8 MYSMB_IO_FAR *pixels,
-    mysmb_io_u16 stride,mysmb_io_u16 rows,const mysmb_io_u16 MYSMB_IO_FAR *plan)
+void mysmb_dos16_pack_planar_band(const mygames_kvm_u8 MYGAMES_KVM_FAR *source,mygames_kvm_u8 MYGAMES_KVM_FAR *pixels,
+    mygames_kvm_u16 stride,mygames_kvm_u16 rows,const mygames_kvm_u16 MYGAMES_KVM_FAR *plan)
 {
-    mysmb_io_u16 offsets[16],map_pointer,row_start,source_base,left;
+    mygames_kvm_u16 offsets[16],map_pointer,row_start,source_base,left;
     left=rows;
     _asm {
         push ds

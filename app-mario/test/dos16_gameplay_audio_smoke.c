@@ -3,7 +3,7 @@
 #include "platform/dos16/dos_audio.h"
 #include "smb1_local_rom.h"
 
-static unsigned long sample_energy(const mysmb_io_u8 *samples,
+static unsigned long sample_energy(const mygames_kvm_u8 *samples,
                                    unsigned short count)
 {
     unsigned short index;
@@ -21,7 +21,7 @@ int main(void)
     struct mysmb_frame frame;
     struct mysmb_io_audio_frame audio;
     struct mysmb_dos16_audio_renderer renderer;
-    mysmb_io_u8 samples[184];
+    mygames_kvm_u8 samples[184];
     unsigned int tick;
     unsigned short count;
     unsigned long energy=0UL;

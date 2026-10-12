@@ -15,11 +15,11 @@ static unsigned long copied=0UL;
 static unsigned char random_byte(void)
 {seed=(seed*1664525UL+1013904223UL)&0xffffffffUL;return (unsigned char)(seed>>24U);}
 #define CHECK(c) do {if(!(c)){printf("line%d\n",__LINE__);return 1;}}while(0)
-static int copy_slots(const mysmb_io_u8 *first,const mysmb_io_u8 *second,
-    mysmb_io_u8 *destination,mysmb_io_u16 first_count,mysmb_io_u16 second_count,
-    mysmb_io_u16 count)
+static int copy_slots(const mygames_kvm_u8 *first,const mygames_kvm_u8 *second,
+    mygames_kvm_u8 *destination,mygames_kvm_u16 first_count,mygames_kvm_u16 second_count,
+    mygames_kvm_u16 count)
 {
-    mysmb_io_u16 row;
+    mygames_kvm_u16 row;
     if(!first || !destination || !count || count>16U || first_count+second_count!=256U ||
         (second_count && !second))return 0;
     for(row=0U;row<count;++row) {
@@ -30,9 +30,9 @@ static int copy_slots(const mysmb_io_u8 *first,const mysmb_io_u8 *second,
     copied+=(unsigned long)count*256UL;
     return 1;
 }
-static int reject_slots(const mysmb_io_u8 *first,const mysmb_io_u8 *second,
-    mysmb_io_u8 *destination,mysmb_io_u16 first_count,mysmb_io_u16 second_count,
-    mysmb_io_u16 count)
+static int reject_slots(const mygames_kvm_u8 *first,const mygames_kvm_u8 *second,
+    mygames_kvm_u8 *destination,mygames_kvm_u16 first_count,mygames_kvm_u16 second_count,
+    mygames_kvm_u16 count)
 {
     (void)first;(void)second;(void)destination;(void)first_count;
     (void)second_count;(void)count;

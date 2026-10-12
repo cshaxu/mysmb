@@ -6,7 +6,7 @@ import struct
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
 from smb_asm_index import index_listing
 from smb_enemy_data_audit import check_literal_span
 from smb_rom_codegen import read_nrom

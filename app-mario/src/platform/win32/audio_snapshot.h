@@ -3,7 +3,7 @@
 #include "platform/win32/audio_renderer.h"
 #include "io/snapshot.h"
 int mysmb_win32_audio_capture(const struct mysmb_win32_audio_renderer *renderer,
-    mysmb_io_u8 *bytes);
+    mygames_kvm_u8 *bytes);
 int mysmb_win32_audio_restore(struct mysmb_win32_audio_renderer *renderer,
-    const mysmb_io_u8 *bytes);
+    const mygames_kvm_u8 *bytes);
 #endif

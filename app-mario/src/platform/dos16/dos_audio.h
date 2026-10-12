@@ -1,7 +1,7 @@
 #ifndef MYSMB_PLATFORM_DOS16_DOS_AUDIO_H
 #define MYSMB_PLATFORM_DOS16_DOS_AUDIO_H
 
-#include "io/types.h"
+#include "kvm/types.h"
 #include "io/audio.h"
 
 enum {
@@ -14,9 +14,9 @@ enum {
  * game-state field: a later renderer may feed the prepared PCM DMA blocks,
  * but discovery and resource ownership must be independently testable. */
 struct mysmb_dos16_audio_config {
-    mysmb_io_u16 base_port;
-    mysmb_io_u8 irq;
-    mysmb_io_u8 dma_channel;
+    mygames_kvm_u16 base_port;
+    mygames_kvm_u8 irq;
+    mygames_kvm_u8 dma_channel;
 };
 
 struct mysmb_dos16_audio_ops {
@@ -29,27 +29,27 @@ struct mysmb_dos16_audio_state {
     struct mysmb_dos16_audio_config config;
     const struct mysmb_dos16_audio_ops *ops;
     void *context;
-    mysmb_io_u8 ready;
-    mysmb_io_u8 reserved;
+    mygames_kvm_u8 ready;
+    mygames_kvm_u8 reserved;
 };
 
 /* Integer-only NES-output consumer.  It is an adapter-side PCM projection,
  * not another game/APU implementation: source-ordered writes remain its sole
  * input and its state is never serialized with original program RAM. */
 struct mysmb_dos16_audio_renderer {
-    mysmb_io_u8 registers[MYSMB_IO_AUDIO_REGISTER_COUNT];
-    mysmb_io_u8 enabled;
-    mysmb_io_u8 envelope_start[3];
-    mysmb_io_u8 sweep_reload[2];
-    mysmb_io_u8 triangle_reload;
-    mysmb_io_u8 started;
-    mysmb_io_u16 length[4];
-    mysmb_io_u16 envelope_level[3];
-    mysmb_io_u16 envelope_divider[3];
-    mysmb_io_u16 sweep_divider[2];
-    mysmb_io_u16 triangle_linear;
-    mysmb_io_u16 pulse_timer[2];
-    mysmb_io_u16 noise_shift;
+    mygames_kvm_u8 registers[MYSMB_IO_AUDIO_REGISTER_COUNT];
+    mygames_kvm_u8 enabled;
+    mygames_kvm_u8 envelope_start[3];
+    mygames_kvm_u8 sweep_reload[2];
+    mygames_kvm_u8 triangle_reload;
+    mygames_kvm_u8 started;
+    mygames_kvm_u16 length[4];
+    mygames_kvm_u16 envelope_level[3];
+    mygames_kvm_u16 envelope_divider[3];
+    mygames_kvm_u16 sweep_divider[2];
+    mygames_kvm_u16 triangle_linear;
+    mygames_kvm_u16 pulse_timer[2];
+    mygames_kvm_u16 noise_shift;
     unsigned long pulse_phase[2];
     unsigned long triangle_phase;
     unsigned long noise_phase;
@@ -77,7 +77,7 @@ void mysmb_dos16_audio_renderer_initialize(
  * zero and does not consume the source frame. */
 unsigned short mysmb_dos16_audio_renderer_render(
     struct mysmb_dos16_audio_renderer *renderer,
-    const struct mysmb_io_audio_frame *frame,mysmb_io_u8 *samples,
+    const struct mysmb_io_audio_frame *frame,mygames_kvm_u8 *samples,
     unsigned short capacity);
 
 /* DOS hardware binding.  It owns only the standard BLASTER environment,
@@ -87,7 +87,7 @@ int mysmb_dos16_audio_dos_open(void);
 void mysmb_dos16_audio_dos_close(void);
 void mysmb_dos16_audio_dos_after_load(void);
 int mysmb_dos16_audio_dos_prepared(void);
-mysmb_io_u8 mysmb_dos16_audio_dos_submit(
+mygames_kvm_u8 mysmb_dos16_audio_dos_submit(
     const struct mysmb_io_audio_frame *frame);
 
 #endif

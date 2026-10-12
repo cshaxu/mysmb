@@ -2,19 +2,19 @@
 #include <dos.h>
 /* 486SX real-mode DWORD bulk operations; addressing remains USE16.
  * Platform-private implementation; palette preparation is neutral IO. */
-int mysmb_dos16_palette_expand(void *context,const mysmb_io_u8 far *packed,
-    mysmb_io_u8 far *pixels,mysmb_io_u16 count,
-    const mysmb_io_u8 far *palette)
+int mysmb_dos16_palette_expand(void *context,const mygames_kvm_u8 far *packed,
+    mygames_kvm_u8 far *pixels,mygames_kvm_u16 count,
+    const mygames_kvm_u8 far *palette)
 {
     struct mysmb_io_palette_pairs near *w;
-    mysmb_io_u16 data_segment,stack_segment,table_offset,zero_pair,last;
+    mygames_kvm_u16 data_segment,stack_segment,table_offset,zero_pair,last;
     _asm {mov data_segment,ds
           mov stack_segment,ss}
     if(!context || !packed || !pixels || count>256U || (count&1U) ||
         FP_SEG(context)!=data_segment || stack_segment!=data_segment)return 0;
     w=(struct mysmb_io_palette_pairs near *)context;
     mysmb_io_palette_pairs_prepare(w,palette);
-    table_offset=(mysmb_io_u16)w->pairs;
+    table_offset=(mygames_kvm_u16)w->pairs;
     zero_pair=w->pairs[0];
     _asm {
         push bp
@@ -105,8 +105,8 @@ pairs_done:
     }
     if(count&2U){
         last=w->pairs[packed[count/2U-1U]];
-        pixels[count-2U]=(mysmb_io_u8)last;
-        pixels[count-1U]=(mysmb_io_u8)(last>>8U);
+        pixels[count-2U]=(mygames_kvm_u8)last;
+        pixels[count-1U]=(mygames_kvm_u8)(last>>8U);
     }
     return 1;
 }

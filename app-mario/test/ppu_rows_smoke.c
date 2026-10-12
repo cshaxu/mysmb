@@ -14,15 +14,15 @@ static unsigned char slot_band[4096+32],slot_palette[32];
 static unsigned char chr[8192],decode0[8192],decode1[8192],band[4096+32],plane[1280+32];
 static unsigned char bg0[63520],bg1[63520];
 static struct mysmb_io_palette_pairs pair0,pair1;
-static int expand_portable(void *context,const mysmb_io_u8 *packed,
-    mysmb_io_u8 *pixels,mysmb_io_u16 count,const mysmb_io_u8 *palette)
+static int expand_portable(void *context,const mygames_kvm_u8 *packed,
+    mygames_kvm_u8 *pixels,mygames_kvm_u16 count,const mygames_kvm_u8 *palette)
 {
     struct mysmb_io_palette_pairs *w=context;
-    mysmb_io_u16 i,pair;
+    mygames_kvm_u16 i,pair;
     if(!w || count>256U || (count&1U))return 0;
     mysmb_io_palette_pairs_prepare(w,palette);
     for(i=0U;i<count/2U;++i){pair=w->pairs[packed[i]];
-        pixels[i*2U]=(mysmb_io_u8)pair;pixels[i*2U+1U]=(mysmb_io_u8)(pair>>8U);}
+        pixels[i*2U]=(mygames_kvm_u8)pair;pixels[i*2U+1U]=(mygames_kvm_u8)(pair>>8U);}
     return 1;
 }
 static unsigned long seed=19UL,compared=0UL,vga_compared=0UL;
@@ -140,7 +140,7 @@ int main(void)
 {
     struct mysmb_ppu_frame_workspace w0,w1;
     struct mysmb_ppu_frame_view cached_view;
-    struct mysmb_io_video_band view;
+    struct mygames_kvm_video_band view;
     unsigned short c,i,first,rows,stop,j,p,y,x,sy,sx,n;
     clock_t started=clock();
     for(c=0;c<512;++c){

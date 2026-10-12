@@ -1,7 +1,7 @@
 #include "io/palette_expand.h"
 #include <string.h>
 /* Fixed low/high nibble byte pairs,independent of palette and host endian. */
-const mysmb_io_u8 MYSMB_IO_FAR mysmb_io_nibble_pairs[512]={
+const mygames_kvm_u8 MYGAMES_KVM_FAR mysmb_io_nibble_pairs[512]={
 0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,
 0,1,1,1,2,1,3,1,4,1,5,1,6,1,7,1,8,1,9,1,10,1,11,1,12,1,13,1,14,1,15,1,
 0,2,1,2,2,2,3,2,4,2,5,2,6,2,7,2,8,2,9,2,10,2,11,2,12,2,13,2,14,2,15,2,
@@ -20,12 +20,12 @@ const mysmb_io_u8 MYSMB_IO_FAR mysmb_io_nibble_pairs[512]={
 0,15,1,15,2,15,3,15,4,15,5,15,6,15,7,15,8,15,9,15,10,15,11,15,12,15,13,15,14,15,15,15
 };
 
-int mysmb_io_nibble_expand(const mysmb_io_u8 MYSMB_IO_FAR *packed,
-    mysmb_io_u8 MYSMB_IO_FAR *pixels,mysmb_io_u16 count)
+int mysmb_io_nibble_expand(const mygames_kvm_u8 MYGAMES_KVM_FAR *packed,
+    mygames_kvm_u8 MYGAMES_KVM_FAR *pixels,mygames_kvm_u16 count)
 {
-    mysmb_io_u16 i,bytes,group[2];mysmb_io_u8 value;
+    mygames_kvm_u16 i,bytes,group[2];mygames_kvm_u8 value;
     if(!packed || !pixels || count>256U || (count&1U))return 0;
-    bytes=(mysmb_io_u16)(count/2U);
+    bytes=(mygames_kvm_u16)(count/2U);
     for(i=0U;i+4U<=bytes;i+=4U){
         memcpy(group,packed+i,4U);if(group[0]|group[1])break;
     }
@@ -37,16 +37,16 @@ int mysmb_io_nibble_expand(const mysmb_io_u8 MYSMB_IO_FAR *packed,
 }
 /* Neutral implementation of the same bounded span contract as host encoders. */
 int mysmb_io_palette_expand_portable(void *context,
-    const mysmb_io_u8 MYSMB_IO_FAR *packed,
-    mysmb_io_u8 MYSMB_IO_FAR *pixels,mysmb_io_u16 count,
-    const mysmb_io_u8 MYSMB_IO_FAR *palette)
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *packed,
+    mygames_kvm_u8 MYGAMES_KVM_FAR *pixels,mygames_kvm_u16 count,
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *palette)
 {
     struct mysmb_io_palette_pairs *w;
-    mysmb_io_u16 i,pair,bytes;
-    mysmb_io_u16 group[2];
+    mygames_kvm_u16 i,pair,bytes;
+    mygames_kvm_u16 group[2];
     if(!packed || !pixels || !palette || count>256U || (count&1U))return 0;
     w=(struct mysmb_io_palette_pairs *)context;
-    bytes=(mysmb_io_u16)(count/2U);
+    bytes=(mygames_kvm_u16)(count/2U);
     for(i=0U;i+4U<=bytes;i+=4U){
         memcpy(&group,packed+i,4U);
         if(group[0]|group[1])break;
@@ -57,8 +57,8 @@ int mysmb_io_palette_expand_portable(void *context,
     for(i=0U;i<count/2U;++i){
         if(w){
             pair=w->pairs[packed[i]];
-            pixels[i*2U]=(mysmb_io_u8)pair;
-            pixels[i*2U+1U]=(mysmb_io_u8)(pair>>8U);
+            pixels[i*2U]=(mygames_kvm_u8)pair;
+            pixels[i*2U+1U]=(mygames_kvm_u8)(pair>>8U);
         }else{
             pixels[i*2U]=palette[packed[i]&15U];
             pixels[i*2U+1U]=palette[packed[i]>>4U];

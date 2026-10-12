@@ -6,24 +6,24 @@ static const char final_name[]="mysmb.sav";
 static const char log_name[]="mysmb.log";
 
 static int write_exact(struct mysmb_snapshot_files *files,void *handle,
-    const mysmb_io_u8 *data,mysmb_io_u16 count)
+    const mygames_kvm_u8 *data,mygames_kvm_u16 count)
 {
-    mysmb_io_u16 actual;
+    mygames_kvm_u16 actual;
     while(count) {
         actual=0U;
         if(!files->write(handle,data,count,&actual) || !actual || actual>count)return 0;
-        data+=actual;count=(mysmb_io_u16)(count-actual);
+        data+=actual;count=(mygames_kvm_u16)(count-actual);
     }
     return 1;
 }
 static int read_exact(struct mysmb_snapshot_files *files,void *handle,
-    mysmb_io_u8 *data,mysmb_io_u16 count)
+    mygames_kvm_u8 *data,mygames_kvm_u16 count)
 {
-    mysmb_io_u16 actual;
+    mygames_kvm_u16 actual;
     while(count) {
         actual=0U;
         if(!files->read(handle,data,count,&actual) || !actual || actual>count)return 0;
-        data+=actual;count=(mysmb_io_u16)(count-actual);
+        data+=actual;count=(mygames_kvm_u16)(count-actual);
     }
     return 1;
 }
@@ -42,7 +42,7 @@ int mysmb_snapshot_save(struct mysmb_snapshot_store *store,
 {
     struct mysmb_snapshot_files *files;
     void *handle;
-    mysmb_io_u8 header[MYSMB_SNAPSHOT_HEADER_BYTES];
+    mygames_kvm_u8 header[MYSMB_SNAPSHOT_HEADER_BYTES];
     int ok;
     if (snapshot==0) return 0;
     files=&store->files;
@@ -64,12 +64,12 @@ failed:
     return 0;
 }
 const struct mysmb_io_snapshot *mysmb_snapshot_load(
-    struct mysmb_snapshot_store *store,const mysmb_io_u8 *fingerprint)
+    struct mysmb_snapshot_store *store,const mygames_kvm_u8 *fingerprint)
 {
     struct mysmb_snapshot_files *files;
     void *handle;
-    mysmb_io_u8 header[MYSMB_SNAPSHOT_HEADER_BYTES],extra;
-    mysmb_io_u16 payload,actual;
+    mygames_kvm_u8 header[MYSMB_SNAPSHOT_HEADER_BYTES],extra;
+    mygames_kvm_u16 payload,actual;
     int ok;
     files=&store->files;handle=0;payload=0U;ok=0;
     if (!files->open(files->context,final_name,MYSMB_SNAPSHOT_READ,&handle))

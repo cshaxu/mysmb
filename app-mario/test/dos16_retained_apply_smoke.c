@@ -3,21 +3,21 @@
 #include <stdio.h>
 #include <string.h>
 
-static mysmb_io_u8 background[MYSMB_PPU_BACKGROUND_BYTES];
-static mysmb_io_u8 second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
-static mysmb_io_u8 chr[8192];
-static mysmb_io_u8 projected[2][30][32][64];
+static mygames_kvm_u8 background[MYSMB_PPU_BACKGROUND_BYTES];
+static mygames_kvm_u8 second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
+static mygames_kvm_u8 chr[8192];
+static mygames_kvm_u8 projected[2][30][32][64];
 static unsigned short writes;
 static unsigned short plane_writes[4];
-static int store(void *context,mysmb_io_u8 table,mysmb_io_u8 row,
-    mysmb_io_u8 column,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+static int store(void *context,mygames_kvm_u8 table,mygames_kvm_u8 row,
+    mygames_kvm_u8 column,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
     (void)context;
     if(table>=2U || row>=30U || column>=32U)return 0;
     memcpy(projected[table][row][column],slots,64U);++writes;return 1;
 }
-static int store_plane(void *context,mysmb_io_u8 plane,mysmb_io_u8 table,
-    mysmb_io_u8 row,mysmb_io_u8 column,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+static int store_plane(void *context,mygames_kvm_u8 plane,mygames_kvm_u8 table,
+    mygames_kvm_u8 row,mygames_kvm_u8 column,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
     (void)context;
     if(plane>=4U || table>=2U || row>=30U || column>=32U)return 0;
@@ -25,17 +25,17 @@ static int store_plane(void *context,mysmb_io_u8 plane,mysmb_io_u8 table,
 }
 static void state(struct mysmb_ppu_state *s)
 {
-    mysmb_io_u16 i;
+    mygames_kvm_u16 i;
     memset(s,0,sizeof(*s));s->chr_data=chr;s->chr_data_size=sizeof(chr);
-    for(i=0U;i<2048U;++i)s->name_table[i/1024U][i&1023U]=(mysmb_io_u8)(i*11U);
-    for(i=0U;i<8192U;++i)chr[i]=(mysmb_io_u8)(i*3U+i/5U);
+    for(i=0U;i<2048U;++i)s->name_table[i/1024U][i&1023U]=(mygames_kvm_u8)(i*11U);
+    for(i=0U;i<8192U;++i)chr[i]=(mygames_kvm_u8)(i*3U+i/5U);
 }
 int main(void)
 {
     struct mysmb_ppu_state s;
     struct mysmb_ppu_frame_workspace w;
     struct mysmb_ppu_frame_view v;
-    mysmb_io_u8 tile[64];
+    mygames_kvm_u8 tile[64];
     state(&s);mysmb_ppu_frame_workspace_bind(&w,0);
     mysmb_ppu_frame_background_byte_bind(&w,background,sizeof(background),second,sizeof(second));
     mysmb_ppu_frame_begin(&s,&w,&v);writes=0U;

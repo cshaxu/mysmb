@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 def load_module():
-    path = Path(__file__).resolve().parents[1] / "tools" / "smb_listing_reconcile.py"
+    path = Path(__file__).resolve().parents[2] / "tools" / "smb_listing_reconcile.py"
     sys.path.insert(0, str(path.parent))
     spec = importlib.util.spec_from_file_location("smb_listing_reconcile", path)
     module = importlib.util.module_from_spec(spec)

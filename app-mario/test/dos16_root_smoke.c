@@ -1,17 +1,17 @@
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/keyboard.h"
 #include <string.h>
-struct host { unsigned calls; unsigned audio_calls; unsigned gate; mysmb_io_u8 requests; };
+struct host { unsigned calls; unsigned audio_calls; unsigned gate; mygames_kvm_u8 requests; };
 static unsigned mode_allowed,text_calls;
-static int mode(void *context,mysmb_io_u8 text)
+static int mode(void *context,mygames_kvm_u8 text)
 {(void)context;(void)text;return mode_allowed;}
-static void text_present(void *context,const struct mysmb_io_text_frame *frame)
+static void text_present(void *context,const struct mygames_kvm_text_frame *frame)
 {(void)context;(void)frame;++text_calls;}
 static void read_input(void *context, struct mysmb_io_input *input)
 { input->buttons=0U; input->buttons2=0U; input->requests=((struct host *)context)->requests; }
-static void present(void *context, const struct mysmb_io_video_frame *frame)
+static void present(void *context, const struct mygames_kvm_video_frame *frame)
 { if (frame->pixels!=0) ++((struct host *)context)->calls; }
-static mysmb_io_u8 audio(void *context, const struct mysmb_io_audio_frame *frame)
+static mygames_kvm_u8 audio(void *context, const struct mysmb_io_audio_frame *frame)
 {
     if (frame->write_count<=MYSMB_IO_AUDIO_WRITE_CAPACITY)
         ++((struct host *)context)->audio_calls;
@@ -56,7 +56,7 @@ static int failed_text_recovery(void)
     if(!mysmb_dos16_root_initialize(&baseline,&hooks))return 21;
     mysmb_dos16_root_bind_text(&borrowed,
         (struct mysmb_text_scene_workspace *)borrowed.ppu_frame.pixels,
-        (struct mysmb_io_text_frame *)(borrowed.ppu_frame.pixels+
+        (struct mygames_kvm_text_frame *)(borrowed.ppu_frame.pixels+
             sizeof(struct mysmb_text_scene_workspace)),mode,text_present);
     for(i=0U;i<3U;++i){
         mysmb_dos16_root_step(&borrowed);mysmb_dos16_root_step(&baseline);
@@ -82,9 +82,9 @@ static int failed_text_recovery(void)
 static struct mysmb_dos16_root row_root;
 static struct mysmb_ppu_frame row_reference;
 static unsigned row_calls,row_failure;
-static int rows_present(void *context,const struct mysmb_io_video_source *source)
+static int rows_present(void *context,const struct mygames_kvm_video_source *source)
 {
-    struct mysmb_io_video_band band;
+    struct mygames_kvm_video_band band;
     unsigned short first,rows;
     unsigned char *pixels=row_root.ppu_frame.pixels;
     (void)context;

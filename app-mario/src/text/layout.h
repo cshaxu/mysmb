@@ -1,10 +1,10 @@
 #ifndef MYSMB_TEXT_LAYOUT_H
 #define MYSMB_TEXT_LAYOUT_H
-#include "io/video.h"
-void mysmb_text_frame_initialize(struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
-    mysmb_io_u8 sky,mysmb_io_u16 rows,const mysmb_io_u8 *palette);
-mysmb_io_u8 mysmb_text_color(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
-    mysmb_io_u8 master);
-mysmb_io_u8 mysmb_text_contrast(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
-    mysmb_io_u8 background);
+#include "kvm/video.h"
+void mysmb_text_frame_initialize(struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    mygames_kvm_u8 sky,mygames_kvm_u16 rows,const mygames_kvm_u8 *palette);
+mygames_kvm_u8 mysmb_text_color(const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    mygames_kvm_u8 master);
+mygames_kvm_u8 mysmb_text_contrast(const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    mygames_kvm_u8 background);
 #endif

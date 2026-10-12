@@ -5,7 +5,7 @@
 #include "platform/dos16/pit_clock.h"
 #include "platform/dos16/dos_audio.h"
 #include "ppu/frame.h"
-#include "io/color.h"
+#include "kvm/color.h"
 #include "io/pacing.h"
 #include <dos.h>
 #include <conio.h>
@@ -29,24 +29,24 @@ static unsigned char opened;
 static unsigned char text_mode;
 static unsigned short text_rows=25U;
 static unsigned char text_colors[16];
-static mysmb_io_u8 palette_shadow[MYSMB_IO_VIDEO_PALETTE_COLORS],palette_valid;
+static mygames_kvm_u8 palette_shadow[MYGAMES_KVM_VIDEO_PALETTE_COLORS],palette_valid;
 static unsigned char retained_mode;
 static unsigned char compact_mode,compact_page;
 static unsigned char ram_mode;
-struct retained_viewport {mysmb_io_u8 table,x,y;};
-struct retained_sprite_backup {mysmb_io_u8 x,y,active,pixels[64];};
+struct retained_viewport {mygames_kvm_u8 table,x,y;};
+struct retained_sprite_backup {mygames_kvm_u8 x,y,active,pixels[64];};
 /* Bounded transient coverage only: 32*256 fixed-HUD bytes plus at most
  * 64 complete 8-by-8 sprite rectangles. No conventional full frame. */
 /* The two 32-by-256 transient HUD surfaces remain bounded at 8KiB each.
  * They are packed in physical-plane order after PPU selection, so restore and
  * redraw can use contiguous VGA spans instead of 16,384 pixel address walks. */
-static mysmb_io_u8 retained_hud[8192],retained_hud_slots[8192],retained_hud_valid;
-static mysmb_io_u8 retained_hud_line[256];
-static mysmb_io_u8 retained_tile_plane;
+static mygames_kvm_u8 retained_hud[8192],retained_hud_slots[8192],retained_hud_valid;
+static mygames_kvm_u8 retained_hud_line[256];
+static mygames_kvm_u8 retained_tile_plane;
 static struct retained_viewport retained_hud_view;
 static struct retained_sprite_backup retained_sprites[64];
-static struct retained_sprite_backup MYSMB_IO_FAR retained_next_sprites[64];
-static mysmb_io_u8 retained_sprite_count,retained_next_count;
+static struct retained_sprite_backup MYGAMES_KVM_FAR retained_next_sprites[64];
+static mygames_kvm_u8 retained_sprite_count,retained_next_count;
 /* PPU-owned source rows plus one temporary OAM tile. This replaces slow VGA
  * plane readback; it is bounded transient overlay storage, not a frame. */
 /* All sprites captured in one presentation share this PPU-selected viewport.
@@ -167,8 +167,8 @@ static void vga_retained_rows(void)
 }
 static void vga_retained_plane(unsigned char plane)
 {vga_register(0x3c4,2,(unsigned char)(1U<<plane));}
-static int vga_retained_tile(void *context,mysmb_io_u8 plane,mysmb_io_u8 table,
-    mysmb_io_u8 row,mysmb_io_u8 column,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+static int vga_retained_tile(void *context,mygames_kvm_u8 plane,mygames_kvm_u8 table,
+    mygames_kvm_u8 row,mygames_kvm_u8 column,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
     volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
     unsigned char copy,expected;
@@ -188,16 +188,16 @@ static int vga_retained_tile(void *context,mysmb_io_u8 plane,mysmb_io_u8 table,
     }
     return 1;
 }
-static int vga_retained_tile_all(void *context,mysmb_io_u8 table,mysmb_io_u8 row,
-    mysmb_io_u8 column,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+static int vga_retained_tile_all(void *context,mygames_kvm_u8 table,mygames_kvm_u8 row,
+    mygames_kvm_u8 column,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
-    mysmb_io_u8 plane;
+    mygames_kvm_u8 plane;
     retained_tile_plane=0xffU;
     for(plane=0U;plane<4U;++plane)
         if(!vga_retained_tile(context,plane,table,row,column,slots))return 0;
     return 1;
 }
-static void vga_retained_viewport(mysmb_io_u8 table,mysmb_io_u8 x,mysmb_io_u8 y)
+static void vga_retained_viewport(mygames_kvm_u8 table,mygames_kvm_u8 x,mygames_kvm_u8 y)
 {
     unsigned short source=(unsigned short)((unsigned short)table*256U+x);
     unsigned short start=(unsigned short)((unsigned short)y*64U+(source>>3U));
@@ -230,28 +230,28 @@ static void vga_compact_rows(void)
     vga_register(0x3ce,5,0);vga_register(0x3c4,2,15);vga_register(0x3c4,0,3);
 }
 
-static void vga_compact_viewport(mysmb_io_u8 page,mysmb_io_u8 pan)
+static void vga_compact_viewport(mygames_kvm_u8 page,mygames_kvm_u8 pan)
 {
-    mysmb_io_u16 base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
+    mygames_kvm_u16 base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
         MYSMB_DOS16_COMPACT_PAGE_B);
-    mysmb_io_u16 start=(mysmb_io_u16)(base>>1U);
+    mygames_kvm_u16 start=(mygames_kvm_u16)(base>>1U);
     vga_register(0x3d4,12,(unsigned char)(start>>8U));
     vga_register(0x3d4,13,(unsigned char)start);
     (void)inp(0x3da);outp(0x3c0,19);outp(0x3c0,(unsigned char)(pan&7U));outp(0x3c0,0x20);
 }
 
-static int vga_compact_tile(void *context,mysmb_io_u8 plane,mysmb_io_u8 table,
-    mysmb_io_u8 row,mysmb_io_u8 column,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+static int vga_compact_tile(void *context,mygames_kvm_u8 plane,mygames_kvm_u8 table,
+    mygames_kvm_u8 row,mygames_kvm_u8 column,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
     volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
-    mysmb_io_u16 base,y,x;
+    mygames_kvm_u16 base,y,x;
     (void)context;
     if(!slots || table>=2U || row>=30U || column>=32U)return 0;
     if(retained_tile_plane!=plane) {
         vga_retained_plane(plane);retained_tile_plane=plane;
     }
-    x=(mysmb_io_u16)table*256U+(mysmb_io_u16)column*8U;
-    base=(mysmb_io_u16)((mysmb_io_u16)row*8U*
+    x=(mygames_kvm_u16)table*256U+(mygames_kvm_u16)column*8U;
+    base=(mygames_kvm_u16)((mygames_kvm_u16)row*8U*
         MYSMB_DOS16_COMPACT_CACHE_STRIDE+(x>>2U));
     for(y=0U;y<8U;++y) {
         video[base+y*MYSMB_DOS16_COMPACT_CACHE_STRIDE]=slots[y*8U+plane];
@@ -264,17 +264,17 @@ static int vga_compact_tile(void *context,mysmb_io_u8 plane,mysmb_io_u8 table,
  * plane at once.  It moves the complete four-plane row without a RAM frame
  * or one sequencer pass per plane. */
 static int vga_compact_copy_viewport(const struct retained_viewport *view,
-    mysmb_io_u8 page)
+    mygames_kvm_u8 page)
 {
     volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
-    mysmb_io_u16 row,source,target,i;
-    mysmb_io_u8 first,second;
+    mygames_kvm_u16 row,source,target,i;
+    mygames_kvm_u8 first,second;
     volatile unsigned char loaded;
     target=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:MYSMB_DOS16_COMPACT_PAGE_B);
     vga_register(0x3c4,2,15);vga_register(0x3ce,5,0x41U);
     for(row=0U;row<MYSMB_DOS16_COMPACT_PAGE_HEIGHT;++row) {
         if(!mysmb_dos16_compact_viewport_row(view->table,view->x,view->y,
-            (mysmb_io_u8)row,&source,&first,&second))goto failed;
+            (mygames_kvm_u8)row,&source,&first,&second))goto failed;
         for(i=0U;i<first;++i) {
             loaded=video[source+i];video[target+row*MYSMB_DOS16_COMPACT_PAGE_STRIDE+i]=loaded;
         }
@@ -287,65 +287,65 @@ failed:
     vga_register(0x3ce,5,0);return 0;
 }
 
-static mysmb_io_u16 compact_page_offset(mysmb_io_u8 page,mysmb_io_u8 pan,
-    mysmb_io_u8 x,mysmb_io_u8 y)
+static mygames_kvm_u16 compact_page_offset(mygames_kvm_u8 page,mygames_kvm_u8 pan,
+    mygames_kvm_u8 x,mygames_kvm_u8 y)
 {
-    mysmb_io_u16 base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
+    mygames_kvm_u16 base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
         MYSMB_DOS16_COMPACT_PAGE_B);
-    return (mysmb_io_u16)(base+(mysmb_io_u16)y*MYSMB_DOS16_COMPACT_PAGE_STRIDE+
-        (((mysmb_io_u16)pan+x)>>2U));
+    return (mygames_kvm_u16)(base+(mygames_kvm_u16)y*MYSMB_DOS16_COMPACT_PAGE_STRIDE+
+        (((mygames_kvm_u16)pan+x)>>2U));
 }
 
-static void compact_write_slots(mysmb_io_u8 page,mysmb_io_u8 pan,
-    mysmb_io_u8 x,mysmb_io_u8 y,mysmb_io_u8 width,mysmb_io_u8 rows,
-    const mysmb_io_u8 MYSMB_IO_FAR *slots,mysmb_io_u8 transparent)
+static void compact_write_slots(mygames_kvm_u8 page,mygames_kvm_u8 pan,
+    mygames_kvm_u8 x,mygames_kvm_u8 y,mygames_kvm_u8 width,mygames_kvm_u8 rows,
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *slots,mygames_kvm_u8 transparent)
 {
     volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
-    mysmb_io_u16 py,i;
-    mysmb_io_u8 plane,first,logical;
+    mygames_kvm_u16 py,i;
+    mygames_kvm_u8 plane,first,logical;
     if(!slots)return;
     for(plane=0U;plane<4U;++plane) {
-        first=(mysmb_io_u8)((plane+4U-((pan+x)&3U))&3U);vga_retained_plane(plane);
-        for(py=0U;py<rows;++py)for(i=first;i<width;i=(mysmb_io_u16)(i+4U)) {
-            logical=(mysmb_io_u8)i;
+        first=(mygames_kvm_u8)((plane+4U-((pan+x)&3U))&3U);vga_retained_plane(plane);
+        for(py=0U;py<rows;++py)for(i=first;i<width;i=(mygames_kvm_u16)(i+4U)) {
+            logical=(mygames_kvm_u8)i;
             if(!transparent || slots[py*8U+logical]!=255U)
-                video[compact_page_offset(page,pan,(mysmb_io_u8)(x+logical),
-                    (mysmb_io_u8)(y+py))]=slots[py*8U+logical];
+                video[compact_page_offset(page,pan,(mygames_kvm_u8)(x+logical),
+                    (mygames_kvm_u8)(y+py))]=slots[py*8U+logical];
         }
     }
 }
 
-static void compact_write_hud(mysmb_io_u8 page,mysmb_io_u8 pan,
-    const mysmb_io_u8 MYSMB_IO_FAR *slots)
+static void compact_write_hud(mygames_kvm_u8 page,mygames_kvm_u8 pan,
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
     volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
-    mysmb_io_u16 base,y,i,offset;
-    mysmb_io_u8 plane,first;
+    mygames_kvm_u16 base,y,i,offset;
+    mygames_kvm_u8 plane,first;
     if(!slots)return;
     base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
         MYSMB_DOS16_COMPACT_PAGE_B);
     for(plane=0U;plane<4U;++plane) {
-        first=(mysmb_io_u8)((plane+4U-(pan&3U))&3U);vga_retained_plane(plane);
-        offset=(mysmb_io_u16)((pan+first)>>2U);
+        first=(mygames_kvm_u8)((plane+4U-(pan&3U))&3U);vga_retained_plane(plane);
+        offset=(mygames_kvm_u16)((pan+first)>>2U);
         for(y=0U;y<32U;++y) {
             volatile unsigned char far *target=video+base+
                 y*MYSMB_DOS16_COMPACT_PAGE_STRIDE+offset;
-            const mysmb_io_u8 MYSMB_IO_FAR *source=slots+y*256U+first;
+            const mygames_kvm_u8 MYGAMES_KVM_FAR *source=slots+y*256U+first;
             for(i=0U;i<64U;++i)target[i]=source[i*4U];
         }
     }
 }
 
-struct compact_sprite_context {mysmb_io_u8 page,pan;};
-static int compact_draw_sprite(void *context,mysmb_io_u8 sprite,mysmb_io_u8 x,
-    mysmb_io_u8 y,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+struct compact_sprite_context {mygames_kvm_u8 page,pan;};
+static int compact_draw_sprite(void *context,mygames_kvm_u8 sprite,mygames_kvm_u8 x,
+    mygames_kvm_u8 y,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
     struct compact_sprite_context *draw=(struct compact_sprite_context *)context;
-    mysmb_io_u8 width=8U,rows=8U;
+    mygames_kvm_u8 width=8U,rows=8U;
     (void)sprite;
     if(!draw || !slots)return 0;
-    if((mysmb_io_u16)x+width>256U)width=(mysmb_io_u8)(256U-x);
-    if((mysmb_io_u16)y+rows>240U)rows=(mysmb_io_u8)(240U-y);
+    if((mygames_kvm_u16)x+width>256U)width=(mygames_kvm_u8)(256U-x);
+    if((mygames_kvm_u16)y+rows>240U)rows=(mygames_kvm_u8)(240U-y);
     compact_write_slots(draw->page,draw->pan,x,y,width,rows,slots,1U);
     return 1;
 }
@@ -353,33 +353,33 @@ static void retained_viewport_from(const struct mysmb_ppu_scene_viewport *source
     struct retained_viewport *target)
 {
     target->table=source->scene_page;target->x=source->output_origin_x;target->y=source->output_origin_y;
-    if(target->y>=240U)target->y=(mysmb_io_u8)(target->y-240U);
+    if(target->y>=240U)target->y=(mygames_kvm_u8)(target->y-240U);
 }
-static mysmb_io_u16 retained_offset(const struct retained_viewport *view,
-    mysmb_io_u8 x,mysmb_io_u8 y)
+static mygames_kvm_u16 retained_offset(const struct retained_viewport *view,
+    mygames_kvm_u8 x,mygames_kvm_u8 y)
 {
-    mysmb_io_u16 physical_x=(mysmb_io_u16)view->table*256U+view->x+x;
-    mysmb_io_u16 physical_y=(mysmb_io_u16)view->y+y;
-    if(physical_x>=512U)physical_x=(mysmb_io_u16)(physical_x-512U);
-    return (mysmb_io_u16)(physical_y*MYSMB_DOS16_RETAINED_STRIDE+(physical_x>>2U));
+    mygames_kvm_u16 physical_x=(mygames_kvm_u16)view->table*256U+view->x+x;
+    mygames_kvm_u16 physical_y=(mygames_kvm_u16)view->y+y;
+    if(physical_x>=512U)physical_x=(mygames_kvm_u16)(physical_x-512U);
+    return (mygames_kvm_u16)(physical_y*MYSMB_DOS16_RETAINED_STRIDE+(physical_x>>2U));
 }
-static mysmb_io_u8 retained_plane(const struct retained_viewport *view,mysmb_io_u8 x)
+static mygames_kvm_u8 retained_plane(const struct retained_viewport *view,mygames_kvm_u8 x)
 {
-    return (mysmb_io_u8)((view->table*256U+view->x+x)&3U);
+    return (mygames_kvm_u8)((view->table*256U+view->x+x)&3U);
 }
 /* A plane owns two positions in each complete 8-pixel sprite row. */
-static mysmb_io_u8 retained_sprite_plane_first(const struct retained_viewport *view,
-    mysmb_io_u8 x,mysmb_io_u8 plane)
-{return (mysmb_io_u8)((plane+4U-retained_plane(view,x))&3U);}
+static mygames_kvm_u8 retained_sprite_plane_first(const struct retained_viewport *view,
+    mygames_kvm_u8 x,mygames_kvm_u8 plane)
+{return (mygames_kvm_u8)((plane+4U-retained_plane(view,x))&3U);}
 
 /* Convert one neutral 32-row source into the same physical plane/order that
  * the current viewport addresses.  The source is still PPU-owned; this is
  * only the transient VGA layout used by the next restore or HUD write. */
 static void retained_hud_pack(const struct retained_viewport *view,
-    const mysmb_io_u8 MYSMB_IO_FAR *source,mysmb_io_u8 MYSMB_IO_FAR *packed)
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *source,mygames_kvm_u8 MYGAMES_KVM_FAR *packed)
 {
-    mysmb_io_u16 y,i;
-    mysmb_io_u8 plane,first;
+    mygames_kvm_u16 y,i;
+    mygames_kvm_u8 plane,first;
     for(plane=0U;plane<4U;++plane) {
         first=retained_sprite_plane_first(view,0U,plane);
         for(y=0U;y<32U;++y)for(i=0U;i<64U;++i)
@@ -390,21 +390,21 @@ static void retained_hud_pack(const struct retained_viewport *view,
 /* One logical 256-pixel line is 64 bytes in each plane.  It can cross the
  * retained 512-pixel row boundary once, never a scanline or PPU boundary. */
 static void retained_hud_write_plane(const struct retained_viewport *view,
-    mysmb_io_u8 plane,const mysmb_io_u8 MYSMB_IO_FAR *packed)
+    mygames_kvm_u8 plane,const mygames_kvm_u8 MYGAMES_KVM_FAR *packed)
 {
     volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
-    mysmb_io_u16 y,offset,first_count,second_count,physical;
-    mysmb_io_u8 first;
+    mygames_kvm_u16 y,offset,first_count,second_count,physical;
+    mygames_kvm_u8 first;
     first=retained_sprite_plane_first(view,0U,plane);
-    physical=(mysmb_io_u16)view->table*256U+view->x+first;
-    if(physical>=512U)physical=(mysmb_io_u16)(physical-512U);
-    offset=(mysmb_io_u16)(physical>>2U);
-    first_count=(mysmb_io_u16)(128U-offset);
+    physical=(mygames_kvm_u16)view->table*256U+view->x+first;
+    if(physical>=512U)physical=(mygames_kvm_u16)(physical-512U);
+    offset=(mygames_kvm_u16)(physical>>2U);
+    first_count=(mygames_kvm_u16)(128U-offset);
     if(first_count>64U)first_count=64U;
-    second_count=(mysmb_io_u16)(64U-first_count);
+    second_count=(mygames_kvm_u16)(64U-first_count);
     vga_retained_plane(plane);
     for(y=0U;y<32U;++y) {
-        const mysmb_io_u8 MYSMB_IO_FAR *source=packed+plane*2048U+y*64U;
+        const mygames_kvm_u8 MYGAMES_KVM_FAR *source=packed+plane*2048U+y*64U;
         copy_plane_bytes((unsigned char far *)video+y*128U+offset,source,first_count);
         if(second_count)copy_plane_bytes((unsigned char far *)video+y*128U,
             source+first_count,second_count);
@@ -412,7 +412,7 @@ static void retained_hud_write_plane(const struct retained_viewport *view,
 }
 static void retained_restore_hud(void)
 {
-    mysmb_io_u8 plane;
+    mygames_kvm_u8 plane;
     if(!retained_hud_valid)return;
     for(plane=0U;plane<4U;++plane)
         retained_hud_write_plane(&retained_hud_view,plane,retained_hud);
@@ -421,7 +421,7 @@ static void retained_restore_hud(void)
 static int retained_hud_rows(const struct mysmb_ppu_frame_view *view,
     const struct retained_viewport *viewport)
 {
-    mysmb_io_u8 plane;
+    mygames_kvm_u8 plane;
     /* Save the PPU-selected scrollable scene, not a VGA readback.  It is the
      * exact surface covered by the fixed HUD and is restored next frame at
      * the old viewport. */
@@ -432,18 +432,18 @@ static int retained_hud_rows(const struct mysmb_ppu_frame_view *view,
      * the VGA plane once per 32-row HUD pass; slot extraction stays in this
      * original caller, avoiding a DOS large-model far-slot helper. */
     for(plane=0U;plane<4U;++plane) {
-        mysmb_io_u16 y,i;
-        mysmb_io_u8 first=retained_sprite_plane_first(viewport,0U,plane);
+        mygames_kvm_u16 y,i;
+        mygames_kvm_u8 first=retained_sprite_plane_first(viewport,0U,plane);
         vga_retained_plane(plane);
         for(y=0U;y<32U;++y) {
             volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
-            mysmb_io_u16 offset,first_count,second_count,physical;
+            mygames_kvm_u16 offset,first_count,second_count,physical;
             for(i=0U;i<64U;++i)retained_hud_line[i]=retained_hud_slots[y*256U+first+i*4U];
-            physical=(mysmb_io_u16)viewport->table*256U+viewport->x+first;
-            if(physical>=512U)physical=(mysmb_io_u16)(physical-512U);
-            offset=(mysmb_io_u16)(physical>>2U);
-            first_count=(mysmb_io_u16)(128U-offset);if(first_count>64U)first_count=64U;
-            second_count=(mysmb_io_u16)(64U-first_count);
+            physical=(mygames_kvm_u16)viewport->table*256U+viewport->x+first;
+            if(physical>=512U)physical=(mygames_kvm_u16)(physical-512U);
+            offset=(mygames_kvm_u16)(physical>>2U);
+            first_count=(mygames_kvm_u16)(128U-offset);if(first_count>64U)first_count=64U;
+            second_count=(mygames_kvm_u16)(64U-first_count);
             copy_plane_bytes((unsigned char far *)video+y*128U+offset,retained_hud_line,first_count);
             if(second_count)copy_plane_bytes((unsigned char far *)video+y*128U,
                 retained_hud_line+first_count,second_count);
@@ -451,9 +451,9 @@ static int retained_hud_rows(const struct mysmb_ppu_frame_view *view,
     }
     retained_hud_view=*viewport;retained_hud_valid=1U;return 1;
 }
-struct retained_collect_context {struct retained_sprite_backup *items;mysmb_io_u8 *count;};
-static int retained_collect_sprite(void *context,mysmb_io_u8 sprite,mysmb_io_u8 x,
-    mysmb_io_u8 y,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+struct retained_collect_context {struct retained_sprite_backup *items;mygames_kvm_u8 *count;};
+static int retained_collect_sprite(void *context,mygames_kvm_u8 sprite,mygames_kvm_u8 x,
+    mygames_kvm_u8 y,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
     struct retained_collect_context *collect=(struct retained_collect_context *)context;
     struct retained_sprite_backup *item;
@@ -464,42 +464,42 @@ static int retained_collect_sprite(void *context,mysmb_io_u8 sprite,mysmb_io_u8 
     return 1;
 }
 static void retained_mark_sprite_tiles(const struct retained_sprite_backup *items,
-    mysmb_io_u8 count,mysmb_io_u8 *marks)
+    mygames_kvm_u8 count,mygames_kvm_u8 *marks)
 {
-    mysmb_io_u16 n,y,last,column,last_column;
+    mygames_kvm_u16 n,y,last,column,last_column;
     for(n=0U;n<count;++n) {
         if(!items[n].active)continue;
-        column=(mysmb_io_u16)(items[n].x>>3U);last_column=(mysmb_io_u16)((items[n].x+7U)>>3U);
-        y=items[n].y;last=(mysmb_io_u16)y+7U;if(last>=240U)last=239U;
+        column=(mygames_kvm_u16)(items[n].x>>3U);last_column=(mygames_kvm_u16)((items[n].x+7U)>>3U);
+        y=items[n].y;last=(mygames_kvm_u16)y+7U;if(last>=240U)last=239U;
         for(;y<=last;++y) {
-            mysmb_io_u16 band=(mysmb_io_u16)(y>>4U);
+            mygames_kvm_u16 band=(mygames_kvm_u16)(y>>4U);
             marks[band*32U+column]=1U;marks[band*32U+last_column]=1U;
         }
     }
 }
 static int retained_repaint_tiles(const struct mysmb_ppu_frame_view *view,
-    const struct retained_viewport *viewport,const mysmb_io_u8 *marks)
+    const struct retained_viewport *viewport,const mygames_kvm_u8 *marks)
 {
     volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
-    mysmb_io_u16 band,row,column,offset;
-    mysmb_io_u8 plane,first,x,y;
-    static mysmb_io_u8 MYSMB_IO_FAR slots[64];
-    for(band=0U;band<240U;band=(mysmb_io_u16)(band+16U)) {
-        for(row=0U;row<16U;row=(mysmb_io_u16)(row+8U))for(column=0U;column<32U;++column) {
+    mygames_kvm_u16 band,row,column,offset;
+    mygames_kvm_u8 plane,first,x,y;
+    static mygames_kvm_u8 MYGAMES_KVM_FAR slots[64];
+    for(band=0U;band<240U;band=(mygames_kvm_u16)(band+16U)) {
+        for(row=0U;row<16U;row=(mygames_kvm_u16)(row+8U))for(column=0U;column<32U;++column) {
             if(!marks[(band>>4U)*32U+column])continue;
             if(!mysmb_ppu_frame_background_rect(view,slots,sizeof(slots),
-                (mysmb_io_u8)(column*8U),(mysmb_io_u8)(band+row),8U,8U))return 0;
+                (mygames_kvm_u8)(column*8U),(mygames_kvm_u8)(band+row),8U,8U))return 0;
             for(plane=0U;plane<4U;++plane) {
-                first=retained_sprite_plane_first(viewport,(mysmb_io_u8)(column*8U),plane);
+                first=retained_sprite_plane_first(viewport,(mygames_kvm_u8)(column*8U),plane);
                 vga_retained_plane(plane);
                 for(y=0U;y<8U;++y) {
                     x=first;
-                    offset=retained_offset(viewport,(mysmb_io_u8)(column*8U+x),
-                        (mysmb_io_u8)(band+row+y));
+                    offset=retained_offset(viewport,(mygames_kvm_u8)(column*8U+x),
+                        (mygames_kvm_u8)(band+row+y));
                     video[offset]=slots[y*8U+x];
-                    x=(mysmb_io_u8)(first+4U);
-                    offset=retained_offset(viewport,(mysmb_io_u8)(column*8U+x),
-                        (mysmb_io_u8)(band+row+y));
+                    x=(mygames_kvm_u8)(first+4U);
+                    offset=retained_offset(viewport,(mygames_kvm_u8)(column*8U+x),
+                        (mygames_kvm_u8)(band+row+y));
                     video[offset]=slots[y*8U+x];
                 }
             }
@@ -508,32 +508,32 @@ static int retained_repaint_tiles(const struct mysmb_ppu_frame_view *view,
     return 1;
 }
 static void retained_draw_sprites(const struct retained_viewport *view,
-    const struct retained_sprite_backup *items,mysmb_io_u8 count)
+    const struct retained_sprite_backup *items,mygames_kvm_u8 count)
 {
     volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
-    mysmb_io_u16 n,py,offset;
-    mysmb_io_u8 plane,first,width,rows;
+    mygames_kvm_u16 n,py,offset;
+    mygames_kvm_u8 plane,first,width,rows;
     for(n=0U;n<count;++n) {
         const struct retained_sprite_backup *item=&items[n];
         if(!item->active)continue;
-        width=8U;if((mysmb_io_u16)item->x+width>256U)width=(mysmb_io_u8)(256U-item->x);
-        rows=8U;if((mysmb_io_u16)item->y+rows>240U)rows=(mysmb_io_u8)(240U-item->y);
+        width=8U;if((mygames_kvm_u16)item->x+width>256U)width=(mygames_kvm_u8)(256U-item->x);
+        rows=8U;if((mygames_kvm_u16)item->y+rows>240U)rows=(mygames_kvm_u8)(240U-item->y);
         for(plane=0U;plane<4U;++plane) {
             first=retained_sprite_plane_first(view,item->x,plane);vga_retained_plane(plane);
             for(py=0U;py<rows;++py) {
                 if(first<width && item->pixels[py*8U+first]!=255U) {
-                    offset=retained_offset(view,(mysmb_io_u8)(item->x+first),(mysmb_io_u8)(item->y+py));
+                    offset=retained_offset(view,(mygames_kvm_u8)(item->x+first),(mygames_kvm_u8)(item->y+py));
                     video[offset]=item->pixels[py*8U+first];
                 }
                 if(first+4U<width && item->pixels[py*8U+first+4U]!=255U) {
-                    offset=retained_offset(view,(mysmb_io_u8)(item->x+first+4U),(mysmb_io_u8)(item->y+py));
+                    offset=retained_offset(view,(mygames_kvm_u8)(item->x+first+4U),(mygames_kvm_u8)(item->y+py));
                     video[offset]=item->pixels[py*8U+first+4U];
                 }
             }
         }
     }
 }
-static int try_mode(mysmb_io_u8 text)
+static int try_mode(mygames_kvm_u8 text)
 {
     union REGS registers;
     unsigned short i;
@@ -561,17 +561,17 @@ static int try_mode(mysmb_io_u8 text)
     vga_native_rows();
     outp(0x3c8,0U);
     for (i=0U;i<64U;++i) {
-        rgb=mysmb_io_color_rgb((mysmb_io_u8)i);
+        rgb=mygames_kvm_color_rgb((mygames_kvm_u8)i);
         outp(0x3c9,(unsigned char)((rgb>>18U)&0x3fU));
         outp(0x3c9,(unsigned char)((rgb>>10U)&0x3fU));
         outp(0x3c9,(unsigned char)((rgb>>2U)&0x3fU));
     }
     return 1;
 }
-int mysmb_dos16_devices_mode(mysmb_io_u8 text)
+int mysmb_dos16_devices_mode(mygames_kvm_u8 text)
 {
     if(!opened || !video_ready)return 0;
-    text=(mysmb_io_u8)(text!=0U);
+    text=(mygames_kvm_u8)(text!=0U);
     if(text==text_mode)return 1;
     if(try_mode(text)) {
         text_mode=text;retained_mode=0U;compact_mode=0U;ram_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
@@ -581,13 +581,13 @@ int mysmb_dos16_devices_mode(mysmb_io_u8 text)
     video_ready=(unsigned char)try_mode(text_mode);
     return 0;
 }
-void mysmb_dos16_devices_palette(const mysmb_io_u8 MYSMB_IO_FAR *palette)
+void mysmb_dos16_devices_palette(const mygames_kvm_u8 MYGAMES_KVM_FAR *palette)
 {
     unsigned short i;unsigned long rgb;
     if(!video_ready || text_mode || !palette)return;
-    for(i=0U;i<MYSMB_IO_VIDEO_PALETTE_COLORS;++i){
+    for(i=0U;i<MYGAMES_KVM_VIDEO_PALETTE_COLORS;++i){
         if(palette_valid && palette_shadow[i]==palette[i])continue;
-        rgb=mysmb_io_color_rgb(palette[i]);outp(0x3c8,i);
+        rgb=mygames_kvm_color_rgb(palette[i]);outp(0x3c8,i);
         outp(0x3c9,(unsigned char)((rgb>>18U)&63UL));
         outp(0x3c9,(unsigned char)((rgb>>10U)&63UL));
         outp(0x3c9,(unsigned char)((rgb>>2U)&63UL));
@@ -677,7 +677,7 @@ static void copy_plane_dwords(unsigned char far *video,
 }
 
 
-int mysmb_dos16_devices_present_band(const struct mysmb_io_video_band *band)
+int mysmb_dos16_devices_present_band(const struct mygames_kvm_video_band *band)
 {
     unsigned char far *video;
     if(!video_ready || text_mode || !band || !band->pixels || !band->rows ||
@@ -692,7 +692,7 @@ int mysmb_dos16_devices_present_band(const struct mysmb_io_video_band *band)
     copy_plane_dwords(video+band->first*256U,band->pixels,band->rows*256U);
     return 1;
 }
-int mysmb_dos16_devices_present_screen(const mysmb_io_u8 MYSMB_IO_FAR *screen)
+int mysmb_dos16_devices_present_screen(const mygames_kvm_u8 MYGAMES_KVM_FAR *screen)
 {
     unsigned char far *video;
     if(!video_ready || text_mode || !screen)return 0;
@@ -701,28 +701,28 @@ int mysmb_dos16_devices_present_screen(const mysmb_io_u8 MYSMB_IO_FAR *screen)
         retained_hud_valid=0U;retained_sprite_count=0U;
     }
     video=(unsigned char far *)0xa0000000UL;
-    copy_plane_dwords(video,screen,MYSMB_IO_VIDEO_PIXELS);
+    copy_plane_dwords(video,screen,MYGAMES_KVM_VIDEO_PIXELS);
     return 1;
 }
-mysmb_io_u8 MYSMB_IO_FAR *mysmb_dos16_devices_direct_band(mysmb_io_u16 first,
-    mysmb_io_u16 rows)
+mygames_kvm_u8 MYGAMES_KVM_FAR *mysmb_dos16_devices_direct_band(mygames_kvm_u16 first,
+    mygames_kvm_u16 rows)
 {
     if(!video_ready || text_mode || !rows || first>=240U || rows>16U ||
         rows>240U-first)return 0;
-    return (mysmb_io_u8 MYSMB_IO_FAR *)0xa0000000UL+first*256U;
+    return (mygames_kvm_u8 MYGAMES_KVM_FAR *)0xa0000000UL+first*256U;
 }
-void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+void mysmb_dos16_devices_text(const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
 {
     unsigned short i;
     volatile unsigned short far *video;
     if(!video_ready || !text_mode || !frame)return;
-    if(text_rows!=MYSMB_IO_TEXT_FRAME_ROWS(frame)) {
-        text_rows=(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame);
+    if(text_rows!=MYGAMES_KVM_TEXT_FRAME_ROWS(frame)) {
+        text_rows=(unsigned short)MYGAMES_KVM_TEXT_FRAME_ROWS(frame);
         if(!try_mode(1U))return;
     }
-    mysmb_io_color_text_attributes(frame->colors,frame->source_colors,text_colors);
+    mygames_kvm_color_text_attributes(frame->colors,frame->source_colors,text_colors);
     video=(volatile unsigned short far *)0xb8000000UL;
-    for(i=0U;i<MYSMB_IO_TEXT_FRAME_CELLS(frame);++i)
+    for(i=0U;i<MYGAMES_KVM_TEXT_FRAME_CELLS(frame);++i)
         video[i]=(unsigned short)(frame->cells[i].character|
             ((unsigned short)text_colors[frame->cells[i].foreground&15U]<<8U)|
             ((unsigned short)text_colors[frame->cells[i].background&15U]<<12U));
@@ -783,9 +783,9 @@ static int retained_frame_legacy(const struct mysmb_ppu_frame_view *view)
 {
     struct mysmb_ppu_scene_viewport source;
     struct retained_viewport viewport;
-    static mysmb_io_u8 MYSMB_IO_FAR sprite_slots[64];
+    static mygames_kvm_u8 MYGAMES_KVM_FAR sprite_slots[64];
     struct retained_collect_context collect;
-    mysmb_io_u8 marks[15U*32U];
+    mygames_kvm_u8 marks[15U*32U];
     if(!video_ready || text_mode || !mysmb_ppu_frame_scene_viewport(view,&source) ||
         !source.background_enabled)return 0;
     if(!retained_mode) {
@@ -824,8 +824,8 @@ int mysmb_dos16_devices_retained_frame(const struct mysmb_ppu_frame_view *view)
     struct mysmb_ppu_scene_viewport source;
     struct retained_viewport viewport;
     struct compact_sprite_context sprites;
-    static mysmb_io_u8 MYSMB_IO_FAR sprite_slots[64];
-    mysmb_io_u8 page,pan;
+    static mygames_kvm_u8 MYGAMES_KVM_FAR sprite_slots[64];
+    mygames_kvm_u8 page,pan;
     if(!video_ready || text_mode || !mysmb_ppu_frame_scene_viewport(view,&source) ||
         !source.background_enabled)return 0;
     if(!compact_mode) {
@@ -834,9 +834,9 @@ int mysmb_dos16_devices_retained_frame(const struct mysmb_ppu_frame_view *view)
     retained_tile_plane=0xffU;
     if(!mysmb_dos16_retained_background_apply_planes(view,vga_compact_tile,0))goto fallback;
     retained_viewport_from(&source,&viewport);
-    page=(mysmb_io_u8)(compact_page^1U);
+    page=(mygames_kvm_u8)(compact_page^1U);
     if(!vga_compact_copy_viewport(&viewport,page))goto fallback;
-    pan=(mysmb_io_u8)(viewport.x&7U);
+    pan=(mygames_kvm_u8)(viewport.x&7U);
     if(source.fixed_top) {
         if(!mysmb_ppu_frame_background_rows(view,retained_hud_slots,
             sizeof(retained_hud_slots),0U,32U))goto fallback;
@@ -854,7 +854,7 @@ fallback:
     return retained_frame_legacy(view);
 }
 
-mysmb_io_u8 mysmb_dos16_devices_audio(const struct mysmb_io_audio_frame *frame)
+mygames_kvm_u8 mysmb_dos16_devices_audio(const struct mysmb_io_audio_frame *frame)
 {
     return mysmb_dos16_audio_dos_submit(frame);
 }

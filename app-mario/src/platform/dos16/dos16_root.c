@@ -12,7 +12,7 @@
  * deliberately impossible FFFFh-paragraph request fails. This avoids a
  * costly far-heap scan for C when B+A already leave too little contiguous
  * storage. It does not reserve memory and a later allocation may still fail. */
-static int optional_far_block_fits(mysmb_io_u16 bytes)
+static int optional_far_block_fits(mygames_kvm_u16 bytes)
 {
     union REGS input,output;
     unsigned short paragraphs=(unsigned short)((bytes+15U)/16U);
@@ -22,8 +22,8 @@ static int optional_far_block_fits(mysmb_io_u16 bytes)
 }
 #endif
 static int initialize(struct mysmb_dos16_root *root,
-    const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
-    int (*present_rows)(void *,const struct mysmb_io_video_source *))
+    const struct mysmb_dos16_hooks *hooks,mygames_kvm_u16 storage_bytes,
+    int (*present_rows)(void *,const struct mygames_kvm_video_source *))
 {
 #ifdef MYSMB_DOS16_TARGET
     mysmb_u8 __far *pixels;
@@ -60,21 +60,21 @@ static int initialize(struct mysmb_dos16_root *root,
 int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
     const struct mysmb_dos16_hooks *hooks)
 {
-    return initialize(root,hooks,MYSMB_IO_VIDEO_PIXELS,0);
+    return initialize(root,hooks,MYGAMES_KVM_VIDEO_PIXELS,0);
 }
 int mysmb_dos16_root_initialize_rows(struct mysmb_dos16_root *root,
-    const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
-    int (*present_rows)(void *,const struct mysmb_io_video_source *))
+    const struct mysmb_dos16_hooks *hooks,mygames_kvm_u16 storage_bytes,
+    int (*present_rows)(void *,const struct mygames_kvm_video_source *))
 {
     if(present_rows==0)storage_bytes=0U;
     return initialize(root,hooks,storage_bytes,present_rows);
 }
-static int read_rows(void *context,mysmb_io_u16 first,mysmb_io_u16 rows,
-    struct mysmb_io_video_band *band)
+static int read_rows(void *context,mygames_kvm_u16 first,mygames_kvm_u16 rows,
+    struct mygames_kvm_video_band *band)
 {
     struct mysmb_dos16_root *root=(struct mysmb_dos16_root *)context;
 #ifdef MYSMB_DOS16_TARGET
-    mysmb_u8 MYSMB_IO_FAR *pixels;
+    mysmb_u8 MYGAMES_KVM_FAR *pixels;
 #endif
     if(band==0)return 0;
 #ifdef MYSMB_DOS16_TARGET
@@ -101,29 +101,29 @@ static int read_rows(void *context,mysmb_io_u16 first,mysmb_io_u16 rows,
     return 1;
 }
 
-static int present_palette(void *context,const struct mysmb_io_video_source *source)
+static int present_palette(void *context,const struct mygames_kvm_video_source *source)
 {
     struct mysmb_dos16_root *root=(struct mysmb_dos16_root *)source->context;
-    struct mysmb_io_palette_video_source view;
+    struct mygames_kvm_palette_video_source view;
     (void)context;view.rows=*source;view.master_colors=root->video_palette;
     return root->present_palette_rows(root->hooks.context,&view);
 }
 int mysmb_dos16_root_initialize_palette_rows(struct mysmb_dos16_root *root,
-    const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
-    int (*present)(void *,const struct mysmb_io_palette_video_source *))
+    const struct mysmb_dos16_hooks *hooks,mygames_kvm_u16 storage_bytes,
+    int (*present)(void *,const struct mygames_kvm_palette_video_source *))
 {
     if(!present || !initialize(root,hooks,storage_bytes,present_palette))return 0;
     root->present_palette_rows=present;return 1;
 }
 void mysmb_dos16_root_bind_retained(struct mysmb_dos16_root *root,
     int (*present)(void *,const struct mysmb_ppu_frame_view *,
-        const mysmb_io_u8 MYSMB_IO_FAR *))
+        const mygames_kvm_u8 MYGAMES_KVM_FAR *))
 {
     if(root)root->present_retained=present;
 }
 void mysmb_dos16_root_bind_ram(struct mysmb_dos16_root *root,
     int (*present)(void *,const struct mysmb_ppu_frame_view *,
-        const mysmb_io_u8 MYSMB_IO_FAR *,mysmb_io_u8 MYSMB_IO_FAR *))
+        const mygames_kvm_u8 MYGAMES_KVM_FAR *,mygames_kvm_u8 MYGAMES_KVM_FAR *))
 {
     if(root)root->present_ram=present;
 }
@@ -132,10 +132,10 @@ void mysmb_dos16_root_bind_video_gate(struct mysmb_dos16_root *root,
 {if(root)root->should_present=should_present;}
 
 void mysmb_dos16_root_bind_text(struct mysmb_dos16_root *root,
-    struct mysmb_text_scene_workspace MYSMB_IO_FAR *workspace,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
-    int (*set_mode)(void *,mysmb_io_u8),
-    void (*present_text)(void *,const struct mysmb_io_text_frame MYSMB_IO_FAR *))
+    struct mysmb_text_scene_workspace MYGAMES_KVM_FAR *workspace,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    int (*set_mode)(void *,mygames_kvm_u8),
+    void (*present_text)(void *,const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *))
 {
     if(!workspace || !frame || !set_mode || !present_text)return;
     root->text_workspace=workspace;root->text_frame=frame;
@@ -150,8 +150,8 @@ void mysmb_dos16_root_bind_snapshot(struct mysmb_dos16_root *root,
 }
 static void present_current(struct mysmb_dos16_root *root)
 {
-    struct mysmb_io_video_frame video;
-    struct mysmb_io_video_source source;
+    struct mygames_kvm_video_frame video;
+    struct mygames_kvm_video_source source;
     struct mysmb_io_input failure;
 #ifdef MYSMB_DOS16_TARGET
     mysmb_u8 __near *near_cache;
@@ -174,13 +174,13 @@ static void present_current(struct mysmb_dos16_root *root)
         /* D is required before any derived cache: without its contiguous
          * composition surface the compact VGA path is not playable. */
         root->ram_screen_attempted=1U;
-        if(root->present_ram && optional_far_block_fits(MYSMB_IO_VIDEO_PIXELS))
-            root->ram_screen=(mysmb_u8 MYSMB_IO_FAR *)
-                _fmalloc(MYSMB_IO_VIDEO_PIXELS);
+        if(root->present_ram && optional_far_block_fits(MYGAMES_KVM_VIDEO_PIXELS))
+            root->ram_screen=(mysmb_u8 MYGAMES_KVM_FAR *)
+                _fmalloc(MYGAMES_KVM_VIDEO_PIXELS);
         /* Reuse the primary-block reserve before requesting another DOS block.
          * Preserve allocation provenance for the matching shutdown operation. */
         near_cache=(mysmb_u8 __near *)_nmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
-        root->ppu_cache_near=(mysmb_io_u8)(near_cache!=0);
+        root->ppu_cache_near=(mygames_kvm_u8)(near_cache!=0);
         decoded=near_cache?(mysmb_u8 __far *)near_cache:
             (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
         /* B is the compact two-nametable background required behind D. */
@@ -257,7 +257,7 @@ static int capture_snapshot(struct mysmb_dos16_root *root)
 }
 void mysmb_dos16_root_bind_clock(struct mysmb_dos16_root *root,void (*resume)(void *))
 {root->resume_clock=resume;}
-static int snapshot_request(struct mysmb_dos16_root *root,mysmb_io_u8 requests)
+static int snapshot_request(struct mysmb_dos16_root *root,mygames_kvm_u8 requests)
 {
     const struct mysmb_io_snapshot *candidate;
     if(!root->snapshot_store)return 0;
@@ -292,8 +292,8 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
     mysmb_io_control_input(&root->control,&decoded);
     if (root->control.exit_requested!=0U) return;
     if((decoded.requests&MYSMB_IO_REQUEST_TOGGLE)!=0U && root->set_mode &&
-        root->set_mode(root->hooks.context,(mysmb_io_u8)!root->text_mode))
-        root->text_mode=(mysmb_io_u8)!root->text_mode;
+        root->set_mode(root->hooks.context,(mygames_kvm_u8)!root->text_mode))
+        root->text_mode=(mygames_kvm_u8)!root->text_mode;
     if(snapshot_request(root,decoded.requests))return;
     if (mysmb_game_startup_step(&root->game,1U)==0U) return;
     mysmb_game_io_input(&decoded,&input);

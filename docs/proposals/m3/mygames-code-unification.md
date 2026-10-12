@@ -223,3 +223,44 @@ contract, app-local translation of raw events into Mario commands, focused
 unit coverage for cells/palette/glyph/event conversion, and unchanged x86/x64
 launch/text behaviour.  DOS16 link is rebuilt if moved code enters its product
 closure.  No Mine source is read or imported.
+
+### S3 closure receipt
+
+S3 establishes `lib/kvm` as the single source owner for portable fixed-width
+types, cells and video contracts, the semantic sixteen-colour palette, CP437
+glyph conversion, and raw physical input/presentation declarations.  The
+former `io/color.*`, `io/text_glyph.*`, `io/types.h`, and `io/video.h` owners
+were removed from Mario.  `app-mario/src/app/input_mapping.*` is the sole new
+Mario policy adapter: it assigns WASD, J/K, Enter, either Shift, Escape, P, O
+and Tab their Mario meanings; KVM assigns none.
+
+`mygames.kvm-contract-smoke` and `mysmb.app-input-mapping-smoke` exercise the
+new owners; both x86 and x64 focused core/I/O/launch/purity matrices pass.
+The S2 relocation also required the Mario-owned Python checks to resolve the
+repository's shared `tools/` and `build/` directories from their new
+`app-mario/test/` location; their assertions and evidence scopes are unchanged.
+The rebuilt DOS16 product links through the previously accepted, locally
+contained Overlay Linker 3.65 route (tool SHA-256
+`124a3c800edc16b60f696d35a9dfec798b68b78fe2ca90c5988ea76bdeab1a8a`), which
+remains a build-only tool and is neither imported nor redistributed.  Its MZ
+product is 361,067 bytes with 384,768 bytes minimum loaded memory.  This task
+changes no ROM node or control edge, and no Mine source was read or imported.
+
+### S4 admission — `lib/win32` host extraction
+
+S4 moves only generic Win32/x64 host ownership from
+`app-mario/src/platform/win32` into `lib/win32`: window lifecycle, borrowed or
+owned Console lifecycle, terminal-capability selection, VT/indexed text
+projection, raw keyboard/focus/mouse capture, timing, and device presentation.
+The library emits only KVM physical events and consumes app-requested
+presentation.  Mario retains `input_mapping`, controller state, all command
+decisions, frame/PPU content, save/load, audio intent, and the decision that a
+Tab event requests a view switch.  No Mine source or Win16 implementation is
+admitted.
+
+The receiving library must have no Mario names or game-state access.  The
+Mario adapter must be the only location converting KVM events into Mario
+commands.  Acceptance covers borrowed-console start, graphical start, a
+borrowed suspend/resume round trip, an owned-console lifetime round trip,
+visible-terminal RGB VT, indexed fallback, raw-event mapping, x86/x64 product
+builds, and the unchanged DOS16 product link.

@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 from writable_tempdir import writable_temporary_directory
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
 from smb_enemy_data_audit import audit, check_literal_span, record_layout
 
 
@@ -41,7 +41,7 @@ def synthetic_binding():
         source += [name + ":", ".byte " + ",".join("$%02x" % x for x in data)]
         image[cursor:cursor + len(data)] = bytes(data)
         cursor += len(data)
-    build = Path(__file__).resolve().parents[1] / "build"
+    build = Path(__file__).resolve().parents[2] / "build"
     build.mkdir(exist_ok=True)
     with writable_temporary_directory(dir=build, prefix="enemy-audit-") as directory:
         base = Path(directory)

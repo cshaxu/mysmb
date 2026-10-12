@@ -3,9 +3,9 @@
  * only moves these already-decided bytes;each row uses DWORD bulk copies and
  * no game, PPU-state, palette, or frame-policy decision. */
 #ifdef MYSMB_DOS16_TARGET
-static void copy_rows(const mysmb_io_u8 MYSMB_IO_FAR *first,
-    const mysmb_io_u8 MYSMB_IO_FAR *second,mysmb_io_u8 MYSMB_IO_FAR *destination,
-    mysmb_io_u16 first_count,mysmb_io_u16 second_count,mysmb_io_u16 rows)
+static void copy_rows(const mygames_kvm_u8 MYGAMES_KVM_FAR *first,
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *second,mygames_kvm_u8 MYGAMES_KVM_FAR *destination,
+    mygames_kvm_u16 first_count,mygames_kvm_u16 second_count,mygames_kvm_u16 rows)
 {
     _asm {
         push ds
@@ -64,9 +64,9 @@ done:
     }
 }
 #endif
-int mysmb_dos16_slot_rows_copy(const mysmb_io_u8 MYSMB_IO_FAR *first,
-    const mysmb_io_u8 MYSMB_IO_FAR *second,mysmb_io_u8 MYSMB_IO_FAR *destination,
-    mysmb_io_u16 first_count,mysmb_io_u16 second_count,mysmb_io_u16 rows)
+int mysmb_dos16_slot_rows_copy(const mygames_kvm_u8 MYGAMES_KVM_FAR *first,
+    const mygames_kvm_u8 MYGAMES_KVM_FAR *second,mygames_kvm_u8 MYGAMES_KVM_FAR *destination,
+    mygames_kvm_u16 first_count,mygames_kvm_u16 second_count,mygames_kvm_u16 rows)
 {
     if(!first || !destination || !rows || rows>16U || first_count+second_count!=256U ||
         (second_count && !second))return 0;

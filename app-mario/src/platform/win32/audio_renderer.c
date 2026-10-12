@@ -100,7 +100,7 @@ static void mysmb_win32_audio_apply_writes(
     unsigned int event;
     unsigned int channel;
     unsigned int index;
-    mysmb_io_u8 value;
+    mygames_kvm_u8 value;
 
     for (event = 0U; event < frame->write_count &&
          event < MYSMB_IO_AUDIO_WRITE_CAPACITY;

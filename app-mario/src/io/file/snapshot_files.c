@@ -21,16 +21,16 @@ static int open_file(void *context,const char *name,int write,void **handle)
     if (file==0) return 0;
     *handle=file;return 1;
 }
-static int read_file(void *handle,mysmb_io_u8 *data,mysmb_io_u16 count,
-    mysmb_io_u16 *actual)
+static int read_file(void *handle,mygames_kvm_u8 *data,mygames_kvm_u16 count,
+    mygames_kvm_u16 *actual)
 {
-    *actual=(mysmb_io_u16)fread(data,1U,count,(FILE *)handle);
+    *actual=(mygames_kvm_u16)fread(data,1U,count,(FILE *)handle);
     return ferror((FILE *)handle)==0;
 }
-static int write_file(void *handle,const mysmb_io_u8 *data,mysmb_io_u16 count,
-    mysmb_io_u16 *actual)
+static int write_file(void *handle,const mygames_kvm_u8 *data,mygames_kvm_u16 count,
+    mygames_kvm_u16 *actual)
 {
-    *actual=(mysmb_io_u16)fwrite(data,1U,count,(FILE *)handle);
+    *actual=(mygames_kvm_u16)fwrite(data,1U,count,(FILE *)handle);
     return ferror((FILE *)handle)==0;
 }
 static int close_file(void *handle,int write)

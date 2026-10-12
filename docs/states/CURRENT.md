@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M3 T43 S3 Packet
+## M3 T43 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T43 S3 P1 — `lib/kvm` neutral contracts |
+| Identifier Mode | M3 T43 S4 P1 — `lib/win32` host extraction |
 | Admission And Approval | Owner approved the Mario-first restructure and specified that applications retain all keyboard and mouse semantics. |
-| Objective | Extract portable presentation and lossless physical-event contracts into `lib/kvm` while retaining Mario command decisions in `app-mario`. |
-| Non-goals | No Mine read/import; no Win32/DOS host extraction; no game binding, ROM/PPU, text-art, mouse or controller semantic change. |
-| Reference Baseline | T43 S2 structural closure: `app-mario` root and three product targets compile from the root superbuild. |
+| Objective | Extract generic Win32/x64 host ownership into `lib/win32`, with Mario retaining command mapping and view decisions. |
+| Non-goals | No Mine read/import, Win16/DOS extraction, ROM/PPU change, text-art change, or Mario key/mouse semantic change. |
+| Reference Baseline | T43 S3 closure: `lib/kvm` owns neutral presentation/physical-event contracts and the three Mario products build. |
 | Candidate Proposal | [M3 T43 proposal](../proposals/m3/mygames-code-unification.md). |
-| Files And ABI Surface | New `lib/kvm` CMake/include/source/test ownership plus `app-mario` include and target dependency updates. No app-facing input meaning becomes a library API. |
+| Files And ABI Surface | New `lib/win32` CMake/include/source/test ownership plus a narrow Mario host callback that consumes KVM physical events and app-requested presentation. No app command becomes a library API. |
 | Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
-| Verification | Contract unit tests, owner/dependency scan, focused Mario text/launch tests, x86/x64 builds and DOS16 link when the moved source is linked there. |
-| Expected Markers | KVM has no host/game includes; one owner per moved neutral contract; raw event payloads carry no Mario command; Mario performs conversion. |
+| Verification | Library contracts, dependency/purity scan, borrowed/owned Console lifecycle tests, VT/indexed tests, raw-event-to-Mario adapter test, x86/x64 builds and DOS16 link. |
+| Expected Markers | Win32 has no Mario constants or game state; it returns only KVM events and presentation results; Mario alone performs conversion and calls its own core/PPU. |
 | Asset Needs | None. No ROM, asset, disassembly, trace or Mine material enters the task. |
-| Reporting Requirements | Report exact moved files, API surface, app-owned mapping boundary, test results and target matrix. |
-| Stop Conditions | Any host API in KVM, app key/mouse semantic in KVM, duplicated compatibility owner, game-state/PPU decision in a library, or Mine import. |
-| Exit Criteria | KVM contracts build as an independent target and Mario consumes them without a behaviour or semantic-binding change. |
+| Reporting Requirements | Report exact moved files, callback surface, app-owned mapping boundary, lifecycle/colour test results and target matrix. |
+| Stop Conditions | Mario constants or game state in `lib/win32`, an app command assigned by the library, duplicate old/new host owner, behavioural change, or Mine import. |
+| Exit Criteria | `lib/win32` is the single Win32 host owner, Mario controls all command decisions, and all three products retain current behaviour. |
 | Original Owner Request | Combine Mine and MySMB through reusable DOS16/Win16/Win32/KVM infrastructure while leaving each app responsible for its own controls. |
-| Similar-Issue Sweep | Scan library headers/sources and CMake dependency edges for Mario constants, Windows/DOS APIs, and duplicate former `io` contract owners. |
+| Similar-Issue Sweep | Scan `lib/win32` headers/sources and CMake dependency edges for Mario constants, controller commands, PPU/core access, duplicate host owners and shell/process-name special cases. |
 
 ## Current Technical Baseline
 

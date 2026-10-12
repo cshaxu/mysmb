@@ -9,10 +9,10 @@ enum {
 struct mysmb_snapshot_files {
     void *context;
     int (*open)(void *context,const char *name,int write,void **handle);
-    int (*read)(void *handle,mysmb_io_u8 *data,mysmb_io_u16 count,
-        mysmb_io_u16 *actual);
-    int (*write)(void *handle,const mysmb_io_u8 *data,mysmb_io_u16 count,
-        mysmb_io_u16 *actual);
+    int (*read)(void *handle,mygames_kvm_u8 *data,mygames_kvm_u16 count,
+        mygames_kvm_u16 *actual);
+    int (*write)(void *handle,const mygames_kvm_u8 *data,mygames_kvm_u16 count,
+        mygames_kvm_u16 *actual);
     /* Flush writes and close,including failure paths. */
     int (*close)(void *handle,int write);
     int (*replace)(void *context,const char *pending,const char *final_name);
@@ -30,5 +30,5 @@ int mysmb_snapshot_save(struct mysmb_snapshot_store *store,
 /* Staging is scratch:the next operation invalidates a borrowed result,even on
  * failure. Only a successful load may be committed to live game state. */
 const struct mysmb_io_snapshot *mysmb_snapshot_load(
-    struct mysmb_snapshot_store *store,const mysmb_io_u8 *fingerprint);
+    struct mysmb_snapshot_store *store,const mygames_kvm_u8 *fingerprint);
 #endif

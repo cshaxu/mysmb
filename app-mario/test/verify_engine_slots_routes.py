@@ -11,7 +11,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('directory', type=Path)
     directory = parser.parse_args().directory.resolve()
-    root = Path(__file__).resolve().parents[1] / 'build'
+    root = Path(__file__).resolve().parents[2] / 'build'
     assert directory.is_relative_to(root.resolve())
     excluded = set(range(8)) | set(range(256, 512)) | {0x778, 0x779}
     # Corrected owner-ROM symbols, not addresses from another ROM revision.

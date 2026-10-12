@@ -34,7 +34,7 @@ static int publication(void)
     if(mysmb_snapshot_cache_current(&cache)->payload[0]!=0xa2U)return 8;
     return 0;
 }
-static mysmb_io_u8 pending[MYSMB_SNAPSHOT_FILE_BYTES+1U],final_file[MYSMB_SNAPSHOT_FILE_BYTES+1U],prior[MYSMB_SNAPSHOT_FILE_BYTES+1U];
+static mygames_kvm_u8 pending[MYSMB_SNAPSHOT_FILE_BYTES+1U],final_file[MYSMB_SNAPSHOT_FILE_BYTES+1U],prior[MYSMB_SNAPSHOT_FILE_BYTES+1U];
 static unsigned int pending_size,final_size,offset,write_calls,logs,removed;
 static int fault;
 static int load_commit(void)
@@ -53,21 +53,21 @@ static int fake_open(void *ctx,const char *name,int write,void **handle)
     *handle=write!=0 ? pending:final_file;
     return 1;
 }
-static int fake_write(void *handle,const mysmb_io_u8 *data,mysmb_io_u16 count,
-    mysmb_io_u16 *actual)
+static int fake_write(void *handle,const mygames_kvm_u8 *data,mygames_kvm_u16 count,
+    mygames_kvm_u16 *actual)
 {
     if (handle!=pending || (fault==2 && ++write_calls>2U)) return 0;
     *actual=count>17U ? 17U:count;
     memcpy(pending+offset,data,*actual);offset+=*actual;pending_size=offset;
     return 1;
 }
-static int fake_read(void *handle,mysmb_io_u8 *data,mysmb_io_u16 count,
-    mysmb_io_u16 *actual)
+static int fake_read(void *handle,mygames_kvm_u8 *data,mygames_kvm_u16 count,
+    mygames_kvm_u16 *actual)
 {
     if (handle!=final_file || fault==6 ||
         (fault==8 && offset>=MYSMB_SNAPSHOT_LEGACY_FILE_BYTES)) return 0;
     if (count>23U) count=23U;
-    if (count>final_size-offset) count=(mysmb_io_u16)(final_size-offset);
+    if (count>final_size-offset) count=(mygames_kvm_u16)(final_size-offset);
     memcpy(data,final_file+offset,count);offset+=count;*actual=count;
     return 1;
 }

@@ -3,9 +3,9 @@
 #include <math.h>
 #include <string.h>
 
-int mysmb_snapshot_put_real(mysmb_io_u8 *bytes, double value)
+int mysmb_snapshot_put_real(mygames_kvm_u8 *bytes, double value)
 {
-    mysmb_io_u8 encoded[MYSMB_SNAPSHOT_REAL_BYTES];
+    mygames_kvm_u8 encoded[MYSMB_SNAPSHOT_REAL_BYTES];
     double fraction, high_part;
     unsigned long high,low;
     int exponent;
@@ -13,25 +13,25 @@ int mysmb_snapshot_put_real(mysmb_io_u8 *bytes, double value)
     if (value!=value || value>DBL_MAX || value< -DBL_MAX) return 0;
     memset(encoded,0,sizeof(encoded));
     if (value!=0.0) {
-        encoded[0]=(mysmb_io_u8)(value<0.0);
+        encoded[0]=(mygames_kvm_u8)(value<0.0);
         fraction=frexp(value<0.0 ? -value:value,&exponent);
         if (exponent< -1073 || exponent>1024) return 0;
         fraction=ldexp(fraction,53);
         high_part=floor(fraction/4294967296.0);
         high=(unsigned long)high_part;
         low=(unsigned long)(fraction-high_part*4294967296.0);
-        mysmb_snapshot_put16(encoded+1,(mysmb_io_u16)(exponent+1074));
+        mysmb_snapshot_put16(encoded+1,(mygames_kvm_u16)(exponent+1074));
         mysmb_snapshot_put32(encoded+3,low);
-        for (i=0U;i<3U;++i) {encoded[7U+i]=(mysmb_io_u8)high;high>>=8U;}
+        for (i=0U;i<3U;++i) {encoded[7U+i]=(mygames_kvm_u8)high;high>>=8U;}
     }
     memcpy(bytes,encoded,sizeof(encoded));
     return 1;
 }
-int mysmb_snapshot_get_real(const mysmb_io_u8 *bytes, double *value)
+int mysmb_snapshot_get_real(const mygames_kvm_u8 *bytes, double *value)
 {
-    mysmb_io_u8 check[MYSMB_SNAPSHOT_REAL_BYTES];
+    mygames_kvm_u8 check[MYSMB_SNAPSHOT_REAL_BYTES];
     unsigned long high,low;
-    mysmb_io_u16 exponent;
+    mygames_kvm_u16 exponent;
     double decoded;
     if (bytes[0]>1U) return 0;
     exponent=mysmb_snapshot_get16(bytes+1);

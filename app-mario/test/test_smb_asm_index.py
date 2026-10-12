@@ -5,7 +5,7 @@ from writable_tempdir import writable_temporary_directory
 
 
 def load_module(name):
-    tool_dir = Path(__file__).parents[1] / "tools"
+    tool_dir = Path(__file__).parents[2] / "tools"
     if str(tool_dir) not in sys.path:
         sys.path.insert(0, str(tool_dir))
     script = tool_dir / (name + ".py")
@@ -17,7 +17,7 @@ def load_module(name):
 
 def main():
     indexer = load_module("smb_asm_index")
-    build = Path(__file__).resolve().parents[1] / "build"
+    build = Path(__file__).resolve().parents[2] / "build"
     build.mkdir(exist_ok=True)
     with writable_temporary_directory(dir=build, prefix="asm-index-") as directory:
         root = Path(directory)

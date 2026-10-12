@@ -3,7 +3,7 @@
 #include <string.h>
 
 void mysmb_game_snapshot_fingerprint(const struct mysmb_game *game,
-    mysmb_io_u8 *fingerprint)
+    mygames_kvm_u8 *fingerprint)
 {
     mysmb_snapshot_put32(fingerprint,mysmb_snapshot_crc(game->area_prg,game->area_prg_size));
     mysmb_snapshot_put32(fingerprint+4,mysmb_snapshot_crc(game->ppu.chr_data,game->ppu.chr_data_size));
@@ -11,9 +11,9 @@ void mysmb_game_snapshot_fingerprint(const struct mysmb_game *game,
     mysmb_snapshot_put32(fingerprint+12,mysmb_snapshot_crc(game->title_icon_data,game->title_icon_data_size));
 }
 int mysmb_game_snapshot_capture(const struct mysmb_game *game,
-    struct mysmb_io_snapshot *snapshot,const mysmb_io_u8 *fingerprint)
+    struct mysmb_io_snapshot *snapshot,const mygames_kvm_u8 *fingerprint)
 {
-    mysmb_io_u8 *out;
+    mygames_kvm_u8 *out;
     unsigned int i;
     out=snapshot->payload;
     mysmb_snapshot_put32(out,game->frame_number);out+=4;
@@ -46,8 +46,8 @@ int mysmb_game_snapshot_capture(const struct mysmb_game *game,
 int mysmb_game_snapshot_valid(const struct mysmb_game *game,
     const struct mysmb_io_snapshot *snapshot)
 {
-    mysmb_io_u8 fingerprint[16];
-    const mysmb_io_u8 *in;
+    mygames_kvm_u8 fingerprint[16];
+    const mygames_kvm_u8 *in;
     unsigned int i;
     mysmb_game_snapshot_fingerprint(game,fingerprint);
     in=snapshot->payload;
@@ -62,7 +62,7 @@ int mysmb_game_snapshot_valid(const struct mysmb_game *game,
 int mysmb_game_snapshot_restore(struct mysmb_game *game,
     const struct mysmb_io_snapshot *snapshot)
 {
-    const mysmb_io_u8 *in;
+    const mygames_kvm_u8 *in;
     unsigned int i;
     if (!mysmb_game_snapshot_valid(game,snapshot)) return 0;
     in=snapshot->payload;
@@ -91,17 +91,17 @@ int mysmb_game_snapshot_restore(struct mysmb_game *game,
 #undef ARRAY
     return 1;
 }
-mysmb_io_u8 mysmb_game_snapshot_running(const struct mysmb_game *game,
+mygames_kvm_u8 mysmb_game_snapshot_running(const struct mysmb_game *game,
     const struct mysmb_frame *frame)
 {
-    return (mysmb_io_u8)(frame->operating_mode==1U &&
+    return (mygames_kvm_u8)(frame->operating_mode==1U &&
         frame->operating_mode_task==3U && !mysmb_game_is_paused(game));
 }
-mysmb_io_u8 mysmb_game_snapshot_available(const struct mysmb_game *game,
+mygames_kvm_u8 mysmb_game_snapshot_available(const struct mysmb_game *game,
     const struct mysmb_frame *frame)
 {
     (void)game;
-    return (mysmb_io_u8)(frame->operating_mode==1U && frame->operating_mode_task==3U);
+    return (mygames_kvm_u8)(frame->operating_mode==1U && frame->operating_mode_task==3U);
 }
 void mysmb_game_snapshot_resume_frame(const struct mysmb_game *game,struct mysmb_frame *frame)
 {

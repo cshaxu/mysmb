@@ -1,7 +1,7 @@
 #include "text/scene.h"
 int mysmb_text_scene_build_profile(const struct mysmb_game *game,
-    struct mysmb_text_scene_workspace MYSMB_IO_FAR *workspace,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,unsigned short rows)
+    struct mysmb_text_scene_workspace MYGAMES_KVM_FAR *workspace,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,unsigned short rows)
 {
     struct mysmb_text_background_receipt background;
     struct mysmb_text_actor_receipt actors;
@@ -11,6 +11,6 @@ int mysmb_text_scene_build_profile(const struct mysmb_game *game,
         workspace->background.opaque,frame,&actors);
 }
 int mysmb_text_scene_build(const struct mysmb_game *game,
-    struct mysmb_text_scene_workspace MYSMB_IO_FAR *workspace,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+    struct mysmb_text_scene_workspace MYGAMES_KVM_FAR *workspace,
+    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
 {return mysmb_text_scene_build_profile(game,workspace,frame,50U);}

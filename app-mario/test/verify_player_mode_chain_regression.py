@@ -5,7 +5,7 @@ parser.add_argument('directory',type=Path)
 parser.add_argument('rom',type=Path)
 args=parser.parse_args()
 b=args.directory.resolve();rom=args.rom.resolve();rows=[]
-assert b.is_relative_to((Path(__file__).resolve().parents[1]/'build').resolve())
+assert b.is_relative_to((Path(__file__).resolve().parents[2]/'build').resolve())
 def frames(p):
  d=p.read_bytes();n=struct.unpack_from('<I',d,8)[0];assert len(d)==12+n*4409 and n==4
  return [d[12+i*4409:12+(i+1)*4409] for i in range(n)]

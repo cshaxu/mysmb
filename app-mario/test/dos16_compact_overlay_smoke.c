@@ -7,15 +7,15 @@
 /* RAM model of the compact DOS adapter.  It uses the same cache/page capacity
  * and PPU callbacks as the hardware presenter, then compares every visible
  * slot against the canonical PPU output. */
-struct compact_sprite_context { mysmb_io_u8 page,pan; };
-static mysmb_io_u8 cache[240][512],pages[2][240][264],chr[8192];
-static mysmb_io_u8 expected[61440],scratch[8192],sprite_slots[64];
-static mysmb_io_u8 current_page;
+struct compact_sprite_context { mygames_kvm_u8 page,pan; };
+static mygames_kvm_u8 cache[240][512],pages[2][240][264],chr[8192];
+static mygames_kvm_u8 expected[61440],scratch[8192],sprite_slots[64];
+static mygames_kvm_u8 current_page;
 
-static int tile(void *context,mysmb_io_u8 table,mysmb_io_u8 row,
-    mysmb_io_u8 column,const mysmb_io_u8 MYSMB_IO_FAR *slots)
+static int tile(void *context,mygames_kvm_u8 table,mygames_kvm_u8 row,
+    mygames_kvm_u8 column,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
-    mysmb_io_u16 x,y;
+    mygames_kvm_u16 x,y;
     (void)context;
     if(!slots)return 0;
     for(y=0U;y<8U;++y)for(x=0U;x<8U;++x)
@@ -23,11 +23,11 @@ static int tile(void *context,mysmb_io_u8 table,mysmb_io_u8 row,
     return 1;
 }
 
-static int sprite(void *context,mysmb_io_u8 index,mysmb_io_u8 x,
-    mysmb_io_u8 y,const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *slots)
+static int sprite(void *context,mygames_kvm_u8 index,mygames_kvm_u8 x,
+    mygames_kvm_u8 y,const mygames_kvm_u8 MYSMB_PPU_FRAME_FAR *slots)
 {
     struct compact_sprite_context *draw=(struct compact_sprite_context *)context;
-    mysmb_io_u16 px,py;
+    mygames_kvm_u16 px,py;
     (void)index;
     if(!draw || !slots)return 0;
     for(py=0U;py<8U && y+py<240U;++py)for(px=0U;px<8U && x+px<256U;++px)
@@ -41,18 +41,18 @@ static int frame(struct mysmb_ppu_state *state,struct mysmb_ppu_frame_workspace 
     struct mysmb_ppu_frame_view view;
     struct mysmb_ppu_scene_viewport scene;
     struct compact_sprite_context sprites;
-    mysmb_io_u16 x,y,source_x,source_y,aligned_x;
-    mysmb_io_u8 page,pan;
+    mygames_kvm_u16 x,y,source_x,source_y,aligned_x;
+    mygames_kvm_u8 page,pan;
     mysmb_ppu_frame_begin(state,work,&view);
     if(!mysmb_dos16_retained_background_apply(&view,tile,0) ||
         !mysmb_ppu_frame_scene_viewport(&view,&scene))return 0;
-    page=(mysmb_io_u8)(current_page^1U);pan=(mysmb_io_u8)(scene.output_origin_x&7U);
-    aligned_x=(mysmb_io_u16)scene.scene_page*256U+
-        ((mysmb_io_u16)scene.output_origin_x&0xfff8U);
+    page=(mygames_kvm_u8)(current_page^1U);pan=(mygames_kvm_u8)(scene.output_origin_x&7U);
+    aligned_x=(mygames_kvm_u16)scene.scene_page*256U+
+        ((mygames_kvm_u16)scene.output_origin_x&0xfff8U);
     for(y=0U;y<240U;++y)for(x=0U;x<264U;++x) {
-        source_x=(mysmb_io_u16)(aligned_x+x);
+        source_x=(mygames_kvm_u16)(aligned_x+x);
         if(source_x>=512U)source_x-=512U;
-        source_y=(mysmb_io_u16)scene.output_origin_y+y;
+        source_y=(mygames_kvm_u16)scene.output_origin_y+y;
         if(source_y>=240U)source_y-=240U;
         pages[page][y][x]=cache[source_y][source_x];
     }
@@ -73,12 +73,12 @@ int main(void)
 {
     struct mysmb_ppu_state state;
     struct mysmb_ppu_frame_workspace work;
-    static mysmb_io_u8 background[MYSMB_PPU_BACKGROUND_BYTES];
-    static mysmb_io_u8 second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
-    mysmb_io_u16 i;
+    static mygames_kvm_u8 background[MYSMB_PPU_BACKGROUND_BYTES];
+    static mygames_kvm_u8 second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
+    mygames_kvm_u16 i;
     memset(&state,0,sizeof(state));
-    for(i=0U;i<8192U;++i)chr[i]=(mysmb_io_u8)(i*11U+i/7U);
-    for(i=0U;i<2048U;++i)state.name_table[i/1024U][i&1023U]=(mysmb_io_u8)(i*3U);
+    for(i=0U;i<8192U;++i)chr[i]=(mygames_kvm_u8)(i*11U+i/7U);
+    for(i=0U;i<2048U;++i)state.name_table[i/1024U][i&1023U]=(mygames_kvm_u8)(i*3U);
     state.chr_data=chr;state.chr_data_size=sizeof(chr);state.visible_ppu_mask=30U;
     state.visible_sprite0_split=1U;state.visible_ppu_name_table=1U;
     state.visible_scroll_x=19U;state.visible_scroll_y=23U;

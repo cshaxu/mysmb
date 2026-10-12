@@ -19,15 +19,15 @@ static struct mysmb_ppu_frame_workspace cache_workspace,other_workspace;
 static unsigned char cache_store[MYSMB_PPU_CHR_DECODED_BYTES+2U];
 static unsigned char other_store[MYSMB_PPU_CHR_DECODED_BYTES+2U],other_chr[8192];
 static struct mysmb_text_scene_workspace workspace;
-static struct mysmb_io_text_frame text;
+static struct mygames_kvm_text_frame text;
 static union borrowed_surface {
     struct mysmb_ppu_frame graphics;
     struct {
         struct mysmb_text_scene_workspace workspace;
-        struct mysmb_io_text_frame frame;
+        struct mygames_kvm_text_frame frame;
     } text;
 } borrowed;
-typedef char borrowed_text_fits[sizeof(borrowed.text)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
+typedef char borrowed_text_fits[sizeof(borrowed.text)<=MYGAMES_KVM_VIDEO_PIXELS?1:-1];
 static struct mysmb_io_snapshot snapshot;
 static struct mysmb_io_snapshot_cache cache;
 static struct mysmb_vga_frame vga;
@@ -138,7 +138,7 @@ static int cache_priority_alias(void)
     printf("cache_priority_alias=4 cases raw-opacity/mask/front-behind pass\n");
     return 0;
 }
-static void scale_reference(const struct mysmb_io_video_frame *video)
+static void scale_reference(const struct mygames_kvm_video_frame *video)
 {
     unsigned int x,y;
     /* Independent direct-enlargement oracle,including every source row. */
@@ -147,7 +147,7 @@ static void scale_reference(const struct mysmb_io_video_frame *video)
             (unsigned char)(video->pixels[(y*3U/5U)*256U+x*4U/5U]&63U);
 }
 static unsigned char scaled_reference[4][MYSMB_VGA_PAGE_SIZE];
-static int compare_scaling(const struct mysmb_io_video_frame *video)
+static int compare_scaling(const struct mygames_kvm_video_frame *video)
 {
     unsigned int page;
     scale_reference(video);
@@ -163,7 +163,7 @@ int main(void)
 {
     struct mysmb_frame frame;
     struct mysmb_input input;
-    struct mysmb_io_video_frame video;
+    struct mygames_kvm_video_frame video;
     unsigned int i,n;
     double start,old_time,new_time,tick_time,graphics_time,text_time,scale_time,save_time;
     int result;

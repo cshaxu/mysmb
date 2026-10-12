@@ -1,11 +1,11 @@
 #include "text/background_scene.h"
-#include "io/text_glyph.h"
+#include "kvm/glyph.h"
 #include <stdio.h>
 #include <string.h>
 
 static struct mysmb_game game,before;
 static struct mysmb_text_background_workspace workspace;
-static struct mysmb_io_text_frame frame,original;
+static struct mygames_kvm_text_frame frame,original;
 static unsigned char prg[0x8000U];
 #define CHECK(c) do {if(!(c)){fprintf(stderr,"background check %d\n",__LINE__);return 1;}}while(0)
 
@@ -55,7 +55,7 @@ int main(void)
         before=game;
         CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
         CHECK(r.unsupported==0U && r.objects==1U);
-        CHECK(frame.cells[27U*80U+20U].character==MYSMB_IO_GLYPH_TOP_LEFT);
+        CHECK(frame.cells[27U*80U+20U].character==MYGAMES_KVM_GLYPH_TOP_LEFT);
         CHECK(frame.cells[28U*80U+22U].background!=frame.cells[0U].background);
         CHECK(memcmp(&before,&game,sizeof(game))==0);
         /* Blank replacement stays blank;hidden blocks are not invented. */
@@ -72,8 +72,8 @@ int main(void)
     CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
     CHECK(r.recognized==480U && r.unsupported==0U && r.objects==1U);
     CHECK(memcmp(&game,&before,sizeof(game))==0);
-    CHECK(frame.cells[30U*80U+30U].character==MYSMB_IO_GLYPH_TOP_LEFT);
-    CHECK(frame.cells[34U*80U+30U].character==MYSMB_IO_GLYPH_VERTICAL);
+    CHECK(frame.cells[30U*80U+30U].character==MYGAMES_KVM_GLYPH_TOP_LEFT);
+    CHECK(frame.cells[34U*80U+30U].character==MYGAMES_KVM_GLYPH_VERTICAL);
     CHECK(frame.cells[34U*80U+34U].background==frame.cells[34U*80U+30U].background);
     CHECK(frame.cells[34U*80U+34U].background!=frame.cells[0U].background);
     original=frame;
@@ -117,8 +117,8 @@ int main(void)
     before=game;
     CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
     CHECK(memcmp(&game,&before,sizeof(game))==0);
-    CHECK(frame.cells[28U*80U+20U].character==MYSMB_IO_GLYPH_VERTICAL);
-    CHECK(frame.cells[27U*80U+25U].character==MYSMB_IO_GLYPH_HORIZONTAL);
+    CHECK(frame.cells[28U*80U+20U].character==MYGAMES_KVM_GLYPH_VERTICAL);
+    CHECK(frame.cells[27U*80U+25U].character==MYGAMES_KVM_GLYPH_HORIZONTAL);
     CHECK(frame.cells[30U*80U+25U].character==' ');
     CHECK(frame.cells[30U*80U+25U].background!=frame.cells[0U].background);
     /* A shaft alone has no invented mouth. Connected geometry never fills

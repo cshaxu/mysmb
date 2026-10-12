@@ -8,7 +8,7 @@
 #include "io/snapshot_keys.h"
 #include "io/file/snapshot_files.h"
 #include "platform/win32/audio_snapshot.h"
-#include "io/color.h"
+#include "kvm/color.h"
 #include "io/control.h"
 #include "core/area.h"
 #include "core/game.h"
@@ -34,10 +34,10 @@ static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
 static struct mysmb_ppu_frame g_ppu_frame;
 static struct mysmb_ppu_frame_workspace g_ppu_workspace;
-static mysmb_io_u8 g_video_palette[MYSMB_IO_VIDEO_PALETTE_COLORS];
-static mysmb_io_u8 g_chr_decoded[MYSMB_PPU_CHR_DECODED_BYTES];
-static mysmb_io_u8 g_background_slots[MYSMB_PPU_BACKGROUND_BYTES];
-static mysmb_io_u8 g_background_second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
+static mygames_kvm_u8 g_video_palette[MYGAMES_KVM_VIDEO_PALETTE_COLORS];
+static mygames_kvm_u8 g_chr_decoded[MYSMB_PPU_CHR_DECODED_BYTES];
+static mygames_kvm_u8 g_background_slots[MYSMB_PPU_BACKGROUND_BYTES];
+static mygames_kvm_u8 g_background_second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
 static struct mysmb_io_audio_frame g_audio_frame;
 static struct mysmb_win32_audio_output g_audio_output;
 static struct mysmb_win32_focus_pause g_focus_pause;
@@ -45,18 +45,18 @@ static struct mysmb_io_control g_control;
 static struct mysmb_snapshot_store g_snapshot_store;
 static struct mysmb_file_storage g_snapshot_files;
 static struct mysmb_snapshot_keys g_snapshot_keys;
-static mysmb_io_u8 g_snapshot_fingerprint[16];
-static mysmb_io_u8 g_snapshot_ready;
-static mysmb_io_u8 g_snapshot_requests;
+static mygames_kvm_u8 g_snapshot_fingerprint[16];
+static mygames_kvm_u8 g_snapshot_ready;
+static mygames_kvm_u8 g_snapshot_requests;
 static struct mysmb_win32_text_console g_console;
 static struct mysmb_win32_text_console g_console_job;
 static HANDLE g_console_thread;
 static HDESK g_console_desktop;
 static struct mysmb_win32_keyboard g_keyboard;
 static struct mysmb_text_scene_workspace g_text_workspace;
-static struct mysmb_io_text_frame g_text_frame;
-static mysmb_io_u8 g_text_mode,g_switching,g_toggle_request,g_text_failed;
-static mysmb_io_u8 g_window_focused;
+static struct mygames_kvm_text_frame g_text_frame;
+static mygames_kvm_u8 g_text_mode,g_switching,g_toggle_request,g_text_failed;
+static mygames_kvm_u8 g_window_focused;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 static struct mysmb_win32_frame_wait g_frame_wait;
@@ -74,10 +74,10 @@ static int mysmb_win32_presenter_focused(HWND window)
      * RDP/terminal hosts can expose a different or unavailable HWND. */
     return g_text_mode?g_console.opened && g_console.focused:g_window_focused;
 }
-static void mysmb_win32_shortcut(HWND window,WORD key,mysmb_io_u8 pressed)
+static void mysmb_win32_shortcut(HWND window,WORD key,mygames_kvm_u8 pressed)
 {
-    mysmb_io_u8 focused,request;
-    focused=(mysmb_io_u8)mysmb_win32_presenter_focused(window);
+    mygames_kvm_u8 focused,request;
+    focused=(mygames_kvm_u8)mysmb_win32_presenter_focused(window);
     if(key==VK_TAB) {
         g_toggle_request|=mysmb_io_control_toggle(&g_control,pressed,focused);
         return;
@@ -93,7 +93,7 @@ static void mysmb_win32_shortcut(HWND window,WORD key,mysmb_io_u8 pressed)
         request,pressed,focused);
 }
 
-static mysmb_io_u8 mysmb_win32_requests_from_message(UINT message,WPARAM key)
+static mygames_kvm_u8 mysmb_win32_requests_from_message(UINT message,WPARAM key)
 {
     return message==WM_CLOSE || (message==WM_KEYDOWN && key==VK_ESCAPE)?
         MYSMB_IO_REQUEST_EXIT:0U;
@@ -156,21 +156,21 @@ static unsigned int mysmb_win32_poll_keys(void)
     return mysmb_win32_keyboard_sample(&g_keyboard);
 }
 
-static void mysmb_win32_draw_gameplay(const struct mysmb_io_palette_video_frame *frame)
+static void mysmb_win32_draw_gameplay(const struct mygames_kvm_palette_video_frame *frame)
 {
-    DWORD palette[MYSMB_IO_VIDEO_PALETTE_COLORS];
+    DWORD palette[MYGAMES_KVM_VIDEO_PALETTE_COLORS];
     unsigned int index;
-    for(index=0U;index<MYSMB_IO_VIDEO_PALETTE_COLORS;++index)
-        palette[index]=(DWORD)mysmb_io_color_rgb(frame->master_colors[index]);
+    for(index=0U;index<MYGAMES_KVM_VIDEO_PALETTE_COLORS;++index)
+        palette[index]=(DWORD)mygames_kvm_color_rgb(frame->master_colors[index]);
     for(index=0U;index<MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT;++index)
         g_pixels[index]=palette[frame->pixels[index]];
 }
 static void mysmb_win32_build_frame(void)
 {
-    struct mysmb_io_palette_video_frame video;
+    struct mygames_kvm_palette_video_frame video;
 
     if(g_text_mode) {
-        g_text_failed=(mysmb_io_u8)(!mysmb_text_scene_build_profile(&g_game,&g_text_workspace,&g_text_frame,25U) ||
+        g_text_failed=(mygames_kvm_u8)(!mysmb_text_scene_build_profile(&g_game,&g_text_workspace,&g_text_frame,25U) ||
             mysmb_win32_text_console_present(&g_console,&g_text_frame)==MYSMB_WIN32_CONSOLE_LOST);
         return;
     }
@@ -281,7 +281,7 @@ static int mysmb_win32_snapshot_request(HWND window)
 {
     const struct mysmb_io_snapshot *candidate;
     struct mysmb_win32_audio_renderer audio;
-    mysmb_io_u8 requests;
+    mygames_kvm_u8 requests;
     requests=g_snapshot_requests;g_snapshot_requests=0U;
     if (!g_snapshot_ready || requests==0U || !mysmb_win32_presenter_focused(window))
         return 0;

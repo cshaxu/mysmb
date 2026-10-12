@@ -8,7 +8,7 @@ void mysmb_game_io_input(const struct mysmb_io_input *source,
 }
 
 void mysmb_game_io_video(const struct mysmb_ppu_frame *source,
-                         struct mysmb_io_video_frame *frame)
+                         struct mygames_kvm_video_frame *frame)
 {
     frame->pixels = source->pixels;
 }
