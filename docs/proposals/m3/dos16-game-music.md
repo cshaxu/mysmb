@@ -220,6 +220,20 @@ the transition to game mode on both x86 and x64. This complements the death
 music route and the target-built DSP/DMA/IRQ witness; audible DOSBox playback
 in graphics and text presenters remains the sole manual acceptance evidence.
 
+**P12 product DMA-reservation correction (in progress).**  The synthetic
+DOSBox witness reserves its two DMA blocks before any product workspace, while
+the actual DOS launcher had initialized the PPU/text/snapshot workspaces first
+and only then attempted the contiguous 4 KiB ISA-DMA allocation.  That makes a
+real product uniquely able to fall back silently through memory fragmentation,
+despite the witness returning `BLASTER-DSP-DMA-IRQ`.  The launcher now opens
+the platform devices before root workspace allocation, and closes them again
+if root initialization fails.  No game tick, audio frame, PPU decision or
+presenter transition moved.  The rebuilt OpenNT/LINK 3.65 MZ image is
+360,955 bytes; the unchanged default-DOSBox SB16 witness again returns
+`BLASTER-DSP-DMA-IRQ`, and platform-purity plus the documentation gate pass.
+Audible product playback remains a manual DOSBox acceptance requirement; this
+receipt does not treat a synthetic device witness as a substitute for it.
+
 ## Acceptance
 
 1. A detected Sound Blaster-compatible DOS device plays music and effects in

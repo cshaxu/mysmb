@@ -95,8 +95,17 @@ static int initialize(void)
     hooks.read_input=read_input;
     hooks.present_video=0;
     hooks.submit_audio=submit_audio;
+    /* Reserve the device-owned Sound Blaster DMA ring before the root asks
+     * DOS for its optional PPU/text/snapshot workspaces.  ISA DMA must use a
+     * single low-memory span; doing this last can leave a playable product
+     * silently without a suitable 4 KiB block even though the same card is
+     * otherwise present.  Device open remains platform-only and no game
+     * state has started before it succeeds. */
+    if(!mysmb_dos16_devices_open())return 0;
     if (!mysmb_dos16_root_initialize_palette_rows(&root,&hooks,
-        (mysmb_io_u16)sizeof(struct runtime_storage),present_rows)) return 0;
+        (mysmb_io_u16)sizeof(struct runtime_storage),present_rows)) {
+        mysmb_dos16_devices_close();return 0;
+    }
     mysmb_dos16_root_bind_clock(&root,resume_clock);
     mysmb_dos16_root_bind_video_gate(&root,should_present);
     /* Graphics borrows4096 bytes and submits them directly.  Text and the
@@ -117,10 +126,6 @@ static int initialize(void)
             mysmb_dos16_snapshot_replace,&files) &&
         mysmb_snapshot_store_initialize(snapshot_store,&files))
         mysmb_dos16_root_bind_snapshot(&root,snapshot_store,reset_output,0);
-    if(!mysmb_dos16_devices_open()) {
-        mysmb_dos16_root_shutdown(&root);
-        runtime_storage=0;text_storage=0;snapshot_store=0;return 0;
-    }
     /* S18's current-background sprite-union presenter passed physical VGA
      * readback before it is selected here. The root retains Chain-4 as the
      * synchronous fallback if this device-only presenter declines a frame. */
