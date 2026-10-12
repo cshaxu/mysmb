@@ -98,7 +98,7 @@ $resourceIncludes = @()
 $resourceDefines = @()
 $resourceSources = @()
 if ($RomPath -ne '') {
-    $generatorRoot = Split-Path -Parent $SourceRoot
+$generatorRoot = Split-Path -Parent (Split-Path -Parent $SourceRoot)
     $resourceDirectory = Join-Path ([IO.Path]::GetFullPath($OutputDirectory)) 'local-rom'
     & python (Join-Path $generatorRoot 'tools/smb_rom_codegen.py') --rom $RomPath --output $resourceDirectory
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

@@ -17,7 +17,7 @@ $env:PATH=(Split-Path -Parent $Compiler)+';'+$env:PATH
 $env:TEMP=$output;$env:TMP=$output
 Push-Location $output
 try {
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fodevice.obj /I (Join-Path $repository 'src') /I $runtimeInclude (Join-Path $repository 'test/dos16_video_lifecycle_probe.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fodevice.obj /I (Join-Path $repository 'app-mario/src') /I $runtimeInclude (Join-Path $repository 'app-mario/test/dos16_video_lifecycle_probe.c')
     if($LASTEXITCODE -ne 0){throw 'Device probe compilation failed.'}
     $members=@('platform_dos16_devices.c','platform_dos16_keyboard.c',
         'platform_dos16_pit_clock.c','io_color.c','io_pacing.c','io_control.c',

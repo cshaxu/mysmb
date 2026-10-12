@@ -20,7 +20,7 @@ New-Item -ItemType Directory -Force -Path $compileTemp | Out-Null
 $env:TEMP=$compileTemp;$env:TMP=$compileTemp
 Push-Location $output
 try {
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fonative.obj /I (Join-Path $repository 'src') /I $runtimeInclude (Join-Path $repository 'test/dos16_native_video_probe.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fonative.obj /I (Join-Path $repository 'app-mario/src') /I $runtimeInclude (Join-Path $repository 'app-mario/test/dos16_native_video_probe.c')
     if($LASTEXITCODE -ne 0){throw 'Native video probe compilation failed.'}
     $members=@('platform_dos16_devices.c','platform_dos16_keyboard.c',
         'platform_dos16_pit_clock.c','io_color.c','io_pacing.c','io_control.c',

@@ -17,7 +17,7 @@ $env:PATH=(Split-Path -Parent $Compiler)+';'+$env:PATH
 $env:TEMP=$output;$env:TMP=$output
 Push-Location $output
 try {
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYSMB_LOCAL_TITLE /c /Foprobe.obj /I (Join-Path $repository 'src') /I $runtimeInclude /I (Join-Path $ProductDirectory 'local-rom') (Join-Path $repository 'test/dos16_input_progress_probe.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYSMB_LOCAL_TITLE /c /Foprobe.obj /I (Join-Path $repository 'app-mario/src') /I $runtimeInclude /I (Join-Path $ProductDirectory 'local-rom') (Join-Path $repository 'app-mario/test/dos16_input_progress_probe.c')
     if($LASTEXITCODE -ne 0){throw 'Input probe compilation failed.'}
     $libraries=@()
     foreach($library in (Get-ChildItem -LiteralPath $ProductDirectory -Filter 'smbgrp*.lib' | Sort-Object Name)) {

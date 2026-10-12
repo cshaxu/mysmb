@@ -150,7 +150,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--build-directory',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
-    parser.add_argument('--source',type=Path,default=root/'src/platform/win32/main_win32.c')
+    parser.add_argument('--source',type=Path,default=root/'app-mario/src/platform/win32/main_win32.c')
     parser.add_argument('--legacy-wait',action='store_true')
     parser.add_argument('--audio',choices=['0','1'],default='0')
     args=parser.parse_args()
@@ -165,13 +165,13 @@ def main():
                   if line.startswith(('CMAKE_C_COMPILER:FILEPATH=','CMAKE_C_COMPILER:STRING=')))
     rsp=tree/'CMakeFiles/mysmb_win32_text_switch_smoke.dir'
     objects=[x for x in shlex.split((rsp/'objects1.rsp').read_text())
-             if not x.endswith(('test/win32_text_switch_smoke.c.obj',
-                                'src/platform/win32/frame_wait.c.obj'))]
+             if not x.endswith(('app-mario/test/win32_text_switch_smoke.c.obj',
+                                'app-mario/src/platform/win32/frame_wait.c.obj'))]
     executable=output/'presentation-profile.exe'
     command=[compiler,'-std=c90','-DMYSMB_LOCAL_TITLE=1']
     if not args.legacy_wait:command+=['-DPROBE_FIXED=1']
     command+=shlex.split((rsp/'includes_C.rsp').read_text())
-    command+=[str(output/'probe.c'),str(root/'src/platform/win32/frame_wait.c')]+objects
+    command+=[str(output/'probe.c'),str(root/'app-mario/src/platform/win32/frame_wait.c')]+objects
     command+=shlex.split((rsp/'linkLibs.rsp').read_text())+['-o',str(executable)]
     subprocess.run(command,cwd=tree,check=True)
     spec=importlib.util.spec_from_file_location('owned_host',root/'tools/Verify-Win32StartupConsole.py')
