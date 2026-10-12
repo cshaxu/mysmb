@@ -208,3 +208,28 @@ same indexed cells. It also rejects a process-name policy. The bounded run16
 probe remains alive through the former failure interval; x86/x64 focused tests
 and platform-purity verify the adapter boundary. Live colour acceptance in a
 normal CMD and run16 remains the owner-visible final check.
+
+### S2 P4 standard sixteen-colour fallback
+
+Owner testing established that some Terminal-hosted Console API buffers accept
+`SetConsoleScreenBufferInfoEx` yet do not visibly apply its `ColorTable` to
+`WriteConsoleOutputW` cells. The API return value therefore cannot prove an
+authored palette is visible. P4 keeps the P2 session and geometry repair, but
+stops relying on custom `ColorTable` entries. For a source palette, it maps
+each authored slot to the nearest fixed standard Console colour and writes
+those foreground/background indices through `CHAR_INFO`. Canonical text frames
+continue to use their standard indices directly. The focused fixture proves
+both mapping cases, x86/x64 focused tests and platform purity pass, and the
+Win32 artifacts are refreshed. This is a Win32 adapter result with zero ROM
+nodes or edges.
+
+### S3 VT capability presentation
+
+S3 is admitted by owner direction to support both presentation capabilities
+from the same neutral text frame. It must attempt to enable
+`ENABLE_VIRTUAL_TERMINAL_PROCESSING` on the current output buffer. On success,
+it emits the frame's authored RGB through VT SGR; on failure, it retains S2's
+standard sixteen-colour `WriteConsoleOutputW` mapping. The choice is solely the
+result of that buffer operation, never a process name, window title, launcher
+or run16 rule. Scope is the Win32 console adapter and its focused fixture; no
+shared text, game, ROM, DOS16, NTVDM64 or configuration code may change.
