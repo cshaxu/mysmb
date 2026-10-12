@@ -6,7 +6,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T41 S3 P3 — closure |
+| Identifier Mode | M3 T41 S3 P5 — closure verification and policy-test repair |
 | Admission And Approval | Owner approved T41 on 2026-10-12; S1 closed in P1 `63b06b85` and S2 closed in P2 `8949fb51`. |
 | Objective | Close T41 with complete x86/x64 unit and integration matrices, DOS16 compiler/link/product verification, platform-purity and documentation gates, refreshed local products for changed code, and a test-owner receipt. |
 | Non-goals | No ROM/core/PPU/text-scene change; no terminal input query; no DOS graphics or process-topology change. |
@@ -14,7 +14,7 @@
 | Candidate Proposal | [M3 T41 proposal](../proposals/m3/text-presentation-quality.md). |
 | Files And ABI Surface | Existing T41 source owners and tests; local `assets/mysmb16.exe`, `assets/mysmb32.exe`, `assets/mysmb64.exe` only after each target validates. |
 | Applicable Rules | Execution, Architecture, Coding, documentation governance and source policy. |
-| Verification | Full x86/x64 build and CTest matrices; DOS16 compile/link and DOS product probe; all three product self-tests; platform-purity, ledger and documentation governance gates; product artifact hashes. |
+| Verification | Full x86/x64 build and 283-test CTest matrices; focused policy-owner test; DOS16 compiler/link and DOS product probe; all three product self-tests; platform-purity, ledger and documentation governance gates; product artifact hashes. |
 | Expected Markers | 283/283 x86 and x64 tests; a linked DOS16 MZ executable; three fresh product artifacts; no platform leakage or unowned test path. |
 | Asset Needs | Existing owner-local build inputs only; no new research or imported assets. |
 | Reporting Requirements | Report changed owners, test-owner mapping, build results, artifacts after code changes, and build cleanup at acceptance. |

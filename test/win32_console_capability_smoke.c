@@ -27,6 +27,13 @@ int main(void)
     CHECK(!mysmb_win32_console_use_vt(1U,1U,1U));
     CHECK(!mysmb_win32_console_use_vt(0U,0U,1U));
     CHECK(!mysmb_win32_console_use_vt(0U,1U,0U));
-    puts("console policy: rows, bounded VT capacity and carrier fallback passed");
+
+    CHECK(mysmb_win32_console_write_result(ERROR_INVALID_HANDLE,1U)==MYSMB_WIN32_CONSOLE_LOST);
+    CHECK(mysmb_win32_console_write_result(ERROR_ACCESS_DENIED,1U)==MYSMB_WIN32_CONSOLE_LOST);
+    CHECK(mysmb_win32_console_write_result(ERROR_INVALID_PARAMETER,1U)==MYSMB_WIN32_CONSOLE_DEFER);
+    CHECK(mysmb_win32_console_write_result(ERROR_NOT_READY,1U)==MYSMB_WIN32_CONSOLE_DEFER);
+    CHECK(mysmb_win32_console_write_result(1UL,119U)==MYSMB_WIN32_CONSOLE_DEFER);
+    CHECK(mysmb_win32_console_write_result(1UL,120U)==MYSMB_WIN32_CONSOLE_LOST);
+    puts("console policy: layout, VT and write failure branches passed");
     return 0;
 }

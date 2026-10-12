@@ -17,3 +17,12 @@ unsigned char mysmb_win32_console_use_vt(unsigned char indexed_carrier,
 {
     return (unsigned char)(!indexed_carrier && output_mode_read && output_mode_set);
 }
+
+int mysmb_win32_console_write_result(DWORD error,unsigned short failures)
+{
+    if(error==ERROR_INVALID_HANDLE || error==ERROR_ACCESS_DENIED)
+        return MYSMB_WIN32_CONSOLE_LOST;
+    if(error==ERROR_INVALID_PARAMETER || error==ERROR_NOT_READY)
+        return MYSMB_WIN32_CONSOLE_DEFER;
+    return failures>=120U?MYSMB_WIN32_CONSOLE_LOST:MYSMB_WIN32_CONSOLE_DEFER;
+}

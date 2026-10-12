@@ -28,12 +28,8 @@ void mysmb_win32_console_initialize_indexed(struct mysmb_win32_text_console *con
 static int mysmb_win32_console_write_failure(struct mysmb_win32_text_console *console)
 {
     DWORD error=GetLastError();
-    if(error==ERROR_INVALID_HANDLE || error==ERROR_ACCESS_DENIED)
-        return MYSMB_WIN32_CONSOLE_LOST;
-    if(error==ERROR_INVALID_PARAMETER || error==ERROR_NOT_READY)
-        return MYSMB_WIN32_CONSOLE_DEFER;
-    if(++console->output_failures>=120U)return MYSMB_WIN32_CONSOLE_LOST;
-    return MYSMB_WIN32_CONSOLE_DEFER;
+    if(console->output_failures<0xffffU)++console->output_failures;
+    return mysmb_win32_console_write_result(error,console->output_failures);
 }
 
 static int mysmb_win32_terminal_present(struct mysmb_win32_text_console *console,

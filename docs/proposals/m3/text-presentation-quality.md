@@ -34,6 +34,30 @@ exclusion.  It must call this a conservative output selection, not proof that
 an arbitrary host implements RGB VT.  The standard indexed projection remains
 the safe fallback.
 
+## Audit disposition
+
+The audit found and closed one duplicated device conversion: DOS B800 and
+Win32 `CHAR_INFO` now call `io/color` for the same neutral sixteen-slot
+projection. They intentionally retain separate glyph and physical-write
+owners because CP437/Unicode mapping and B800/Console API writes are distinct
+host boundaries.
+
+The adapter does **not** duplicate Microsoft Edit's device-attribute query.
+That detector is unsuitable for this product: MySMB owns one `CONIN$` stream
+and a query reply can be consumed as an Escape key by the game. The retained
+contract is therefore narrower and testable: enable RGB output only when a
+normal visible Console accepts the output mode; a hidden 2x4 carrier always
+uses indexed cells. This is a deliberate, documented difference rather than
+a process-name special case.
+
+The former Win32 console monolith is split into lifecycle, input, geometry,
+presentation and pure policy owners. The two composition-root fixtures that
+include a `main_*.c` remain documented integration exceptions; no
+`text_console*.c` implementation is included by a unit test. During closure,
+the Console-write error/threshold decision was found to have only indirect
+coverage, moved to the pure policy owner, and given one exhaustive owner-local
+test.
+
 ## Planned S tasks
 
 ### S1 — Shared 16-colour projection and quality governance
@@ -65,8 +89,8 @@ its include. No `text_console*.c` source is included by a test.
 | Owner and decision | One owner-local assertion | Distinct integration evidence |
 | --- | --- | --- |
 | `io/color`: canonical identity and authored RGB nearest-index projection | `mysmb.io-color-text-projection-smoke`, all sixteen slots per branch | DOS B800 and Win32 indexed writers consume the same helper. |
-| Win32 policy: selected rows, bounded VT capacity, carrier/mode selection | `mysmb.win32-console-capability-smoke` | Product self-test covers the selected presenter path. |
-| Win32 presentation: RGB SGR versus indexed `CHAR_INFO`, write result | Presentation owner is reached through the public console lifecycle | `mysmb.win32-x86/x64-self-test` and `mysmb_win32_text_switch_smoke`. |
+| Win32 policy: selected rows, bounded VT capacity, carrier/mode selection and Console write-result classification | `mysmb.win32-console-capability-smoke` | Product self-test covers the selected presenter path. |
+| Win32 presentation: RGB SGR versus indexed `CHAR_INFO` | Public presentation lifecycle result | `mysmb.win32-x86/x64-self-test` and `mysmb_win32_text_switch_smoke`. |
 | Win32 lifecycle/input/geometry | Their public return contracts stay in their owners | `mysmb_win32_parent_console_smoke` exercises borrowed-console restore and real Console API geometry. |
 | DOS B800 text join | The shared projection unit provides the conversion assertion | `dos16_video_lifecycle_probe` verifies the physical B800 attributes, glyphs, mode restoration and keyboard join. |
 

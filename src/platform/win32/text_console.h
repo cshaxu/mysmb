@@ -2,6 +2,7 @@
 #define MYSMB_WIN32_TEXT_CONSOLE_H
 #include <windows.h>
 #include "io/video.h"
+#include "platform/win32/text_console_policy.h"
 struct mysmb_win32_text_console {
     HANDLE input,output;
     HANDLE shell_output;
@@ -31,10 +32,6 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console);
 /* A normal presenter switch retains the already-open console session. */
 int mysmb_win32_text_console_suspend(struct mysmb_win32_text_console *console);
 int mysmb_win32_text_console_resume(struct mysmb_win32_text_console *console);
-enum mysmb_win32_console_result {
-    MYSMB_WIN32_CONSOLE_LOST=0, MYSMB_WIN32_CONSOLE_READY=1,
-    MYSMB_WIN32_CONSOLE_DEFER=2
-};
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     const struct mysmb_io_text_frame *frame);
 int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,
