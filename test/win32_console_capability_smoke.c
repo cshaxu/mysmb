@@ -8,8 +8,6 @@ static CONSOLE_SCREEN_BUFFER_INFOEX palette;
 static CONSOLE_FONT_INFOEX effective;
 static CHAR_INFO written_cells[MYSMB_IO_TEXT_CELLS];
 static WCHAR vt_prefix[512],vt_output[MYSMB_IO_TEXT_CELLS*48U+1024U];
-static INPUT_RECORD input_queue[32],restored_input[32];
-static unsigned int input_head,input_tail,restored_count;
 static BOOL mode_probe(HANDLE h,LPDWORD mode)
 {if(lost && h==(HANDLE)2)return FALSE;*mode=ENABLE_VIRTUAL_TERMINAL_PROCESSING;return TRUE;}
 static BOOL buffer_probe(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFO out)
@@ -30,20 +28,6 @@ static BOOL cell_write(HANDLE h,const CHAR_INFO *cells,COORD size,COORD origin,P
 {(void)h;(void)size;(void)origin;if(write_error){SetLastError((DWORD)write_error);return FALSE;}CopyMemory(written_cells,cells,sizeof(written_cells));++cell_writes;if(partial)view->Bottom=20;return TRUE;}
 static BOOL vt_write(HANDLE h,const VOID *data,DWORD count,LPDWORD written,LPVOID reserved)
 {DWORD n=count<511U?count:511U;(void)h;(void)reserved;if(write_error){SetLastError((DWORD)write_error);return FALSE;}CopyMemory(vt_prefix,data,n*sizeof(WCHAR));vt_prefix[n]=0;*written=count;return TRUE;}
-static DWORD wait_input(HANDLE h,DWORD milliseconds)
-{(void)h;(void)milliseconds;return input_head<input_tail?WAIT_OBJECT_0:WAIT_TIMEOUT;}
-static BOOL input_events(HANDLE h,LPDWORD count)
-{(void)h;*count=(DWORD)(input_tail-input_head);return TRUE;}
-static BOOL input_read(HANDLE h,PINPUT_RECORD event,DWORD maximum,LPDWORD read)
-{(void)h;(void)maximum;if(input_head==input_tail){*read=0U;return TRUE;}*event=input_queue[input_head++];*read=1U;return TRUE;}
-static BOOL input_write(HANDLE h,const INPUT_RECORD *events,DWORD count,LPDWORD written)
-{(void)h;CopyMemory(restored_input+restored_count,events,count*sizeof(*events));restored_count+=(unsigned int)count;*written=count;return TRUE;}
-static void input_character(WCHAR character)
-{ZeroMemory(input_queue+input_tail,sizeof(input_queue[input_tail]));input_queue[input_tail].EventType=KEY_EVENT;
- input_queue[input_tail].Event.KeyEvent.bKeyDown=TRUE;input_queue[input_tail++].Event.KeyEvent.uChar.UnicodeChar=character;}
-static void input_escape_key(void)
-{ZeroMemory(input_queue+input_tail,sizeof(input_queue[input_tail]));input_queue[input_tail].EventType=KEY_EVENT;
- input_queue[input_tail].Event.KeyEvent.bKeyDown=TRUE;input_queue[input_tail++].Event.KeyEvent.wVirtualKeyCode=VK_ESCAPE;}
 static BOOL iconic(HWND window){(void)window;return minimized;}
 static BOOL zoom(HWND window){(void)window;return zoomed;}
 static BOOL probe_client(HWND window,LPRECT rect)
@@ -67,10 +51,6 @@ static BOOL set_size(HANDLE output,COORD size)
 #define GetTickCount probe_clock
 #define WriteConsoleW vt_write
 #define WriteConsoleOutputW cell_write
-#define WaitForSingleObject wait_input
-#define GetNumberOfConsoleInputEvents input_events
-#define ReadConsoleInputW input_read
-#define WriteConsoleInputW input_write
 #include "../src/platform/win32/text_console.c"
 static struct mysmb_win32_text_console device;
 static struct mysmb_io_text_frame scene;
@@ -97,7 +77,10 @@ int main(void)
  unsigned i,previous_fonts;
  device.opened=1;device.input=(HANDLE)1;device.output=(HANDLE)2;
  buffer.dwSize.X=80;buffer.dwSize.Y=50;buffer.srWindow.Right=79;buffer.srWindow.Bottom=49;
- effective.cbSize=sizeof(effective);effective.dwFontSize.X=9;effective.dwFontSize.Y=18;
+ effective.cbSize=sizeof(effective);effective.dwFontSize.X=2;effective.dwFontSize.Y=4;
+ device.window_usable=0U;CHECK(mysmb_win32_console_indexed_carrier(&device));
+ effective.dwFontSize.X=9;effective.dwFontSize.Y=18;
+ CHECK(!mysmb_win32_console_indexed_carrier(&device));
  scene.rows=50;scene.source_colors=1;
  for(i=0U;i<4000U;++i) {
   scene.cells[i].character='X';scene.cells[i].foreground=(unsigned char)(i&15U);
@@ -172,18 +155,6 @@ int main(void)
  for(i=0U;i<16U;++i)scene.colors[i]=mysmb_io_color_text_rgb((mysmb_io_u8)i);
  for(i=0U;i<2000U;++i)
   CHECK(written_cells[i].Attributes==expected_attribute(&scene,i));
- /* Capability probing happens before game input begins. A DA reply is removed;
-  * an ordinary key is restored untouched for the game input owner. */
- input_head=input_tail=restored_count=0U;
- input_escape_key();input_character(L'[');input_character(L'?');input_character(L'1');
- input_character(L';');input_character(L'0');input_character(L'c');
- CHECK(mysmb_win32_console_vt_probe_open(&device));CHECK(restored_count==0U);
- input_head=input_tail=restored_count=0U;input_character(L'K');
- CHECK(!mysmb_win32_console_vt_probe_open(&device));
- CHECK(restored_count==1U && restored_input[0].Event.KeyEvent.uChar.UnicodeChar==L'K');
- input_head=input_tail=restored_count=0U;input_escape_key();
- CHECK(!mysmb_win32_console_vt_probe_open(&device));
- CHECK(restored_count==1U && restored_input[0].Event.KeyEvent.wVirtualKeyCode==VK_ESCAPE);
  /* A successful output-mode capability selects authored RGB VT output. */
  device.vt_output=1U;device.terminal_output=vt_output;scene.source_colors=1U;
  scene.rows=25U;buffer.srWindow.Bottom=24;scene.colors[0]=0x787cecUL;scene.colors[2]=0xeceeeeUL;

@@ -347,3 +347,15 @@ focused fixture now covers both the relay-encoded valid reply and a genuine
 lone Escape. Thus the query can distinguish a relay that accepts a mode bit
 but gives no DA reply, without reviving the asynchronous input interception
 that caused the earlier Tab exits.
+
+### S3 P8 hidden-carrier capability selection
+
+P7 owner acceptance still exited, proving that the Console-input DA response
+is not a safe contract for MySMB. P8 removes DA I/O completely. The NTVWM
+relay already exposes a stable device fact required by its own capture design:
+it has no usable host window and reports a 2x4 hidden carrier font. That pair
+selects the standard indexed Console API path even if the relay accepts the VT
+mode bit. A visible or normal-font Console that accepts VT retains RGB output.
+This is adapter capability selection based on the active device's geometry and
+font properties; it does not inspect a process, title, launcher, run16 name or
+shared game input. The fixture verifies both carrier and non-carrier paths.
