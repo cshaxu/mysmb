@@ -234,6 +234,18 @@ presenter transition moved.  The rebuilt OpenNT/LINK 3.65 MZ image is
 Audible product playback remains a manual DOSBox acceptance requirement; this
 receipt does not treat a synthetic device witness as a substitute for it.
 
+**P13 actual-product PCM capture receipt (in progress).**  A hidden DOSBox
+run of the rebuilt product received one Start key edge and entered the normal
+translated gameplay route.  DOSBox's disk audio backend captured 528,384
+bytes of mixed 16-bit PCM: 44.97 percent of samples were nonzero, its absolute
+peak was 20,525, and its RMS amplitude was 2,902.  An otherwise identical
+startup-only run had produced all-zero output because it had not advanced into
+the music-producing gameplay route.  The capture is an ignored diagnostic,
+not a tracked asset.  This proves that the actual product, rather than only a
+synthetic DSP witness, supplies audible PCM to DOSBox after the normal Start
+transition.  It does not replace owner listening checks for both presenters,
+load/reset and Escape.
+
 ## Acceptance
 
 1. A detected Sound Blaster-compatible DOS device plays music and effects in
