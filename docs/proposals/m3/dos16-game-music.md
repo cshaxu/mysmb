@@ -197,6 +197,19 @@ The unmodified default DOSBox SB16 route again returns
 `BLASTER-DSP-DMA-IRQ`.  This closes the device side of save/load recovery;
 audible presenter and Escape acceptance remain manual S4 evidence.
 
+**P10 run16 host-limit receipt (in progress).** Owner testing of
+`run16 mysmb16.exe` produced no audible output. This is the expected
+no-device path, not a regression in the DOS Sound Blaster route: the
+read-only NTVDM64 production tree has no registered Sound Blaster VDD or
+DSP/DMA/IRQ provider. Its `vdd/samples/vsbd` directory is an excluded sample,
+not a loaded production device. MySMB therefore neither finds a `BLASTER`
+endpoint nor touches unprovided hardware, and remains silently playable.
+`run16` is retained as the required no-device fallback witness; DOSBox or
+physical Sound Blaster-compatible DOS hardware remains the audible acceptance
+host. Making run16 audible requires a separately admitted NTVDM64 task to
+provide and register a Sound Blaster-compatible virtual device; it cannot be
+correctly implemented by adding a MySMB-only special case.
+
 ## Acceptance
 
 1. A detected Sound Blaster-compatible DOS device plays music and effects in
