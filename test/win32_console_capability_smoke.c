@@ -12,7 +12,8 @@ static BOOL mode_probe(HANDLE h,LPDWORD mode)
 static BOOL buffer_probe(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFO out)
 {(void)h;if(query_fail)return FALSE;*out=buffer;return TRUE;}
 static BOOL palette_probe(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFOEX out)
-{(void)h;*out=palette;out->cbSize=sizeof(*out);return TRUE;}
+{(void)h;*out=palette;out->cbSize=sizeof(*out);out->dwSize=buffer.dwSize;
+ out->srWindow=buffer.srWindow;return TRUE;}
 static BOOL palette_write(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFOEX in)
 {(void)h;palette=*in;++palette_sets;return TRUE;}
 static BOOL font_set(HANDLE h,BOOL maximum,PCONSOLE_FONT_INFOEX font)
@@ -73,12 +74,17 @@ int main(void)
  for(i=0U;i<16U;++i)scene.colors[i]=((unsigned long)(i*13U)<<16U)|((unsigned long)(255U-i*11U)<<8U)|(unsigned long)(i*7U);
  /* The mock reports VT mode enabled. Presentation must still use ColorTable
   * plus indexed CHAR_INFO, never a WriteConsoleW escape stream. */
- mysmb_win32_console_fit(&device,1);CHECK(font_calls==1);
+ /* A hidden carrier owns its font. A logical grid request must not install
+  * the visible-console font and transiently invalidate its capture region. */
+ device.window_usable=0;mysmb_win32_console_fit(&device,1);CHECK(font_calls==0);
+ device.window_usable=1;mysmb_win32_console_fit(&device,1);CHECK(font_calls==1);
  CHECK(device.effective_font.dwFontSize.Y==18);
  font_effect=1;mysmb_win32_console_fit(&device,1);
  CHECK(device.effective_font.dwFontSize.X==8 && device.effective_font.dwFontSize.Y==8);
  CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
  CHECK(palette_sets==1U && cell_writes==1U && check_palette(scene.colors));
+ CHECK(palette.srWindow.Right==buffer.srWindow.Right+1 &&
+     palette.srWindow.Bottom==buffer.srWindow.Bottom+1);
  for(i=0U;i<4000U;++i)
   CHECK(written_cells[i].Attributes==(WORD)(scene.cells[i].foreground|((WORD)scene.cells[i].background<<4U)));
  partial=1;
@@ -96,9 +102,12 @@ int main(void)
  CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
  CHECK(font_calls==(int)previous_fonts+1);
  buffer.srWindow.Bottom=49;clock_value=500;
- /* A notification/no-window host can still accept real buffer geometry. */
+ /* A non-window carrier owns geometry as well as font: it must never see the
+  * temporary 1x1 probe rectangle used only by classic visible consoles. */
  {COORD target={80,50};SMALL_RECT view={0,0,79,49};
-  device.window_usable=0;geometry_effect=1;
+  device.window_usable=0;geometry_effect=1;window_calls=0;
+  CHECK(!mysmb_win32_console_size(&device,target,&view));CHECK(window_calls==0);
+  device.window_usable=1;
   CHECK(mysmb_win32_console_size(&device,target,&view));
   buffer.dwSize.X=120;buffer.dwSize.Y=30;buffer.srWindow.Right=119;buffer.srWindow.Bottom=29;fail_buffer_once=2;
   CHECK(!mysmb_win32_console_size(&device,target,&view));

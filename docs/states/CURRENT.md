@@ -11,15 +11,15 @@
 | Objective | Replace the Win32 VT-RGB text renderer with one Console API palette/index output path, resolving the bounded run16 presentation defect without a host-specific branch. |
 | Scope | `src/platform/win32/text_console.*`, its focused platform tests and required composition declarations. |
 | Non-goals | No game/ROM/PPU/IO/text-scene semantics, DOS16 behavior, console-host configuration, NTVDM64 source edit or process changes. |
-| Reference Baseline | The adapter enables VT output and emits RGB escape sequences when successful; otherwise it sets a 16-slot console palette and uses indexed `CHAR_INFO` cells. |
+| Reference Baseline | The adapter enables VT output and emits RGB escape sequences when successful; otherwise it sets a 16-slot console palette and uses indexed `CHAR_INFO` cells. The first API-palette package exposed an unrelated hidden-console font-fit race: run16's NTVWM captures its 2x4 carrier while MySMB was changing it to a visible Console font. |
 | Candidate Proposal | [Win32 console-session identity](../proposals/m3/win32-console-session-identity.md#s2-console-api-paletteindex-renderer). |
 | Files And ABI Surface | Win32-only private text-console implementation and tests; no shared or public ABI change. |
 | Applicable Rules | Execution, Architecture, Coding and Documentation rules. |
 | Expected Markers | ROM scope `[]`; expectedMatches `[]`; actualMatches `[]`; new `0`; historical `1992/1992` unchanged. |
 | Asset Needs | Existing local Win32 and DOS16 toolchains; no ROM or third-party input. |
-| Stop Conditions | Any shared game/IO/DOS source edit, host configuration change, product helper process, loss of console-session identity, or palette/index test unable to distinguish an RGB stream. |
-| Verification | Focused console-capability and text-switch tests force successful VT negotiation and verify all 16 Console API palette entries, indexed `CHAR_INFO` attributes, and absence of `WriteConsoleW` escape output; then run platform purity, x86/x64 build/test and the DOS16 route. |
-| Exit Criteria | Both Win32 targets use the same API palette/index renderer with successful and failed VT-mode negotiation; no RGB escape renderer remains reachable. |
+| Stop Conditions | Any shared game/IO/DOS source edit, host configuration change, product helper process, loss of console-session identity, palette/index test unable to distinguish an RGB stream, or a hidden carrier requiring a different geometry protocol. |
+| Verification | Focused console-capability and text-switch tests force successful VT negotiation and verify all 16 Console API palette entries, indexed `CHAR_INFO` attributes, absence of `WriteConsoleW` escape output, and no font mutation for a hidden carrier; then run platform purity, x86/x64 build/test and a bounded run16 probe. |
+| Exit Criteria | Both Win32 targets use the same API palette/index renderer with successful and failed VT-mode negotiation; no RGB escape renderer remains reachable; a bounded hidden run16 probe survives the former worker-failure interval without a malformed viewport. |
 | ROM scope | `[]`; zero nodes and zero control edges. |
 | Reporting | Report exact palette/index selection evidence, the 16-slot mapping, touched Win32-only files, test/build result and no ROM-equivalence credit. |
 | Reporting Requirements | State that this is a platform adapter repair, not gameplay or NTVDM16 certification. |
@@ -31,4 +31,8 @@
 S1 is closed: it selects text by actual parent-console capability, retains
 borrowed sessions across Tab, clears stale game frames, and closes temporary
 owned console sessions on graphics return. S2 now replaces the VT-RGB frame
-output selection with one Console API palette/index implementation.
+output selection with one Console API palette/index implementation. Its first
+package exposed a hidden-carrier font/geometry race in run16; the active repair
+preserves that carrier font, suppresses non-window geometry probes and converts
+the getter's inclusive viewport to the setter's exclusive right/bottom bounds
+when updating the Console palette.

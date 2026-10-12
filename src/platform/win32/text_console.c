@@ -41,6 +41,11 @@ static void mysmb_win32_console_palette(struct mysmb_win32_text_console *console
         console->fallback_colors[i]=mysmb_io_color_text_nearest(colors[i]);
     ZeroMemory(&palette,sizeof(palette));palette.cbSize=sizeof(palette);
     if(GetConsoleScreenBufferInfoEx(console->output,&palette)) {
+        /* This Console API returns an inclusive viewport but consumes the
+         * extended setter's right/bottom as exclusive bounds. Preserve the
+         * complete host-owned geometry while changing only ColorTable. */
+        if(palette.srWindow.Right<SHRT_MAX)++palette.srWindow.Right;
+        if(palette.srWindow.Bottom<SHRT_MAX)++palette.srWindow.Bottom;
         for(i=0U;i<16U;++i)
             palette.ColorTable[i]=RGB((colors[i]>>16U)&255UL,
                 (colors[i]>>8U)&255UL,colors[i]&255UL);
@@ -62,6 +67,11 @@ static void mysmb_win32_console_fit(struct mysmb_win32_text_console *console,
     RECT client;
     COORD maximum;
     unsigned int target=8U;
+    /* NTVWM's hidden Console deliberately supplies a 2x4 carrier font so
+     * its logical grid can be captured. Changing that invisible carrier
+     * makes its viewport temporarily unrepresentable while it is sampled.
+     * Font fitting is only meaningful for a visible host HWND. */
+    if(!console->window_usable)return;
     if(console->rows!=25U && console->rows!=50U)console->rows=50U;
     if(!initial && console->window_usable && GetClientRect(console->window,&client)) {
         unsigned int x=(unsigned int)(client.right-client.left)/80U;
@@ -95,6 +105,10 @@ static unsigned char mysmb_win32_console_size(struct mysmb_win32_text_console *c
 {
     SMALL_RECT tiny={0,0,0,0};
     CONSOLE_SCREEN_BUFFER_INFO before,info;
+    /* A non-window Console may be a hidden NTVWM carrier or a terminal
+     * viewport. Its geometry is host-owned; a temporary 1x1 rectangle is
+     * observable to concurrent capture and is therefore not a safe probe. */
+    if(!console->window_usable)return 0U;
     if(!GetConsoleScreenBufferInfo(console->output,&before))return 0U;
     {
         unsigned int attempt;

@@ -155,3 +155,37 @@ both product self-tests and platform-purity checks pass. The deleted terminal
 stream fixture exercised only the retired RGB escape implementation. DOS16
 production sources are unchanged; its retained artifact is therefore not a
 claim of a newly linked DOS16 route for this Win32-only part.
+
+### S2 P2 hidden-carrier geometry repair
+
+Owner run16 acceptance of P1 failed with incorrect colours followed by an
+automatic exit. A bounded hidden probe reproduced the exit and recorded the
+native worker's `ERROR_INVALID_PARAMETER`: MySMB changed NTVWM's invisible
+2x4 carrier font to its visible 8x16/8x8 preference, then the temporary
+one-cell geometry transaction exposed an invalid sampled viewport. This is a
+Win32 adapter geometry defect, not a missing colour field in the NTVWM/NTCON
+wire contract: that contract transmits indexed cells and all sixteen RGB
+palette entries.
+
+P2 keeps the API-palette/index renderer. It prohibits both
+`mysmb_win32_console_fit` and the temporary 1x1 geometry probe from changing a
+Console without a usable visible host window. Such a carrier retains its
+host-owned dimensions while MySMB writes only its bounded 80-column frame.
+The second probe then identified the remaining defect: this Console's
+`GetConsoleScreenBufferInfoEx` returns inclusive right/bottom viewport bounds,
+while its setter consumes exclusive bounds. The palette helper therefore
+converts those two fields before every ColorTable write, preserving geometry
+without a run16-specific branch. The focused fixture rejects both a font API
+call and a geometry mutation for a hidden carrier, and asserts the inclusive to
+exclusive conversion. A repeated bounded run16 probe must remain alive past the
+former failure interval and must not record a malformed captured rectangle
+before this part can close.
+
+The first P2 probe proved that retaining the 2x4 carrier and avoiding the
+geometry transaction alone were necessary but insufficient. The final
+inclusive-to-exclusive conversion keeps each palette update from shrinking the
+captured window. The focused fixture passes for both Windows widths, and the
+repeated bounded run16 probe remains alive throughout the former eight-second
+failure interval without an invalid captured rectangle or error 87. Its lone
+launch-time `ERROR_NOT_FOUND` configuration lookup is normal absence of an
+optional text configuration and is neither a capture nor presentation failure.
