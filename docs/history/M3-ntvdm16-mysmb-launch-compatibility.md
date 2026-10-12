@@ -45,3 +45,11 @@ NTVDM, then repeat the DOSBox route.
 complete the named graphical and input route without crash, corruption or
 host configuration change.  A source change refreshes the three local target
 artifacts under the repository delivery policy.
+
+## Owner-directed archival
+
+The owner confirmed this candidate completed on 2026-10-12 and directed its
+removal from the queue. It was never admitted as a separate numeric T, so this
+record preserves that owner disposition rather than inventing a task-level
+automated verification claim. The earlier M3 T34 run16 text-colour receipt is
+related evidence only; it is not relabelled as this candidate's complete route.
