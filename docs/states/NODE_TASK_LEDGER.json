@@ -9487,18 +9487,16 @@
     },
     {
       "id": "M3 T41",
-      "state": "active",
+      "state": "closed",
       "evidence": [
-        "docs/proposals/m3/text-presentation-quality.md",
-        "docs/states/CURRENT.md"
+        "docs/history/M3-T41-text-presentation-quality.md"
       ],
       "subtasks": [
         {
           "id": "M3 T41 S1",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/text-presentation-quality.md",
-            "docs/states/CURRENT.md"
+            "docs/history/M3-T41-text-presentation-quality.md"
           ],
           "recordKinds": [
             "shared-text-colour-projection-and-quality-governance"
@@ -9511,8 +9509,7 @@
           "id": "M3 T41 S2",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/text-presentation-quality.md",
-            "docs/states/CURRENT.md"
+            "docs/history/M3-T41-text-presentation-quality.md"
           ],
           "recordKinds": [
             "win32-console-presentation-boundary"
@@ -9523,17 +9520,16 @@
         },
         {
           "id": "M3 T41 S3",
-          "state": "active",
+          "state": "closed",
           "evidence": [
-            "docs/proposals/m3/text-presentation-quality.md",
-            "docs/states/CURRENT.md"
+            "docs/history/M3-T41-text-presentation-quality.md"
           ],
           "recordKinds": [
             "cross-adapter-quality-closure"
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Owner-approved closure: target builds, full test matrices, DOS16 link/product, artifacts and governance gates."
+          "technicalReceipt": "Owner accepted closure after target builds, full test matrices, DOS16 link/product, artifacts and governance gates; generated build evidence removed after acceptance."
         }
       ]
     }
@@ -1010749,7 +1010745,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/text-presentation-quality.md"
+      "evidence": "docs/history/M3-T41-text-presentation-quality.md"
     },
     {
       "subtask": "M3 T41 S2",
@@ -1010761,7 +1010757,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/text-presentation-quality.md"
+      "evidence": "docs/history/M3-T41-text-presentation-quality.md"
     },
     {
       "subtask": "M3 T41 S3",
@@ -1010772,8 +1010768,8 @@
       "incomingComplete": [],
       "baseline": 0,
       "maximumComplete": 0,
-      "state": "active",
-      "evidence": "docs/proposals/m3/text-presentation-quality.md"
+      "state": "closed",
+      "evidence": "docs/history/M3-T41-text-presentation-quality.md"
     }
   ]
 }

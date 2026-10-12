@@ -168,3 +168,9 @@ for owner acceptance and the required post-acceptance build cleanup.
 5. All configured unit/integration tests and required target builds pass.
 6. Each owner-accepted closure leaves `build/` free of generated task outputs;
    only tracked evidence describes the completed run.
+
+## Owner acceptance and archival
+
+The owner accepted T41 on 2026-10-12. The generated build, probe, trace and
+log outputs were removed after acceptance. This retained record is the
+reviewable closure evidence; the task has no active packet or queue entry.
