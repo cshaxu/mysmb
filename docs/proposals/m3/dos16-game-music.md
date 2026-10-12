@@ -44,6 +44,38 @@ with the existing Win32 renderer only as an internal behavioral reference; do
 not copy floating-point or Win32 device code. Produce a bounded source and
 probe plan with explicit conventional-memory budget before implementation.
 
+#### S1 closure receipt
+
+The current call path is exact and complete: `mysmb_dos16_root_step` calls
+`mysmb_game_io_audio` after every logical `mysmb_game_tick`, then invokes the
+composition hook; `main_dos16.c` delegates that hook to
+`mysmb_dos16_devices_audio`. The latter is the only DOS physical consumer and
+currently discards the frame. It is invoked after the optional video gate, so
+stale graphical frames can be dropped without dropping audio state. Text mode
+only changes the video device; it neither stops nor reinitializes the audio
+hook.
+
+The selected backend is an integer, Sound Blaster-compatible 8-bit PCM device
+configured solely from the standard `BLASTER` fields for base I/O, IRQ and
+8-bit DMA channel. It will use a bounded 11,025 Hz mono DMA ring: two
+individually DMA-safe 2 KiB blocks plus a sub-1 KiB renderer/device state,
+for a maximum new conventional-memory payload of 5 KiB before allocator
+metadata. Blocks are allocated at open, never during a game tick or interrupt;
+the IRQ handler only acknowledges the DSP/PIC and selects a prebuilt block.
+The foreground platform consumer advances the integer NES synthesis state from
+each ordered frame and fills a block before it is handed to DMA. The renderer
+uses a 60 Hz to 11,025 Hz fractional sample accumulator, so it does not couple
+audio cadence to graphics publication.
+
+`devices_open`/`devices_close` own device open, vector restoration and DMA
+shutdown; `devices_mode` must remain video-only. `devices_after_load` needs a
+platform reset/resynchronization hook so a restored frame cannot leave a stale
+DMA waveform playing. A missing or malformed `BLASTER`, failed DSP reset, DMA
+allocation failure or incomplete setup remains nonfatal and returns the
+existing unavailable capability. No core, app, IO contract or Win32 renderer
+needs alteration. DOSBox validation will use its existing configured Sound
+Blaster device; this task does not edit emulator settings.
+
 ### S2 — DOS16 Sound Blaster device lifecycle
 
 Implement platform-only BLASTER parsing/probe, DSP reset, DMA/IRQ setup and

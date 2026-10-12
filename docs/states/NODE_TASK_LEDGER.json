@@ -9543,7 +9543,7 @@
       "subtasks": [
         {
           "id": "M3 T42 S1",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/dos16-game-music.md",
             "docs/states/CURRENT.md"
@@ -9553,7 +9553,21 @@
           ],
           "canReceive": false,
           "admissionRole": "audit",
-          "technicalReceipt": "Owner-approved zero-ROM-node audit of the existing shared audio-frame handoff and DOS16 physical audio backend design."
+          "technicalReceipt": "Closed audit: one DOS physical consumer discards the existing frame; selected bounded Sound Blaster PCM lifecycle and integer synthesis path without a core/IO change."
+        },
+        {
+          "id": "M3 T42 S2",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/dos16-game-music.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "dos16-sound-blaster-device-lifecycle"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Owner-directed platform-only device lifecycle implementation; zero ROM nodes and edges."
         }
       ]
     }
@@ -1010798,6 +1010812,18 @@
     {
       "subtask": "M3 T42 S1",
       "kind": "audit",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/dos16-game-music.md"
+    },
+    {
+      "subtask": "M3 T42 S2",
+      "kind": "implementation",
       "scope": [],
       "expectedMatches": [],
       "actualMatches": [],
