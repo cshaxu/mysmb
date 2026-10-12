@@ -27,6 +27,33 @@ static unsigned char mysmb_win32_console_window(HWND window)
     return (unsigned char)(window && IsWindowVisible(window) &&
         GetWindowRect(window,&rect) && rect.right>rect.left && rect.bottom>rect.top);
 }
+/* Text frames carry sixteen palette slots plus four-bit cell attributes.
+ * Keep that device contract independent of a host's VT capability: ConPTY
+ * forwarding of RGB escape streams is not equivalent to Console API cells. */
+static void mysmb_win32_console_palette(struct mysmb_win32_text_console *console,
+    const unsigned long *colors)
+{
+    CONSOLE_SCREEN_BUFFER_INFOEX palette;
+    unsigned short i;
+    console->colors_valid=2U;
+    CopyMemory(console->colors,colors,sizeof(console->colors));
+    for(i=0U;i<16U;++i)
+        console->fallback_colors[i]=mysmb_io_color_text_nearest(colors[i]);
+    ZeroMemory(&palette,sizeof(palette));palette.cbSize=sizeof(palette);
+    if(GetConsoleScreenBufferInfoEx(console->output,&palette)) {
+        for(i=0U;i<16U;++i)
+            palette.ColorTable[i]=RGB((colors[i]>>16U)&255UL,
+                (colors[i]>>8U)&255UL,colors[i]&255UL);
+        if(SetConsoleScreenBufferInfoEx(console->output,&palette))
+            console->colors_valid=1U;
+    }
+}
+static void mysmb_win32_console_canonical_palette(unsigned long *colors)
+{
+    unsigned short i;
+    for(i=0U;i<16U;++i)
+        colors[i]=mysmb_io_color_text_rgb((mysmb_io_u8)i);
+}
 static void mysmb_win32_console_fit(struct mysmb_win32_text_console *console,
     unsigned char initial)
 {
@@ -99,11 +126,8 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     SMALL_RECT view;
     CONSOLE_CURSOR_INFO cursor;
     DWORD mode;
-    CONSOLE_SCREEN_BUFFER_INFOEX info;
-    unsigned int i;
-    unsigned long rgb;
     DWORD processes[2];
-    DWORD output_mode;
+    unsigned long canonical_colors[16];
     if(console->opened)return 1;
     console->rows=rows==25U?25U:50U;console->colors_valid=0U;
     if(!owner)return 0;
@@ -160,20 +184,8 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     }
     size.X=80;size.Y=(SHORT)console->rows;
     view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console->rows-1U);
-    if(GetConsoleMode(console->output,&output_mode) &&
-        SetConsoleMode(console->output,output_mode|0x0001U|0x0004U|0x0008U)) {
-        console->terminal_output=(WCHAR *)HeapAlloc(GetProcessHeap(),0U,
-            (MYSMB_IO_TEXT_CELLS*48U+1024U)*sizeof(WCHAR));
-        console->vt_output=(unsigned char)(console->terminal_output!=NULL);
-    }
-    ZeroMemory(&info,sizeof(info));info.cbSize=sizeof(info);
-    if(!console->vt_output && GetConsoleScreenBufferInfoEx(console->output,&info)) {
-        for(i=0U;i<16U;++i) {
-            rgb=mysmb_io_color_text_rgb((mysmb_io_u8)i);
-            info.ColorTable[i]=RGB((rgb>>16U)&255UL,(rgb>>8U)&255UL,rgb&255UL);
-        }
-        (void)SetConsoleScreenBufferInfoEx(console->output,&info);
-    }
+    mysmb_win32_console_canonical_palette(canonical_colors);
+    mysmb_win32_console_palette(console,canonical_colors);
     if(!SetConsoleActiveScreenBuffer(console->output)) {
         mysmb_win32_text_console_close(console);return 0;
     }
@@ -268,8 +280,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
     if(console->shell_output && console->shell_output!=INVALID_HANDLE_VALUE)
         CloseHandle(console->shell_output);
     if(console->shell_title)HeapFree(GetProcessHeap(),0U,console->shell_title);
-    if(console->terminal_output)HeapFree(GetProcessHeap(),0U,console->terminal_output);
-    console->terminal_output=NULL;console->vt_output=console->window_usable=console->font_changed=console->geometry_usable=0U;
+    console->window_usable=console->font_changed=console->geometry_usable=0U;
     /* During host close,detaching/unregistering can hand termination back to
      * the default handler before the CRT exit. Leave attachment teardown to
      * process exit;ordinary Tab/recovery detaches immediately. */
@@ -322,60 +333,13 @@ static int mysmb_win32_console_write_failure(struct mysmb_win32_text_console *co
     if(++console->output_failures>=120U)return MYSMB_WIN32_CONSOLE_LOST;
     return MYSMB_WIN32_CONSOLE_DEFER;
 }
-/* Terminal owns its font and viewport. Emit exact neutral RGB cells only in
- * the current visible region; never resize the user's terminal during a frame. */
-static int mysmb_win32_terminal_present(struct mysmb_win32_text_console *console,
-    const struct mysmb_io_text_frame *frame)
-{
-    CONSOLE_SCREEN_BUFFER_INFO info;
-    WCHAR *out=console->terminal_output,sequence[96];
-    DWORD written;
-    unsigned int width,height,x,y,count=0U,length;
-    int foreground=-1,background=-1;
-    unsigned long fg,bg;
-    WCHAR glyph;
-    const struct mysmb_io_text_cell *cell;
-    if(!out || !GetConsoleScreenBufferInfo(console->output,&info))return MYSMB_WIN32_CONSOLE_DEFER;
-    width=(unsigned int)(info.srWindow.Right-info.srWindow.Left+1);
-    height=(unsigned int)(info.srWindow.Bottom-info.srWindow.Top+1);
-    if(width>80U)width=80U;
-    if(height>MYSMB_IO_TEXT_FRAME_ROWS(frame))height=MYSMB_IO_TEXT_FRAME_ROWS(frame);
-    if(!width || !height)return MYSMB_WIN32_CONSOLE_DEFER;
-    /* Drop inherited reverse/bold attributes before applying this frame. */
-    lstrcpyW(out,L"\x1b[0m\x1b[?25l");count=10U;
-    for(y=0U;y<height;++y) {
-        length=(unsigned int)wsprintfW(sequence,L"\x1b[%u;1H",y+1U);
-        CopyMemory(out+count,sequence,length*sizeof(WCHAR));count+=length;
-        for(x=0U;x<width;++x) {
-            cell=&frame->cells[y*80U+x];
-            if(foreground!=(int)(cell->foreground&15U) ||
-                background!=(int)(cell->background&15U)) {
-                foreground=cell->foreground&15U;background=cell->background&15U;
-                fg=frame->source_colors==1U?frame->colors[foreground]:mysmb_io_color_text_rgb((mysmb_io_u8)foreground);
-                bg=frame->source_colors==1U?frame->colors[background]:mysmb_io_color_text_rgb((mysmb_io_u8)background);
-                length=(unsigned int)wsprintfW(sequence,
-                    L"\x1b[38;2;%u;%u;%u;48;2;%u;%u;%um",
-                    (unsigned int)((fg>>16U)&255U),(unsigned int)((fg>>8U)&255U),
-                    (unsigned int)(fg&255U),(unsigned int)((bg>>16U)&255U),
-                    (unsigned int)((bg>>8U)&255U),(unsigned int)(bg&255U));
-                CopyMemory(out+count,sequence,length*sizeof(WCHAR));count+=length;
-            }
-            glyph=(WCHAR)mysmb_io_text_glyph_unicode(cell->character);
-            if(!glyph)return 0;
-            out[count++]=glyph;
-        }
-    }
-    if(!WriteConsoleW(console->output,out,count,&written,NULL))
-        return mysmb_win32_console_write_failure(console);
-    console->output_failures=0U;
-    return written==count?MYSMB_WIN32_CONSOLE_READY:MYSMB_WIN32_CONSOLE_DEFER;
-}
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     const struct mysmb_io_text_frame *frame)
 {
     unsigned short i;
     int geometry;
     DWORD input_mode,output_mode;
+    unsigned long canonical_colors[16];
     COORD size,origin;
     SMALL_RECT view;
     if(!console->opened || frame==0 ||
@@ -383,28 +347,21 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
         !GetConsoleMode(console->output,&output_mode))return MYSMB_WIN32_CONSOLE_LOST;
     geometry=mysmb_win32_console_geometry(console);
     if(geometry!=MYSMB_WIN32_CONSOLE_READY)return geometry;
-    if(console->vt_output)return mysmb_win32_terminal_present(console,frame);
     if(frame->source_colors==1U && (!console->colors_valid ||
         memcmp(console->colors,frame->colors,sizeof(console->colors))!=0)) {
-        CONSOLE_SCREEN_BUFFER_INFOEX palette;
-        console->colors_valid=2U;
-        CopyMemory(console->colors,frame->colors,sizeof(console->colors));
-        for(i=0U;i<16U;++i)console->fallback_colors[i]=mysmb_io_color_text_nearest(frame->colors[i]);
-        ZeroMemory(&palette,sizeof(palette));palette.cbSize=sizeof(palette);
-        if(GetConsoleScreenBufferInfoEx(console->output,&palette)) {
-            for(i=0U;i<16U;++i)palette.ColorTable[i]=RGB(
-                (frame->colors[i]>>16U)&255UL,(frame->colors[i]>>8U)&255UL,frame->colors[i]&255UL);
-            if(SetConsoleScreenBufferInfoEx(console->output,&palette)) {
-                CopyMemory(console->colors,frame->colors,sizeof(console->colors));console->colors_valid=1U;
-                /* Palette APIs can round a classic viewport. Keep its
-                 * selected cell rectangle through the existing bounded owner. */
-                if(console->window_usable) {
-                    size.X=80;size.Y=(SHORT)console->rows;
-                    view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console->rows-1U);
-                    (void)mysmb_win32_console_size(console,size,&view);
-                }
-            }
+        mysmb_win32_console_palette(console,frame->colors);
+        /* Palette APIs can round a classic viewport. Keep its selected cell
+         * rectangle through the existing bounded geometry owner. */
+        if(console->colors_valid==1U && console->window_usable) {
+            size.X=80;size.Y=(SHORT)console->rows;
+            view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console->rows-1U);
+            (void)mysmb_win32_console_size(console,size,&view);
         }
+    } else if(frame->source_colors!=1U) {
+        mysmb_win32_console_canonical_palette(canonical_colors);
+        if(!console->colors_valid ||
+            memcmp(console->colors,canonical_colors,sizeof(canonical_colors))!=0)
+            mysmb_win32_console_palette(console,canonical_colors);
     }
     for(i=0U;i<MYSMB_IO_TEXT_FRAME_CELLS(frame);++i) {
         console->cells[i].Char.UnicodeChar=(WCHAR)mysmb_io_text_glyph_unicode(frame->cells[i].character);

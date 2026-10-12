@@ -106,18 +106,52 @@ host. This does not erase the parent shell contents. The borrowed fixture reads
 all 2,000 compact-frame cells from the retained game buffer after each switch
 and rejects any surviving glyph or attribute.
 
-## S2: NTVDM64 run16 console-presentation audit
+## S2: Console API palette/index renderer
 
-The owner reports that `mysmb64.exe` has correct text colors when launched
-directly from `cmd.exe`, but its text mode has red bricks and a red area outside
-the intended frame when launched through NTVDM64 `run16`. S2 is read-only
-investigation across the MySMB Win32 console adapter and the owner-local NXVM
-NTVDM64/run16 implementation. It will establish the actual console device
-type, output mode, viewport/buffer dimensions, palette/VT capability and escape
-sequence interpretation in both launch routes.
+The owner has selected the repair directly: the Win32 adapter must always set
+all sixteen `CONSOLE_SCREEN_BUFFER_INFOEX.ColorTable` entries through the
+Console API, encode each `CHAR_INFO.Attributes` value from the frame's
+four-bit foreground/background indices, and submit the bounded 80×25 or 80×50
+grid through `WriteConsoleOutputW`. A successful
+`ENABLE_VIRTUAL_TERMINAL_PROCESSING` call must not select a true-RGB escape
+stream, call `WriteConsoleW` for colored game pixels or rely on terminal escape
+interpretation.
 
-The audit must identify whether the discrepancy is caused by MySMB's terminal
-VT emitter, classic console palette path, run16's host setup, or a combination.
-It may add neutral diagnostics below `build/m3-t40-s2/`; it cannot alter game,
-ROM, text-scene or NTVDM64 source. Any product repair requires a subsequent
-explicit S2 P with a narrow host-adapter acceptance test.
+S2 changes only `src/platform/win32/text_console.*`, its platform tests and
+necessary composition declarations. It does not change shared game/ROM/PPU/IO
+or text-scene semantics, DOS16 behavior, console-host configuration, the
+NTVDM64 project or process topology. It receives zero ROM nodes and zero
+control edges.
+
+The implementation removes the VT-RGB output selection and dynamic terminal
+stream buffer. It applies the full 16-entry palette on the initial canonical
+palette and on every new source palette, preserves existing geometry,
+borrowed/owned-console session identity, Tab, input, close and device-loss
+handling, then always emits indexed `CHAR_INFO` cells.
+
+Focused capability and text-switch tests must force VT-mode negotiation to
+succeed and prove that the API palette/index path still runs. They must reject
+any RGB escape write and compare all sixteen palette entries plus representative
+foreground/background attributes. x86/x64 builds/tests, platform purity, the
+unchanged DOS16 route and refreshed target artifacts complete the operational
+proof.
+
+### S2 P1 API palette/index delivery
+
+The Win32 adapter no longer allocates a terminal RGB stream, enables output VT
+mode, or selects a renderer from VT negotiation. Opening a text device applies
+the canonical sixteen entries through `SetConsoleScreenBufferInfoEx`; each
+source-palette change applies all sixteen source entries through that same API.
+Every frame is submitted as indexed `CHAR_INFO` cells through
+`WriteConsoleOutputW`. If a host refuses palette mutation, the existing
+nearest-index fallback remains active, so geometry, input, session identity and
+device-loss behavior do not become host-specific.
+
+The focused capability fixture reports VT output as available, forbids a
+`WriteConsoleW` reference at compile time, and verifies all sixteen palette
+entries and all foreground/background attributes. Both Windows widths build
+the product, capability fixture and text-switch fixture; both capability runs,
+both product self-tests and platform-purity checks pass. The deleted terminal
+stream fixture exercised only the retired RGB escape implementation. DOS16
+production sources are unchanged; its retained artifact is therefore not a
+claim of a newly linked DOS16 route for this Win32-only part.

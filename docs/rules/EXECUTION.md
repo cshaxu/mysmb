@@ -184,6 +184,21 @@ active packet registration. Query exact S node sets with `--subtask "M2 Tn Sm"`.
 
 Build trees, generated C/data, traces, and ROM-derived executables are local outputs. Delete temporary products once no active S needs them; verify a target is beneath an ignored owned output directory before recursive cleanup.
 
+### Long-running build and test execution
+
+Do not run a compilation, linker invocation, CTest matrix, ROM route, or other
+potentially long validation inside a fixed 30-second interactive command. A
+timeout can interrupt Ninja while it writes its dependency log, causing later
+builds to rebuild valid objects or report a corrupt dependency database.
+
+Start such work in a continuable command session and wait/poll that same
+session until it exits. Store command logs, probe output and any recovery
+artifacts below the ignored `build/` directory. A short interactive command is
+limited to starting the continuable session, checking its live state, or
+reading its completed log. Never treat an interrupted build as a validation
+result; repair the affected build tree before running the next acceptance
+command.
+
 ## Recorder Trace Containment
 
 An owner-ROM trace run declares a unique ignored output path, time/no-progress and byte budgets, checkpoints, and cleanup owner. Raw traces are never fixtures or committed evidence; retain only neutral summaries needed by an admitted S.

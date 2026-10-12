@@ -476,8 +476,8 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
                 if(GetCurrentDirectoryA(MAX_PATH,cwd) && strstr(cwd,"\\build\\")) {
                     file=fopen("state-80.log","w");
                     if(file) {
-                        fprintf(file,"cycle=%u text=%u borrowed=%u opened=%u terminal=%u thread=%d error=%lu processes=%lu\n",
-                            i,g_text_mode,g_console.borrowed,g_console.opened,g_console.vt_output,
+                        fprintf(file,"cycle=%u text=%u borrowed=%u opened=%u thread=%d error=%lu processes=%lu\n",
+                            i,g_text_mode,g_console.borrowed,g_console.opened,
                             g_console_thread!=NULL,(unsigned long)error,(unsigned long)count);
                         fclose(file);
                     }

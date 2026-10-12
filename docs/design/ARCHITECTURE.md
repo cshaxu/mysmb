@@ -132,8 +132,9 @@ not terminal escape-sequence input. Console outputs request8x16for25rows and
 8x8for the retained50rows,with bounded settled
 fit. Effective font/window changes are optional capabilities;no class-name
 flag owns device policy. A usable visible host window alone enables activation
-and optional restored geometry. VT-capable outputs receive neutral RGB glyphs;
-font and geometry support are independent. Every device receives one optional
+and optional restored geometry. Console output receives the neutral 16-slot
+palette and indexed glyph cells through the Console API; font and geometry
+support are independent. Every device receives one optional
 selected80x25/80x50entry size/view request even without a real HWND;partial unsupported
 requests restore prior geometry. Successful geometry is read back and retained
 for borrowed-shell restoration. Non-window hosts are never forcibly resized
@@ -197,8 +198,10 @@ remain bounded by its layout's requested cell geometry. In-flight clipping or un
 without a presenter switch;genuine handle loss keeps recovery.
 Borrowed shutdown restores the original shell view when a real window exists.
 Terminal notification/message-only handles do not expose classic geometry;
-Terminal output follows native visible dimensions without font/window/palette
-resizing calls. Explicit RGB/glyph output preserves neutral cell colors.
+Terminal output follows native visible dimensions without font/window resize
+calls. The Console API receives the neutral 16-slot palette and indexed glyph
+cells; unsupported palette mutation retains the adapter's nearest indexed
+fallback.
 Fresh owned console acquisition runs on a device-only thread bound to the root
 desktop;the root continues pumping without a blocking join. Existing shell
 attachment and release retain the established path. No game state or product
