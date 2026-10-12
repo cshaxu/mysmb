@@ -2,6 +2,13 @@
 #define MYSMB_PLATFORM_DOS16_DOS_AUDIO_H
 
 #include "io/types.h"
+#include "io/audio.h"
+
+enum {
+    MYSMB_DOS16_AUDIO_SAMPLE_RATE=11025U,
+    MYSMB_DOS16_AUDIO_BLOCK_BYTES=2048U,
+    MYSMB_DOS16_AUDIO_BLOCK_COUNT=2U
+};
 
 /* This is a physical-device contract only.  It deliberately has no APU or
  * game-state field: a later renderer may feed the prepared PCM DMA blocks,
@@ -26,6 +33,31 @@ struct mysmb_dos16_audio_state {
     mysmb_io_u8 reserved;
 };
 
+/* Integer-only NES-output consumer.  It is an adapter-side PCM projection,
+ * not another game/APU implementation: source-ordered writes remain its sole
+ * input and its state is never serialized with original program RAM. */
+struct mysmb_dos16_audio_renderer {
+    mysmb_io_u8 registers[MYSMB_IO_AUDIO_REGISTER_COUNT];
+    mysmb_io_u8 enabled;
+    mysmb_io_u8 envelope_start[3];
+    mysmb_io_u8 sweep_reload[2];
+    mysmb_io_u8 triangle_reload;
+    mysmb_io_u8 started;
+    mysmb_io_u16 length[4];
+    mysmb_io_u16 envelope_level[3];
+    mysmb_io_u16 envelope_divider[3];
+    mysmb_io_u16 sweep_divider[2];
+    mysmb_io_u16 triangle_linear;
+    mysmb_io_u16 pulse_timer[2];
+    mysmb_io_u16 noise_shift;
+    unsigned long pulse_phase[2];
+    unsigned long triangle_phase;
+    unsigned long noise_phase;
+    unsigned long sample_remainder;
+    long highpass_input;
+    long highpass_output;
+};
+
 /* Parse the conventional BLASTER A (hex base I/O), I (IRQ) and D (8-bit DMA)
  * fields.  Unknown fields are intentionally ignored; all three required
  * fields must occur once and be in range. */
@@ -38,6 +70,15 @@ void mysmb_dos16_audio_close(struct mysmb_dos16_audio_state *state);
 /* Reassert device presence after load without allocating, opening a vector or
  * changing presentation state.  A lost device releases its reserved memory. */
 int mysmb_dos16_audio_reprobe(struct mysmb_dos16_audio_state *state);
+void mysmb_dos16_audio_renderer_initialize(
+    struct mysmb_dos16_audio_renderer *renderer);
+/* Renders one source tick into at most capacity unsigned 8-bit PCM samples.
+ * It returns the count (183 or 184 at 11,025Hz); insufficient capacity yields
+ * zero and does not consume the source frame. */
+unsigned short mysmb_dos16_audio_renderer_render(
+    struct mysmb_dos16_audio_renderer *renderer,
+    const struct mysmb_io_audio_frame *frame,mysmb_io_u8 *samples,
+    unsigned short capacity);
 
 /* DOS hardware binding.  It owns only the standard BLASTER environment,
  * Sound Blaster DSP reset handshake and one fixed future-DMA reservation.
@@ -46,5 +87,7 @@ int mysmb_dos16_audio_dos_open(void);
 void mysmb_dos16_audio_dos_close(void);
 void mysmb_dos16_audio_dos_after_load(void);
 int mysmb_dos16_audio_dos_prepared(void);
+mysmb_io_u8 mysmb_dos16_audio_dos_submit(
+    const struct mysmb_io_audio_frame *frame);
 
 #endif

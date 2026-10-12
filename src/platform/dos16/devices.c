@@ -856,8 +856,5 @@ fallback:
 
 mysmb_io_u8 mysmb_dos16_devices_audio(const struct mysmb_io_audio_frame *frame)
 {
-    /* S2 owns discovery/reservation only.  S3 will consume this untouched
-     * frame in source-write order and return AVAILABLE after PCM begins. */
-    (void)frame;
-    return MYSMB_IO_AUDIO_UNAVAILABLE;
+    return mysmb_dos16_audio_dos_submit(frame);
 }

@@ -2817,6 +2817,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T42 S1 | 0 | 0 | dos16-audio-backend-admission-audit; [record](../../docs/proposals/m3/dos16-game-music.md); [record](../../docs/states/CURRENT.md) |
 | M3 T42 S2 | 0 | 0 | dos16-sound-blaster-device-lifecycle; [record](../../docs/proposals/m3/dos16-game-music.md); [record](../../docs/states/CURRENT.md) |
 | M3 T42 S3 | 0 | 0 | dos16-integer-apu-pcm-synthesis; [record](../../docs/proposals/m3/dos16-game-music.md); [record](../../docs/states/CURRENT.md) |
+| M3 T42 S4 | 0 | 0 | dos16-integrated-music-route; [record](../../docs/proposals/m3/dos16-game-music.md); [record](../../docs/states/CURRENT.md) |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
 | M3 T6 | 0 | - | [record](../../docs/history/M3-T5-dos16-composition-root.md); [record](../../docs/history/M3-T6-opennt-mz-link.md); S not recorded |
 | M3 T7 | 0 | - | [record](../../docs/history/M3-T6-opennt-mz-link.md); [record](../../docs/history/M3-T7-dos-hardware-hooks.md); S not recorded |
@@ -4037,4 +4038,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T41 S3 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T41-text-presentation-quality.md) |
 | M3 T42 S1 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/dos16-game-music.md) |
 | M3 T42 S2 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/dos16-game-music.md) |
-| M3 T42 S3 | 0 | 0 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/dos16-game-music.md) |
+| M3 T42 S3 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/dos16-game-music.md) |
+| M3 T42 S4 | 0 | 0 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/dos16-game-music.md) |

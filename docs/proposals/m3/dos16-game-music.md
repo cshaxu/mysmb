@@ -120,6 +120,19 @@ Unit tests
 compare register/write consumption, pause/silence and event priority against
 the shared frame contract; no game-side timing changes are allowed.
 
+**Closure receipt.** S3 adds a platform-local 11,025 Hz integer renderer.  It
+consumes every source-order write, including repeated register writes, and
+uses a remainder accumulator so sixty NES ticks produce exactly 11,025
+samples.  PCM is accumulated into two fixed 2 KiB far-memory blocks; the
+first DSP transfer is armed only after a full block is ready.  The device path
+programs DMA before the DSP transfer command, restores the prior interrupt
+vector on close or failed reprobe, masks DMA before release, and rejects the
+AT cascade DMA channel.  It adds a 4,096-byte dynamic far allocation and
+about 0.4 KiB of fixed near state (renderer and staging samples), with no
+allocation in the frame path.  Focused x86/x64 tests pass, as do platform
+purity and the actual OpenNT/DOS LINK 3.65 MZ build.  Audible hardware
+validation is deliberately deferred to S4.
+
 ### S4 — Integrated DOS music route
 
 Bind the backend to the DOS root and validate title music, gameplay music,

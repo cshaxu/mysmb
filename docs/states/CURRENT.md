@@ -2,24 +2,24 @@
 
 ## Current Work
 
-## M3 T42 S3 Packet
+## M3 T42 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T42 S3 P3 — integer NES-frame PCM synthesis and Sound Blaster submission |
-| Admission And Approval | Owner approved M3 T42; this P3 closes S2 and admits S3. |
-| Objective | Consume every unchanged shared audio frame exactly once in a DOS16 integer renderer, fill the already bounded PCM blocks, and activate DMA/IRQ only after a full starter block exists. |
+| Identifier Mode | M3 T42 S4 P5 — integrated DOS music route |
+| Admission And Approval | Owner approved M3 T42; this P5 closes S3 and admits S4. |
+| Objective | Validate the completed DOS Sound Blaster route in both presenters and prove that music/effects, load/reset and teardown preserve shared game/audio semantics. |
 | Non-goals | No translated ROM/core/audio-command change; no Win32 renderer reuse; no floating point; no PC-speaker substitute; no imported driver, ROM asset or third-party source; no DOSBox configuration edit. |
-| Reference Baseline | S2 receipt: the DOS binding parses/probes BLASTER and reserves 4096 bytes but still returns unavailable because no PCM/DMA/IRQ owner exists. |
+| Reference Baseline | S3 receipt: the platform now renders unchanged audio frames at 11,025 Hz into two 2 KiB DMA blocks and owns the bounded DSP/DMA/IRQ lifecycle. |
 | Candidate Proposal | [M3 T42 proposal](../proposals/m3/dos16-game-music.md). |
-| Files And ABI Surface | `src/platform/dos16/dos_audio.*`, `devices.*`, platform-local tests and DOS build owner. The shared `mysmb_io_audio_frame` ABI stays read-only. |
+| Files And ABI Surface | DOS launcher/route evidence, `src/platform/dos16/dos_audio.*`, `devices.*`, platform-local tests and DOS build owner. The shared `mysmb_io_audio_frame` ABI stays read-only. |
 | Applicable Rules | Execution, Architecture, Coding, Documentation and source policy. |
-| Verification | Owner-local integer render/write-order, silence and start/rollback tests; DOS16 link; existing DOSBox Sound Blaster route; platform-purity and source-boundary review. |
-| Expected Markers | Ordered repeated-write retention, 60Hz→11025Hz integer cadence, bounded 2×2 KiB blocks, DMA/IRQ startup only after a full block, restored vector/DMA state on every failure path, and no audio lifecycle event on Tab. |
+| Verification | Existing unit and DOS16-link evidence, real DOSBox Sound Blaster route, title/gameplay effect markers, pause/load/Tab/Escape transitions and platform-purity review. |
+| Expected Markers | Audible title/gameplay/effect route, safe silent no-device fallback, restored vector/DMA state on Escape, and no audio lifecycle event on Tab. |
 | Asset Needs | Existing local product/source and existing DOSBox installation only; no new ROM, trace, third-party source or audio asset. |
-| Reporting Requirements | Report sample/block geometry, exact conventional-memory delta, DMA/IRQ rollback coverage, audio-frame ordering proof and audible/deferred boundary. |
+| Reporting Requirements | Report device-route corpus, observed audible markers, no-device behaviour, fixed conventional-memory cost and any remaining host-only limit. |
 | Stop Conditions | Any need to alter original audio writes/order, dependency on a DOSBox setting, unbounded conventional-memory allocation, or a required imported driver/source. |
-| Exit Criteria | The platform returns available only when it submits PCM from the unchanged frame; all startup/close/failure paths preserve game/video behavior and remain bounded. |
+| Exit Criteria | A detected Sound Blaster-compatible DOS device plays music/effects in both presenters; absence is silent and playable; teardown/reset never leaves IRQ/DMA state active. |
 | Original Owner Request | Implement DOS music support; graphical and text DOS modes currently have no music. |
 | Similar-Issue Sweep | Inspect all DOS vector, PIC, DMA, DSP, environment-parser, mode/reset and close paths; ensure no graphics/text transition opens, closes or reallocates audio hardware. |
 

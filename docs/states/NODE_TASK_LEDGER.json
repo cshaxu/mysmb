@@ -9571,7 +9571,7 @@
         },
         {
           "id": "M3 T42 S3",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/dos16-game-music.md",
             "docs/states/CURRENT.md"
@@ -9581,7 +9581,21 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Owner-directed platform-only integer PCM and Sound Blaster DMA/IRQ submission; zero ROM nodes and edges."
+          "technicalReceipt": "Closed platform-only 11,025 Hz integer PCM renderer and bounded 2x2 KiB Sound Blaster DMA/IRQ submission; source-order repeated writes, 60Hz cadence, DMA/vector rollback and zero ROM nodes/edges verified."
+        },
+        {
+          "id": "M3 T42 S4",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/dos16-game-music.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "dos16-integrated-music-route"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Admitted real DOS Sound Blaster route validation for title/gameplay/effects, both presenters, reset and teardown."
         }
       ]
     }
@@ -1010849,6 +1010863,18 @@
     },
     {
       "subtask": "M3 T42 S3",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/dos16-game-music.md"
+    },
+    {
+      "subtask": "M3 T42 S4",
       "kind": "implementation",
       "scope": [],
       "expectedMatches": [],
