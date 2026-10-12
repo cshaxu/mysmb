@@ -13,3 +13,9 @@ The concrete source map is [Source Layout](../design/CODING.md).
 ## Test Boundaries
 
 Tests live under `test/` and follow their source owner. Owner-ROM oracle runs, raw traces, generated comparison data, and protected artifacts stay local and ignored; tracked tests contain only project-owned harness logic and neutral metadata.
+
+Each production owner has focused tests for every changed decision and return
+contract.  A unit test names one owner and asserts each behavior once; a second
+test may cover it only when it proves a distinct boundary or lifecycle join.
+Avoid tests that include production implementation files merely to reach static
+internals when a narrow declared test seam can exercise the same contract.

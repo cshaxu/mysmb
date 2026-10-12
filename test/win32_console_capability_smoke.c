@@ -87,8 +87,8 @@ int main(void)
   scene.cells[i].background=(unsigned char)((i>>4U)&15U);
  }
  for(i=0U;i<16U;++i)scene.colors[i]=((unsigned long)(i*13U)<<16U)|((unsigned long)(255U-i*11U)<<8U)|(unsigned long)(i*7U);
- /* The mock reports VT mode enabled. Presentation must still use ColorTable
-  * plus indexed CHAR_INFO, never a WriteConsoleW escape stream. */
+ /* The hidden carrier retains indexed CHAR_INFO even when its output mode
+  * reports VT support. A normal device is exercised on the RGB branch below. */
  /* A hidden carrier owns its font. A logical grid request must not install
   * the visible-console font and transiently invalidate its capture region. */
  device.window_usable=0;mysmb_win32_console_fit(&device,1);CHECK(font_calls==0);

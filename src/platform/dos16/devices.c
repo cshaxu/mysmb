@@ -715,8 +715,7 @@ void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *fra
         text_rows=(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame);
         if(!try_mode(1U))return;
     }
-    for(i=0U;i<16U;++i)
-        text_colors[i]=mysmb_io_color_text_nearest(frame->colors[i]);
+    mysmb_io_color_text_attributes(frame->colors,frame->source_colors,text_colors);
     video=(volatile unsigned short far *)0xb8000000UL;
     for(i=0U;i<MYSMB_IO_TEXT_FRAME_CELLS(frame);++i)
         video[i]=(unsigned short)(frame->cells[i].character|

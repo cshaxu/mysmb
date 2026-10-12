@@ -7,6 +7,9 @@ a task ledger, or a record of completed work. Active work is recorded only in
 [CURRENT.md](CURRENT.md); closed tasks remain in their proposal/history record
 and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
+M3 T41 is admitted directly by owner approval and is therefore recorded only
+in [Current](CURRENT.md), not retained as a queue item.
+
 1. [NESticle forensic DOS-performance audit](../proposals/m3/nesticle-forensic-performance-audit.md) - owner-directed prerequisite: establish the actual owner-executable display, page/retrace, frameskip and per-frame work model against a matched MySMB census before selecting further optimization work. Local-only, read-only third-party research; no product edit or import.
 
 2. [DOS16 contiguous VGA-copy code-generation qualification](../proposals/m3/dos16-contiguous-vga-copy.md) - new owner-directed candidate; first force the existing C path to compile as a fixed 61,440-byte contiguous far transfer and inspect the generated DOS16 loop. Admit a tiny assembly fallback only if that C code-generation gate fails. Preserve shared PPU/game semantics and measure exact output plus fixed-cycle cost.

@@ -14,6 +14,24 @@ The coordinator admits, scopes, reviews, and closes work. An executor may questi
 
 Preserve unrelated changes. Every implementation repair records a similar-issue sweep: the defect class, search scope, every production hit and disposition, and post-fix verification. Work outside scope is deferred to `TODO.md` or a later candidate.
 
+## Acceptance Cleanup And Test Closure
+
+After owner acceptance of an S or T, remove that work's generated build,
+probe, trace, log and staged-artifact outputs from `build/`.  Preserve the
+reviewable conclusion in tracked proposal/history evidence, never by retaining
+an ignored build tree.  A later admitted task may retain only its own active
+generated workspace; stale prior-task outputs are not evidence.
+
+Every implementation S records a test-owner closure: each changed production
+decision, success/failure return and externally visible conversion has one
+owner-local unit assertion or a documented reason it is covered only by an
+integration join.  Do not duplicate the same assertion in several unit tests
+merely to inflate coverage.  Integration tests prove boundaries between owners
+and full lifecycle joins; they do not replace owner-local branch coverage.
+Before closure, run the configured unit and integration suite applicable to
+the changed owners, then the required product/platform checks.  A failure is
+resolved in production or its owning test before the S advances.
+
 ## Work Identifiers
 
 Use `M<milestone> T<task> S<subtask> P<part>` for implementation and its design prerequisites. `M<milestone> Td S<subtask> P<part>` is reserved for an approved standalone governance task. A P is one complete reviewable commit.

@@ -51,6 +51,15 @@ mysmb_io_u8 mysmb_io_color_text16(mysmb_io_u8 index)
     return choices[index&63U];
 }
 
+void mysmb_io_color_text_attributes(const unsigned long *colors,
+    mysmb_io_u8 source_colors,mysmb_io_u8 attributes[16])
+{
+    unsigned short i;
+    for(i=0U;i<16U;++i)
+        attributes[i]=source_colors!=0U?
+            mysmb_io_color_text_nearest(colors[i]):(mysmb_io_u8)i;
+}
+
 mysmb_io_u8 mysmb_io_color_text_contrast(mysmb_io_u8 background)
 {
     static const mysmb_io_u8 choices[16] = {

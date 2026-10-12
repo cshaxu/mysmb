@@ -9484,6 +9484,54 @@
           "technicalReceipt": "P1-P8 closed: normal/visible VT devices retain authored RGB; the hidden no-window 2x4 carrier uses indexed Console cells. No capability query reads game input. Owner accepted CMD, graphical Tab and run16 corpus; x86/x64 tests and artifacts pass; zero ROM-node and edge scope."
         }
       ]
+    },
+    {
+      "id": "M3 T41",
+      "state": "active",
+      "evidence": [
+        "docs/proposals/m3/text-presentation-quality.md",
+        "docs/states/CURRENT.md"
+      ],
+      "subtasks": [
+        {
+          "id": "M3 T41 S1",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/text-presentation-quality.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "shared-text-colour-projection-and-quality-governance"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Owner-approved non-ROM quality work: shared indexed projection, focused adapter tests and closure governance."
+        },
+        {
+          "id": "M3 T41 S2",
+          "state": "planned",
+          "evidence": [
+            "docs/proposals/m3/text-presentation-quality.md"
+          ],
+          "recordKinds": [
+            "win32-console-presentation-boundary"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation"
+        },
+        {
+          "id": "M3 T41 S3",
+          "state": "planned",
+          "evidence": [
+            "docs/proposals/m3/text-presentation-quality.md"
+          ],
+          "recordKinds": [
+            "cross-adapter-quality-closure"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation"
+        }
+      ]
     }
   ],
   "futurePackages": [
@@ -1010686,6 +1010734,18 @@
       "maximumComplete": 1992,
       "state": "closed",
       "evidence": "docs/history/M3-T40-win32-console-session-identity.md"
+    },
+    {
+      "subtask": "M3 T41 S1",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "active",
+      "evidence": "docs/proposals/m3/text-presentation-quality.md"
     }
   ]
 }

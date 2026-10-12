@@ -31,17 +31,17 @@ static unsigned char mysmb_win32_console_window(HWND window)
  * Keep that device contract independent of a host's VT capability: ConPTY
  * forwarding of RGB escape streams is not equivalent to Console API cells. */
 static void mysmb_win32_console_palette(struct mysmb_win32_text_console *console,
-    const unsigned long *colors)
+    const unsigned long *colors,unsigned char source_colors)
 {
-    unsigned short i;
     /* Terminal hosts may accept ColorTable writes yet retain their own fixed
      * sixteen-colour display palette. Map authored slots explicitly to the
      * standard Console attributes instead of trusting that write. */
-    console->colors_valid=2U;
+    console->colors_valid=1U;
     CopyMemory(console->colors,colors,sizeof(console->colors));
-    for(i=0U;i<16U;++i)
-        console->fallback_colors[i]=mysmb_io_color_text_nearest(colors[i]);
-}static void mysmb_win32_console_canonical_palette(unsigned long *colors)
+    mysmb_io_color_text_attributes(colors,source_colors,console->fallback_colors);
+}
+
+static void mysmb_win32_console_canonical_palette(unsigned long *colors)
 {
     unsigned short i;
     for(i=0U;i<16U;++i)
@@ -216,7 +216,7 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     }
     if(!console->vt_output) {
         mysmb_win32_console_canonical_palette(canonical_colors);
-        mysmb_win32_console_palette(console,canonical_colors);
+        mysmb_win32_console_palette(console,canonical_colors,0U);
     }
     /* Font request is attempted on every output buffer. API success may be
      * virtualized;effective physical glyph geometry still needs visual proof. */
@@ -423,28 +423,19 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     if(console->vt_output)return mysmb_win32_terminal_present(console,frame);
     if(frame->source_colors==1U && (!console->colors_valid ||
         memcmp(console->colors,frame->colors,sizeof(console->colors))!=0)) {
-        mysmb_win32_console_palette(console,frame->colors);
-        /* Palette APIs can round a classic viewport. Keep its selected cell
-         * rectangle through the existing bounded geometry owner. */
-        if(console->colors_valid==1U && console->window_usable) {
-            size.X=80;size.Y=(SHORT)console->rows;
-            view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console->rows-1U);
-            (void)mysmb_win32_console_size(console,size,&view);
-        }
+        mysmb_win32_console_palette(console,frame->colors,1U);
     } else if(frame->source_colors!=1U) {
         mysmb_win32_console_canonical_palette(canonical_colors);
         if(!console->colors_valid ||
             memcmp(console->colors,canonical_colors,sizeof(canonical_colors))!=0)
-            mysmb_win32_console_palette(console,canonical_colors);
+            mysmb_win32_console_palette(console,canonical_colors,0U);
     }
     for(i=0U;i<MYSMB_IO_TEXT_FRAME_CELLS(frame);++i) {
         console->cells[i].Char.UnicodeChar=(WCHAR)mysmb_io_text_glyph_unicode(frame->cells[i].character);
         if(console->cells[i].Char.UnicodeChar==0U)return 0;
-        console->cells[i].Attributes=(WORD)((frame->cells[i].foreground&15U)|
-            ((frame->cells[i].background&15U)<<4U));
-        if(frame->source_colors==1U && console->colors_valid==2U)
-            console->cells[i].Attributes=(WORD)(console->fallback_colors[frame->cells[i].foreground&15U]|
-                (console->fallback_colors[frame->cells[i].background&15U]<<4U));
+        console->cells[i].Attributes=(WORD)(console->fallback_colors[
+            frame->cells[i].foreground&15U]|(console->fallback_colors[
+            frame->cells[i].background&15U]<<4U));
     }
     size.X=80;size.Y=(SHORT)console->rows;origin.X=origin.Y=0;
     view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console->rows-1U);
