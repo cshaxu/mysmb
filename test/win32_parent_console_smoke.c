@@ -124,7 +124,8 @@ int main(int argc,char **argv)
     frame.cells[3920].character=0xc0U;frame.cells[3999].character=0xd9U;
     for(cycle=0;cycle<4;cycle++) {
         {
-            /* An optional geometry failure keeps valid input/output usable. */
+            /* The real Console API path keeps input/output usable across
+             * repeated borrowed-shell lifecycle transitions. */
             if(!mysmb_win32_text_console_open(&device,owner) || !device.borrowed ||
                 device.window!=GetConsoleWindow() || !mysmb_win32_text_console_present(&device,&frame))return 6;
             if(!check_frame() || (device.geometry_usable && checked_cells!=4000U))return 21;

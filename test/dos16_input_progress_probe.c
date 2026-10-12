@@ -1,6 +1,7 @@
 /* Diagnostic composition entry,not linked into the product.
  * Reuse the complete product entry;observe public input/pause contracts only.
- * Bounded transition logging cannot certify the uninstrumented runtime. */
+ * Its file-scope root state makes this an integration fixture rather than a
+ * leaf unit test;bounded transition logging cannot certify the runtime. */
 #include "platform/dos16/devices.h"
 static void observed_input(struct mysmb_io_input *input);
 #define mysmb_dos16_devices_input observed_input
