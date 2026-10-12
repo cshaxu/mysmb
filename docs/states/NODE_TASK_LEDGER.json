@@ -9557,7 +9557,7 @@
         },
         {
           "id": "M3 T42 S2",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/dos16-game-music.md",
             "docs/states/CURRENT.md"
@@ -9567,7 +9567,21 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Owner-directed platform-only device lifecycle implementation; zero ROM nodes and edges."
+          "technicalReceipt": "Closed platform lifecycle: strict BLASTER A/I/D parser, DSP reset probe, fixed 4096-byte DOS reservation, PSP environment scan, idempotent release and loss-safe reprobe; no frame synthesis or DMA/IRQ claim."
+        },
+        {
+          "id": "M3 T42 S3",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/dos16-game-music.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "dos16-integer-apu-pcm-synthesis"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Owner-directed platform-only integer PCM and Sound Blaster DMA/IRQ submission; zero ROM nodes and edges."
         }
       ]
     }
@@ -1010823,6 +1010837,18 @@
     },
     {
       "subtask": "M3 T42 S2",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/dos16-game-music.md"
+    },
+    {
+      "subtask": "M3 T42 S3",
       "kind": "implementation",
       "scope": [],
       "expectedMatches": [],

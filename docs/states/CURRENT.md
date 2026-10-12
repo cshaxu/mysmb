@@ -2,24 +2,24 @@
 
 ## Current Work
 
-## M3 T42 S2 Packet
+## M3 T42 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T42 S2 P2 — DOS16 Sound Blaster device lifecycle |
-| Admission And Approval | Owner approved M3 T42; this P2 closes the S1 audit and admits S2. |
-| Objective | Add a bounded, platform-only Sound Blaster-compatible device lifecycle that detects standard DOS configuration, safely opens/closes hardware and survives graphical/text presentation switching. |
-| Non-goals | No translated ROM/core/audio-command change; no synthesis yet; no Win32 change; no PC-speaker substitute; no imported driver, ROM asset or third-party source; no DOSBox configuration edit. |
-| Reference Baseline | S1 receipt: root submits each audio frame after every logical tick, while `mysmb_dos16_devices_audio` discards it; graphics/text mode does not own audio lifetime. |
+| Identifier Mode | M3 T42 S3 P3 — integer NES-frame PCM synthesis and Sound Blaster submission |
+| Admission And Approval | Owner approved M3 T42; this P3 closes S2 and admits S3. |
+| Objective | Consume every unchanged shared audio frame exactly once in a DOS16 integer renderer, fill the already bounded PCM blocks, and activate DMA/IRQ only after a full starter block exists. |
+| Non-goals | No translated ROM/core/audio-command change; no Win32 renderer reuse; no floating point; no PC-speaker substitute; no imported driver, ROM asset or third-party source; no DOSBox configuration edit. |
+| Reference Baseline | S2 receipt: the DOS binding parses/probes BLASTER and reserves 4096 bytes but still returns unavailable because no PCM/DMA/IRQ owner exists. |
 | Candidate Proposal | [M3 T42 proposal](../proposals/m3/dos16-game-music.md). |
-| Files And ABI Surface | `src/platform/dos16/dos_audio.*` (new), `devices.*`, platform-local tests and DOS build owner. The shared `mysmb_io_audio_frame` ABI stays read-only. |
+| Files And ABI Surface | `src/platform/dos16/dos_audio.*`, `devices.*`, platform-local tests and DOS build owner. The shared `mysmb_io_audio_frame` ABI stays read-only. |
 | Applicable Rules | Execution, Architecture, Coding, Documentation and source policy. |
-| Verification | Owner-local BLASTER parser and lifecycle failure/rollback tests; DOS16 link; existing DOSBox configuration probe; platform-purity and source-boundary review. |
-| Expected Markers | Valid `A/I/D` parsing, bounded 2×2 KiB DMA allocation protocol, DSP reset/configure/shutdown ordering, restored vectors on every failure path, and no audio lifecycle event on Tab. |
+| Verification | Owner-local integer render/write-order, silence and start/rollback tests; DOS16 link; existing DOSBox Sound Blaster route; platform-purity and source-boundary review. |
+| Expected Markers | Ordered repeated-write retention, 60Hz→11025Hz integer cadence, bounded 2×2 KiB blocks, DMA/IRQ startup only after a full block, restored vector/DMA state on every failure path, and no audio lifecycle event on Tab. |
 | Asset Needs | Existing local product/source and existing DOSBox installation only; no new ROM, trace, third-party source or audio asset. |
-| Reporting Requirements | Report device fields, allocation sizes, IRQ/DMA rollback coverage, actual conventional-memory delta, and deferred synthesis boundary. |
+| Reporting Requirements | Report sample/block geometry, exact conventional-memory delta, DMA/IRQ rollback coverage, audio-frame ordering proof and audible/deferred boundary. |
 | Stop Conditions | Any need to alter original audio writes/order, dependency on a DOSBox setting, unbounded conventional-memory allocation, or a required imported driver/source. |
-| Exit Criteria | The DOS device can safely become available or remain safely unavailable, with every setup/close branch owned and tested; it does not yet claim audible synthesis. |
+| Exit Criteria | The platform returns available only when it submits PCM from the unchanged frame; all startup/close/failure paths preserve game/video behavior and remain bounded. |
 | Original Owner Request | Implement DOS music support; graphical and text DOS modes currently have no music. |
 | Similar-Issue Sweep | Inspect all DOS vector, PIC, DMA, DSP, environment-parser, mode/reset and close paths; ensure no graphics/text transition opens, closes or reallocates audio hardware. |
 

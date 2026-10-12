@@ -3,6 +3,7 @@
 #include "platform/dos16/retained_background.h"
 #include "platform/dos16/keyboard.h"
 #include "platform/dos16/pit_clock.h"
+#include "platform/dos16/dos_audio.h"
 #include "ppu/frame.h"
 #include "io/color.h"
 #include "io/pacing.h"
@@ -630,6 +631,9 @@ int mysmb_dos16_devices_open(void)
     old_keyboard=_dos_getvect(9U);
     _dos_setvect(9U,keyboard_interrupt);
     mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);
+    /* Audio is independent of graphics/text mode.  An absent Sound Blaster is
+     * nonfatal; S3 will make a prepared device audible. */
+    (void)mysmb_dos16_audio_dos_open();
     present_due=1U;
     opened=1U;
     return 1;
@@ -638,6 +642,7 @@ int mysmb_dos16_devices_open(void)
 void mysmb_dos16_devices_close(void)
 {
     if (opened==0U) return;
+    mysmb_dos16_audio_dos_close();
     _dos_setvect(9U,old_keyboard);
     restore_video();opened=video_ready=text_mode=retained_mode=compact_mode=ram_mode=retained_hud_valid=retained_sprite_count=0U;
 }
@@ -751,6 +756,9 @@ int mysmb_dos16_devices_should_present(void)
 void mysmb_dos16_devices_after_load(void)
 {
     palette_valid=0U;
+    /* A load may have taken long enough for physical DSP state to be lost;
+     * this probe never changes game audio state or video presentation. */
+    mysmb_dos16_audio_dos_after_load();
     _disable();mysmb_dos16_keyboard_after_load(&keyboard);_enable();
     mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);present_due=1U;
 }
@@ -848,7 +856,8 @@ fallback:
 
 mysmb_io_u8 mysmb_dos16_devices_audio(const struct mysmb_io_audio_frame *frame)
 {
-    /* No DOS sound hardware adapter is installed;never claim audible output. */
+    /* S2 owns discovery/reservation only.  S3 will consume this untouched
+     * frame in source-write order and return AVAILABLE after PCM begins. */
     (void)frame;
     return MYSMB_IO_AUDIO_UNAVAILABLE;
 }

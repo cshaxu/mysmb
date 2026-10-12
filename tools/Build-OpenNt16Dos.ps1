@@ -84,7 +84,7 @@ $sources = @(
     'text/elements.c', 'text/compact_elements.c', 'text/layout.c', 'text/actor_scene.c',
     'text/background_scene.c', 'text/caption_scene.c',
     'text/scene.c',
-    'app/game_io.c', 'app/game_snapshot.c', 'io/color.c', 'io/palette_pairs.c', 'io/palette_expand.c', 'io/text_glyph.c', 'io/scale.c', 'io/pacing.c', 'io/control.c', 'io/snapshot.c', 'io/snapshot_store.c', 'io/snapshot_keys.c', 'io/file/snapshot_files.c', 'platform/dos16/snapshot_replace.c', 'platform/dos16/keyboard.c', 'platform/dos16/pit_clock.c', 'platform/dos16/devices.c',
+    'app/game_io.c', 'app/game_snapshot.c', 'io/color.c', 'io/palette_pairs.c', 'io/palette_expand.c', 'io/text_glyph.c', 'io/scale.c', 'io/pacing.c', 'io/control.c', 'io/snapshot.c', 'io/snapshot_store.c', 'io/snapshot_keys.c', 'io/file/snapshot_files.c', 'platform/dos16/snapshot_replace.c', 'platform/dos16/keyboard.c', 'platform/dos16/pit_clock.c', 'platform/dos16/dos_audio.c', 'platform/dos16/dos_audio_dos.c', 'platform/dos16/devices.c',
     'io/file/executable_path.c', 'platform/dos16/executable_path.c',
     'io/planar_frame.c', 'platform/dos16/planar_row.c', 'platform/dos16/palette_expand.c', 'platform/dos16/nibble_expand.c', 'platform/dos16/slot_copy.c', 'platform/dos16/retained_background.c', 'platform/dos16/compact_vga_layout.c', 'platform/dos16/ram_compositor.c', 'platform/dos16/dos16_root.c',
     'platform/dos16/main_dos16.c'

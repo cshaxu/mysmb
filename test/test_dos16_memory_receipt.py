@@ -40,8 +40,10 @@ try:
             assert not receipt["dynamicHeapIncluded"] and not receipt["hardwarePerformanceQualified"]
     # Mutation is bounded to the maximum-extra word; all rejected inputs stay intact.
     cap_cases = [("cap-valid", image, valid_map, True)]
+    # Historical LINK products carry a nonzero checksum.  The bounded loader
+    # edit preserves it, so it is valid input rather than a corruption.
     checksum = bytearray(image);struct.pack_into("<H", checksum, 18, 1)
-    cap_cases.append(("checksum", checksum, valid_map, False))
+    cap_cases.append(("checksum", checksum, valid_map, True))
     small_max = bytearray(image);struct.pack_into("<H", small_max, 12, 22)
     cap_cases.append(("small-max", small_max, valid_map, False))
     inverted = bytearray(image);struct.pack_into("<H", inverted, 12, 21)

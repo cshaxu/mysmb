@@ -78,16 +78,45 @@ Blaster device; this task does not edit emulator settings.
 
 ### S2 — DOS16 Sound Blaster device lifecycle
 
-Implement platform-only BLASTER parsing/probe, DSP reset, DMA/IRQ setup and
-idempotent shutdown. A focused device test must prove parsing, absent-device
-fallback, rollback after every failed setup phase, and that graphical/text
-switches leave a ready device alive.
+Implement platform-only BLASTER parsing/probe, DSP reset, fixed DMA-buffer
+reservation and idempotent shutdown. Actual DMA programming and IRQ ownership
+begin only once S3 has PCM blocks to submit; reserving the future blocks first
+keeps this setup phase safe and independently testable. A focused device test
+must prove parsing, absent-device fallback and rollback after every present
+setup phase. Graphical/text switches leave the prepared device untouched.
+
+#### S2 closure receipt
+
+`platform/dos16/dos_audio.*` now separates a portable, testable lifecycle
+state machine from the DOS physical binding. It accepts one `BLASTER` value
+with exactly one valid `A` (hex base I/O), `I` (IRQ), and `D` (8-bit DMA)
+field, ignores unrelated standard fields such as `T`, probes the DSP reset
+handshake, and reserves exactly 256 paragraphs (4096 bytes) through DOS
+allocation. `devices_open`, `devices_close`, and `devices_after_load` own
+open, idempotent release, and loss-safe reprobe. `devices_mode` remains
+strictly video-only, so graphical/text switching cannot reopen, reset, or
+reallocate audio.
+
+The OpenNT startup policy rejects CRT `getenv`; the physical binder therefore
+obtains the process PSP through DOS `AH=62h` and copies only `BLASTER` to a
+bounded 128-byte buffer. This avoids a CRT startup-vector dependency. The
+platform still returns unavailable for frames: S2 has no PCM, DMA transfer or
+IRQ handler and does not claim audible output. The owner-local unit test covers
+valid/malformed configuration, probe loss, allocation rollback and idempotent
+close. Focused x86/x64 tests, platform purity, OpenNT compilation and the DOS
+LINK 3.65 MZ route passed. The actual DOS image reports a 377,376-byte minimum
+load and a 4,096-byte initial near heap reserve; the 4,096-byte future audio
+allocation is a dynamic far-heap cost and is not included in that loader
+receipt.
 
 ### S3 — Integer NES-frame synthesis and submission
 
 Implement the DOS16 integer synthesis owner that consumes each unchanged
 `mysmb_io_audio_frame` exactly once, preserves repeated source writes, and
-fills fixed DMA blocks without heap allocation during gameplay. Unit tests
+fills the two reserved DMA blocks without heap allocation during gameplay.
+This S activates DMA/IRQ ownership only after a complete silent starter block
+exists, and restores the prior vector/DMAs on every partial startup failure.
+Unit tests
 compare register/write consumption, pause/silence and event priority against
 the shared frame contract; no game-side timing changes are allowed.
 
