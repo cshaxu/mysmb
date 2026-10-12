@@ -90,7 +90,7 @@ its include. No `text_console*.c` source is included by a test.
 | --- | --- | --- |
 | `io/color`: canonical identity and authored RGB nearest-index projection | `mysmb.io-color-text-projection-smoke`, all sixteen slots per branch | DOS B800 and Win32 indexed writers consume the same helper. |
 | Win32 policy: selected rows, bounded VT capacity, carrier/mode selection and Console write-result classification | `mysmb.win32-console-capability-smoke` | Product self-test covers the selected presenter path. |
-| Win32 presentation: RGB SGR versus indexed `CHAR_INFO` | Public presentation lifecycle result | `mysmb.win32-x86/x64-self-test` and `mysmb_win32_text_switch_smoke`. |
+| Win32 presentation: exact RGB SGR encoder, bounds and invalid glyph failure | `mysmb.win32-console-capability-smoke` | `mysmb.win32-x86/x64-self-test` and `mysmb_win32_text_switch_smoke` prove the device/session join. |
 | Win32 lifecycle/input/geometry | Their public return contracts stay in their owners | `mysmb_win32_parent_console_smoke` exercises borrowed-console restore and real Console API geometry. |
 | DOS B800 text join | The shared projection unit provides the conversion assertion | `dos16_video_lifecycle_probe` verifies the physical B800 attributes, glyphs, mode restoration and keyboard join. |
 
@@ -123,13 +123,22 @@ produces OMF, `PrepareDosLink365Omf.py` groups it, and the private DOSBox
 Microsoft Segmented-Executable Linker 5.10 emits the MZ image. The current
 route compiled 174 checked objects and emitted `mysmb-dos16.exe` (350,511
 bytes). `VerifyDos16Memory.py` passed with 49 segments, 52,624 DGROUP bytes and
-378,720 bytes page-rounded maximum loaded memory. `Invoke-DosBoxIoProbe.ps1`
+387,520 bytes page-rounded maximum loaded memory. `Invoke-DosBoxIoProbe.ps1`
 then exercised actual title, gameplay input, release and Escape-exit behavior.
 
 The corresponding x86 and x64 builds each completed their 283-test CTest
 matrix, including the policy-owner smoke. The three local product outputs are
 refreshed only from those validated builds. The active packet records their
 hashes and awaits owner acceptance before generated task output cleanup.
+
+P9 completed the named private-desktop host-integration target. Its owned
+fixture is launched below a detached no-Console `cmd` parent, so it cannot
+accidentally exercise the separately tested borrowed route. The test now
+requires exact selected geometry and `CHAR_INFO` cells only for the indexed
+Console API projection. A VT host may retain its own valid restored viewport
+or omit classic maximize/system-menu decoration; the product clips RGB output
+to that viewport. Exact RGB SGR formatting, capacity exhaustion and invalid
+glyph rejection are asserted once by `mysmb.win32-console-capability-smoke`.
 
 ## Acceptance
 

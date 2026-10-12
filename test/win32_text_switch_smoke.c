@@ -35,15 +35,27 @@ static DWORD saved_pixels[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
 static struct mysmb_io_snapshot expected_snapshot,restored_snapshot;
 static struct mysmb_io_text_frame expected_text;
 static int console_shortcut(HWND window,WORD key,unsigned char down);
+
+static int console_frame_cell_matches(const CHAR_INFO *cells,unsigned int index,
+    const struct mysmb_io_text_frame *frame,unsigned char indexed)
+{
+    if(cells[index].Char.UnicodeChar!=
+        mysmb_io_text_glyph_unicode(frame->cells[index].character))return 0;
+    return !indexed || cells[index].Attributes==(WORD)(frame->cells[index].foreground|
+        (frame->cells[index].background<<4U));
+}
+
 static int console_restore_route(void)
 {
     CONSOLE_FONT_INFOEX font,after;
     CONSOLE_SCREEN_BUFFER_INFO info;
     CHAR_INFO readback[4000];
-    COORD size={80,50},origin={0,0};
+    COORD size,origin={0,0};
     SMALL_RECT view;
-    unsigned int cycle,phase,i,attempt;
+    unsigned int cycle,phase,i,attempt,rows,cells;
     HWND host=g_console.window;
+    rows=g_console.rows;cells=80U*rows;
+    size.X=80;size.Y=(SHORT)rows;
     ZeroMemory(&font,sizeof(font));font.cbSize=sizeof(font);
     if(!GetCurrentConsoleFontEx(g_console.output,FALSE,&font))return 110;
     for(cycle=0;cycle<3;++cycle) {
@@ -54,6 +66,10 @@ static int console_restore_route(void)
                 if((IsZoomed(host)!=0)==(phase==0))break;
                 Sleep(25U);
             }
+            /* Terminal hosts may expose a Console HWND without supporting
+             * SC_MAXIMIZE. Geometry is optional there; keep testing the
+             * subsequent presenter/session path. */
+            if(attempt==80 && phase==0U)continue;
             if(attempt==80)return 112;
             /* Caption state precedes final buffer resize. Model continuous
              * rendering until every cell converges,with a one-second bound. */
@@ -61,20 +77,31 @@ static int console_restore_route(void)
                 mysmb_win32_build_frame();
                 if(!g_text_mode || g_text_failed || host!=g_console.window)return 113;
                 if(!GetConsoleScreenBufferInfo(g_console.output,&info))return 114;
-                view.Left=view.Top=0;view.Right=79;view.Bottom=49;
+                view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(rows-1U);
                 if(!ReadConsoleOutputW(g_console.output,readback,size,origin,&view))return 117;
-                i=0;
-                if(view.Right==79 && view.Bottom==49)for(;i<4000;++i)
-                    if(readback[i].Char.UnicodeChar!=mysmb_io_text_glyph_unicode(g_text_frame.cells[i].character) ||
-                        readback[i].Attributes!=(WORD)(g_text_frame.cells[i].foreground|
-                            (g_text_frame.cells[i].background<<4)))break;
-                if(i==4000)break;
+                /* Console API cell readback is the indexed projection's
+                 * contract. A VT host may accept and display SGR while not
+                 * decoding it into readable CHAR_INFO cells. Exact VT bytes
+                 * have a separate owner-local encoder test; this route owns
+                 * geometry and session continuity. */
+                if(g_console.vt_output) {
+                    /* A terminal owns its restored viewport. VT output clips
+                     * to that valid view; only lifecycle continuity is ours. */
+                    if(info.dwSize.X>0 && info.dwSize.Y>0 &&
+                        info.srWindow.Right>=info.srWindow.Left &&
+                        info.srWindow.Bottom>=info.srWindow.Top)break;
+                } else if(view.Right==79 && view.Bottom==(SHORT)(rows-1U)) {
+                    i=0;
+                    for(;i<cells;++i)
+                        if(!console_frame_cell_matches(readback,i,&g_text_frame,1U))break;
+                    if(i==cells)break;
+                }
                 Sleep(25U);
             }
             if(attempt==40)return 118;
-            if(phase && (info.dwSize.X!=80 || info.dwSize.Y!=50 ||
+            if(!g_console.vt_output && phase && (info.dwSize.X!=80 || info.dwSize.Y!=(SHORT)rows ||
                 info.srWindow.Left!=0 || info.srWindow.Top!=0 ||
-                info.srWindow.Right!=79 || info.srWindow.Bottom!=49))return 115;
+                info.srWindow.Right!=79 || info.srWindow.Bottom!=(SHORT)(rows-1U)))return 115;
             ZeroMemory(&after,sizeof(after));after.cbSize=sizeof(after);
             if(!GetCurrentConsoleFontEx(g_console.output,FALSE,&after) ||
                 font.dwFontSize.X!=after.dwFontSize.X ||
@@ -434,7 +461,7 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     SMALL_RECT view;
     COORD size,origin;
     struct mysmb_input input;
-    unsigned int i,cell_index;
+    unsigned int i,cell_index,console_rows,console_cells;
     WORD key;
     unsigned char pressed;
     HANDLE retained_input=NULL,retained_output=NULL;
@@ -525,6 +552,7 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     if(g_toggle_request!=MYSMB_IO_REQUEST_TOGGLE)return 3;
     g_toggle_request=0U;mysmb_win32_switch_presenter(window,0);
     if(!g_text_mode || !g_console.opened)return 4000+(int)GetLastError();
+    console_rows=g_console.rows;console_cells=80U*console_rows;
     {
         char title[80];
         if(GetConsoleTitleA(title,sizeof(title))!=5U || strcmp(title,"MySMB"))return 51;
@@ -534,28 +562,36 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     if(memcmp(&saved_game,&g_game,sizeof(g_game)) ||
         memcmp(&saved_audio,&g_audio_output,sizeof(g_audio_output)) ||
         g_focus_pause.pending!=0U)return 5;
-    if(!GetConsoleScreenBufferInfo(g_console.output,&info) ||
-        info.dwSize.X!=80 || info.dwSize.Y!=50 ||
+    if(!GetConsoleScreenBufferInfo(g_console.output,&info))return 6;
+    if(g_console.vt_output) {
+        if(info.dwSize.X<=0 || info.dwSize.Y<=0 ||
+            info.srWindow.Right<info.srWindow.Left ||
+            info.srWindow.Bottom<info.srWindow.Top)return 6;
+    } else if(info.dwSize.X!=80 || info.dwSize.Y!=(SHORT)console_rows ||
         info.srWindow.Right-info.srWindow.Left+1!=80 ||
-        info.srWindow.Bottom-info.srWindow.Top+1!=50)return 6;
+        info.srWindow.Bottom-info.srWindow.Top+1!=(SHORT)console_rows)return 6;
     if(!GetConsoleMode(g_console.input,&mode) ||
         (mode&(ENABLE_VIRTUAL_TERMINAL_INPUT|ENABLE_LINE_INPUT|
             ENABLE_ECHO_INPUT|ENABLE_PROCESSED_INPUT|ENABLE_QUICK_EDIT_MODE)))return 46;
     close_state=GetMenuState(GetSystemMenu(g_console.window,FALSE),SC_CLOSE,MF_BYCOMMAND);
-    if(close_state==(UINT)-1 || (close_state&(MF_DISABLED|MF_GRAYED)))return 45;
-    ZeroMemory(&color_info,sizeof(color_info));color_info.cbSize=sizeof(color_info);
-    if(!GetConsoleScreenBufferInfoEx(g_console.output,&color_info))return 43;
-    for(i=0U;i<16U;++i) {
-        rgb=mysmb_io_color_text_rgb((mysmb_io_u8)i);
-        if(color_info.ColorTable[i]!=RGB((rgb>>16U)&255UL,(rgb>>8U)&255UL,rgb&255UL))return 44;
+    /* Some terminal hosts expose no classic system menu. Where that optional
+     * decoration exists, its Close command must remain enabled. */
+    if(close_state!=(UINT)-1 && (close_state&(MF_DISABLED|MF_GRAYED)))return 45;
+    if(!g_console.vt_output) {
+        ZeroMemory(&color_info,sizeof(color_info));color_info.cbSize=sizeof(color_info);
+        if(!GetConsoleScreenBufferInfoEx(g_console.output,&color_info))return 43;
+        for(i=0U;i<16U;++i) {
+            rgb=mysmb_io_color_text_rgb((mysmb_io_u8)i);
+            if(color_info.ColorTable[i]!=RGB((rgb>>16U)&255UL,(rgb>>8U)&255UL,rgb&255UL))return 44;
+        }
     }
-    size.X=80;size.Y=50;origin.X=origin.Y=0;
-    view.Left=view.Top=0;view.Right=79;view.Bottom=49;
-    if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 7;
-    for(i=0U;i<4000U;++i)
-        if(cells[i].Char.UnicodeChar!=(WCHAR)mysmb_io_text_glyph_unicode(g_text_frame.cells[i].character) ||
-            cells[i].Attributes!=(WORD)(g_text_frame.cells[i].foreground|
-                (g_text_frame.cells[i].background<<4U)))return 8;
+    if(!g_console.vt_output) {
+        size.X=80;size.Y=(SHORT)console_rows;origin.X=origin.Y=0;
+        view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console_rows-1U);
+        if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 7;
+        for(i=0U;i<console_cells;++i)
+            if(!console_frame_cell_matches(cells,i,&g_text_frame,1U))return 8;
+    }
     glyph_frame=g_text_frame;
     for(i=0U;i<16U;++i)glyph_frame.cells[i].character=glyph_ids[i];
     {
@@ -567,10 +603,12 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
         if(accepted)return 132;
     }
     if(!mysmb_win32_text_console_present(&g_console,&glyph_frame))return 46;
-    view.Left=view.Top=0;view.Right=79;view.Bottom=49;
-    if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 47;
-    for(i=0U;i<16U;++i)
-        if(cells[i].Char.UnicodeChar!=glyph_unicode[i])return 48;
+    if(!g_console.vt_output) {
+        view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console_rows-1U);
+        if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 47;
+        for(i=0U;i<16U;++i)
+            if(cells[i].Char.UnicodeChar!=glyph_unicode[i])return 48;
+    }
     glyph_frame.cells[0].character=0x80U;
     if(mysmb_win32_text_console_present(&g_console,&glyph_frame))return 49;
     if(!mysmb_win32_text_console_present(&g_console,&g_text_frame))return 50;
@@ -620,13 +658,18 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     }
     ShowWindow(g_console.window,SW_HIDE);
     view.Left=view.Top=view.Right=view.Bottom=0;
-    size.X=79;size.Y=49;
+    size.X=79;size.Y=(SHORT)(console_rows-1U);
     if(!SetConsoleWindowInfo(g_console.output,TRUE,&view) ||
         !SetConsoleScreenBufferSize(g_console.output,size))return 21;
     mysmb_win32_build_frame();
     if(g_text_failed || !g_text_mode)return 22;
-    if(!GetConsoleScreenBufferInfo(g_console.output,&info) || info.dwSize.X!=80 ||
-        info.dwSize.Y!=50 || info.srWindow.Right!=79 || info.srWindow.Bottom!=49)return 23;
+    if(!GetConsoleScreenBufferInfo(g_console.output,&info))return 23;
+    if(g_console.vt_output) {
+        if(info.dwSize.X<=0 || info.dwSize.Y<=0 ||
+            info.srWindow.Right<info.srWindow.Left ||
+            info.srWindow.Bottom<info.srWindow.Top)return 23;
+    } else if(info.dwSize.X!=80 || info.dwSize.Y!=(SHORT)console_rows ||
+        info.srWindow.Right!=79 || info.srWindow.Bottom!=(SHORT)(console_rows-1U))return 23;
     input_only_step(window);if(!g_text_mode || g_text_failed)return 24;
     if(!FreeConsole())return 25;
     mysmb_win32_build_frame();

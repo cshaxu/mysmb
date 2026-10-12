@@ -32,46 +32,72 @@ static int mysmb_win32_console_write_failure(struct mysmb_win32_text_console *co
     return mysmb_win32_console_write_result(error,console->output_failures);
 }
 
-static int mysmb_win32_terminal_present(struct mysmb_win32_text_console *console,
-    const struct mysmb_io_text_frame *frame)
+static int mysmb_win32_console_vt_append(WCHAR *out,size_t capacity,
+    size_t *count,const WCHAR *source,size_t length)
 {
-    CONSOLE_SCREEN_BUFFER_INFO info;
-    WCHAR *out=console->terminal_output,sequence[96];
-    DWORD written;
-    unsigned int width,height,x,y,count=0U,length;
+    if(*count>capacity || length>capacity-*count)return 0;
+    CopyMemory(out+*count,source,length*sizeof(WCHAR));*count+=length;
+    return 1;
+}
+
+size_t mysmb_win32_console_vt_encode(const struct mysmb_io_text_frame *frame,
+    unsigned int width,unsigned int height,WCHAR *out,size_t capacity)
+{
+    WCHAR sequence[96];
+    unsigned int x,y,length;
+    size_t count=0U;
     int foreground=-1,background=-1;
     unsigned long fg,bg;
     WCHAR glyph;
     const struct mysmb_io_text_cell *cell;
+    static const WCHAR reset[]=L"\x1b[0m\x1b[?25l";
+    if(!frame || !out || !width || width>80U || !height ||
+        height>MYSMB_IO_TEXT_FRAME_ROWS(frame))return 0U;
+    if(!mysmb_win32_console_vt_append(out,capacity,&count,reset,
+        sizeof(reset)/sizeof(reset[0])-1U))return 0U;
+    for(y=0U;y<height;++y) {
+        length=(unsigned int)wsprintfW(sequence,L"\x1b[%u;1H",y+1U);
+        if(!mysmb_win32_console_vt_append(out,capacity,&count,sequence,length))return 0U;
+        for(x=0U;x<width;++x) {
+            cell=&frame->cells[y*80U+x];
+            if(foreground!=(int)(cell->foreground&15U) ||
+                background!=(int)(cell->background&15U)) {
+                foreground=cell->foreground&15U;background=cell->background&15U;
+                fg=frame->source_colors==1U?frame->colors[foreground]:
+                    mysmb_io_color_text_rgb((mysmb_io_u8)foreground);
+                bg=frame->source_colors==1U?frame->colors[background]:
+                    mysmb_io_color_text_rgb((mysmb_io_u8)background);
+                length=(unsigned int)wsprintfW(sequence,
+                    L"\x1b[38;2;%u;%u;%u;48;2;%u;%u;%um",
+                    (unsigned int)((fg>>16U)&255U),(unsigned int)((fg>>8U)&255U),
+                    (unsigned int)(fg&255U),(unsigned int)((bg>>16U)&255U),
+                    (unsigned int)((bg>>8U)&255U),(unsigned int)(bg&255U));
+                if(!mysmb_win32_console_vt_append(out,capacity,&count,sequence,length))return 0U;
+            }
+            glyph=(WCHAR)mysmb_io_text_glyph_unicode(cell->character);
+            if(!glyph || !mysmb_win32_console_vt_append(out,capacity,&count,&glyph,1U))return 0U;
+        }
+    }
+    return count;
+}
+
+static int mysmb_win32_terminal_present(struct mysmb_win32_text_console *console,
+    const struct mysmb_io_text_frame *frame)
+{
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    WCHAR *out=console->terminal_output;
+    DWORD written;
+    unsigned int width,height;
+    size_t count;
     if(!out || !GetConsoleScreenBufferInfo(console->output,&info))return MYSMB_WIN32_CONSOLE_DEFER;
     width=(unsigned int)(info.srWindow.Right-info.srWindow.Left+1);
     height=(unsigned int)(info.srWindow.Bottom-info.srWindow.Top+1);
     if(width>80U)width=80U;
     if(height>MYSMB_IO_TEXT_FRAME_ROWS(frame))height=MYSMB_IO_TEXT_FRAME_ROWS(frame);
     if(!width || !height)return MYSMB_WIN32_CONSOLE_DEFER;
-    lstrcpyW(out,L"\x1b[0m\x1b[?25l");count=10U;
-    for(y=0U;y<height;++y) {
-        length=(unsigned int)wsprintfW(sequence,L"\x1b[%u;1H",y+1U);
-        CopyMemory(out+count,sequence,length*sizeof(WCHAR));count+=length;
-        for(x=0U;x<width;++x) {
-            cell=&frame->cells[y*80U+x];
-            if(foreground!=(int)(cell->foreground&15U) ||
-                background!=(int)(cell->background&15U)) {
-                foreground=cell->foreground&15U;background=cell->background&15U;
-                fg=frame->source_colors==1U?frame->colors[foreground]:mysmb_io_color_text_rgb((mysmb_io_u8)foreground);
-                bg=frame->source_colors==1U?frame->colors[background]:mysmb_io_color_text_rgb((mysmb_io_u8)background);
-                length=(unsigned int)wsprintfW(sequence,
-                    L"\x1b[38;2;%u;%u;%u;48;2;%u;%u;%um",
-                    (unsigned int)((fg>>16U)&255U),(unsigned int)((fg>>8U)&255U),
-                    (unsigned int)(fg&255U),(unsigned int)((bg>>16U)&255U),
-                    (unsigned int)((bg>>8U)&255U),(unsigned int)(bg&255U));
-                CopyMemory(out+count,sequence,length*sizeof(WCHAR));count+=length;
-            }
-            glyph=(WCHAR)mysmb_io_text_glyph_unicode(cell->character);
-            if(!glyph)return MYSMB_WIN32_CONSOLE_LOST;
-            out[count++]=glyph;
-        }
-    }
+    count=mysmb_win32_console_vt_encode(frame,width,height,out,
+        mysmb_win32_console_vt_capacity(console->rows));
+    if(!count)return MYSMB_WIN32_CONSOLE_LOST;
     if(!WriteConsoleW(console->output,out,count,&written,NULL))
         return mysmb_win32_console_write_failure(console);
     console->output_failures=0U;

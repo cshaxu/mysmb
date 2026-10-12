@@ -1094,7 +1094,8 @@ if(WIN32)
     target_link_libraries(mysmb_win32_parent_console_smoke PRIVATE mysmb_io_color user32)
     add_executable(mysmb_win32_console_capability_smoke
         test/win32_console_capability_smoke.c
-        src/platform/win32/text_console_policy.c)
+        src/platform/win32/text_console_policy.c
+        src/platform/win32/text_console_presentation.c)
     target_link_libraries(mysmb_win32_console_capability_smoke PRIVATE mysmb_io_color user32)
     add_test(NAME mysmb.win32-console-capability-smoke COMMAND mysmb_win32_console_capability_smoke)
     if(MYSMB_WIN32_ARCH STREQUAL "host")

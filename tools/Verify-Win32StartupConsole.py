@@ -134,7 +134,11 @@ def main():
             for variant in ("owned-null","owned-foreign"):
                 fixture_output=output/variant;fixture_output.mkdir(exist_ok=True)
                 marker=fixture_output/"root-result.txt";marker.unlink(missing_ok=True)
-                handle=start('"%s" "%s"' % (args.switch.resolve(),fixture_output),name,fixture_output)
+                # This route must begin graphically, then allocate and close
+                # an owned Console on Tab.  Do not inherit this runner's
+                # Console, or it becomes the separate borrowed-console case.
+                handle=start('cmd.exe /d /c ""%s" "%s""' %
+                             (args.switch.resolve(),fixture_output),name,fixture_output,0x8)
                 handles.append(handle);completed(handle)
                 require(marker.exists() and marker.read_text().strip()=="0","Owned root fixture result missing")
                 rows.append(dict(route=variant+"/input/snapshot/focus/Unicode/recovery",exitCode=0))
