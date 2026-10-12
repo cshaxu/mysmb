@@ -11,13 +11,34 @@ static struct mysmb_dos16_audio_renderer renderer;
 static mysmb_io_u8 sample_scratch[184];
 static volatile unsigned char block_free[MYSMB_DOS16_AUDIO_BLOCK_COUNT];
 static volatile unsigned char block_ready[MYSMB_DOS16_AUDIO_BLOCK_COUNT];
-static volatile unsigned char active_block,playing,vector_ready;
+static volatile unsigned char active_block,playing,vector_ready,pic_ready;
+static mysmb_io_u8 old_master_mask,old_slave_mask;
 static unsigned char fill_block=0xffU;
 static unsigned short fill_count;
 static void (interrupt far *old_audio_vector)();
 static int dsp_write(mysmb_io_u8 value);
 static void dma_mask(mysmb_io_u8 mask);
 static void stop_playback(void);
+
+static void pic_enable_irq(void)
+{
+    old_master_mask=(mysmb_io_u8)inp(0x21U);
+    old_slave_mask=(mysmb_io_u8)inp(0xa1U);
+    if(audio.config.irq<8U)
+        outp(0x21U,(unsigned int)(old_master_mask&~(1U<<audio.config.irq)));
+    else {
+        outp(0xa1U,(unsigned int)(old_slave_mask&~(1U<<(audio.config.irq-8U))));
+        /* Every slave IRQ reaches the master through cascade IRQ2. */
+        outp(0x21U,(unsigned int)(old_master_mask&~4U));
+    }
+    pic_ready=1U;
+}
+
+static void pic_restore(void)
+{
+    if(!pic_ready)return;
+    outp(0x21U,old_master_mask);outp(0xa1U,old_slave_mask);pic_ready=0U;
+}
 
 /* The OpenNT DOS link policy rejects CRT environment startup helpers.  Query
  * DOS for this process's PSP, then copy only its BLASTER value into a bounded
@@ -97,7 +118,7 @@ static int dma_reserve(void *context,const struct mysmb_dos16_audio_config *conf
     for(index=0UL;index<MYSMB_DOS16_AUDIO_BLOCK_BYTES*MYSMB_DOS16_AUDIO_BLOCK_COUNT;++index)
         audio_memory[index]=128U;
     block_free[0]=block_free[1]=1U;block_ready[0]=block_ready[1]=0U;
-    fill_block=0xffU;fill_count=0U;playing=0U;vector_ready=0U;
+    fill_block=0xffU;fill_count=0U;playing=0U;vector_ready=0U;pic_ready=0U;
     mysmb_dos16_audio_renderer_initialize(&renderer);
     return 1;
 }
@@ -111,7 +132,7 @@ static void dma_release(void *context)
     _disable();
     stop_playback();
     if(vector_ready)_dos_setvect((unsigned)(audio.config.irq<8U?audio.config.irq+8U:audio.config.irq+0x68U),old_audio_vector);
-    vector_ready=0U;playing=0U;
+    vector_ready=0U;pic_restore();playing=0U;
     _enable();
     if(audio_segment)_dos_freemem(audio_segment);
     audio_segment=0U;audio_memory=0;audio_physical=0UL;
@@ -228,6 +249,7 @@ static int ensure_playing(void)
         if(!vector_ready) {
             old_audio_vector=_dos_getvect((unsigned)(audio.config.irq<8U?audio.config.irq+8U:audio.config.irq+0x68U));
             _dos_setvect((unsigned)(audio.config.irq<8U?audio.config.irq+8U:audio.config.irq+0x68U),audio_interrupt);
+            pic_enable_irq();
             vector_ready=1U;
         }
         block_ready[block]=0U;block_free[block]=0U;

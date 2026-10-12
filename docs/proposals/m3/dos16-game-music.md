@@ -167,6 +167,18 @@ not an audible SB acceptance host.  DOSBox or real SB-compatible DOS hardware
 is required for this S4 route until NTVDM64 separately admits a sound-device
 provider.
 
+**P7 physical interrupt-route correction (in progress).** A target-built
+probe now follows the same `BLASTER` discovery, renderer, DSP, DMA and IRQ
+path as the product.  The corrected environment lookup opened DOSBox's DSP,
+but the first full PCM block still exhausted both DMA buffers: the driver had
+installed the IRQ vector without unmasking the configured PIC line.  The
+backend now preserves the master/slave masks, enables the selected IRQ (and
+the master IRQ2 cascade for a slave IRQ), and restores both masks before it
+releases the vector and DMA storage.  The default unmodified DOSBox SB16
+route now returns `BLASTER-DSP-DMA-IRQ` after two seconds of paced source-frame
+submissions.  This is a real device-route witness; audible title/effect and
+presenter transition acceptance remain open.
+
 ## Acceptance
 
 1. A detected Sound Blaster-compatible DOS device plays music and effects in
