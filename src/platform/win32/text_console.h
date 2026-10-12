@@ -17,7 +17,7 @@ struct mysmb_win32_text_console {
     DWORD fit_changed_at;
     unsigned short geometry_pending;
     unsigned short rows;
-    unsigned char colors_valid;
+    unsigned char colors_valid,color_table_bounds;
     unsigned long colors[16];
     unsigned char fallback_colors[16];
     CHAR_INFO cells[MYSMB_IO_TEXT_CELLS];

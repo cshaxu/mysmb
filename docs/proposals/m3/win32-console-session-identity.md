@@ -189,3 +189,22 @@ repeated bounded run16 probe remains alive throughout the former eight-second
 failure interval without an invalid captured rectangle or error 87. Its lone
 launch-time `ERROR_NOT_FOUND` configuration lookup is normal absence of an
 optional text configuration and is neither a capture nor presentation failure.
+
+### S2 P3 native and carrier bound contracts
+
+P2 made the exclusive-bound conversion unconditional. Owner acceptance then
+proved that a regular CMD Console also displayed incorrect colours: its native
+inclusive `SetConsoleScreenBufferInfoEx` contract rejected the enlarged
+rectangle, leaving the adapter on its default-palette fallback. Restoring the
+native bounds fixed that standard path but reproduced the NTVWM worker exit,
+so the two contracts cannot be represented by one unconditional rectangle.
+
+P3 records the distinction as a device capability, not a host/process-name
+branch. A usable normal console, Terminal-style console, or any non-carrier
+font uses the standard inclusive rectangle unchanged. Only the documented
+invisible 2x4 carrier selects the relay's exclusive right/bottom values. The
+focused fixture proves both paths with the same neutral RGB palette and the
+same indexed cells. It also rejects a process-name policy. The bounded run16
+probe remains alive through the former failure interval; x86/x64 focused tests
+and platform-purity verify the adapter boundary. Live colour acceptance in a
+normal CMD and run16 remains the owner-visible final check.

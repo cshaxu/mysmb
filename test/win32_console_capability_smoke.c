@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "platform/win32/text_console.h"
-static int lost,query_fail,partial,font_effect,font_calls,write_error,minimized,zoomed,window_calls,geometry_effect,fail_buffer_once;
+static int lost,query_fail,partial,font_effect,font_calls,write_error,minimized,zoomed,window_calls,geometry_effect,fail_buffer_once,palette_exclusive;
 static DWORD clock_value,palette_sets,cell_writes;
 static CONSOLE_SCREEN_BUFFER_INFO buffer;
 static CONSOLE_SCREEN_BUFFER_INFOEX palette;
@@ -15,7 +15,7 @@ static BOOL palette_probe(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFOEX out)
 {(void)h;*out=palette;out->cbSize=sizeof(*out);out->dwSize=buffer.dwSize;
  out->srWindow=buffer.srWindow;return TRUE;}
 static BOOL palette_write(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFOEX in)
-{(void)h;palette=*in;++palette_sets;return TRUE;}
+{(void)h;palette=*in;if(palette_exclusive){--palette.srWindow.Right;--palette.srWindow.Bottom;buffer.srWindow=palette.srWindow;}++palette_sets;return TRUE;}
 static BOOL font_set(HANDLE h,BOOL maximum,PCONSOLE_FONT_INFOEX font)
 {(void)h;(void)maximum;++font_calls;if(font_effect)effective=*font;return TRUE;}
 static BOOL font_get(HANDLE h,BOOL maximum,PCONSOLE_FONT_INFOEX font)
@@ -83,8 +83,8 @@ int main(void)
  CHECK(device.effective_font.dwFontSize.X==8 && device.effective_font.dwFontSize.Y==8);
  CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
  CHECK(palette_sets==1U && cell_writes==1U && check_palette(scene.colors));
- CHECK(palette.srWindow.Right==buffer.srWindow.Right+1 &&
-     palette.srWindow.Bottom==buffer.srWindow.Bottom+1);
+ CHECK(palette.srWindow.Right==buffer.srWindow.Right &&
+     palette.srWindow.Bottom==buffer.srWindow.Bottom);
  for(i=0U;i<4000U;++i)
   CHECK(written_cells[i].Attributes==(WORD)(scene.cells[i].foreground|((WORD)scene.cells[i].background<<4U)));
  partial=1;
@@ -144,5 +144,13 @@ int main(void)
  CHECK(check_palette(scene.colors));
  for(i=0U;i<2000U;++i)
   CHECK(written_cells[i].Attributes==(WORD)(scene.cells[i].foreground|((WORD)scene.cells[i].background<<4U)));
+ /* The documented 2x4 invisible carrier selects the relay's exclusive
+  * setter contract without a terminal/process-name special case. */
+ device.colors_valid=0;device.color_table_bounds=0;palette_exclusive=1;
+ effective.dwFontSize.X=2;effective.dwFontSize.Y=4;device.window_usable=0;
+ CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
+ CHECK(device.color_table_bounds==2U && palette.srWindow.Right==buffer.srWindow.Right &&
+     palette.srWindow.Bottom==buffer.srWindow.Bottom);
+ CHECK(check_palette(scene.colors));
  puts("console capabilities: API palette/index path survives VT mode, geometry and handle-loss checks");return 0;
 }

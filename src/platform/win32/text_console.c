@@ -34,6 +34,7 @@ static void mysmb_win32_console_palette(struct mysmb_win32_text_console *console
     const unsigned long *colors)
 {
     CONSOLE_SCREEN_BUFFER_INFOEX palette;
+    CONSOLE_FONT_INFOEX font;
     unsigned short i;
     console->colors_valid=2U;
     CopyMemory(console->colors,colors,sizeof(console->colors));
@@ -41,11 +42,26 @@ static void mysmb_win32_console_palette(struct mysmb_win32_text_console *console
         console->fallback_colors[i]=mysmb_io_color_text_nearest(colors[i]);
     ZeroMemory(&palette,sizeof(palette));palette.cbSize=sizeof(palette);
     if(GetConsoleScreenBufferInfoEx(console->output,&palette)) {
-        /* This Console API returns an inclusive viewport but consumes the
-         * extended setter's right/bottom as exclusive bounds. Preserve the
-         * complete host-owned geometry while changing only ColorTable. */
-        if(palette.srWindow.Right<SHRT_MAX)++palette.srWindow.Right;
-        if(palette.srWindow.Bottom<SHRT_MAX)++palette.srWindow.Bottom;
+        /* A real Console uses inclusive SMALL_RECT endpoints for both calls.
+         * NTVWM's documented 2x4 invisible carrier instead consumes setter
+         * endpoints as exclusive. Select only from this device capability,
+         * never a process/terminal identity; normal visible and Terminal
+         * Console devices keep the native inclusive contract. */
+        if(!console->color_table_bounds) {
+            ZeroMemory(&font,sizeof(font));font.cbSize=sizeof(font);
+            if(!console->window_usable &&
+                GetCurrentConsoleFontEx(console->output,FALSE,&font) &&
+                font.dwFontSize.X==2 && font.dwFontSize.Y==4)
+                console->color_table_bounds=2U;
+            else console->color_table_bounds=1U;
+        }
+        /* CONSOLE_SCREEN_BUFFER_INFOEX uses the native inclusive SMALL_RECT
+         * contract for both query and update. Keep it verbatim unless the
+         * carrier capability identifies the exclusive relay contract. */
+        if(console->color_table_bounds==2U) {
+            palette.srWindow.Right++;
+            palette.srWindow.Bottom++;
+        }
         for(i=0U;i<16U;++i)
             palette.ColorTable[i]=RGB((colors[i]>>16U)&255UL,
                 (colors[i]>>8U)&255UL,colors[i]&255UL);
@@ -144,6 +160,7 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     unsigned long canonical_colors[16];
     if(console->opened)return 1;
     console->rows=rows==25U?25U:50U;console->colors_valid=0U;
+    console->color_table_bounds=0U;
     if(!owner)return 0;
     if(GetConsoleProcessList(processes,2U)!=0U) {
         if(!mysmb_win32_start_in_text())return 0;
