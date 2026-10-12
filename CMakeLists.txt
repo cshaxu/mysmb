@@ -759,7 +759,11 @@ add_library(mysmb_dos16_core OBJECT ${MYSMB_CORE_SOURCES})
 target_include_directories(mysmb_dos16_core PRIVATE src)
 
 if(MYSMB_OPENNT_CL16)
-    set(MYSMB_OPENNT_OUTPUT_DIR "${CMAKE_BINARY_DIR}/opennt16")
+    # cl16 keeps intermediate paths in a fixed-size buffer.  Keep its owned
+    # output beneath the repository build tree, but independent of the
+    # width-specific Ninja directory so modern long build paths do not make
+    # the historical compiler fail before issuing a diagnostic.
+    set(MYSMB_OPENNT_OUTPUT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/build/dos16-opennt")
     add_custom_target(mysmb_opennt16_core
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"

@@ -18,6 +18,8 @@ $stackObject = Join-Path $RuntimeDirectory 'LVARSTCK.OBJ'
 $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC'
 $pythonExecutable = (Get-Command python -ErrorAction Stop).Source
 $originalBuildPath = $env:PATH
+$originalTemporaryPath = $env:TEMP
+$originalTemporaryDirectory = $env:TMP
 $safeRenderSources = @('ppu/frame.c','io/planar_frame.c','io/palette_pairs.c','io/palette_expand.c',
     'platform/dos16/palette_expand.c','platform/dos16/nibble_expand.c','platform/dos16/slot_copy.c','platform/dos16/planar_row.c')
 $sources = @(
@@ -111,6 +113,11 @@ try {
     # The historical optimizer driver overflows its command buffer with a long
     # inherited PATH, even for a tiny C function. This is process-local only.
     $env:PATH = $toolDirectory + ';' + (Join-Path $env:SystemRoot 'System32')
+    # Its intermediate-file path has the same fixed-size limitation.  Modern
+    # per-user TEMP values routinely exceed it, which otherwise makes cl16
+    # return 4 without a diagnostic even for a one-line source file.
+    $env:TEMP = (Get-Location).Path
+    $env:TMP = (Get-Location).Path
     # Compile the neutral contract probe with the real far-pointer ABI too.
     # It is not linked into the product and supplies no ROM or device data.
     $ioContractProbe = Join-Path (Split-Path -Parent $SourceRoot) 'test/io_contract_smoke.c'
@@ -219,5 +226,7 @@ try {
 }
 finally {
     $env:PATH = $originalBuildPath
+    $env:TEMP = $originalTemporaryPath
+    $env:TMP = $originalTemporaryDirectory
     Pop-Location
 }
