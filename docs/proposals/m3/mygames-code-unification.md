@@ -41,7 +41,7 @@ scope for this task.
 | --- | --- | --- | --- |
 | Game state and graphics content | `core`, `ppu`, `text`, and Mario app glue; ROM-equivalent PPU/OAM remains Mario-only | Mine core, app, board scene and game data | Keep in `app-mario` and `app-mine`; never extract game rules or render semantics. |
 | Neutral text frame and 16-colour meaning | `io/text`, glyph mapping and colour projection | `io/text` cell/attribute and `text/scene` | Define one `lib/kvm` cell, palette and glyph contract.  App code writes semantic cells; hosts project them. |
-| Text/graphics switch request and key state | shared IO request edge, platform roots | application/window key dispatch | Put mode-request edge state and normalized key events in `lib/kvm`; each app owns the response permitted by its capabilities. |
+| Physical keyboard and mouse input | shared IO/controller bytes and platform roots | application/window key dispatch | Put only lossless physical input-event contracts in `lib/kvm`. Each app owns every key/mouse binding, repeat policy and gameplay/menu/presentation meaning. |
 | Win32/x64 startup and Console lifecycle | parent Console detection, borrowed buffer preservation, owned Console allocation, Tab suspend/resume | simple parent/owned console open-close | Make MySMB's lifecycle the `lib/win32` baseline.  Mine adopts it; no executable-name or shell-name special case is permitted. |
 | VT and indexed colour selection | conservative normal-terminal RGB VT versus hidden indexed carrier; `CHAR_INFO` 16-colour fallback | indexed `WriteConsoleOutputW` only | Keep terminal probing and output device policy in `lib/win32`; `lib/kvm` owns the sixteen semantic colours, not terminal escape sequences. |
 | DOS16 text/input | BIOS/B800, keyboard, mode/pacing and device root | BIOS/B800, keyboard and mouse | Extract only host primitives and normalized events into `lib/dos16`.  Mario VGA/PPU composition and Mine board text remain app-owned. |
@@ -83,65 +83,91 @@ tools/           one superbuild and target matrix
 test/            library contract tests plus app-specific tests
 ```
 
-`lib/kvm` contains contracts and reusable algorithms only.  It has no
+`lib/kvm` contains contracts and reusable algorithms only. It has no
 `windows.h`, DOS interrupt, ROM, PPU, board, sound or save format dependency.
 The three host libraries may depend on `lib/kvm`; neither app depends on the
-other.  A host library reports physical key, focus, terminal and presentation
-capabilities.  It never chooses gameplay actions, owns game state, redraws
-app artwork, or introduces a helper process.
+other. A host library reports lossless physical key, mouse, focus, terminal
+and presentation capabilities. It never assigns an input meaning. In
+particular, `lib/kvm` does not reserve Tab, WASD, J/K, mouse buttons, menu
+keys, repeat behavior or controller mapping: each app maps received physical
+events to its own game/menu commands and separately requests a view switch.
+A host library does not choose gameplay actions, own game state, redraw app
+artwork, or introduce a helper process.
 
 ## Planned migration sequence
 
 The steps are intentionally separated so that directory relocation, shared
 contract extraction and behavior changes are independently reviewable.
 
-### S2 — provenance receipt and monorepo baseline
+### S2 — Mario-only structural baseline
 
-Admit the Mine revision and history-preserving import method, introduce the
-top-level superbuild, and place the two applications below `app-mario/` and
-`app-mine/` with build bridges.  There is no behavior change.  Every existing
-Mario and Mine target continues to build before library extraction begins.
+Create `app-mario/` and the top-level superbuild, then move MySMB source into
+its app boundary with build bridges. The exact same DOS16, Win32 x86 and
+Win32 x64 products must build before and after the move. Mine is not imported
+and no public behavior changes. This establishes the receiving layout before
+any shared-code extraction.
 
-### S3 — `lib/kvm` neutral contract
+### S3 — `lib/kvm` presentation and raw-input contracts
 
-Extract text cell/glyph/palette, normalized keyboard event and
-presentation-request contracts.  Migrate both apps to the contract while
-retaining their own scene producers.  Unit tests cover each contract decision
-once; integration tests cover Tab request delivery without host APIs.
+Extract neutral text cell/glyph/palette contracts plus lossless physical
+key/mouse/focus event and presentation-request interfaces. Mario's text
+scenes remain in `app-mario`; Mario alone maps events to controller buttons,
+save/load, pause, exit and Tab. Unit tests cover each contract conversion
+once; integration tests prove that app-owned bindings can request a view
+switch without a host API.
 
-### S4 — `lib/win32` Console and window integration
+### S4 — Mario-only `lib/win32` extraction
 
-Promote the MySMB Console lifecycle as a reusable Win32 component and wire
-Mine to it.  Test borrowed Console launch, graphical launch, borrowed
-suspend/resume, owned Console lifetime, Tab round trips, visible-terminal VT
-output and indexed fallback.  The output frame stays app-owned.
+Move MySMB's window loop, Console session, parent/owned lifecycle, terminal
+capability selection, VT/indexed present adapters and raw event capture into
+`lib/win32`. `app-mario` keeps all input meanings and the decision to toggle
+text/graphics. Test borrowed Console launch, graphical launch, borrowed
+suspend/resume, owned Console lifetime, app-requested Tab round trips,
+visible-terminal VT output and indexed fallback.
 
-### S5 — `lib/dos16` text/input host integration
+### S5 — Mario-only `lib/dos16` extraction
 
-Extract BIOS keyboard, B800 text presentation, indexed colour projection,
-timer and optional mouse primitives.  Mario retains its VGA/PPU compositor;
-Mine retains its board text producer.  Test DOS text input and colour cells
-against the same `lib/kvm` frame used by Win32 indexed fallback.
+Move DOS bootstrap, BIOS raw keyboard, B800 text present, 16-colour projection,
+timer and optional raw mouse primitives into `lib/dos16`. Mario retains its
+VGA/PPU compositor, sound, game input mapping and text/graphics choice. Test
+the physical-event and colour-cell contracts against the same `lib/kvm` frame
+used by the Win32 indexed fallback.
 
-### S6 — `lib/win16` and Mario Win16 host
+### S6 — receiving seams for Win16 and Mine
 
-Extract the generic Mine Win16 NE/MZ and USER/GDI host, retain Mine's
-in-window character Tab view, then add a Mario adapter with graphical and
-text callbacks.  The acceptance target is a Win3.x double-click window and a
-same-window Tab text view.  No modern Console functionality enters this host.
+Define the `lib/win16` callback/build seam and the future `app-mine` target
+interface without importing Mine source. This is a compile-contract and
+documentation task only: no fictitious Mario Win16 product is claimed and no
+Mine file is copied. It makes the later history-preserving import mechanical
+instead of forcing a second architectural redesign.
 
-### S7 — product matrix, parity and cleanup
+### S7 — Mario structural parity and duplicate-owner removal
 
-Run the Mario and Mine target matrix: DOS16, Win16, Win32 x86 and Win32 x64
-where each app declares support.  Check launch classification, Tab state
-preservation, colour policy, input mapping, window close/exit and no duplicate
-platform implementations.  Remove superseded adapters only after both apps
-use the shared owner.
+Run the Mario DOS16, Win32 x86 and Win32 x64 matrix after all extractions.
+Check application-owned launch binding, state preservation across app-requested
+view switches, colour policy, input mapping, close/exit, game-state identity
+and absence of duplicate MySMB platform implementations. Remove superseded
+Mario adapters only after the shared library is its sole owner.
+
+### S8 — Mine provenance admission and history-preserving import
+
+Only after S2-S7 are accepted, record Mine revision/ownership/distribution
+receipt, import its history beneath `app-mine/`, and prove its existing targets
+through the superbuild. This S does not yet refactor Mine behavior.
+
+### S9 — Mine adoption and Win16 delivery
+
+Migrate Mine to the already-proven KVM/Win32/DOS16 owners, extract the generic
+Mine Win16 USER/GDI and NE/MZ host into `lib/win16`, then add the Mario Win16
+adapter. Each app retains its own keyboard/mouse semantics. The final matrix
+covers the targets each app declares, including Win3.x double-click graphical
+launch and in-window app-requested text view.
 
 ## S1 acceptance and next admission gate
 
 S1 closes only when this ownership map, capability gaps, import provenance
-gate and staged migration order are committed and pass documentation
-governance.  It does **not** claim the monorepo or Win16 Mario port exists.
-S2 cannot begin until the owner accepts the directory/import strategy and the
-Mine revision/provenance receipt is recorded.
+gate, app-owned input rule and staged migration order are committed and pass
+documentation governance. It does **not** claim the monorepo or Win16 Mario
+port exists. S2-S7 deliberately require no Mine import. S8 cannot begin until
+the owner approves the final receiving structure and Mine's revision/provenance
+receipt is recorded.

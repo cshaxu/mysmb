@@ -6,9 +6,9 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T43 S1 P1 — MyGames monorepo architecture audit and design |
+| Identifier Mode | M3 T43 S1 P2 — app-owned input clarification and Mario-first migration sequence |
 | Admission And Approval | Owner approved a new task to unify MySMB and Mine in this repository and requested an audit/design before source relocation or extraction. |
-| Objective | Establish the exact ownership map and staged design for `app-mario`, `app-mine`, `lib/kvm`, `lib/dos16`, `lib/win16` and `lib/win32`. |
+| Objective | Establish the exact ownership map and staged design for `app-mario`, `app-mine`, `lib/kvm`, `lib/dos16`, `lib/win16` and `lib/win32`, with app-owned keyboard/mouse semantics. |
 | Non-goals | No source import, directory relocation, application behavior change, ROM work, product build, executable refresh or third-party/code copy. |
 | Reference Baseline | Closed M3 T42 products; current MySMB source and a read-only owner-managed Mine audit. |
 | Candidate Proposal | [M3 T43 proposal](../proposals/m3/mygames-code-unification.md). |
@@ -17,7 +17,7 @@
 | Verification | Ledger validation, documentation governance, clean working tree and semantic review of each listed platform boundary. |
 | Expected Markers | One clear owner for every shared candidate; no copied sibling source and no claimed Win16 Mario product. |
 | Asset Needs | None.  Mine is read only during S1. |
-| Reporting Requirements | Distinguish existing capability from target capability; identify which project supplies each missing capability. |
+| Reporting Requirements | Distinguish existing capability from target capability; identify which project supplies each missing capability and retain every input binding inside its app. |
 | Stop Conditions | Any import without an explicit Mine provenance/revision receipt, any game renderer moved into `lib/kvm`, or any host library choosing gameplay logic. |
 | Exit Criteria | Committed design names the migration order, acceptance matrix, provenance gate and retained app boundaries; owner can approve S2 without reopening discovery. |
 | Original Owner Request | Combine Mine and MySMB, extract shared DOS16/Win16/Win32/KVM integration, and close cross-project platform capability gaps. |
