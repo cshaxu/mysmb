@@ -55,7 +55,14 @@ static unsigned char mysmb_win32_console_vt_input(struct mysmb_win32_text_consol
     const INPUT_RECORD *event)
 {
     WCHAR character=0;
-    if(event->EventType==KEY_EVENT)character=event->Event.KeyEvent.uChar.UnicodeChar;
+    if(event->EventType==KEY_EVENT) {
+        character=event->Event.KeyEvent.uChar.UnicodeChar;
+        /* Some Console relays represent the first reply byte as VK_ESCAPE
+         * without a Unicode character. Hold it as a candidate; if the rest
+         * is not CSI it is returned to the ordinary Escape input path. */
+        if(!character && !console->vt_escape &&
+            event->Event.KeyEvent.wVirtualKeyCode==VK_ESCAPE)character=L'\x1b';
+    }
     if(!console->vt_escape) {
         if(character!=L'\x1b')return 0U;
         console->vt_escape=1U;return 1U;
@@ -267,28 +274,27 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     if(!SetConsoleActiveScreenBuffer(console->output)) {
         mysmb_win32_text_console_close(console);return 0;
     }
-    /* This is a capability probe on the selected output buffer, never a
-     * launcher, window or process-name policy. */
     mysmb_win32_console_canonical_palette(canonical_colors);
     mysmb_win32_console_palette(console,canonical_colors);
+    if(!GetConsoleMode(console->input,&mode) ||
+        !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS|ENABLE_WINDOW_INPUT)&
+            ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|
+                ENABLE_PROCESSED_INPUT|ENABLE_VIRTUAL_TERMINAL_INPUT))) {
+        mysmb_win32_text_console_close(console);return 0;
+    }
+    /* Set raw event input before emitting the query.  Otherwise a host may
+     * translate the reply's initial ESC under processed-input rules and feed
+     * it to the shared Escape-to-exit path before our VT parser can consume it. */
     if(GetConsoleMode(console->output,&output_mode) &&
         SetConsoleMode(console->output,output_mode|ENABLE_VIRTUAL_TERMINAL_PROCESSING)) {
         console->terminal_output=(WCHAR *)HeapAlloc(GetProcessHeap(),0U,
             (MYSMB_IO_TEXT_CELLS*48U+1024U)*sizeof(WCHAR));
         if(console->terminal_output) {
             DWORD written;
-            /* DA is the standard reply that Edit uses to delimit its startup
-             * terminal probe. It has no visible output. */
             if(WriteConsoleW(console->output,L"\x1b[0c",4U,&written,NULL) && written==4U) {
                 console->vt_probe=1U;console->vt_probe_started=GetTickCount();
             } else {HeapFree(GetProcessHeap(),0U,console->terminal_output);console->terminal_output=NULL;}
         }
-    }
-    if(!GetConsoleMode(console->input,&mode) ||
-        !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS|ENABLE_WINDOW_INPUT)&
-            ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|
-                ENABLE_PROCESSED_INPUT|ENABLE_VIRTUAL_TERMINAL_INPUT))) {
-        mysmb_win32_text_console_close(console);return 0;
     }
     /* Font request is attempted on every output buffer. API success may be
      * virtualized;effective physical glyph geometry still needs visual proof. */

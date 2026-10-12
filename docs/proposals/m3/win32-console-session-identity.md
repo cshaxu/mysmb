@@ -272,3 +272,19 @@ channel-capability proof, not a false claim that a terminal-standard reply can
 prove every possible RGB renderer; Microsoft Edit likewise requires modern RGB
 terminal support after this negotiation. The same neutral frame feeds either
 output path.
+
+### S3 P3 probe-input ordering repair
+
+Owner acceptance exposed an immediate exit from graphical launch and from Tab
+entry. The device-query writer in P2 ran before the Console input handle was
+placed in raw event mode. On an affected Console relay, the reply's initial
+escape byte therefore arrived as `VK_ESCAPE` rather than a Unicode VT byte and
+reached the existing shared exit owner. The process had no crash report: it was
+correctly obeying an incorrectly delivered Escape request.
+
+The input mode now changes before the output query is emitted. The bounded
+parser also treats a zero-Unicode `VK_ESCAPE` as a tentative reply lead byte;
+only a following legal CSI reply consumes it. Any non-CSI sequence or timeout
+returns the held records to the ordinary input queue, preserving a real Escape
+press. This keeps the capability handshake entirely in the Win32 adapter and
+does not alter application-request or game input semantics.

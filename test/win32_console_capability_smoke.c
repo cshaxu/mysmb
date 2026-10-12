@@ -39,6 +39,9 @@ static BOOL input_read(HANDLE h,PINPUT_RECORD event,DWORD maximum,LPDWORD read)
 static void input_character(WCHAR character)
 {ZeroMemory(&input_queue[input_tail],sizeof(input_queue[input_tail]));input_queue[input_tail].EventType=KEY_EVENT;
  input_queue[input_tail++].Event.KeyEvent.uChar.UnicodeChar=character;}
+static void input_escape_key(void)
+{ZeroMemory(&input_queue[input_tail],sizeof(input_queue[input_tail]));input_queue[input_tail].EventType=KEY_EVENT;
+ input_queue[input_tail++].Event.KeyEvent.wVirtualKeyCode=VK_ESCAPE;}
 static BOOL iconic(HWND window){(void)window;return minimized;}
 static BOOL zoom(HWND window){(void)window;return zoomed;}
 static BOOL probe_client(HWND window,LPRECT rect)
@@ -181,7 +184,7 @@ int main(void)
  for(i=0U;i<2000U;++i){scene.cells[i].foreground=2U;scene.cells[i].background=0U;}
  CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
  CHECK(device.vt_output==0U);
- input_character(L'\x1b');input_character(L'[');input_character(L'?');input_character(L'1');
+ input_escape_key();input_character(L'[');input_character(L'?');input_character(L'1');
  input_character(L';');input_character(L'0');input_character(L'c');
  CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
  CHECK(device.vt_output==1U && device.vt_probe==3U);
