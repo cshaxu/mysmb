@@ -140,6 +140,22 @@ or omit classic maximize/system-menu decoration; the product clips RGB output
 to that viewport. Exact RGB SGR formatting, capacity exhaustion and invalid
 glyph rejection are asserted once by `mysmb.win32-console-capability-smoke`.
 
+### P10 independent closure audit
+
+A final source-level sweep confirms that the portable 64-to-16 text mapping
+has its intended two scene consumers (`text/layout` and
+`text/background_scene`), while DOS B800 and Win32 indexed Console are the
+only physical-device consumers of `mysmb_io_color_text_attributes`. The RGB
+VT encoder reads the resulting neutral text frame directly; it introduces no
+second palette conversion or gameplay decision.
+
+The only test-side production implementation includes are the three documented
+composition roots (one DOS, two Win32). No `text_console*.c` implementation is
+included by a test. The non-core source, test and CMake sweep has no
+TODO/FIXME/TEMP markers, `git diff --check` is clean, and no source or product
+change was made by this audit. This is a closure receipt, not a replacement
+for owner acceptance and the required post-acceptance build cleanup.
+
 ## Acceptance
 
 1. DOS and Win32 indexed output use the same tested 16-slot projection.

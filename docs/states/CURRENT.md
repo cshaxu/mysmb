@@ -6,7 +6,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T41 S3 P9 — host-integrated VT contract and DOS16 closure |
+| Identifier Mode | M3 T41 S3 P10 — independent code-quality closure audit |
 | Admission And Approval | Owner approved T41 on 2026-10-12; S1 closed in P1 `63b06b85` and S2 closed in P2 `8949fb51`. |
 | Objective | Close T41 with complete x86/x64 unit and integration matrices, DOS16 compiler/link/product verification, platform-purity and documentation gates, refreshed local products for changed code, and a test-owner receipt. |
 | Non-goals | No ROM/core/PPU/text-scene change; no terminal input query; no DOS graphics or process-topology change. |
@@ -54,6 +54,25 @@ the indexed Console API contract from VT output: exact RGB bytes belong to the
 presentation owner-local test, while a VT host owns its restored viewport and
 may lack classic maximize or system-menu capabilities. The ordinary x86/x64
 CTest matrix remains 283 tests per width.
+
+### P10 independent code-quality closure audit
+
+The final independent source audit found no unresolved duplicate conversion or
+unowned text-presentation test path. `src/text/layout.c` and
+`src/text/background_scene.c` remain the scene-side users of the portable
+NES-to-neutral-sixteen-colour projection in `io/color`; DOS B800 and Win32
+indexed Console output then share `mysmb_io_color_text_attributes` exactly at
+their separate physical device boundaries. RGB VT encodes those same neutral
+frame slots and is not a third palette or game-side conversion.
+
+The only production implementation inclusions in tests are the documented
+composition-root fixtures: one DOS root and two Win32 roots. No
+`text_console*.c` implementation is directly included by a test. A source
+sweep found no TODO/FIXME/TEMP markers in `src/platform`, `src/io`, tests or
+CMake. `git diff --check` passes. This audit changed no production code or
+product artifact; the clean tracked state is commit `236d133f`. It completes
+the review evidence, while preserving current generated P9 outputs solely
+until owner acceptance triggers the mandatory cleanup.
 
 ## Current Technical Baseline
 
