@@ -30,6 +30,10 @@ int main(void)
         }
         while(bios_ticks()==tick){}
         tick=bios_ticks();
+        /* The root calls this at a synchronous load boundary.  The device
+         * must stop the active DMA transfer, re-probe, then accept later
+         * frames without changing the shared source order. */
+        if(cycle==18U)mysmb_dos16_audio_dos_after_load();
     }
     mysmb_dos16_audio_dos_close();return 0;
 }

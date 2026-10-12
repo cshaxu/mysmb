@@ -188,6 +188,15 @@ the DSP/DMA/IRQ sink.  The focused DOS audio, root and source-audio joins pass
 on both x86 and x64.  The remaining manual acceptance is audible title and
 effect playback in both DOS presenters, plus transition/load/Escape checks.
 
+**P9 physical load-reset receipt (in progress).** The target device witness
+now invokes the same `mysmb_dos16_audio_dos_after_load` boundary used by the
+DOS root halfway through its paced DMA route.  It stops the active transfer,
+re-probes the DSP, resets only adapter-owned synthesis/buffer state, and then
+continues to receive DMA IRQs through the unchanged shared source sequence.
+The unmodified default DOSBox SB16 route again returns
+`BLASTER-DSP-DMA-IRQ`.  This closes the device side of save/load recovery;
+audible presenter and Escape acceptance remain manual S4 evidence.
+
 ## Acceptance
 
 1. A detected Sound Blaster-compatible DOS device plays music and effects in
