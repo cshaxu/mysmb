@@ -108,6 +108,22 @@ refresh all three local executable artifacts for code changes, and record a
 coverage/ownership receipt.  After owner acceptance, remove generated build
 artifacts while retaining concise tracked evidence.
 
+## S3 verification evidence
+
+The closure uses the established DOS16 route, rather than treating a direct
+host invocation of an obsolete linker wrapper as authoritative: OpenNT CL16
+produces OMF, `PrepareDosLink365Omf.py` groups it, and the private DOSBox
+Microsoft Segmented-Executable Linker 5.10 emits the MZ image. The current
+route compiled 174 checked objects and emitted `mysmb-dos16.exe` (350,511
+bytes). `VerifyDos16Memory.py` passed with 49 segments, 52,624 DGROUP bytes and
+378,720 bytes page-rounded maximum loaded memory. `Invoke-DosBoxIoProbe.ps1`
+then exercised actual title, gameplay input, release and Escape-exit behavior.
+
+The corresponding x86 and x64 builds each completed their 283-test CTest
+matrix, including the policy-owner smoke. The three local product outputs are
+refreshed only from those validated builds. The active packet records their
+hashes and awaits owner acceptance before generated task output cleanup.
+
 ## Acceptance
 
 1. DOS and Win32 indexed output use the same tested 16-slot projection.

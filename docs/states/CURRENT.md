@@ -6,7 +6,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T41 S3 P5 — closure verification and policy-test repair |
+| Identifier Mode | M3 T41 S3 P7 — closure verification and restored DOS16 product route |
 | Admission And Approval | Owner approved T41 on 2026-10-12; S1 closed in P1 `63b06b85` and S2 closed in P2 `8949fb51`. |
 | Objective | Close T41 with complete x86/x64 unit and integration matrices, DOS16 compiler/link/product verification, platform-purity and documentation gates, refreshed local products for changed code, and a test-owner receipt. |
 | Non-goals | No ROM/core/PPU/text-scene change; no terminal input query; no DOS graphics or process-topology change. |
@@ -23,15 +23,22 @@
 | Original Owner Request | Audit and correct duplicate non-core paths, DOS/Win32 colour projections, VT capability architecture, code quality, cleanup and test closure. |
 | Similar-Issue Sweep | Rebuild every changed target; inspect every `platform/` include boundary, text palette projection, Win32 console source inclusion and product artifact source timestamp. |
 
-### Current S3 hold
+### S3 DOS16 evidence
 
-x86 and x64 have rebuilt and passed their complete 283-test matrices. The
-fixed DOS16 compiler completed all 174 object checks, but its fixed
-`tools/dos16/link16.exe` cannot start on this Windows host (`The system cannot
-execute the specified program`); the correctly formed `run16 --wait LINK.EXE
-@DOSLINK.RSP` fallback returns `ERROR_NOT_SUPPORTED` (50). No current DOS MZ
-executable or replacement `assets/mysmb16.exe` exists. This is a host toolchain
-blocker, not a passed DOS acceptance or a reason to substitute a stale product.
+The direct host `tools/dos16/link16.exe` and run16 attempts are not the
+accepted DOS16 link route. The restored project route is OpenNT CL16 OMF,
+`PrepareDosLink365Omf.py` bucketing, then the private DOSBox Microsoft
+Segmented-Executable Linker 5.10. It compiled all 174 objects, linked a current
+350,511-byte MZ executable, and passed `VerifyDos16Memory.py` with 49 segments,
+52,624 DGROUP bytes, and a 378,720-byte page-rounded maximum load. The actual
+product then passed the automated DOSBox0.74-3 I/O receipt: title, start,
+right-run, jump, left-release, and Escape exit. The output hash is
+`0a4a07f0f790361cc6fb6c1d8c69e2efaf8aa0d1438e1a9fde984be73849da8b`.
+
+The x86 and x64 matrices remain 283/283 passing. All three locally ignored
+product artifacts were refreshed from those validated target outputs. S3 is
+ready for owner acceptance; acceptance cleanup, rather than an invented linker
+blocker, is the remaining lifecycle step.
 
 ## Current Technical Baseline
 
