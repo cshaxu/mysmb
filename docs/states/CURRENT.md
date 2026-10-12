@@ -6,7 +6,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T41 S3 P7 — closure verification and restored DOS16 product route |
+| Identifier Mode | M3 T41 S3 P8 — explicit Win32 host-integration ownership |
 | Admission And Approval | Owner approved T41 on 2026-10-12; S1 closed in P1 `63b06b85` and S2 closed in P2 `8949fb51`. |
 | Objective | Close T41 with complete x86/x64 unit and integration matrices, DOS16 compiler/link/product verification, platform-purity and documentation gates, refreshed local products for changed code, and a test-owner receipt. |
 | Non-goals | No ROM/core/PPU/text-scene change; no terminal input query; no DOS graphics or process-topology change. |
@@ -39,6 +39,18 @@ The x86 and x64 matrices remain 283/283 passing. All three locally ignored
 product artifacts were refreshed from those validated target outputs. S3 is
 ready for owner acceptance; acceptance cleanup, rather than an invented linker
 blocker, is the remaining lifecycle step.
+
+### S3 host-integration ownership
+
+The borrowed-console and text-switch fixtures cannot be ordinary CTest tests:
+a normal CTest worker may be a ConPTY and lacks the classic Console contract
+being verified. They are now bound to the named non-default
+`mysmb_win32_host_integration` CMake target, which runs them through
+`Verify-Win32StartupConsole.py` on a private desktop and stores receipts below
+the build directory. The current Codex worker cannot create that desktop
+(`ERROR_ACCESS_DENIED`), so this environment records no false pass or failure;
+the existing accepted owner corpus remains the host evidence. The ordinary
+x86/x64 CTest matrix remains 283 tests per width.
 
 ## Current Technical Baseline
 

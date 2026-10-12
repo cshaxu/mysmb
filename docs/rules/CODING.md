@@ -19,3 +19,10 @@ contract.  A unit test names one owner and asserts each behavior once; a second
 test may cover it only when it proves a distinct boundary or lifecycle join.
 Avoid tests that include production implementation files merely to reach static
 internals when a narrow declared test seam can exercise the same contract.
+
+An integration fixture that requires a real host capability unavailable to a
+normal CTest worker (for example a private desktop or a classic borrowed
+Console) must have a named, non-default CMake host-integration target. Its
+command, required capability and result are recorded in the owning task. It
+must not be silently omitted merely because a headless/ConPTY CTest worker
+cannot represent that host contract.

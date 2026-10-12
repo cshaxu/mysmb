@@ -100,6 +100,13 @@ translation unit. They must not add duplicated leaf-branch assertions. No
 other production implementation file is included by a text-presentation unit
 test.
 
+`mysmb_win32_parent_console_smoke` and
+`mysmb_win32_text_switch_smoke` require a classic borrowed Console and a
+private desktop respectively. They are therefore grouped by the explicit
+non-default `mysmb_win32_host_integration` CMake target rather than registered
+as ordinary CTest tests, whose worker can be a ConPTY and cannot prove that
+host contract. The target writes only below its build directory.
+
 ### S3 — Cross-adapter closure
 
 Run complete unit and integration matrices, x86/x64 builds and product self

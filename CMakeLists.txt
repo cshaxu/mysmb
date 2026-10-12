@@ -1396,6 +1396,29 @@ add_test(NAME mysmb.dos16-ram-compositor-smoke COMMAND mysmb_dos16_ram_composito
 add_test(NAME mysmb.dos16-root-smoke COMMAND mysmb_dos16_root_smoke)
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
+
+if(WIN32)
+    # These fixtures exercise a real borrowed/owned Console and a private
+    # desktop. They are deliberately not ordinary CTest cases: a CTest worker
+    # may itself be a ConPTY without the classic Console contract under test.
+    # Keep the lifecycle route named and invocable so it cannot silently become
+    # a build-only executable.
+    add_custom_target(mysmb_win32_host_integration
+        COMMAND ${CMAKE_COMMAND} -E make_directory
+            "${CMAKE_BINARY_DIR}/win32-host-integration"
+        COMMAND ${Python3_EXECUTABLE}
+            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Verify-Win32StartupConsole.py"
+            --product "$<TARGET_FILE:mysmb_win32>"
+            --policy "$<TARGET_FILE:mysmb_win32_launch_policy_smoke>"
+            --switch "$<TARGET_FILE:mysmb_win32_text_switch_smoke>"
+            --parent "$<TARGET_FILE:mysmb_win32_parent_console_smoke>"
+            --output "${CMAKE_BINARY_DIR}/win32-host-integration"
+        DEPENDS mysmb_win32 mysmb_win32_launch_policy_smoke
+            mysmb_win32_text_switch_smoke mysmb_win32_parent_console_smoke
+        USES_TERMINAL
+        VERBATIM)
+endif()
+
 add_test(NAME mysmb.rom-codegen
          COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test/test_smb_rom_codegen.py)
 add_test(NAME mysmb.asm-index
