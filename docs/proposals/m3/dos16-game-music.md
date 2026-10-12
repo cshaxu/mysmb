@@ -142,6 +142,15 @@ route, applicable Windows regressions and all three product builds for code
 changes. Hardware absence must leave a playable silent game without changing
 logical audio state.
 
+**P5 route receipt (in progress).** The installed, unmodified DOSBox 0.74-3
+configuration exposes `BLASTER=A220 I7 D1 H5 T6`, which selects the supported
+8-bit DMA route.  The new MZ image completes its OpenNT/DOS LINK 3.65 build
+and remains live through a five-second title-route smoke run under that
+configuration.  The smoke result proves device discovery and startup do not
+terminate the game; it is not presented as an audible title/effect result.
+The audible title/gameplay, text/graphics transition, load and Escape corpus
+remains S4's open acceptance work.
+
 ## Acceptance
 
 1. A detected Sound Blaster-compatible DOS device plays music and effects in

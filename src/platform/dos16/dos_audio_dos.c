@@ -98,9 +98,14 @@ static int dma_reserve(void *context,const struct mysmb_dos16_audio_config *conf
 static void dma_release(void *context)
 {
     (void)context;
+    /* The terminal-count IRQ may already be pending when a caller closes the
+     * device.  Keep the DSP/DMA shutdown and IVT restoration atomic so it
+     * cannot arrive at the restored owner with audio state still live. */
+    _disable();
     stop_playback();
     if(vector_ready)_dos_setvect((unsigned)(audio.config.irq<8U?audio.config.irq+8U:audio.config.irq+0x68U),old_audio_vector);
     vector_ready=0U;playing=0U;
+    _enable();
     if(audio_segment)_dos_freemem(audio_segment);
     audio_segment=0U;audio_memory=0;audio_physical=0UL;
 }
@@ -126,7 +131,9 @@ void mysmb_dos16_audio_dos_after_load(void)
     unsigned long index;
     /* Loading is a device reset boundary.  Never leave the DMA controller or
      * DSP referring to a buffer while the generic lifecycle re-probes it. */
+    _disable();
     stop_playback();
+    _enable();
     if(!mysmb_dos16_audio_reprobe(&audio))return;
     mysmb_dos16_audio_renderer_initialize(&renderer);
     for(index=0UL;audio_memory && index<MYSMB_DOS16_AUDIO_BLOCK_BYTES*MYSMB_DOS16_AUDIO_BLOCK_COUNT;++index)
