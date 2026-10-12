@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M3 T41 S2 Packet
+## M3 T41 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T41 S2 P2 — implementation |
-| Admission And Approval | Owner approved T41 on 2026-10-12; S1 closed in P1 `63b06b85` after its shared projection and governance scope. |
-| Objective | Separate the Win32 console session, geometry/input and presentation responsibilities; bound RGB VT storage to the selected 25/50-row frame; replace direct implementation inclusion with a declared test seam. |
+| Identifier Mode | M3 T41 S3 P3 — closure |
+| Admission And Approval | Owner approved T41 on 2026-10-12; S1 closed in P1 `63b06b85` and S2 closed in P2 `8949fb51`. |
+| Objective | Close T41 with complete x86/x64 unit and integration matrices, DOS16 compiler/link/product verification, platform-purity and documentation gates, refreshed local products for changed code, and a test-owner receipt. |
 | Non-goals | No ROM/core/PPU/text-scene change; no terminal input query; no DOS graphics or process-topology change. |
 | Reference Baseline | M3 T40 S3 P9, commit `46909575`; accepted CMD, graphical Tab and run16 corpus. |
 | Candidate Proposal | [M3 T41 proposal](../proposals/m3/text-presentation-quality.md). |
-| Files And ABI Surface | `src/platform/win32/text_console.*` and focused Win32 tests; private adapter decomposition only, no game ABI change. |
+| Files And ABI Surface | Existing T41 source owners and tests; local `assets/mysmb16.exe`, `assets/mysmb32.exe`, `assets/mysmb64.exe` only after each target validates. |
 | Applicable Rules | Execution, Architecture, Coding, documentation governance and source policy. |
-| Verification | 25/50-row VT capacity tests; indexed and RGB presentation smoke tests through the declared seam; x86/x64 build/test; final DOS16 link and purity/documentation gates remain S3 closure work. |
-| Expected Markers | One lifecycle contract; RGB capacity proportional to selected rows; unchanged glyph ownership; no VT input query; no production-source inclusion in tests. |
+| Verification | Full x86/x64 build and CTest matrices; DOS16 compile/link and DOS product probe; all three product self-tests; platform-purity, ledger and documentation governance gates; product artifact hashes. |
+| Expected Markers | 283/283 x86 and x64 tests; a linked DOS16 MZ executable; three fresh product artifacts; no platform leakage or unowned test path. |
 | Asset Needs | Existing owner-local build inputs only; no new research or imported assets. |
 | Reporting Requirements | Report changed owners, test-owner mapping, build results, artifacts after code changes, and build cleanup at acceptance. |
 | Stop Conditions | Any core/PPU semantic difference, terminal query requirement, or inability to preserve the accepted three-route corpus. |
-| Exit Criteria | S2's Windows adapter has focused ownership boundaries, bounded VT allocation and contract-level tests; S3 remains planned for cross-adapter/product closure. |
+| Exit Criteria | All T41 acceptance criteria are evidenced; T is ready for owner acceptance and only then may its active generated build outputs be cleaned. |
 | Original Owner Request | Audit and correct duplicate non-core paths, DOS/Win32 colour projections, VT capability architecture, code quality, cleanup and test closure. |
-| Similar-Issue Sweep | Inspect every Win32 console session, close/suspend/resume, input/geometry, `terminal_output`, `WriteConsole*`, VT selection and production-source test inclusion. |
+| Similar-Issue Sweep | Rebuild every changed target; inspect every `platform/` include boundary, text palette projection, Win32 console source inclusion and product artifact source timestamp. |
 
 ## Current Technical Baseline
 

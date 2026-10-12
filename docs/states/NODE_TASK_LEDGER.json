@@ -9509,7 +9509,7 @@
         },
         {
           "id": "M3 T41 S2",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/text-presentation-quality.md",
             "docs/states/CURRENT.md"
@@ -9519,19 +9519,21 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Owner-approved continuation: split Win32 console owners, bound RGB VT stream and replace direct implementation inclusion."
+          "technicalReceipt": "Session/input/geometry/presentation/policy split landed in 8949fb51; x86/x64 full matrices passed."
         },
         {
           "id": "M3 T41 S3",
-          "state": "planned",
+          "state": "active",
           "evidence": [
-            "docs/proposals/m3/text-presentation-quality.md"
+            "docs/proposals/m3/text-presentation-quality.md",
+            "docs/states/CURRENT.md"
           ],
           "recordKinds": [
             "cross-adapter-quality-closure"
           ],
           "canReceive": false,
-          "admissionRole": "implementation"
+          "admissionRole": "implementation",
+          "technicalReceipt": "Owner-approved closure: target builds, full test matrices, DOS16 link/product, artifacts and governance gates."
         }
       ]
     }
@@ -1010751,6 +1010753,18 @@
     },
     {
       "subtask": "M3 T41 S2",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/text-presentation-quality.md"
+    },
+    {
+      "subtask": "M3 T41 S3",
       "kind": "implementation",
       "scope": [],
       "expectedMatches": [],
