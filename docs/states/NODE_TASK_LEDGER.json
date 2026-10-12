@@ -9609,7 +9609,7 @@
       "subtasks": [
         {
           "id": "M3 T43 S1",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/mygames-code-unification.md",
             "docs/states/CURRENT.md"
@@ -9619,7 +9619,21 @@
           ],
           "canReceive": false,
           "admissionRole": "audit",
-          "technicalReceipt": "Admitted zero-scope audit: inventory Mine and MySMB platform boundaries and define a provenance-gated monorepo migration; no sibling source import or production change."
+          "technicalReceipt": "Closed architecture audit: app-owned key/mouse semantics, Mario-first structural migration S2-S7, and a provenance-gated Mine import S8 were recorded; no sibling source was imported."
+        },
+        {
+          "id": "M3 T43 S2",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "mygames-mario-structural-baseline"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Admitted zero-node structural migration: move MySMB source/tests to app-mario and retain root target behavior; no Mine import or shared behavior extraction."
         }
       ]
     }
@@ -1010912,6 +1010926,18 @@
     {
       "subtask": "M3 T43 S1",
       "kind": "audit",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+    },
+    {
+      "subtask": "M3 T43 S2",
+      "kind": "implementation",
       "scope": [],
       "expectedMatches": [],
       "actualMatches": [],

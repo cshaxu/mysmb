@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M3 T43 S1 Packet
+## M3 T43 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T43 S1 P2 — app-owned input clarification and Mario-first migration sequence |
-| Admission And Approval | Owner approved a new task to unify MySMB and Mine in this repository and requested an audit/design before source relocation or extraction. |
-| Objective | Establish the exact ownership map and staged design for `app-mario`, `app-mine`, `lib/kvm`, `lib/dos16`, `lib/win16` and `lib/win32`, with app-owned keyboard/mouse semantics. |
-| Non-goals | No source import, directory relocation, application behavior change, ROM work, product build, executable refresh or third-party/code copy. |
-| Reference Baseline | Closed M3 T42 products; current MySMB source and a read-only owner-managed Mine audit. |
+| Identifier Mode | M3 T43 S2 P1 — Mario-only structural baseline |
+| Admission And Approval | Owner approved execution after accepting the app-owned input boundary and Mario-first sequence. |
+| Objective | Move the complete existing MySMB application source and project-owned tests beneath `app-mario`, with a root superbuild that preserves the current target matrix. |
+| Non-goals | No Mine read/import, `lib` behavioral extraction, C logic modification, ROM/resource change, input-binding change, executable behavior change or new Win16 target. |
+| Reference Baseline | T43 S1 architecture receipt and the pre-move MySMB CMake target/source inventory. |
 | Candidate Proposal | [M3 T43 proposal](../proposals/m3/mygames-code-unification.md). |
-| Files And ABI Surface | Proposal, active packet and zero-scope ledger only.  The proposed libraries are design targets, not present ABI. |
+| Files And ABI Surface | Root `CMakeLists.txt`, `app-mario/CMakeLists.txt`, moved `app-mario/src` and `app-mario/test`, plus build scripts whose source/test root is explicit. No public header/ABI change. |
 | Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
-| Verification | Ledger validation, documentation governance, clean working tree and semantic review of each listed platform boundary. |
-| Expected Markers | One clear owner for every shared candidate; no copied sibling source and no claimed Win16 Mario product. |
-| Asset Needs | None.  Mine is read only during S1. |
-| Reporting Requirements | Distinguish existing capability from target capability; identify which project supplies each missing capability and retain every input binding inside its app. |
-| Stop Conditions | Any import without an explicit Mine provenance/revision receipt, any game renderer moved into `lib/kvm`, or any host library choosing gameplay logic. |
-| Exit Criteria | Committed design names the migration order, acceptance matrix, provenance gate and retained app boundaries; owner can approve S2 without reopening discovery. |
+| Verification | Source inventory comparison, root CMake configure, focused CTest, Win32 x86/x64 builds, OpenNT DOS16 build, platform-purity test, ledger and documentation governance. |
+| Expected Markers | No root `src` or `test`; all Mario targets resolve below `app-mario`; root configure remains stable; generated outputs stay ignored. |
+| Asset Needs | Existing owner-local ROM is used only by already configured local build paths; no asset is moved or committed. |
+| Reporting Requirements | Report moved source/test counts, unchanged product target names, each build result and any tool path migrated. |
+| Stop Conditions | Any Mine import/read beyond S1, behavior-affecting source edit, duplicated compatibility source tree, or need to change a game input/PPU decision to make the move build. |
+| Exit Criteria | The Mario source/test tree has one `app-mario` owner; all three existing product build routes and focused tests pass from the root superbuild. |
 | Original Owner Request | Combine Mine and MySMB, extract shared DOS16/Win16/Win32/KVM integration, and close cross-project platform capability gaps. |
-| Similar-Issue Sweep | Audit startup classification, borrowed/owned Console lifetime, Tab switching, VT/indexed colour, text cells, keyboard input, DOS B800 and Win16 windowing in both projects. |
+| Similar-Issue Sweep | Search every CMake and project tool source/test root reference; retain only explicit app ownership or a root tool reference, never a stale root `src`/`test` path. |
 
 ## Current Technical Baseline
 

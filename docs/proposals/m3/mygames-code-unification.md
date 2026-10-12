@@ -107,6 +107,22 @@ Win32 x64 products must build before and after the move. Mine is not imported
 and no public behavior changes. This establishes the receiving layout before
 any shared-code extraction.
 
+#### S2 admission
+
+The admitted implementation scope is the existing MySMB source tree, its
+project-owned tests and the CMake/build paths that name them. It is a pure
+directory and build-ownership migration: no C function body, public behavior,
+ROM mapping, resource input, app input binding or product option may change.
+The root CMake file becomes a superbuild that adds `app-mario`; the application
+CMake file remains the sole owner of Mario target definitions. Shared libraries
+are placeholders only in this S and no Mine source is read or imported.
+
+The pre/post acceptance comparison is: the same source inventory is reachable
+only below `app-mario`, the root configure path remains `cmake -S .`, and the
+existing Ninja x86/x64 product targets plus the OpenNT DOS16 build command
+resolve source, tests and tools through their new ownership paths. Product
+output names and locations remain unchanged.
+
 ### S3 — `lib/kvm` presentation and raw-input contracts
 
 Extract neutral text cell/glyph/palette contracts plus lossless physical
@@ -171,3 +187,10 @@ documentation governance. It does **not** claim the monorepo or Win16 Mario
 port exists. S2-S7 deliberately require no Mine import. S8 cannot begin until
 the owner approves the final receiving structure and Mine's revision/provenance
 receipt is recorded.
+
+### S1 closure receipt
+
+S1 established the shared-candidate map, the rule that applications own all
+keyboard and mouse semantics, and the Mario-first S2-S7 order. The Mine tree
+was inspected read-only and is not imported. This receipt is design evidence
+only; it does not assert any future library or Win16 Mario target exists.
