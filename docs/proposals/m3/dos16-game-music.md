@@ -151,6 +151,22 @@ terminate the game; it is not presented as an audible title/effect result.
 The audible title/gameplay, text/graphics transition, load and Escape corpus
 remains S4's open acceptance work.
 
+**P6 environment-route correction (in progress).** The P5 startup result did
+not prove that the DOS process found `BLASTER`.  The physical binder had read
+the PSP segment returned by DOS `AH=62h` as though it were the environment
+segment.  In the DOS PSP, the environment segment is the word at `PSP:002Ch`.
+The binder now follows that word before copying the bounded `BLASTER` value;
+the old code therefore selected the silent no-device fallback on ordinary DOS
+hosts.  The corrected MZ image passes its DOS LINK 3.65 build and the focused
+x86/x64 audio/root tests.  A read-only review of the run16/NTVDM64 production
+sources finds no configured Sound Blaster device or VDD binding; its only
+Sound Blaster implementation is the excluded `vdd/samples/vsbd` sample.
+Consequently run16 currently cannot provide the DSP/DMA/IRQ hardware that this
+Sound Blaster route requires.  It remains a valid silent-fallback witness, but
+not an audible SB acceptance host.  DOSBox or real SB-compatible DOS hardware
+is required for this S4 route until NTVDM64 separately admits a sound-device
+provider.
+
 ## Acceptance
 
 1. A detected Sound Blaster-compatible DOS device plays music and effects in

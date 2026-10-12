@@ -28,15 +28,22 @@ static int current_blaster(char *target,unsigned short capacity)
     union {
         struct { unsigned short offset,segment; } address;
         const char far *pointer;
-    } environment_address;
+    } psp_address,environment_address;
     const char far *environment;
-    unsigned short offset=0U,write;
+    unsigned short environment_segment,offset=0U,write;
     static const char name[]="BLASTER=";
     registers.h.ah=0x62U;intdos(&registers,&registers);
+    /* AH=62 returns the PSP segment, not the environment segment.  DOS keeps
+     * the latter as a word at PSP:002Ch.  Scanning PSP:0000 used to make the
+     * backend silently miss BLASTER on every normal DOS host. */
+    psp_address.address.offset=0x2cU;
+    psp_address.address.segment=registers.x.bx;
+    environment_segment=*(const unsigned short far *)psp_address.pointer;
+    if(!environment_segment)return 0;
     /* The OpenNT runtime exposes MK_FP as an unresolved CRT helper in this
-     * model.  Build the standard segment:offset far address directly. */
+     * model. Build the standard segment:offset far address directly. */
     environment_address.address.offset=0U;
-    environment_address.address.segment=registers.x.bx;
+    environment_address.address.segment=environment_segment;
     environment=environment_address.pointer;
     while(offset<65534U && environment[offset]) {
         unsigned short match=0U;
@@ -240,7 +247,10 @@ mysmb_io_u8 mysmb_dos16_audio_dos_submit(const struct mysmb_io_audio_frame *fram
     while(offset<count) {
         if(fill_block==0xffU) {
             for(block=0U;block<MYSMB_DOS16_AUDIO_BLOCK_COUNT;++block)if(block_free[block])break;
-            if(block==MYSMB_DOS16_AUDIO_BLOCK_COUNT)break;
+            /* Do not advertise a healthy consumer after both DMA blocks have
+             * stalled.  The root will keep the game/audio state advancing,
+             * while this platform output safely drops until hardware recovers. */
+            if(block==MYSMB_DOS16_AUDIO_BLOCK_COUNT)return MYSMB_IO_AUDIO_UNAVAILABLE;
             block_free[block]=0U;fill_block=block;fill_count=0U;
         }
         copy=(unsigned short)(count-offset);
@@ -249,7 +259,7 @@ mysmb_io_u8 mysmb_dos16_audio_dos_submit(const struct mysmb_io_audio_frame *fram
         offset=(unsigned short)(offset+copy);fill_count=(unsigned short)(fill_count+copy);
         if(fill_count==MYSMB_DOS16_AUDIO_BLOCK_BYTES) {
             block=fill_block;block_ready[block]=1U;fill_block=0xffU;fill_count=0U;
-            (void)ensure_playing();
+            if(!ensure_playing())return MYSMB_IO_AUDIO_UNAVAILABLE;
         }
     }
     return MYSMB_IO_AUDIO_AVAILABLE;
