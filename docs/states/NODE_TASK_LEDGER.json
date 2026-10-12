@@ -9598,6 +9598,30 @@
           "technicalReceipt": "Closed integrated route: actual product PCM reaches DOSBox after a normal Start transition; Sound Blaster absence remains safe and silent, while host-output audibility is recorded separately."
         }
       ]
+    },
+    {
+      "id": "M3 T43",
+      "state": "active",
+      "evidence": [
+        "docs/proposals/m3/mygames-code-unification.md",
+        "docs/states/CURRENT.md"
+      ],
+      "subtasks": [
+        {
+          "id": "M3 T43 S1",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "mygames-architecture-audit"
+          ],
+          "canReceive": false,
+          "admissionRole": "audit",
+          "technicalReceipt": "Admitted zero-scope audit: inventory Mine and MySMB platform boundaries and define a provenance-gated monorepo migration; no sibling source import or production change."
+        }
+      ]
     }
   ],
   "futurePackages": [
@@ -1010884,6 +1010908,18 @@
       "maximumComplete": 0,
       "state": "closed",
       "evidence": "docs/history/M3-T42-dos16-game-music.md"
+    },
+    {
+      "subtask": "M3 T43 S1",
+      "kind": "audit",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "active",
+      "evidence": "docs/proposals/m3/mygames-code-unification.md"
     }
   ]
 }

@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M3 T42 S4 Packet
+## M3 T43 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T42 S4 P14 — owner-accepted closure and cleanup |
-| Admission And Approval | Owner approved T42 and directed closure of the current S after P13 evidence. |
-| Objective | Archive the completed DOS Sound Blaster route, record the host-output limit accurately, and remove active generated outputs. |
-| Non-goals | No production code, ROM/core/audio semantics, DOSBox configuration, external driver, or host-audio repair. |
-| Reference Baseline | P12 product DMA reservation and P13 actual-product DOSBox PCM capture. |
-| Candidate Proposal | [M3 T42 proposal](../proposals/m3/dos16-game-music.md). |
-| Files And ABI Surface | Closure documentation and ledger only; the shared audio ABI remains unchanged. |
-| Applicable Rules | Execution, Documentation and source policy. |
-| Verification | Ledger validation, documentation governance gate, clean diff, and absent active task outputs. |
-| Expected Markers | Closed S4/T42, retained factual evidence, and no `build/t42-s4` artifacts. |
-| Asset Needs | None. |
-| Reporting Requirements | State the product-PCM proof separately from unavailable host audibility. |
-| Stop Conditions | Any claim that the local DOSBox/RDP host listening check passed. |
-| Exit Criteria | Historical record and ledger are closed; generated task output is removed. |
-| Original Owner Request | Implement DOS music support; graphical and text DOS modes currently have no music. |
-| Similar-Issue Sweep | Close the product allocation, device route, source-frame and host-output evidence as separate dispositions. |
+| Identifier Mode | M3 T43 S1 P1 — MyGames monorepo architecture audit and design |
+| Admission And Approval | Owner approved a new task to unify MySMB and Mine in this repository and requested an audit/design before source relocation or extraction. |
+| Objective | Establish the exact ownership map and staged design for `app-mario`, `app-mine`, `lib/kvm`, `lib/dos16`, `lib/win16` and `lib/win32`. |
+| Non-goals | No source import, directory relocation, application behavior change, ROM work, product build, executable refresh or third-party/code copy. |
+| Reference Baseline | Closed M3 T42 products; current MySMB source and a read-only owner-managed Mine audit. |
+| Candidate Proposal | [M3 T43 proposal](../proposals/m3/mygames-code-unification.md). |
+| Files And ABI Surface | Proposal, active packet and zero-scope ledger only.  The proposed libraries are design targets, not present ABI. |
+| Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
+| Verification | Ledger validation, documentation governance, clean working tree and semantic review of each listed platform boundary. |
+| Expected Markers | One clear owner for every shared candidate; no copied sibling source and no claimed Win16 Mario product. |
+| Asset Needs | None.  Mine is read only during S1. |
+| Reporting Requirements | Distinguish existing capability from target capability; identify which project supplies each missing capability. |
+| Stop Conditions | Any import without an explicit Mine provenance/revision receipt, any game renderer moved into `lib/kvm`, or any host library choosing gameplay logic. |
+| Exit Criteria | Committed design names the migration order, acceptance matrix, provenance gate and retained app boundaries; owner can approve S2 without reopening discovery. |
+| Original Owner Request | Combine Mine and MySMB, extract shared DOS16/Win16/Win32/KVM integration, and close cross-project platform capability gaps. |
+| Similar-Issue Sweep | Audit startup classification, borrowed/owned Console lifetime, Tab switching, VT/indexed colour, text cells, keyboard input, DOS B800 and Win16 windowing in both projects. |
 
 ## Current Technical Baseline
 
