@@ -47,53 +47,6 @@ static void mysmb_win32_console_palette(struct mysmb_win32_text_console *console
     for(i=0U;i<16U;++i)
         colors[i]=mysmb_io_color_text_rgb((mysmb_io_u8)i);
 }
-/* A VT mode bit says that the Console accepts a request, not that the current
- * terminal relay renders authored SGR. Probe before this device is returned
- * to the game input owner, so a terminal reply cannot reach Escape-to-exit. */
-static unsigned char mysmb_win32_console_vt_reply(const INPUT_RECORD *records,
-    unsigned int count,unsigned int *first,unsigned int *last)
-{
-    unsigned int i,j;
-    WCHAR character;
-    for(i=0U;i<count;++i) {
-        if(records[i].EventType!=KEY_EVENT || !records[i].Event.KeyEvent.bKeyDown ||
-            records[i].Event.KeyEvent.uChar.UnicodeChar!=L'\x1b')continue;
-        if(i+2U>=count || records[i+1U].EventType!=KEY_EVENT ||
-            !records[i+1U].Event.KeyEvent.bKeyDown ||
-            records[i+1U].Event.KeyEvent.uChar.UnicodeChar!=L'[')continue;
-        for(j=i+2U;j<count;++j) {
-            if(records[j].EventType!=KEY_EVENT || !records[j].Event.KeyEvent.bKeyDown)return 0U;
-            character=records[j].Event.KeyEvent.uChar.UnicodeChar;
-            if(character==L'c') {*first=i;*last=j;return 1U;}
-            if(character!=L'?' && character!=L';' &&
-                (character<L'0' || character>L'9'))break;
-        }
-    }
-    return 0U;
-}
-static unsigned char mysmb_win32_console_vt_probe_open(struct mysmb_win32_text_console *console)
-{
-    INPUT_RECORD records[32],restore[32];
-    DWORD start,elapsed,count,read,written;
-    unsigned int used=0U,first=0U,last=0U,i,kept=0U;
-    if(!WriteConsoleW(console->output,L"\x1b[0c",4U,&written,NULL) || written!=4U)return 0U;
-    start=GetTickCount();
-    while(used<sizeof(records)/sizeof(records[0])) {
-        elapsed=GetTickCount()-start;
-        if(elapsed>=25U || WaitForSingleObject(console->input,25U-elapsed)!=WAIT_OBJECT_0)break;
-        while(used<sizeof(records)/sizeof(records[0]) &&
-            GetNumberOfConsoleInputEvents(console->input,&count) && count!=0U) {
-            if(!ReadConsoleInputW(console->input,records+used,1U,&read) || read!=1U)break;
-            ++used;
-        }
-        if(mysmb_win32_console_vt_reply(records,used,&first,&last))break;
-    }
-    if(!mysmb_win32_console_vt_reply(records,used,&first,&last))first=last=used;
-    for(i=0U;i<used;++i)
-        if(i<first || i>last)restore[kept++]=records[i];
-    if(kept && (!WriteConsoleInputW(console->input,restore,kept,&written) || written!=kept))return 0U;
-    return (unsigned char)(first<last);
-}
 static void mysmb_win32_console_fit(struct mysmb_win32_text_console *console,
     unsigned char initial)
 {
@@ -246,12 +199,7 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
         SetConsoleMode(console->output,output_mode|ENABLE_VIRTUAL_TERMINAL_PROCESSING)) {
         console->terminal_output=(WCHAR *)HeapAlloc(GetProcessHeap(),0U,
             (MYSMB_IO_TEXT_CELLS*48U+1024U)*sizeof(WCHAR));
-        if(console->terminal_output)
-            console->vt_output=mysmb_win32_console_vt_probe_open(console);
-        if(!console->vt_output && console->terminal_output) {
-            HeapFree(GetProcessHeap(),0U,console->terminal_output);
-            console->terminal_output=NULL;
-        }
+        console->vt_output=(unsigned char)(console->terminal_output!=NULL);
     }
     if(!console->vt_output) {
         mysmb_win32_console_canonical_palette(canonical_colors);

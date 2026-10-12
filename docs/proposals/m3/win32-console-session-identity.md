@@ -321,3 +321,16 @@ the standard indexed fallback. Every unrelated input record read during the
 bounded operation is returned to the Console input queue before game input can
 run. This mirrors the startup-negotiation shape used by Microsoft Edit without
 allowing a relay reply to impersonate a running-game Escape event.
+
+### S3 P6 reject Console-input DA probing
+
+P5 owner acceptance failed in both CMD and run16: even before the game loop
+starts, the queried Console path can surface a reply lead as an Escape key
+record that is not safely distinguishable from a real Escape. The probe is
+therefore withdrawn in full and P4's stable output-mode selection is restored.
+This is a hard boundary for MySMB's single `CONIN$` ownership model: terminal
+queries requiring replies on that queue cannot be used as a runtime capability
+signal. `ms-edit` has a different input architecture and cannot be copied here
+without a separately designed input transport. Run16's RGB-versus-indexed
+rendering remains an NTVWM/NTCON adapter capability issue, not a justification
+to reintroduce unsafe game-input interception.
