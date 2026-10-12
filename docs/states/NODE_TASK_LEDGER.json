@@ -9623,7 +9623,7 @@
         },
         {
           "id": "M3 T43 S2",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/mygames-code-unification.md",
             "docs/states/CURRENT.md"
@@ -9633,7 +9633,21 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Admitted zero-node structural migration: move MySMB source/tests to app-mario and retain root target behavior; no Mine import or shared behavior extraction."
+          "technicalReceipt": "Closed Mario-only structural migration: 288 source files and 639 project-owned test files moved to app-mario; root superbuild and x86/x64/DOS16 products retained; no Mine import or game/input change."
+        },
+        {
+          "id": "M3 T43 S3",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "mygames-kvm-neutral-contract-extraction"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Admitted zero-node neutral KVM contract extraction; application-owned keyboard/mouse meaning remains outside lib/kvm."
         }
       ]
     }
@@ -1010937,6 +1010951,18 @@
     },
     {
       "subtask": "M3 T43 S2",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+    },
+    {
+      "subtask": "M3 T43 S3",
       "kind": "implementation",
       "scope": [],
       "expectedMatches": [],

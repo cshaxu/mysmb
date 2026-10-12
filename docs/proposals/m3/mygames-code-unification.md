@@ -194,3 +194,32 @@ S1 established the shared-candidate map, the rule that applications own all
 keyboard and mouse semantics, and the Mario-first S2-S7 order. The Mine tree
 was inspected read-only and is not imported. This receipt is design evidence
 only; it does not assert any future library or Win16 Mario target exists.
+
+### S2 closure receipt
+
+S2 moved **288** Mario source files and **639** Mario-owned test files below
+`app-mario/`; the root now owns only the superbuild.  The three target names
+remain `mysmb-dos16`, `mysmb-win32-x86`, and `mysmb-win32-x64`.  Root
+configuration, the focused core/I/O/launch/purity tests on both Win32 widths,
+the OpenNT DOS16 link and its memory receipt passed.  The DOS product reports
+384,656 bytes minimum loaded memory.  The M2 path ledger was reconciled to the
+new file locations as metadata only; its incomplete final-certification status
+and open obligations are unchanged.  No Mine content was imported and no
+Mario C function body or input binding changed.
+
+### S3 admission — `lib/kvm` neutral presentation and physical input
+
+S3 creates `lib/kvm` as the only owner of portable fixed-width types, text
+cells/frame geometry, semantic sixteen-colour palette projection, selected
+CP437 glyph conversion, video-view contracts, and lossless physical input and
+presentation-request event contracts.  It may move only host-neutral code out
+of `app-mario/src/io`.  Mario retains NES controller bytes, all gameplay/menu
+commands, save/load/pause/exit decisions, Tab meaning, mouse meaning, PPU/OAM
+art, ROM logic and layout selection.  `lib/kvm` cannot name a Mario key,
+controller button, menu action, Win32 API, DOS interrupt, PPU or game state.
+
+Acceptance requires a separate `kvm` CMake target, one owner for every moved
+contract, app-local translation of raw events into Mario commands, focused
+unit coverage for cells/palette/glyph/event conversion, and unchanged x86/x64
+launch/text behaviour.  DOS16 link is rebuilt if moved code enters its product
+closure.  No Mine source is read or imported.
