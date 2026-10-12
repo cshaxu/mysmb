@@ -227,11 +227,12 @@ nodes or edges.
 
 S3 is admitted by owner direction to support both presentation capabilities
 from the same neutral text frame. It must attempt to enable
-`ENABLE_VIRTUAL_TERMINAL_PROCESSING` on the current output buffer. On success,
-it emits the frame's authored RGB through VT SGR; on failure, it retains S2's
+`ENABLE_VIRTUAL_TERMINAL_PROCESSING` on the current output buffer, then confirm
+the terminal path with a bounded Device Attributes query/reply before using
+authored RGB SGR. Expired, absent or malformed confirmation retains S2's
 standard sixteen-colour `WriteConsoleOutputW` mapping. The choice is solely the
-result of that buffer operation, never a process name, window title, launcher
-or run16 rule. Scope is the Win32 console adapter and its focused fixture; no
+result of buffer operations and the reply, never a process name, window title,
+launcher or run16 rule. Scope is the Win32 console adapter and its focused fixture; no
 shared text, game, ROM, DOS16, NTVDM64 or configuration code may change.
 ### S3 P1 dual capability renderer
 
@@ -249,3 +250,25 @@ RGB result from the same 25-row source frame, including the exact expected RGB
 sequence. x86 and x64 focused capability and platform-purity tests pass. The
 Win32 x86/x64 artifacts are refreshed; the unchanged DOS16 artifact is
 retained. This remains a platform-only change with zero ROM nodes and edges.
+
+### S3 P2 active VT terminal probe
+
+P1 treated successful `SetConsoleMode(...ENABLE_VIRTUAL_TERMINAL_PROCESSING)`
+as sufficient. Owner review correctly identified that this only proves the
+Console accepted a mode bit; a relay can still fail to parse the emitted stream.
+The revised adapter follows the official Microsoft Edit startup pattern: it
+issues a non-printing Device Attributes query to the selected output buffer,
+then uses a separate, bounded input-side parser to await a legal CSI `...c`
+reply. It never consults `COLORTERM`, a process name, a title, a launcher or a
+host setting.
+
+The query begins asynchronously at text-device open and is polled by later
+presentation calls for at most 80 ms, so Tab never blocks on terminal I/O.
+Unrelated records are held and then delivered through the existing key-reader;
+the reply itself is discarded. A completed reply enables the existing authored
+RGB SGR writer. A timeout, read failure, incomplete sequence or queue bound
+leaves the standard sixteen-colour Console API writer selected. This is a
+channel-capability proof, not a false claim that a terminal-standard reply can
+prove every possible RGB renderer; Microsoft Edit likewise requires modern RGB
+terminal support after this negotiation. The same neutral frame feeds either
+output path.
