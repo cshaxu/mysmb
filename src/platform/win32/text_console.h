@@ -11,15 +11,11 @@ struct mysmb_win32_text_console {
     CONSOLE_SCREEN_BUFFER_INFO shell_info;
     HWND window;
     unsigned char opened,borrowed,mode_saved,focused,suspended,window_usable,vt_output,font_changed,geometry_usable;
-    unsigned char vt_probe,vt_escape,vt_input_count,vt_query_count;
     CONSOLE_FONT_INFOEX shell_font,effective_font;
     COORD observed_view;
     unsigned short output_failures;
     DWORD fit_changed_at;
     WCHAR *terminal_output;
-    DWORD vt_probe_started;
-    INPUT_RECORD vt_input[32];
-    INPUT_RECORD vt_query[16];
     unsigned short geometry_pending;
     unsigned short rows;
     unsigned char colors_valid;

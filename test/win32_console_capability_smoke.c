@@ -8,8 +8,6 @@ static CONSOLE_SCREEN_BUFFER_INFOEX palette;
 static CONSOLE_FONT_INFOEX effective;
 static CHAR_INFO written_cells[MYSMB_IO_TEXT_CELLS];
 static WCHAR vt_prefix[512],vt_output[MYSMB_IO_TEXT_CELLS*48U+1024U];
-static INPUT_RECORD input_queue[32];
-static unsigned int input_head,input_tail;
 static BOOL mode_probe(HANDLE h,LPDWORD mode)
 {if(lost && h==(HANDLE)2)return FALSE;*mode=ENABLE_VIRTUAL_TERMINAL_PROCESSING;return TRUE;}
 static BOOL buffer_probe(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFO out)
@@ -30,18 +28,6 @@ static BOOL cell_write(HANDLE h,const CHAR_INFO *cells,COORD size,COORD origin,P
 {(void)h;(void)size;(void)origin;if(write_error){SetLastError((DWORD)write_error);return FALSE;}CopyMemory(written_cells,cells,sizeof(written_cells));++cell_writes;if(partial)view->Bottom=20;return TRUE;}
 static BOOL vt_write(HANDLE h,const VOID *data,DWORD count,LPDWORD written,LPVOID reserved)
 {DWORD n=count<511U?count:511U;(void)h;(void)reserved;if(write_error){SetLastError((DWORD)write_error);return FALSE;}CopyMemory(vt_prefix,data,n*sizeof(WCHAR));vt_prefix[n]=0;*written=count;return TRUE;}
-static BOOL input_events(HANDLE h,LPDWORD count)
-{(void)h;*count=(DWORD)(input_tail-input_head);return TRUE;}
-static BOOL input_peek(HANDLE h,PINPUT_RECORD event,DWORD maximum,LPDWORD read)
-{(void)h;(void)maximum;if(input_head==input_tail){*read=0U;return TRUE;}*event=input_queue[input_head];*read=1U;return TRUE;}
-static BOOL input_read(HANDLE h,PINPUT_RECORD event,DWORD maximum,LPDWORD read)
-{if(!input_peek(h,event,maximum,read))return FALSE;if(*read)++input_head;return TRUE;}
-static void input_character(WCHAR character)
-{ZeroMemory(&input_queue[input_tail],sizeof(input_queue[input_tail]));input_queue[input_tail].EventType=KEY_EVENT;
- input_queue[input_tail++].Event.KeyEvent.uChar.UnicodeChar=character;}
-static void input_escape_key(void)
-{ZeroMemory(&input_queue[input_tail],sizeof(input_queue[input_tail]));input_queue[input_tail].EventType=KEY_EVENT;
- input_queue[input_tail++].Event.KeyEvent.wVirtualKeyCode=VK_ESCAPE;}
 static BOOL iconic(HWND window){(void)window;return minimized;}
 static BOOL zoom(HWND window){(void)window;return zoomed;}
 static BOOL probe_client(HWND window,LPRECT rect)
@@ -65,9 +51,6 @@ static BOOL set_size(HANDLE output,COORD size)
 #define GetTickCount probe_clock
 #define WriteConsoleW vt_write
 #define WriteConsoleOutputW cell_write
-#define GetNumberOfConsoleInputEvents input_events
-#define PeekConsoleInputW input_peek
-#define ReadConsoleInputW input_read
 #include "../src/platform/win32/text_console.c"
 static struct mysmb_win32_text_console device;
 static struct mysmb_io_text_frame scene;
@@ -169,25 +152,11 @@ int main(void)
  for(i=0U;i<16U;++i)scene.colors[i]=mysmb_io_color_text_rgb((mysmb_io_u8)i);
  for(i=0U;i<2000U;++i)
   CHECK(written_cells[i].Attributes==expected_attribute(&scene,i));
- /* An expired probe frees its unused stream and retains API cells. */
- device.vt_output=0U;device.vt_probe=1U;device.vt_probe_started=1700U;
- device.terminal_output=(WCHAR *)HeapAlloc(GetProcessHeap(),0U,32U*sizeof(WCHAR));clock_value=1780U;
- CHECK(device.terminal_output!=NULL);
- CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
- CHECK(device.vt_output==0U && device.vt_probe==2U && device.terminal_output==NULL);
- /* A mode bit is only a candidate. RGB begins after the terminal returns
-  * the device-attributes reply consumed by the independent probe parser. */
- device.vt_output=0U;device.vt_probe=1U;device.vt_probe_started=2000U;
- device.terminal_output=vt_output;scene.source_colors=1U;clock_value=2001U;
- input_head=input_tail=0U;
+ /* A successful output-mode capability selects authored RGB VT output. */
+ device.vt_output=1U;device.terminal_output=vt_output;scene.source_colors=1U;
  scene.rows=25U;buffer.srWindow.Bottom=24;scene.colors[0]=0x787cecUL;scene.colors[2]=0xeceeeeUL;
  for(i=0U;i<2000U;++i){scene.cells[i].foreground=2U;scene.cells[i].background=0U;}
  CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
- CHECK(device.vt_output==0U);
- input_escape_key();input_character(L'[');input_character(L'?');input_character(L'1');
- input_character(L';');input_character(L'0');input_character(L'c');
- CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
- CHECK(device.vt_output==1U && device.vt_probe==3U);
  CHECK(wcsncmp(vt_prefix,L"\x1b[0m",4U)==0);
  CHECK(wcsstr(vt_prefix,L"38;2;236;238;238;48;2;120;124;236m")!=0);
  puts("console capabilities: VT RGB and standard 16-colour API paths passed");return 0;

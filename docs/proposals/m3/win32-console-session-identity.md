@@ -288,3 +288,23 @@ only a following legal CSI reply consumes it. Any non-CSI sequence or timeout
 returns the held records to the ordinary input queue, preserving a real Escape
 press. This keeps the capability handshake entirely in the Win32 adapter and
 does not alter application-request or game input semantics.
+
+### S3 P4 withdraw in-band terminal query
+
+Owner acceptance established that P2/P3 still made graphical launch or Tab
+entry flash and exit. A Device Attributes reply shares the same console input
+queue as game controls, so no bounded parser can reliably distinguish a
+terminal control reply from a real Escape across all Console relays. The
+in-band query is therefore withdrawn rather than retained as a launcher- or
+host-specific exception.
+
+S3 returns to P1's explicit output-buffer contract: successful
+`SetConsoleMode(...ENABLE_VIRTUAL_TERMINAL_PROCESSING)` on MySMB's active
+screen buffer selects authored RGB SGR output; a failure selects S2's standard
+sixteen-colour `WriteConsoleOutputW` fallback. No VT query is written, no
+console input record is consumed or held by capability detection, and normal
+Escape handling is again the sole owner of game exit. This restores RGB VT for
+an owned console that accepts VT mode while retaining the fallback for a
+buffer that rejects it. A future active terminal query requires a separately
+isolated input transport and a newly admitted task; it cannot be added to the
+shared game-input channel.

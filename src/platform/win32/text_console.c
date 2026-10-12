@@ -47,91 +47,6 @@ static void mysmb_win32_console_palette(struct mysmb_win32_text_console *console
     for(i=0U;i<16U;++i)
         colors[i]=mysmb_io_color_text_rgb((mysmb_io_u8)i);
 }
-/* Match Microsoft Edit's output-query/input-reply capability pattern.  A
- * successful mode bit alone does not prove that an intervening host parses
- * VT output.  This bounded, nonblocking probe preserves unrelated input for
- * the normal console-key owner. */
-static unsigned char mysmb_win32_console_vt_input(struct mysmb_win32_text_console *console,
-    const INPUT_RECORD *event)
-{
-    WCHAR character=0;
-    if(event->EventType==KEY_EVENT) {
-        character=event->Event.KeyEvent.uChar.UnicodeChar;
-        /* Some Console relays represent the first reply byte as VK_ESCAPE
-         * without a Unicode character. Hold it as a candidate; if the rest
-         * is not CSI it is returned to the ordinary Escape input path. */
-        if(!character && !console->vt_escape &&
-            event->Event.KeyEvent.wVirtualKeyCode==VK_ESCAPE)character=L'\x1b';
-    }
-    if(!console->vt_escape) {
-        if(character!=L'\x1b')return 0U;
-        console->vt_escape=1U;return 1U;
-    }
-    if(console->vt_escape==1U) {
-        if(character==L'[') {console->vt_escape=2U;return 1U;}
-        console->vt_escape=0U;return 0U;
-    }
-    if(character==L'c') {console->vt_escape=0U;return 2U;}
-    if(character==L'?' || character==L';' ||
-        (character>=L'0' && character<=L'9'))return 1U;
-    console->vt_escape=0U;return 0U;
-}
-static void mysmb_win32_console_vt_probe_abort(struct mysmb_win32_text_console *console)
-{
-    if(console->vt_query_count && console->vt_input_count+console->vt_query_count<=
-        sizeof(console->vt_input)/sizeof(console->vt_input[0])) {
-        CopyMemory(console->vt_input+console->vt_input_count,console->vt_query,
-            console->vt_query_count*sizeof(console->vt_query[0]));
-        console->vt_input_count=(unsigned char)(console->vt_input_count+console->vt_query_count);
-    }
-    console->vt_query_count=0U;console->vt_escape=0U;console->vt_probe=2U;
-    /* The RGB stream is useful only after a completed reply; do not retain
-     * its sizeable buffer on the standard Console fallback path. */
-    if(console->terminal_output)HeapFree(GetProcessHeap(),0U,console->terminal_output);
-    console->terminal_output=NULL;
-}
-static void mysmb_win32_console_vt_probe(struct mysmb_win32_text_console *console)
-{
-    INPUT_RECORD event;
-    DWORD count,read;
-    unsigned int i;
-    unsigned char state;
-    if(console->vt_probe!=1U)return;
-    if(GetTickCount()-console->vt_probe_started>=80U) {
-        mysmb_win32_console_vt_probe_abort(console);return;
-    }
-    for(i=0U;i<8U;++i) {
-        if(!GetNumberOfConsoleInputEvents(console->input,&count) || count==0U)return;
-        if(console->vt_input_count>=sizeof(console->vt_input)/sizeof(console->vt_input[0]) ||
-            console->vt_query_count>=sizeof(console->vt_query)/sizeof(console->vt_query[0])) {
-            mysmb_win32_console_vt_probe_abort(console);return;
-        }
-        if(!PeekConsoleInputW(console->input,&event,1U,&read) || read!=1U ||
-            !ReadConsoleInputW(console->input,&event,1U,&read) || read!=1U) {
-            mysmb_win32_console_vt_probe_abort(console);return;
-        }
-        state=mysmb_win32_console_vt_input(console,&event);
-        if(state==2U) {
-            console->vt_query_count=0U;console->vt_output=1U;console->vt_probe=3U;
-            return;
-        }
-        if(state==1U) {
-            console->vt_query[console->vt_query_count++]=event;
-        } else {
-            if(console->vt_query_count) {
-                if(console->vt_input_count+console->vt_query_count>=
-                    sizeof(console->vt_input)/sizeof(console->vt_input[0])) {
-                    mysmb_win32_console_vt_probe_abort(console);return;
-                }
-                CopyMemory(console->vt_input+console->vt_input_count,console->vt_query,
-                    console->vt_query_count*sizeof(console->vt_query[0]));
-                console->vt_input_count=(unsigned char)(console->vt_input_count+console->vt_query_count);
-                console->vt_query_count=0U;
-            }
-            console->vt_input[console->vt_input_count++]=event;
-        }
-    }
-}
 static void mysmb_win32_console_fit(struct mysmb_win32_text_console *console,
     unsigned char initial)
 {
@@ -274,27 +189,21 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     if(!SetConsoleActiveScreenBuffer(console->output)) {
         mysmb_win32_text_console_close(console);return 0;
     }
-    mysmb_win32_console_canonical_palette(canonical_colors);
-    mysmb_win32_console_palette(console,canonical_colors);
     if(!GetConsoleMode(console->input,&mode) ||
         !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS|ENABLE_WINDOW_INPUT)&
             ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|
                 ENABLE_PROCESSED_INPUT|ENABLE_VIRTUAL_TERMINAL_INPUT))) {
         mysmb_win32_text_console_close(console);return 0;
     }
-    /* Set raw event input before emitting the query.  Otherwise a host may
-     * translate the reply's initial ESC under processed-input rules and feed
-     * it to the shared Escape-to-exit path before our VT parser can consume it. */
     if(GetConsoleMode(console->output,&output_mode) &&
         SetConsoleMode(console->output,output_mode|ENABLE_VIRTUAL_TERMINAL_PROCESSING)) {
         console->terminal_output=(WCHAR *)HeapAlloc(GetProcessHeap(),0U,
             (MYSMB_IO_TEXT_CELLS*48U+1024U)*sizeof(WCHAR));
-        if(console->terminal_output) {
-            DWORD written;
-            if(WriteConsoleW(console->output,L"\x1b[0c",4U,&written,NULL) && written==4U) {
-                console->vt_probe=1U;console->vt_probe_started=GetTickCount();
-            } else {HeapFree(GetProcessHeap(),0U,console->terminal_output);console->terminal_output=NULL;}
-        }
+        console->vt_output=(unsigned char)(console->terminal_output!=NULL);
+    }
+    if(!console->vt_output) {
+        mysmb_win32_console_canonical_palette(canonical_colors);
+        mysmb_win32_console_palette(console,canonical_colors);
     }
     /* Font request is attempted on every output buffer. API success may be
      * virtualized;effective physical glyph geometry still needs visual proof. */
@@ -382,8 +291,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
         CloseHandle(console->shell_output);
     if(console->shell_title)HeapFree(GetProcessHeap(),0U,console->shell_title);
     if(console->terminal_output)HeapFree(GetProcessHeap(),0U,console->terminal_output);
-    console->terminal_output=NULL;console->vt_output=console->vt_probe=console->vt_escape=
-        console->vt_input_count=console->vt_query_count=console->window_usable=
+    console->terminal_output=NULL;console->vt_output=console->window_usable=
         console->font_changed=console->geometry_usable=0U;
     /* During host close,detaching/unregistering can hand termination back to
      * the default handler before the CRT exit. Leave attachment teardown to
@@ -497,7 +405,6 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     if(!console->opened || frame==0 ||
         !GetConsoleMode(console->input,&input_mode) ||
         !GetConsoleMode(console->output,&output_mode))return MYSMB_WIN32_CONSOLE_LOST;
-    mysmb_win32_console_vt_probe(console);
     geometry=mysmb_win32_console_geometry(console);
     if(geometry!=MYSMB_WIN32_CONSOLE_READY)return geometry;
     if(console->vt_output)return mysmb_win32_terminal_present(console,frame);
@@ -542,12 +449,7 @@ int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,
 {
     DWORD count,read;
     INPUT_RECORD event;
-    if(!console->opened)return 0;
-    if(console->vt_input_count) {
-        event=console->vt_input[0];
-        MoveMemory(console->vt_input,console->vt_input+1,
-            (--console->vt_input_count)*sizeof(console->vt_input[0]));
-    } else if(!GetNumberOfConsoleInputEvents(console->input,&count) || count==0U ||
+    if(!console->opened || !GetNumberOfConsoleInputEvents(console->input,&count) || count==0U ||
         !ReadConsoleInputW(console->input,&event,1U,&read) || read!=1U)return 0;
     *key=*scan=0U;*pressed=0U;
     if(event.EventType==FOCUS_EVENT) {
