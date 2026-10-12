@@ -78,7 +78,7 @@ int main(void)
 {
     unsigned int i,cases;
     static const unsigned int sizes[3][2]={{40U,15U},{80U,50U},{120U,60U}};
-    device.opened=device.terminal=1U;device.terminal_output=staging;
+    device.opened=device.vt_output=1U;device.terminal_output=staging;
     for(i=0U;i<4000U;++i) {
         frame.cells[i].character=(unsigned char)('A'+i%26U);
         frame.cells[i].foreground=(unsigned char)(i%16U);
