@@ -20,8 +20,8 @@
         "MYSMB_WIN32_ARCH": "x64",
         "MYSMB_ROM_PATH": "$env{MYSMB_ROM_PATH}",
         "MYSMB_ASM_PATH": "$env{MYSMB_ASM_PATH}",
-        "MYSMB_OPENNT_CL16": "$env{MYSMB_OPENNT_CL16}",
-        "MYSMB_DOS_RUNTIME_DIR": "$env{MYSMB_DOS_RUNTIME_DIR}"
+        "MYSMB_OPENNT_CL16": "${sourceDir}/tools/dos16/cl16.exe",
+        "MYSMB_DOS_RUNTIME_DIR": "${sourceDir}/tools/dos16/runtime/LIB"
       }
     },
     {
@@ -42,8 +42,8 @@
         "MYSMB_WIN32_ARCH": "x86",
         "MYSMB_ROM_PATH": "$env{MYSMB_ROM_PATH}",
         "MYSMB_ASM_PATH": "$env{MYSMB_ASM_PATH}",
-        "MYSMB_OPENNT_CL16": "$env{MYSMB_OPENNT_CL16}",
-        "MYSMB_DOS_RUNTIME_DIR": "$env{MYSMB_DOS_RUNTIME_DIR}"
+        "MYSMB_OPENNT_CL16": "${sourceDir}/tools/dos16/cl16.exe",
+        "MYSMB_DOS_RUNTIME_DIR": "${sourceDir}/tools/dos16/runtime/LIB"
       }
     }
   ],
@@ -69,3 +69,4 @@
     }
   ]
 }
+
