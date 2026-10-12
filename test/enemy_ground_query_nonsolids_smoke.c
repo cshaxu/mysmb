@@ -1,5 +1,6 @@
 #include "core/world/world.h"
 #include "core/objects.h"
+#include <string.h>
 
 int main(void)
 {
@@ -8,6 +9,7 @@ int main(void)
     static const mysmb_u8 non_solids[5] = {0x26U, 0xc2U, 0xc3U, 0x5fU, 0x60U};
     mysmb_u8 index;
 
+    memset(&game,0,sizeof(game));
     mysmb_game_initialize_memory(&game, 0U);
     game.ram[0x006eU] = 0U;
     game.ram[0x0087U] = 0xf8U;

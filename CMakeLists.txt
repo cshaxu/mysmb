@@ -752,9 +752,6 @@ add_executable(mysmb_dos_snapshot_smoke test/dos_snapshot_smoke.c
     src/io/file/snapshot_files.c src/io/file/executable_path.c
     src/platform/win32/snapshot_replace.c src/platform/dos16/snapshot_replace.c)
 target_link_libraries(mysmb_dos_snapshot_smoke PRIVATE mysmb_dos16_root)
-file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/dos-snapshot-test")
-add_test(NAME mysmb.dos-snapshot-smoke COMMAND mysmb_dos_snapshot_smoke
-    "${CMAKE_BINARY_DIR}/dos-snapshot-test")
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
@@ -1139,9 +1136,6 @@ if(WIN32)
     target_include_directories(mysmb_win32_frame_wait_smoke PRIVATE src)
     target_link_libraries(mysmb_win32_frame_wait_smoke PRIVATE winmm user32)
     add_test(NAME mysmb.win32-frame-wait-smoke COMMAND mysmb_win32_frame_wait_smoke)
-    file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-binding-test")
-    add_test(NAME mysmb.win32-snapshot-binding-smoke COMMAND mysmb_win32_snapshot_binding_smoke
-        "${CMAKE_BINARY_DIR}/snapshot-binding-test")
     add_executable(mysmb_win32_focus_pause_smoke
         test/win32_focus_pause_smoke.c
         src/platform/win32/focus_pause.c)
@@ -1503,6 +1497,9 @@ if(MYSMB_ROM_PATH)
         target_include_directories(mysmb_dos_snapshot_smoke PRIVATE
             "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
         target_compile_definitions(mysmb_dos_snapshot_smoke PRIVATE MYSMB_LOCAL_TITLE=1)
+        file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/dos-snapshot-test")
+        add_test(NAME mysmb.dos-snapshot-smoke COMMAND mysmb_dos_snapshot_smoke
+            "${CMAKE_BINARY_DIR}/dos-snapshot-test")
         target_sources(mysmb_win32 PRIVATE
             $<TARGET_OBJECTS:mysmb_local_rom_data>
             $<TARGET_OBJECTS:mysmb_local_title_data>
@@ -1516,6 +1513,9 @@ if(MYSMB_ROM_PATH)
         target_include_directories(mysmb_win32_snapshot_binding_smoke PRIVATE
             "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
         target_compile_definitions(mysmb_win32_snapshot_binding_smoke PRIVATE MYSMB_LOCAL_TITLE=1)
+        file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-binding-test")
+        add_test(NAME mysmb.win32-snapshot-binding-smoke COMMAND mysmb_win32_snapshot_binding_smoke
+            "${CMAKE_BINARY_DIR}/snapshot-binding-test")
         target_sources(mysmb_win32_text_switch_smoke PRIVATE
             $<TARGET_OBJECTS:mysmb_local_rom_data> $<TARGET_OBJECTS:mysmb_local_title_data>)
         target_include_directories(mysmb_win32_text_switch_smoke PRIVATE

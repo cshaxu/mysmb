@@ -2,6 +2,7 @@
 #include "core/objects.h"
 #include "core/enemy/frenzy.h"
 #include "core/enemy/stream.h"
+#include <string.h>
 
 int main(void)
 {
@@ -9,6 +10,7 @@ int main(void)
 
     /* PlayerLakituDiff: 64 pixels is capped at $3c, then $15-$10 yields
      * $05.  Direction zero selects the negated horizontal speed. */
+    memset(&game,0,sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 17U;
@@ -23,6 +25,7 @@ int main(void)
         game.ram[0x0401U] != 0xb0U) return 1;
 
     /* Beyond $3c, a left-moving Lakitu decelerates before reversing. */
+    memset(&game,0,sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 17U;
@@ -37,6 +40,7 @@ int main(void)
         game.ram[0x0087U] != 0U) return 2;
 
     /* A stomped Lakitu follows MoveD_EnemyVertically's $3d gravity route. */
+    memset(&game,0,sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 17U;
@@ -48,6 +52,7 @@ int main(void)
         game.ram[0x0434U] != 0x3dU) return 3;
 
     /* The active frenzy request recreates Lakitu after seven timer periods. */
+    memset(&game,0,sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x06cbU] = 18U;
     game.ram[0x06d1U] = 6U;
@@ -60,6 +65,7 @@ int main(void)
         game.ram[0x00d3U] != 0x20U) return 4;
 
     /* A normal Lakitu creates an egg in a free ordinary slot. */
+    memset(&game,0,sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x06cbU] = 18U;
     game.ram[0x00ceU] = 0x2cU;
@@ -80,6 +86,7 @@ int main(void)
         game.ram[0x00a3U] != 0xfdU || game.ram[0x0049U] != 1U) return 1;
 
     /* Spiny eggs select the same routine with the original $20 force. */
+    memset(&game,0,sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 18U;
@@ -92,6 +99,7 @@ int main(void)
         game.ram[0x0434U] != 0x20U) return 1;
 
     /* EnemyToBGCollisionDet lands the egg and restores ordinary Spiny state. */
+    memset(&game,0,sizeof(game));
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x000fU] = 1U;
     game.ram[0x0016U] = 18U;
@@ -130,6 +138,7 @@ int main(void)
         struct mysmb_area_source source;
         mysmb_u8 slot;
 
+        memset(&game,0,sizeof(game));
         mysmb_game_initialize_memory(&game, 0xfeU);
         for (slot = 0U; slot < 6U; ++slot) game.ram[0x000fU + slot] = 0U;
         source.prg = prg;

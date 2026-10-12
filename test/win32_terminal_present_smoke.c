@@ -60,6 +60,7 @@ static int check_stream(unsigned int width,unsigned int height)
                 if(n!=2U || value[1]!=1U || value[0]!=cursors+1U)return 5;
                 y=value[0]-1U;x=0U;++cursors;
             }else if(command=='m') {
+                if(n==1U && value[0]==0U)continue;
                 if(n!=10U || value[0]!=38U || value[1]!=2U || value[5]!=48U || value[6]!=2U)return 6;
                 foreground=(value[2]<<16U)|(value[3]<<8U)|value[4];
                 background=(value[7]<<16U)|(value[8]<<8U)|value[9];
