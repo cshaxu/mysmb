@@ -54,6 +54,12 @@ test 25- and 50-row worst cases.  Correct stale test comments and ensure the
 test seam observes public presentation behavior rather than depending on an
 included production `.c` file.
 
+The similar-issue sweep finds two remaining `main_win32.c` inclusions. They
+are explicitly retained integration fixtures for the composition root's
+file-scope lifecycle state and message joins;they do not unit-test static leaf
+helpers,which have owner-local tests. Each fixture records that reason beside
+its include. No `text_console*.c` source is included by a test.
+
 ### S3 — Cross-adapter closure
 
 Run complete unit and integration matrices, x86/x64 builds and product self

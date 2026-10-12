@@ -1088,10 +1088,13 @@ if(WIN32)
     target_include_directories(mysmb_win32_launch_policy_smoke PRIVATE src)
     add_test(NAME mysmb.win32-launch-policy-smoke COMMAND mysmb_win32_launch_policy_smoke)
     add_executable(mysmb_win32_parent_console_smoke test/win32_parent_console_smoke.c
-        src/platform/win32/launch.c)
+        src/platform/win32/text_console.c src/platform/win32/text_console_policy.c
+        src/platform/win32/text_console_presentation.c src/platform/win32/text_console_geometry.c
+        src/platform/win32/text_console_input.c src/platform/win32/launch.c)
     target_link_libraries(mysmb_win32_parent_console_smoke PRIVATE mysmb_io_color user32)
     add_executable(mysmb_win32_console_capability_smoke
-        test/win32_console_capability_smoke.c src/platform/win32/launch.c)
+        test/win32_console_capability_smoke.c
+        src/platform/win32/text_console_policy.c)
     target_link_libraries(mysmb_win32_console_capability_smoke PRIVATE mysmb_io_color user32)
     add_test(NAME mysmb.win32-console-capability-smoke COMMAND mysmb_win32_console_capability_smoke)
     if(MYSMB_WIN32_ARCH STREQUAL "host")
@@ -1108,7 +1111,10 @@ if(WIN32)
         src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c
         src/platform/win32/focus_pause.c
-        src/platform/win32/text_console.c src/platform/win32/launch.c
+        src/platform/win32/text_console.c src/platform/win32/text_console_policy.c
+        src/platform/win32/text_console_presentation.c src/platform/win32/text_console_geometry.c
+        src/platform/win32/text_console_input.c
+        src/platform/win32/launch.c
         src/platform/win32/keyboard.c)
     target_link_libraries(mysmb_win32 PRIVATE mysmb_core mysmb_game_io mysmb_io_color user32 gdi32 winmm)
     target_sources(mysmb_win32 PRIVATE src/io/file/snapshot_files.c
@@ -1120,12 +1126,18 @@ if(WIN32)
         src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
         src/io/file/snapshot_files.c src/platform/win32/snapshot_replace.c
         src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c
-        src/platform/win32/text_console.c src/platform/win32/launch.c
+        src/platform/win32/text_console.c src/platform/win32/text_console_policy.c
+        src/platform/win32/text_console_presentation.c src/platform/win32/text_console_geometry.c
+        src/platform/win32/text_console_input.c
+        src/platform/win32/launch.c
         src/platform/win32/keyboard.c)
     add_executable(mysmb_win32_text_switch_smoke WIN32
         test/win32_text_switch_smoke.c src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
-        src/platform/win32/text_console.c src/platform/win32/launch.c
+        src/platform/win32/text_console.c src/platform/win32/text_console_policy.c
+        src/platform/win32/text_console_presentation.c src/platform/win32/text_console_geometry.c
+        src/platform/win32/text_console_input.c
+        src/platform/win32/launch.c
         src/platform/win32/keyboard.c src/io/file/snapshot_files.c
         src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
         src/platform/win32/audio_snapshot_real.c)

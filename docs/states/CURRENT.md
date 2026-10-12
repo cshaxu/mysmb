@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M3 T41 S1 Packet
+## M3 T41 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T41 S1 P1 — implementation |
-| Admission And Approval | Owner approved the code-quality task and its governance additions on 2026-10-12. |
-| Objective | Establish one shared indexed text-colour projection and the rules needed for bounded, owner-closed quality work. |
+| Identifier Mode | M3 T41 S2 P2 — implementation |
+| Admission And Approval | Owner approved T41 on 2026-10-12; S1 closed in P1 `63b06b85` after its shared projection and governance scope. |
+| Objective | Separate the Win32 console session, geometry/input and presentation responsibilities; bound RGB VT storage to the selected 25/50-row frame; replace direct implementation inclusion with a declared test seam. |
 | Non-goals | No ROM/core/PPU/text-scene change; no terminal input query; no DOS graphics or process-topology change. |
 | Reference Baseline | M3 T40 S3 P9, commit `46909575`; accepted CMD, graphical Tab and run16 corpus. |
 | Candidate Proposal | [M3 T41 proposal](../proposals/m3/text-presentation-quality.md). |
-| Files And ABI Surface | `src/io/color.*`, DOS16 text device, Win32 text-console adapter and focused tests; no game ABI change. |
+| Files And ABI Surface | `src/platform/win32/text_console.*` and focused Win32 tests; private adapter decomposition only, no game ABI change. |
 | Applicable Rules | Execution, Architecture, Coding, documentation governance and source policy. |
-| Verification | Shared projection unit test; DOS16 and Win32 focused presentation tests; x86/x64 build/test; DOS16 link; purity and documentation gates. |
-| Expected Markers | Canonical/source palette equivalence; all 16 slots; foreground/background attributes; unchanged glyph ownership; no VT input query. |
+| Verification | 25/50-row VT capacity tests; indexed and RGB presentation smoke tests through the declared seam; x86/x64 build/test; final DOS16 link and purity/documentation gates remain S3 closure work. |
+| Expected Markers | One lifecycle contract; RGB capacity proportional to selected rows; unchanged glyph ownership; no VT input query; no production-source inclusion in tests. |
 | Asset Needs | Existing owner-local build inputs only; no new research or imported assets. |
 | Reporting Requirements | Report changed owners, test-owner mapping, build results, artifacts after code changes, and build cleanup at acceptance. |
 | Stop Conditions | Any core/PPU semantic difference, terminal query requirement, or inability to preserve the accepted three-route corpus. |
-| Exit Criteria | S1 shared projection and governance rules pass focused checks; remaining T41 S2/S3 stay planned. |
+| Exit Criteria | S2's Windows adapter has focused ownership boundaries, bounded VT allocation and contract-level tests; S3 remains planned for cross-adapter/product closure. |
 | Original Owner Request | Audit and correct duplicate non-core paths, DOS/Win32 colour projections, VT capability architecture, code quality, cleanup and test closure. |
-| Similar-Issue Sweep | Inspect every `mysmb_io_color_text_*`, `source_colors`, `CHAR_INFO`, B800 text write, VT selection and direct production-source test include. |
+| Similar-Issue Sweep | Inspect every Win32 console session, close/suspend/resume, input/geometry, `terminal_output`, `WriteConsole*`, VT selection and production-source test inclusion. |
 
 ## Current Technical Baseline
 

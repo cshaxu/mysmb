@@ -9495,7 +9495,7 @@
       "subtasks": [
         {
           "id": "M3 T41 S1",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/text-presentation-quality.md",
             "docs/states/CURRENT.md"
@@ -9505,19 +9505,21 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Owner-approved non-ROM quality work: shared indexed projection, focused adapter tests and closure governance."
+          "technicalReceipt": "Shared 16-slot projection and owner-closed governance landed in 63b06b85; x64 full 283/283 and focused x86 passed."
         },
         {
           "id": "M3 T41 S2",
-          "state": "planned",
+          "state": "active",
           "evidence": [
-            "docs/proposals/m3/text-presentation-quality.md"
+            "docs/proposals/m3/text-presentation-quality.md",
+            "docs/states/CURRENT.md"
           ],
           "recordKinds": [
             "win32-console-presentation-boundary"
           ],
           "canReceive": false,
-          "admissionRole": "implementation"
+          "admissionRole": "implementation",
+          "technicalReceipt": "Owner-approved continuation: split Win32 console owners, bound RGB VT stream and replace direct implementation inclusion."
         },
         {
           "id": "M3 T41 S3",
@@ -1010737,6 +1010739,18 @@
     },
     {
       "subtask": "M3 T41 S1",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/text-presentation-quality.md"
+    },
+    {
+      "subtask": "M3 T41 S2",
       "kind": "implementation",
       "scope": [],
       "expectedMatches": [],

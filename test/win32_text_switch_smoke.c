@@ -24,6 +24,9 @@ static int probe_stretch(HDC dc,int x,int y,int w,int h,int sx,int sy,int sw,int
 #define StretchDIBits probe_stretch
 #define WinMain mysmb_unused_product_entry
 #define MYSMB_WIN32_EMBEDDED_TEST 1
+/* This is a composition-root integration fixture: its assertions cover the
+ * root's static presenter switch and window-message join. Leaf owners have
+ * separate unit tests, so this does not duplicate their branch checks. */
 #include "../src/platform/win32/main_win32.c"
 #undef WinMain
 static struct mysmb_game saved_game;

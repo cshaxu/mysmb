@@ -9,6 +9,9 @@ static SHORT test_key(int key){(void)key;return 0;}
 #define GetForegroundWindow test_foreground
 #define GetAsyncKeyState test_key
 #define MYSMB_WIN32_EMBEDDED_TEST 1
+/* This is a composition-root integration fixture: its assertions cover the
+ * root's static lifecycle state and actual window-message join. Leaf owners
+ * have separate unit tests, so this does not duplicate their branch checks. */
 #define WinMain mysmb_unused_product_entry
 #include "../src/platform/win32/main_win32.c"
 #undef WinMain

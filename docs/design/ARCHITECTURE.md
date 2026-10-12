@@ -104,8 +104,8 @@ and window-close requests. No exit request changes original game state.
 
 Game code may request neutral buttons, frame ticks, and command sinks. Windows and DOS adapters translate those contracts to host APIs. Text rendering consumes game object/state commands; it never infers semantics from a bitmap. The runtime contains no 6502 CPU, generic NES PPU, or generic NES APU emulator. Platform selection happens at CMake target boundaries; `core/` does not fork on platform macros.
 
-Windows launch policy selects text for a direct CMD/PowerShell parent with an
-attachable console;other or unknown parents select graphics. The console
+Windows launch policy selects text when the direct parent owns an attachable
+console;other or unknown parents select graphics. The console
 subsystem makes interactive CMD wait for the same game process;non-shell
 entry detaches its startup console before showing graphics. Shell text uses
 a separate game screen buffer in the borrowed console. Tab/error/exit restore
@@ -133,12 +133,18 @@ not terminal escape-sequence input. Console outputs request8x16for25rows and
 fit. Effective font/window changes are optional capabilities;no class-name
 flag owns device policy. A usable visible host window alone enables activation
 and optional restored geometry. Console output receives the neutral 16-slot
-palette and indexed glyph cells through the Console API; font and geometry
-support are independent. Every device receives one optional
-selected80x25/80x50entry size/view request even without a real HWND;partial unsupported
-requests restore prior geometry. Successful geometry is read back and retained
-for borrowed-shell restoration. Non-window hosts are never forcibly resized
-per frame;unsupported requests retain responsive viewport clipping.
+palette and indexed glyph cells through the Console API when RGB VT is
+unavailable. A normal/visible host that accepts output VT receives authored RGB
+SGR cells;the hidden no-window 2x4 carrier uses indexed fallback even when it
+reports a VT mode bit. This is conservative output selection,not a
+terminal-input query or a claim that every VT host supports RGB. The RGB stream
+is bounded by the selected25/50-row frame. Session lifecycle,input records,
+geometry and presentation are separate Win32 owners. Font and geometry support
+are independent. Every device receives one optional selected80x25/80x50entry
+size/view request only when it has a usable HWND;partial unsupported requests
+restore prior geometry. Successful geometry is read back and retained for
+borrowed-shell restoration. Non-window hosts are never forcibly resized per
+frame;unsupported requests retain responsive viewport clipping.
 Ready/defer/lost separates resize/partial writes from genuine device failure.
 Borrowed shell fonts are explicitly restored. Full Terminal80x50and physical
 glyph acceptance remain pending owner verification.

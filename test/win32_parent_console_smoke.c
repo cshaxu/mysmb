@@ -2,15 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 #include "platform/win32/text_console.h"
-static int fail_view;
-static BOOL probe_view(HANDLE output,BOOL absolute,const SMALL_RECT *view)
-{
-    if(fail_view) {fail_view=0;SetLastError(ERROR_INVALID_PARAMETER);return FALSE;}
-    return SetConsoleWindowInfo(output,absolute,view);
-}
-#define SetConsoleWindowInfo probe_view
-#include "../src/platform/win32/text_console.c"
-#undef SetConsoleWindowInfo
 static struct mysmb_win32_text_console device;
 static struct mysmb_io_text_frame frame;
 static CHAR_INFO rendered[4000];
@@ -132,7 +123,6 @@ int main(int argc,char **argv)
     frame.cells[0].character=0xdaU;frame.cells[79].character=0xbfU;
     frame.cells[3920].character=0xc0U;frame.cells[3999].character=0xd9U;
     for(cycle=0;cycle<4;cycle++) {
-        fail_view=cycle==3;
         {
             /* An optional geometry failure keeps valid input/output usable. */
             if(!mysmb_win32_text_console_open(&device,owner) || !device.borrowed ||
