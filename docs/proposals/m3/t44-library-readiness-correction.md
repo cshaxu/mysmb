@@ -30,7 +30,7 @@ Mario continues to ignore Tab on Win16 as previously approved.
 
 ## Gap register
 
-G01-G04 close with S7, G05 with S8 and G06 with S9; G07 closes with S10; G08-G12 remain open. Each receiving S attaches
+G01-G04 close with S7, G05 with S8 and G06 with S9; G07 closes with S10; G08 closes with S11; G09-G12 remain open. Each receiving S attaches
 changed-owner tests and operational evidence before closing its entries.
 
 | ID | Evidence and consequence | Disposition / receiver | Required proof |
@@ -78,7 +78,7 @@ Do not force Mine into Mario's memory model or cache footprint.
 ## Planned S roadmap
 
 Estimates include production/tests; actual changed files/lines are reported at
-closure. S6-S10 are closed; S11 is next. Tests ship with each changed owner, not at S13.
+closure. S6-S11 are closed; S12 is next. Tests ship with each changed owner, not at S13.
 
 | S | Delivery and dependencies | Estimated files / lines | Exit |
 | --- | --- | --- | --- |
@@ -87,7 +87,7 @@ closure. S6-S10 are closed; S11 is next. Tests ship with each changed owner, not
 | S8 closed | App refresh/pause/deadlines, G05; after S7 | 8-16 /300-800 | Event-driven and60Hz clients work without host-imposed game cadence |
 | S9 closed | Win32/x64 host and Console/window mouse, G06; after S8 | 15-28 /800-1800 | Both widths and view/session/input lifecycle joins pass |
 | S10 closed | DOS mouse and physical graphics services, G07; after S9 | 12-24 /600-1400 | DOS probe and Mario regressions; PPU/cache semantics unchanged |
-| S11 | Win16 configurable graphics, window text and mouse, G08; after S10 | 12-22 /600-1400 | Actual Win3.x receipts; accepted Mario behavior preserved |
+| S11 closed | Win16 configurable graphics, window text and mouse, G08; after S10 | 12-22 /600-1400 | Actual Win3.x receipts; accepted Mario behavior preserved |
 | S12 | PCM/file/build ownership, G09-G10; after S11 | 15-30 /600-1500 | Independent no-ROM client, model ABI and product/service tests pass |
 | S13 | Full readiness joins/register reconciliation, G11-G12; after S12 | 8-16 /400-1000 | All required gaps evidenced; final checklist satisfied |
 
@@ -341,3 +341,55 @@ Implementation affects14 source/test/build files, approximately440 added and
 165 removed lines including new owners. Products remain ignored. ROM scope,
 expected and actual promotions0; historical1992/1992, retained1991/1992 nodes
 and4260/4261 feasible controls unchanged. G08-G12 remain required T work.
+
+## S11 admission
+
+G08 only, no ROM promotions. Retain output independently of app callbacks;
+allow segment-bounded bands for large surfaces and app-selected window text.
+Physical mouse/capture/cancel/menu events have no game meaning in the host.
+Mario stays graphics-only on Win16. Neutral client proves additional views.
+
+## S11 P1 closure receipt
+
+G08 closes. Win16 keeps immutable segment-bounded DIB bands; Mario remains a
+single band, larger boards no longer require one segment. App update may change
+geometry/palette and request dirty composition. Paint only replays retained
+output. The host accepts app-selected window text with CP437 OEM font and16
+logical colours. A retained copy protects paint from later producer mutation.
+Two-level app-defined menu labels/IDs and mutable checked/enabled flags have no
+game semantics. Mouse chords, signed outside coordinates, capture/cancel,
+focus loss, resize and command events use the common physical vocabulary.
+View switches cancel held gestures; apps retain bindings, cadence and policy.
+Mario Win16 remains graphics-only with inert Tab. No Mine import or core/PPU edit.
+
+Reviewer sweep fixed allocation/lock rollback for every band, silent invalid
+composition, paint failure timer rearming and initial oversize window geometry.
+Actual SDK compile has no new library warnings. Owner tests assert large-band
+allocation, every partial allocation/lock cleanup, physical conversion/chord/
+cancel/command/resize, dynamic geometry, retained text, RGB-to-COLORREF, opaque
+cell extents, font/output failure, idle/timer scheduling and retained repaint.
+No second unit duplicates shared pointer or palette algorithm assertions.
+
+Both Release suites303/303 pass. Actual Win3.x neutral client, with no ROM/game
+linkage, reports result0/failure0, four phases, mouse2/cancel1/command1/resize1,
+66 produced bands:504x323 graphics,80x25 CP437 text, then320x200 graphics.
+Captured graphics/text visibly include all256 OEM codes and distinct colours.
+Actual Mario Win3.x route proves title/start/move/exit. Windows runtime uses the
+previous qualified standard VGA environment; DOSBox cycles/CPU unchanged.
+A pre-existing swap-file utility prompt was acknowledged in the probe script;
+it is not a game failure or performance-setting change. No live RDP claim.
+Win32/DOS source behavior retains S10 host/probe receipts. Final paint-failure
+cleanup guard is unit-tested; normal runtime route is unchanged by that guard.
+
+Win16 allocates actual4-bit rows on standard VGA: Mario retained pixels now
+30720bytes rather than61440, plus a small descriptor and about1KiB palette
+comparison state. Large boards allocate multiple blocks; no block exceeds
+65520bytes. DOS stub/resident footprint unchanged. No speedup claim.
+All products republished (bytes / SHA256):
+- 16: 652461 / 7e94f07139f7f907954aad43086ff00a521e87e166611ac6581598e78dc6f975
+- 32: 418443 / 05abaafabebcfb49eac2b2df130635a20fbe5a2131af631664ce3686a9d5c780
+- 64: 382059 / 35aec024d7d6f82c2d5cc299be8f624643e7508f1768fa9f8b48a354af17c8d8
+
+Actual source/test/build scope11files, about570 inserted/70 removed lines.
+Scope/expected/actual ROM promotions0; historical1992/1992, retained1991/1992
+nodes and4260/4261feasible controls unchanged. G09-G12 remain required work.

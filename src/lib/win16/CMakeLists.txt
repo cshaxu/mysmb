@@ -36,7 +36,7 @@ target_link_libraries(mygames_win16_file_path_smoke PRIVATE mygames_kvm)
 add_test(NAME mygames.win16-file-path COMMAND mygames_win16_file_path_smoke)
 
 add_executable(mygames_win16_host_smoke
-    ${CMAKE_SOURCE_DIR}/test/lib/win16/host_lifecycle_smoke.c host.c dib.c)
+    ${CMAKE_SOURCE_DIR}/test/lib/win16/host_lifecycle_smoke.c host.c dib.c text.c)
 target_include_directories(mygames_win16_host_smoke PRIVATE
     ${CMAKE_SOURCE_DIR}/test/lib/win16/host_sdk "${CMAKE_SOURCE_DIR}/src/lib")
 target_link_libraries(mygames_win16_host_smoke PRIVATE mygames_kvm)

@@ -174,6 +174,7 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     application.palette=mysmb_io_source_colors;application.palette_count=64U;
     application.width=256U;application.height=240U;
     application.context=0;application.title="MySMB";
+    application.menus=0;application.menu_count=0;
     application.available_views=MYGAMES_WIN16_VIEW_GRAPHICS;
     application.input=input;application.update=update;
     application.presentation=0;application.exit_requested=exit_requested;

@@ -19,6 +19,8 @@
 #define SM_CYSCREEN 1
 #define SM_CYCAPTION 2
 #define SM_CYFRAME 3
+#define SM_CXSCREEN 4
+#define SM_CXFRAME 5
 #define WM_QUERYNEWPALETTE 1
 #define WM_PALETTECHANGED 2
 #define WM_KEYDOWN 3
@@ -98,7 +100,54 @@ void *LoadCursor(HINSTANCE,const char *);
 int RegisterClass(const WNDCLASS *);
 int GetSystemMetrics(int);
 int AdjustWindowRect(RECT *,long,int);
-HWND CreateWindow(const char *,const char *,long,int,int,int,int,HWND,void *,HINSTANCE,void *);
+
+#define WM_MOUSEMOVE 12
+#define WM_LBUTTONDOWN 13
+#define WM_LBUTTONUP 14
+#define WM_RBUTTONDOWN 15
+#define WM_RBUTTONUP 16
+#define WM_MBUTTONDOWN 17
+#define WM_MBUTTONUP 18
+#define WM_CANCELMODE 19
+#define WM_COMMAND 20
+#define WM_SIZE 21
+#define MK_LBUTTON 1
+#define MK_RBUTTON 2
+#define MK_MBUTTON 16
+#define MK_SHIFT 4
+#define MK_CONTROL 8
+#define MF_POPUP 16
+#define MF_STRING 0
+#define MF_SEPARATOR 2048
+#define MF_BYCOMMAND 0
+#define MF_CHECKED 8
+#define MF_UNCHECKED 0
+#define MF_GRAYED 1
+#define MF_ENABLED 0
+#define OEM_CHARSET 255
+#define FIXED_PITCH 1
+#define ETO_OPAQUE 2
+#define ETO_CLIPPED 4
+typedef unsigned short HMENU;
+typedef void *HFONT;
+short GetKeyState(int);
+HWND GetCapture(void);
+HWND SetCapture(HWND);
+void ReleaseCapture(void);
+HMENU CreateMenu(void);
+HMENU CreatePopupMenu(void);
+int AppendMenu(HMENU,unsigned short,UINT,const char *);
+int DestroyMenu(HMENU);
+int CheckMenuItem(HMENU,UINT,UINT);
+int EnableMenuItem(HMENU,UINT,UINT);
+void DrawMenuBar(HWND);
+HFONT CreateFont(int,int,int,int,int,unsigned char,unsigned char,unsigned char,unsigned char,unsigned char,unsigned char,unsigned char,unsigned char,const char *);
+void *SelectObject(HDC,void *);
+DWORD SetTextColor(HDC,DWORD);
+DWORD SetBkColor(HDC,DWORD);
+int ExtTextOut(HDC,int,int,UINT,const RECT *,const char *,UINT,const int *);
+
+HWND CreateWindow(const char *,const char *,long,int,int,int,int,HWND,HMENU,HINSTANCE,void *);
 void ShowWindow(HWND,int);
 int GetMessage(MSG *,HWND,int,int);
 void TranslateMessage(const MSG *);
