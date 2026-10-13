@@ -2,34 +2,30 @@
 
 ## Current Work
 
-## M3 T44 S2 Packet
+## M3 T44 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T44 S2 P3 - delivered, awaiting owner acceptance |
-| Admission And Approval | Owner inserts this new S2 before the unexecuted directory migration; original source/test/final phases become planned S3/S4/S5. |
-| Objective | Establish and implement one local mysmb16.exe with functional DOS MZ graphics/text Tab switching and a native Win3.x NE graphical window entry, now extended by the owner to P/O save/load and music through reusable Win16 libraries. |
-| Non-goals | No Win16 Tab switching, text view or DOS-prompt handoff. No source-tree relocation, Mine game import, ROM logic change or Win32 behavior change. Owner accepts the fixed-3000-cycle DOSBox performance limitation; no emulator speed/configuration change to mask it. |
-| Reference Baseline | P2 runs the same portable core in an actual Win3.1 enhanced-mode graphical game, receives Start/directional/jump input, ignores Tab and exits to Program Manager. A 720-frame Win16/Win64 RAM/nametable replay and final canonical pixels match. x86/x64 suites each pass 296 tests and thirteen host routes. Standard sixteen-colour VGA has visible colour approximations. MZ image/relocations and resident bounds pass the binder. |
-| Candidate Proposal | [M3 T44 proposal](../proposals/m3/nxvm-source-test-layout.md). |
-| Files And ABI Surface | Win16 PCM device and file services, shared Mario integer audio renderer, app snapshot/audio integration, NE/MZ build and owned tests. Shared game/PPU semantics remain common. |
-| Applicable Rules | Execution, Documentation, Architecture, Coding and source policy, subject to the explicit owner Win16 insertion. |
-| Verification | Mine/tool provenance review, format/stub validation, actual Win3.x graphical game launch/input/exit and DOS graphics/text Tab regression. Win16 Tab must not initiate a presenter or process switch. Verify P/O round trip and rejected corrupt loads; synthetic PCM and actual driver output; missing audio device, reset/focus and teardown. |
-| Expected Markers | DOS executes the original MZ game with both presenters; Win3.x selects a native NE graphical entry and remains in its graphical window. |
-| Asset Needs | Owner-local Mine reference is pinned by exact file hashes in the proposal; no Git revision or redistribution permission is claimed. Owner-local ROM, compiler/SDK and Windows runtime are local-only test/build inputs, with tool/library hashes in the proposal. Protected data and tool binaries are not committed. |
-| Reporting Requirements | Report DOS dual-mode and native Win16 graphical-window evidence separately, including tested Windows versions, input, exit and MZ resident bounds. Prompt switching remains deferred. |
-| Stop Conditions | Forked gameplay, copied unreviewed sibling/vendor material, DOS stub replaced by a message-only stub, generated binaries staged or unverified state continuity claims. |
-| Exit Criteria | Functional DOS graphics/text switching and native Win3.x graphical game entry of the same dual-format product are verified. Win16 now also requires P/O save/load and waveform music output, with the related reusable libraries. No Tab/text/prompt support is required. |
-| Original Owner Request | Same mysmb16.exe retains DOS Tab and opens a graphical window on Win3.x; research Tab to a DOS text prompt, like Mine NE/MZ packaging. |
-| Similar-Issue Sweep | Inspect EXE/stub sizes and offsets, far/near Win16 ABI, timer/input/video ownership, snapshot/state handoff and cleanup of both launch routes. |
+| Identifier Mode | Continuation - M3 T44 S3 P1, source/build migration admitted |
+| Admission And Approval | Owner accepts S2 and requests admission of the next S. S2 closes at accepted implementation c308fa7e; S3 follows the existing T44 proposal. |
+| Objective | Move production ownership to src/lib and src/app-mario/core plus src/app-mario/kvm, updating build/include/generator paths without changing function semantics. |
+| Non-goals | No Mine code import, game/PPU/audio behavior change, Win16 Tab feature, or test-tree migration; mirrored tests remain S4. No new performance or ROM-equivalence claims. |
+| Reference Baseline | Owner-accepted c308fa7e: DOS dual-mode and native Win16 graphical MZ/NE product with P/O and music. x86/x64 each 299 pass plus one unavailable host-audio skip. S2 proposal retains bounded runtime receipts and limitations. |
+| Candidate Proposal | [M3 T44 proposal](../proposals/m3/nxvm-source-test-layout.md#s3---source-and-build-ownership-migration). |
+| Files And ABI Surface | Approximately 300 production source/header paths, shared component build definitions, root/app CMake, presets, tools and current source-map links. Test paths stay explicit. No runtime ABI change. |
+| Applicable Rules | Execution, Documentation, Architecture and Coding rules; Source Layout and source policy. Historical evidence remains historical. |
+| Verification | Record old/new path manifest and source identity apart from reviewed include/path edits; configure and build x86/x64 with Ninja/ccache and DOS/Win16 with existing tools; run configured tests, dependency/purity and binder checks; refresh three products. |
+| Expected Markers | Single production owner per file below src/lib or src/app-mario; no forwarding copies, duplicate includes or symlink bridges. Same controls and DOS/Win16/Win32 behavior. |
+| Asset Needs | Existing owner-local tools/SDK/ROM remain private inputs under the S2 provenance contract. No new material or imports. Generated outputs remain ignored; local products remain assets/mario. |
+| Reporting Requirements | Report moved-file count, substantive versus path-only changes, tests/builds and product identities. Scope and expected/actual new ROM nodes/edges are empty; no certification promotion. |
+| Stop Conditions | Unexpected semantic diff, ownership cycle, missing tool provenance, failed platform build/test, or source duplication. Resolve within scope before claiming closure. |
+| Exit Criteria | Source topology and build/include paths migrated; source semantics preserved; applicable suites and target checks pass; three local EXEs refreshed with reviewed evidence. S4 remains planned. |
+| Original Owner Request | NXVM-style src/lib/{dos16,win16,win32,kvm}, src/app-mario/{core,kvm}, mirrored tests and per-app assets. Complete Mario/library separation before Mine import. |
+| Similar-Issue Sweep | Find stale production paths in CMake, scripts, code generators, includes, purity tests and current authorities; account for every hit, including the newly accepted Win16 save/audio owners. |
 
-P3 result: Win16 P/O uses the shared snapshot contract, and its new reusable
-waveform/file libraries are connected. Actual Win3.1 save/restore matches
-core and presentation bytes; the final product rejects a corrupt slot,
-saves/loads and exits successfully. Game and post-load PCM are captured,
-with low-cycle gaps explicitly retained. Each native width passes 299 tests
-plus one unavailable host-audio skip. All three local EXEs are refreshed;
-ROM core/PPU and node/edge credit remain unchanged. S3 is not admitted.
+S2 owner acceptance is recorded in the proposal. Its obsolete build/probe and
+native build outputs were removed; published assets/mario products are retained.
+S3 is admitted; source relocation has not yet begun. T44 remains open.
 
 ## Current Technical Baseline
 

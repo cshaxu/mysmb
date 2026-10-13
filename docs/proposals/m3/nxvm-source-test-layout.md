@@ -466,3 +466,35 @@ replaces it with a fresh 10035-byte CRC-valid slot, O resumes play, Tab stays
 in the same graphical window, and Escape returns to Program Manager. This
 run uses the exact published mysmb16.exe, not the receipt-instrumented build.
 Build-only diagnostic code and SDL captures are never linked into products.
+
+## S2 owner acceptance and S3 admission
+
+On 2026-10-13 the owner accepts S2 and authorizes the next planned S.
+S2 closes at c308fa7e with its P2/P3 bounded evidence, accepted fixed-cycle
+performance limits and documented host/version/colour limitations. No unfinished
+S2 obligation is silently transferred to source relocation. Win16 text/prompt
+and unqualified hosts remain explicitly recorded in TODO. T44 remains open.
+
+Acceptance cleanup removed the obsolete S1/S2 outputs and both native build
+trees: 299984614 file bytes (about 286 MiB). The three published assets/mario
+EXEs and the owned tools are preserved. The worktree's seventeen pre-existing
+resource deletions remain unrelated and unstaged. Only S3 may now accumulate
+active generated evidence under build.
+
+S3 P1 is the admission/governance commit; it does not move production code or
+rebuild unchanged products. The following implementation will inventory the
+accepted source tree, record old/new paths and normalized source identities,
+then move production code and repair build/include references as one coherent
+change. Approximately 300 production files plus build/tool/current-authority
+references are expected; the exact manifest precedes the move. Shared component
+headers and implementations flatten directly into src/lib/component. Mario
+core goes to src/app-mario/core; app/io/ppu/text/platform owners go below
+src/app-mario/kvm. Reference-only harnesses stay test-only for S4.
+
+S3 closure requires semantic identity apart from reviewed path/include edits,
+no duplicate owners or compatibility bridges, passing native suites and purity
+checks, actual DOS/Win16 links with MZ/NE validation, and three refreshed local
+products. Existing tests retain explicit paths until S4; S5 retains the final
+combined host acceptance. No Mine import or game behavior change is authorized
+by this move. ROM node/edge scope, expected promotions and actual promotions
+are all empty; prior conformance evidence is not expanded by relocation.
