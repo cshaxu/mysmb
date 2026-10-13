@@ -9911,7 +9911,7 @@
       "subtasks": [
         {
           "id": "M3 T45 S1",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/mine-import-host-adoption.md",
             "docs/states/CURRENT.md"
@@ -9921,7 +9921,7 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Mine source snapshot and no-change baseline; publication provenance decision pending."
+          "technicalReceipt": "Source snapshot qualified,423 baseline checks pass x86/x64/DOS; owner approves independent core/art and reviewed application import."
         }
       ]
     }
@@ -1035376,7 +1035376,7 @@
       ],
       "baseline": 1992,
       "maximumComplete": 1992,
-      "state": "active",
+      "state": "closed",
       "evidence": "docs/proposals/m3/mine-import-host-adoption.md"
     }
   ]

@@ -86,3 +86,27 @@ independent core/art replacement. That question remains pending. S1 stays
 open and S2 is not admitted. No Mine production files, bitmaps or executables
 are committed; no Mario source/product changed. This P is the bounded
 admission/provenance/baseline record only, not T closure.
+
+## S1 P2 owner source decision and closure
+
+Owner explicitly approves independent core/art implementation and importing
+reviewed application code. XP-derived core/header, three bitmap strips,
+resource script and vendor references are excluded from the tracked import.
+The new core uses independent storage/algorithms and original procedural art;
+it does not promise the old XP cell encoding or old random-board hash. The
+retained423-check hash is only the incoming baseline. New rule tests and
+cross-width deterministic checks own acceptance of the replacement.
+
+Only owner-supplied application gesture and text-layout code is adapted, with
+snapshot hashes recorded; no upstream Git history exists. S1 source/baseline
+exit is satisfied. To deliver complete products with implementation commits,
+combine the former S2-S4 into one vertical S2 (core/app/text/render + shared
+Win32/DOS/Win16 adapters and build), estimated20-30files/1500-2500lines.
+S3 then owns final combined regression/receipts/cleanup and T closure. The
+former S3-S5 slots were plans only and had no admitted identifiers.
+
+| S | Final delivery | Exit |
+| --- | --- | --- |
+| S1 closed | Source decision and unchanged baseline | Three-width423checks passed; independent-source policy approved |
+| S2 next | Independent Mine core/art and reviewed app/text; shared-host products | Rule/input/presentation tests plus native/DOS/Win16 builds and three Mine EXEs |
+| S3 planned | Combined host regression and readiness closure | Actual platform joins, Mario regression, commit/push and cleanup |

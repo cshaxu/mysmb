@@ -4,8 +4,8 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New: M3 T45 S1 P1 active; T44 remains closed. |
-| Admission And Approval | Owner authorizes Mine migration, compilation, tests, commit and push. S1 only; source publication decision pending. |
+| Identifier Mode | New: M3 T45 S1 P2 closed; T44 remains closed. |
+| Admission And Approval | Owner authorizes Mine migration, compilation, tests, commit and push. Owner approves independent core/art and reviewed app/text import; S1 closed, S2 next. |
 | Objective | Record exact Mine snapshot/provenance and unchanged native/DOS test baseline before shared-host adoption. |
 | Non-goals | No Mario core/PPU change, no new ROM credit, no unreviewed vendor/resource publication or sibling edits. |
 | Reference Baseline | MySMB1e850f87; hash-qualified Mine snapshot in admitted proposal; sibling has no Git history. |
@@ -32,5 +32,5 @@ Historical1992/1992, retained1991/1992nodes and4260/4261feasible controls
 ## S1 checkpoint
 
 Unchanged Mine core/app/text:423checks/0failures/hash5f3c8245 on x86,x64
-and actual DOS16. Both native baseline products compile. Source publication
-choice remains pending; no S2 admission, production import or T closure.
+and actual DOS16. Both native baseline products compile. Source decision approved: independent core/art; reviewed app/text import.
+S1 closes; S2 will deliver all three Mine products together.

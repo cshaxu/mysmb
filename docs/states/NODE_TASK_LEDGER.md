@@ -4084,4 +4084,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T44 S11 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T44-library-readiness-correction.md) |
 | M3 T44 S12 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T44-library-readiness-correction.md) |
 | M3 T44 S13 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T44-library-readiness-correction.md) |
-| M3 T45 S1 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/mine-import-host-adoption.md) |
+| M3 T45 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/mine-import-host-adoption.md) |
