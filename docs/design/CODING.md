@@ -2,6 +2,17 @@
 
 ## Current And Target Trees
 
+T44 migrates the T43 physical tree below to the owner-required topology:
+shared components at `src/lib/{kvm,dos16,win32,win16}`, translated Mario code
+at `src/app-mario/core`, and Mario-specific I/O/presentation/assembly below
+`src/app-mario/kvm`. The future Mine receiving boundary is
+`src/app-mine/{core,kvm}`. Tests live at the corresponding paths below
+`test/`, including nested production subsystems; there is no extra per-app
+src/test layer in the target. Source movement is S2 and test movement is S3,
+as recorded in [the active migration](../proposals/m3/nxvm-source-test-layout.md).
+The current local product boundary is already `assets/mario` and future
+Mine products use `assets/mine`.
+
 ```text
 app-mario/src/core/       all translated ROM logic,RAM,OAM/APU writers and observation receipts
 app-mario/src/text/       authored immutable scene/element consumers and receipt snapshot codec
@@ -19,7 +30,8 @@ lib/dos16/                 reusable Set-1, IRQ, BIOS text, B800 and PIT services
 lib/win16/                 receiving callback contract only; no USER/GDI host yet
 app-mine/                  receiving documentation only; provenance-reviewed import pending
 tools/                     local generators and governance checks
-assets/                    ignored local package outputs: mysmb16.exe, mysmb32.exe, mysmb64.exe
+assets/mario/              ignored local Mario outputs: mysmb16.exe, mysmb32.exe, mysmb64.exe
+assets/mine/               future ignored Mine outputs
 ```
 
 ## Files And Names

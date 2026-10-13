@@ -9706,6 +9706,44 @@
           "technicalReceipt": "Closed zero-node final receiving acceptance: actual PE32/PE64 291-test matrices and all 13 real console routes each pass; local three products bound, shared owners unique, Mine import remains future candidate."
         }
       ]
+    },
+    {
+      "id": "M3 T44",
+      "state": "active",
+      "evidence": [
+        "docs/proposals/m3/nxvm-source-test-layout.md",
+        "docs/states/CURRENT.md"
+      ],
+      "subtasks": [
+        {
+          "id": "M3 T44 S1",
+          "state": "closed",
+          "evidence": [
+            "docs/proposals/m3/nxvm-source-test-layout.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "nxvm-layout-contract"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Closed zero-node migration contract: owner destinations declared, tracked source/test/library inventory recorded, identical local Mario products moved to assets/mario and delivery authority updated."
+        },
+        {
+          "id": "M3 T44 S2",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/nxvm-source-test-layout.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "nxvm-source-build-relocation"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Admitted zero-node source/build relocation into src/lib and src/app-mario/core,kvm; test ownership migration follows in S3."
+        }
+      ]
     }
   ],
   "futurePackages": [
@@ -1011076,6 +1011114,30 @@
       "maximumComplete": 0,
       "state": "closed",
       "evidence": "docs/history/M3-T43-mygames-code-unification.md"
+    },
+    {
+      "subtask": "M3 T44 S1",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/nxvm-source-test-layout.md"
+    },
+    {
+      "subtask": "M3 T44 S2",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "active",
+      "evidence": "docs/proposals/m3/nxvm-source-test-layout.md"
     }
   ]
 }
