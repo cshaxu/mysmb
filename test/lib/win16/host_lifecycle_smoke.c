@@ -10,6 +10,7 @@ static int failure,step,quit,exit_code,exit_flag,dirty,wake,failed_timer,focus;
 static unsigned char pixels[4032];
 static struct mygames_win16_application *active_app;
 static int fail_font,fail_text;
+static int device_bits=8,color_case;
 static int scenario,view_kind,mouse_events,cancels,commands,text_draws,allocs;
 static unsigned long last_foreground,last_background;
 static struct mygames_kvm_input_event last_event;
@@ -58,7 +59,7 @@ void StretchDIBits(HDC dc,int a,int b,int c,int d,int e,int f,int g,int h,const 
 {(void)dc;(void)a;(void)b;(void)c;(void)d;(void)e;(void)f;(void)g;(void)h;(void)p;(void)i;(void)mode;(void)operation;++paints;}
 void EndPaint(HWND w,PAINTSTRUCT *p){(void)w;(void)p;}
 LRESULT DefWindowProc(HWND w,UINT m,WPARAM p,LPARAM l){(void)w;(void)m;(void)p;(void)l;return 0;}
-int GetDeviceCaps(HDC dc,int index){(void)dc;return index==PLANES?1:8;}
+int GetDeviceCaps(HDC dc,int index){(void)dc;return index==PLANES?1:device_bits;}
 HPALETTE CreatePalette(const LOGPALETTE *p){(void)p;return (HPALETTE)1;}
 int DeleteObject(void *p){(void)p;return 1;}
 void *LoadCursor(HINSTANCE i,const char *name){(void)i;(void)name;return 0;}
@@ -148,13 +149,14 @@ DWORD SetBkColor(HDC dc,DWORD c){(void)dc;last_background=c;return c;}
 int ExtTextOut(HDC dc,int x,int y,UINT flags,const RECT *r,const char *c,UINT n,const int *spacing)
 {(void)dc;(void)x;(void)y;(void)spacing;
  if(n!=1 || flags!=(ETO_OPAQUE|ETO_CLIPPED) || r->right<=r->left || r->bottom<=r->top)failure=38;
- if(text_draws%6==0 && ((unsigned char)*c!=1 || last_foreground!=0xffffffUL || last_background!=0xaa0000UL))failure=39;
+ if(!color_case && text_draws%6==0 && ((unsigned char)*c!=1 || last_foreground!=0xffffffUL || last_background!=0xaa0000UL))failure=39;
  ++text_draws;return !fail_text;}
 int main(void)
 {
     struct mygames_win16_application app;
     int result,i;
     RECT rect;
+    unsigned long source_colors[16];
     memset(&app,0,sizeof(app));app.title="Neutral idle client";
     app.available_views=MYGAMES_WIN16_VIEW_GRAPHICS;app.input=input;
     app.update=update;app.exit_requested=exiting;app.graphics=graphics;
@@ -184,5 +186,17 @@ int main(void)
     fail_font=1;if(mygames_win16_text_paint((HDC)1,&rect,&text))return 51;
     fail_font=0;fail_text=1;cells[0].character=1;
     if(mygames_win16_text_paint((HDC)1,&rect,&text) || failure)return 52;
+    /* Device conversion owns custom RGB reduction, independent of any app. */
+    fail_text=0;color_case=1;text.columns=text.rows=text.stride=text.capacity=1;
+    memset(source_colors,0,sizeof(source_colors));
+    source_colors[0]=0x787cecUL;source_colors[1]=0xeceeeeUL;
+    text.colors=source_colors;text.source_colors=1;
+    cells[0].foreground=1;cells[0].background=0;
+    device_bits=4;
+    if(!mygames_win16_text_paint((HDC)1,&rect,&text) ||
+        last_background!=0xff5555UL || last_foreground!=0xffffffUL)return 53;
+    device_bits=8;
+    if(!mygames_win16_text_paint((HDC)1,&rect,&text) ||
+        last_background!=0xec7c78UL || last_foreground!=0xeeeeecUL)return 54;
     return 0;
 }

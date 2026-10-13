@@ -48,7 +48,10 @@ try {
         $sources+=Join-Path $repository 'src/lib/win16/text.c'
         $sources+=Join-Path $repository 'src/lib/kvm/pointer.c'
         $sources+=Join-Path $repository 'src/lib/kvm/video.c'
+        $sources+=Join-Path $repository 'src/lib/kvm/glyph.c'
         $sources+=Join-Path $repository 'src/app-mario/kvm/platform/win16/scheduler.c'
+        $sources+=@('elements.c','compact_elements.c','layout.c','actor_scene.c',
+            'background_scene.c','caption_scene.c','scene.c') | ForEach-Object {Join-Path $sourceRoot ('kvm/text/'+$_)}
         $sources+=@('src/lib/win16/audio.c','src/lib/win16/file.c','src/lib/win16/file_replace.c') | ForEach-Object {Join-Path $repository $_}
         $objects=@()
         foreach($source in $sources) {

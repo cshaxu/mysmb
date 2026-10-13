@@ -15,7 +15,8 @@ The text product defaults to an 80x25 colored character scene. The retained
 selection switch;there is no new user-facing switch yet. Shared text owners
 draw semantic color masses with character landmarks from committed object
 observations,not a bitmap sampler. Tab switches graphics/text over the same
-game state on DOS16 and Windows. ASCII information and selected CP437 details
+game state on DOS16 and Windows, including the same Win3.x window; no DOS
+prompt is launched by Win16. ASCII information and selected CP437 details
 remain shared. Blue/dark scenes keep light information text;question blocks
 retain a visible question mark even at one/two rows tall.
 

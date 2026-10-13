@@ -35,7 +35,7 @@ Win32 VT can express the RGB values of the16 active text palette slots;
 non-VT and DOS use16 hardware/Console colour indices through the same KVM
 conversion. This does not imply64simultaneous text palette slots. Applications
 choose palettes; no NES palette is in lib. Win16 text is inside its window;
-real DOS-prompt handoff is not provided. Mario Win16 Tab stays inert.
+real DOS-prompt handoff is not provided. Mario Win16 Tab switches its authored80x25scene and pixels in that same window.
 
 Library builds do not consume ROM paths or link Mario. Small/large16-bit
 objects and their CRTs are separate builds; borrowed far pixels, palettes and
@@ -276,7 +276,7 @@ or original PPU state semantics through this capability.
 T44 S2 adds a Win16 composition root alongside dos16 and win32. The shared
 USER/GDI host remains in src/lib/win16 and consumes neutral physical events and
 synchronous canonical pixel bands. Mario owns input meanings and binds the
-same core and PPU; Win16 Tab is inert. Shared planar pixel layout is
+same core and PPU; Win16 Tab switches window graphics/text. Shared planar pixel layout is
 io/planar_frame;it knows only neutral pixels,dimensions,capacity and an optional
 synchronous row encoder. The DOS root supplies its private dos16/planar_row
 encoder. Shared IO imports no host declaration or assembly. File/path services

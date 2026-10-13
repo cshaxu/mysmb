@@ -1,8 +1,8 @@
 # M3 T45 Mine import and shared-host adoption
 
-T45 closed on 2026-10-13. S1 source decision, S2 implementation and S3
-combined regression are complete. Historical checkpoints below retain their
-original admission context; the final S3 receipt owns closure.
+T45 was reopened after S3 for the owner-requested Mario Win16 window-text
+join. S1-S3 retain their original closure evidence; S4 below owns the
+corrective implementation and final task closure.
 
 ## Receiving baseline and admission gate
 
@@ -223,3 +223,99 @@ retained1991/1992nodes and4260/4261feasible controls (4342raw,81infeasible)
 remain unchanged. T45 is not a ROM final-certification task.
 
 Acceptance cleanup removed3task-owned generated directories,3850 files and246755389 bytes. Build is empty; products and qualified tools remain.
+
+## S4 corrective reopening: Mario Win16 window text
+
+Owner reopens T45 and admits S4 to give Mario the shared Win16 window-text
+capability already qualified for Mine. Same process/window/game, Tab between
+canonical graphics and the existing authored80x25text scene. No DOS prompt,
+no ROM/core/PPU semantic change, no Mine behavior change or library game policy.
+Estimate5-8source/test/build files,150-300lines plus governance.
+
+Reuse io/control's physical-edge gate, text/scene and layout's neutral view,
+and lib/win16's retained text/graphics lifecycle. The Win16 root owns choice,
+observer enablement and text workspace allocation; required allocation failure
+must cleanly return, not publish an incomplete frame. Presentation changes
+request redraw independently of a logical tick. Focus, save/load, audio and
+exit retain their current owners. Similar-issue sweep covers inert Tab gates,
+observer initialization, segmented storage and host source manifests.
+
+Verification: existing control/mapping/text/host owner tests, a focused
+read-only game-to-text integration join, actual Win3.x Tab hold/release and
+return, gameplay and P/O continuity; refreshed three Mario EXEs and native
+regression. Scope/expected matches[]; historical1992/1992, retained1991/1992
+nodes and4260/4261feasible relations unchanged. Owner ROM and SDK/CRT are the
+same qualified local-only build inputs; generated data/screenshots/probes stay
+below build/t45-s4 and are not published. Single-person implement/review passes.
+
+### S4 implementation and review receipt
+
+Mario's Win16 root now enables its existing text observer, allocates a
+segmented text workspace, and supplies the shared host with graphics and
+80x25 authored text views. Physical Tab press edges change the app's view;
+held/repeated input does not toggle repeatedly. A view change requests paint
+without requiring a game tick. Focus loss clears the latch. One game, audio,
+scheduler and snapshot path remain in place; no real DOS prompt is launched.
+
+Actual Win3.x testing found a reusable host gap: arbitrary source RGB passed
+straight to GDI on standard VGA could map a blue background to white and hide
+white captions. The neutral Win16 painter now uses the same canonical16
+nearest-colour conversion as its DIB path when device depth is at most4bits.
+It converts16slots once per paint; higher depths retain source RGB. No Mario
+palette or input meaning enters the library. Existing Mine canonical-slot
+text follows its unchanged route. Diagnostic guest frame dumps established
+that Mario's scene cells and palette were correct before the host conversion.
+
+The source-manifest sweep adds the existing scene, layout, actor, background,
+caption, authored-element and neutral glyph owners to Win16. The required
+text allocation failure releases previous allocations; optional background
+cache failure remains supported. No core, PPU, DOS or Win32 production logic
+changes. DOS payload/load-memory preservation is checked by the hybrid binder.
+
+Test-owner closure:
+
+- The Mario root integration fixture compiles the production root separately.
+  It owns immediate Tab redraw, hold/repeat, focus/release,80x25neutral view,
+  required allocation/lock failures, optional cache failures, cleanup and
+  Escape. Full pixel output is unchanged by repeated text composition and
+  view switching without elapsed ticks.
+- The existing Win16 host test owns low-depth source-palette reduction and
+  high-depth RGB retention, alongside canonical-slot and device failure paths.
+- Combined Release Ninja/ccache builds and complete CTest suites pass311/311
+  each on x86 and x64. Both named Mario Win32 host-integration targets pass
+  all15routes, including real private-desktop graphics and borrowed/owned
+  Console input/Tab/restore. No active desktop was driven.
+- The actual large-model Win16 build and MZ/NE binding pass. The original DOS
+  load image is retained:352990image bytes,2658relocations,
+  387088minimum and391184maximum resident bytes. Compile diagnostics include
+  existing old-compiler width warnings; this is not a warning-free claim.
+- The tracked Win16 input script runs in a private Win3.x copy with a hidden
+  SDL probe and unchanged DOSBox CPU/cycles. It checks held Tab, return to
+  pixels, active gameplay, save, subsequent movement, load, text and Escape.
+  Guest-frame and GDI diagnostics are build-only and absent from the product.
+  The standard VGA driver and dummy capture limit displayed colour fidelity;
+  this verifies the window text lifecycle, not SVGA or physical-machine speed.
+
+Implementation/reviewer passes confirm input meanings and game cadence stay
+app-owned, the library fix is only device colour conversion, and no unrelated
+ROM-node ledger row or existing task was edited. There is no new ROM proof:
+scope/expected/actual additions are empty; historical1992/1992,
+retained1991/1992nodes and4260/4261feasible controls (4342raw,81infeasible)
+remain unchanged. The six queued candidates retain their order.
+
+S4 actual change size: seven source/build/test files,224additions and13deletions,
+plus six governance/design files. The additional shared-host colour conversion
+was required by the actual Win3.x test, within the same window-text join.
+The final probe exits normally; its10035-byte save is created and restored
+without a snapshot-error log. Manual owner colour/play acceptance is pending.
+Three local product receipts (SHA-256):
+
+| Product | Bytes | SHA-256 |
+| --- | --- | --- |
+| assets/mario/mysmb16.exe | 695397 | 515b160e92975c1543d24769bb31ff87ae3c85c20dab2ea0bf7c1bfcdbe9ba47 |
+| assets/mario/mysmb32.exe | 419979 | d47636b8dcdbe10bccb191795d4449c49c538e137aad40b5d677e1b727cdd215 |
+| assets/mario/mysmb64.exe | 383595 | 88084ba6d3fa77b2a571aab134ae1d1d57df142403c0e7de331f54c00c9274bb |
+
+T45 corrective implementation is closed. Task-generated build outputs remain
+only for pending owner acceptance and will then be removed by the acceptance
+cleanup rule. Local executable publication is not a ROM/source distribution.

@@ -17,6 +17,7 @@
 #include "core/game.h"
 #include "core/area.h"
 #include "ppu/frame.h"
+#include "text/scene.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 
@@ -37,6 +38,14 @@ static struct mysmb_snapshot_store *snapshot_store;
 static struct mysmb_file_storage file_storage;
 static struct mysmb_snapshot_keys snapshot_keys;
 static unsigned char fingerprint[16],samples[184];
+/* The same authored scene as DOS/Win32, allocated outside DGROUP. */
+struct text_storage {
+    struct mysmb_text_scene_workspace workspace;
+    struct mysmb_io_text_frame frame;
+    struct mygames_kvm_text_frame view;
+};
+static struct text_storage *text_storage;
+static mygames_kvm_u8 text_mode,presentation_dirty;
 
 
 static void snapshot_request(mygames_kvm_u8 request)
@@ -79,6 +88,7 @@ static void input(void *context,const struct mygames_kvm_input_event *event)
         mapped.buttons=mapped.buttons2=mapped.requests=0U;
         mysmb_io_input_latch_clear(&input_latch);
         mysmb_snapshot_keys_reset(&snapshot_keys);
+        (void)mysmb_io_control_toggle(&control,0U,0U);
         if(!event->down)(void)mygames_win16_audio_reset();
         return;
     }
@@ -92,9 +102,14 @@ static void input(void *context,const struct mygames_kvm_input_event *event)
     request=mysmb_snapshot_keys_transition(&snapshot_keys,mapped.requests,
         event->down,1U);
     if(request)snapshot_request(request);
+    if(event->kind==MYGAMES_KVM_INPUT_KEY &&
+        event->physical_code==MYGAMES_KVM_KEY_TAB &&
+        (!event->down || !event->repeat) &&
+        mysmb_io_control_toggle(&control,event->down,(mygames_kvm_u8)focused)) {
+        text_mode^=1U;presentation_dirty=1U;
+    }
     mapped.requests&=MYSMB_IO_REQUEST_EXIT;
     mysmb_io_control_input(&control,&mapped);
-    /* Win16 is graphical-only in this admission. Tab is deliberately inert. */
 }
 static void tick(void *context)
 {
@@ -119,7 +134,22 @@ static void update(void *context,unsigned long now,struct mygames_win16_update *
     ticks=mysmb_win16_scheduler_step(&scheduler,now);
     for(i=0U;i<ticks;++i)tick(context);
     /* Original app cadence: drain bounded debt and compose only current state. */
-    result->dirty=(mygames_kvm_u8)(ticks && scheduler.credit<1000UL);
+    result->dirty=(mygames_kvm_u8)(presentation_dirty ||
+        (ticks && scheduler.credit<1000UL));
+    presentation_dirty=0U;
+}
+static mygames_kvm_u8 presentation(void *context)
+{
+    (void)context;
+    return text_mode?MYGAMES_KVM_PRESENTATION_TEXT:MYGAMES_KVM_PRESENTATION_GRAPHICS;
+}
+static const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *text(void *context)
+{
+    (void)context;
+    if(!mysmb_text_scene_build_profile(&game,&text_storage->workspace,
+        &text_storage->frame,25U))return 0;
+    mysmb_text_frame_view(&text_storage->frame,&text_storage->view);
+    return &text_storage->view;
 }
 static int graphics(void *context,struct mygames_kvm_video_band *band)
 {
@@ -137,13 +167,14 @@ static mygames_kvm_u8 exit_requested(void *context)
 int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
 {
     struct mygames_win16_application application;
-    HGLOBAL background,snapshot_memory;
+    HGLOBAL background,snapshot_memory,text_memory;
     struct mysmb_snapshot_files files;
     char path[260],directory[260];
     unsigned char FAR *background_bytes;
     int result;
     (void)command;
     mysmb_game_power_on(&game);mysmb_game_frame_initialize(&frame);
+    mysmb_text_observer_enable(&game,1U);
     mysmb_game_bind_area_source(&game,mysmb_local_prg,MYSMB_LOCAL_PRG_SIZE);
     mysmb_game_bind_chr_source(&game,mysmb_local_chr,MYSMB_LOCAL_CHR_SIZE);
     mysmb_game_bind_title_source(&game,mysmb_local_title_data,
@@ -152,6 +183,7 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     mysmb_app_input_mapping_initialize(&mapping);
     mysmb_io_input_latch_clear(&input_latch);
     mysmb_io_control_initialize(&control);
+    text_mode=presentation_dirty=0U;
     mysmb_snapshot_keys_reset(&snapshot_keys);
     mysmb_game_snapshot_fingerprint(&game,fingerprint);
     snapshot_memory=GlobalAlloc(GMEM_MOVEABLE,sizeof(struct mysmb_snapshot_store));
@@ -162,6 +194,13 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
         !mysmb_snapshot_store_initialize(snapshot_store,&files)) {
         if(snapshot_store)GlobalUnlock(snapshot_memory);
         if(snapshot_memory)GlobalFree(snapshot_memory);
+        return 2;
+    }
+    text_memory=GlobalAlloc(GMEM_MOVEABLE,sizeof(struct text_storage));
+    text_storage=text_memory?(struct text_storage *)GlobalLock(text_memory):0;
+    if(!text_storage) {
+        if(text_memory)GlobalFree(text_memory);
+        GlobalUnlock(snapshot_memory);GlobalFree(snapshot_memory);snapshot_store=0;
         return 2;
     }
     mysmb_audio_renderer_initialize(&renderer);
@@ -175,12 +214,13 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     application.width=256U;application.height=240U;
     application.context=0;application.title="MySMB";
     application.menus=0;application.menu_count=0;
-    application.available_views=MYGAMES_WIN16_VIEW_GRAPHICS;
+    application.available_views=MYGAMES_WIN16_VIEW_GRAPHICS|MYGAMES_WIN16_VIEW_TEXT;
     application.input=input;application.update=update;
-    application.presentation=0;application.exit_requested=exit_requested;
-    application.text=0;application.graphics=graphics;
+    application.presentation=presentation;application.exit_requested=exit_requested;
+    application.text=text;application.graphics=graphics;
     result=mygames_win16_run(instance,previous,show,&application);
     mygames_win16_audio_close();
+    GlobalUnlock(text_memory);GlobalFree(text_memory);text_storage=0;
     GlobalUnlock(snapshot_memory);GlobalFree(snapshot_memory);snapshot_store=0;
     if(background_bytes)GlobalUnlock(background);
     if(background)GlobalFree(background);

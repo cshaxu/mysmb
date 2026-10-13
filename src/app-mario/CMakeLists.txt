@@ -2214,3 +2214,18 @@ target_include_directories(mysmb_win16_scheduler_smoke PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/kvm" "${CMAKE_SOURCE_DIR}/src/lib")
 set_target_properties(mysmb_win16_scheduler_smoke PROPERTIES C_STANDARD 90 C_STANDARD_REQUIRED ON C_EXTENSIONS OFF)
 add_test(NAME mysmb.win16-app-scheduler COMMAND mysmb_win16_scheduler_smoke)
+
+if(TARGET mysmb_local_title_data)
+    add_executable(mysmb_win16_window_text_join
+        ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/win16/window_text_join.c
+        kvm/platform/win16/main_win16.c kvm/platform/win16/scheduler.c
+        kvm/io/audio_renderer.c kvm/io/input_latch.c
+        kvm/io/file/snapshot_files.c kvm/io/file/executable_path.c
+        $<TARGET_OBJECTS:mysmb_local_rom_data> $<TARGET_OBJECTS:mysmb_local_title_data>)
+    target_include_directories(mysmb_win16_window_text_join BEFORE PRIVATE
+        ${CMAKE_SOURCE_DIR}/test/lib/win16/host_sdk
+        ${MYSMB_LOCAL_ROM_DIR} ${MYSMB_LOCAL_TITLE_DIR})
+    target_link_libraries(mysmb_win16_window_text_join PRIVATE mysmb_app_input_mapping
+        mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_snapshot)
+    add_test(NAME mysmb.win16-window-text COMMAND mysmb_win16_window_text_join)
+endif()
