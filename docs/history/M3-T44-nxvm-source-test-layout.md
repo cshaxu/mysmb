@@ -578,3 +578,66 @@ requires a bounded repair. Existing native and DOS/Win16 object workspaces
 are reused only as current S5 inputs; all obsolete generated outputs are
 removed after the final tracked receipt. Seventeen unrelated resource
 deletions remain preserved and unstaged. Mine import is still not admitted.
+
+
+## S5 P1 and T44 final closure
+
+The owner authorizes automatic S closure/admission. Final source and mirrored
+test topology passes: 661 moved test/reference paths resolve, old app-mario,
+app-mine and lib trees are absent, validation projections are test-only, and
+Mine core/kvm boundaries contain documentation rather than imported code.
+Public host capabilities remain in src/lib; every game input meaning and Mario
+composition stays in src/app-mario. Production C/headers do not change in S4/S5.
+
+The unchanged configured S4 suites provide 300/300 passing cases for each
+native width, with no skipped case. Final Ninja product targets are up to date.
+Actual private-desktop integration passes all thirteen routes on each width:
+borrowed and owned Console lifetimes, foreign/null standard handles, held Tab,
+input/focus/recovery, direct shell waiting and prompt restoration. Sandbox
+creation of a private desktop initially returns access denied; the same gate
+passes with the permitted private-desktop capability, never using the user's
+active desktop.
+
+The actual DOS device probe passes graphics/text mode lifetime, default25 and
+explicit50/25/50rows, source-palette indices and sixteen glyph slots, sixty-four
+authored score-word cases, cursor/IRQ restoration, clocked input and Escape.
+Final input receipt is buttons208 (Start/A/B), cursor1543 before and after;
+392 samples precede exit in the retained run. The SDL proxy supplies physical
+ASCII scancodes and holds Enter/J/K until sampled; a short unsynchronized
+100ms pulse script did not prove held input and is not counted as success.
+No DOSBox setting or cycle budget was modified. This is a functional join,
+not a frame-rate or physical speaker qualification.
+
+The similar-issue sweep found two stale probe assumptions: immediate text
+entry was still expected to be50rows, and white-background score captions were
+expected to stay white. The fixture now checks the existing25-row default,
+explicit row transitions, source-colour metadata and black-on-white captions.
+These are test corrections against current contracts, not production behavior
+changes. The public SDL test ABI now includes ASCII physical scan codes; the
+actual DOS input join owns that conversion assertion. No assertion was removed.
+
+DOS and Win16 are relinked from the S3 production objects whose source bytes,
+compiler and flags remain unchanged. The DOS allocation verifier and MZ/NE
+binder pass:213 segments, maximum32768bytes, DGROUP53088 including2048stack,
+DOS resident385840-389936bytes includingPSP before runtime caches. The final
+hybrid is byte-identical to the accepted S2 product, so its actual Win3.1
+save/load/music receipt remains applicable; no new Win3 runtime run is claimed.
+No broader Win3 version, Win16 text, hardware-speed or end-to-end ROM certificate
+is inferred. Final local delivery, never committed:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 642781 | 43fec3438f2142fd3de7c9de01d43d021f74ccf1f18d789c7a818747de0299cb |
+| mysmb32.exe | 411787 | 2e48d6b2e618451b3ca78285b2327c72ae56ebfe189d5d3bc6832504262b2a01 |
+| mysmb64.exe | 376939 | 3013818eff8684541f007c0d011c127c317fc7f78649503b6f55bd80d10a158b |
+
+T44 closes with S1-S5 complete. Historical mapping1992/1992 and retained local
+1991/1992nodes,4260/4261feasible controls remain unchanged (4342raw,81infeasible).
+The inherited nine source-snapshot binding gaps remain in the already queued
+final-certification work. The next queue candidate is not automatically admitted
+by authorization to advance S tasks inside T44. Mine import remains queued.
+Build/probe outputs are removed after these neutral receipts. Seventeen
+pre-existing resource deletions are preserved unstaged; no claim of a globally
+clean worktree is made. The task's own source/test/governance changes are committed.
+
+Final acceptance cleanup removed 215720574 generated file bytes from the five owned build workspaces; build is empty. Published products and tools remain intact.

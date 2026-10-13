@@ -44,7 +44,7 @@ int main(void)
     r.x.ax=3U;int86(0x10,&r,&r);
     r.x.ax=0x1112U;r.x.bx=0U;int86(0x10,&r,&r);
     if(rows()!=42 || !mysmb_dos16_devices_open())return fail(11);
-    if(!mysmb_dos16_devices_mode(1U) || rows()!=49)return fail(12);
+    if(!mysmb_dos16_devices_mode(1U) || rows()!=24)return fail(12);
     mysmb_dos16_devices_close();
     if(mode()!=3 || rows()!=42)return fail(13);
     r.x.ax=0x1202U;r.x.bx=0x30U;int86(0x10,&r,&r);
@@ -54,7 +54,8 @@ int main(void)
     r.h.ah=3U;r.h.bh=0U;int86(0x10,&r,&r);cursor=r.x.cx;
     vector=_dos_getvect(9U);
     if(!mysmb_dos16_devices_open() || mode()!=0x13)return fail(2);
-    if(!mysmb_dos16_devices_mode(1U) || mode()!=3 || rows()!=49)return fail(3);
+    if(!mysmb_dos16_devices_mode(1U) || mode()!=3 || rows()!=24)return fail(3);
+    glyph_frame.rows=50U;glyph_frame.source_colors=1U;
     for(i=0U;i<MYGAMES_KVM_TEXT_CELLS;++i) {
         glyph_frame.cells[i].character=' ';
         glyph_frame.cells[i].foreground=15U;glyph_frame.cells[i].background=1U;
@@ -67,6 +68,11 @@ int main(void)
     glyph_frame.colors[3]=0xe454ecUL;
     for(i=0U;i<16U;++i)glyph_frame.cells[i].character=glyph_ids[i];
     mysmb_dos16_devices_text(&glyph_frame);
+    if(rows()!=49)return fail(17);
+    glyph_frame.rows=25U;mysmb_dos16_devices_text(&glyph_frame);
+    if(rows()!=24)return fail(18);
+    glyph_frame.rows=50U;mysmb_dos16_devices_text(&glyph_frame);
+    if(rows()!=49)return fail(19);
     text=(volatile unsigned short far *)0xb8000000UL;
     foreground=mygames_kvm_color_text_nearest(glyph_frame.colors[15U]);
     background=mygames_kvm_color_text_nearest(glyph_frame.colors[1U]);
@@ -80,7 +86,8 @@ int main(void)
             word.face_left=(unsigned char)facing;
             if(!mysmb_text_elements_build(&word,1U,(unsigned char)bg,&glyph_frame))return fail(15);
             mysmb_dos16_devices_text(&glyph_frame);
-            foreground=mygames_kvm_color_text_nearest(glyph_frame.colors[15U]);
+            /* White captions on blue, black captions on white. */
+            foreground=(unsigned char)(bg==15U?0U:15U);
             background=mygames_kvm_color_text_nearest(glyph_frame.colors[(unsigned char)bg]);
             for(j=0U;words[value][j]!='\0';++j)
                 if(text[j]!=((unsigned short)words[value][j]|(
@@ -100,6 +107,9 @@ int main(void)
     mysmb_dos16_devices_close();mysmb_dos16_devices_close();
     if(mode()!=3 || rows()!=49 || _dos_getvect(9U)!=vector)return fail(6);
     r.h.ah=3U;r.h.bh=0U;int86(0x10,&r,&r);
+    receipt=fopen("input.log","w");
+    if(receipt){fprintf(receipt,"cursor=%u expected=%u samples=%u buttons=%u\n",
+        r.x.cx,cursor,i,seen);fclose(receipt);}
     if(r.x.cx!=cursor || i==600U ||
         (seen&(MYSMB_IO_BUTTON_START|MYSMB_IO_BUTTON_A|MYSMB_IO_BUTTON_B))!=
         (MYSMB_IO_BUTTON_START|MYSMB_IO_BUTTON_A|MYSMB_IO_BUTTON_B))return fail(7);

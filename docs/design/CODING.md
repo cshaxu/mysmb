@@ -2,7 +2,7 @@
 
 ## Current And Target Trees
 
-T44 S3 places production sources in the owner-required topology:
+T44 places production sources in the owner-required topology:
 shared components at `src/lib/{kvm,dos16,win32,win16}`, translated Mario code
 at `src/app-mario/core`, and Mario-specific I/O/presentation/assembly below
 `src/app-mario/kvm`. The future Mine receiving boundary is
@@ -10,7 +10,7 @@ at `src/app-mario/core`, and Mario-specific I/O/presentation/assembly below
 `test/`, including nested production subsystems; there is no extra per-app
 src/test layer in the target. After the owner's Win16 insertion, source
 movement is complete in S3 and mirrored test movement is S4,
-as recorded in [the active migration](../proposals/m3/nxvm-source-test-layout.md).
+as recorded in [the completed migration](../history/M3-T44-nxvm-source-test-layout.md).
 The current local product boundary is already `assets/mario` and future
 Mine products use `assets/mine`.
 
@@ -123,7 +123,7 @@ receipt encoding belong to text;render/frame/page projections belong to validate
 
 S6 separates core observation receipts from text scene/snapshot consumers.
 Core links only PPU storage;app snapshot links the independent text codec.
-Validation projections link only `app-mario/test`/recorder targets;no product linkage.
+Validation projections link only `test/app-mario`/recorder targets;no product linkage.
 
 ## Platform component boundary
 

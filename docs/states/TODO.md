@@ -19,7 +19,7 @@
   visibly approximate source colours; the 8bpp path has synthetic tests only.
   Win3.0 and Windows standard mode are unqualified. Admission path: a later
   owner-requested bounded Win16 receiving task, retaining the common core/PPU
-  and app-owned controls. [Scope and receipts](../proposals/m3/nxvm-source-test-layout.md#s2-p3-delivery-receipt).
+  and app-owned controls. [Scope and receipts](../history/M3-T44-nxvm-source-test-layout.md#s2-p3-delivery-receipt).
 
 - [ ] **HOST-TEXT-FIXTURE-131:** The full current text-switch fixture exits at
   its initial-client geometry assertion131 on the isolated host,before the

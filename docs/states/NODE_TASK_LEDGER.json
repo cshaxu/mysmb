@@ -9709,9 +9709,9 @@
     },
     {
       "id": "M3 T44",
-      "state": "active",
+      "state": "closed",
       "evidence": [
-        "docs/proposals/m3/nxvm-source-test-layout.md",
+        "docs/history/M3-T44-nxvm-source-test-layout.md",
         "docs/states/CURRENT.md"
       ],
       "subtasks": [
@@ -9719,7 +9719,7 @@
           "id": "M3 T44 S1",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/nxvm-source-test-layout.md",
+            "docs/history/M3-T44-nxvm-source-test-layout.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9733,7 +9733,7 @@
           "id": "M3 T44 S2",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/nxvm-source-test-layout.md",
+            "docs/history/M3-T44-nxvm-source-test-layout.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9748,7 +9748,7 @@
           "id": "M3 T44 S3",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/nxvm-source-test-layout.md",
+            "docs/history/M3-T44-nxvm-source-test-layout.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9762,7 +9762,7 @@
           "id": "M3 T44 S4",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/nxvm-source-test-layout.md",
+            "docs/history/M3-T44-nxvm-source-test-layout.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9774,9 +9774,9 @@
         },
         {
           "id": "M3 T44 S5",
-          "state": "active",
+          "state": "closed",
           "evidence": [
-            "docs/proposals/m3/nxvm-source-test-layout.md",
+            "docs/history/M3-T44-nxvm-source-test-layout.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9784,7 +9784,7 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Owner-authorized automatic admission: final builds, actual Console and DOS device routes, topology, delivery and cleanup."
+          "technicalReceipt": "Final topology, x86/x64 300/300 plus actual 13 host routes each; actual DOS device probe passes with current row/palette fixture and held input; DOS/Win16 relink and binder pass, hybrid byte-identical to accepted S2. Products published locally, no ROM credit."
         }
       ]
     }
@@ -1011168,7 +1011168,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/nxvm-source-test-layout.md"
+      "evidence": "docs/history/M3-T44-nxvm-source-test-layout.md"
     },
     {
       "subtask": "M3 T44 S2",
@@ -1011180,7 +1011180,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/nxvm-source-test-layout.md"
+      "evidence": "docs/history/M3-T44-nxvm-source-test-layout.md"
     },
     {
       "subtask": "M3 T44 S3",
@@ -1013185,7 +1013185,7 @@
       "baseline": 1992,
       "maximumComplete": 1992,
       "state": "closed",
-      "evidence": "docs/proposals/m3/nxvm-source-test-layout.md"
+      "evidence": "docs/history/M3-T44-nxvm-source-test-layout.md"
     },
     {
       "subtask": "M3 T44 S4",
@@ -1015190,7 +1015190,7 @@
       "baseline": 1992,
       "maximumComplete": 1992,
       "state": "closed",
-      "evidence": "docs/proposals/m3/nxvm-source-test-layout.md"
+      "evidence": "docs/history/M3-T44-nxvm-source-test-layout.md"
     },
     {
       "subtask": "M3 T44 S5",
@@ -1017194,8 +1017194,8 @@
       ],
       "baseline": 1992,
       "maximumComplete": 1992,
-      "state": "active",
-      "evidence": "docs/proposals/m3/nxvm-source-test-layout.md"
+      "state": "closed",
+      "evidence": "docs/history/M3-T44-nxvm-source-test-layout.md"
     }
   ]
 }

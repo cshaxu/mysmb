@@ -76,6 +76,12 @@ __declspec(dllexport) int __cdecl probe_poll(void *event)
         if (!strcmp(action,"key")) {
             generated.key.type=value?2U:3U;generated.key.state=value?1U:0U;
             generated.key.symbol=argument;
+            /* SDL Win32 supplies physical scans even for ASCII key events.
+             * Preserve the host mapper's normal usescancodes setting. */
+            if(argument>=0 && argument<128)
+                generated.key.scan=(unsigned char)MapVirtualKeyA(
+                    (UINT)(argument>='a' && argument<='z'?
+                        argument-'a'+'A':argument),MAPVK_VK_TO_VSC);
         } else if (!strcmp(action,"quit")) generated.bytes[0]=12U;
         else { next_action();return 0; }
         memcpy(event,&generated,sizeof(generated));result=1;

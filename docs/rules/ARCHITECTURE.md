@@ -8,15 +8,10 @@ The concrete MySMB component map is [System Architecture](../design/ARCHITECTURE
 - Each mutable state, original-ROM data region, validation trace, resource route, and platform capability has one explicit owner and production path.
 - The portable translated game layer exposes no host API, host-sized pointer assumption, mutable platform layout, or implicit global state.
 - Only a declared composition root connects game logic, validation adapters, renderers, input, timing, and audio.
-- `src/app-mario/kvm/platform/` contains exactly `dos16/` and `win32/` through T43 S2.
-  Host execution and platform-specific declarations belong to their host component.
+- `src/lib/{dos16,win16,win32}` owns reusable host mechanisms. Mario-specific
+  composition adapters live at `src/app-mario/kvm/platform/{dos16,win16,win32}`.
   Shared formats/services belong to neutral components and cannot import a host.
-  Later T43 extraction tasks replace these app-local owners with the declared
-  `src/lib/dos16/` and `src/lib/win32/` owners; they do not fork game behavior.
-- T44 S2 explicitly admits a Win16 host under `src/lib/win16` and a Mario-specific
-  Win16 composition adapter. The later T44 layout move places that adapter
-  under `src/app-mario/kvm`; USER/GDI mechanics remain shared host ownership.
-  Original game/PPU semantics remain common and contain no Win16 API.
+  Original game and PPU semantics remain common and contain no host API.
 - The translation preserves source-address provenance and original state semantics. A visually similar replacement cannot silently substitute for a translated original routine.
 
 ## Source And Research Admission
