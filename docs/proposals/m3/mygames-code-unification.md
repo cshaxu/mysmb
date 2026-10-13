@@ -377,3 +377,25 @@ The compile contract must expose app-owned callbacks for raw input and app-
 requested presentation, with host capability results. An absent app-mine must
 configure normally; the receiving documentation must identify the later
 provenance/history-preserving import gate. Scope and new ROM matches are empty.
+
+### S6 closure receipt
+
+The optional `MYGAMES_BUILD_MINE` hook defaults off and rejects explicit enable
+when the app CMake file is absent. The receiving directory contains only
+import/ownership documentation. `mygames_win16_contract` exposes app-owned
+physical-input, tick, presentation/exit and text/graphics producer callbacks;
+it declares no implemented host entry point. Native PE32 and PE64 contract
+tests pass, as do the KVM/DOS contract boundary tests. The actual OpenNT large-
+model compiler compiles the callback fixture with far KVM pointers. The purity
+gate includes this receiving contract. No Mine source is read or imported,
+and no Win3.x runtime or product is claimed. S5 products remain the latest:
+S6 changes declarations, build admission and tests, not product execution.
+
+### S7 admission
+
+Audit the final Mario/shared-library ownership and duplicate-owner removal;
+run the complete actual-width matrices and confirm the retained DOS product,
+host-probe receipt, local artifacts and compile-contract bindings. Verify
+the disabled/absent Mine seam and explicitly unimplemented Win16 host. Final
+acceptance stops at import readiness; future import/runtime stages require a
+separate owner/provenance admission. No ROM node or gameplay work is admitted.

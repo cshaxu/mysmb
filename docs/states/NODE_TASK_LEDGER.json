@@ -9679,7 +9679,7 @@
         },
         {
           "id": "M3 T43 S6",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/mygames-code-unification.md",
             "docs/states/CURRENT.md"
@@ -9689,7 +9689,21 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Admitted zero-node Win16/Mine receiving contracts and superbuild seam; no Mine import or claimed Win16 runtime implementation."
+          "technicalReceipt": "Closed zero-node receiving seam: C90 app callbacks, Win16 interface-only target, absent-Mine superbuild gate and provenance/import documentation; actual x86/x64 tests and real DOS16 ABI compilation pass."
+        },
+        {
+          "id": "M3 T43 S7",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "mygames-structural-parity"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Admitted zero-node final structural parity, shared-owner dependency audit and pre-Mine readiness acceptance."
         }
       ]
     }
@@ -1011041,6 +1011055,18 @@
     },
     {
       "subtask": "M3 T43 S6",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+    },
+    {
+      "subtask": "M3 T43 S7",
       "kind": "implementation",
       "scope": [],
       "expectedMatches": [],

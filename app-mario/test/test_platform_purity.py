@@ -110,4 +110,15 @@ for path in dos16.rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(repository)}: DOS16 host leaks {token}")
             sys.exit(1)
-print("platform, IO, PPU, core, KVM and Win32 dependency purity: passed")
+win16 = repository / "lib" / "win16"
+for path in win16.rglob("*.[ch]"):
+    text = path.read_text(encoding="utf-8")
+    for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
+        if not include.startswith(("win16/", "kvm/")):
+            print(f"{path.relative_to(repository)}: Win16 contract imports {include}")
+            sys.exit(1)
+    for token in ("MYSMB_", "mysmb_", "core/", "ppu/", "app-mario/", "app-mine/"):
+        if token in text:
+            print(f"{path.relative_to(repository)}: Win16 contract leaks {token}")
+            sys.exit(1)
+print("platform, IO, PPU, core, KVM and host dependency purity: passed")

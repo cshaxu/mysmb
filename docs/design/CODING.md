@@ -16,6 +16,8 @@ app-mario/test/           Mario-owned unit and integration harnesses
 lib/kvm/                   portable cells, palette/glyph algorithms, video and physical-event contracts
 lib/win32/                 reusable Windows Console/window/input and timing services
 lib/dos16/                 reusable Set-1, IRQ, BIOS text, B800 and PIT services
+lib/win16/                 receiving callback contract only; no USER/GDI host yet
+app-mine/                  receiving documentation only; provenance-reviewed import pending
 tools/                     local generators and governance checks
 assets/                    ignored local package outputs: mysmb16.exe, mysmb32.exe, mysmb64.exe
 ```

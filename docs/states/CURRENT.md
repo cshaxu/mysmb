@@ -2,24 +2,24 @@
 
 ## Current Work
 
-## M3 T43 S6 Packet
+## M3 T43 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T43 S6 P1 - Win16/Mine receiving seams |
-| Admission And Approval | Owner approved the Mario-first S2-S7 sequence and automatic next-S admission. S5 has passed actual x86/x64 and DOS16 verification. |
-| Objective | Define the Win16 callback/build seam and optional app-mine superbuild receiving interface, ready for a later provenance-reviewed import. |
+| Identifier Mode | M3 T43 S7 P1 - Mario structural parity and import readiness |
+| Admission And Approval | Owner approved the Mario-first S2-S7 sequence and automatic next-S admission. S5 has passed actual x86/x64 and DOS16 verification; S6 receiving contracts have passed native tests and DOS16 ABI compilation. |
+| Objective | Verify the completed Mario/lib split, single shared owners, actual three-product bindings and readiness for a later provenance-reviewed Mine import. |
 | Non-goals | No Mine read/import, Win16 host implementation, Mario Win16 executable, game/PPU change, artwork change or input binding change. |
 | Reference Baseline | S5: lib/kvm, lib/win32 and lib/dos16 expose neutral contracts/mechanics; Mario retains its controls and composition. |
 | Candidate Proposal | [M3 T43 proposal](../proposals/m3/mygames-code-unification.md). |
-| Files And ABI Surface | Neutral callback/capability declarations, lib/win16 interface target, optional app-mine root build seam, receiving documentation and owner-local contract tests. |
+| Files And ABI Surface | All app-mario/lib build and dependency edges, existing product artifacts, receiving declarations, purity tests and final evidence. |
 | Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
-| Verification | Compile-contract tests, absent-Mine configure, dependency/purity scan, actual-width Win32 builds and documentation/ledger gates. |
+| Verification | Complete actual PE32/PE64 test matrices, product self-tests and headers, retained DOS MZ/device-probe checks, duplicate/dependency scan and documentation/ledger gates. |
 | Expected Markers | Optional absent app builds cleanly; declarations contain no Mario rules; Win16 remains an explicitly unimplemented device; apps own all input/presentation meanings. |
 | Asset Needs | None for new contracts. Existing owner-local product validation may use the admitted ROM without committing generated material. |
 | Reporting Requirements | Report receiving targets, callback ownership, supported versus future capabilities and all remaining pre-import gates. |
 | Stop Conditions | Mine material imported, fictitious Win16 runtime claim, host assigning app commands or reverse app dependencies in libraries. |
-| Exit Criteria | The receiving interfaces compile, root build accepts an absent app-mine and ownership/verification are explicit for the later import. |
+| Exit Criteria | Mario uses single shared host owners, the three local products retain verified bindings, and Mine import gates and all future capabilities are explicit. |
 | Original Owner Request | Finish app-mario/lib separation before importing Mine; each app defines its keyboard and mouse semantics. |
 | Similar-Issue Sweep | Check callback/capability declarations and build edges for application names, implicit key meaning, cross-app dependencies and unsupported platform claims. |
 

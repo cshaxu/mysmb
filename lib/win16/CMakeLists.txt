@@ -1,0 +1,9 @@
+add_library(mygames_win16_contract INTERFACE)
+target_include_directories(mygames_win16_contract INTERFACE include)
+target_link_libraries(mygames_win16_contract INTERFACE mygames_kvm)
+
+add_executable(mygames_win16_contract_smoke test/application_contract_smoke.c)
+target_link_libraries(mygames_win16_contract_smoke PRIVATE mygames_win16_contract)
+set_target_properties(mygames_win16_contract_smoke PROPERTIES
+    C_STANDARD 90 C_STANDARD_REQUIRED ON C_EXTENSIONS OFF)
+add_test(NAME mygames.win16-application-contract COMMAND mygames_win16_contract_smoke)
