@@ -319,3 +319,13 @@ Three local product receipts (SHA-256):
 T45 corrective implementation is closed. Task-generated build outputs remain
 only for pending owner acceptance and will then be removed by the acceptance
 cleanup rule. Local executable publication is not a ROM/source distribution.
+
+### S4 P2 owner-directed resource cleanup
+
+The owner explicitly authorizes committing and pushing all17previously
+unstaged deletions under assets/resources. P2 records only those deletions
+and this closure-state update; it does not restore or publish the assets.
+S4 remains closed pending owner visual/play acceptance. No implementation,
+EXE, test or ROM accounting changes; P1 build/runtime evidence remains valid.
+The documentation gate is rerun. Task build evidence remains until acceptance;
+no next S or T is admitted.

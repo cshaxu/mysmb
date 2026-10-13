@@ -4,7 +4,7 @@
 
 ## Current Technical Baseline
 
-T45 S4 P1 implementation/review complete; no active S. The owner-requested
+T45 S4 P1 implementation/review and P2 owner-directed cleanup complete; no active S. The owner-requested
 Mario Win16 Tab capability uses the same window, game and authored80x25scene.
 S1-S3 Mine migration receipts remain valid. The [S4 receipt](../history/M3-T45-mine-import-host-adoption.md#s4-implementation-and-review-receipt)
 owns code, tests, limitations and product hashes.
@@ -20,5 +20,5 @@ owns code, tests, limitations and product hashes.
   this task's build workspace is retained only until that acceptance cleanup.
 - Historical1992/1992, retained1991/1992nodes and4260/4261feasible controls
   (4342raw,81infeasible) unchanged. Scope/expected/actual additions are empty.
-- The six queued candidates are unchanged. Seventeen pre-existing resource
-  deletions remain unstaged and untouched; no next T is admitted.
+- The six queued candidates are unchanged. The owner authorized committing
+  all seventeen pre-existing resource deletions in S4 P2; no next T is admitted.
