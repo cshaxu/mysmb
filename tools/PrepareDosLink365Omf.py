@@ -21,6 +21,8 @@ def object_for_source(source):
         return Path(normalized).with_suffix(".obj").name
     if "/lib/kvm/src/" in normalized:
         return "kvm_" + Path(normalized).with_suffix(".obj").name
+    if "/lib/dos16/src/" in normalized:
+        return "dos16_" + Path(normalized).with_suffix(".obj").name
     return normalized.split("/src/", 1)[1].replace("/", "_")
 
 

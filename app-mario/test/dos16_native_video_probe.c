@@ -1,6 +1,7 @@
 /* Original16-bit toolchain hardware probe;synthetic pixels,no ROM input. */
 #include "platform/dos16/devices.h"
 #include "platform/dos16/planar_row.h"
+#include "dos16/host.h"
 #include <dos.h>
 #include <conio.h>
 #include <malloc.h>
@@ -8,6 +9,8 @@
 #include <string.h>
 static unsigned char pattern(unsigned short x,unsigned short y)
 {return (unsigned char)((x*13U+y*7U)&63U);}
+static void ignore_scan(void *context,mygames_kvm_u8 scan)
+{(void)context;(void)scan;}
 int main(void)
 {
     unsigned short first,y,x,p,rows,i;
@@ -19,10 +22,24 @@ int main(void)
     union REGS r;
     unsigned char original,restored;
     FILE *f;
+    void (interrupt far *original_keyboard)();
+    unsigned long first_stamp;
+    struct mygames_dos16_video_state original_video,restored_video;
+    mygames_dos16_video_capture(&original_video);
+    original_keyboard=_dos_getvect(9U);
+    mygames_dos16_keyboard_close();
+    if(mygames_dos16_keyboard_open(0,0))return 10;
+    if(mygames_dos16_text_mode(24U))return 15;
     r.h.ah=15U;int86(16,&r,&r);original=r.h.al;
     storage=(unsigned char far *)_fmalloc(8192U);
     text=(struct mygames_kvm_text_frame far *)_fmalloc(sizeof(*text));
     if(!storage || !text || !mysmb_dos16_devices_open())return 1;
+    if(mygames_dos16_keyboard_open(ignore_scan,0))return 11;
+    if(_dos_getvect(9U)==original_keyboard)return 12;
+    first_stamp=mygames_dos16_clock_stamp();
+    for(i=0U;i<1000U;++i)
+        if(mygames_dos16_clock_stamp()!=first_stamp)break;
+    if(i==1000U)return 13;
     /* Exercise actual graphics/text/graphics mode ownership twice. */
     memset(text,0,sizeof(*text));text->rows=25U;
     text->colors[2]=0xffffffUL;
@@ -33,6 +50,9 @@ int main(void)
         if(*(volatile unsigned short far *)0xb8000000UL!=0x0254U)return 3;
         if(!mysmb_dos16_devices_mode(0U))return 4;
     }
+    if(!mygames_dos16_text_mode(50U))return 16;
+    if(!mygames_dos16_text_mode(25U))return 17;
+    if(!mysmb_dos16_devices_mode(1U) || !mysmb_dos16_devices_mode(0U))return 18;
     for(first=0U;first<240U;first+=16U){
         rows=16U;
         for(y=0U;y<rows;++y)for(x=0U;x<256U;++x)
@@ -60,6 +80,13 @@ int main(void)
     for(y=0U;y<240U;++y)for(x=0U;x<256U;++x)
         if(video[y*256U+x]!=pattern(x,y))++direct_bad;
     mysmb_dos16_devices_close();
+    if(_dos_getvect(9U)!=original_keyboard)return 14;
+    mygames_dos16_keyboard_close();
+    mygames_dos16_video_capture(&restored_video);
+    if(original_video.mode!=restored_video.mode ||
+        original_video.rows!=restored_video.rows ||
+        original_video.font!=restored_video.font ||
+        original_video.cursor!=restored_video.cursor)return 19;
     r.h.ah=15U;int86(16,&r,&r);restored=r.h.al;
     f=fopen("NATIVE.TXT","wt");if(!f)return 6;
     fprintf(f,"pixels%lu bufferedMismatch%lu directMismatch%lu directBytes%lu tabRoundTrips2 original%u restored%u\n",

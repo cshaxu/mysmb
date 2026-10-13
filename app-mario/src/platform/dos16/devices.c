@@ -2,7 +2,8 @@
 #include "platform/dos16/compact_vga_layout.h"
 #include "platform/dos16/retained_background.h"
 #include "platform/dos16/keyboard.h"
-#include "platform/dos16/pit_clock.h"
+#include "dos16/host.h"
+#include "dos16/text_cells.h"
 #include "platform/dos16/dos_audio.h"
 #include "ppu/frame.h"
 #include "kvm/color.h"
@@ -12,11 +13,7 @@
 #include <string.h>
 
 static struct mysmb_dos16_keyboard keyboard;
-static void (interrupt far *old_keyboard)();
-static unsigned char old_mode;
-static unsigned char old_rows;
-static unsigned char old_font;
-static unsigned short old_cursor;
+static struct mygames_dos16_video_state old_video;
 static unsigned char video_ready;
 /* DOS binds this shared deadline to a frame-dropping policy.  Other hosts may
  * retain ordinary pacing without binding a video gate. */
@@ -28,7 +25,6 @@ static unsigned char present_due=1U;
 static unsigned char opened;
 static unsigned char text_mode;
 static unsigned short text_rows=25U;
-static unsigned char text_colors[16];
 static mygames_kvm_u8 palette_shadow[MYGAMES_KVM_VIDEO_PALETTE_COLORS],palette_valid;
 static unsigned char retained_mode;
 static unsigned char compact_mode,compact_page;
@@ -81,45 +77,9 @@ static void copy_plane_bytes(unsigned char far *video,
     }
 }
 
-static void interrupt far keyboard_interrupt(void)
+static void keyboard_scan(void *context,mygames_kvm_u8 scan)
 {
-    unsigned char scan, control;
-    scan=(unsigned char)inp(0x60);
-    control=(unsigned char)inp(0x61);
-    outp(0x61,control|0x80U);
-    outp(0x61,control);
-    mysmb_dos16_keyboard_scan(&keyboard,scan);
-    outp(0x20,0x20);
-}
-
-/* Latch BIOS-owned PIT channel zero; never change its rate or IRQ vector. */
-static unsigned long timer_stamp(void)
-{
-    unsigned short low, high, phase;
-    unsigned int attempt;
-    unsigned char status;
-    unsigned long ticks;
-    volatile unsigned long far *bios_ticks;
-    bios_ticks=(volatile unsigned long far *)0x0040006cUL;
-    _disable();
-    /* A zero reload count at an OUT transition is ambiguous in a sampled
-     * read-back. Recapture the whole BIOS/PIT pair;never change its rate.
-     * Bound interrupt-disabled work even if the device stops advancing. */
-    for(attempt=0U;attempt<4U;++attempt) {
-        ticks=*bios_ticks;
-        outp(0x43,0xc2U);
-        status=(unsigned char)inp(0x40);
-        low=(unsigned short)inp(0x40);
-        high=(unsigned short)inp(0x40);
-        if((low|(high<<8U))!=0U)break;
-    }
-    phase=mysmb_dos16_pit_phase(status,(unsigned short)(low|(high<<8U)));
-    /* A latched high count plus pending IRQ0 means a wrap not yet reflected
-     * in the BIOS count. Leave the timer vector/rate and clock untouched. */
-    outp(0x20,0x0aU);
-    if ((inp(0x20)&1U)!=0U && phase<32768U) ++ticks;
-    _enable();
-    return (ticks<<16U)+phase;
+    mysmb_dos16_keyboard_scan((struct mysmb_dos16_keyboard *)context,scan);
 }
 
 /* Independent native256x240 timing:25.175MHz,800dots/525lines,approximately
@@ -539,20 +499,7 @@ static int try_mode(mygames_kvm_u8 text)
     unsigned short i;
     unsigned long rgb;
     palette_valid=0U;
-    if(text) {
-        registers.x.ax=0x1202U;registers.x.bx=0x30U;
-        int86(0x10,&registers,&registers);
-        registers.x.ax=3U;int86(0x10,&registers,&registers);
-        registers.x.ax=text_rows==50U?0x1112U:0x1114U;registers.x.bx=0U;
-        int86(0x10,&registers,&registers);
-        registers.x.ax=0x1003U;registers.x.bx=0U;
-        int86(0x10,&registers,&registers);
-        registers.h.ah=1U;registers.h.ch=0x20U;registers.h.cl=0U;
-        int86(0x10,&registers,&registers);
-        registers.h.ah=0x0fU;int86(0x10,&registers,&registers);
-        return registers.h.al==3U && registers.h.ah==80U &&
-            *(volatile unsigned char far *)0x00400084UL==(unsigned char)(text_rows-1U);
-    }
+    if(text)return mygames_dos16_text_mode(text_rows);
     registers.h.ah=0U;
     registers.h.al=0x13U;
     int86(0x10,&registers,&registers);
@@ -595,42 +542,17 @@ void mysmb_dos16_devices_palette(const mygames_kvm_u8 MYGAMES_KVM_FAR *palette)
     }
     palette_valid=1U;
 }
-static void restore_video(void)
-{
-    union REGS registers;
-    if(old_mode<=3U || old_mode==7U) {
-        /* 43 eight-pixel rows occupy344 of the350 scanlines. */
-        registers.x.ax=(unsigned short)((old_rows+1U)*old_font>350U?0x1202U:
-            (old_rows+1U)*old_font>200U?0x1201U:0x1200U);
-        registers.x.bx=0x30U;int86(0x10,&registers,&registers);
-    }
-    registers.h.ah=0U;registers.h.al=old_mode;
-    int86(0x10,&registers,&registers);
-    if(old_mode<=3U || old_mode==7U) {
-        if(old_font==8U || old_font==14U || old_font==16U) {
-            registers.x.ax=old_font==8U?0x1112U:old_font==14U?0x1111U:0x1114U;
-            registers.x.bx=0U;int86(0x10,&registers,&registers);
-        }
-        registers.h.ah=1U;registers.x.cx=old_cursor;
-        int86(0x10,&registers,&registers);
-    }
-}
 int mysmb_dos16_devices_open(void)
 {
-    union REGS registers;
     if(opened)return video_ready;
-    registers.h.ah=0x0fU;int86(0x10,&registers,&registers);
-    old_mode=registers.h.al;
-    old_rows=*(volatile unsigned char far *)0x00400084UL;
-    old_font=*(volatile unsigned char far *)0x00400085UL;
-    registers.h.ah=3U;registers.h.bh=0U;
-    int86(0x10,&registers,&registers);old_cursor=registers.x.cx;
-    if(!try_mode(0U)) {restore_video();return 0;}
+    mygames_dos16_video_capture(&old_video);
+    if(!try_mode(0U)) {mygames_dos16_video_restore(&old_video);return 0;}
     text_mode=0U;retained_mode=0U;compact_mode=0U;ram_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;video_ready=1U;
     mysmb_dos16_keyboard_initialize(&keyboard);
-    old_keyboard=_dos_getvect(9U);
-    _dos_setvect(9U,keyboard_interrupt);
-    mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);
+    if(!mygames_dos16_keyboard_open(keyboard_scan,&keyboard)) {
+        mygames_dos16_video_restore(&old_video);video_ready=0U;return 0;
+    }
+    mysmb_io_pacing_initialize(&pacing,mygames_dos16_clock_stamp(),19886UL);
     /* Audio is independent of graphics/text mode.  An absent Sound Blaster is
      * nonfatal; S3 will make a prepared device audible. */
     (void)mysmb_dos16_audio_dos_open();
@@ -643,8 +565,8 @@ void mysmb_dos16_devices_close(void)
 {
     if (opened==0U) return;
     mysmb_dos16_audio_dos_close();
-    _dos_setvect(9U,old_keyboard);
-    restore_video();opened=video_ready=text_mode=retained_mode=compact_mode=ram_mode=retained_hud_valid=retained_sprite_count=0U;
+    mygames_dos16_keyboard_close();
+    mygames_dos16_video_restore(&old_video);opened=video_ready=text_mode=retained_mode=compact_mode=ram_mode=retained_hud_valid=retained_sprite_count=0U;
 }
 
 void mysmb_dos16_devices_input(struct mysmb_io_input *input)
@@ -713,19 +635,14 @@ mygames_kvm_u8 MYGAMES_KVM_FAR *mysmb_dos16_devices_direct_band(mygames_kvm_u16 
 }
 void mysmb_dos16_devices_text(const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
 {
-    unsigned short i;
     volatile unsigned short far *video;
     if(!video_ready || !text_mode || !frame)return;
     if(text_rows!=MYGAMES_KVM_TEXT_FRAME_ROWS(frame)) {
         text_rows=(unsigned short)MYGAMES_KVM_TEXT_FRAME_ROWS(frame);
         if(!try_mode(1U))return;
     }
-    mygames_kvm_color_text_attributes(frame->colors,frame->source_colors,text_colors);
     video=(volatile unsigned short far *)0xb8000000UL;
-    for(i=0U;i<MYGAMES_KVM_TEXT_FRAME_CELLS(frame);++i)
-        video[i]=(unsigned short)(frame->cells[i].character|
-            ((unsigned short)text_colors[frame->cells[i].foreground&15U]<<8U)|
-            ((unsigned short)text_colors[frame->cells[i].background&15U]<<12U));
+    mygames_dos16_text_cells(frame,video);
 }
 
 void mysmb_dos16_devices_wait(void)
@@ -736,15 +653,15 @@ void mysmb_dos16_devices_wait(void)
      * composing stale images.  Rebasing here slows the game to the renderer.
      * The signed-half-range check also treats the BIOS midnight reset as a
      * new clock origin rather than a catch-up burst. */
-    now=timer_stamp();
+    now=mygames_dos16_clock_stamp();
     elapsed=(now-pacing.last)&0xffffffffUL;
     if(elapsed>0x7fffffffUL)pacing.last=now;
     pacing.last=(pacing.last+pacing.period)&0xffffffffUL;
-    now=timer_stamp();
+    now=mygames_dos16_clock_stamp();
     elapsed=(now-pacing.last)&0xffffffffUL;
     if(elapsed<=0x7fffffffUL) {present_due=0U;return;}
     do {
-        now=timer_stamp();
+        now=mygames_dos16_clock_stamp();
         elapsed=(now-pacing.last)&0xffffffffUL;
     } while(elapsed>0x7fffffffUL);
     present_due=1U;
@@ -760,10 +677,10 @@ void mysmb_dos16_devices_after_load(void)
      * this probe never changes game audio state or video presentation. */
     mysmb_dos16_audio_dos_after_load();
     _disable();mysmb_dos16_keyboard_after_load(&keyboard);_enable();
-    mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);present_due=1U;
+    mysmb_io_pacing_initialize(&pacing,mygames_dos16_clock_stamp(),19886UL);present_due=1U;
 }
 void mysmb_dos16_devices_resume_clock(void)
-{mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);present_due=1U;}
+{mysmb_io_pacing_initialize(&pacing,mygames_dos16_clock_stamp(),19886UL);present_due=1U;}
 
 int mysmb_dos16_devices_retained_background(const struct mysmb_ppu_frame_view *view)
 {

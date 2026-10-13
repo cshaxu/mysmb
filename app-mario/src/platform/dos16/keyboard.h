@@ -3,13 +3,11 @@
 
 #include "io/input.h"
 #include "io/control.h"
+#include "dos16/raw_keyboard.h"
 
 /* AT set-1 physical key state, independent of BIOS character buffering. */
 struct mysmb_dos16_keyboard {
-    mygames_kvm_u8 down[128];
-    mygames_kvm_u8 extended[128];
-    mygames_kvm_u8 prefix;
-    mygames_kvm_u8 pause_bytes;
+    struct mygames_dos16_set1_keyboard raw;
     mygames_kvm_u8 pending_requests;
     struct mysmb_io_control shortcuts;
 };

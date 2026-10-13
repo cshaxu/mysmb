@@ -10,10 +10,12 @@ app-mario/src/io/         Mario controller/audio/save and app-local I/O contract
 app-mario/src/app/        public game-to-IO composition glue; no gameplay/device policy
 app-mario/src/assets/     generated owner-local declarations; never tracked
 app-mario/src/validate/   test-only projections,owner-ROM reference and trace comparison
-app-mario/src/platform/   win32 and dos16 host adapters, pending S4/S5 extraction
+app-mario/src/platform/   Mario composition roots, input policy, VGA/PPU and audio adapters
 app-mario/src/main-*.c    one small composition root per host target
 app-mario/test/           Mario-owned unit and integration harnesses
 lib/kvm/                   portable cells, palette/glyph algorithms, video and physical-event contracts
+lib/win32/                 reusable Windows Console/window/input and timing services
+lib/dos16/                 reusable Set-1, IRQ, BIOS text, B800 and PIT services
 tools/                     local generators and governance checks
 assets/                    ignored local package outputs: mysmb16.exe, mysmb32.exe, mysmb64.exe
 ```

@@ -74,7 +74,7 @@ for path in (root / "src" / "core").rglob("*.[ch]"):
                 "app/", "validate/")) or include == "ppu/frame.h":
             print(f"{path.relative_to(root)}: core imports downstream {include}")
             sys.exit(1)
-repository = root.parents[1]
+repository = root.parent
 kvm = repository / "lib" / "kvm"
 for path in kvm.rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
@@ -98,5 +98,16 @@ for path in win32.rglob("*.[ch]"):
     for token in ("MYSMB_", "mysmb_", "struct mysmb_game", "core/", "ppu/"):
         if token in text:
             print(f"{path.relative_to(repository)}: Win32 host leaks {token}")
+            sys.exit(1)
+dos16 = repository / "lib" / "dos16"
+for path in dos16.rglob("*.[ch]"):
+    text = path.read_text(encoding="utf-8")
+    for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
+        if not include.startswith(("dos16/", "kvm/")) and include not in ("string.h", "dos.h", "conio.h"):
+            print(f"{path.relative_to(repository)}: DOS16 host imports {include}")
+            sys.exit(1)
+    for token in ("MYSMB_", "mysmb_", "struct mysmb_game", "core/", "ppu/"):
+        if token in text:
+            print(f"{path.relative_to(repository)}: DOS16 host leaks {token}")
             sys.exit(1)
 print("platform, IO, PPU, core, KVM and Win32 dependency purity: passed")

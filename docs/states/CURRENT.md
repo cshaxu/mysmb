@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M3 T43 S5 Packet
+## M3 T43 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T43 S5 P1 — `lib/dos16` host extraction |
-| Admission And Approval | Owner approved the Mario-first restructure and specified that applications retain all keyboard and mouse semantics. S4 has completed its implementation closure. |
-| Objective | Extract generic DOS16 bootstrap, raw physical input, B800 text device and timer ownership into `lib/dos16`, retaining Mario's game and VGA/PPU decisions in `app-mario`. |
-| Non-goals | No Mine read/import, Win16 extraction, ROM/PPU change, text-art change, DOS graphics-compositor/sound move, or Mario key/mouse semantic change. |
-| Reference Baseline | T43 S4 closure: `lib/win32` owns reusable Win32 host mechanics while Mario maps neutral KVM events to app commands. |
+| Identifier Mode | M3 T43 S6 P1 - Win16/Mine receiving seams |
+| Admission And Approval | Owner approved the Mario-first S2-S7 sequence and automatic next-S admission. S5 has passed actual x86/x64 and DOS16 verification. |
+| Objective | Define the Win16 callback/build seam and optional app-mine superbuild receiving interface, ready for a later provenance-reviewed import. |
+| Non-goals | No Mine read/import, Win16 host implementation, Mario Win16 executable, game/PPU change, artwork change or input binding change. |
+| Reference Baseline | S5: lib/kvm, lib/win32 and lib/dos16 expose neutral contracts/mechanics; Mario retains its controls and composition. |
 | Candidate Proposal | [M3 T43 proposal](../proposals/m3/mygames-code-unification.md). |
-| Files And ABI Surface | New `lib/dos16` CMake/include/source/test ownership plus neutral KVM cell/event/timer interfaces. Mario's DOS composition root consumes the services and remains the sole mapper of app controls and selector of text/graphics. |
+| Files And ABI Surface | Neutral callback/capability declarations, lib/win16 interface target, optional app-mine root build seam, receiving documentation and owner-local contract tests. |
 | Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
-| Verification | DOS16 library contracts, dependency/purity scan, KVM physical-event and indexed-cell adapter tests, Win32 regression builds, DOS16 Link 3.65 product link and applicable DOSBox I/O probe. |
-| Expected Markers | DOS16 has no Mario constants or game state; it returns neutral KVM events and device results; Mario alone maps controls and calls its core/PPU/VGA compositor. |
-| Asset Needs | None. No ROM, asset, disassembly, trace or Mine material enters the task. |
-| Reporting Requirements | Report exact moved files, callback surface, app-owned mapping boundary, indexed-cell/physical-event results and target matrix. |
-| Stop Conditions | Mario constants or game state in `lib/dos16`, an app command assigned by the library, duplicate old/new host owner, behavioural change, or Mine import. |
-| Exit Criteria | `lib/dos16` is the single owner of its generic DOS host mechanics, Mario controls all command and presentation decisions, and all three products retain current behaviour. |
-| Original Owner Request | Combine Mine and MySMB through reusable DOS16/Win16/Win32/KVM infrastructure while leaving each app responsible for its own controls. |
-| Similar-Issue Sweep | Scan `lib/dos16` headers/sources and CMake dependency edges for Mario constants, controller commands, PPU/core access, duplicate host owners and text/graphics-selection special cases. |
+| Verification | Compile-contract tests, absent-Mine configure, dependency/purity scan, actual-width Win32 builds and documentation/ledger gates. |
+| Expected Markers | Optional absent app builds cleanly; declarations contain no Mario rules; Win16 remains an explicitly unimplemented device; apps own all input/presentation meanings. |
+| Asset Needs | None for new contracts. Existing owner-local product validation may use the admitted ROM without committing generated material. |
+| Reporting Requirements | Report receiving targets, callback ownership, supported versus future capabilities and all remaining pre-import gates. |
+| Stop Conditions | Mine material imported, fictitious Win16 runtime claim, host assigning app commands or reverse app dependencies in libraries. |
+| Exit Criteria | The receiving interfaces compile, root build accepts an absent app-mine and ownership/verification are explicit for the later import. |
+| Original Owner Request | Finish app-mario/lib separation before importing Mine; each app defines its keyboard and mouse semantics. |
+| Similar-Issue Sweep | Check callback/capability declarations and build edges for application names, implicit key meaning, cross-app dependencies and unsupported platform claims. |
 
 ## Current Technical Baseline
 

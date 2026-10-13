@@ -9665,7 +9665,7 @@
         },
         {
           "id": "M3 T43 S5",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/mygames-code-unification.md",
             "docs/states/CURRENT.md"
@@ -9675,7 +9675,21 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Admitted zero-node DOS16 host extraction: lib/dos16 will expose neutral device mechanics while Mario retains all controls, text/graphics selection and VGA/PPU composition."
+          "technicalReceipt": "Closed zero-node DOS host extraction: raw scans, IRQ lifetime, BIOS/PIT sampling, indexed cells and BIOS text/video restoration are reusable; Mario retains commands and VGA/PPU/audio assembly. Verified actual PE32/PE64 products and DOSBox device lifecycle."
+        },
+        {
+          "id": "M3 T43 S6",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "mygames-receiving-seams"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Admitted zero-node Win16/Mine receiving contracts and superbuild seam; no Mine import or claimed Win16 runtime implementation."
         }
       ]
     }
@@ -1011015,6 +1011029,18 @@
     },
     {
       "subtask": "M3 T43 S5",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+    },
+    {
+      "subtask": "M3 T43 S6",
       "kind": "implementation",
       "scope": [],
       "expectedMatches": [],

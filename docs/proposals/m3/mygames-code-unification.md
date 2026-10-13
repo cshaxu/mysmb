@@ -301,3 +301,79 @@ pipe host, both an ordinary DOS command and LINK return the documented host
 status 87 before DOS execution. This neither validates nor rejects NTVDM64 or
 LINK. A later interactive Console probe may run `run16 --wait LINK /?`; this
 S makes no NTVDM64 source or configuration change.
+
+### S5 implementation checkpoint (not closure)
+
+The shared DOS16 library now owns Set-1 physical make/break/repeat decoding,
+PIT phase conversion and indexed KVM cell-to-B800 word conversion. Mario's
+adapter still assigns controller, save/load, exit and presentation meanings.
+The PIT exhaustive unit test moves with its production owner. The library
+cell test checks full 25/50-row buffers and end sentinels; its initial
+two-cell fixture was invalid and its earlier passing result is discarded.
+The library purity gate now resolves the actual repository root; previous
+empty-directory scans are not reused as evidence.
+
+The synthetic DOSBox device probe links against the extracted objects and
+passes two graphics/text round trips, 61,440 buffered and direct pixel checks
+with zero mismatches, and restoration to the original video mode. The fresh
+OpenNT compilation and DOS LINK 3.65 product link also succeed. These are
+local operational checks, not new ROM-equivalence claims. S5 remains open:
+finish the DOS host-lifecycle ownership review, current-product matrix and
+test-owner closure before advancing to the Win16/Mine receiving seam.
+
+The continued extraction moves keyboard IRQ capture/acknowledgment and
+installation/restoration, BIOS/PIT timestamp sampling, BIOS 25/50-row setup,
+and video mode/font/cursor capture/restoration into the DOS host. The IRQ
+calls an application scan sink with an opaque context. The native probe
+additionally checks empty/duplicate keyboard-open rejection, vector
+installation/restoration, an advancing timestamp, both text row counts and
+complete video-state restoration. All pass in DOSBox with synthetic pixels.
+The linked product is 361,691 bytes with 385,392 bytes minimum loaded memory;
+dynamic allocations are excluded from that loader figure. Mario's private
+CRT hooks remain app-owned because their no-argument/no-environment-vector
+premise belongs to Mario's composition root. The reused native/lifecycle probe
+object inventory now has one build-tool owner.
+
+A separate hidden-CMD run16 LINK help probe timed out without output. It
+adds no NTVDM64 compatibility conclusion; the DOSBox link is the accepted
+operational route. The x86/x64 complete matrices are still in progress, so
+this checkpoint remains uncommitted and S5 remains active.
+
+Final product-header inspection invalidated the old S4/S5 tree labelled x86:
+it selected the x64 compiler and emitted PE64 despite its x86 filename. Its
+290 passing tests are same-width evidence only. S5 uses the existing i686
+Ninja/ccache preset for the real x86 replacement matrix, and CMake now rejects
+a named x86/x64 target whose compiler pointer width disagrees. The resource-
+bound x64 matrix passed 290/290 and its PE64 self-test passed. The real x86
+matrix remains pending; neither the filename nor the old S4 receipt is reused
+as width evidence.
+
+### S5 closure receipt
+
+The final actual-width matrix passes: PE32 i686 x86 290/290 and PE64 x64
+290/290, with both product self-tests passing. DOS16 uses the same OpenNT
+compiler and locally retained LINK 3.65, with the synthetic host probe passing
+keyboard ownership, clock progression, 25/50-row setup, mode/font/cursor
+restoration and zero pixel differences. The three local products were refreshed:
+DOS16 361,691 bytes, PE32 411,787 bytes and PE64 365,163 bytes. The MZ minimum
+loaded memory is 385,392 bytes, excluding dynamic allocations. No ROM nodes
+or control edges are changed or promoted by this infrastructure task.
+
+Raw Set-1/cell conversion and PIT phase tests live with the library; Mario's
+keyboard/save/root tests retain app policy assertions. Hardware-only IRQ and
+BIOS joins are covered by the native DOSBox probe. The source review retains
+the original bounded PIT recapture and pending-IRQ calculation. The dependency
+gate examines the actual libraries, and CMake rejects falsely labelled widths.
+Superseded PIT owners are removed. The three previously tracked generated EXEs
+are removed from the index while their refreshed local copies remain in assets,
+following the current AGENTS/source policy. No generated product is published.
+
+### S6 admission
+
+Add only neutral receiving declarations, a Win16 interface target and an
+optional app-mine superbuild hook. The current objective stops at import
+readiness: no Mine source is read/copied and no Win16 runtime is invented.
+The compile contract must expose app-owned callbacks for raw input and app-
+requested presentation, with host capability results. An absent app-mine must
+configure normally; the receiving documentation must identify the later
+provenance/history-preserving import gate. Scope and new ROM matches are empty.
