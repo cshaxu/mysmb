@@ -1,9 +1,13 @@
 # M3 T45 Mine import and shared-host adoption
 
+T45 closed on 2026-10-13. S1 source decision, S2 implementation and S3
+combined regression are complete. Historical checkpoints below retain their
+original admission context; the final S3 receipt owns closure.
+
 ## Receiving baseline and admission gate
 
 T44 S6-S13 closes the shared-host capability correction. The
-[fixed gap register and receipts](../../history/M3-T44-library-readiness-correction.md)
+[fixed gap register and receipts](../history/M3-T44-library-readiness-correction.md)
 show all12required gaps closed, independent libraries and current platform
 joins. Mine import can now be admitted separately; this does not certify the
 unimported Mine app or remove its provenance and per-app verification gates.
@@ -30,8 +34,8 @@ it explicitly supplies no redistribution licence. Owner chose independent core/a
 | S | Scope | Estimate | Exit |
 | --- | --- | --- | --- |
 | S1 closed | Source/provenance and unchanged baseline | Governance only | Source decision and three-width baseline complete |
-| S2 active | Independent core/art, reviewed app/text, shared hosts and three products |20-30files/1500-2500lines | Owner-local tests, native/DOS/Win16 builds and products |
-| S3 planned | Combined integration/regression and T closure | Receipts and bounded fixes | Platform joins, Mario regression, cleanup and reviewed push |
+| S2 closed | Independent core/art, reviewed app/text, shared hosts and three products |20-30files/1500-2500lines | Owner-local tests, native/DOS/Win16 builds and products |
+| S3 closed | Combined integration/regression and T closure | Receipts and bounded fixes | Platform joins, Mario regression, cleanup and reviewed push |
 
 S1 is source-only/baseline work. Import and publication cannot advance until
 the provenance decision is explicit. Scope/expected/actual ROM credit0;
@@ -104,8 +108,8 @@ former S3-S5 slots were plans only and had no admitted identifiers.
 | S | Final delivery | Exit |
 | --- | --- | --- |
 | S1 closed | Source decision and unchanged baseline | Three-width423checks passed; independent-source policy approved |
-| S2 next | Independent Mine core/art and reviewed app/text; shared-host products | Rule/input/presentation tests plus native/DOS/Win16 builds and three Mine EXEs |
-| S3 planned | Combined host regression and readiness closure | Actual platform joins, Mario regression, commit/push and cleanup |
+| S2 closed | Independent Mine core/art and reviewed app/text; shared-host products | Rule/input/presentation tests plus native/DOS/Win16 builds and three Mine EXEs |
+| S3 closed | Combined host regression and readiness closure | Actual platform joins, Mario regression, commit/push and cleanup |
 
 ## S2 admission
 
@@ -162,3 +166,60 @@ historical1992/1992 and retained1991/1992nodes,4260/4261feasible controls remain
 unchanged. S2 closes; S3 owns final combined builds/platform receipt refresh,
 source-boundary review and T closure. Generated work is retained only until
 that admitted final verification consumes it; no binary is committed.
+
+## S3 admission
+
+Automatic owner-authorized final verification of0028ca55. Initially no production changes planned;4-8receipt/governance files expected. The bounded Win16 warning correction changes this S to implementation accounting, with no ABI or game-rule change. Reuse the qualified small-model and native builds, run combined Mine/Mario suites and exact current products through private-desktop and DOS/Win3.x routes. Empty ROM scope/expected0; retained accounting unchanged. Final history records actual results and preserved unrelated work.
+
+## S3 P1 combined regression and T closure
+
+Both combined Ninja/ccache Release builds pass310/310 configured tests
+(Mario, independent Mine and libraries). The x86 build had one compiler
+subprocess terminate without a diagnostic; a bounded rebuild compiled that
+same object and completed the full suite. No compiler defect is inferred.
+Both widths also pass the shared device joins and all15Mario launch/Console
+routes, including interactive CMD Tab/return/prompt. Both final Mine products
+pass all3launch routes (detached, ordinary owned console, borrowed console),
+mouse reveal, expert-level input, repeated Tab and clean exit.
+
+The final Mine16 was compiled and linked again using the qualified small-model
+DOS and Win16 tools. The only production change aligns cached Win16 dimensions
+with the unsigned host fields (two added lines, one removed); no ABI or game
+rule changed, and the product SHA256 remains identical to S2. Review found
+no other signed comparison warning in this build. All three products retain
+the exact sizes and hashes in the S2 table.
+
+Windows3.x actual pixels show opened cells, timer advancement, expert board,
+window text and graphical return; the NE exits normally. DOS actual product
+input covers two separated clicks, expert/help/escape and quit. The first
+click may be consumed by DOSBox mouse acquisition, so the fixture now reserves
+startup time and explicitly sends a second click. A hidden SDL dummy surface
+can lose unchanged cells after capture: its partial screenshot cannot certify
+VGA contents. A build-only diagnostic copy read all4000bytes of B800 text
+memory after opening cells: the board, numbers, timer and footer are intact.
+That hook is absent from the shipped product. This distinguishes guest state
+from the host capture limitation; it is not a claim of visible real-machine
+or RDP manual acceptance. Installed DOSBox CPU/cycles were never changed.
+
+Test ownership remains core rules, app gestures/clock, presentation conversion
+and actual host lifecycle joins; S3 adds no duplicate rule assertions.
+Independent Mine-only builds and both combined app builds pass. Portable
+line/branch coverage and DOS rule hashes are retained in S2; no all-path claim
+is added. Source review confirms app input/policy stays in app-mine and reusable
+mechanisms stay in lib; no Mario or library production source changed in T45.
+No XP core/header/bitmap/resource/vendor input is published. Reviewed app/text
+imports retain their source hashes; no sibling is modified.
+
+S1, S2 and S3 meet this T's bounded import exit. DOS is text-only, Win3.x has
+window graphics/text, and Win32/x64 support parent-console/window Tab over
+one game. Mine custom difficulty, persistence, high scores and sound were
+not part of the imported baseline and are not claimed here. Local products
+are available under assets/mine; binaries and local runtime/source copies
+are excluded from commits. Seventeen pre-existing assets/resources deletions
+remain unstaged and untouched. Queue order is unchanged; no next T is admitted.
+
+ROM scope, expected and actual additions are empty. Historical1992/1992,
+retained1991/1992nodes and4260/4261feasible controls (4342raw,81infeasible)
+remain unchanged. T45 is not a ROM final-certification task.
+
+Acceptance cleanup removed3task-owned generated directories,3850 files and246755389 bytes. Build is empty; products and qualified tools remain.

@@ -431,7 +431,7 @@ and local assets match their verified builds. No generated EXE is committed.
 
 T43 S1-S7 close under the owner's import-readiness scope. Former import/host
 adoption phases transfer to the unnumbered
-[Mine import candidate](../proposals/m3/mine-import-host-adoption.md).
+[Mine import candidate](../history/M3-T45-mine-import-host-adoption.md).
 This is structural/platform acceptance, not new original-ROM certification:
 scope/expected/actual ROM nodes are empty, and the existing incomplete M2
 final-certificate boundary remains unchanged. Win16 runtime and Mine game

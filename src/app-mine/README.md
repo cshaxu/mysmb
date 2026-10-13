@@ -23,7 +23,7 @@ cancel at focus/capture/view boundaries. Updates are input/clock driven.
 ## Source disposition
 
 Owner approved independent implementation and reviewed app/text adaptation in
-[M3 T45](../../docs/proposals/m3/mine-import-host-adoption.md). The sibling has
+[M3 T45](../../docs/history/M3-T45-mine-import-host-adoption.md). The sibling has
 no Git history. No XP-derived core/header, bitmap/resource script or vendor
 source is imported. The independent core uses separate hazard and cover arrays,
 a fixed32-bit RNG and iterative flood; artwork is authored procedural C.

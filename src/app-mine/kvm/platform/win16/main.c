@@ -10,7 +10,8 @@ static struct mygames_win16_application application;
 static unsigned char pixels[504*8];
 static unsigned long palette[16];
 static int client_width,client_height;
-static int sized_width,sized_height,sized_view=-1;
+static unsigned short sized_width,sized_height;
+static int sized_view=-1;
 
 /* Window size is Mine presentation policy. The retained USER/GDI host still
  * owns painting and delivers every resulting physical resize/input event. */
