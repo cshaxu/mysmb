@@ -20,6 +20,6 @@ else()
     target_compile_options(mygames_win32 PRIVATE -Wall -Wextra -Werror -pedantic)
 endif()
 
-add_executable(mygames_win32_contract_smoke ${CMAKE_SOURCE_DIR}/lib/win32/test/win32_contract_smoke.c)
+add_executable(mygames_win32_contract_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/win32_contract_smoke.c)
 target_link_libraries(mygames_win32_contract_smoke PRIVATE mygames_win32)
 add_test(NAME mygames.win32-contract-smoke COMMAND mygames_win32_contract_smoke)

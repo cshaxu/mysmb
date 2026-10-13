@@ -202,3 +202,17 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
 
 
 - [x] **Special actor/platform child gaps** The current small/large runners use the real platform box/collision/movement/OAM owners with original order and slot reloads. Source-shaped balance/position/X/right semantics are covered by T63/T64 and T69 actual children; S15 proves paired balance slots and canonical offscreen input/return states. [Latest integrated platform proof](../history/M2-T69-cross-cohort-current-proof.md#s15-p3-closure---real-offscreen-children-and-nmi-integration).
+
+
+## Retained audit source bindings
+
+- [ ] **M2-SOURCE-SNAPSHOT-BINDING:** T44 S4 moves current source-path metadata
+  without replacing historical hashes. At accepted S2 commit c308fa7e the old
+  snapshot already mismatched seven paths (root/app CMake, DOS devices and
+  keyboard C/header, Win32 entry, PPU frame header) and lacked two former DOS
+  PIT paths, now owned by src/lib/dos16. This is inherited final-binding debt,
+  not a new logic finding or restarted audit. Preserve the old hashes and
+  reconcile applicability in the already queued
+  [remaining current certification](../proposals/m2/remaining-current-certification.md).
+  The strict full-registry checker still rejects the historical dependency
+  snapshot; path-only migration does not certify those old bindings.

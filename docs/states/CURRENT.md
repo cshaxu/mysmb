@@ -2,32 +2,30 @@
 
 ## Current Work
 
-## M3 T44 S4 Packet
+## M3 T44 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation - M3 T44 S4 P1, mirrored test migration admitted |
-| Admission And Approval | Owner authorizes automatic S closure/admission. S3 path-only migration passes its gates; S4 follows the existing T44 proposal. |
-| Objective | Move tests into test/lib and test/app-mario mirroring production owners; reconcile fixture/tool discovery and current source-path metadata. |
-| Non-goals | No Mine code import, game/PPU/audio behavior change, Win16 Tab feature, or weakening/removal of assertions; source relocation is complete. No new performance or ROM-equivalence claims. |
-| Reference Baseline | Owner-accepted c308fa7e: DOS dual-mode and native Win16 graphical MZ/NE product with P/O and music. x86/x64 each 299 pass plus one unavailable host-audio skip. S2 proposal retains bounded runtime receipts and limitations. |
-| Candidate Proposal | [M3 T44 proposal](../proposals/m3/nxvm-source-test-layout.md#s3---source-and-build-ownership-migration). |
-| Files And ABI Surface | About 660 tests/reference entries, their CMake/tool callers and current ledger path metadata. Production ABI and function bodies stay unchanged. |
-| Applicable Rules | Execution, Documentation, Architecture and Coding rules; Source Layout and source policy. Historical evidence remains historical. |
-| Verification | Record old/new path manifest and source identity apart from reviewed include/path edits; configure and build x86/x64 with Ninja/ccache and DOS/Win16 with existing tools; run configured tests, dependency/purity and binder checks; refresh three products. |
-| Expected Markers | Single production owner per file below src/lib or src/app-mario; no forwarding copies, duplicate includes or symlink bridges. Same controls and DOS/Win16/Win32 behavior. |
-| Asset Needs | Existing owner-local tools/SDK/ROM remain private inputs under the S2 provenance contract. No new material or imports. Generated outputs remain ignored; local products remain assets/mario. |
-| Reporting Requirements | Report moved-file count, substantive versus path-only changes, tests/builds and product identities. Scope and expected/actual new ROM nodes/edges are empty; no certification promotion. |
-| Stop Conditions | Unexpected semantic diff, ownership cycle, missing tool provenance, failed platform build/test, or source duplication. Resolve within scope before claiming closure. |
-| Exit Criteria | Each test has an explicit owner and mirrored destination; fixtures and current paths resolve; native suites pass without lost cases; no reference projection enters product linkage. S5 remains planned. |
-| Original Owner Request | NXVM-style src/lib/{dos16,win16,win32,kvm}, src/app-mario/{core,kvm}, mirrored tests and per-app assets. Complete Mario/library separation before Mine import. |
-| Similar-Issue Sweep | Find stale production paths in CMake, scripts, code generators, includes, purity tests and current authorities; account for every hit, including the newly accepted Win16 save/audio owners. |
+| Identifier Mode | Continuation - M3 T44 S5 P1, final platform and host acceptance |
+| Admission And Approval | Owner explicitly authorizes automatic S closure/admission; S4 native and ownership gates pass. |
+| Objective | Qualify the final app/lib and mirrored-test layout, actual host joins and three local products; close T44. |
+| Non-goals | No Mine import, gameplay/PPU change, Win16 Tab, new performance claim or ROM-certification promotion. |
+| Reference Baseline | S3 source identities and actual DOS/Win16 links; S4 x86/x64 300/300. Hybrid remains byte-identical to owner-accepted S2. |
+| Candidate Proposal | [T44](../proposals/m3/nxvm-source-test-layout.md#s5---final-platform-and-host-acceptance). |
+| Files And ABI Surface | Expected zero production changes; final receiving/governance documents and build-only evidence. |
+| Applicable Rules | Execution, Documentation, Architecture and Coding; source policy and Source Layout. |
+| Verification | Reuse unchanged S4 complete suites; actual private-desktop x86/x64 host routes, DOS device probe, DOS/Win16 link and binder, product headers, purity/topology and documentation gates. |
+| Expected Markers | src/lib and src/app-mario have single owners; mirrored test owners; three products only under assets/mario. |
+| Asset Needs | Previously qualified owner-local ROM, SDK/compiler and DOSBox inputs only; generated evidence below build and no distribution. |
+| Reporting Requirements | Report test/host/build results and product hashes; expected/actual ROM scope empty, no node or edge credit. |
+| Stop Conditions | Integration failure, semantic diff or ownership violation must be repaired before closure. |
+| Exit Criteria | Scoped gates pass, local products ready, bounded evidence retained, generated workspaces cleaned and only unrelated resource deletions remain unstaged. |
+| Original Owner Request | Complete NXVM-style Mario/library split and prepare Mine receiving paths; automatic closure/admission of each S. |
+| Similar-Issue Sweep | Check obsolete paths, production/test leakage, caller and fixture discovery, actual host lifecycle and final package identities. |
 
-S2 owner acceptance is recorded in the proposal. Its obsolete build/probe and
-native build outputs were removed; published assets/mario products are retained.
-S3 is closed: 318 files moved, all 311 production C/header files byte-identical,
-300/300 tests pass on each native width, DOS/Win16 builds and binder pass,
-three products refreshed. S4 is the sole active S. T44 remains open.
+S1-S4 are closed. S5 is the only active S. The inherited historical source
+snapshot binding gaps remain assigned to queued final certification; this
+layout task does not certify all ROM behavior.
 
 ## Current Technical Baseline
 

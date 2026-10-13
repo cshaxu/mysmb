@@ -165,7 +165,7 @@ def main():
                   if line.startswith(('CMAKE_C_COMPILER:FILEPATH=','CMAKE_C_COMPILER:STRING=')))
     rsp=tree/'CMakeFiles/mysmb_win32_text_switch_smoke.dir'
     objects=[x for x in shlex.split((rsp/'objects1.rsp').read_text())
-             if not x.endswith(('app-mario/test/win32_text_switch_smoke.c.obj',
+             if not x.endswith(('test/app-mario/kvm/platform/win32/win32_text_switch_smoke.c.obj',
                                 'src/app-mario/kvm/platform/win32/frame_wait.c.obj'))]
     executable=output/'presentation-profile.exe'
     command=[compiler,'-std=c90','-DMYSMB_LOCAL_TITLE=1']

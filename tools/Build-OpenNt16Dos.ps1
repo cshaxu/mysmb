@@ -124,7 +124,7 @@ try {
     $env:TMP = (Get-Location).Path
     # Compile the neutral contract probe with the real far-pointer ABI too.
     # It is not linked into the product and supplies no ROM or device data.
-    $ioContractProbe = Join-Path (Split-Path -Parent $PSScriptRoot) 'app-mario/test/io_contract_smoke.c'
+    $ioContractProbe = Join-Path (Split-Path -Parent $PSScriptRoot) 'test/app-mario/kvm/io/io_contract_smoke.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Foio_contract_smoke.obj /I $IncludeDirectory /I (Join-Path $IncludeDirectory 'kvm') /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $ioContractProbe
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $ioBridge = Join-Path $SourceRoot 'kvm/app/game_io.c'

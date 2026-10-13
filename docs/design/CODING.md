@@ -9,30 +9,23 @@ at `src/app-mario/core`, and Mario-specific I/O/presentation/assembly below
 `src/app-mine/{core,kvm}`. Tests live at the corresponding paths below
 `test/`, including nested production subsystems; there is no extra per-app
 src/test layer in the target. After the owner's Win16 insertion, source
-movement is S3 and test movement is S4,
+movement is complete in S3 and mirrored test movement is S4,
 as recorded in [the active migration](../proposals/m3/nxvm-source-test-layout.md).
 The current local product boundary is already `assets/mario` and future
 Mine products use `assets/mine`.
 
 ```text
-src/app-mario/core/       all translated ROM logic,RAM,OAM/APU writers and observation receipts
-src/app-mario/kvm/text/       authored immutable scene/element consumers and receipt snapshot codec
-src/app-mario/kvm/ppu/        neutral addressed/visible state and read-only shared pixel compositor
-src/app-mario/kvm/io/         Mario controller/audio/save and app-local I/O contracts
-src/app-mario/kvm/app/        public game-to-IO composition glue; no gameplay/device policy
-src/app-mario/kvm/assets/     generated owner-local declarations; never tracked
-app-mario/src/validate/   test-only projections,owner-ROM reference and trace comparison
-src/app-mario/kvm/platform/   Mario composition roots, input policy, VGA/PPU and audio adapters
-src/app-mario/main-*.c    one small composition root per host target
-app-mario/test/           Mario-owned unit and integration harnesses
-src/lib/kvm/                   portable cells, palette/glyph algorithms, video and physical-event contracts
-src/lib/win32/                 reusable Windows Console/window/input and timing services
-src/lib/dos16/                 reusable Set-1, IRQ, BIOS text, B800 and PIT services
-src/lib/win16/                 USER/GDI graphical host, neutral DIB/clock and receiving callbacks
-app-mine/                  receiving documentation only; provenance-reviewed import pending
-tools/                     local generators and governance checks
-assets/mario/              ignored local Mario outputs: mysmb16.exe, mysmb32.exe, mysmb64.exe
-assets/mine/               future ignored Mine outputs
+src/lib/{kvm,dos16,win16,win32}/  shared neutral contracts and host mechanics
+src/app-mario/core/              translated original game logic
+src/app-mario/kvm/{app,io,ppu,text,platform}/  Mario-specific assembly/presentation
+src/app-mine/{core,kvm}/         receiving boundary; no imported game code
+test/lib/{kvm,dos16,win16,win32}/ shared-owner tests
+test/app-mario/{core,kvm}/       tests nested by their production owner
+test/app-mario/kvm/ppu/validate/ test-only reference projections
+test/app-mine/{core,kvm}/        receiving boundary; no acceptance claim
+tools/                          generators and governance/build entry points
+assets/mario/                   local mysmb16.exe, mysmb32.exe, mysmb64.exe
+assets/mine/                    future local Mine products
 ```
 
 ## Files And Names

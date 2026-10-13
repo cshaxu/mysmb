@@ -21,7 +21,7 @@ $env:PATH=(Split-Path -Parent $Compiler)+';'+(Join-Path $env:SystemRoot 'System3
 $env:TEMP=$compileTemp;$env:TMP=$compileTemp
 Push-Location $output
 try {
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foprobe.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I (Join-Path $repository 'src/lib') /I $runtimeInclude (Join-Path $repository 'app-mario/test/dos16_audio_device_probe.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foprobe.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I (Join-Path $repository 'src/lib') /I $runtimeInclude (Join-Path $repository 'test/app-mario/kvm/platform/dos16/dos16_audio_device_probe.c')
     if($LASTEXITCODE -ne 0){throw 'DOS audio probe compilation failed.'}
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foaudio.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I (Join-Path $repository 'src/lib') /I $runtimeInclude (Join-Path $repository 'src/app-mario/kvm/platform/dos16/dos_audio.c')
     if($LASTEXITCODE -ne 0){throw 'DOS audio renderer compilation failed.'}

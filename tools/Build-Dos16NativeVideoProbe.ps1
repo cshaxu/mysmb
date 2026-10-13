@@ -22,7 +22,7 @@ New-Item -ItemType Directory -Force -Path $compileTemp | Out-Null
 $env:TEMP=$compileTemp;$env:TMP=$compileTemp
 Push-Location $output
 try {
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fonative.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I $kvmInclude /I $dos16Include /I $runtimeInclude (Join-Path $repository 'app-mario/test/dos16_native_video_probe.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fonative.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I $kvmInclude /I $dos16Include /I $runtimeInclude (Join-Path $repository 'test/app-mario/kvm/platform/dos16/dos16_native_video_probe.c')
     if($LASTEXITCODE -ne 0){throw 'Native video probe compilation failed.'}
     . (Join-Path $PSScriptRoot 'Get-Dos16DeviceProbeMembers.ps1')
     $members=@(Get-Dos16DeviceProbeMembers)

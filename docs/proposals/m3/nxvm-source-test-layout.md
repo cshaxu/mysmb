@@ -539,3 +539,42 @@ S4 does not change production C behavior or import Mine. Native build trees
 are immediately reused as S4 active workspaces; obsolete S3-only probes and
 intermediates are removed after this tracked receipt. S5 still owns final
 combined host acceptance and complete active-build cleanup.
+
+
+## S4 P1 closure and automatic S5 admission
+
+S4 moves 661 test/reference files into mirrored owners. Core tests follow
+core and its area/blocks/enemy/fireball/oam/player/world owners; presentation,
+IO and host-composition checks follow kvm. Shared mechanism tests belong to
+test/lib. Eight reference projection files belong to test-only ppu/validate.
+Fixture includes are relative to their new owner; Python discovery finds the
+repository independently of depth. A dormant dispatcher source-contract check
+also receives its current core path and passes without assertion changes.
+
+All moved C function bodies and assertions match HEAD after excluding include
+directives. Production C/header files are unchanged from S3. Both configured
+widths pass 300/300 tests with no skip. The dependency/purity and documentation
+gates pass. Validation headers are absent from production include paths;
+reference projections remain absent from product linkage. No product refresh
+is required for these test/build-discovery-only changes; S5 publishes the final
+integrated delivery. Mine receives core/kvm documentation directories only.
+
+Current metadata has 10326 registry path references and 415 ledger references,
+all resolving. Other registry evidence/dispositions and historical snapshot
+hashes remain unchanged. The strict full-registry verifier still rejects an
+inherited historical source hash: at the accepted S2 baseline seven paths
+already mismatched and two former PIT paths were missing. These nine binding
+gaps are recorded in TODO and the existing remaining-certification proposal;
+path relocation is not a replacement ROM audit or a new certification claim.
+Historical mapping is 1992/1992; retained local evidence is 1991/1992 nodes and
+4260/4261 feasible controls (4342 raw, 81 infeasible). No counts are promoted.
+
+S5 is automatically admitted under the owner's standing instruction. Scope:
+final native build and real Console routes, qualified DOS/Win16 build inputs,
+actual DOS device probe, product identities and final topology/documentation
+review. Expected production changes: zero; expected tracked changes: fewer
+than ten governance/receiving documents unless a concrete integration fault
+requires a bounded repair. Existing native and DOS/Win16 object workspaces
+are reused only as current S5 inputs; all obsolete generated outputs are
+removed after the final tracked receipt. Seventeen unrelated resource
+deletions remain preserved and unstaged. Mine import is still not admitted.

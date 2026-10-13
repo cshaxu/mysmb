@@ -27,206 +27,206 @@
   },
   "sourceSnapshot": {
     "CMakeLists.txt": "1cb73eb0809838a427eeba41690eeef11d24915c72242118de49618cad19b200",
-    "app-mario/src/app/game_io.c": "e6fb0a01e420a20ea590c58f0f4729e2131606a61f21a691c45ec254021c27c9",
-    "app-mario/src/app/game_io.h": "a67e6ae2ea6d2f891344acb03de2786f8d124b027d7f271f1023702f11123234",
-    "app-mario/src/core/area.c": "7553e1175c8871237f9fc9c4ec6d13134a6008d35bd89a7182400f9e62520341",
-    "app-mario/src/core/area.h": "ae0e86079819b2e1bf3174c93d761eb68fa7e3374ff7cc560b15b6cf2db9062a",
-    "app-mario/src/core/area/area_data.c": "19a05068087f1fc8594089a8616ae9adf00497811ad62ad93bfffe2783f0dd18",
-    "app-mario/src/core/area/block_buffer.c": "496d53b2d83bd89256e9b2c3c1741716f3e8675c0b3e44073b489503d6a28a3a",
-    "app-mario/src/core/area/block_buffer.h": "2cccec7f50fe87d3a757e36cd6b33fb4d7db4354ba8e8dac84e5757a9d70195c",
-    "app-mario/src/core/area/block_metatile.c": "fba30c144fbf15cf56358d2821c7932526d09b5ad3ce58cee3dadae17583cf34",
-    "app-mario/src/core/audio.c": "ec9f3866d86a9f1552ee5a52f4d94fddc425398203e1adf9351abd97a397ced0",
-    "app-mario/src/core/audio.h": "32cec9dfa36220af7836e74f204665776fb5c1460f9c332426981a0ce513846d",
-    "app-mario/src/core/blocks/bump.c": "ece4d5f2983be24dc523ea2679c87383bba9b4111b9d47e9bcc03bb438196a79",
-    "app-mario/src/core/blocks/bump.h": "c6c5b171b4437161951366213e0b7b2f8002e764af82569e69ebe38fc83ee643",
-    "app-mario/src/core/blocks/chunks.c": "450da316f921313c051b757c2dbec2c9a8f6a0e67b1b8ef92139e2306dc36311",
-    "app-mario/src/core/blocks/chunks.h": "a00b18ec4ab716cab4947af51648593669114aa95a667fbba25247a3f0a74b6c",
-    "app-mario/src/core/blocks/head.c": "4fc2bca5d6e758320b76ae5f406cf1aef1049f5e9628b44968b1851269a108a6",
-    "app-mario/src/core/blocks/head.h": "48d44d9b0e94579a77cbef81b2734c907192a97ca18b010f903aa4bd0232ebb3",
-    "app-mario/src/core/blocks/lifetime.c": "075f76fa74b57e18a8d03b7ab216a30d1726ad71bc4004fcf0305b89ac555f48",
-    "app-mario/src/core/blocks/replacement.c": "87f31bed5c4cfbf357394e049251dcab615ae8a5dcdfe678e38f550530ce25d4",
-    "app-mario/src/core/boot.c": "fb048582b7fb0a1cc6737798ae83ee72350bcbc041adc6910aa59fd2de1473a5",
-    "app-mario/src/core/bridge.c": "3f6dcc4226b9dca8a8929d2013fc3722289109986aae58ec76f816d41105f369",
-    "app-mario/src/core/cannon.c": "fdd346045853a38bfebad9acaa577e02dcf6bd32b8609b162fe7e210575f285a",
-    "app-mario/src/core/coin.c": "a76ad8f95e2e91b72e84a53629ab6fa390dd13453e5dbd8b431fe3eb779c917f",
-    "app-mario/src/core/dispatcher.c": "4f9a0462116031018bf4dd30d86c5ce59f64f86f35f18552f84b16f7e1c8e1de",
-    "app-mario/src/core/dispatcher.h": "5455e6dd98a32e159ffb4738df5ad892c2c3e0a753d9efef6ce6453815644fc0",
-    "app-mario/src/core/endgame_objects.c": "8d6ed32c0f57118c4c863fc2927c9afdc888666551ea321f7ca81fb412e58d9e",
-    "app-mario/src/core/enemy/actor_slots.c": "948788551ea2dbad8e3e6360555203f7588934f50aec82d7d798be44905f945c",
-    "app-mario/src/core/enemy/actor_slots.h": "bfbeedee86e27ad0921d9f0383896363895ebae2142fca04c3be310bf25c28c3",
-    "app-mario/src/core/enemy/background.c": "ae4f0173d37152f1c7a5f30392062f7e54412d8909a9a643c02a6c87e3597e3e",
-    "app-mario/src/core/enemy/background.h": "6b0fcf329b026f49f2ab95537847cacc29e2505a3672f405edfc306f82d08dc6",
-    "app-mario/src/core/enemy/balance_platform.c": "0ff04f8cbb63af6c2bb16b856ef889385655d9f2cc70709406347ea70b4dac18",
-    "app-mario/src/core/enemy/bloober.c": "ec6f8823018ef5fc686314e2b5d9882b52c9f16db1fac318e957caac509bb28a",
-    "app-mario/src/core/enemy/bowser.c": "f2fd345d25dd735d79c60bc8f7e324dca5ccaf838fb94daf74a34902b1bde750",
-    "app-mario/src/core/enemy/bowser_flame.c": "e48d89aee828cb1e349b1f69b6cd6f651023e3960776d014228f1f958d416069",
-    "app-mario/src/core/enemy/bullet_bill.c": "34d67bc094ef2f43879e6bd785e28f8395637bbb0adc7f8c54585eb0b8db75f5",
-    "app-mario/src/core/enemy/core.c": "eab76bb9353d11d6b202e894973770e15ac8b4012275b03b4afe960e035d9c82",
-    "app-mario/src/core/enemy/core.h": "5b1e00fccd6379a267925a528e85e5f3b8d4f0c2691be9fac2d2e2828f394628",
-    "app-mario/src/core/enemy/dispatch_targets.c": "83a240859492c1569442ec7118b8af1bcdfa7c8b3505bb13840dff00b086c748",
-    "app-mario/src/core/enemy/distance.c": "57c98570f2a998793ec4540921fa16da1ce142dd4a99eafea910f2b3a1c1ee06",
-    "app-mario/src/core/enemy/distance.h": "1fb30e365bd78d749bcd02c7db9d7a219c48768872c23e431c4e15787ad963f4",
-    "app-mario/src/core/enemy/firebar.c": "cb630d4379c543f403cce3204f901b936a625f4cd4a7542a02f87daee2fd2da3",
-    "app-mario/src/core/enemy/firebar.h": "fa13070d700edb334a91da608cccb01027d34097551397c6255b293a9097f6e9",
-    "app-mario/src/core/enemy/firebar_children.c": "1acc407529bc0831bb1504d2418dc744c9b0ee869f3ae55d1d5015c423c28171",
-    "app-mario/src/core/enemy/fireworks.c": "624c2d72aeef4181891cc5064d71beef93594d571073dbf98a2fdde1ab774610",
-    "app-mario/src/core/enemy/flying_cheep.c": "cadf0763e090105a3045491c4808b83d0616ffa592a0241d41805d8d1f681573",
-    "app-mario/src/core/enemy/frenzy.c": "2b0a943d5980f15581f51f122f9d1260e5512021313b1a3986c576af898f0b3e",
-    "app-mario/src/core/enemy/frenzy.h": "3574ce34c64195fb8e3e130b28c12f10be83b9de0e4baa8591543e79c46c5a54",
-    "app-mario/src/core/enemy/green_paratroopa.c": "cf7a48fef47cc6eafe964a661d6c2e0d16f2fdda020aa466d938efd5fab2c84a",
-    "app-mario/src/core/enemy/group.c": "415a4e191803660dfee4f208542490462e22418629116961480ae3ffc0859b02",
-    "app-mario/src/core/enemy/group.h": "8a4966ea7af8cefe35c0ab8a7a23b135d791a92c7e72b5aef5abf48362d319ed",
-    "app-mario/src/core/enemy/hammer_bro.c": "fc283b2e77f7836d3b52e25b55895aac9bc83f891f6b172b1a41a4f9f3b62eb2",
-    "app-mario/src/core/enemy/init.c": "aba91e055187173669491d2fd4c999d66d8aa04c45021ad4f879fdba5de82410",
-    "app-mario/src/core/enemy/init.h": "cc84547a5036d51b3caa5f6bd0376fc8af164a69071f4b222f641c94f7c41b62",
-    "app-mario/src/core/enemy/init_targets.c": "712f38cb949d9829a9c8c2a4349083daca2462807e6dfd41d1aecd1113ef878c",
-    "app-mario/src/core/enemy/init_targets.h": "b2c0cb0d89f63492712ea2b1fe4e20dc9e80095e41ddcafd1bca4ead0512c5ab",
-    "app-mario/src/core/enemy/jump_terrain.c": "ba27dc815df2a88c871a3a39dfe50532353072f0d011a87d3294fe32213fb176",
-    "app-mario/src/core/enemy/lakitu.c": "9ad7ba14966f92c7a7f59511995d44a8fb7a6d449598dcac9edbb3d9af4f344f",
-    "app-mario/src/core/enemy/lifecycle.c": "3b0dd51fbeeb13dd8d7bb1a867c1baed65d41d014c0199998aabeae6bf84dbda",
-    "app-mario/src/core/enemy/loop.c": "4668bc773b81175f1cedca825da266af6da1e7353f3c7999d13742b5873d4c41",
-    "app-mario/src/core/enemy/loop.h": "4b77b60551972b71650de897dfd0ad41baedd00789eb65afd70056ca9e46c2ae",
-    "app-mario/src/core/enemy/movement.c": "95294eb720ecb89570efa96fcc505ba92d3ed9ff307b029abb46fbd500550292",
-    "app-mario/src/core/enemy/movement.h": "f5044da35f2ee22b30aace0610ca9848a9fc6382cd9523032504263cbd3689e9",
-    "app-mario/src/core/enemy/normal.c": "593d20a89f54845de17095397f50a33e47557d725ebc530cb05a51516080d1a7",
-    "app-mario/src/core/enemy/paratroopa.c": "f59918ec98a6b28a3a179bb351fea3f00e53c7c486f9d226c1bc658ee637fa8e",
-    "app-mario/src/core/enemy/piranha.c": "e4c5aaaf118d7e1a26b6dec5fc3f4578b1d10d69a35e41e40fe2407388e0ea33",
-    "app-mario/src/core/enemy/platform.c": "1b46f69f4fce12f5aaf4d97ea22ff234b3a11669b11e528122e36c2acb4ec6f9",
-    "app-mario/src/core/enemy/platform.h": "7768279e0692f56333ad676b8fec27596804b17c7a3bb9a9845a4b86331197c5",
-    "app-mario/src/core/enemy/platform_callers.c": "4c23bc0f1d79ec3aaf41e81dc8f41a582f46f7839cbb59872fada63ca3fdef57",
-    "app-mario/src/core/enemy/platform_collision.c": "99a60517f18db1473b32f6ddc5c9e1ed47486237c21e5a0417d9a7163f2be009",
-    "app-mario/src/core/enemy/platform_position.c": "96f1ac4cdac51d29c953a5f87667fcb630ac169573b8682e319c4f634f59320c",
-    "app-mario/src/core/enemy/podoboo.c": "9842079ae5877b55f3afe05ecf08eb272c6e55d2fbf94adcd3af1421d3af49a2",
-    "app-mario/src/core/enemy/side_collision.c": "48d8f93944dec08450adaab7ea882d12fc5f0bdd49c2aaf9b193dc0db1b63e8c",
-    "app-mario/src/core/enemy/special_callers.c": "cc61eb34fc6e7b32627a31afa453b3a092964ffd724a3f90ca24421a2e51f7fd",
-    "app-mario/src/core/enemy/star_flag.c": "9729a7280092c1fdc335bb441fab40e08c84fc8439e2958d03b7f244d69f7965",
-    "app-mario/src/core/enemy/stream.c": "681ad309bd0202e23483807d9e8d483f3eecf2d8d4b8a85b21f0c449f2907124",
-    "app-mario/src/core/enemy/stream.h": "27e45b204635a48122b45439bbb8c7e6849fde3dcea9624b1dbf933c91053758",
-    "app-mario/src/core/enemy/swimming_cheep.c": "d47ab7a34cdb34d8c45482aaba1da96538ea8cf690876caea099d1c9756f8a72",
-    "app-mario/src/core/enemy/x_counter.c": "137c5cd3757b81b21364297c5c558f5bb0f571d68e777212ee2d514c88122ca7",
-    "app-mario/src/core/enemy/x_counter.h": "14641562edd7f5608f192a0534d267011c953116524e4fe7b71e7723b53d74dd",
-    "app-mario/src/core/enemy_bounds.c": "215f4741dbcc62aa429a7e57de0785f7baa087094467d47c8dba3b66525f46bf",
-    "app-mario/src/core/engine.c": "6d2724f19ac2b402818a06cd8c3a07138d6a08610192b992ec1b967133161741",
-    "app-mario/src/core/engine_slots.c": "63a1b07d4bf303d4b882d191640e9c625c2141abdf22629d15a7fc6235b72616",
-    "app-mario/src/core/engine_tail.c": "b8ab9ee666ddb6b4b957bffc7e3d47dc3a6b504995a01eb6379e597bd71ff1f6",
-    "app-mario/src/core/entry.c": "daf54de414ef2fd4d2d8b8371b9fd46ed31ba9e3bb897db80fca38a338dabdd8",
-    "app-mario/src/core/fireball/bubble.c": "71f306c382470dac3840be0a764d0a53481d563605596b9e818def067bcc2ebe",
-    "app-mario/src/core/fireball/fireball.h": "d8ca18ea49b9236d892989a3947981eeaff2f8cf9677d8cc90b460c587b772f3",
-    "app-mario/src/core/fireball/fireball_core.c": "1920acfedd80ec15d9f2fd664584db906cf98372746a7e5d112a9bd4f9b43af6",
-    "app-mario/src/core/fireball/fireball_spawn.c": "e020d3b5ee6ee11e01bebf1ccc47d94ad3d75b8f78c273d586f99947cc4f6f91",
-    "app-mario/src/core/frame_root.c": "19b44c2d1e8d34ec0af2361b3ee485fc6ec16589ab1df02497d49ba4620a6503",
-    "app-mario/src/core/frame_root.h": "5fb1cad576ee419c2b65b7988d9523bedc839290b3146ef5e069544f7c395cd6",
-    "app-mario/src/core/game.c": "d8e1293c8579fea9a1d276940520c6aed37807c1a7e6ff1507db603d5b788fb3",
-    "app-mario/src/core/game.h": "9ec48409de22e7d50363ffeb8d373bfbb6faf2438ad875b869d496d838b1ac3f",
-    "app-mario/src/core/hammer.c": "bd6e53b3d344fdd7678dedff181b8906bbdcd29e097e649d76c7e6542c169b75",
-    "app-mario/src/core/jumpspring.c": "493a4eefdbae7a5491fe1121b35f4b85b9ed48332bd66be42edb77419fad6de8",
-    "app-mario/src/core/misc.c": "b9eda422b39df21469375bdd2291668580d0cbf1e13085a30f15c791b1f3a6cd",
-    "app-mario/src/core/oam/block_gfx.c": "0f8b90c86a9c17abfe041b00fb95fc713b82002de387fb0872abebb62b410af4",
-    "app-mario/src/core/oam/block_offscreen.c": "6adcc84a2f9bde44f346278018afded5a5502fa41bfde09f11f08ed1120b61ba",
-    "app-mario/src/core/oam/bloober_gfx.c": "81d6cab9c7b53becbd3825a4dbb2fad356bce5c20fad1535d9f0e83db26c2fa5",
-    "app-mario/src/core/oam/bowser_flame_gfx.c": "50060550ea57c98438e6b7f99e8c5143b17a72f36c8108af5f6a6c6b3bbd5110",
-    "app-mario/src/core/oam/bowser_gfx.c": "be1c4f356b79522c3d40d753d1fc36c1ca4b3569c1bd165baad3ac82a4ab2c88",
-    "app-mario/src/core/oam/bullet_bill_gfx.c": "b4c6f07f2b0dc2626e917bdc20dd5686419efe7827d7b05eb6c5de132cc0833d",
-    "app-mario/src/core/oam/cheep_gfx.c": "a262d27d38b1ea6320da8d6f437ea6f68f086b2ed4bc94842c4a37c46f5d64d2",
-    "app-mario/src/core/oam/enemy_offscreen.c": "89263073f7a9f38d6ea3a63448c7568b91bde01497446e2572bcb1ddb340954d",
-    "app-mario/src/core/oam/enemy_offscreen_tail.h": "7f0ad13b3d62cc5712270e96363babb172a8ca4a81e5d74c41badab50e216189",
-    "app-mario/src/core/oam/fireball_gfx.c": "70f134d2df68428d6d6815cbf5464710ab91de12ced443b48226d902e12aecf4",
-    "app-mario/src/core/oam/firebar_gfx.c": "3b8eee43444f4990a01e2c83840085061a0e6abc1165152f081fad90818b4d65",
-    "app-mario/src/core/oam/fireworks_gfx.c": "e5c02319f90b41d3301a761205ac8e27672a49acc18943cca01f12290596e721",
-    "app-mario/src/core/oam/flagpole_gfx.c": "abe8c01b5148746b599e629b3fd4c3ee5a9915f24ec4bf1d42293905e445d2f1",
-    "app-mario/src/core/oam/goomba_gfx.c": "a4c0a7153865edcc59562c46e8e22db7e210ee41812e0928b2d5bd4530960fbe",
-    "app-mario/src/core/oam/hammer_bro_gfx.c": "e2a8e492c14cd33abac30350ab2cbc9cc1aeb372698f603dc3e84b4f0c900ac5",
-    "app-mario/src/core/oam/hammer_gfx.c": "5c455ac2e41c512617b9474dc51496260aef4dca5340151f0f28436a33c1abe1",
-    "app-mario/src/core/oam/normal_enemy_gfx.c": "eeb52a3eca116583e460558266dd0b8832904a2d0b0bcf279951726a73ae85e0",
-    "app-mario/src/core/oam/oam.h": "4be5b9bed2ce1ff121b7c5e07fe58269c1396377690b2b0e081e2b439617c96e",
-    "app-mario/src/core/oam/object_position.c": "eab6a75a833bc5d6911f2ac8c209d94afcef028c797a8d6f6b4f614e3de4803b",
-    "app-mario/src/core/oam/piranha_gfx.c": "466afdcd3f206f724fc2f0aba1e3534f9b195171b374960ff55c63c27611657f",
-    "app-mario/src/core/oam/player_gfx.c": "59ff494f3afcb9cbf4677c07bb86f05a2c050ad7aa9bc8656da4a945cbc0ccf4",
-    "app-mario/src/core/oam/podoboo_gfx.c": "7aafde047804a3eb15e272c1caf9bed72c7549f8568b36a3ab6e3bd095d7cda5",
-    "app-mario/src/core/oam/power_up_gfx.c": "100dbfcad085f40d9da3ecee18659ff2dbe4f2cc876dcb61be1588c98628a8ba",
-    "app-mario/src/core/oam/small_platform_gfx.c": "5176b592e2e4ff0c8e49d4ade57e006afb246d4c386df988715ba1db34795900",
-    "app-mario/src/core/oam/spiny_gfx.c": "53ece50721f37b8d87ff59c9846b2335d590f85b046651d5db775049866258d9",
-    "app-mario/src/core/oam/sprite_draw.c": "e2768ec904b3a440621e3ebd2c164324b1e31ac69066e7b0e5303c00718c1db9",
-    "app-mario/src/core/oam/sprite_dump.c": "36bc99f5eb539b0b6afb6168a246ff57660ecc466aebc24081f5e4cdb5d00c25",
-    "app-mario/src/core/oam/sprite_row.c": "26457e400e3aa0fc71dbcea59ab41c016046121293d42fe8232c2ba5a4795f0d",
-    "app-mario/src/core/oam/sprite_stacker.c": "52f8cbdf399491eb32cccbcd802c2c007cbbfb89a9334409c2c5d4d14d82a9cb",
-    "app-mario/src/core/oam/vine_gfx.c": "781b5d415fd32956cd8a03948b02a06053d27f3b598041a97a684cc11737a95a",
-    "app-mario/src/core/objects.c": "53b7b2a3128ab958c2f7656acd15d46f9db1a58a4d6fce7b05ef5384a8f658bc",
-    "app-mario/src/core/objects.h": "daa0ae9813432f2acb59d886dde5bccd6895805ebd3c97e5795fd342e6b667b2",
-    "app-mario/src/core/player.c": "079d7b8d890d6be8ffe320e1504b6abd5eea88835e53ba3fb918f19c555c824d",
-    "app-mario/src/core/player.h": "01ec6e69c51dba74f2ad91bd759f476bca69a54a34897504bda4fa16366ecfa3",
-    "app-mario/src/core/player/climbing.c": "a2a1b3756635e5444491af691b64293d198b5b0961d8dd557c805ad4e777d67d",
-    "app-mario/src/core/player/impede.c": "84dff0af6fe14a2d977b7811ab36b6beea479e49ae9a59a66ca9973b31209b52",
-    "app-mario/src/core/player/pipe_entry.c": "b9af6bdb30a92c05b58be146dfec1f6dff7233c9c9bc12f5098568d436936d91",
-    "app-mario/src/core/player/terrain.c": "6ebdf8013d6e99b17a3058ebb8137f9bae4885b53f252ca7d34ff11b8e65ab10",
-    "app-mario/src/core/player/terrain_children.h": "9668712a3c84f862d223df7b075da5daeccca744208c90632498f02dff96ffd3",
-    "app-mario/src/core/player/terrain_metatiles.c": "5024e5c3fe3ff02c41c08d047e5e4c0b71a9e8eb064c39e869f2486f7745d08b",
-    "app-mario/src/core/player_control.c": "17f4ffe478624fca7a4a914825a28b0f0872e308b4a6064308e0f18563a96e8c",
-    "app-mario/src/core/player_end_level.c": "794a32428c7cd2fccf216d8059e5c3215865e5f78a58abf05b2a81033f4f9a42",
-    "app-mario/src/core/player_modes.c": "36732edb32d6982e055ea7812864e22ebe1f687d12219deecb103ccd8ccb22fd",
-    "app-mario/src/core/player_movement.c": "4daa60e94fe8bb448111e75d8266d74b21fea745b8aa894c3d2800fab68d8e5f",
-    "app-mario/src/core/player_transition.c": "fb212072922d0c8270125cb358546c5d4d7eba8f617721225231f990ed4a6ac0",
-    "app-mario/src/core/power_up.c": "5f2195774670393b26b70f0b07ee42a933bcce081e356fe25d1da0b646c5f809",
-    "app-mario/src/core/power_up_init.c": "2cedf9ff558c0bc83c59d96b6ee3697ef1622cff55dd688c42e7aa12c45b66cf",
-    "app-mario/src/core/score.c": "fb4eda17231d6328574ba4dc231e782317f6fe075d077f3f4295c59d58549837",
-    "app-mario/src/core/score.h": "a5951559c136e0399fc48a7ae86ce20e2703d5ea5034c7fc5a445c1f64601f14",
-    "app-mario/src/core/scroll.c": "95c470d5ea647db65477c4783c9641be664d47cf58dd798fce3b709bd04732c7",
-    "app-mario/src/core/status.c": "718c3ac0843a24d1e6dfb5dc5ab11119cd8b96749f9bf64aad9a39afb57f247e",
-    "app-mario/src/core/status.h": "5d6081a50edd787946458c76ed070e07dbaafeea14a290f98809b55d62bd7e7c",
-    "app-mario/src/core/terminal_modes.c": "f0b26be0b2f222f8b6f676a72b71cc49923ea85ed33de3128295aba8948c8599",
-    "app-mario/src/core/terminal_modes.h": "2b05b806eb769ae708946cdb193cf58f816a22d8932def826f95862c233064ff",
-    "app-mario/src/core/timer.c": "93faefc9fec2eb2ab34d31372b1d43b8536e2d279319b261c752f63fe3271fdc",
-    "app-mario/src/core/title_modes.c": "ffd9d8c7001d38ca2a8fc81a5b51ff001ac65491f83b39ea8df750fc21d985ef",
-    "app-mario/src/core/title_modes.h": "2643c0ec6b9d02c2b67d0f068849a4d68b6f0ef1d92bcc314572fd35aa69da3a",
-    "app-mario/src/core/vine.c": "52600a809c953df967efd12b778faa3f1f394ba42d1d4c9fb9e5119cf1a80122",
-    "app-mario/src/core/whirlpool.c": "2b8b2d647cae4dbf20a74b02d71cefcf9202fbb692c5b5ee5f1e6cb5f0755e88",
-    "app-mario/src/core/world/block_buffer.c": "87cb9d2ca04297926b1de4d8757353628250445ab28d3d7c5e020aac4d6d52b6",
-    "app-mario/src/core/world/bounding_box.c": "bc3c9e23a7d2788bfe1f6110d39628a1f0076484a8f1f9589db061f5a386f937",
-    "app-mario/src/core/world/collision.c": "4efe6d37295957823b27bc5da45a657a021ea145dbdfa36a4afc38b3daa3f565",
-    "app-mario/src/core/world/enemy_collision.c": "c06189ef9acae9fff8d65bf5cbd8998d30aaba3cd58bf58c6be2ea71e30b765c",
-    "app-mario/src/core/world/fireball_enemy.c": "cba1933ab0c969f121f9afe6eae63c7f1a730a37891a60e283feaef2a7afdaf9",
-    "app-mario/src/core/world/fireball_hit.c": "786ded6d984d25ac9028c354df0cae16375802a05aac87a1a9032dd1d4e49275",
-    "app-mario/src/core/world/geometry.c": "aa21ff6bc767f59227f0d4f3dbe2ab9691906b03cc84d7ecc829c7c124c62cdb",
-    "app-mario/src/core/world/gravity.c": "669241d13e00babeeb902f1cd63049ff33e74f9a529f0cc0420026b590ca0c07",
-    "app-mario/src/core/world/hammer_collision.c": "831fc6ed6506afaf99c57744511eeac2773076ca56aab9c0ad353c61b460d7be",
-    "app-mario/src/core/world/metatiles.c": "3f365a618d405963d88e505a644e8e41bed5d7f9783195b369f5956da13078bb",
-    "app-mario/src/core/world/movement.c": "e657e8149a368e2f3df101af984d1fec66024872f6ea7e7dd9a1c859faef220b",
-    "app-mario/src/core/world/player_enemy_collision.c": "401dc837e37b5a805a4707a9bbbea05fee2dc6216511ba25c160d2de8bebacd5",
-    "app-mario/src/core/world/powerup_collision.c": "6743aa7dda3fce06a4fea65b8b3d17946352203215f22b21e4cb558426796b5b",
-    "app-mario/src/core/world/world.h": "90a2df7045c716c8f47bb94d130860b7102a68c895f83095f7a30a9a7c992ea1",
-    "app-mario/src/io/audio.h": "19417ddc33f9fcff94bd423cbb296dcdad4db8ff3ddbbbeda40c76960c794597",
-    "app-mario/src/io/control.c": "5983bc5f81a97141efd6f312cf314f16bf092cbd79dbcf9e5ac4c133b400992b",
-    "app-mario/src/io/control.h": "b24eb5585163abcf48376ff63b163d7e6c62b7893938ff6dbb968052fe55e95c",
-    "app-mario/src/io/input.h": "8d163a533b3ca8039537f14de6746756452d97b2a8c6c6298e04737273ae0769",
-    "app-mario/src/io/pacing.c": "68e43bcb7d8d743b17e5ffe726f71d6fc88feb60cc0683cb8cce892e056dd6d6",
-    "app-mario/src/io/pacing.h": "c664b4def13afb086c89a3a30f7a31e689d9e5f2375e9457341619d33ad80cd1",
-    "app-mario/src/io/scale.c": "075c4935addae96b08f42da932669657f1ef17501f09b6cb1d2d6010a7569110",
-    "app-mario/src/io/scale.h": "b0d2aac0fbd870619d47ceb9662811733977a8736df34361a98eea389110a9f9",
-    "app-mario/src/platform/dos16/devices.c": "a4a4a071a183977be9d581d551917f4c982cf75750cbc4add6e597472b6abf12",
-    "app-mario/src/platform/dos16/devices.h": "b95f6c7da39bfc39433554738cc1d0ec63b796f47ae591a1771d1ad4b9ca9811",
-    "app-mario/src/platform/dos16/dos16_root.c": "ae4f2e824891ef918428b814bc46f3444580c8d5694e8808a4c8d97feb36ea7b",
-    "app-mario/src/platform/dos16/dos16_root.h": "9c4cffa743da51cd1c3faefe69bab95c048c07c4574504a4604ef1625a7a86e3",
-    "app-mario/src/platform/dos16/keyboard.c": "70e868cc211cf7ceaafd8f3c88351e02783775ce0158a80bad515315a8d3baa1",
-    "app-mario/src/platform/dos16/keyboard.h": "fb879d4c0a9ad3925431ad20d5c4f6b7d34855b310d3043abc86d353d0bbde48",
-    "app-mario/src/platform/dos16/main_dos16.c": "41f626c385b3759a13b5da2288b13a4bb675e5332819997923c0bbdd5eb20ddc",
-    "app-mario/src/platform/dos16/pit_clock.c": "3c3f147817baa53c2aa3d7f8ff04f96ef1242b08e31848e2d458b74c79b66e85",
-    "app-mario/src/platform/dos16/pit_clock.h": "84ebc13bdf4696094c2f9183eaf52a3e1eb9c1755ad6f5cae1e9ae7dbaa48212",
-    "app-mario/src/platform/win32/audio_output.c": "4bb62f8a2749e27d9fde46295f8022865257aa13d7bc432353e383575f88e60b",
-    "app-mario/src/platform/win32/audio_output.h": "83c250acbe030b25c5b8177e2dfd73528573bdebac3baf506ec204d9a5a42481",
-    "app-mario/src/platform/win32/audio_renderer.c": "7188b862541450dd3ecfcf247198ede056bdafbc5af6de9b8e2eca069a69a70e",
-    "app-mario/src/platform/win32/audio_renderer.h": "b0d4e1bf4f241c4437a46df165a958ea9df74101a8a5002f4b43a2d94f4224d8",
-    "app-mario/src/platform/win32/focus_pause.c": "3145d6c67c2330a2992ae22da3b85b3849a23dadd0e93a65cdc6904f73d3689d",
-    "app-mario/src/platform/win32/focus_pause.h": "b9b565122cb56069057547c6f7c0f4755d9527f12dd76447275c3a372fde1fe5",
-    "app-mario/src/platform/win32/main_win32.c": "b8b4b79cd31cbf95dfdb86f3a9ebab451140dd52fa94b415947ba33ef3f1c1c9",
-    "app-mario/src/ppu/frame.c": "fa1102b19a19a189e8ff342b0bbd2a793f644ea6a049dbe0df942ce050cb3da9",
-    "app-mario/src/ppu/frame.h": "78a2d123b0f50b1ba334d175c181c7327104e49c7149bc637166e1c478b218e1",
-    "app-mario/src/ppu/state.c": "106c9302f03898128127122775b578bac507ce59d1dff5839a132c6a2b831d5e",
-    "app-mario/src/ppu/state.h": "e476fe623d2b9221dba90cfdb76a28fa0f1af9b1a383d4a442ccf2ad00dc5ad5",
-    "app-mario/src/validate/frame_snapshot.c": "a8ae0b5ac2fa2cf9c17f3c1583ec26f2313d4e62cef0eb515d7bdacb4e26f014",
-    "app-mario/src/validate/frame_snapshot.h": "c8250a5405adc439b0942589e68b800f506b763d662c14e645a30af4a12d9fe4",
-    "app-mario/src/validate/render.c": "ee804479bf11009b3d979c2cf8a3e7db15c6aefa2fd839b84a06f4976034f496",
-    "app-mario/src/validate/render.h": "72138f7333dc2bef221b5bbfe539a3f98b65498c131c6f1c558f9008ef51c940",
-    "app-mario/CMakeLists.txt": "63bff7220a3323cc584203d2069cffa2b1bbea93a293f50cad147b7974bfd6f8"
+    "src/app-mario/kvm/app/game_io.c": "e6fb0a01e420a20ea590c58f0f4729e2131606a61f21a691c45ec254021c27c9",
+    "src/app-mario/kvm/app/game_io.h": "a67e6ae2ea6d2f891344acb03de2786f8d124b027d7f271f1023702f11123234",
+    "src/app-mario/core/area.c": "7553e1175c8871237f9fc9c4ec6d13134a6008d35bd89a7182400f9e62520341",
+    "src/app-mario/core/area.h": "ae0e86079819b2e1bf3174c93d761eb68fa7e3374ff7cc560b15b6cf2db9062a",
+    "src/app-mario/core/area/area_data.c": "19a05068087f1fc8594089a8616ae9adf00497811ad62ad93bfffe2783f0dd18",
+    "src/app-mario/core/area/block_buffer.c": "496d53b2d83bd89256e9b2c3c1741716f3e8675c0b3e44073b489503d6a28a3a",
+    "src/app-mario/core/area/block_buffer.h": "2cccec7f50fe87d3a757e36cd6b33fb4d7db4354ba8e8dac84e5757a9d70195c",
+    "src/app-mario/core/area/block_metatile.c": "fba30c144fbf15cf56358d2821c7932526d09b5ad3ce58cee3dadae17583cf34",
+    "src/app-mario/core/audio.c": "ec9f3866d86a9f1552ee5a52f4d94fddc425398203e1adf9351abd97a397ced0",
+    "src/app-mario/core/audio.h": "32cec9dfa36220af7836e74f204665776fb5c1460f9c332426981a0ce513846d",
+    "src/app-mario/core/blocks/bump.c": "ece4d5f2983be24dc523ea2679c87383bba9b4111b9d47e9bcc03bb438196a79",
+    "src/app-mario/core/blocks/bump.h": "c6c5b171b4437161951366213e0b7b2f8002e764af82569e69ebe38fc83ee643",
+    "src/app-mario/core/blocks/chunks.c": "450da316f921313c051b757c2dbec2c9a8f6a0e67b1b8ef92139e2306dc36311",
+    "src/app-mario/core/blocks/chunks.h": "a00b18ec4ab716cab4947af51648593669114aa95a667fbba25247a3f0a74b6c",
+    "src/app-mario/core/blocks/head.c": "4fc2bca5d6e758320b76ae5f406cf1aef1049f5e9628b44968b1851269a108a6",
+    "src/app-mario/core/blocks/head.h": "48d44d9b0e94579a77cbef81b2734c907192a97ca18b010f903aa4bd0232ebb3",
+    "src/app-mario/core/blocks/lifetime.c": "075f76fa74b57e18a8d03b7ab216a30d1726ad71bc4004fcf0305b89ac555f48",
+    "src/app-mario/core/blocks/replacement.c": "87f31bed5c4cfbf357394e049251dcab615ae8a5dcdfe678e38f550530ce25d4",
+    "src/app-mario/core/boot.c": "fb048582b7fb0a1cc6737798ae83ee72350bcbc041adc6910aa59fd2de1473a5",
+    "src/app-mario/core/bridge.c": "3f6dcc4226b9dca8a8929d2013fc3722289109986aae58ec76f816d41105f369",
+    "src/app-mario/core/cannon.c": "fdd346045853a38bfebad9acaa577e02dcf6bd32b8609b162fe7e210575f285a",
+    "src/app-mario/core/coin.c": "a76ad8f95e2e91b72e84a53629ab6fa390dd13453e5dbd8b431fe3eb779c917f",
+    "src/app-mario/core/dispatcher.c": "4f9a0462116031018bf4dd30d86c5ce59f64f86f35f18552f84b16f7e1c8e1de",
+    "src/app-mario/core/dispatcher.h": "5455e6dd98a32e159ffb4738df5ad892c2c3e0a753d9efef6ce6453815644fc0",
+    "src/app-mario/core/endgame_objects.c": "8d6ed32c0f57118c4c863fc2927c9afdc888666551ea321f7ca81fb412e58d9e",
+    "src/app-mario/core/enemy/actor_slots.c": "948788551ea2dbad8e3e6360555203f7588934f50aec82d7d798be44905f945c",
+    "src/app-mario/core/enemy/actor_slots.h": "bfbeedee86e27ad0921d9f0383896363895ebae2142fca04c3be310bf25c28c3",
+    "src/app-mario/core/enemy/background.c": "ae4f0173d37152f1c7a5f30392062f7e54412d8909a9a643c02a6c87e3597e3e",
+    "src/app-mario/core/enemy/background.h": "6b0fcf329b026f49f2ab95537847cacc29e2505a3672f405edfc306f82d08dc6",
+    "src/app-mario/core/enemy/balance_platform.c": "0ff04f8cbb63af6c2bb16b856ef889385655d9f2cc70709406347ea70b4dac18",
+    "src/app-mario/core/enemy/bloober.c": "ec6f8823018ef5fc686314e2b5d9882b52c9f16db1fac318e957caac509bb28a",
+    "src/app-mario/core/enemy/bowser.c": "f2fd345d25dd735d79c60bc8f7e324dca5ccaf838fb94daf74a34902b1bde750",
+    "src/app-mario/core/enemy/bowser_flame.c": "e48d89aee828cb1e349b1f69b6cd6f651023e3960776d014228f1f958d416069",
+    "src/app-mario/core/enemy/bullet_bill.c": "34d67bc094ef2f43879e6bd785e28f8395637bbb0adc7f8c54585eb0b8db75f5",
+    "src/app-mario/core/enemy/core.c": "eab76bb9353d11d6b202e894973770e15ac8b4012275b03b4afe960e035d9c82",
+    "src/app-mario/core/enemy/core.h": "5b1e00fccd6379a267925a528e85e5f3b8d4f0c2691be9fac2d2e2828f394628",
+    "src/app-mario/core/enemy/dispatch_targets.c": "83a240859492c1569442ec7118b8af1bcdfa7c8b3505bb13840dff00b086c748",
+    "src/app-mario/core/enemy/distance.c": "57c98570f2a998793ec4540921fa16da1ce142dd4a99eafea910f2b3a1c1ee06",
+    "src/app-mario/core/enemy/distance.h": "1fb30e365bd78d749bcd02c7db9d7a219c48768872c23e431c4e15787ad963f4",
+    "src/app-mario/core/enemy/firebar.c": "cb630d4379c543f403cce3204f901b936a625f4cd4a7542a02f87daee2fd2da3",
+    "src/app-mario/core/enemy/firebar.h": "fa13070d700edb334a91da608cccb01027d34097551397c6255b293a9097f6e9",
+    "src/app-mario/core/enemy/firebar_children.c": "1acc407529bc0831bb1504d2418dc744c9b0ee869f3ae55d1d5015c423c28171",
+    "src/app-mario/core/enemy/fireworks.c": "624c2d72aeef4181891cc5064d71beef93594d571073dbf98a2fdde1ab774610",
+    "src/app-mario/core/enemy/flying_cheep.c": "cadf0763e090105a3045491c4808b83d0616ffa592a0241d41805d8d1f681573",
+    "src/app-mario/core/enemy/frenzy.c": "2b0a943d5980f15581f51f122f9d1260e5512021313b1a3986c576af898f0b3e",
+    "src/app-mario/core/enemy/frenzy.h": "3574ce34c64195fb8e3e130b28c12f10be83b9de0e4baa8591543e79c46c5a54",
+    "src/app-mario/core/enemy/green_paratroopa.c": "cf7a48fef47cc6eafe964a661d6c2e0d16f2fdda020aa466d938efd5fab2c84a",
+    "src/app-mario/core/enemy/group.c": "415a4e191803660dfee4f208542490462e22418629116961480ae3ffc0859b02",
+    "src/app-mario/core/enemy/group.h": "8a4966ea7af8cefe35c0ab8a7a23b135d791a92c7e72b5aef5abf48362d319ed",
+    "src/app-mario/core/enemy/hammer_bro.c": "fc283b2e77f7836d3b52e25b55895aac9bc83f891f6b172b1a41a4f9f3b62eb2",
+    "src/app-mario/core/enemy/init.c": "aba91e055187173669491d2fd4c999d66d8aa04c45021ad4f879fdba5de82410",
+    "src/app-mario/core/enemy/init.h": "cc84547a5036d51b3caa5f6bd0376fc8af164a69071f4b222f641c94f7c41b62",
+    "src/app-mario/core/enemy/init_targets.c": "712f38cb949d9829a9c8c2a4349083daca2462807e6dfd41d1aecd1113ef878c",
+    "src/app-mario/core/enemy/init_targets.h": "b2c0cb0d89f63492712ea2b1fe4e20dc9e80095e41ddcafd1bca4ead0512c5ab",
+    "src/app-mario/core/enemy/jump_terrain.c": "ba27dc815df2a88c871a3a39dfe50532353072f0d011a87d3294fe32213fb176",
+    "src/app-mario/core/enemy/lakitu.c": "9ad7ba14966f92c7a7f59511995d44a8fb7a6d449598dcac9edbb3d9af4f344f",
+    "src/app-mario/core/enemy/lifecycle.c": "3b0dd51fbeeb13dd8d7bb1a867c1baed65d41d014c0199998aabeae6bf84dbda",
+    "src/app-mario/core/enemy/loop.c": "4668bc773b81175f1cedca825da266af6da1e7353f3c7999d13742b5873d4c41",
+    "src/app-mario/core/enemy/loop.h": "4b77b60551972b71650de897dfd0ad41baedd00789eb65afd70056ca9e46c2ae",
+    "src/app-mario/core/enemy/movement.c": "95294eb720ecb89570efa96fcc505ba92d3ed9ff307b029abb46fbd500550292",
+    "src/app-mario/core/enemy/movement.h": "f5044da35f2ee22b30aace0610ca9848a9fc6382cd9523032504263cbd3689e9",
+    "src/app-mario/core/enemy/normal.c": "593d20a89f54845de17095397f50a33e47557d725ebc530cb05a51516080d1a7",
+    "src/app-mario/core/enemy/paratroopa.c": "f59918ec98a6b28a3a179bb351fea3f00e53c7c486f9d226c1bc658ee637fa8e",
+    "src/app-mario/core/enemy/piranha.c": "e4c5aaaf118d7e1a26b6dec5fc3f4578b1d10d69a35e41e40fe2407388e0ea33",
+    "src/app-mario/core/enemy/platform.c": "1b46f69f4fce12f5aaf4d97ea22ff234b3a11669b11e528122e36c2acb4ec6f9",
+    "src/app-mario/core/enemy/platform.h": "7768279e0692f56333ad676b8fec27596804b17c7a3bb9a9845a4b86331197c5",
+    "src/app-mario/core/enemy/platform_callers.c": "4c23bc0f1d79ec3aaf41e81dc8f41a582f46f7839cbb59872fada63ca3fdef57",
+    "src/app-mario/core/enemy/platform_collision.c": "99a60517f18db1473b32f6ddc5c9e1ed47486237c21e5a0417d9a7163f2be009",
+    "src/app-mario/core/enemy/platform_position.c": "96f1ac4cdac51d29c953a5f87667fcb630ac169573b8682e319c4f634f59320c",
+    "src/app-mario/core/enemy/podoboo.c": "9842079ae5877b55f3afe05ecf08eb272c6e55d2fbf94adcd3af1421d3af49a2",
+    "src/app-mario/core/enemy/side_collision.c": "48d8f93944dec08450adaab7ea882d12fc5f0bdd49c2aaf9b193dc0db1b63e8c",
+    "src/app-mario/core/enemy/special_callers.c": "cc61eb34fc6e7b32627a31afa453b3a092964ffd724a3f90ca24421a2e51f7fd",
+    "src/app-mario/core/enemy/star_flag.c": "9729a7280092c1fdc335bb441fab40e08c84fc8439e2958d03b7f244d69f7965",
+    "src/app-mario/core/enemy/stream.c": "681ad309bd0202e23483807d9e8d483f3eecf2d8d4b8a85b21f0c449f2907124",
+    "src/app-mario/core/enemy/stream.h": "27e45b204635a48122b45439bbb8c7e6849fde3dcea9624b1dbf933c91053758",
+    "src/app-mario/core/enemy/swimming_cheep.c": "d47ab7a34cdb34d8c45482aaba1da96538ea8cf690876caea099d1c9756f8a72",
+    "src/app-mario/core/enemy/x_counter.c": "137c5cd3757b81b21364297c5c558f5bb0f571d68e777212ee2d514c88122ca7",
+    "src/app-mario/core/enemy/x_counter.h": "14641562edd7f5608f192a0534d267011c953116524e4fe7b71e7723b53d74dd",
+    "src/app-mario/core/enemy_bounds.c": "215f4741dbcc62aa429a7e57de0785f7baa087094467d47c8dba3b66525f46bf",
+    "src/app-mario/core/engine.c": "6d2724f19ac2b402818a06cd8c3a07138d6a08610192b992ec1b967133161741",
+    "src/app-mario/core/engine_slots.c": "63a1b07d4bf303d4b882d191640e9c625c2141abdf22629d15a7fc6235b72616",
+    "src/app-mario/core/engine_tail.c": "b8ab9ee666ddb6b4b957bffc7e3d47dc3a6b504995a01eb6379e597bd71ff1f6",
+    "src/app-mario/core/entry.c": "daf54de414ef2fd4d2d8b8371b9fd46ed31ba9e3bb897db80fca38a338dabdd8",
+    "src/app-mario/core/fireball/bubble.c": "71f306c382470dac3840be0a764d0a53481d563605596b9e818def067bcc2ebe",
+    "src/app-mario/core/fireball/fireball.h": "d8ca18ea49b9236d892989a3947981eeaff2f8cf9677d8cc90b460c587b772f3",
+    "src/app-mario/core/fireball/fireball_core.c": "1920acfedd80ec15d9f2fd664584db906cf98372746a7e5d112a9bd4f9b43af6",
+    "src/app-mario/core/fireball/fireball_spawn.c": "e020d3b5ee6ee11e01bebf1ccc47d94ad3d75b8f78c273d586f99947cc4f6f91",
+    "src/app-mario/core/frame_root.c": "19b44c2d1e8d34ec0af2361b3ee485fc6ec16589ab1df02497d49ba4620a6503",
+    "src/app-mario/core/frame_root.h": "5fb1cad576ee419c2b65b7988d9523bedc839290b3146ef5e069544f7c395cd6",
+    "src/app-mario/core/game.c": "d8e1293c8579fea9a1d276940520c6aed37807c1a7e6ff1507db603d5b788fb3",
+    "src/app-mario/core/game.h": "9ec48409de22e7d50363ffeb8d373bfbb6faf2438ad875b869d496d838b1ac3f",
+    "src/app-mario/core/hammer.c": "bd6e53b3d344fdd7678dedff181b8906bbdcd29e097e649d76c7e6542c169b75",
+    "src/app-mario/core/jumpspring.c": "493a4eefdbae7a5491fe1121b35f4b85b9ed48332bd66be42edb77419fad6de8",
+    "src/app-mario/core/misc.c": "b9eda422b39df21469375bdd2291668580d0cbf1e13085a30f15c791b1f3a6cd",
+    "src/app-mario/core/oam/block_gfx.c": "0f8b90c86a9c17abfe041b00fb95fc713b82002de387fb0872abebb62b410af4",
+    "src/app-mario/core/oam/block_offscreen.c": "6adcc84a2f9bde44f346278018afded5a5502fa41bfde09f11f08ed1120b61ba",
+    "src/app-mario/core/oam/bloober_gfx.c": "81d6cab9c7b53becbd3825a4dbb2fad356bce5c20fad1535d9f0e83db26c2fa5",
+    "src/app-mario/core/oam/bowser_flame_gfx.c": "50060550ea57c98438e6b7f99e8c5143b17a72f36c8108af5f6a6c6b3bbd5110",
+    "src/app-mario/core/oam/bowser_gfx.c": "be1c4f356b79522c3d40d753d1fc36c1ca4b3569c1bd165baad3ac82a4ab2c88",
+    "src/app-mario/core/oam/bullet_bill_gfx.c": "b4c6f07f2b0dc2626e917bdc20dd5686419efe7827d7b05eb6c5de132cc0833d",
+    "src/app-mario/core/oam/cheep_gfx.c": "a262d27d38b1ea6320da8d6f437ea6f68f086b2ed4bc94842c4a37c46f5d64d2",
+    "src/app-mario/core/oam/enemy_offscreen.c": "89263073f7a9f38d6ea3a63448c7568b91bde01497446e2572bcb1ddb340954d",
+    "src/app-mario/core/oam/enemy_offscreen_tail.h": "7f0ad13b3d62cc5712270e96363babb172a8ca4a81e5d74c41badab50e216189",
+    "src/app-mario/core/oam/fireball_gfx.c": "70f134d2df68428d6d6815cbf5464710ab91de12ced443b48226d902e12aecf4",
+    "src/app-mario/core/oam/firebar_gfx.c": "3b8eee43444f4990a01e2c83840085061a0e6abc1165152f081fad90818b4d65",
+    "src/app-mario/core/oam/fireworks_gfx.c": "e5c02319f90b41d3301a761205ac8e27672a49acc18943cca01f12290596e721",
+    "src/app-mario/core/oam/flagpole_gfx.c": "abe8c01b5148746b599e629b3fd4c3ee5a9915f24ec4bf1d42293905e445d2f1",
+    "src/app-mario/core/oam/goomba_gfx.c": "a4c0a7153865edcc59562c46e8e22db7e210ee41812e0928b2d5bd4530960fbe",
+    "src/app-mario/core/oam/hammer_bro_gfx.c": "e2a8e492c14cd33abac30350ab2cbc9cc1aeb372698f603dc3e84b4f0c900ac5",
+    "src/app-mario/core/oam/hammer_gfx.c": "5c455ac2e41c512617b9474dc51496260aef4dca5340151f0f28436a33c1abe1",
+    "src/app-mario/core/oam/normal_enemy_gfx.c": "eeb52a3eca116583e460558266dd0b8832904a2d0b0bcf279951726a73ae85e0",
+    "src/app-mario/core/oam/oam.h": "4be5b9bed2ce1ff121b7c5e07fe58269c1396377690b2b0e081e2b439617c96e",
+    "src/app-mario/core/oam/object_position.c": "eab6a75a833bc5d6911f2ac8c209d94afcef028c797a8d6f6b4f614e3de4803b",
+    "src/app-mario/core/oam/piranha_gfx.c": "466afdcd3f206f724fc2f0aba1e3534f9b195171b374960ff55c63c27611657f",
+    "src/app-mario/core/oam/player_gfx.c": "59ff494f3afcb9cbf4677c07bb86f05a2c050ad7aa9bc8656da4a945cbc0ccf4",
+    "src/app-mario/core/oam/podoboo_gfx.c": "7aafde047804a3eb15e272c1caf9bed72c7549f8568b36a3ab6e3bd095d7cda5",
+    "src/app-mario/core/oam/power_up_gfx.c": "100dbfcad085f40d9da3ecee18659ff2dbe4f2cc876dcb61be1588c98628a8ba",
+    "src/app-mario/core/oam/small_platform_gfx.c": "5176b592e2e4ff0c8e49d4ade57e006afb246d4c386df988715ba1db34795900",
+    "src/app-mario/core/oam/spiny_gfx.c": "53ece50721f37b8d87ff59c9846b2335d590f85b046651d5db775049866258d9",
+    "src/app-mario/core/oam/sprite_draw.c": "e2768ec904b3a440621e3ebd2c164324b1e31ac69066e7b0e5303c00718c1db9",
+    "src/app-mario/core/oam/sprite_dump.c": "36bc99f5eb539b0b6afb6168a246ff57660ecc466aebc24081f5e4cdb5d00c25",
+    "src/app-mario/core/oam/sprite_row.c": "26457e400e3aa0fc71dbcea59ab41c016046121293d42fe8232c2ba5a4795f0d",
+    "src/app-mario/core/oam/sprite_stacker.c": "52f8cbdf399491eb32cccbcd802c2c007cbbfb89a9334409c2c5d4d14d82a9cb",
+    "src/app-mario/core/oam/vine_gfx.c": "781b5d415fd32956cd8a03948b02a06053d27f3b598041a97a684cc11737a95a",
+    "src/app-mario/core/objects.c": "53b7b2a3128ab958c2f7656acd15d46f9db1a58a4d6fce7b05ef5384a8f658bc",
+    "src/app-mario/core/objects.h": "daa0ae9813432f2acb59d886dde5bccd6895805ebd3c97e5795fd342e6b667b2",
+    "src/app-mario/core/player.c": "079d7b8d890d6be8ffe320e1504b6abd5eea88835e53ba3fb918f19c555c824d",
+    "src/app-mario/core/player.h": "01ec6e69c51dba74f2ad91bd759f476bca69a54a34897504bda4fa16366ecfa3",
+    "src/app-mario/core/player/climbing.c": "a2a1b3756635e5444491af691b64293d198b5b0961d8dd557c805ad4e777d67d",
+    "src/app-mario/core/player/impede.c": "84dff0af6fe14a2d977b7811ab36b6beea479e49ae9a59a66ca9973b31209b52",
+    "src/app-mario/core/player/pipe_entry.c": "b9af6bdb30a92c05b58be146dfec1f6dff7233c9c9bc12f5098568d436936d91",
+    "src/app-mario/core/player/terrain.c": "6ebdf8013d6e99b17a3058ebb8137f9bae4885b53f252ca7d34ff11b8e65ab10",
+    "src/app-mario/core/player/terrain_children.h": "9668712a3c84f862d223df7b075da5daeccca744208c90632498f02dff96ffd3",
+    "src/app-mario/core/player/terrain_metatiles.c": "5024e5c3fe3ff02c41c08d047e5e4c0b71a9e8eb064c39e869f2486f7745d08b",
+    "src/app-mario/core/player_control.c": "17f4ffe478624fca7a4a914825a28b0f0872e308b4a6064308e0f18563a96e8c",
+    "src/app-mario/core/player_end_level.c": "794a32428c7cd2fccf216d8059e5c3215865e5f78a58abf05b2a81033f4f9a42",
+    "src/app-mario/core/player_modes.c": "36732edb32d6982e055ea7812864e22ebe1f687d12219deecb103ccd8ccb22fd",
+    "src/app-mario/core/player_movement.c": "4daa60e94fe8bb448111e75d8266d74b21fea745b8aa894c3d2800fab68d8e5f",
+    "src/app-mario/core/player_transition.c": "fb212072922d0c8270125cb358546c5d4d7eba8f617721225231f990ed4a6ac0",
+    "src/app-mario/core/power_up.c": "5f2195774670393b26b70f0b07ee42a933bcce081e356fe25d1da0b646c5f809",
+    "src/app-mario/core/power_up_init.c": "2cedf9ff558c0bc83c59d96b6ee3697ef1622cff55dd688c42e7aa12c45b66cf",
+    "src/app-mario/core/score.c": "fb4eda17231d6328574ba4dc231e782317f6fe075d077f3f4295c59d58549837",
+    "src/app-mario/core/score.h": "a5951559c136e0399fc48a7ae86ce20e2703d5ea5034c7fc5a445c1f64601f14",
+    "src/app-mario/core/scroll.c": "95c470d5ea647db65477c4783c9641be664d47cf58dd798fce3b709bd04732c7",
+    "src/app-mario/core/status.c": "718c3ac0843a24d1e6dfb5dc5ab11119cd8b96749f9bf64aad9a39afb57f247e",
+    "src/app-mario/core/status.h": "5d6081a50edd787946458c76ed070e07dbaafeea14a290f98809b55d62bd7e7c",
+    "src/app-mario/core/terminal_modes.c": "f0b26be0b2f222f8b6f676a72b71cc49923ea85ed33de3128295aba8948c8599",
+    "src/app-mario/core/terminal_modes.h": "2b05b806eb769ae708946cdb193cf58f816a22d8932def826f95862c233064ff",
+    "src/app-mario/core/timer.c": "93faefc9fec2eb2ab34d31372b1d43b8536e2d279319b261c752f63fe3271fdc",
+    "src/app-mario/core/title_modes.c": "ffd9d8c7001d38ca2a8fc81a5b51ff001ac65491f83b39ea8df750fc21d985ef",
+    "src/app-mario/core/title_modes.h": "2643c0ec6b9d02c2b67d0f068849a4d68b6f0ef1d92bcc314572fd35aa69da3a",
+    "src/app-mario/core/vine.c": "52600a809c953df967efd12b778faa3f1f394ba42d1d4c9fb9e5119cf1a80122",
+    "src/app-mario/core/whirlpool.c": "2b8b2d647cae4dbf20a74b02d71cefcf9202fbb692c5b5ee5f1e6cb5f0755e88",
+    "src/app-mario/core/world/block_buffer.c": "87cb9d2ca04297926b1de4d8757353628250445ab28d3d7c5e020aac4d6d52b6",
+    "src/app-mario/core/world/bounding_box.c": "bc3c9e23a7d2788bfe1f6110d39628a1f0076484a8f1f9589db061f5a386f937",
+    "src/app-mario/core/world/collision.c": "4efe6d37295957823b27bc5da45a657a021ea145dbdfa36a4afc38b3daa3f565",
+    "src/app-mario/core/world/enemy_collision.c": "c06189ef9acae9fff8d65bf5cbd8998d30aaba3cd58bf58c6be2ea71e30b765c",
+    "src/app-mario/core/world/fireball_enemy.c": "cba1933ab0c969f121f9afe6eae63c7f1a730a37891a60e283feaef2a7afdaf9",
+    "src/app-mario/core/world/fireball_hit.c": "786ded6d984d25ac9028c354df0cae16375802a05aac87a1a9032dd1d4e49275",
+    "src/app-mario/core/world/geometry.c": "aa21ff6bc767f59227f0d4f3dbe2ab9691906b03cc84d7ecc829c7c124c62cdb",
+    "src/app-mario/core/world/gravity.c": "669241d13e00babeeb902f1cd63049ff33e74f9a529f0cc0420026b590ca0c07",
+    "src/app-mario/core/world/hammer_collision.c": "831fc6ed6506afaf99c57744511eeac2773076ca56aab9c0ad353c61b460d7be",
+    "src/app-mario/core/world/metatiles.c": "3f365a618d405963d88e505a644e8e41bed5d7f9783195b369f5956da13078bb",
+    "src/app-mario/core/world/movement.c": "e657e8149a368e2f3df101af984d1fec66024872f6ea7e7dd9a1c859faef220b",
+    "src/app-mario/core/world/player_enemy_collision.c": "401dc837e37b5a805a4707a9bbbea05fee2dc6216511ba25c160d2de8bebacd5",
+    "src/app-mario/core/world/powerup_collision.c": "6743aa7dda3fce06a4fea65b8b3d17946352203215f22b21e4cb558426796b5b",
+    "src/app-mario/core/world/world.h": "90a2df7045c716c8f47bb94d130860b7102a68c895f83095f7a30a9a7c992ea1",
+    "src/app-mario/kvm/io/audio.h": "19417ddc33f9fcff94bd423cbb296dcdad4db8ff3ddbbbeda40c76960c794597",
+    "src/app-mario/kvm/io/control.c": "5983bc5f81a97141efd6f312cf314f16bf092cbd79dbcf9e5ac4c133b400992b",
+    "src/app-mario/kvm/io/control.h": "b24eb5585163abcf48376ff63b163d7e6c62b7893938ff6dbb968052fe55e95c",
+    "src/app-mario/kvm/io/input.h": "8d163a533b3ca8039537f14de6746756452d97b2a8c6c6298e04737273ae0769",
+    "src/app-mario/kvm/io/pacing.c": "68e43bcb7d8d743b17e5ffe726f71d6fc88feb60cc0683cb8cce892e056dd6d6",
+    "src/app-mario/kvm/io/pacing.h": "c664b4def13afb086c89a3a30f7a31e689d9e5f2375e9457341619d33ad80cd1",
+    "src/app-mario/kvm/io/scale.c": "075c4935addae96b08f42da932669657f1ef17501f09b6cb1d2d6010a7569110",
+    "src/app-mario/kvm/io/scale.h": "b0d2aac0fbd870619d47ceb9662811733977a8736df34361a98eea389110a9f9",
+    "src/app-mario/kvm/platform/dos16/devices.c": "a4a4a071a183977be9d581d551917f4c982cf75750cbc4add6e597472b6abf12",
+    "src/app-mario/kvm/platform/dos16/devices.h": "b95f6c7da39bfc39433554738cc1d0ec63b796f47ae591a1771d1ad4b9ca9811",
+    "src/app-mario/kvm/platform/dos16/dos16_root.c": "ae4f2e824891ef918428b814bc46f3444580c8d5694e8808a4c8d97feb36ea7b",
+    "src/app-mario/kvm/platform/dos16/dos16_root.h": "9c4cffa743da51cd1c3faefe69bab95c048c07c4574504a4604ef1625a7a86e3",
+    "src/app-mario/kvm/platform/dos16/keyboard.c": "70e868cc211cf7ceaafd8f3c88351e02783775ce0158a80bad515315a8d3baa1",
+    "src/app-mario/kvm/platform/dos16/keyboard.h": "fb879d4c0a9ad3925431ad20d5c4f6b7d34855b310d3043abc86d353d0bbde48",
+    "src/app-mario/kvm/platform/dos16/main_dos16.c": "41f626c385b3759a13b5da2288b13a4bb675e5332819997923c0bbdd5eb20ddc",
+    "src/app-mario/kvm/platform/win32/audio_output.c": "4bb62f8a2749e27d9fde46295f8022865257aa13d7bc432353e383575f88e60b",
+    "src/app-mario/kvm/platform/win32/audio_output.h": "83c250acbe030b25c5b8177e2dfd73528573bdebac3baf506ec204d9a5a42481",
+    "src/app-mario/kvm/platform/win32/audio_renderer.c": "7188b862541450dd3ecfcf247198ede056bdafbc5af6de9b8e2eca069a69a70e",
+    "src/app-mario/kvm/platform/win32/audio_renderer.h": "b0d4e1bf4f241c4437a46df165a958ea9df74101a8a5002f4b43a2d94f4224d8",
+    "src/app-mario/kvm/platform/win32/focus_pause.c": "3145d6c67c2330a2992ae22da3b85b3849a23dadd0e93a65cdc6904f73d3689d",
+    "src/app-mario/kvm/platform/win32/focus_pause.h": "b9b565122cb56069057547c6f7c0f4755d9527f12dd76447275c3a372fde1fe5",
+    "src/app-mario/kvm/platform/win32/main_win32.c": "b8b4b79cd31cbf95dfdb86f3a9ebab451140dd52fa94b415947ba33ef3f1c1c9",
+    "src/app-mario/kvm/ppu/frame.c": "fa1102b19a19a189e8ff342b0bbd2a793f644ea6a049dbe0df942ce050cb3da9",
+    "src/app-mario/kvm/ppu/frame.h": "78a2d123b0f50b1ba334d175c181c7327104e49c7149bc637166e1c478b218e1",
+    "src/app-mario/kvm/ppu/state.c": "106c9302f03898128127122775b578bac507ce59d1dff5839a132c6a2b831d5e",
+    "src/app-mario/kvm/ppu/state.h": "e476fe623d2b9221dba90cfdb76a28fa0f1af9b1a383d4a442ccf2ad00dc5ad5",
+    "test/app-mario/kvm/ppu/validate/frame_snapshot.c": "a8ae0b5ac2fa2cf9c17f3c1583ec26f2313d4e62cef0eb515d7bdacb4e26f014",
+    "test/app-mario/kvm/ppu/validate/frame_snapshot.h": "c8250a5405adc439b0942589e68b800f506b763d662c14e645a30af4a12d9fe4",
+    "test/app-mario/kvm/ppu/validate/render.c": "ee804479bf11009b3d979c2cf8a3e7db15c6aefa2fd839b84a06f4976034f496",
+    "test/app-mario/kvm/ppu/validate/render.h": "72138f7333dc2bef221b5bbfe539a3f98b65498c131c6f1c558f9008ef51c940",
+    "src/app-mario/CMakeLists.txt": "63bff7220a3323cc584203d2069cffa2b1bbea93a293f50cad147b7974bfd6f8",
+    "src/lib/dos16/pit_clock.c": "3c3f147817baa53c2aa3d7f8ff04f96ef1242b08e31848e2d458b74c79b66e85",
+    "src/lib/dos16/pit_clock.h": "84ebc13bdf4696094c2f9183eaf52a3e1eb9c1755ad6f5cae1e9ae7dbaa48212"
   },
   "uses": [
     {
@@ -117868,7 +117868,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/frenzy.c"
+        "src/app-mario/core/enemy/frenzy.c"
       ]
     },
     {
@@ -117907,7 +117907,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/init_targets.c"
+        "src/app-mario/core/enemy/init_targets.c"
       ]
     },
     {
@@ -117946,7 +117946,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/frenzy.c"
+        "src/app-mario/core/enemy/frenzy.c"
       ]
     },
     {
@@ -117985,9 +117985,9 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/frenzy.c",
-        "app-mario/src/core/enemy/init_targets.c",
-        "app-mario/src/core/enemy/lakitu.c"
+        "src/app-mario/core/enemy/frenzy.c",
+        "src/app-mario/core/enemy/init_targets.c",
+        "src/app-mario/core/enemy/lakitu.c"
       ]
     },
     {
@@ -118026,8 +118026,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/frenzy.c",
-        "app-mario/src/core/enemy/init_targets.c"
+        "src/app-mario/core/enemy/frenzy.c",
+        "src/app-mario/core/enemy/init_targets.c"
       ]
     },
     {
@@ -118066,9 +118066,9 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/blocks/chunks.c",
-        "app-mario/src/core/blocks/lifetime.c",
-        "app-mario/src/core/blocks/replacement.c"
+        "src/app-mario/core/blocks/chunks.c",
+        "src/app-mario/core/blocks/lifetime.c",
+        "src/app-mario/core/blocks/replacement.c"
       ]
     },
     {
@@ -118107,7 +118107,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/init_targets.c"
+        "src/app-mario/core/enemy/init_targets.c"
       ]
     },
     {
@@ -118146,7 +118146,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/cannon.c"
+        "src/app-mario/core/cannon.c"
       ]
     },
     {
@@ -118185,9 +118185,9 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/coin.c",
-        "app-mario/src/core/misc.c",
-        "app-mario/src/core/score.c"
+        "src/app-mario/core/coin.c",
+        "src/app-mario/core/misc.c",
+        "src/app-mario/core/score.c"
       ]
     },
     {
@@ -118226,8 +118226,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/core.c",
-        "app-mario/src/core/enemy/loop.c"
+        "src/app-mario/core/enemy/core.c",
+        "src/app-mario/core/enemy/loop.c"
       ]
     },
     {
@@ -118266,8 +118266,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/init.c",
-        "app-mario/src/core/enemy/init_targets.c"
+        "src/app-mario/core/enemy/init.c",
+        "src/app-mario/core/enemy/init_targets.c"
       ]
     },
     {
@@ -118306,8 +118306,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/init.c",
-        "app-mario/src/core/enemy/stream.c"
+        "src/app-mario/core/enemy/init.c",
+        "src/app-mario/core/enemy/stream.c"
       ]
     },
     {
@@ -118346,7 +118346,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/fireball/fireball_core.c"
+        "src/app-mario/core/fireball/fireball_core.c"
       ]
     },
     {
@@ -118385,7 +118385,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/fireball/fireball_spawn.c"
+        "src/app-mario/core/fireball/fireball_spawn.c"
       ]
     },
     {
@@ -118424,8 +118424,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/frenzy.c",
-        "app-mario/src/core/enemy/init_targets.c"
+        "src/app-mario/core/enemy/frenzy.c",
+        "src/app-mario/core/enemy/init_targets.c"
       ]
     },
     {
@@ -118464,7 +118464,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/frenzy.c"
+        "src/app-mario/core/enemy/frenzy.c"
       ]
     },
     {
@@ -118503,7 +118503,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/flagpole_gfx.c"
+        "src/app-mario/core/oam/flagpole_gfx.c"
       ]
     },
     {
@@ -118542,8 +118542,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/bridge.c",
-        "app-mario/src/core/enemy/loop.c"
+        "src/app-mario/core/bridge.c",
+        "src/app-mario/core/enemy/loop.c"
       ]
     },
     {
@@ -118582,7 +118582,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/actor_slots.c"
+        "src/app-mario/core/enemy/actor_slots.c"
       ]
     },
     {
@@ -118621,7 +118621,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/balance_platform.c"
+        "src/app-mario/core/enemy/balance_platform.c"
       ]
     },
     {
@@ -118660,7 +118660,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/bowser.c"
+        "src/app-mario/core/enemy/bowser.c"
       ]
     },
     {
@@ -118699,7 +118699,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/bowser_flame.c"
+        "src/app-mario/core/enemy/bowser_flame.c"
       ]
     },
     {
@@ -118738,7 +118738,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/firebar_children.c"
+        "src/app-mario/core/enemy/firebar_children.c"
       ]
     },
     {
@@ -118777,7 +118777,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/fireworks.c"
+        "src/app-mario/core/enemy/fireworks.c"
       ]
     },
     {
@@ -118816,7 +118816,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/frenzy.c"
+        "src/app-mario/core/enemy/frenzy.c"
       ]
     },
     {
@@ -118855,7 +118855,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/loop.c"
+        "src/app-mario/core/enemy/loop.c"
       ]
     },
     {
@@ -118894,7 +118894,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/piranha.c"
+        "src/app-mario/core/enemy/piranha.c"
       ]
     },
     {
@@ -118933,7 +118933,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/platform.c"
+        "src/app-mario/core/enemy/platform.c"
       ]
     },
     {
@@ -118972,7 +118972,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/star_flag.c"
+        "src/app-mario/core/enemy/star_flag.c"
       ]
     },
     {
@@ -119011,7 +119011,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/bowser_flame_gfx.c"
+        "src/app-mario/core/oam/bowser_flame_gfx.c"
       ]
     },
     {
@@ -119050,7 +119050,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/bowser_gfx.c"
+        "src/app-mario/core/oam/bowser_gfx.c"
       ]
     },
     {
@@ -119089,7 +119089,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/fireball_enemy.c"
+        "src/app-mario/core/world/fireball_enemy.c"
       ]
     },
     {
@@ -119128,7 +119128,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/fireball/bubble.c"
+        "src/app-mario/core/fireball/bubble.c"
       ]
     },
     {
@@ -119167,8 +119167,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/core.c",
-        "app-mario/src/core/timer.c"
+        "src/app-mario/core/enemy/core.c",
+        "src/app-mario/core/timer.c"
       ]
     },
     {
@@ -119207,7 +119207,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/whirlpool.c"
+        "src/app-mario/core/whirlpool.c"
       ]
     },
     {
@@ -119246,7 +119246,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/group.c"
+        "src/app-mario/core/enemy/group.c"
       ]
     },
     {
@@ -119285,7 +119285,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/hammer.c"
+        "src/app-mario/core/hammer.c"
       ]
     },
     {
@@ -119324,7 +119324,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/init_targets.c"
+        "src/app-mario/core/enemy/init_targets.c"
       ]
     },
     {
@@ -119363,8 +119363,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/blocks/bump.c",
-        "app-mario/src/core/blocks/head.c"
+        "src/app-mario/core/blocks/bump.c",
+        "src/app-mario/core/blocks/head.c"
       ]
     },
     {
@@ -119403,8 +119403,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/power_up.c",
-        "app-mario/src/core/power_up_init.c"
+        "src/app-mario/core/power_up.c",
+        "src/app-mario/core/power_up_init.c"
       ]
     },
     {
@@ -119443,7 +119443,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/jumpspring.c"
+        "src/app-mario/core/jumpspring.c"
       ]
     },
     {
@@ -119482,7 +119482,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/vine.c"
+        "src/app-mario/core/vine.c"
       ]
     },
     {
@@ -119521,7 +119521,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/vine.c"
+        "src/app-mario/core/vine.c"
       ]
     },
     {
@@ -119560,10 +119560,10 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/movement.c",
-        "app-mario/src/core/player.c",
-        "app-mario/src/core/world/gravity.c",
-        "app-mario/src/core/world/movement.c"
+        "src/app-mario/core/enemy/movement.c",
+        "src/app-mario/core/player.c",
+        "src/app-mario/core/world/gravity.c",
+        "src/app-mario/core/world/movement.c"
       ]
     },
     {
@@ -119602,10 +119602,10 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/dispatcher.c",
-        "app-mario/src/core/engine.c",
-        "app-mario/src/core/engine_slots.c",
-        "app-mario/src/core/engine_tail.c"
+        "src/app-mario/core/dispatcher.c",
+        "src/app-mario/core/engine.c",
+        "src/app-mario/core/engine_slots.c",
+        "src/app-mario/core/engine_tail.c"
       ]
     },
     {
@@ -119644,8 +119644,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/area.c",
-        "app-mario/src/core/engine.c"
+        "src/app-mario/core/area.c",
+        "src/app-mario/core/engine.c"
       ]
     },
     {
@@ -119684,8 +119684,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/area.c",
-        "app-mario/src/core/oam/flagpole_gfx.c"
+        "src/app-mario/core/area.c",
+        "src/app-mario/core/oam/flagpole_gfx.c"
       ]
     },
     {
@@ -119724,7 +119724,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/area/area_data.c"
+        "src/app-mario/core/area/area_data.c"
       ]
     },
     {
@@ -119763,7 +119763,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/area/block_metatile.c"
+        "src/app-mario/core/area/block_metatile.c"
       ]
     },
     {
@@ -119802,7 +119802,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/audio.c"
+        "src/app-mario/core/audio.c"
       ]
     },
     {
@@ -119939,8 +119939,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/boot.c",
-        "app-mario/src/ppu/state.c"
+        "src/app-mario/core/boot.c",
+        "src/app-mario/kvm/ppu/state.c"
       ]
     },
     {
@@ -119979,7 +119979,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/dispatcher.c"
+        "src/app-mario/core/dispatcher.c"
       ]
     },
     {
@@ -120018,9 +120018,9 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/background.c",
-        "app-mario/src/core/enemy/frenzy.c",
-        "app-mario/src/core/objects.c"
+        "src/app-mario/core/enemy/background.c",
+        "src/app-mario/core/enemy/frenzy.c",
+        "src/app-mario/core/objects.c"
       ]
     },
     {
@@ -120059,7 +120059,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/bloober.c"
+        "src/app-mario/core/enemy/bloober.c"
       ]
     },
     {
@@ -120098,11 +120098,11 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/cannon.c",
-        "app-mario/src/core/enemy/background.c",
-        "app-mario/src/core/enemy/bloober.c",
-        "app-mario/src/core/enemy/distance.c",
-        "app-mario/src/core/world/player_enemy_collision.c"
+        "src/app-mario/core/cannon.c",
+        "src/app-mario/core/enemy/background.c",
+        "src/app-mario/core/enemy/bloober.c",
+        "src/app-mario/core/enemy/distance.c",
+        "src/app-mario/core/world/player_enemy_collision.c"
       ]
     },
     {
@@ -120141,8 +120141,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/firebar.c",
-        "app-mario/src/core/enemy/firebar_children.c"
+        "src/app-mario/core/enemy/firebar.c",
+        "src/app-mario/core/enemy/firebar_children.c"
       ]
     },
     {
@@ -120181,7 +120181,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/flying_cheep.c"
+        "src/app-mario/core/enemy/flying_cheep.c"
       ]
     },
     {
@@ -120220,7 +120220,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/frenzy.c"
+        "src/app-mario/core/enemy/frenzy.c"
       ]
     },
     {
@@ -120259,7 +120259,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/hammer_bro.c"
+        "src/app-mario/core/enemy/hammer_bro.c"
       ]
     },
     {
@@ -120298,7 +120298,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/init_targets.c"
+        "src/app-mario/core/enemy/init_targets.c"
       ]
     },
     {
@@ -120337,7 +120337,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/jump_terrain.c"
+        "src/app-mario/core/enemy/jump_terrain.c"
       ]
     },
     {
@@ -120376,7 +120376,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/lakitu.c"
+        "src/app-mario/core/enemy/lakitu.c"
       ]
     },
     {
@@ -120415,7 +120415,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/movement.c"
+        "src/app-mario/core/enemy/movement.c"
       ]
     },
     {
@@ -120454,7 +120454,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/platform_callers.c"
+        "src/app-mario/core/enemy/platform_callers.c"
       ]
     },
     {
@@ -120493,7 +120493,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/platform_collision.c"
+        "src/app-mario/core/enemy/platform_collision.c"
       ]
     },
     {
@@ -120532,8 +120532,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/platform_collision.c",
-        "app-mario/src/core/enemy/platform_position.c"
+        "src/app-mario/core/enemy/platform_collision.c",
+        "src/app-mario/core/enemy/platform_position.c"
       ]
     },
     {
@@ -120572,7 +120572,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/side_collision.c"
+        "src/app-mario/core/enemy/side_collision.c"
       ]
     },
     {
@@ -120611,7 +120611,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/star_flag.c"
+        "src/app-mario/core/enemy/star_flag.c"
       ]
     },
     {
@@ -120650,8 +120650,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/bullet_bill.c",
-        "app-mario/src/core/enemy/swimming_cheep.c"
+        "src/app-mario/core/enemy/bullet_bill.c",
+        "src/app-mario/core/enemy/swimming_cheep.c"
       ]
     },
     {
@@ -120690,17 +120690,17 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/core.c",
-        "app-mario/src/core/enemy/dispatch_targets.c",
-        "app-mario/src/core/enemy/frenzy.c",
-        "app-mario/src/core/enemy/init.c",
-        "app-mario/src/core/enemy/normal.c",
-        "app-mario/src/core/enemy/special_callers.c",
-        "app-mario/src/core/oam/bloober_gfx.c",
-        "app-mario/src/core/oam/cheep_gfx.c",
-        "app-mario/src/core/oam/normal_enemy_gfx.c",
-        "app-mario/src/core/oam/podoboo_gfx.c",
-        "app-mario/src/core/objects.c"
+        "src/app-mario/core/enemy/core.c",
+        "src/app-mario/core/enemy/dispatch_targets.c",
+        "src/app-mario/core/enemy/frenzy.c",
+        "src/app-mario/core/enemy/init.c",
+        "src/app-mario/core/enemy/normal.c",
+        "src/app-mario/core/enemy/special_callers.c",
+        "src/app-mario/core/oam/bloober_gfx.c",
+        "src/app-mario/core/oam/cheep_gfx.c",
+        "src/app-mario/core/oam/normal_enemy_gfx.c",
+        "src/app-mario/core/oam/podoboo_gfx.c",
+        "src/app-mario/core/objects.c"
       ]
     },
     {
@@ -120739,8 +120739,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/green_paratroopa.c",
-        "app-mario/src/core/enemy/x_counter.c"
+        "src/app-mario/core/enemy/green_paratroopa.c",
+        "src/app-mario/core/enemy/x_counter.c"
       ]
     },
     {
@@ -120779,12 +120779,12 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/core.c",
-        "app-mario/src/core/enemy/lifecycle.c",
-        "app-mario/src/core/enemy/loop.c",
-        "app-mario/src/core/enemy/podoboo.c",
-        "app-mario/src/core/enemy_bounds.c",
-        "app-mario/src/core/vine.c"
+        "src/app-mario/core/enemy/core.c",
+        "src/app-mario/core/enemy/lifecycle.c",
+        "src/app-mario/core/enemy/loop.c",
+        "src/app-mario/core/enemy/podoboo.c",
+        "src/app-mario/core/enemy_bounds.c",
+        "src/app-mario/core/vine.c"
       ]
     },
     {
@@ -120823,8 +120823,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/movement.c",
-        "app-mario/src/core/enemy/paratroopa.c"
+        "src/app-mario/core/enemy/movement.c",
+        "src/app-mario/core/enemy/paratroopa.c"
       ]
     },
     {
@@ -120863,8 +120863,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy_bounds.c",
-        "app-mario/src/core/world/bounding_box.c"
+        "src/app-mario/core/enemy_bounds.c",
+        "src/app-mario/core/world/bounding_box.c"
       ]
     },
     {
@@ -120903,7 +120903,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/entry.c"
+        "src/app-mario/core/entry.c"
       ]
     },
     {
@@ -120942,7 +120942,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/fireball/bubble.c"
+        "src/app-mario/core/fireball/bubble.c"
       ]
     },
     {
@@ -121037,7 +121037,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/frame_root.c"
+        "src/app-mario/core/frame_root.c"
       ]
     },
     {
@@ -121132,8 +121132,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/frame_root.c",
-        "app-mario/src/core/terminal_modes.c"
+        "src/app-mario/core/frame_root.c",
+        "src/app-mario/core/terminal_modes.c"
       ]
     },
     {
@@ -121228,8 +121228,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/frame_root.c",
-        "app-mario/src/core/title_modes.c"
+        "src/app-mario/core/frame_root.c",
+        "src/app-mario/core/title_modes.c"
       ]
     },
     {
@@ -121268,7 +121268,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/game.c"
+        "src/app-mario/core/game.c"
       ]
     },
     {
@@ -121307,7 +121307,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/jumpspring.c"
+        "src/app-mario/core/jumpspring.c"
       ]
     },
     {
@@ -121346,7 +121346,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/block_gfx.c"
+        "src/app-mario/core/oam/block_gfx.c"
       ]
     },
     {
@@ -121385,8 +121385,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/block_offscreen.c",
-        "app-mario/src/core/oam/sprite_dump.c"
+        "src/app-mario/core/oam/block_offscreen.c",
+        "src/app-mario/core/oam/sprite_dump.c"
       ]
     },
     {
@@ -121425,8 +121425,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/enemy_offscreen.c",
-        "app-mario/src/core/oam/sprite_dump.c"
+        "src/app-mario/core/oam/enemy_offscreen.c",
+        "src/app-mario/core/oam/sprite_dump.c"
       ]
     },
     {
@@ -121465,7 +121465,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/fireball_gfx.c"
+        "src/app-mario/core/oam/fireball_gfx.c"
       ]
     },
     {
@@ -121504,7 +121504,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/firebar_gfx.c"
+        "src/app-mario/core/oam/firebar_gfx.c"
       ]
     },
     {
@@ -121543,7 +121543,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/fireworks_gfx.c"
+        "src/app-mario/core/oam/fireworks_gfx.c"
       ]
     },
     {
@@ -121582,9 +121582,9 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/flagpole_gfx.c",
-        "app-mario/src/core/oam/sprite_dump.c",
-        "app-mario/src/core/oam/sprite_row.c"
+        "src/app-mario/core/oam/flagpole_gfx.c",
+        "src/app-mario/core/oam/sprite_dump.c",
+        "src/app-mario/core/oam/sprite_row.c"
       ]
     },
     {
@@ -121623,8 +121623,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/hammer_gfx.c",
-        "app-mario/src/core/oam/sprite_dump.c"
+        "src/app-mario/core/oam/hammer_gfx.c",
+        "src/app-mario/core/oam/sprite_dump.c"
       ]
     },
     {
@@ -121663,8 +121663,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/normal_enemy_gfx.c",
-        "app-mario/src/core/oam/sprite_row.c"
+        "src/app-mario/core/oam/normal_enemy_gfx.c",
+        "src/app-mario/core/oam/sprite_row.c"
       ]
     },
     {
@@ -121703,8 +121703,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/normal_enemy_gfx.c",
-        "app-mario/src/core/oam/sprite_row.c"
+        "src/app-mario/core/oam/normal_enemy_gfx.c",
+        "src/app-mario/core/oam/sprite_row.c"
       ]
     },
     {
@@ -121743,8 +121743,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/object_position.c",
-        "app-mario/src/core/oam/player_gfx.c"
+        "src/app-mario/core/oam/object_position.c",
+        "src/app-mario/core/oam/player_gfx.c"
       ]
     },
     {
@@ -121783,7 +121783,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/player_gfx.c"
+        "src/app-mario/core/oam/player_gfx.c"
       ]
     },
     {
@@ -121822,8 +121822,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/power_up_gfx.c",
-        "app-mario/src/core/oam/sprite_row.c"
+        "src/app-mario/core/oam/power_up_gfx.c",
+        "src/app-mario/core/oam/sprite_row.c"
       ]
     },
     {
@@ -121862,7 +121862,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/small_platform_gfx.c"
+        "src/app-mario/core/oam/small_platform_gfx.c"
       ]
     },
     {
@@ -121901,7 +121901,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/sprite_dump.c"
+        "src/app-mario/core/oam/sprite_dump.c"
       ]
     },
     {
@@ -121940,8 +121940,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/block_offscreen.c",
-        "app-mario/src/core/oam/sprite_dump.c"
+        "src/app-mario/core/oam/block_offscreen.c",
+        "src/app-mario/core/oam/sprite_dump.c"
       ]
     },
     {
@@ -121980,7 +121980,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/sprite_draw.c"
+        "src/app-mario/core/oam/sprite_draw.c"
       ]
     },
     {
@@ -122019,8 +122019,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/enemy_offscreen.c",
-        "app-mario/src/core/oam/sprite_row.c"
+        "src/app-mario/core/oam/enemy_offscreen.c",
+        "src/app-mario/core/oam/sprite_row.c"
       ]
     },
     {
@@ -122059,8 +122059,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/sprite_draw.c",
-        "app-mario/src/core/oam/sprite_row.c"
+        "src/app-mario/core/oam/sprite_draw.c",
+        "src/app-mario/core/oam/sprite_row.c"
       ]
     },
     {
@@ -122099,7 +122099,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/sprite_stacker.c"
+        "src/app-mario/core/oam/sprite_stacker.c"
       ]
     },
     {
@@ -122138,7 +122138,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/vine_gfx.c"
+        "src/app-mario/core/oam/vine_gfx.c"
       ]
     },
     {
@@ -122177,10 +122177,10 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/oam/sprite_dump.c",
-        "app-mario/src/core/objects.c",
-        "app-mario/src/core/world/bounding_box.c",
-        "app-mario/src/core/world/collision.c"
+        "src/app-mario/core/oam/sprite_dump.c",
+        "src/app-mario/core/objects.c",
+        "src/app-mario/core/world/bounding_box.c",
+        "src/app-mario/core/world/collision.c"
       ]
     },
     {
@@ -122219,7 +122219,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/objects.c"
+        "src/app-mario/core/objects.c"
       ]
     },
     {
@@ -122258,7 +122258,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/objects.c"
+        "src/app-mario/core/objects.c"
       ]
     },
     {
@@ -122297,7 +122297,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/objects.c"
+        "src/app-mario/core/objects.c"
       ]
     },
     {
@@ -122336,7 +122336,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/objects.c"
+        "src/app-mario/core/objects.c"
       ]
     },
     {
@@ -122375,7 +122375,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player.c"
+        "src/app-mario/core/player.c"
       ]
     },
     {
@@ -122414,9 +122414,9 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player/climbing.c",
-        "app-mario/src/core/player/terrain.c",
-        "app-mario/src/core/player/terrain_metatiles.c"
+        "src/app-mario/core/player/climbing.c",
+        "src/app-mario/core/player/terrain.c",
+        "src/app-mario/core/player/terrain_metatiles.c"
       ]
     },
     {
@@ -122455,8 +122455,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player/impede.c",
-        "app-mario/src/core/player/pipe_entry.c"
+        "src/app-mario/core/player/impede.c",
+        "src/app-mario/core/player/pipe_entry.c"
       ]
     },
     {
@@ -122495,8 +122495,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player.c",
-        "app-mario/src/core/player/terrain.c"
+        "src/app-mario/core/player.c",
+        "src/app-mario/core/player/terrain.c"
       ]
     },
     {
@@ -122535,8 +122535,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player/terrain.c",
-        "app-mario/src/core/world/collision.c"
+        "src/app-mario/core/player/terrain.c",
+        "src/app-mario/core/world/collision.c"
       ]
     },
     {
@@ -122575,7 +122575,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player/terrain.c"
+        "src/app-mario/core/player/terrain.c"
       ]
     },
     {
@@ -122614,8 +122614,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player/climbing.c",
-        "app-mario/src/core/player/terrain_metatiles.c"
+        "src/app-mario/core/player/climbing.c",
+        "src/app-mario/core/player/terrain_metatiles.c"
       ]
     },
     {
@@ -122654,7 +122654,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player_control.c"
+        "src/app-mario/core/player_control.c"
       ]
     },
     {
@@ -122693,7 +122693,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player_end_level.c"
+        "src/app-mario/core/player_end_level.c"
       ]
     },
     {
@@ -122732,7 +122732,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player_modes.c"
+        "src/app-mario/core/player_modes.c"
       ]
     },
     {
@@ -122771,7 +122771,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player_movement.c"
+        "src/app-mario/core/player_movement.c"
       ]
     },
     {
@@ -122810,7 +122810,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/player_transition.c"
+        "src/app-mario/core/player_transition.c"
       ]
     },
     {
@@ -122849,7 +122849,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/scroll.c"
+        "src/app-mario/core/scroll.c"
       ]
     },
     {
@@ -122888,7 +122888,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/status.c"
+        "src/app-mario/core/status.c"
       ]
     },
     {
@@ -122983,7 +122983,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/terminal_modes.c"
+        "src/app-mario/core/terminal_modes.c"
       ]
     },
     {
@@ -123078,7 +123078,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/title_modes.c"
+        "src/app-mario/core/title_modes.c"
       ]
     },
     {
@@ -123117,8 +123117,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/area/block_buffer.c",
-        "app-mario/src/core/world/block_buffer.c"
+        "src/app-mario/core/area/block_buffer.c",
+        "src/app-mario/core/world/block_buffer.c"
       ]
     },
     {
@@ -123157,7 +123157,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/block_buffer.c"
+        "src/app-mario/core/world/block_buffer.c"
       ]
     },
     {
@@ -123196,7 +123196,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/bounding_box.c"
+        "src/app-mario/core/world/bounding_box.c"
       ]
     },
     {
@@ -123235,8 +123235,8 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/fireball/fireball_core.c",
-        "app-mario/src/core/world/collision.c"
+        "src/app-mario/core/fireball/fireball_core.c",
+        "src/app-mario/core/world/collision.c"
       ]
     },
     {
@@ -123275,7 +123275,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/collision.c"
+        "src/app-mario/core/world/collision.c"
       ]
     },
     {
@@ -123314,7 +123314,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/enemy_collision.c"
+        "src/app-mario/core/world/enemy_collision.c"
       ]
     },
     {
@@ -123353,7 +123353,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/fireball_hit.c"
+        "src/app-mario/core/world/fireball_hit.c"
       ]
     },
     {
@@ -123392,7 +123392,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/geometry.c"
+        "src/app-mario/core/world/geometry.c"
       ]
     },
     {
@@ -123431,7 +123431,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/hammer_collision.c"
+        "src/app-mario/core/world/hammer_collision.c"
       ]
     },
     {
@@ -123470,9 +123470,9 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/enemy/background.c",
-        "app-mario/src/core/world/collision.c",
-        "app-mario/src/core/world/metatiles.c"
+        "src/app-mario/core/enemy/background.c",
+        "src/app-mario/core/world/collision.c",
+        "src/app-mario/core/world/metatiles.c"
       ]
     },
     {
@@ -123511,7 +123511,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/metatiles.c"
+        "src/app-mario/core/world/metatiles.c"
       ]
     },
     {
@@ -123550,7 +123550,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/player_enemy_collision.c"
+        "src/app-mario/core/world/player_enemy_collision.c"
       ]
     },
     {
@@ -123589,7 +123589,7 @@
         }
       },
       "currentSourcePaths": [
-        "app-mario/src/core/world/powerup_collision.c"
+        "src/app-mario/core/world/powerup_collision.c"
       ]
     }
   ],
@@ -126632,5 +126632,27 @@
         "semanticClaim": "Metadata reconciliation only; it does not create a new ROM-equivalence or final-certification claim."
       }
     ]
+  },
+  "sourcePathRelocation": {
+    "task": "M3 T44 S4",
+    "scope": "Current path metadata only; historical hashes and evidence dispositions are preserved.",
+    "productionSourceIdentity": "All 311 moved C/header files match the pre-move bytes at S3.",
+    "inheritedBindingGaps": {
+      "mismatches": [
+        "CMakeLists.txt",
+        "app-mario/src/platform/dos16/devices.c",
+        "app-mario/src/platform/dos16/keyboard.c",
+        "app-mario/src/platform/dos16/keyboard.h",
+        "app-mario/src/platform/win32/main_win32.c",
+        "app-mario/src/ppu/frame.h",
+        "app-mario/CMakeLists.txt"
+      ],
+      "missing": [
+        "app-mario/src/platform/dos16/pit_clock.c",
+        "app-mario/src/platform/dos16/pit_clock.h"
+      ]
+    },
+    "receivingProposal": "docs/proposals/m2/remaining-current-certification.md",
+    "finalBindingVerified": false
   }
 }
