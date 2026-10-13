@@ -30,7 +30,7 @@ Mario continues to ignore Tab on Win16 as previously approved.
 
 ## Gap register
 
-G01-G04 close with S7 below; G05-G12 remain open. Each receiving S attaches
+G01-G04 close with S7 and G05 with S8 below; G06-G12 remain open. Each receiving S attaches
 changed-owner tests and operational evidence before closing its entries.
 
 | ID | Evidence and consequence | Disposition / receiver | Required proof |
@@ -78,13 +78,13 @@ Do not force Mine into Mario's memory model or cache footprint.
 ## Planned S roadmap
 
 Estimates include production/tests; actual changed files/lines are reported at
-closure. S6-S7 are closed; S8 is next. Tests ship with each changed owner, not at S13.
+closure. S6-S8 are closed; S9 is next. Tests ship with each changed owner, not at S13.
 
 | S | Delivery and dependencies | Estimated files / lines | Exit |
 | --- | --- | --- | --- |
 | S6 closed | Audit, fixed register, status correction and design | Docs only, about6 files | All findings assigned; governance/admission pass |
 | S7 closed | Neutral KVM and atomic Mario adapters, G01-G04 | 20-40 /700-1600 | Both-app data/input representable; no NES maps in lib; Mario output retained |
-| S8 | App refresh/pause/deadlines, G05; after S7 | 8-16 /300-800 | Event-driven and60Hz clients work without host-imposed game cadence |
+| S8 closed | App refresh/pause/deadlines, G05; after S7 | 8-16 /300-800 | Event-driven and60Hz clients work without host-imposed game cadence |
 | S9 | Win32/x64 host and Console/window mouse, G06; after S8 | 15-28 /800-1800 | Both widths and view/session/input lifecycle joins pass |
 | S10 | DOS mouse and physical graphics services, G07; after S9 | 12-24 /600-1400 | DOS probe and Mario regressions; PPU/cache semantics unchanged |
 | S11 | Win16 configurable graphics, window text and mouse, G08; after S10 | 12-22 /600-1400 | Actual Win3.x receipts; accepted Mario behavior preserved |
@@ -192,3 +192,43 @@ No product or protected probe image is committed. Zero node scope, expected
 and actual promotions; historical1992/1992 and retained1991/1992 nodes,
 4260/4261 feasible controls unchanged. The inherited final certificate remains
 incomplete. Unrelated resource deletions remain untouched.
+
+## S8 admission
+
+G05 only; zero ROM scope/promotions. Move the existing60Hz/four-tick budget
+and focus pause into Mario. The USER host accepts requested wake delays and
+dirty output; paint only replays retained pixels. Add owner scheduler tests
+and a no-game host lifecycle fixture, including idle/no-timer behavior.
+
+## S8 P1 closure receipt
+
+G05 closes. The existing60Hz/four-tick credit algorithm moved unchanged from
+lib/win16/clock to app-mario/platform/win16/scheduler. Mario owns focus pause,
+file-transaction rebase, logical tick/audio order and overdue-image skipping.
+The library receives dirty output plus an app-requested wake delay; zero means
+wait for input. WM_PAINT only replays the retained DIB. Exit is serviced after
+input even for clients that never request a timer; shutdown guards prevent
+recursive focus-loss teardown. Library documentation now reflects this contract.
+
+Single-person reviewer checked all former clock/focus/pacing references in
+lib/win16 and its consumers. No second scheduler, core/PPU change or Mine import.
+Test-owner closure: app scheduler retains credit/cap/wrap/backward-time cases;
+neutral host fixture compiles the actual host separately against a synthetic
+USER device and proves idle/no-timer, app-selected123ms wake, dirty-only
+composition, retained paint, focus delivery, timer failure and recursive
+shutdown. Application ABI fixture migrated to update requests. This device
+fixture is not described as actual Windows execution.
+
+Release x86/x64 suites each301/301 pass; final owner tests including recursive
+shutdown pass both widths. Win16 compiler/linker/MZ binding pass. Actual
+owner-local Win3.1 standard-VGA probe passes startup, Enter gameplay, D movement
+and Escape exit0 with retained captures inspected locally. DOSBox settings
+unchanged. DOS entry/code/resident bounds unchanged from S7; Win32 source and
+product hashes unchanged after incremental builds. Prior13-route Console joins
+remain applicable to unchanged sources; they were not needlessly rerun.
+
+Local products republished:16=646061bytes,
+SHA2562cba8dc5d092fd4bc96bac82b9998c24a4eeef33a491b4e9ca02e22edcb3321a;
+32/64 retain S7 sizes/hashes. No protected products/captures committed.
+Expected/actual ROM promotions0; historical1992/1992, retained1991/1992nodes
+and4260/4261feasible controls unchanged. G06-G12 remain required T work.

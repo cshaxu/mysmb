@@ -9,12 +9,16 @@
 #define MYGAMES_WIN16_VIEW_GRAPHICS 1U
 #define MYGAMES_WIN16_VIEW_TEXT 2U
 
+/* update runs after input or a requested wake. dirty requests composition;
+ * wake_ms is a one-shot delay (0 means wait for input indefinitely).
+ * Host paint never calls update or graphics. Timers may wake later than asked. */
+struct mygames_win16_update {mygames_kvm_u16 wake_ms;mygames_kvm_u8 dirty;};
 struct mygames_win16_application {
     void *context;
     const char *title;
     mygames_kvm_u8 available_views;
     void (*input)(void *,const struct mygames_kvm_input_event *);
-    void (*tick)(void *);
+    void (*update)(void *,unsigned long,struct mygames_win16_update *);
     mygames_kvm_u8 (*presentation)(void *);
     mygames_kvm_u8 (*exit_requested)(void *);
     const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *(*text)(void *);

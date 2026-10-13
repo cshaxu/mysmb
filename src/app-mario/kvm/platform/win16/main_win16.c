@@ -1,6 +1,7 @@
 #include "io/color.h"
 #include <windows.h>
 #include "win16/host.h"
+#include "platform/win16/scheduler.h"
 #include "win16/audio.h"
 #include "win16/file.h"
 #include "app/game_io.h"
@@ -19,6 +20,8 @@
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 
+static struct mysmb_win16_scheduler scheduler;
+static int focused;
 static struct mysmb_game game;
 static struct mysmb_frame frame;
 static struct mysmb_app_input_mapping mapping;
@@ -61,7 +64,7 @@ static void snapshot_request(mygames_kvm_u8 request)
     }
     /* File I/O is synchronous between logical ticks. Never catch up the
      * elapsed disk time or play stale pre-load buffers afterwards. */
-    (void)mygames_win16_audio_reset();mygames_win16_rebase_clock();
+    (void)mygames_win16_audio_reset();mysmb_win16_scheduler_reset(&scheduler,GetTickCount());
 }
 
 
@@ -70,6 +73,8 @@ static void input(void *context,const struct mygames_kvm_input_event *event)
     mygames_kvm_u8 request;
     (void)context;
     if(event->kind==MYGAMES_KVM_INPUT_FOCUS) {
+        focused=event->down!=0U;
+        mysmb_win16_scheduler_reset(&scheduler,GetTickCount());
         mysmb_app_input_mapping_initialize(&mapping);
         mapped.buttons=mapped.buttons2=mapped.requests=0U;
         mysmb_io_input_latch_clear(&input_latch);
@@ -104,6 +109,17 @@ static void tick(void *context)
     mysmb_game_io_audio(&game,&audio_frame);
     count=mysmb_audio_renderer_render(&renderer,&audio_frame,samples,sizeof(samples));
     if(count)(void)mygames_win16_audio_submit(samples,count);
+}
+static void update(void *context,unsigned long now,struct mygames_win16_update *result)
+{
+    unsigned short ticks,i;
+    result->wake_ms=0U;result->dirty=0U;
+    if(!focused)return;
+    result->wake_ms=16U;
+    ticks=mysmb_win16_scheduler_step(&scheduler,now);
+    for(i=0U;i<ticks;++i)tick(context);
+    /* Original app cadence: drain bounded debt and compose only current state. */
+    result->dirty=(mygames_kvm_u8)(ticks && scheduler.credit<1000UL);
 }
 static int graphics(void *context,struct mygames_kvm_video_band *band)
 {
@@ -159,7 +175,7 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     application.width=256U;application.height=240U;
     application.context=0;application.title="MySMB";
     application.available_views=MYGAMES_WIN16_VIEW_GRAPHICS;
-    application.input=input;application.tick=tick;
+    application.input=input;application.update=update;
     application.presentation=0;application.exit_requested=exit_requested;
     application.text=0;application.graphics=graphics;
     result=mygames_win16_run(instance,previous,show,&application);

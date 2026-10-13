@@ -2223,3 +2223,11 @@ foreach(MYSMB_VALIDATION_CONSUMER mysmb_core_smoke mysmb_render_smoke
         target_link_libraries(${MYSMB_VALIDATION_CONSUMER} PRIVATE mysmb_validation_projections)
     endif()
 endforeach()
+
+add_executable(mysmb_win16_scheduler_smoke
+    ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/win16/scheduler_smoke.c
+    kvm/platform/win16/scheduler.c)
+target_include_directories(mysmb_win16_scheduler_smoke PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/kvm" "${CMAKE_SOURCE_DIR}/src/lib")
+set_target_properties(mysmb_win16_scheduler_smoke PROPERTIES C_STANDARD 90 C_STANDARD_REQUIRED ON C_EXTENSIONS OFF)
+add_test(NAME mysmb.win16-app-scheduler COMMAND mysmb_win16_scheduler_smoke)

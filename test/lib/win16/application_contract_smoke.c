@@ -14,7 +14,8 @@ static void input(void *context,const struct mygames_kvm_input_event *event)
         if(event->physical_code==MYGAMES_KVM_KEY_ESCAPE)app->exit=1U;
     }
 }
-static void tick(void *context){++((struct fixture *)context)->ticks;}
+static void update(void *context,unsigned long now,struct mygames_win16_update *result)
+{(void)now;++((struct fixture *)context)->ticks;result->dirty=1U;result->wake_ms=0U;}
 static mygames_kvm_u8 view(void *context){return ((struct fixture *)context)->view;}
 static mygames_kvm_u8 exiting(void *context){return ((struct fixture *)context)->exit;}
 static const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *text_frame(void *context)
@@ -29,12 +30,13 @@ int main(void)
     struct fixture state={0U,0U,0U,0U};
     struct mygames_win16_application app={&state,"Contract fixture",
         MYGAMES_WIN16_VIEW_GRAPHICS|MYGAMES_WIN16_VIEW_TEXT,
-        input,tick,view,exiting,text_frame,graphics,0,0U,256U,240U};
+        input,update,view,exiting,text_frame,graphics,0,0U,256U,240U};
     struct mygames_kvm_input_event event={MYGAMES_KVM_INPUT_KEY,1U,0U,
         MYGAMES_KVM_KEY_TAB,0U,0U,0U,0U,0U,MYGAMES_KVM_COORD_NONE};
     struct mygames_kvm_video_band band;
+    struct mygames_win16_update result;
     app.input(app.context,&event);
-    app.tick(app.context);
+    app.update(app.context,0UL,&result);
     if(app.presentation(app.context)!=MYGAMES_KVM_PRESENTATION_TEXT || state.ticks!=1U)return 1;
     if(app.text(app.context)!=&text || !app.graphics(app.context,&band) ||
         band.pixels!=pixels || band.rows!=1U)return 2;

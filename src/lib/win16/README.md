@@ -24,10 +24,11 @@ portable synthetic tests; these do not replace real Win3.x host acceptance.
 The NE/MZ binder verifies unchanged DOS code, relocation and entry state and
 preserves resident allocation bounds after the historical linker wraps it.
 
-The clock bounds each dispatch to four logical ticks and retains remaining
-credit. Catch-up skips obsolete composition; a completed DIB is painted
-synchronously so timer traffic cannot starve presentation. Focus changes
-clear physical keys and reset host timing. No host code reads game state.
+The host calls app update after input or an app-requested wake. The app returns
+whether its image is dirty and a next wake delay (zero waits for input).
+Only dirty output is recomposed; WM_PAINT replays retained pixels. Focus
+changes clear physical keys and are delivered to the app; pause/rebase,
+fixed tick rate, catch-up limits and frame skipping belong to the app.
 
 Actual runtime qualification covers Win3.1 enhanced mode with the standard
 sixteen-colour VGA driver. Its device palette approximates source colours;

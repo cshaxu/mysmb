@@ -2,7 +2,6 @@
 #include <string.h>
 #include "win16/host.h"
 #include "win16/dib.h"
-#include "win16/clock.h"
 #include "kvm/color.h"
 #include "kvm/windows_key.h"
 
@@ -14,14 +13,10 @@ static HPALETTE palette;
 static const struct mygames_win16_application *app;
 static HGLOBAL storage;
 static unsigned char FAR *pixels;
-static struct mygames_win16_clock clock;
 static unsigned char keys[MYGAMES_KVM_PHYSICAL_KEY_COUNT];
-static int focused,ready;
+static int ready,closing;
 static unsigned short output_bits,row_bytes,storage_bytes;
 static unsigned char reduced_colors[256];
-
-void mygames_win16_rebase_clock(void)
-{mygames_win16_clock_reset(&clock,GetTickCount());}
 
 static int compose(void)
 {
@@ -37,6 +32,25 @@ static int compose(void)
             reduced_colors,app->height,app->palette_count))return 0;
     }
     return 1;
+}
+
+static void service(HWND window)
+{
+    struct mygames_win16_update update;
+    if(closing)return;
+    KillTimer(window,1);
+    if(app->exit_requested(app->context)){closing=1;DestroyWindow(window);return;}
+    memset(&update,0,sizeof(update));
+    app->update(app->context,GetTickCount(),&update);
+    if(app->exit_requested(app->context)){closing=1;DestroyWindow(window);return;}
+    if(update.dirty) {
+        ready=compose();InvalidateRect(window,0,FALSE);
+        if(ready)UpdateWindow(window);
+    }
+    if(update.wake_ms && !SetTimer(window,1,update.wake_ms,0)) {
+        /* A requested wake cannot be silently lost. */
+        closing=1;DestroyWindow(window);PostQuitMessage(5);
+    }
 }
 
 static void key_event(WPARAM key,LPARAM detail,int down)
@@ -60,7 +74,6 @@ LRESULT FAR PASCAL __export MygamesWin16WndProc(HWND window,UINT message,
     RECT rect;
     HDC dc;
     HPALETTE old_palette;
-    unsigned short ticks,i;
     struct mygames_kvm_input_event event;
     switch(message) {
     case WM_QUERYNEWPALETTE:
@@ -74,29 +87,14 @@ LRESULT FAR PASCAL __export MygamesWin16WndProc(HWND window,UINT message,
     case WM_PALETTECHANGED:
         if((HWND)word!=window && palette)InvalidateRect(window,0,FALSE);
         return 0;
-    case WM_KEYDOWN: key_event(word,detail,1);return 0;
-    case WM_KEYUP: key_event(word,detail,0);return 0;
+    case WM_KEYDOWN: key_event(word,detail,1);service(window);return 0;
+    case WM_KEYUP: key_event(word,detail,0);service(window);return 0;
     case WM_SETFOCUS: case WM_KILLFOCUS:
-        focused=message==WM_SETFOCUS;
         memset(keys,0,sizeof(keys));memset(&event,0,sizeof(event));
-        event.kind=MYGAMES_KVM_INPUT_FOCUS;event.down=(unsigned char)focused;
-        app->input(app->context,&event);
-        mygames_win16_clock_reset(&clock,GetTickCount());return 0;
-    case WM_TIMER:
-        if(app->exit_requested(app->context)){DestroyWindow(window);return 0;}
-        if(!focused)return 0;
-        /* USER timer delivery is coarse. Preserve 60-Hz logical ticks and
-         * publish once after the due ticks; paint never advances the app. */
-        ticks=mygames_win16_clock_step(&clock,GetTickCount());
-        for(i=0U;i<ticks;++i)app->tick(app->context);
-        /* Catch up logical state without rebuilding an already overdue view.
-         * Input and USER messages still get a turn after each bounded batch. */
-        if(!ticks || clock.credit>=1000UL)return 0;
-        ready=compose();InvalidateRect(window,0,FALSE);
-        /* Win3 timer traffic can keep a deferred paint behind a busy queue.
-         * Submit the completed immutable frame before returning to USER. */
-        if(ready)UpdateWindow(window);
-        return 0;
+        event.kind=MYGAMES_KVM_INPUT_FOCUS;
+        event.down=(unsigned char)(message==WM_SETFOCUS);
+        app->input(app->context,&event);service(window);return 0;
+    case WM_TIMER: service(window);return 0;
     case WM_PAINT:
         dc=BeginPaint(window,&paint);GetClientRect(window,&rect);
         old_palette=0;
@@ -107,7 +105,7 @@ LRESULT FAR PASCAL __export MygamesWin16WndProc(HWND window,UINT message,
                 pixels,(BITMAPINFO FAR *)&bitmap,DIB_RGB_COLORS,SRCCOPY);
         if(old_palette)SelectPalette(dc,old_palette,TRUE);
         EndPaint(window,&paint);return 0;
-    case WM_DESTROY: KillTimer(window,1);PostQuitMessage(0);return 0;
+    case WM_DESTROY: closing=1;KillTimer(window,1);PostQuitMessage(0);return 0;
     }
     return DefWindowProc(window,message,word,detail);
 }
@@ -122,13 +120,13 @@ int mygames_win16_run(HINSTANCE instance,HINSTANCE previous,int show,
     unsigned short i;
     unsigned long rgb,bytes;
     HDC screen;
-    if(!application || !application->input || !application->tick ||
+    if(!application || !application->input || !application->update ||
         !application->graphics || !application->exit_requested ||
         !(application->available_views&MYGAMES_WIN16_VIEW_GRAPHICS))return 1;
     if(!application->palette || !application->palette_count ||
         application->palette_count>256U || !application->width || !application->height ||
         application->width>32767U || application->height>32767U)return 1;
-    app=application;ready=focused=0;
+    app=application;ready=closing=0;
     memset(keys,0,sizeof(keys));memset(&bitmap,0,sizeof(bitmap));
     bytes=(((unsigned long)app->width+3UL)/4UL)*4UL*app->height;
     if(bytes>65535UL)return 2;
@@ -182,11 +180,7 @@ int mygames_win16_run(HINSTANCE instance,HINSTANCE previous,int show,
         CW_USEDEFAULT,CW_USEDEFAULT,rect.right-rect.left,rect.bottom-rect.top,
         0,0,instance,0);
     if(!window){DeleteObject(palette);GlobalUnlock(storage);GlobalFree(storage);return 4;}
-    mygames_win16_clock_reset(&clock,GetTickCount());
-    if(!SetTimer(window,1,16,0)) {
-        DestroyWindow(window);DeleteObject(palette);GlobalUnlock(storage);GlobalFree(storage);return 5;
-    }
-    ShowWindow(window,show);UpdateWindow(window);
+    ShowWindow(window,show);service(window);UpdateWindow(window);
     while(GetMessage(&message,0,0,0)) {
         TranslateMessage(&message);DispatchMessage(&message);
     }

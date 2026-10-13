@@ -46,7 +46,7 @@ try {
         $sources+=@((Join-Path $repository 'src/lib/kvm/color.c'),(Join-Path $repository 'src/lib/kvm/windows_key.c'),(Join-Path $repository 'src/lib/win16/host.c'),(Join-Path $generated 'smb1_local_rom.c'),(Join-Path $generated 'smb1_local_title.c'))
         $sources+=Join-Path $repository 'src/lib/win16/dib.c'
         $sources+=Join-Path $repository 'src/lib/kvm/video.c'
-        $sources+=Join-Path $repository 'src/lib/win16/clock.c'
+        $sources+=Join-Path $repository 'src/app-mario/kvm/platform/win16/scheduler.c'
         $sources+=@('src/lib/win16/audio.c','src/lib/win16/file.c','src/lib/win16/file_replace.c') | ForEach-Object {Join-Path $repository $_}
         $objects=@()
         foreach($source in $sources) {

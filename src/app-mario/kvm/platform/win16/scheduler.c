@@ -1,7 +1,7 @@
-#include "win16/clock.h"
-void mygames_win16_clock_reset(struct mygames_win16_clock *clock,unsigned long now)
+#include "platform/win16/scheduler.h"
+void mysmb_win16_scheduler_reset(struct mysmb_win16_scheduler *clock,unsigned long now)
 {clock->last=now&0xffffffffUL;clock->credit=0UL;}
-mygames_kvm_u8 mygames_win16_clock_step(struct mygames_win16_clock *clock,
+mygames_kvm_u8 mysmb_win16_scheduler_step(struct mysmb_win16_scheduler *clock,
     unsigned long now)
 {
     unsigned long elapsed=(now-clock->last)&0xffffffffUL;

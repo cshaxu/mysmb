@@ -12,15 +12,12 @@ find_package(Python3 COMPONENTS Interpreter REQUIRED)
 add_test(NAME mygames.win16-mz-binding COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_SOURCE_DIR}/test/lib/win16/test_mz_binding.py)
 
-add_library(mygames_win16_dib STATIC dib.c clock.c)
+add_library(mygames_win16_dib STATIC dib.c)
 target_include_directories(mygames_win16_dib PUBLIC "${CMAKE_SOURCE_DIR}/src/lib")
 target_link_libraries(mygames_win16_dib PUBLIC mygames_kvm)
 add_executable(mygames_win16_dib_smoke ${CMAKE_SOURCE_DIR}/test/lib/win16/dib_smoke.c)
 target_link_libraries(mygames_win16_dib_smoke PRIVATE mygames_win16_dib)
 add_test(NAME mygames.win16-dib-projection COMMAND mygames_win16_dib_smoke)
-add_executable(mygames_win16_clock_smoke ${CMAKE_SOURCE_DIR}/test/lib/win16/clock_smoke.c)
-target_link_libraries(mygames_win16_clock_smoke PRIVATE mygames_win16_dib)
-add_test(NAME mygames.win16-clock-budget COMMAND mygames_win16_clock_smoke)
 
 add_executable(mygames_win16_audio_smoke ${CMAKE_SOURCE_DIR}/test/lib/win16/audio_smoke.c audio.c)
 target_include_directories(mygames_win16_audio_smoke PRIVATE ${CMAKE_SOURCE_DIR}/test/lib/win16/fake_sdk "${CMAKE_SOURCE_DIR}/src/lib")
@@ -37,3 +34,11 @@ add_executable(mygames_win16_file_path_smoke ${CMAKE_SOURCE_DIR}/test/lib/win16/
 target_include_directories(mygames_win16_file_path_smoke PRIVATE ${CMAKE_SOURCE_DIR}/test/lib/win16/fake_sdk "${CMAKE_SOURCE_DIR}/src/lib")
 target_link_libraries(mygames_win16_file_path_smoke PRIVATE mygames_kvm)
 add_test(NAME mygames.win16-file-path COMMAND mygames_win16_file_path_smoke)
+
+add_executable(mygames_win16_host_smoke
+    ${CMAKE_SOURCE_DIR}/test/lib/win16/host_lifecycle_smoke.c host.c dib.c)
+target_include_directories(mygames_win16_host_smoke PRIVATE
+    ${CMAKE_SOURCE_DIR}/test/lib/win16/host_sdk "${CMAKE_SOURCE_DIR}/src/lib")
+target_link_libraries(mygames_win16_host_smoke PRIVATE mygames_kvm)
+set_target_properties(mygames_win16_host_smoke PROPERTIES C_STANDARD 90 C_STANDARD_REQUIRED ON C_EXTENSIONS OFF)
+add_test(NAME mygames.win16-host-lifecycle COMMAND mygames_win16_host_smoke)
