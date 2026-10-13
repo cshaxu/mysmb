@@ -18,6 +18,13 @@ int main(void)
     event.physical_code=MYGAMES_KVM_KEY_TAB;
     mysmb_app_input_mapping_event(&mapping,&event,&input);
     if((input.requests&MYSMB_IO_REQUEST_TOGGLE)==0U)return 3;
+    input.requests=0U;event.down=0U;
+    mysmb_app_input_mapping_event(&mapping,&event,&input);
+    if(input.requests!=MYSMB_IO_REQUEST_TOGGLE)return 8;
+    input.requests=0U;event.down=1U;event.repeat=1U;
+    mysmb_app_input_mapping_event(&mapping,&event,&input);
+    if(input.requests)return 9;
+    event.repeat=0U;
     input.requests=0U;
     event.physical_code=MYGAMES_KVM_KEY_DOWN_ARROW;
     mysmb_app_input_mapping_event(&mapping,&event,&input);

@@ -113,6 +113,14 @@ static void mysmb_win32_release_keys(void)
     mysmb_snapshot_keys_reset(&g_snapshot_keys);g_snapshot_requests=0U;
     (void)mysmb_io_control_toggle(&g_control,0U,0U);
 }
+static void mysmb_win32_transfer_keys(void)
+{
+    mygames_kvm_u8 tab_held=g_control.toggle_held;
+    mysmb_win32_release_keys();
+    /* A presenter transfer does not physically release the app's Tab key.
+     * Suppress a make delivered by the new device until its break arrives. */
+    g_control.toggle_held=tab_held;
+}
 static int mysmb_win32_key_event(HWND window,WORD key,WORD scan,
     unsigned char pressed)
 {
@@ -208,7 +216,7 @@ static void mygames_win32_console_begin(HWND window)
 {
     if(g_console_thread)return;
     g_switching=1U;
-    mysmb_win32_release_keys();
+    mysmb_win32_transfer_keys();
     ZeroMemory(&g_console_job,sizeof(g_console_job));
     g_console_desktop=GetThreadDesktop(GetCurrentThreadId());
     g_console_thread=CreateThread(NULL,0U,mygames_win32_console_job,window,0U,NULL);
@@ -237,7 +245,7 @@ static void mysmb_win32_console_complete(HWND window)
 static void mysmb_win32_switch_presenter(HWND window,int activate)
 {
     g_switching=1U;
-    mysmb_win32_release_keys();
+    mysmb_win32_transfer_keys();
     if(!g_text_mode) {
         if(g_console.opened && !mygames_win32_text_console_resume(&g_console))
             mygames_win32_text_console_close(&g_console);

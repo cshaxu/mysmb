@@ -40,10 +40,10 @@ void mysmb_app_input_mapping_event(struct mysmb_app_input_mapping *mapping,
     if(event->repeat==0U) {
         if(event->physical_code==MYGAMES_KVM_KEY_P)input->requests|=MYSMB_IO_REQUEST_SAVE;
         if(event->physical_code==MYGAMES_KVM_KEY_O)input->requests|=MYSMB_IO_REQUEST_LOAD;
+        if(event->physical_code==MYGAMES_KVM_KEY_TAB)input->requests|=MYSMB_IO_REQUEST_TOGGLE;
     }
     if(event->down!=0U && event->repeat==0U) {
         if(event->physical_code==MYGAMES_KVM_KEY_ESCAPE)input->requests|=MYSMB_IO_REQUEST_EXIT;
-        if(event->physical_code==MYGAMES_KVM_KEY_TAB)input->requests|=MYSMB_IO_REQUEST_TOGGLE;
     }
     sample(mapping,input);
 }

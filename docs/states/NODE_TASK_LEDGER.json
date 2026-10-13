@@ -9601,9 +9601,9 @@
     },
     {
       "id": "M3 T43",
-      "state": "active",
+      "state": "closed",
       "evidence": [
-        "docs/proposals/m3/mygames-code-unification.md",
+        "docs/history/M3-T43-mygames-code-unification.md",
         "docs/states/CURRENT.md"
       ],
       "subtasks": [
@@ -9611,7 +9611,7 @@
           "id": "M3 T43 S1",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/history/M3-T43-mygames-code-unification.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9625,7 +9625,7 @@
           "id": "M3 T43 S2",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/history/M3-T43-mygames-code-unification.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9639,7 +9639,7 @@
           "id": "M3 T43 S3",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/history/M3-T43-mygames-code-unification.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9653,7 +9653,7 @@
           "id": "M3 T43 S4",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/history/M3-T43-mygames-code-unification.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9667,7 +9667,7 @@
           "id": "M3 T43 S5",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/history/M3-T43-mygames-code-unification.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9681,7 +9681,7 @@
           "id": "M3 T43 S6",
           "state": "closed",
           "evidence": [
-            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/history/M3-T43-mygames-code-unification.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9693,9 +9693,9 @@
         },
         {
           "id": "M3 T43 S7",
-          "state": "active",
+          "state": "closed",
           "evidence": [
-            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/history/M3-T43-mygames-code-unification.md",
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
@@ -9703,7 +9703,7 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Admitted zero-node final structural parity, shared-owner dependency audit and pre-Mine readiness acceptance."
+          "technicalReceipt": "Closed zero-node final receiving acceptance: actual PE32/PE64 291-test matrices and all 13 real console routes each pass; local three products bound, shared owners unique, Mine import remains future candidate."
         }
       ]
     }
@@ -1011003,7 +1011003,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+      "evidence": "docs/history/M3-T43-mygames-code-unification.md"
     },
     {
       "subtask": "M3 T43 S2",
@@ -1011015,7 +1011015,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+      "evidence": "docs/history/M3-T43-mygames-code-unification.md"
     },
     {
       "subtask": "M3 T43 S3",
@@ -1011027,7 +1011027,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+      "evidence": "docs/history/M3-T43-mygames-code-unification.md"
     },
     {
       "subtask": "M3 T43 S4",
@@ -1011039,7 +1011039,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+      "evidence": "docs/history/M3-T43-mygames-code-unification.md"
     },
     {
       "subtask": "M3 T43 S5",
@@ -1011051,7 +1011051,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+      "evidence": "docs/history/M3-T43-mygames-code-unification.md"
     },
     {
       "subtask": "M3 T43 S6",
@@ -1011063,7 +1011063,7 @@
       "baseline": 0,
       "maximumComplete": 0,
       "state": "closed",
-      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+      "evidence": "docs/history/M3-T43-mygames-code-unification.md"
     },
     {
       "subtask": "M3 T43 S7",
@@ -1011074,8 +1011074,8 @@
       "incomingComplete": [],
       "baseline": 0,
       "maximumComplete": 0,
-      "state": "active",
-      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+      "state": "closed",
+      "evidence": "docs/history/M3-T43-mygames-code-unification.md"
     }
   ]
 }

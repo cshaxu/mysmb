@@ -2818,14 +2818,14 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T42 S2 | 0 | 0 | dos16-sound-blaster-device-lifecycle; [record](../../docs/proposals/m3/dos16-game-music.md); [record](../../docs/states/CURRENT.md) |
 | M3 T42 S3 | 0 | 0 | dos16-integer-apu-pcm-synthesis; [record](../../docs/proposals/m3/dos16-game-music.md); [record](../../docs/states/CURRENT.md) |
 | M3 T42 S4 | 0 | 0 | dos16-integrated-music-route; [record](../../docs/proposals/m3/dos16-game-music.md); [record](../../docs/history/M3-T42-dos16-game-music.md) |
-| M3 T43 | 0 | - | [record](../../docs/proposals/m3/mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
-| M3 T43 S1 | 0 | 0 | mygames-architecture-audit; [record](../../docs/proposals/m3/mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
-| M3 T43 S2 | 0 | 0 | mygames-mario-structural-baseline; [record](../../docs/proposals/m3/mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
-| M3 T43 S3 | 0 | 0 | mygames-kvm-neutral-contract-extraction; [record](../../docs/proposals/m3/mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
-| M3 T43 S4 | 0 | 0 | mygames-win32-host-extraction; [record](../../docs/proposals/m3/mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
-| M3 T43 S5 | 0 | 0 | mygames-dos16-host-extraction; [record](../../docs/proposals/m3/mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
-| M3 T43 S6 | 0 | 0 | mygames-receiving-seams; [record](../../docs/proposals/m3/mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
-| M3 T43 S7 | 0 | 0 | mygames-structural-parity; [record](../../docs/proposals/m3/mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
+| M3 T43 | 0 | - | [record](../../docs/history/M3-T43-mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
+| M3 T43 S1 | 0 | 0 | mygames-architecture-audit; [record](../../docs/history/M3-T43-mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
+| M3 T43 S2 | 0 | 0 | mygames-mario-structural-baseline; [record](../../docs/history/M3-T43-mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
+| M3 T43 S3 | 0 | 0 | mygames-kvm-neutral-contract-extraction; [record](../../docs/history/M3-T43-mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
+| M3 T43 S4 | 0 | 0 | mygames-win32-host-extraction; [record](../../docs/history/M3-T43-mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
+| M3 T43 S5 | 0 | 0 | mygames-dos16-host-extraction; [record](../../docs/history/M3-T43-mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
+| M3 T43 S6 | 0 | 0 | mygames-receiving-seams; [record](../../docs/history/M3-T43-mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
+| M3 T43 S7 | 0 | 0 | mygames-structural-parity; [record](../../docs/history/M3-T43-mygames-code-unification.md); [record](../../docs/states/CURRENT.md) |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
 | M3 T6 | 0 | - | [record](../../docs/history/M3-T5-dos16-composition-root.md); [record](../../docs/history/M3-T6-opennt-mz-link.md); S not recorded |
 | M3 T7 | 0 | - | [record](../../docs/history/M3-T6-opennt-mz-link.md); [record](../../docs/history/M3-T7-dos-hardware-hooks.md); S not recorded |
@@ -4048,10 +4048,10 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T42 S2 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/dos16-game-music.md) |
 | M3 T42 S3 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/dos16-game-music.md) |
 | M3 T42 S4 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T42-dos16-game-music.md) |
-| M3 T43 S1 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/mygames-code-unification.md) |
-| M3 T43 S2 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/mygames-code-unification.md) |
-| M3 T43 S3 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/mygames-code-unification.md) |
-| M3 T43 S4 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/mygames-code-unification.md) |
-| M3 T43 S5 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/mygames-code-unification.md) |
-| M3 T43 S6 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/mygames-code-unification.md) |
-| M3 T43 S7 | 0 | 0 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/mygames-code-unification.md) |
+| M3 T43 S1 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T43-mygames-code-unification.md) |
+| M3 T43 S2 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T43-mygames-code-unification.md) |
+| M3 T43 S3 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T43-mygames-code-unification.md) |
+| M3 T43 S4 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T43-mygames-code-unification.md) |
+| M3 T43 S5 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T43-mygames-code-unification.md) |
+| M3 T43 S6 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T43-mygames-code-unification.md) |
+| M3 T43 S7 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T43-mygames-code-unification.md) |

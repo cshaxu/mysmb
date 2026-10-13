@@ -18,9 +18,10 @@ The common result is one coherent interaction model:
 | DOS16 | Use the indexed 16-colour text projection and host-owned keyboard/video adapters.  An app declares whether a graphical presentation is available. |
 | Win3.x | Double-click starts a native GDI window.  Tab changes presentation in that window; it does not require a modern Console. |
 
-This task is an architecture audit and migration design.  It moves no
-application source, imports no sibling code, changes no ROM-derived logic,
-and produces no product executable.
+S1 established the design. The owner then admitted the Mario-first S2-S7
+implementation and limited the current goal to completing the split and
+preparing to import Mine. This task closes that receiving phase; actual Mine
+import and Win16 runtime adoption remain a separately admitted future task.
 
 ## Read-only source and provenance boundary
 
@@ -165,13 +166,13 @@ view switches, colour policy, input mapping, close/exit, game-state identity
 and absence of duplicate MySMB platform implementations. Remove superseded
 Mario adapters only after the shared library is its sole owner.
 
-### S8 — Mine provenance admission and history-preserving import
+### Deferred import phase - Mine provenance and history-preserving import
 
 Only after S2-S7 are accepted, record Mine revision/ownership/distribution
 receipt, import its history beneath `app-mine/`, and prove its existing targets
 through the superbuild. This S does not yet refactor Mine behavior.
 
-### S9 — Mine adoption and Win16 delivery
+### Deferred adoption phase - Mine adoption and Win16 delivery
 
 Migrate Mine to the already-proven KVM/Win32/DOS16 owners, extract the generic
 Mine Win16 USER/GDI and NE/MZ host into `lib/win16`, then add the Mario Win16
@@ -399,3 +400,39 @@ host-probe receipt, local artifacts and compile-contract bindings. Verify
 the disabled/absent Mine seam and explicitly unimplemented Win16 host. Final
 acceptance stops at import readiness; future import/runtime stages require a
 separate owner/provenance admission. No ROM node or gameplay work is admitted.
+
+### S7 final receipt and T43 receiving-phase closure
+
+The shared-owner/dependency audit passes: KVM is neutral; DOS16 and Win32
+depend on KVM without either application; Win16 is an interface-only target.
+The former Mario PIT and Win32 host leaf copies are absent. There is no old
+root src/test tree. Mine contains only receiving documentation, and explicit
+enable without an imported CMake file rejects configuration. Each app retains
+its own bindings and presentation decisions; Mario core/PPU/art remain local.
+
+The final actual-width CTest matrices pass 291/291 each. Both widths also
+pass all 13 private-desktop host routes, including borrowed/owned console
+lifetimes, input/focus, repeated Tab, snapshot, error recovery, launch/close
+and interactive CMD wait/prompt restoration. This host gate found a root
+join missed by ordinary CTest: switching cleared Tab-held state, and mapping
+discarded its break edge. S7 repairs the app-local transfer and forwards both
+non-repeat Tab edges. The app unit test covers break/repeat mapping, and the
+real host routes now pass. No input binding or game rule is reassigned to a
+library. Estimated zero production change became this bounded root repair.
+
+All three local products are current: DOS16 361,691 bytes, actual PE32 x86
+411,787 bytes and PE64 x64 365,675 bytes. Both native product self-tests pass.
+DOS recompilation/link/memory verification passes, with the same 385,392-byte
+minimum load and original output hash; S7 changes no DOS execution source.
+The accepted DOSBox synthetic probe retains zero differences in 61,440
+pixels, both text row counts, IRQ and video-state restoration. The callback
+contract compiles with the real 16-bit large-model ABI. Product identities
+and local assets match their verified builds. No generated EXE is committed.
+
+T43 S1-S7 close under the owner's import-readiness scope. Former import/host
+adoption phases transfer to the unnumbered
+[Mine import candidate](../proposals/m3/mine-import-host-adoption.md).
+This is structural/platform acceptance, not new original-ROM certification:
+scope/expected/actual ROM nodes are empty, and the existing incomplete M2
+final-certificate boundary remains unchanged. Win16 runtime and Mine game
+code remain future work. The prepared tree is ready for their admission.
