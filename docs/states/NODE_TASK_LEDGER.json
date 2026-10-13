@@ -9737,11 +9737,11 @@
             "docs/states/CURRENT.md"
           ],
           "recordKinds": [
-            "nxvm-source-build-relocation"
+            "win16-ne-mz-product-feasibility"
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Admitted zero-node source/build relocation into src/lib and src/app-mario/core,kvm; test ownership migration follows in S3."
+          "technicalReceipt": "S2 P1 records independently linked and Win3.1-run /AL NE/MZ GDI pixel/timer probes, pinned SDK/CRT provenance and DOS resident-memory preservation; actual Mario NE integration and DOS-prompt bridge disposition remain open in P2."
         }
       ]
     }

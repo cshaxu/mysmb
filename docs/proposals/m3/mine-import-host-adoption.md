@@ -11,6 +11,11 @@ The owner limited the current goal to completing this split and preparing
 for import. The former T43 S8/S9 plan is retained here as a future unnumbered
 candidate. It has no admitted task identifier or approval to import now.
 
+Owner amendment: T44 S2 now admits the Mario NE/MZ Win3.x host first. When
+this candidate is admitted, consume its then-verified Win16 owner rather than
+creating a competing host from Mine; review and import only capabilities that
+the common owner actually lacks.
+
 ## Proposed bounded sequence
 
 1. Record the exact Mine revision, ownership and redistribution receipt;

@@ -8,7 +8,8 @@ at `src/app-mario/core`, and Mario-specific I/O/presentation/assembly below
 `src/app-mario/kvm`. The future Mine receiving boundary is
 `src/app-mine/{core,kvm}`. Tests live at the corresponding paths below
 `test/`, including nested production subsystems; there is no extra per-app
-src/test layer in the target. Source movement is S2 and test movement is S3,
+src/test layer in the target. After the owner's Win16 insertion, source
+movement is S3 and test movement is S4,
 as recorded in [the active migration](../proposals/m3/nxvm-source-test-layout.md).
 The current local product boundary is already `assets/mario` and future
 Mine products use `assets/mine`.
