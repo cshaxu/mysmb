@@ -21,7 +21,7 @@ def source_paths(record, identity, repository_root):
     require(len(paths) == len(set(paths)),
             "%s has duplicate currentSourcePaths" % identity)
     for path in paths:
-        require(isinstance(path, str) and path.startswith("app-mario/src/") and
+        require(isinstance(path, str) and path.startswith("src/app-mario/") and
                 path.endswith(".c"),
                 "%s has an invalid current source path" % identity)
         require((repository_root / path).is_file(),

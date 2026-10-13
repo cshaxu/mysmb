@@ -3,8 +3,18 @@ from pathlib import Path
 import re
 import sys
 
-root = Path(__file__).resolve().parents[1]
-platform = root / "src" / "platform"
+repository = Path(__file__).resolve().parents[2]
+root = repository / "src" / "app-mario"
+# A missing moved owner must fail, not silently pass an empty rglob.
+for owner in [root / "core", root / "kvm" / "io", root / "kvm" / "ppu"] + [
+        repository / "src" / "lib" / name for name in ("kvm", "dos16", "win16", "win32")]:
+    if not owner.is_dir() or not any(owner.rglob("*.[ch]")):
+        raise SystemExit(f"missing production owner: {owner}")
+for old in (repository / "app-mario" / "src", repository / "lib"):
+    for path in old.rglob("*.[ch]"):
+        if "test" not in path.relative_to(old).parts and "validate" not in path.relative_to(old).parts:
+            raise SystemExit(f"stale production source: {path}")
+platform = root / "kvm" / "platform"
 components = {p.name for p in platform.iterdir() if p.is_dir()}
 if components != {"dos16", "win32", "win16"}:
     print(f"platform components must be dos16/win16/win32 only: {sorted(components)}")
@@ -44,10 +54,10 @@ for path in platform.rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(root)}: forbidden game-state access {token}")
             sys.exit(1)
-for path in (root / "src" / "io").rglob("*.[ch]"):
+for path in (root / "kvm" / "io").rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
-        stdio_service = path.parent == root / "src" / "io" / "file" and include == "stdio.h"
+        stdio_service = path.parent == root / "kvm" / "io" / "file" and include == "stdio.h"
         if not include.startswith(("io/", "kvm/")) and include != "string.h" and not stdio_service:
             print(f"{path.relative_to(root)}: IO contract imports {include}")
             sys.exit(1)
@@ -56,7 +66,7 @@ for path in (root / "src" / "io").rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(root)}: IO contract leaks {token}")
             sys.exit(1)
-for path in (root / "src" / "ppu").rglob("*.[ch]"):
+for path in (root / "kvm" / "ppu").rglob("*.[ch]"):
     text=path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)',text,re.M):
         if not include.startswith(("ppu/", "io/", "kvm/")) and include != "string.h":
@@ -66,15 +76,14 @@ for path in (root / "src" / "ppu").rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(root)}: PPU leaks {token}")
             sys.exit(1)
-for path in (root / "src" / "core").rglob("*.[ch]"):
+for path in (root / "core").rglob("*.[ch]"):
     text=path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)',text,re.M):
         if include.startswith(("text/", "game/presentation/", "platform/",
                 "app/", "validate/")) or include == "ppu/frame.h":
             print(f"{path.relative_to(root)}: core imports downstream {include}")
             sys.exit(1)
-repository = root.parent
-kvm = repository / "lib" / "kvm"
+kvm = repository / "src" / "lib" / "kvm"
 for path in kvm.rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
@@ -85,7 +94,7 @@ for path in kvm.rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(repository)}: KVM leaks {token}")
             sys.exit(1)
-win32 = repository / "lib" / "win32"
+win32 = repository / "src" / "lib" / "win32"
 allowed_win32_includes = ("win32/", "kvm/", "windows.h", "mmsystem.h",
                           "tlhelp32.h", "string.h", "stddef.h")
 for path in win32.rglob("*.[ch]"):
@@ -98,7 +107,7 @@ for path in win32.rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(repository)}: Win32 host leaks {token}")
             sys.exit(1)
-dos16 = repository / "lib" / "dos16"
+dos16 = repository / "src" / "lib" / "dos16"
 for path in dos16.rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
@@ -109,7 +118,7 @@ for path in dos16.rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(repository)}: DOS16 host leaks {token}")
             sys.exit(1)
-win16 = repository / "lib" / "win16"
+win16 = repository / "src" / "lib" / "win16"
 for path in win16.rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):

@@ -12,14 +12,14 @@ $build=[IO.Path]::GetFullPath((Join-Path $repository 'build'))+[IO.Path]::Direct
 if(!$output.StartsWith($build,[StringComparison]::OrdinalIgnoreCase)){throw 'Probe must remain below build.'}
 New-Item -ItemType Directory -Force -Path $output | Out-Null
 $runtimeInclude=Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC'
-$kvmInclude=Join-Path $repository 'lib/kvm/include'
-$dos16Include=Join-Path $repository 'lib/dos16/include'
+$kvmInclude=Join-Path $repository 'src/lib'
+$dos16Include=Join-Path $repository 'src/lib'
 $oldPath=$env:PATH;$oldTemp=$env:TEMP;$oldTmp=$env:TMP
 $env:PATH=(Split-Path -Parent $Compiler)+';'+(Join-Path $env:SystemRoot 'System32')
 $env:TEMP=$output;$env:TMP=$output
 Push-Location $output
 try {
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fodevice.obj /I (Join-Path $repository 'app-mario/src') /I $kvmInclude /I $dos16Include /I $runtimeInclude (Join-Path $repository 'app-mario/test/dos16_video_lifecycle_probe.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fodevice.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I $kvmInclude /I $dos16Include /I $runtimeInclude (Join-Path $repository 'app-mario/test/dos16_video_lifecycle_probe.c')
     if($LASTEXITCODE -ne 0){throw 'Device probe compilation failed.'}
     . (Join-Path $PSScriptRoot 'Get-Dos16DeviceProbeMembers.ps1')
     $members=@(Get-Dos16DeviceProbeMembers)

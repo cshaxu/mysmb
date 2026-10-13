@@ -51,7 +51,7 @@ finally {
 }
 & $Python (Join-Path $PSScriptRoot 'PrepareDosLink365Omf.py') `
     --input $output --output $stage --stack 'mysmb-stack.obj' `
-    --direct 'mysmb-startup.obj' --direct 'platform_dos16_main_dos16.c'
+    --direct 'mysmb-startup.obj' --direct 'kvm_platform_dos16_main_dos16.c'
 if ($LASTEXITCODE -ne 0) { throw 'OMF preparation failed.' }
 $manifest = Get-Content -Raw (Join-Path $stage 'manifest.json') | ConvertFrom-Json
 Push-Location $stage

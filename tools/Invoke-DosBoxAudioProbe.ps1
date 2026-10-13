@@ -21,14 +21,14 @@ $env:PATH=(Split-Path -Parent $Compiler)+';'+(Join-Path $env:SystemRoot 'System3
 $env:TEMP=$compileTemp;$env:TMP=$compileTemp
 Push-Location $output
 try {
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foprobe.obj /I (Join-Path $repository 'app-mario/src') /I (Join-Path $repository 'lib/kvm/include') /I $runtimeInclude (Join-Path $repository 'app-mario/test/dos16_audio_device_probe.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foprobe.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I (Join-Path $repository 'src/lib') /I $runtimeInclude (Join-Path $repository 'app-mario/test/dos16_audio_device_probe.c')
     if($LASTEXITCODE -ne 0){throw 'DOS audio probe compilation failed.'}
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foaudio.obj /I (Join-Path $repository 'app-mario/src') /I (Join-Path $repository 'lib/kvm/include') /I $runtimeInclude (Join-Path $repository 'app-mario/src/platform/dos16/dos_audio.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foaudio.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I (Join-Path $repository 'src/lib') /I $runtimeInclude (Join-Path $repository 'src/app-mario/kvm/platform/dos16/dos_audio.c')
     if($LASTEXITCODE -ne 0){throw 'DOS audio renderer compilation failed.'}
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fopcm.obj /I (Join-Path $repository 'app-mario/src') /I (Join-Path $repository 'lib/kvm/include') /I $runtimeInclude (Join-Path $repository 'app-mario/src/io/audio_renderer.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fopcm.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I (Join-Path $repository 'src/lib') /I $runtimeInclude (Join-Path $repository 'src/app-mario/kvm/io/audio_renderer.c')
     if($LASTEXITCODE -ne 0){throw 'Shared PCM renderer compilation failed.'}
     # Keep this name inside DOS 8.3 limits because LINK 3.65 runs in DOSBox.
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foaudiodos.obj /I (Join-Path $repository 'app-mario/src') /I (Join-Path $repository 'lib/kvm/include') /I $runtimeInclude (Join-Path $repository 'app-mario/src/platform/dos16/dos_audio_dos.c')
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foaudiodos.obj /I (Join-Path $repository 'src/app-mario') /I (Join-Path $repository 'src/app-mario/kvm') /I (Join-Path $repository 'src/lib') /I $runtimeInclude (Join-Path $repository 'src/app-mario/kvm/platform/dos16/dos_audio_dos.c')
     if($LASTEXITCODE -ne 0){throw 'DOS audio device compilation failed.'}
     Copy-Item -LiteralPath $DosLinker -Destination 'LINK.EXE' -Force
     Copy-Item -LiteralPath $runtime -Destination 'RT.LIB' -Force

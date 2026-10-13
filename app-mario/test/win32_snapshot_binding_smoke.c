@@ -13,7 +13,7 @@ static SHORT test_key(int key){(void)key;return 0;}
  * root's static lifecycle state and actual window-message join. Leaf owners
  * have separate unit tests, so this does not duplicate their branch checks. */
 #define WinMain mysmb_unused_product_entry
-#include "../src/platform/win32/main_win32.c"
+#include "platform/win32/main_win32.c"
 #undef WinMain
 static struct mysmb_io_snapshot expected,actual;
 static unsigned char wire[MYSMB_SNAPSHOT_FILE_BYTES];

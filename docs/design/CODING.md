@@ -2,7 +2,7 @@
 
 ## Current And Target Trees
 
-T44 migrates the T43 physical tree below to the owner-required topology:
+T44 S3 places production sources in the owner-required topology:
 shared components at `src/lib/{kvm,dos16,win32,win16}`, translated Mario code
 at `src/app-mario/core`, and Mario-specific I/O/presentation/assembly below
 `src/app-mario/kvm`. The future Mine receiving boundary is
@@ -15,20 +15,20 @@ The current local product boundary is already `assets/mario` and future
 Mine products use `assets/mine`.
 
 ```text
-app-mario/src/core/       all translated ROM logic,RAM,OAM/APU writers and observation receipts
-app-mario/src/text/       authored immutable scene/element consumers and receipt snapshot codec
-app-mario/src/ppu/        neutral addressed/visible state and read-only shared pixel compositor
-app-mario/src/io/         Mario controller/audio/save and app-local I/O contracts
-app-mario/src/app/        public game-to-IO composition glue; no gameplay/device policy
-app-mario/src/assets/     generated owner-local declarations; never tracked
+src/app-mario/core/       all translated ROM logic,RAM,OAM/APU writers and observation receipts
+src/app-mario/kvm/text/       authored immutable scene/element consumers and receipt snapshot codec
+src/app-mario/kvm/ppu/        neutral addressed/visible state and read-only shared pixel compositor
+src/app-mario/kvm/io/         Mario controller/audio/save and app-local I/O contracts
+src/app-mario/kvm/app/        public game-to-IO composition glue; no gameplay/device policy
+src/app-mario/kvm/assets/     generated owner-local declarations; never tracked
 app-mario/src/validate/   test-only projections,owner-ROM reference and trace comparison
-app-mario/src/platform/   Mario composition roots, input policy, VGA/PPU and audio adapters
-app-mario/src/main-*.c    one small composition root per host target
+src/app-mario/kvm/platform/   Mario composition roots, input policy, VGA/PPU and audio adapters
+src/app-mario/main-*.c    one small composition root per host target
 app-mario/test/           Mario-owned unit and integration harnesses
-lib/kvm/                   portable cells, palette/glyph algorithms, video and physical-event contracts
-lib/win32/                 reusable Windows Console/window/input and timing services
-lib/dos16/                 reusable Set-1, IRQ, BIOS text, B800 and PIT services
-lib/win16/                 USER/GDI graphical host, neutral DIB/clock and receiving callbacks
+src/lib/kvm/                   portable cells, palette/glyph algorithms, video and physical-event contracts
+src/lib/win32/                 reusable Windows Console/window/input and timing services
+src/lib/dos16/                 reusable Set-1, IRQ, BIOS text, B800 and PIT services
+src/lib/win16/                 USER/GDI graphical host, neutral DIB/clock and receiving callbacks
 app-mine/                  receiving documentation only; provenance-reviewed import pending
 tools/                     local generators and governance checks
 assets/mario/              ignored local Mario outputs: mysmb16.exe, mysmb32.exe, mysmb64.exe
@@ -50,7 +50,7 @@ and selected80x25/retained80x50text cells. Cells remain three bytes;the neutral
 frame retains4000-cell capacity and adds selected rows and a16-entry RGB
 palette with a source-color map. Selected glyph IDs and their Unicode/reflection
 mapping live in io/text_glyph. It contains no game state, ROM data, host API,
-audio synthesis, or text quantizer. Shared color lookup and indexed row scaling
+or text quantizer. The shared integer audio renderer owns neutral APU-to-PCM synthesis. Shared color lookup and indexed row scaling
 consume only the neutral video contract. Its sole target-dependent representation
 is the far pointer required to address pixels with the DOS16 compiler.
 Existing game and platform representations remain until their admitted
@@ -115,7 +115,7 @@ Win32 audio snapshot modules marshal host synthesis state arithmetically.
 `io/file` provides stdio services;each host supplies executable-path,
 replacement and device-reset services. Only roots connect these owners.
 
-`app-mario/src/core/` cannot include host headers or platform macros. `app-mario/src/platform/` cannot mutate game internals. `validate/` is linked only by tests and recorders;it is absent from products. CMake selects `mysmb-win32-x86`, `mysmb-win32-x64`, or `mysmb-dos16`; compile definitions are permitted only beneath the platform roots. The OpenNT 16-bit C compiler verifies the same core in real-mode large-model mode; the later DOS adapter owns linking the full MZ executable. Modern 32/64-bit compilers run the Win32 product.
+`src/app-mario/core/` cannot include host headers or platform macros. `src/app-mario/kvm/platform/` cannot mutate game internals. `validate/` is linked only by tests and recorders;it is absent from products. CMake selects `mysmb-win32-x86`, `mysmb-win32-x64`, or `mysmb-dos16`; compile definitions are permitted only beneath the platform roots. The OpenNT 16-bit C compiler verifies the same core in real-mode large-model mode; the later DOS adapter owns linking the full MZ executable. Modern 32/64-bit compilers run the Win32 product.
 
 ## Component boundaries
 
@@ -162,7 +162,7 @@ sampler is validate/text_frame and links only to tests. No compatibility copy
 or forwarding directory remains at the old platform locations.
 
 Win16 P/O controls are app-owned and use the existing snapshot codec, validation
-and synchronous file store. lib/win16 owns module-path discovery, backup file
+and synchronous file store. src/lib/win16 owns module-path discovery, backup file
 replacement and the MMSYSTEM waveform queue. Mario io/audio_renderer is the
 single integer synthesizer for DOS16 and Win16; device drivers consume PCM
 without inspecting original sound commands. Saving pauses dispatch only for

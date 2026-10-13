@@ -12,7 +12,7 @@ param(
 )
 $ErrorActionPreference='Stop'
 $repository=Split-Path -Parent $PSScriptRoot
-$sourceRoot=Join-Path $repository 'app-mario/src'
+$sourceRoot=Join-Path $repository 'src/app-mario'
 $output=[IO.Path]::GetFullPath($OutputDirectory)
 $buildRoot=[IO.Path]::GetFullPath((Join-Path $repository 'build'))+'\'
 if(!$output.StartsWith($buildRoot,[StringComparison]::OrdinalIgnoreCase)) {
@@ -42,28 +42,28 @@ try {
         & $python (Join-Path $PSScriptRoot 'smb_title_codegen.py') --rom $RomPath --output $generated
         if($LASTEXITCODE){throw 'Title generator failed'}
         $sources=@(Get-ChildItem -LiteralPath (Join-Path $sourceRoot 'core') -Recurse -Filter *.c | Sort-Object FullName | ForEach-Object {$_.FullName})
-        $sources+=@('ppu/state.c','ppu/frame.c','io/palette_expand.c','io/palette_pairs.c','io/input_latch.c','io/control.c','io/audio_renderer.c','io/snapshot.c','io/snapshot_store.c','io/snapshot_keys.c','io/file/snapshot_files.c','io/file/executable_path.c','app/game_io.c','app/game_snapshot.c','text/observer_snapshot.c','app/input_mapping.c','platform/win16/main_win16.c') | ForEach-Object {Join-Path $sourceRoot $_}
-        $sources+=@((Join-Path $repository 'lib/kvm/src/color.c'),(Join-Path $repository 'lib/kvm/src/windows_key.c'),(Join-Path $repository 'lib/win16/src/host.c'),(Join-Path $generated 'smb1_local_rom.c'),(Join-Path $generated 'smb1_local_title.c'))
-        $sources+=Join-Path $repository 'lib/win16/src/dib.c'
-        $sources+=Join-Path $repository 'lib/win16/src/clock.c'
-        $sources+=@('lib/win16/src/audio.c','lib/win16/src/file.c','lib/win16/src/file_replace.c') | ForEach-Object {Join-Path $repository $_}
+        $sources+=@('kvm/ppu/state.c','kvm/ppu/frame.c','kvm/io/palette_expand.c','kvm/io/palette_pairs.c','kvm/io/input_latch.c','kvm/io/control.c','kvm/io/audio_renderer.c','kvm/io/snapshot.c','kvm/io/snapshot_store.c','kvm/io/snapshot_keys.c','kvm/io/file/snapshot_files.c','kvm/io/file/executable_path.c','kvm/app/game_io.c','kvm/app/game_snapshot.c','kvm/text/observer_snapshot.c','kvm/app/input_mapping.c','kvm/platform/win16/main_win16.c') | ForEach-Object {Join-Path $sourceRoot $_}
+        $sources+=@((Join-Path $repository 'src/lib/kvm/color.c'),(Join-Path $repository 'src/lib/kvm/windows_key.c'),(Join-Path $repository 'src/lib/win16/host.c'),(Join-Path $generated 'smb1_local_rom.c'),(Join-Path $generated 'smb1_local_title.c'))
+        $sources+=Join-Path $repository 'src/lib/win16/dib.c'
+        $sources+=Join-Path $repository 'src/lib/win16/clock.c'
+        $sources+=@('src/lib/win16/audio.c','src/lib/win16/file.c','src/lib/win16/file_replace.c') | ForEach-Object {Join-Path $repository $_}
         $objects=@()
         foreach($source in $sources) {
             $relative=$source.Substring($repository.Length+1)
             $object=($relative -replace '[\\/-]', '_' -replace '\.c$', '.obj')
             $renderFlags=@()
-            if($relative.Replace('\','/') -in @('app-mario/src/ppu/frame.c','app-mario/src/io/palette_expand.c','app-mario/src/io/palette_pairs.c','lib/win16/src/dib.c')) {
+            if($relative.Replace('\','/') -in @('src/app-mario/kvm/ppu/frame.c','src/app-mario/kvm/io/palette_expand.c','src/app-mario/kvm/io/palette_pairs.c','src/lib/win16/dib.c')) {
                 # Match the reviewed DOS render-only optimization flags while
                 # retaining the Win16 Windows ABI and unchanged core compiler.
                 $renderFlags=@('/Ox','/On','/Ow')
             }
-            & $Compiler /nologo /AL /G2sw /Gs /W3 @renderFlags /c "/Fo$object" /I $SdkIncludeDirectory /I $sourceRoot /I (Join-Path $repository 'lib/kvm/include') /I (Join-Path $repository 'lib/win16/include') /I $generated $source
+            & $Compiler /nologo /AL /G2sw /Gs /W3 @renderFlags /c "/Fo$object" /I $SdkIncludeDirectory /I $sourceRoot /I (Join-Path $sourceRoot 'kvm') /I (Join-Path $repository 'src/lib') /I $generated $source
             if($LASTEXITCODE){throw "Win16 compile failed: $relative"}
             $objects+=$object
         }
         # Historical LINK's file-descriptor table cannot hold the split core
         # as direct objects. Group OMF members, as in the existing DOS build.
-        $entry='app_mario_src_platform_win16_main_win16.obj'
+        $entry='src_app_mario_kvm_platform_win16_main_win16.obj'
         $members=@($objects | Where-Object {$_ -ne $entry})
         $groups=@()
         $librarian=Join-Path (Split-Path -Parent $Compiler) 'lib16.exe'

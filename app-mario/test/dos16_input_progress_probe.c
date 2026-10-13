@@ -5,7 +5,7 @@
 #include "platform/dos16/devices.h"
 static void observed_input(struct mysmb_io_input *input);
 #define mysmb_dos16_devices_input observed_input
-#include "../src/platform/dos16/main_dos16.c"
+#include "platform/dos16/main_dos16.c"
 #undef mysmb_dos16_devices_input
 
 static void observed_input(struct mysmb_io_input *input)

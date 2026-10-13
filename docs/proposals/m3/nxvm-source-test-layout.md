@@ -498,3 +498,44 @@ products. Existing tests retain explicit paths until S4; S5 retains the final
 combined host acceptance. No Mine import or game behavior change is authorized
 by this move. ROM node/edge scope, expected promotions and actual promotions
 are all empty; prior conformance evidence is not expanded by relocation.
+
+## S3 P2 closure and automatic S4 admission
+
+Owner authorizes automatic closure/admission of each S after its gates.
+S3 moved 318 files, including 311 C/header files whose SHA-256 identities
+exactly match the pre-move source manifest. The mapping is deterministic:
+app-mario/src/core goes to src/app-mario/core; the app/io/ppu/text/platform
+owners go to src/app-mario/kvm; shared lib component src and include/component
+flatten into src/lib/component. Seven build/readme files accompany their owners.
+No function, declaration or source include changed in production. Existing
+validation projections and tests remain at explicit old locations for S4.
+
+CMake and fourteen tool entry points now use the moved owners. The similar-issue
+sweep repaired dynamic DOS/Win16 source lists, direct entry-object selection,
+OMF member discovery, probe include roots, two Windows fixture entry includes,
+the DOS input fixture include, Python CTest entry paths and snapshot output
+paths. The purity gate now rejects missing owner trees rather than silently
+accepting an empty scan. Historical evidence paths are not reinterpreted.
+
+Both configured widths pass 300/300 tests with no skip in this run. Actual
+DOS and native Win16 builds pass; the hybrid binder checks 2651 relocations,
+351131 DOS image bytes and resident bounds 385840-389936 including PSP.
+The full DOS/Win16 product is byte-identical to the accepted S2 product.
+Current documentation and responsibility-ledger gates pass. No new ROM-node
+or control-edge credit is claimed. Published local artifacts:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 642781 | 43fec3438f2142fd3de7c9de01d43d021f74ccf1f18d789c7a818747de0299cb |
+| mysmb32.exe | 411787 | 85e18ac27f07aabf615e55463684186aa0095a968fd296333f1996262aac5ed5 |
+| mysmb64.exe | 376939 | 306fdf8f7b47fa3cb2caa57b93c2093f2b05a5256758b006febb34aa827297a6 |
+
+S4 now owns the mirrored test migration, fixture discovery, test-only reference
+projection placement and current source-path metadata. Estimate: about 660
+test/reference entries plus their CMake/tool callers. Each fixture receives a
+production owner before moving; cross-owner tests name their composition owner.
+Assertions and case counts must not be weakened or replaced by empty scans.
+S4 does not change production C behavior or import Mine. Native build trees
+are immediately reused as S4 active workspaces; obsolete S3-only probes and
+intermediates are removed after this tracked receipt. S5 still owns final
+combined host acceptance and complete active-build cleanup.

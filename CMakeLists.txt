@@ -4,11 +4,11 @@ project(mygames LANGUAGES C)
 
 # Applications own their targets; shared libraries will be added beside them.
 enable_testing()
-add_subdirectory(lib/kvm)
-add_subdirectory(lib/dos16)
-add_subdirectory(lib/win32)
-add_subdirectory(lib/win16)
-add_subdirectory(app-mario)
+add_subdirectory(src/lib/kvm)
+add_subdirectory(src/lib/dos16)
+add_subdirectory(src/lib/win32)
+add_subdirectory(src/lib/win16)
+add_subdirectory(src/app-mario)
 
 option(MYGAMES_BUILD_MINE "Build the separately admitted Mine application" OFF)
 if(MYGAMES_BUILD_MINE)

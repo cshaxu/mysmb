@@ -19,11 +19,11 @@ def object_for_source(source):
     normalized = source.replace("\\", "/")
     if "/local-rom/" in normalized:
         return Path(normalized).with_suffix(".obj").name
-    if "/lib/kvm/src/" in normalized:
+    if "/src/lib/kvm/" in normalized:
         return "kvm_" + Path(normalized).with_suffix(".obj").name
-    if "/lib/dos16/src/" in normalized:
+    if "/src/lib/dos16/" in normalized:
         return "dos16_" + Path(normalized).with_suffix(".obj").name
-    return normalized.split("/src/", 1)[1].replace("/", "_")
+    return normalized.split("/src/app-mario/", 1)[1].replace("/", "_")
 
 
 def library_members(library):

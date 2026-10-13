@@ -32,7 +32,7 @@ $out.Add('')
 $out.Add('## Rules')
 $out.Add('')
 $out.Add('- ROM assembly is the authority for all game behavior. The C source must name the original routine(s) it ports.')
-$out.Add('- `app-mario/src/core` owns every game decision, PPU-state construction, OAM construction, and input decoding. `src/platform` may only collect host input, schedule frames, and submit the already constructed frame.')
+$out.Add('- `src/app-mario/core` owns every game decision, PPU-state construction, OAM construction, and input decoding. `src/platform` may only collect host input, schedule frames, and submit the already constructed frame.')
 $out.Add('- A green unit test alone does not close an item. Each behavioral item needs a ROM-reference frame script and comparison of the affected CPU RAM, CIRAM, palette, OAM, PPU state, and audio state.')
 $out.Add('- No ad-hoc behavior change is permitted. A repair first names the checklist entry, original labels, exact source branch path, and regression route.')
 $out.Add('- The control graph is authoritative for executable structure. Data labels are separately tracked because tables and constants are part of ROM fidelity, but they do not become synthetic C functions.')
@@ -85,7 +85,7 @@ $out.Add('')
 $out.Add('## Mandatory conformance gates')
 $out.Add('')
 $out.Add('- [ ] Every label below is assigned to exactly one logical owner or explicitly classified as a local branch of an assigned owner.')
-$out.Add('- [ ] Every `app-mario/src/core` entry point has its ROM label set, state-write map, and trace route recorded.')
+$out.Add('- [ ] Every `src/app-mario/core` entry point has its ROM label set, state-write map, and trace route recorded.')
 $out.Add('- [ ] Every visible OAM family, status-bar split, palette/CIRAM path, and audio queue has a matching reference route.')
 $out.Add('- [ ] W1-1 title/start, movement/jump, coin/block, mushroom/fire-flower, damage/death/restart, pipe, flag/castle, warp and two-player routes pass frame comparison on x86 and x64.')
 $out.Add('- [ ] x86 and x64 native traces are byte-identical for every approved route.')
@@ -122,7 +122,7 @@ $out.Add('')
 $out.Add('- Executable control nodes with an explicit edge: `' + $controlNodes.Count + '`')
 $out.Add('- Static/data-only or unconnected labels requiring separate classification: `' + ($labels.Count - $controlNodes.Count) + '`')
 $dotPath = Join-Path (Split-Path -Parent $AsmPath) 'smb1-rom-controlgraph.dot'
-$gameFiles = Get-ChildItem -LiteralPath 'app-mario/src/core' -Recurse -File -Include '*.c','*.h'
+$gameFiles = Get-ChildItem -LiteralPath 'src/app-mario/core' -Recurse -File -Include '*.c','*.h'
 $gameText = ($gameFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
 $covered = New-Object System.Collections.Generic.HashSet[string]
 foreach ($l in $labels) {
@@ -132,7 +132,7 @@ $audit = New-Object System.Collections.Generic.List[string]
 $audit.Add('# ROM migration baseline audit')
 $audit.Add('')
 $audit.Add('- ROM symbols: ' + $labels.Count)
-$audit.Add('- Symbols mentioned anywhere in `app-mario/src/core`: ' + $covered.Count)
+$audit.Add('- Symbols mentioned anywhere in `src/app-mario/core`: ' + $covered.Count)
 $audit.Add('- A mention is not migration proof. All items remain open until the inventory records a C owner, state-write map, and frame-reference evidence.')
 $audit.Add('')
 $audit.Add('## Mentioned ROM symbols')

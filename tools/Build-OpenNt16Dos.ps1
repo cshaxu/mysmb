@@ -16,15 +16,15 @@ $librarian = Join-Path $toolDirectory 'lib16.exe'
 $runtimeLibrary = Join-Path $RuntimeDirectory 'LLIBCE.LIB'
 $stackObject = Join-Path $RuntimeDirectory 'LVARSTCK.OBJ'
 $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC'
-$kvmIncludeDirectory = Join-Path (Split-Path -Parent (Split-Path -Parent $SourceRoot)) 'lib/kvm/include'
-$dos16Root = Join-Path (Split-Path -Parent (Split-Path -Parent $SourceRoot)) 'lib/dos16'
-$dos16IncludeDirectory = Join-Path $dos16Root 'include'
+$kvmIncludeDirectory = Join-Path (Split-Path -Parent (Split-Path -Parent $SourceRoot)) 'src/lib'
+$dos16Root = Join-Path (Split-Path -Parent (Split-Path -Parent $SourceRoot)) 'src/lib/dos16'
+$dos16IncludeDirectory = $kvmIncludeDirectory
 $pythonExecutable = (Get-Command python -ErrorAction Stop).Source
 $originalBuildPath = $env:PATH
 $originalTemporaryPath = $env:TEMP
 $originalTemporaryDirectory = $env:TMP
-$safeRenderSources = @('ppu/frame.c','io/planar_frame.c','io/palette_pairs.c','io/palette_expand.c',
-    'platform/dos16/palette_expand.c','platform/dos16/nibble_expand.c','platform/dos16/slot_copy.c','platform/dos16/planar_row.c')
+$safeRenderSources = @('kvm/ppu/frame.c','kvm/io/planar_frame.c','kvm/io/palette_pairs.c','kvm/io/palette_expand.c',
+    'kvm/platform/dos16/palette_expand.c','kvm/platform/dos16/nibble_expand.c','kvm/platform/dos16/slot_copy.c','kvm/platform/dos16/planar_row.c')
 $sources = @(
     'core/whirlpool.c',
     'core/cannon.c',
@@ -73,7 +73,7 @@ $sources = @(
     'core/enemy/side_collision.c',
     'core/area/block_buffer.c',
     'core/area/area_data.c',
-    'ppu/state.c', 'core/boot.c', 'core/dispatcher.c', 'core/engine.c', 'core/engine_slots.c', 'core/engine_tail.c', 'core/frame_root.c', 'core/title_modes.c', 'core/terminal_modes.c', 'core/game.c', 'core/audio.c', 'core/area.c', 'core/area/block_metatile.c', 'core/enemy/stream.c', 'core/enemy/group.c', 'core/enemy/init.c', 'core/enemy/init_targets.c', 'core/enemy/loop.c', 'core/enemy/core.c', 'core/enemy/dispatch_targets.c', 'core/enemy/movement.c', 'core/enemy/frenzy.c', 'core/player.c', 'core/player/terrain.c', 'core/player/terrain_metatiles.c', 'core/player/climbing.c', 'core/player/pipe_entry.c', 'core/player/impede.c', 'core/world/metatiles.c', 'core/player_control.c', 'core/player_transition.c', 'core/player_modes.c', 'core/player_end_level.c', 'core/player_movement.c', 'core/scroll.c', 'core/entry.c',
+    'kvm/ppu/state.c', 'core/boot.c', 'core/dispatcher.c', 'core/engine.c', 'core/engine_slots.c', 'core/engine_tail.c', 'core/frame_root.c', 'core/title_modes.c', 'core/terminal_modes.c', 'core/game.c', 'core/audio.c', 'core/area.c', 'core/area/block_metatile.c', 'core/enemy/stream.c', 'core/enemy/group.c', 'core/enemy/init.c', 'core/enemy/init_targets.c', 'core/enemy/loop.c', 'core/enemy/core.c', 'core/enemy/dispatch_targets.c', 'core/enemy/movement.c', 'core/enemy/frenzy.c', 'core/player.c', 'core/player/terrain.c', 'core/player/terrain_metatiles.c', 'core/player/climbing.c', 'core/player/pipe_entry.c', 'core/player/impede.c', 'core/world/metatiles.c', 'core/player_control.c', 'core/player_transition.c', 'core/player_modes.c', 'core/player_end_level.c', 'core/player_movement.c', 'core/scroll.c', 'core/entry.c',
     'core/objects.c', 'core/fireball/fireball_spawn.c', 'core/fireball/fireball_core.c', 'core/world/movement.c', 'core/world/gravity.c', 'core/world/collision.c', 'core/world/block_buffer.c', 'core/world/bounding_box.c',
     'core/world/geometry.c', 'core/bridge.c', 'core/oam/bullet_bill_gfx.c', 'core/oam/hammer_gfx.c', 'core/oam/firebar_gfx.c', 'core/oam/vine_gfx.c', 'core/oam/sprite_stacker.c', 'core/oam/sprite_dump.c', 'core/enemy_bounds.c',
     'core/oam/power_up_gfx.c', 'core/oam/object_position.c', 'core/oam/sprite_row.c', 'core/oam/enemy_offscreen.c', 'core/oam/sprite_draw.c', 'core/oam/block_offscreen.c', 'core/oam/player_gfx.c', 'core/oam/fireball_gfx.c', 'core/oam/block_gfx.c', 'core/oam/goomba_gfx.c',
@@ -81,16 +81,16 @@ $sources = @(
     'core/oam/bloober_gfx.c', 'core/oam/podoboo_gfx.c', 'core/oam/normal_enemy_gfx.c',
     'core/oam/spiny_gfx.c', 'core/oam/hammer_bro_gfx.c', 'core/oam/bowser_gfx.c', 'core/oam/bowser_flame_gfx.c', 'core/endgame_objects.c', 'core/oam/flagpole_gfx.c',
     'core/oam/small_platform_gfx.c',
-    'ppu/frame.c', 'core/status.c',
+    'kvm/ppu/frame.c', 'core/status.c',
     'core/observation.c',
-    'text/observer_snapshot.c',
-    'text/elements.c', 'text/compact_elements.c', 'text/layout.c', 'text/actor_scene.c',
-    'text/background_scene.c', 'text/caption_scene.c',
-    'text/scene.c',
-    'app/game_io.c', 'app/game_snapshot.c', 'io/palette_pairs.c', 'io/palette_expand.c', 'io/scale.c', 'io/pacing.c', 'io/control.c', 'io/snapshot.c', 'io/snapshot_store.c', 'io/snapshot_keys.c', 'io/file/snapshot_files.c', 'platform/dos16/snapshot_replace.c', 'platform/dos16/keyboard.c', 'platform/dos16/dos_audio.c', 'io/audio_renderer.c', 'platform/dos16/dos_audio_dos.c', 'platform/dos16/devices.c',
-    'io/file/executable_path.c', 'platform/dos16/executable_path.c',
-    'io/planar_frame.c', 'platform/dos16/planar_row.c', 'platform/dos16/palette_expand.c', 'platform/dos16/nibble_expand.c', 'platform/dos16/slot_copy.c', 'platform/dos16/retained_background.c', 'platform/dos16/compact_vga_layout.c', 'platform/dos16/ram_compositor.c', 'platform/dos16/dos16_root.c',
-    'platform/dos16/main_dos16.c'
+    'kvm/text/observer_snapshot.c',
+    'kvm/text/elements.c', 'kvm/text/compact_elements.c', 'kvm/text/layout.c', 'kvm/text/actor_scene.c',
+    'kvm/text/background_scene.c', 'kvm/text/caption_scene.c',
+    'kvm/text/scene.c',
+    'kvm/app/game_io.c', 'kvm/app/game_snapshot.c', 'kvm/io/palette_pairs.c', 'kvm/io/palette_expand.c', 'kvm/io/scale.c', 'kvm/io/pacing.c', 'kvm/io/control.c', 'kvm/io/snapshot.c', 'kvm/io/snapshot_store.c', 'kvm/io/snapshot_keys.c', 'kvm/io/file/snapshot_files.c', 'kvm/platform/dos16/snapshot_replace.c', 'kvm/platform/dos16/keyboard.c', 'kvm/platform/dos16/dos_audio.c', 'kvm/io/audio_renderer.c', 'kvm/platform/dos16/dos_audio_dos.c', 'kvm/platform/dos16/devices.c',
+    'kvm/io/file/executable_path.c', 'kvm/platform/dos16/executable_path.c',
+    'kvm/io/planar_frame.c', 'kvm/platform/dos16/planar_row.c', 'kvm/platform/dos16/palette_expand.c', 'kvm/platform/dos16/nibble_expand.c', 'kvm/platform/dos16/slot_copy.c', 'kvm/platform/dos16/retained_background.c', 'kvm/platform/dos16/compact_vga_layout.c', 'kvm/platform/dos16/ram_compositor.c', 'kvm/platform/dos16/dos16_root.c',
+    'kvm/platform/dos16/main_dos16.c'
 )
 if (!(Test-Path -LiteralPath $runtimeLibrary) -or !(Test-Path -LiteralPath $stackObject) -or
     !(Test-Path -LiteralPath $runtimeIncludeDirectory) -or !(Test-Path -LiteralPath $kvmIncludeDirectory) -or
@@ -124,29 +124,29 @@ try {
     $env:TMP = (Get-Location).Path
     # Compile the neutral contract probe with the real far-pointer ABI too.
     # It is not linked into the product and supplies no ROM or device data.
-    $ioContractProbe = Join-Path (Split-Path -Parent $SourceRoot) 'test/io_contract_smoke.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Foio_contract_smoke.obj /I $IncludeDirectory /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $ioContractProbe
+    $ioContractProbe = Join-Path (Split-Path -Parent $PSScriptRoot) 'app-mario/test/io_contract_smoke.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Foio_contract_smoke.obj /I $IncludeDirectory /I (Join-Path $IncludeDirectory 'kvm') /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $ioContractProbe
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-    $ioBridge = Join-Path $SourceRoot 'app/game_io.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Foapp_game_io.obj /I $IncludeDirectory /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $ioBridge
+    $ioBridge = Join-Path $SourceRoot 'kvm/app/game_io.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Foapp_game_io.obj /I $IncludeDirectory /I (Join-Path $IncludeDirectory 'kvm') /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $ioBridge
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     # Isolated text foundation: check the real far-pointer ABI without linking
     # a dormant presentation path into the current graphical product.
-    $textElements = Join-Path $SourceRoot 'text/elements.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_elements.obj /I $IncludeDirectory /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textElements
+    $textElements = Join-Path $SourceRoot 'kvm/text/elements.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_elements.obj /I $IncludeDirectory /I (Join-Path $IncludeDirectory 'kvm') /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textElements
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-    $textScene = Join-Path $SourceRoot 'text/actor_scene.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_actor_scene.obj /I $IncludeDirectory /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textScene
+    $textScene = Join-Path $SourceRoot 'kvm/text/actor_scene.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_actor_scene.obj /I $IncludeDirectory /I (Join-Path $IncludeDirectory 'kvm') /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textScene
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-    $textBackground = Join-Path $SourceRoot 'text/background_scene.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_background_scene.obj /I $IncludeDirectory /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textBackground
+    $textBackground = Join-Path $SourceRoot 'kvm/text/background_scene.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_background_scene.obj /I $IncludeDirectory /I (Join-Path $IncludeDirectory 'kvm') /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textBackground
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $objects = @()
-    $textCaption = Join-Path $SourceRoot 'text/caption_scene.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_caption_scene.obj /I $IncludeDirectory /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textCaption
+    $textCaption = Join-Path $SourceRoot 'kvm/text/caption_scene.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_caption_scene.obj /I $IncludeDirectory /I (Join-Path $IncludeDirectory 'kvm') /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textCaption
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-    $textAssembly = Join-Path $SourceRoot 'text/scene.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_scene.obj /I $IncludeDirectory /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textAssembly
+    $textAssembly = Join-Path $SourceRoot 'kvm/text/scene.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fotext_scene.obj /I $IncludeDirectory /I (Join-Path $IncludeDirectory 'kvm') /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory $textAssembly
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     foreach ($relativeSource in $sources) {
         $source = Join-Path $SourceRoot $relativeSource
@@ -160,19 +160,19 @@ try {
             # IRQ, clock, input, root or startup source enters this whitelist.
             $renderFlags = @('/Ox','/On','/Ow','/G0')
         }
-        & $Compiler /nologo /AL /Gs @renderFlags /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET @resourceDefines /c /Fo$object /I $IncludeDirectory /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory @resourceIncludes $source
+        & $Compiler /nologo /AL /Gs @renderFlags /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET @resourceDefines /c /Fo$object /I $IncludeDirectory /I (Join-Path $IncludeDirectory 'kvm') /I $kvmIncludeDirectory /I $dos16IncludeDirectory /I $runtimeIncludeDirectory @resourceIncludes $source
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $objects += $object
     }
     foreach ($kvmSource in @('color.c','glyph.c')) {
         $object = 'kvm_' + [IO.Path]::ChangeExtension($kvmSource, '.obj')
-        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fo$object /I $kvmIncludeDirectory /I $runtimeIncludeDirectory (Join-Path (Split-Path -Parent $kvmIncludeDirectory) ('src/' + $kvmSource))
+        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fo$object /I $kvmIncludeDirectory /I $runtimeIncludeDirectory (Join-Path $kvmIncludeDirectory ('kvm/' + $kvmSource))
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $objects += $object
     }
     foreach ($dos16Source in @('raw_keyboard.c','pit_clock.c','text_cells.c','host.c','video_mode.c')) {
         $object = 'dos16_' + [IO.Path]::ChangeExtension($dos16Source, '.obj')
-        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fo$object /I $dos16IncludeDirectory /I $kvmIncludeDirectory /I $runtimeIncludeDirectory (Join-Path $dos16Root ('src/' + $dos16Source))
+        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fo$object /I $dos16IncludeDirectory /I $kvmIncludeDirectory /I $runtimeIncludeDirectory (Join-Path $dos16Root $dos16Source)
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $objects += $object
     }
@@ -191,13 +191,13 @@ try {
     if (!(Test-Path -LiteralPath $librarian)) {
         throw 'The configured compiler directory lacks lib16.exe.'
     }
-    $entryObject = 'platform_dos16_main_dos16.c'
+    $entryObject = 'kvm_platform_dos16_main_dos16.c'
     # Resolve the private runtime hook explicitly before LLIBCE is searched.
-    $entrySource = Get-Content -Raw -Encoding UTF8 (Join-Path $SourceRoot 'platform/dos16/main_dos16.c')
+    $entrySource = Get-Content -Raw -Encoding UTF8 (Join-Path $SourceRoot 'kvm/platform/dos16/main_dos16.c')
     if ($entrySource -notmatch '(?m)^\s*int\s+main\s*\(\s*void\s*\)') {
         throw 'The DOS startup hook requires main(void); review argument consumers.'
     }
-    $startupSource = Join-Path $SourceRoot 'platform/dos16/process_startup.c'
+    $startupSource = Join-Path $SourceRoot 'kvm/platform/dos16/process_startup.c'
     & $Compiler /nologo /AL /Gs /c /Fomysmb-startup.obj /I $runtimeIncludeDirectory $startupSource
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     # C vectors are omitted; physical DOS environment and cinit are retained.

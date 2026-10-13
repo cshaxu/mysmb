@@ -27,7 +27,7 @@ static int probe_stretch(HDC dc,int x,int y,int w,int h,int sx,int sy,int sw,int
 /* This is a composition-root integration fixture: its assertions cover the
  * root's static presenter switch and window-message join. Leaf owners have
  * separate unit tests, so this does not duplicate their branch checks. */
-#include "../src/platform/win32/main_win32.c"
+#include "platform/win32/main_win32.c"
 #undef WinMain
 static struct mysmb_game saved_game;
 static struct mysmb_win32_audio_output saved_audio;

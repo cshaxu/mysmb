@@ -6,9 +6,9 @@ MySMB is one native product with a portable translated program and separate host
 
 ## Modules, Ownership, And Assembly
 
-The physical Mario tree is `app-mario/src/`. For readability, remaining module paths are relative to it. T43 S3 adds `lib/kvm` as the single owner of portable fixed-width types, semantic palette and glyph algorithms, neutral cells/video contracts, and raw physical input/presentation requests. KVM contains no host API or application command meaning; Mario maps every received physical event in `app-mario/src/app/input_mapping`.
+The physical Mario tree is `src/app-mario/`. For readability, remaining module paths are relative to it. T43 S3 adds `src/lib/kvm` as the single owner of portable fixed-width types, semantic palette and glyph algorithms, neutral cells/video contracts, and raw physical input/presentation requests. KVM contains no host API or application command meaning; Mario maps every received physical event in `src/app-mario/kvm/app/input_mapping`.
 
-`core/` owns the original RAM container and all translated CPU/OAM/source-sound routines. `core/observation` owns source-decision receipts;`text/` owns authored scenes and receipt encoding. `validate/` owns render/frame/page projections used only by tests and recorders. `assets/` owns generated, owner-local ROM derivatives. `validate/` owns reference-execution comparison through local tools such as `nnes`. `lib/win32` owns reusable window, Console, raw-device-input and timing mechanics; `app-mario/src/platform/win32` retains the Mario composition root plus Mario-specific audio, focus and snapshot adapters. `lib/dos16` owns Set-1 physical decoding, keyboard IRQ lifetime, BIOS/PIT sampling, BIOS text-mode setup/restoration and indexed text cell output. Mario retains its scan-to-command mapping, VGA/PPU composition, sound and device assembly. Each target has its own small composition root.
+`core/` owns the original RAM container and all translated CPU/OAM/source-sound routines. `core/observation` owns source-decision receipts;`text/` owns authored scenes and receipt encoding. `validate/` owns render/frame/page projections used only by tests and recorders. `assets/` owns generated, owner-local ROM derivatives. `validate/` owns reference-execution comparison through local tools such as `nnes`. `src/lib/win32` owns reusable window, Console, raw-device-input and timing mechanics; `src/app-mario/kvm/platform/win32` retains the Mario composition root plus Mario-specific audio, focus and snapshot adapters. `src/lib/dos16` owns Set-1 physical decoding, keyboard IRQ lifetime, BIOS/PIT sampling, BIOS text-mode setup/restoration and indexed text cell output. Mario retains its scan-to-command mapping, VGA/PPU composition, sound and device assembly. Each target has its own small composition root.
 
 `ppu/state` now owns the single addressed/visible PPU storage and immutable
 CHR binding embedded in the game container. Core retains all original NMI
@@ -230,7 +230,7 @@ DOS segment/ISA/VGA operations remain in dos16. No platform selects gameplay
 or original PPU state semantics through this capability.
 
 T44 S2 adds a Win16 composition root alongside dos16 and win32. The shared
-USER/GDI host remains in lib/win16 and consumes neutral physical events and
+USER/GDI host remains in src/lib/win16 and consumes neutral physical events and
 synchronous canonical pixel bands. Mario owns input meanings and binds the
 same core and PPU; Win16 Tab is inert. Shared planar pixel layout is
 io/planar_frame;it knows only neutral pixels,dimensions,capacity and an optional
@@ -242,7 +242,7 @@ sampler is validate/text_frame and links only to tests. No compatibility copy
 or forwarding directory remains at the old platform locations.
 
 Win16 P/O controls are app-owned and use the existing snapshot codec, validation
-and synchronous file store. lib/win16 owns module-path discovery, backup file
+and synchronous file store. src/lib/win16 owns module-path discovery, backup file
 replacement and the MMSYSTEM waveform queue. Mario io/audio_renderer is the
 single integer synthesizer for DOS16 and Win16; device drivers consume PCM
 without inspecting original sound commands. Saving pauses dispatch only for
