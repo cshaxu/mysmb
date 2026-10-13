@@ -113,7 +113,7 @@ win16 = repository / "lib" / "win16"
 for path in win16.rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
-        if not include.startswith(("win16/", "kvm/")) and include not in ("windows.h", "string.h"):
+        if not include.startswith(("win16/", "kvm/")) and include not in ("windows.h", "mmsystem.h", "string.h", "stdio.h", "errno.h"):
             print(f"{path.relative_to(repository)}: Win16 host imports {include}")
             sys.exit(1)
     for token in ("MYSMB_", "mysmb_", "core/", "ppu/", "app-mario/", "app-mine/"):

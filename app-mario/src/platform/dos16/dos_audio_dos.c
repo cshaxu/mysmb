@@ -7,7 +7,7 @@ static struct mysmb_dos16_audio_state audio;
 static unsigned short audio_segment;
 static unsigned long audio_physical;
 static unsigned char far *audio_memory;
-static struct mysmb_dos16_audio_renderer renderer;
+static struct mysmb_audio_renderer renderer;
 static mygames_kvm_u8 sample_scratch[184];
 static volatile unsigned char block_free[MYSMB_DOS16_AUDIO_BLOCK_COUNT];
 static volatile unsigned char block_ready[MYSMB_DOS16_AUDIO_BLOCK_COUNT];
@@ -119,7 +119,7 @@ static int dma_reserve(void *context,const struct mysmb_dos16_audio_config *conf
         audio_memory[index]=128U;
     block_free[0]=block_free[1]=1U;block_ready[0]=block_ready[1]=0U;
     fill_block=0xffU;fill_count=0U;playing=0U;vector_ready=0U;pic_ready=0U;
-    mysmb_dos16_audio_renderer_initialize(&renderer);
+    mysmb_audio_renderer_initialize(&renderer);
     return 1;
 }
 
@@ -163,7 +163,7 @@ void mysmb_dos16_audio_dos_after_load(void)
     stop_playback();
     _enable();
     if(!mysmb_dos16_audio_reprobe(&audio))return;
-    mysmb_dos16_audio_renderer_initialize(&renderer);
+    mysmb_audio_renderer_initialize(&renderer);
     for(index=0UL;audio_memory && index<MYSMB_DOS16_AUDIO_BLOCK_BYTES*MYSMB_DOS16_AUDIO_BLOCK_COUNT;++index)
         audio_memory[index]=128U;
     block_free[0]=block_free[1]=1U;block_ready[0]=block_ready[1]=0U;
@@ -263,7 +263,7 @@ mygames_kvm_u8 mysmb_dos16_audio_dos_submit(const struct mysmb_io_audio_frame *f
 {
     unsigned short count,offset,copy;mygames_kvm_u8 block;
     if(!audio.ready || !audio_memory || !frame)return MYSMB_IO_AUDIO_UNAVAILABLE;
-    count=mysmb_dos16_audio_renderer_render(&renderer,frame,sample_scratch,sizeof(sample_scratch));
+    count=mysmb_audio_renderer_render(&renderer,frame,sample_scratch,sizeof(sample_scratch));
     if(!count)return MYSMB_IO_AUDIO_UNAVAILABLE;
     offset=0U;
     while(offset<count) {

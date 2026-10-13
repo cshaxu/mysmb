@@ -42,10 +42,11 @@ try {
         & $python (Join-Path $PSScriptRoot 'smb_title_codegen.py') --rom $RomPath --output $generated
         if($LASTEXITCODE){throw 'Title generator failed'}
         $sources=@(Get-ChildItem -LiteralPath (Join-Path $sourceRoot 'core') -Recurse -Filter *.c | Sort-Object FullName | ForEach-Object {$_.FullName})
-        $sources+=@('ppu/state.c','ppu/frame.c','io/palette_expand.c','io/palette_pairs.c','io/input_latch.c','io/control.c','app/input_mapping.c','platform/win16/main_win16.c') | ForEach-Object {Join-Path $sourceRoot $_}
+        $sources+=@('ppu/state.c','ppu/frame.c','io/palette_expand.c','io/palette_pairs.c','io/input_latch.c','io/control.c','io/audio_renderer.c','io/snapshot.c','io/snapshot_store.c','io/snapshot_keys.c','io/file/snapshot_files.c','io/file/executable_path.c','app/game_io.c','app/game_snapshot.c','text/observer_snapshot.c','app/input_mapping.c','platform/win16/main_win16.c') | ForEach-Object {Join-Path $sourceRoot $_}
         $sources+=@((Join-Path $repository 'lib/kvm/src/color.c'),(Join-Path $repository 'lib/kvm/src/windows_key.c'),(Join-Path $repository 'lib/win16/src/host.c'),(Join-Path $generated 'smb1_local_rom.c'),(Join-Path $generated 'smb1_local_title.c'))
         $sources+=Join-Path $repository 'lib/win16/src/dib.c'
         $sources+=Join-Path $repository 'lib/win16/src/clock.c'
+        $sources+=@('lib/win16/src/audio.c','lib/win16/src/file.c','lib/win16/src/file_replace.c') | ForEach-Object {Join-Path $repository $_}
         $objects=@()
         foreach($source in $sources) {
             $relative=$source.Substring($repository.Length+1)

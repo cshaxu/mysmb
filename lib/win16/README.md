@@ -32,4 +32,15 @@ clear physical keys and reset host timing. No host code reads game state.
 Actual runtime qualification covers Win3.1 enhanced mode with the standard
 sixteen-colour VGA driver. Its device palette approximates source colours;
 the 8bpp conversion is unit-tested but has no qualified 256-colour driver
-receipt. Win16 audio, save/load and text devices are deferred capabilities.
+receipt. Win16 text/prompt devices remain deferred capabilities.
+
+The audio service owns unsigned-eight-bit mono waveform buffers and the
+Win3.x MMSYSTEM lifetime. It dynamically discovers exports, retries temporary
+device ownership at most once per second and never blocks on a full queue.
+Reset discards queued PCM; failed driver teardown retains owned memory rather
+than freeing an in-flight buffer. A missing waveform driver is optional.
+
+The file service discovers the executable using the supplied WinMain instance
+and publishes a completed candidate with an eight-dot-three backup/rollback
+sequence. It knows no game keys, snapshot schema, slot name or audio synthesis.
+Mario binds these services to its shared snapshot and integer PCM owners.

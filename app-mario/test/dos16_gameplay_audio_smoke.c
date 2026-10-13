@@ -20,7 +20,7 @@ int main(void)
     struct mysmb_input input;
     struct mysmb_frame frame;
     struct mysmb_io_audio_frame audio;
-    struct mysmb_dos16_audio_renderer renderer;
+    struct mysmb_audio_renderer renderer;
     mygames_kvm_u8 samples[184];
     unsigned int tick;
     unsigned short count;
@@ -31,13 +31,13 @@ int main(void)
      * call a music routine or insert any synthetic APU write. */
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game,mysmb_local_prg,MYSMB_LOCAL_PRG_SIZE);
-    mysmb_dos16_audio_renderer_initialize(&renderer);
+    mysmb_audio_renderer_initialize(&renderer);
     input.buttons=MYSMB_BUTTON_START;
     input.buttons2=0U;
     for(tick=0U;tick<180U;++tick) {
         mysmb_game_tick(&game,&input,&frame);
         mysmb_game_io_audio(&game,&audio);
-        count=mysmb_dos16_audio_renderer_render(&renderer,&audio,samples,
+        count=mysmb_audio_renderer_render(&renderer,&audio,samples,
             sizeof(samples));
         if(count<183U || count>184U)return 1;
         /* The Start edge is one logical frame only, as supplied by the DOS

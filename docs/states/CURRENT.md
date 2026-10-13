@@ -6,22 +6,30 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T44 S2 P2 - native Win16 game delivery awaiting owner acceptance |
+| Identifier Mode | M3 T44 S2 P3 - delivered, awaiting owner acceptance |
 | Admission And Approval | Owner inserts this new S2 before the unexecuted directory migration; original source/test/final phases become planned S3/S4/S5. |
-| Objective | Establish and implement one local mysmb16.exe with functional DOS MZ graphics/text Tab switching and a native Win3.x NE graphical window entry. |
-| Non-goals | No Win16 Tab switching, text view or DOS-prompt handoff. This graphical-entry baseline does not integrate Win16 audio-device or save/load adapters; their receiving debt is explicit in TODO. No source-tree relocation, Mine game import, ROM logic change or Win32 behavior change. Owner accepts the fixed-3000-cycle DOSBox performance limitation; no emulator speed/configuration change to mask it. |
+| Objective | Establish and implement one local mysmb16.exe with functional DOS MZ graphics/text Tab switching and a native Win3.x NE graphical window entry, now extended by the owner to P/O save/load and music through reusable Win16 libraries. |
+| Non-goals | No Win16 Tab switching, text view or DOS-prompt handoff. No source-tree relocation, Mine game import, ROM logic change or Win32 behavior change. Owner accepts the fixed-3000-cycle DOSBox performance limitation; no emulator speed/configuration change to mask it. |
 | Reference Baseline | P2 runs the same portable core in an actual Win3.1 enhanced-mode graphical game, receives Start/directional/jump input, ignores Tab and exits to Program Manager. A 720-frame Win16/Win64 RAM/nametable replay and final canonical pixels match. x86/x64 suites each pass 296 tests and thirteen host routes. Standard sixteen-colour VGA has visible colour approximations. MZ image/relocations and resident bounds pass the binder. |
 | Candidate Proposal | [M3 T44 proposal](../proposals/m3/nxvm-source-test-layout.md). |
-| Files And ABI Surface | Win16 host/adapter, NE/MZ build and local packaging, tests and feasibility evidence. Shared game/PPU semantics remain common. |
+| Files And ABI Surface | Win16 PCM device and file services, shared Mario integer audio renderer, app snapshot/audio integration, NE/MZ build and owned tests. Shared game/PPU semantics remain common. |
 | Applicable Rules | Execution, Documentation, Architecture, Coding and source policy, subject to the explicit owner Win16 insertion. |
-| Verification | Mine/tool provenance review, format/stub validation, actual Win3.x graphical game launch/input/exit and DOS graphics/text Tab regression. Win16 Tab must not initiate a presenter or process switch. |
+| Verification | Mine/tool provenance review, format/stub validation, actual Win3.x graphical game launch/input/exit and DOS graphics/text Tab regression. Win16 Tab must not initiate a presenter or process switch. Verify P/O round trip and rejected corrupt loads; synthetic PCM and actual driver output; missing audio device, reset/focus and teardown. |
 | Expected Markers | DOS executes the original MZ game with both presenters; Win3.x selects a native NE graphical entry and remains in its graphical window. |
 | Asset Needs | Owner-local Mine reference is pinned by exact file hashes in the proposal; no Git revision or redistribution permission is claimed. Owner-local ROM, compiler/SDK and Windows runtime are local-only test/build inputs, with tool/library hashes in the proposal. Protected data and tool binaries are not committed. |
 | Reporting Requirements | Report DOS dual-mode and native Win16 graphical-window evidence separately, including tested Windows versions, input, exit and MZ resident bounds. Prompt switching remains deferred. |
 | Stop Conditions | Forked gameplay, copied unreviewed sibling/vendor material, DOS stub replaced by a message-only stub, generated binaries staged or unverified state continuity claims. |
-| Exit Criteria | Functional DOS graphics/text switching and native Win3.x graphical game entry of the same dual-format product are verified. Win16 requires no Tab/text/prompt support for this closure. |
+| Exit Criteria | Functional DOS graphics/text switching and native Win3.x graphical game entry of the same dual-format product are verified. Win16 now also requires P/O save/load and waveform music output, with the related reusable libraries. No Tab/text/prompt support is required. |
 | Original Owner Request | Same mysmb16.exe retains DOS Tab and opens a graphical window on Win3.x; research Tab to a DOS text prompt, like Mine NE/MZ packaging. |
 | Similar-Issue Sweep | Inspect EXE/stub sizes and offsets, far/near Win16 ABI, timer/input/video ownership, snapshot/state handoff and cleanup of both launch routes. |
+
+P3 result: Win16 P/O uses the shared snapshot contract, and its new reusable
+waveform/file libraries are connected. Actual Win3.1 save/restore matches
+core and presentation bytes; the final product rejects a corrupt slot,
+saves/loads and exits successfully. Game and post-load PCM are captured,
+with low-cycle gaps explicitly retained. Each native width passes 299 tests
+plus one unavailable host-audio skip. All three local EXEs are refreshed;
+ROM core/PPU and node/edge credit remain unchanged. S3 is not admitted.
 
 ## Current Technical Baseline
 

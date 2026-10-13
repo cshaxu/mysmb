@@ -20,6 +20,9 @@ static int focused,ready;
 static unsigned short output_bits,row_bytes;
 static unsigned char reduced_colors[64];
 
+void mygames_win16_rebase_clock(void)
+{mygames_win16_clock_reset(&clock,GetTickCount());}
+
 static int compose(void)
 {
     struct mygames_kvm_video_band band;

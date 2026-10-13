@@ -160,3 +160,11 @@ are io/file with portable stdio;replacement and executable discovery stay in
 the appropriate host,whose declarations are host-owned. The retired pixel
 sampler is validate/text_frame and links only to tests. No compatibility copy
 or forwarding directory remains at the old platform locations.
+
+Win16 P/O controls are app-owned and use the existing snapshot codec, validation
+and synchronous file store. lib/win16 owns module-path discovery, backup file
+replacement and the MMSYSTEM waveform queue. Mario io/audio_renderer is the
+single integer synthesizer for DOS16 and Win16; device drivers consume PCM
+without inspecting original sound commands. Saving pauses dispatch only for
+the file operation; loading restores game/APU state and reinitializes physical
+synthesis phase, matching the existing DOS save contract.

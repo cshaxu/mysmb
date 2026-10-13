@@ -372,3 +372,97 @@ accepted by the owner. This does not establish low-speed DOS playability.
 Win16 audio-device and save/load adapters are not part of this graphical
 entry baseline and are recorded with text/prompt handoff as receiving debt
 in TODO. Core APU writes remain common, not audible Win16 output.
+
+## S2 P3 owner-directed save and music extension
+
+The owner extends the active S2 to implement Win16 save/load and music with
+reusable libraries. No new S number or directory relocation is admitted.
+Win16 remains graphical-only. Expected scope is 15-25 implementation/test/build
+files plus governance; ROM node/edge scope and credit remain empty.
+
+lib/win16 owns waveform-device buffers/lifetime and executable-path/file
+replacement mechanisms. Mario owns P/O semantics and the existing snapshot
+codec/validation; its integer PCM renderer is extracted from the DOS adapter
+into shared app IO without changing synthesis. DOS and Win16 consume that
+same renderer. Each logical tick consumes original ordered sound writes even
+when video is skipped; device failure must not stop gameplay.
+
+Validation includes owner-local PCM/input/snapshot/file failure contracts,
+all configured native suites, real Win3.1 save/load and waveform output,
+original DOS-stub preservation and refreshed three local products. Only the
+private Windows test copy may receive an owner-local waveform-driver setup;
+no global DOSBox speed or existing Windows installation is changed. Third-party
+drivers/SDK remain local-only, provenance-pinned verification inputs.
+
+## S2 P3 delivery receipt
+
+P3 supersedes the P2 audio/save deferral. Mario Win16 owns P/O meanings and
+uses the common fingerprint, codec, validation and single snapshot workspace.
+File operations are synchronous between ticks; timing is rebased afterwards.
+The waveform queue is reset at load/focus loss and before teardown. Saved game
+and APU state are complete; physical oscillator phase is not serialized and
+is reinitialized on load, as in the existing DOS route. No sample-exact audio
+continuation or Win32 synthesizer parity is claimed.
+
+Reusable Win16 file/device owners live in lib/win16. The existing DOS integer
+synthesizer moves intact to Mario io/audio_renderer; only API names change,
+plus a restored-register synchronization entry. DOS device discovery remains
+DOS-owned. No core or PPU implementation changes; zero new node/edge credit.
+The source-tree relocation is still the separate, unexecuted S3.
+
+Tests own separate contracts: shared synthesis covers ordered writes, exact
+11025 samples over sixty ticks, capacity and restored registers; Win16 audio
+covers dynamic discovery, allocation/lock/open/prepare failure, queue saturation,
+write/reset/unprepare/close failures, memory retention and transient-ownership
+retry. File owners cover explicit module instance, path bounds and backup
+replacement/self-collision. Existing snapshot owners retain corrupt-header,
+CRC, fingerprint and restore validation; these are not duplicated per host.
+The configured x86 and x64 suites each have 300 cases: 299 pass and the actual
+Win32 audio-device case skips because the worker lacks that host capability.
+
+Actual Win3.1 enhanced-mode verification uses the same private 3000-cycle
+DOSBox/SDL test route as P2. The private Windows copy receives the owner's
+Sound Blaster 2 wave driver and virtual device, configured for the existing
+port 220/IRQ7. Neither the source Windows installation nor DOSBox timing is
+changed. Local compressed driver identities, without redistributing them:
+
+| Verification input | SHA-256 |
+| --- | --- |
+| SNDBLST2.DR_ | 137dd4cb208dbb29ced6378e876ac0a33cf7ea3c3864b46310a942c74a25f85b |
+| VSBD.38_ | 3e4c7e9d7d0e5eab0fd62d0689e8293cdd60efe75d7e784006e72cdee93e32b8 |
+
+The native waveform open initially returns MMSYSERR_ALLOCATED while Windows
+plays its startup sound. Device-only retry recovers; the probe then records
+1778 accepted tick buffers versus 22 initial unavailable buffers. P produces a
+10035-byte file. Following movement, O restores all 4622 core-state bytes and
+5253 presentation bytes exactly. SDL mixer capture uses signed16 stereo at
+44100 Hz: title waiting at 20-40 seconds is silent, gameplay at 65-80 seconds
+has RMS 452.64 and peak 18943, post-load at 98-110 seconds has RMS 462.75 and
+peak 19837, and post-exit is silent. This separates game output from startup
+sound. It proves the route, not smoothness: substantial silent gaps remain
+at the accepted fixed low cycle budget. Host/RDP speaker audibility is not
+certified by file capture.
+
+The MZ payload links with the existing owned toolchain. The binder proves the
+same DOS image, relocations, entry and stack in the final MZ/NE file. DOS minimum
+resident allocation is 385840 bytes including PSP, maximum 389936, excluding
+runtime cache allocations; DGROUP is 53088 with a 2048-byte stack. The new
+Win16 audio/file heap is NE-only, not allocated by DOS. Product files remain
+ignored local delivery outputs under assets/mario:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| mysmb16.exe | 642781 | 43fec3438f2142fd3de7c9de01d43d021f74ccf1f18d789c7a818747de0299cb |
+| mysmb32.exe | 411787 | 31175e55969dc8497e4ef363ed0f531fd50c4bf5df03ce06f6005ba27577cde1 |
+| mysmb64.exe | 376939 | 63f5aaeb7b0a4e64c0da29221e2a6d3ed85736f7e68877467b1b207514dd8a73 |
+
+Win16 remains window-only, Tab inert. Win3.0, standard mode, a 256-colour driver
+and low-speed smooth audio remain unqualified. User-visible save/load and
+music are submitted for owner acceptance; no next S is automatically admitted.
+
+The final non-diagnostic hybrid repeats the native route: a deliberately
+corrupted slot is rejected with snapshot error 11, gameplay continues, P
+replaces it with a fresh 10035-byte CRC-valid slot, O resumes play, Tab stays
+in the same graphical window, and Escape returns to Program Manager. This
+run uses the exact published mysmb16.exe, not the receipt-instrumented build.
+Build-only diagnostic code and SDL captures are never linked into products.
