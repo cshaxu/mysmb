@@ -1,6 +1,12 @@
 # Bounded Windows Audio Device Startup
 
-## Retained Task Status
+## Current task status
+
+Owner resumes M3 T19 S1 at453ae52d for audit/research/design only. The latest
+2026-10-13 audit below supersedes old call-site and design assumptions.
+Implementation remains outstanding; no product repair or closure is claimed.
+
+## Historical suspension
 
 M3 T19 S1 is suspended by explicit owner instruction,not closed or accepted.
 Research and the single-process assessment below are retained;remaining
@@ -180,3 +186,185 @@ T18 pacing and platform purity,then rebuild/package three targets if product
 code changes. Existing sixteen successful real opens do not prove this design.
 Estimated6-9code/build/test files,500-900lines;no game or DOS code changes.
 This is an evaluated candidate,not implemented or accepted closure evidence.
+
+## 2026-10-13 current-source audit and revised design
+
+This section is the current design authority for resumed T19 S1 at453ae52d.
+Earlier sections are historical research. This turn authorizes audit/design,
+not production implementation. The old driver/session cause remains unknown;
+normal successful opens do not discharge the stalled-call obligation.
+
+### Current call chain and findings
+
+| ID | Current owner/site | Finding and disposition |
+| --- | --- | --- |
+| A1 | app-mario/kvm/platform/win32/main_win32.c, WinMain around588 | Synchronous audio open/prepare still precedes the message loop. A slow device delays window and Console input alike. Outstanding. |
+| A2 | main_win32.c, step around498; audio_output.c submit | Each logical tick can call waveOutWrite on main. Moving only open is insufficient. Outstanding. |
+| A3 | main_win32.c, snapshot_request around348 | Reset is synchronous, but game and renderer are correctly committed only after validation/reset succeeds. Preserve this transaction when asynchronous; do not move game state to the worker. |
+| A4 | main_win32.c WM_DESTROY around538; audio_output.c close | Root teardown calls the driver synchronously and the void app wrapper discards close failure. This can block Console restoration/PostQuitMessage and cannot acknowledge safe device teardown. Outstanding. |
+| A5 | lib/win32/pcm.c close and open failure unwind | Contrary to the old proposal, failed reset/unprepare/close now retains the device and remaining prepared count. Keep this improvement. Partial preparation can still return open failure with a live device if cleanup fails; callers must retain its lifetime. |
+| A6 | audio_output.c submit device-null return | Queue-full render advances oscillator phase, but device-absent render does not. Startup/late recovery needs explicit app policy: advance the synthesizer every logical tick even without a writable slot, discard PCM, and never replay old startup samples. This is an adapter change, not core/APU logic. |
+| A7 | main_win32.c update_title around193; g_audio_available | Availability is initialized once and title caching keys only on pause. Async status changes require app-owned status/title invalidation; the library must not choose user strings. |
+| A8 | test/lib/win32/pcm_smoke.c and app audio tests | Current mocks cover open/prepare/write/reset errors, queue reuse and reset-failed close retention. They do not inject unprepare/close failures, combined prepare+cleanup failure, blocked calls, late results or concurrent publication. Add those focused obligations; retain existing snapshot/render/host tests. |
+
+The sole production Win32 WinMM API table is in lib/win32/pcm.c. Its production
+consumer is Mario's audio_output adapter; Mine currently has no audio calls.
+DOS16 and Win16 have separate host mechanisms and are outside this repair.
+The neutral PCM implementation is synchronous by contract and not thread-safe;
+placing calls on different threads without an ownership layer would add races.
+
+### Fresh bounded normal-device measurements
+
+Project-owned build-only probe directly links the current pcm.c, injects
+API-timing wrappers through its existing API table, and uses silence rather
+than game/ROM data. Each width performs8sequential cycles: open44,100Hz mono
+16-bit, prepare8blocks of735samples, write all8, reset, close. Close itself
+performs a second reset. QPC measures only each API call, excluding logging.
+The supervisor allows12seconds per probe and can stop only its own test
+process. Neither probe timed out; every API result was success. No service,
+endpoint, driver, desktop input or DOSBox settings were modified.
+
+| API | Calls per width | x86 median/max ms | x64 median/max ms |
+| --- | --- | --- | --- |
+| Open | 8 | 358.678/785.255 | 386.79/454.046 |
+| PrepareHeader | 64 | 0.196/0.303 | 0.182/1.172 |
+| Write | 64 | 0.218/10.815 | 0.211/7.359 |
+| Reset | 16 | 1.923/7.886 | 2.365/11.168 |
+| UnprepareHeader | 64 | 0.193/0.973 | 0.185/0.289 |
+| Close | 8 | 15.608/16.972 | 16.384/17.25 |
+
+The historical8-second failure did not recur. These measurements describe the
+current tool session, not separate proven local/RDP configurations, audible
+music quality, a permanent upper bound, or a before/after speedup. Write/reset
+outliers can consume a substantial part of a16.67msmain-thread tick budget,
+but this small sample does not quantify gameplay slowdown.
+Current sample storage is11760bytes; headers256/384bytes, queue flags8bytes
+and PCM descriptors28/48bytes for x86/x64. The proposed queue keeps eight total
+sample blocks, not two eight-block queues. Worker stack/events/state are new
+Windows-only overhead to measure; there is no DOS memory increase.
+
+Reproduction: compile the neutral wrappers with GCC32/64 and current pcm.c,
+C90/O2/Wall/Wextra, linking WinMM; run the above fixed format/count sequence
+with a12second external deadline. Both existing pcm_smoke owner tests also
+compile with Werror and pass on both widths. The timing harness and raw CSVs
+remain below build/t19-s1-audit. No full product suite or EXE rebuild is needed
+for this documentation-only P; the T45 receipts are retained, not relabeled
+as new T19 operational proof.
+
+### Recommended single-process architecture
+
+Keep the current PCM driver-call owner and add a neutral asynchronous lifetime
+owner under lib/win32 (proposed pcm_session.c/.h). One session has at most one
+device thread. Only that thread calls pcm_open/acquire/submit/reset/close or
+reads driver completion flags. Extend the existing open mechanism with an
+optional completion-event handle, defaulting to NULL for synchronous clients;
+do not create a second set of WinMM call implementations.
+
+The session owns stable heap storage for headers, eight sample slots, flags,
+command/status records, events and the thread handle. The app borrows a free
+slot, renders, and publishes it with an interlocked transition. States are
+FREE -> PRODUCER -> READY -> DRIVER -> FREE; failed writes return ownership
+only after the call returns. Main never waits on a driver-held lock. Worker
+uses completion/command events and checks all queued headers after a wake;
+event coalescing must not lose completions. A slot borrowed by either producer
+or driver cannot be reset, freed or reused by another owner.
+
+Public operations are nonblocking begin, status, acquire/publish, reset-request,
+stop-request and terminal-result/release. Requests carry monotonically changing
+IDs/epochs; status carries current operation, start time and last result.
+OPENING -> READY/FAILED; READY -> RESETTING -> READY/FAILED; stop is monotonic
+from every state to STOPPING -> CLOSED or CLEANUP_FAILED. STALLED is a deadline
+observation of an outstanding operation, not cancellation or ownership release.
+Main never retries an in-flight call or spawns a replacement thread. A failed
+cleanup retains the object and supports serialized retry after the prior call
+returns. Ready is published only after all headers are prepared. Late open
+after stop goes straight to cleanup without publishing ready.
+
+The Mario adapter owns renderer advancement and overflow/unavailable policy.
+It renders to a free slot or its existing discard workspace every logical
+tick. It produces no startup backlog while OPENING. When a stalled operation
+returns, any unsubmitted old backlog must be invalidated before normal output
+resumes; if driver blocks remain queued, the app requests reset and waits for
+its acknowledgement while rendering/discarding. Generic epochs implement the
+mechanism; no60Hz, NES, frame-count or gameplay rules belong in lib.
+Normal ready-path PCM must match the current synthesizer sample-for-sample.
+
+The app polls published status during its existing message/tick loop; no new
+frame-wait architecture is required initially. It updates its own audio title
+state and retains Tab/focus/exit behavior in either presenter. A2second device
+operation observation deadline is an initial policy to qualify, not a driver
+cancellation guarantee. Closed/failed status must remain distinct from stalled.
+
+### Snapshot and shutdown transactions
+
+Save remains synchronous on main with the existing renderer/game snapshot;
+PCM slots and device handles are not serialized. For load, validate into the
+existing staging snapshot and a renderer candidate, request a new reset epoch,
+and suspend logical ticks while continuing input/paint/Tab/close dispatch.
+The app owns this transaction. Do not pump nested messages inside the old
+synchronous reset function. New P/O requests cannot overwrite the staging
+candidate while a reset acknowledgement is pending; coalesce or reject them
+explicitly until that transaction resolves. Exit takes priority.
+
+Only matching successful reset acknowledgement commits game and renderer
+together. Reset failure/timeout abandons the candidate and resumes the old
+logical state with a re-anchored clock; no late acknowledgement may commit it.
+Outstanding reset still owns driver buffers; output remains gated until it
+returns. A device that never opened has no old PCM to reset, but its command
+epoch must still acknowledge that fact so a late open cannot publish stale
+work. No save-format or game-pause-bit change is required.
+
+Exit first disables production and posts stop while main continues dispatch.
+The worker performs reset/unprepare/close; only successful close plus thread
+termination permits lifetime release. WM_DESTROY contains no driver calls.
+Restore the borrowed Console and finish owned file transactions before any
+exceptional termination policy. If graceful cleanup exceeds its proposed
+250msbudget, keep memory alive; never TerminateThread or free borrowed buffers.
+Self-TerminateProcess after app cleanup remains a prototype candidate from the
+old plan, not an implemented or approved-safe guarantee. Measure normal-close
+latency before finalizing the budget. If the candidate cannot satisfy lifetime
+and host restoration tests, report the explicit remaining shutdown limitation
+instead of claiming a bounded arbitrary-driver exit.
+
+The official contracts support these boundaries: [waveOutOpen](https://learn.microsoft.com/en-us/windows/win32/api/mmeapi/nf-mmeapi-waveoutopen)
+defines notification modes but no timeout argument; [waveOutReset](https://learn.microsoft.com/en-us/windows/win32/api/mmeapi/nf-mmeapi-waveoutreset)
+returns pending buffers; [unprepare](https://learn.microsoft.com/en-us/windows/win32/api/mmeapi/nf-mmeapi-waveoutunprepareheader)
+must precede freeing them; [close](https://learn.microsoft.com/en-us/windows/win32/api/mmeapi/nf-mmeapi-waveoutclose)
+can fail with buffers outstanding. [ExitProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess)
+can deadlock through DLL detach locks; [TerminateProcess](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess)
+still cannot promise immediate teardown when kernel I/O remains pending.
+
+### Bounded implementation and acceptance matrix
+
+Retain S1 as the complete device-lifetime chain. Do not split individual API
+calls into new S tasks. Design P1 records this audit; subsequent implementation
+parts first qualify controlled lifetime seams, then integrate app transactions
+and run acceptance. Estimated10-14source/test/build files and600-1000lines,
+including mirrored tests; confirm after the prototype, not a delivery promise.
+
+| Owner | Required acceptance before S1/T19 closes |
+| --- | --- |
+| lib/win32/pcm | Every preparation index failure, combined cleanup failure, reset/unprepare/close failure with exact retained ownership and successful retry; preserve existing positive paths. |
+| lib/win32/pcm_session | Event-controlled held open/prepare/write/reset/unprepare/close; one thread, nonblocking producer, no early free/reuse, stop priority, late open/ack, epoch reset, full queue, event coalescing and allocation/thread/event failure. |
+| Mario audio adapter | Ready PCM equality; absent/pending/full-queue synth-state continuity; no startup/stale recovery playback; status reporting; no game/snapshot fields in library. |
+| Mario root/snapshot | UI close/input serviced within1second while fake acquisition is held; Tab/focus both presenters; load success/failure/timeout/late acknowledgement, repeated P/O and close during load; game+renderer commit atomically. |
+| Shutdown host join | Graceful thread join before free; failed/stalled cleanup retains ownership; borrowed Console restored; exceptional self-exit prototype measured separately from normal cleanup. No arbitrary-driver hard-exit claim. |
+| Actual products | Both widths with normal real device and capability failure; owned/borrowed Console, window, snapshots and audio regression; all applicable unit/integration suites; three Mario EXEs when production changes. |
+
+Tests assert each owner's decision once; integration fixtures cover joins and
+actual timing rather than duplicating renderer rules. Deliberate stalls use
+project-owned event seams, not a broken real driver or longer test timeout.
+No separate production process, backend switch to WASAPI/DirectSound, Mine
+music feature, DOS/Win16 change or core/PPU redesign is admitted by this plan.
+
+### Audit disposition
+
+Audit/research/design is complete for this turn. T19/S1 remains active and
+unfinished: lifecycle prototype, production repair and acceptance matrix above
+are outstanding. The resumed queue entry is removed; five other candidates
+keep their order. T45/S4 still awaits owner play acceptance independently.
+No product code, test source or EXE changed. Historical1992/1992,
+retained1991/1992nodes and4260/4261feasible controls (4342raw,81infeasible)
+are unchanged; scope/expected/actual additions are empty. Single-person review
+checked current findings against source and did not count historical claims
+or timing samples as an implemented repair.

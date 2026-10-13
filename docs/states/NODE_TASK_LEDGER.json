@@ -8121,7 +8121,7 @@
       "evidence": [
         "docs/proposals/m3/bounded-windows-audio-startup.md"
       ],
-      "state": "suspended",
+      "state": "active",
       "subtasks": [
         {
           "id": "M3 T19 S1",
@@ -8133,8 +8133,8 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "state": "suspended",
-          "receipt": "Owner admits queue head;complete acquisition/lifetime chain,empty ROM scope. Owner suspends unfinished work and returns it to queue;research retained,no closure."
+          "state": "active",
+          "receipt": "Owner admits queue head;complete acquisition/lifetime chain,empty ROM scope. Owner suspends unfinished work and returns it to queue;research retained,no closure. Owner resumes current-source audit/research/design at453ae52d; implementation and closure remain outstanding."
         }
       ]
     },
@@ -838749,7 +838749,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m3/bounded-windows-audio-startup.md",
-      "state": "suspended"
+      "state": "active"
     },
     {
       "subtask": "M3 T20 S1",
