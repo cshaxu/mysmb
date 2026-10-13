@@ -2,6 +2,10 @@
 
 ## Receiving baseline and admission gate
 
+T44 is reopened: directory migration is complete, but generic host readiness
+is not. Import depends on the [corrective gap register and S7-S13 exits](t44-library-readiness-correction.md). Current Win16 and KVM APIs still carry
+Mario-specific assumptions; do not treat them as complete Mine contracts.
+
 The Mario-first ownership split closes in M3 T43; T44 supplies the final
 NXVM-style paths. `src/app-mario` owns its application;
 KVM, Win32 and DOS16 reusable owners are separate libraries. `src/app-mine`

@@ -1,5 +1,10 @@
 # System Architecture
 
+T44 corrective S6 distinguishes the owner topology below from complete reusable
+host readiness. The [gap register](../proposals/m3/t44-library-readiness-correction.md)
+records remaining Mario assumptions and missing host capabilities. Directory
+separation is implemented; the listed corrective interfaces are not yet implemented.
+
 ## Product Shape
 
 MySMB is one native product with a portable translated program and separate host adapters. The primary development runtime is a native Win32 window, built for both 32-bit and 64-bit Windows. The core remains compatible with the later real-mode 16-bit DOS executable for a 25 MHz 486SX. It is not a general NES emulator and does not depend on `nnes` at runtime.
