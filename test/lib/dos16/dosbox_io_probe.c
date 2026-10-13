@@ -33,6 +33,7 @@ static DWORD beginning;
 static unsigned long due;
 static int argument,value,pending;
 static char action[16],name[64];
+static unsigned short mouse_x,mouse_y;
 
 static void next_action(void)
 {
@@ -82,6 +83,23 @@ __declspec(dllexport) int __cdecl probe_poll(void *event)
                 generated.key.scan=(unsigned char)MapVirtualKeyA(
                     (UINT)(argument>='a' && argument<='z'?
                         argument-'a'+'A':argument),MAPVK_VK_TO_VSC);
+            else if(argument>=282 && argument<=293)
+                generated.key.scan=(unsigned char)MapVirtualKeyA(VK_F1+argument-282,MAPVK_VK_TO_VSC);
+            else if(argument==308 || argument==306 || argument==304)
+                generated.key.scan=(unsigned char)MapVirtualKeyA(argument==308?VK_MENU:
+                    argument==306?VK_CONTROL:VK_SHIFT,MAPVK_VK_TO_VSC);
+        } else if (!strcmp(action,"move")) {
+            /* SDL1.2 motion: type,which,state,pad,x,y,xrel,yrel. */
+            short relative_x=(short)(argument-mouse_x),relative_y=(short)(value-mouse_y);
+            mouse_x=(unsigned short)argument;mouse_y=(unsigned short)value;
+            generated.bytes[0]=4U;
+            memcpy(generated.bytes+4,&mouse_x,2);memcpy(generated.bytes+6,&mouse_y,2);
+            memcpy(generated.bytes+8,&relative_x,2);memcpy(generated.bytes+10,&relative_y,2);
+        } else if (!strcmp(action,"button")) {
+            /* SDL1.2 button: type,which,button,state,x,y. */
+            generated.bytes[0]=(unsigned char)(value?5:6);
+            generated.bytes[2]=(unsigned char)argument;generated.bytes[3]=(unsigned char)value;
+            memcpy(generated.bytes+4,&mouse_x,2);memcpy(generated.bytes+6,&mouse_y,2);
         } else if (!strcmp(action,"quit")) generated.bytes[0]=12U;
         else { next_action();return 0; }
         memcpy(event,&generated,sizeof(generated));result=1;

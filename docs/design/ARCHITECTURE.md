@@ -3,7 +3,7 @@
 T44 corrective S7-S12 implements the shared-host capability split; S13 closes
 its independent build and integration acceptance. The
 [gap register](../history/M3-T44-library-readiness-correction.md) records
-per-owner evidence and the final readiness decision. Mine source is not imported.
+per-owner evidence and the final readiness decision. T45 adds the independent Mine rules/art and reviewed app/text adaptation; see [Mine](../../src/app-mine/README.md).
 
 ## Reusable library boundary
 

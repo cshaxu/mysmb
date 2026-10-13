@@ -1,4 +1,6 @@
-# Mine core test boundary
+# Mine core tests
 
-Tests will mirror src/app-mine/core after the separate import admission.
-No Mine tests or acceptance are claimed here.
+core_test.c owns independent rules, boundaries, deterministic fixed-width
+boards, first-safe relocation, marking/flood/chord outcomes and clock limits.
+Run the same C test as x86,x64 and actual small-model DOS16; compare its board
+hash. This replaces, rather than claims equivalence to, the excluded XP core.

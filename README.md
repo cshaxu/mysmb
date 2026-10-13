@@ -4,6 +4,11 @@ MySMB is a planned source-level C translation of the NES **Super Mario Bros.**
 program. Its aim is to preserve the original program logic and data semantics,
 then compile the shared C implementation for 16-bit, 32-bit, and 64-bit hosts.
 
+The repository also builds [Mine](src/app-mine/README.md), with independently
+implemented Minesweeper rules/art and shared DOS16, Win16 and Win32 devices.
+Each app owns its controls and refresh policy. Local products are separated
+under assets/mario and assets/mine. Mine-only builds need no ROM input.
+
 ## Start Here
 
 Project authorities, task lifecycle, and active work are in the [Documentation Guide](docs/README.md). M2 is translating the native C game route after the M1 title foundation; owner-local ROM inputs remain outside the tracked product.

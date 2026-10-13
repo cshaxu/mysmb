@@ -5,27 +5,27 @@
 T44 places production sources in the owner-required topology:
 shared components at `src/lib/{kvm,dos16,win32,win16}`, translated Mario code
 at `src/app-mario/core`, and Mario-specific I/O/presentation/assembly below
-`src/app-mario/kvm`. The future Mine receiving boundary is
+`src/app-mario/kvm`. The independent Mine application boundary is
 `src/app-mine/{core,kvm}`. Tests live at the corresponding paths below
 `test/`, including nested production subsystems; there is no extra per-app
 src/test layer in the target. After the owner's Win16 insertion, source
 movement is complete in S3 and mirrored test movement is S4,
 as recorded in [the completed migration](../history/M3-T44-nxvm-source-test-layout.md).
-The current local product boundary is already `assets/mario` and future
+The current local product boundary is already `assets/mario` and
 Mine products use `assets/mine`.
 
 ```text
 src/lib/{kvm,dos16,win16,win32}/  shared neutral contracts and host mechanics
 src/app-mario/core/              translated original game logic
 src/app-mario/kvm/{app,io,ppu,text,platform}/  Mario-specific assembly/presentation
-src/app-mine/{core,kvm}/         receiving boundary; no imported game code
+src/app-mine/{core,kvm}/         independent rules and app-owned presentation/assembly
 test/lib/{kvm,dos16,win16,win32}/ shared-owner tests
 test/app-mario/{core,kvm}/       tests nested by their production owner
 test/app-mario/kvm/ppu/validate/ test-only reference projections
-test/app-mine/{core,kvm}/        receiving boundary; no acceptance claim
+test/app-mine/{core,kvm}/        independent rule, presentation and platform-join tests
 tools/                          generators and governance/build entry points
 assets/mario/                   local mysmb16.exe, mysmb32.exe, mysmb64.exe
-assets/mine/                    future local Mine products
+assets/mine/                    local mine16.exe, mine32.exe, mine64.exe
 ```
 
 ## Independent library build and tests

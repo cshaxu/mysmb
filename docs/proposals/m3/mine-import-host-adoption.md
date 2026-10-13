@@ -23,19 +23,15 @@ The sibling is read-only; only the receiving repository may change. Source
 inspection found no Git repository, so there is no history to merge. Use a
 hash-qualified source snapshot, never invent an upstream revision. Local
 provenance identifies adapted XP WinMine routines and three XP bitmap strips;
-it explicitly supplies no redistribution licence. Publication treatment is
-pending the owner's scoped decision; protected/derived inputs stay in build
-until resolved. No original vendor tree or binary is imported by default.
+it explicitly supplies no redistribution licence. Owner chose independent core/art and reviewed app/text adaptation; protected/derived inputs stay in build. No original vendor tree or binary is imported by default.
 
 ## Admitted S roadmap
 
 | S | Scope | Estimate | Exit |
 | --- | --- | --- | --- |
-| S1 active | Source/provenance snapshot and unchanged baseline |3governance files; no production change | Exact snapshot and native/DOS core checks; publication boundary decided |
-| S2 planned | Core/app/text migration with mirrored tests and target build |12-20files/1000-1800lines | Source disposition obeyed; deterministic baseline retained; no Mario dependency |
-| S3 planned | Win32/x64 shared-host adoption |6-12files/600-1200lines | Window/Console launch, Tab, palette, mouse/keyboard and teardown integration |
-| S4 planned | DOS16 and Win16 shared-host adoption/NE-MZ binding |6-12files/500-1000lines | Actual DOS/Win3.x loading/input/text/window and model-qualified builds |
-| S5 planned | Combined regression, local products and T closure |4-8files plus receipts | Mine and Mario suites pass; three Mine EXEs; reviewed commit/push and cleanup |
+| S1 closed | Source/provenance and unchanged baseline | Governance only | Source decision and three-width baseline complete |
+| S2 active | Independent core/art, reviewed app/text, shared hosts and three products |20-30files/1500-2500lines | Owner-local tests, native/DOS/Win16 builds and products |
+| S3 planned | Combined integration/regression and T closure | Receipts and bounded fixes | Platform joins, Mario regression, cleanup and reviewed push |
 
 S1 is source-only/baseline work. Import and publication cannot advance until
 the provenance decision is explicit. Scope/expected/actual ROM credit0;
@@ -110,3 +106,59 @@ former S3-S5 slots were plans only and had no admitted identifiers.
 | S1 closed | Source decision and unchanged baseline | Three-width423checks passed; independent-source policy approved |
 | S2 next | Independent Mine core/art and reviewed app/text; shared-host products | Rule/input/presentation tests plus native/DOS/Win16 builds and three Mine EXEs |
 | S3 planned | Combined host regression and readiness closure | Actual platform joins, Mario regression, commit/push and cleanup |
+
+## S2 admission
+
+Owner approval admits independent core/art, reviewed app/text adaptation and shared-host roots. Empty ROM scope/expected0; historical1992/1992 unchanged. Rule, gesture, colour/geometry and platform integration own separate tests. Product outputs are local assets/mine/mine16.exe, mine32.exe and mine64.exe. No XP core/header/art or sibling modification enters this change.
+
+## S2 P1 implementation and closure
+
+Independent core and procedural art are present under app-mine; only the
+four hash-qualified app/text files listed in its README are adapted.
+No XP core/header/bitmap/resource/vendor bytes entered the tracked import.
+All hosts consume one Mine game/session; neutral KVM cells carry canonical16
+slots. Win32 uses the existing parent-console, VT/fallback, window and input
+libraries. DOS uses shared IRQ/PIT/mouse/text devices. Win16 uses the existing
+retained USER/GDI host, with Mine-owned sizing, menus and text/window choice.
+The neutral DOSBox SDL proxy moved from Mario tests to lib/dos16 and gained
+physical mouse/modifier events. It is not linked into any product.
+
+Verification: x86 and x64 each25/25 configured tests pass. Actual DOS16 tests
+pass279core checks and50application checks; the core board hash00d790d1 and
+presentation hash62cf853d match both native widths. GCC instrumentation of
+six portable owners executes322/322lines, all548branch sites and all163call
+sites;472/548branch outcomes are exercised. This is scoped test coverage,
+not an all-path or OS-failure proof. Native app device joins, not portable
+unit mocks, own actual window/Console behavior and cleanup. Hardware creation
+failure branches are source-reviewed; no synthetic allocation-failure claim.
+
+Actual PE32 and PE64 private-desktop runs pass detached graphical, ordinary
+console-subsystem graphical and borrowed CMD startup; graphical left-release,
+text level input, retained Tab cycles and normal exit. Actual DOSBox uses
+unchanged installed CPU/cycles and proves text board, mouse reveal, clock,
+expert/help keys and quit. Windows3.x proves its NE entry, graphical mouse
+reveal/clock, expert board, window text/graphics Tab and exit. The default
+DOSBox auto-capture consumes the first Windows mouse click; the second click
+is the game action. No user desktop or sibling installation is modified.
+
+Similar-issue sweep: both text and pixel counters used platform CRT varargs;
+Win16 visibly corrupted them. Both now use the same bounded decimal owner,
+including negative/minimum/maximum tests. The graphical face-release path
+retained stale suppression; it now clears it on release and has a focused
+regression. Console DEFER preserves dirty state, resize requests repaint,
+and Tab's physical latch survives presenter focus changes. Win16 presentation
+resizes on app geometry/view changes; pointer mapping follows client size.
+
+| Local product | Bytes | SHA256 |
+| --- | --- | --- |
+| assets/mine/mine16.exe |40157|525868524884a74eb1f10fcda02ff3c8fb89ee9eb3ff4389610829ec3e56a0e4|
+| assets/mine/mine32.exe |155358|edea074d0bb7de7bf650e077456687216551218676d5a521cec375299c246699|
+| assets/mine/mine64.exe |149044|34e690ddd46e0119488b450062de80de5a581e2d7b400b2470ee8f2abc2afa98|
+
+The NE/MZ binder verifies the preserved19143-byte DOS image and36896-byte
+minimum DOS resident requirement. This minimum is not peak allocation.
+Mario source and its products are unchanged. ROM scope/expected/actual0;
+historical1992/1992 and retained1991/1992nodes,4260/4261feasible controls remain
+unchanged. S2 closes; S3 owns final combined builds/platform receipt refresh,
+source-boundary review and T closure. Generated work is retained only until
+that admitted final verification consumes it; no binary is committed.

@@ -31,5 +31,5 @@ foreach ($line in $exports) {
 if ($definitions.Count -lt 100) {throw 'Incomplete SDL export inventory.'}
 $def=Join-Path $output 'SDL.def'
 $definitions | Set-Content -LiteralPath $def -Encoding ascii
-& $Compiler -std=c17 -O2 -Wall -Wextra -shared (Join-Path $repository 'test/app-mario/kvm/platform/dos16/dosbox_io_probe.c') $def -o (Join-Path $output 'SDL.dll')
+& $Compiler -std=c17 -O2 -Wall -Wextra -shared (Join-Path $repository 'test/lib/dos16/dosbox_io_probe.c') $def -o (Join-Path $output 'SDL.dll')
 exit $LASTEXITCODE
