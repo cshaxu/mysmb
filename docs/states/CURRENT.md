@@ -1,40 +1,36 @@
 # Project Status
 
-## M3 T44 S13 Packet
+## M3 T45 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: T44 S6 design accepted; S13 P1 and reopened T44 closed after implementation and separate coordinator review. |
-| Admission And Approval | Owner authorizes automatic progression through T44 closure, using one executor with separate implementation and reviewer passes. No active S; owner-authorized automatic T44 progression completed. |
-| Objective | Close G11-G12: independent host/test ownership, four-platform evidence and Mine-readiness reconciliation. |
-| Non-goals | No Mine import, game/PPU logic change, new ROM certification, or changed Mario tick/audio ordering. |
-| Reference Baseline | c663c306 and retained T44 receipts; sibling Mine source-only comparison. |
-| Candidate Proposal | [Corrective audit and roadmap](../history/M3-T44-library-readiness-correction.md). |
-| Files And ABI Surface | Shared test/build owners, host integration tool and governance; estimate8-16files/400-1000lines. |
+| Identifier Mode | New: M3 T45 S1 P1 active; T44 remains closed. |
+| Admission And Approval | Owner authorizes Mine migration, compilation, tests, commit and push. S1 only; source publication decision pending. |
+| Objective | Record exact Mine snapshot/provenance and unchanged native/DOS test baseline before shared-host adoption. |
+| Non-goals | No Mario core/PPU change, no new ROM credit, no unreviewed vendor/resource publication or sibling edits. |
+| Reference Baseline | MySMB1e850f87; hash-qualified Mine snapshot in admitted proposal; sibling has no Git history. |
+| Candidate Proposal | [T45 Mine migration](../proposals/m3/mine-import-host-adoption.md). |
+| Files And ABI Surface | S1 governance and local build only; about3tracked documents, no production ABI change. |
 | Applicable Rules | Task Reading Set: Execution, Documentation, Architecture, Coding and source policy. |
-| Verification | Owner-local tests, both native suites and Console joins, DOS/Win16 build checks, three products; node/ledger/governance gates. |
-| Expected Markers | Twelve tracked gaps with receiving S and acceptance; empty node scope and expected matches; historical1992/1992 unchanged. |
-| Asset Needs | Read-only sibling Mine, redistribution unreviewed, no import. Existing owner-local SMB1 ROM and previously qualified DOS/Win16 tools only for local builds; no ROM-derived output committed. Task-generated outputs cleaned after receipt retention; no active build workspace. |
-| Reporting Requirements | Explain retained/moved/missing capabilities and planned S sizes/exits; zero new node/edge credit. |
-| Stop Conditions | No unapproved source import, game/PPU semantic change or readiness claim based only on static review. |
-| Exit Criteria | No open G01-G12; independent no-ROM libraries and all applicable platform joins pass; receiving Mine docs truthful; cleanup and T closure. |
-| Original Owner Request | Reopen T; audit gaps, support Console/window mouse, return game refresh policy to app-mario, provide new S roadmap. |
-| Similar-Issue Sweep | Four lib families plus app adapters: geometry/palette, input/capture, scheduling, device services, memory-model/build/test isolation. |
+| Verification | Source manifest, unchanged x86/x64/DOS core checks and native compile; source/ledger/governance gates. |
+| Expected Markers | Empty ROM scope/expected/actual; historical1992/1992 unchanged. |
+| Asset Needs | Owner-supplied Mine sources and XP-derived bitmaps copied only to ignored build/t45-s1; no redistribution licence supplied. Existing qualified compilers/runtime are local-only. |
+| Reporting Requirements | Record actual source/hash, test results and publication decision; no invented revision or original-source licensing. |
+| Stop Conditions | Do not commit/push derived source/resources until the scoped publication decision is resolved; no sibling changes. |
+| Exit Criteria | Snapshot and unchanged baseline recorded; source disposition explicit before S2 admission. |
+| Original Owner Request | Admit next T to migrate Mine into app-mine, compile/test, commit and push. |
+| Similar-Issue Sweep | All source/test/resources and host paths: provenance, duplicate mechanisms, input meanings, memory model and product entry. |
 
 ## Current Technical Baseline
 
-S6-S13 are closed; G01-G12 have scoped implementation and runtime receipts in
-the historical record. All12required gaps closed; Mine import remains a separate queued candidate.
-Latest products are S12, unchanged and reverified in S13; closure receipts are in history. No Mine import and no core/PPU
-semantic changes. Historical1992/1992, retained1991/1992 nodes and4260/4261
-feasible controls (4342raw,81infeasible) unchanged; no final certificate claim.
-Preserve17 unrelated resource deletions. Build artifacts stay ignored.
+T44 closed with12gaps resolved, native307/307each and independent22/22each.
+Its local Mario products remain in assets/mario. T45 S1 is active; no Mine
+source has entered the tracked tree. Preserve17unrelated resource deletions.
+Historical1992/1992, retained1991/1992nodes and4260/4261feasible controls
+(4342raw,81infeasible) remain unchanged; no final ROM certificate claim.
 
-## T44 closure
+## S1 checkpoint
 
-Public libraries build and test without Mario/ROM. Independent suites22/22
-and complete suites307/307 pass on both widths; both15-route product host
-matrices and both2-route neutral host matrices pass. S12 actual DOS/Win16
-model/device receipts remain current. Three local EXEs are in assets/mario.
-Mine can now enter its separately admitted provenance/import/adoption task;
-its game code and product behavior have not yet been imported or certified.
+Unchanged Mine core/app/text:423checks/0failures/hash5f3c8245 on x86,x64
+and actual DOS16. Both native baseline products compile. Source publication
+choice remains pending; no S2 admission, production import or T closure.

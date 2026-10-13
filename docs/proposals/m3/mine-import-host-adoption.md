@@ -1,4 +1,4 @@
-# Mine import and shared-host adoption
+# M3 T45 Mine import and shared-host adoption
 
 ## Receiving baseline and admission gate
 
@@ -18,20 +18,35 @@ is off. DOS text profiles are80x25/80x50. Win16 text is in a Windows window,
 not a real DOS prompt. Small-model libraries must be built separately from
 Mario large-model objects. No Mario memory footprint is imposed on Mine.
 
-The owner limited the current goal to completing this split and preparing
-for import. The former T43 S8/S9 plan is retained here as a future unnumbered
-candidate. It has no admitted task identifier or approval to import now.
+Owner admits T45 on2026-10-13 to migrate Mine, build/test and commit/push.
+The sibling is read-only; only the receiving repository may change. Source
+inspection found no Git repository, so there is no history to merge. Use a
+hash-qualified source snapshot, never invent an upstream revision. Local
+provenance identifies adapted XP WinMine routines and three XP bitmap strips;
+it explicitly supplies no redistribution licence. Publication treatment is
+pending the owner's scoped decision; protected/derived inputs stay in build
+until resolved. No original vendor tree or binary is imported by default.
 
-Owner amendment: T44 S2 now admits the Mario NE/MZ Win3.x host first. When
-this candidate is admitted, consume its then-verified Win16 owner rather than
-creating a competing host from Mine; review and import only capabilities that
-the common owner actually lacks.
+## Admitted S roadmap
+
+| S | Scope | Estimate | Exit |
+| --- | --- | --- | --- |
+| S1 active | Source/provenance snapshot and unchanged baseline |3governance files; no production change | Exact snapshot and native/DOS core checks; publication boundary decided |
+| S2 planned | Core/app/text migration with mirrored tests and target build |12-20files/1000-1800lines | Source disposition obeyed; deterministic baseline retained; no Mario dependency |
+| S3 planned | Win32/x64 shared-host adoption |6-12files/600-1200lines | Window/Console launch, Tab, palette, mouse/keyboard and teardown integration |
+| S4 planned | DOS16 and Win16 shared-host adoption/NE-MZ binding |6-12files/500-1000lines | Actual DOS/Win3.x loading/input/text/window and model-qualified builds |
+| S5 planned | Combined regression, local products and T closure |4-8files plus receipts | Mine and Mario suites pass; three Mine EXEs; reviewed commit/push and cleanup |
+
+S1 is source-only/baseline work. Import and publication cannot advance until
+the provenance decision is explicit. Scope/expected/actual ROM credit0;
+historical1992/1992, retained1991/1992nodes and4260/4261feasible controls stay
+unchanged. Apps own all input meanings and update policy.
 
 ## Proposed bounded sequence
 
 1. Record the exact Mine revision, ownership and redistribution receipt;
-   import its history beneath `src/app-mine` through a subtree or equivalent
-   history-preserving merge. Establish its unchanged target baseline before
+   import its qualified snapshot beneath `src/app-mine`, retaining source
+   hashes and the approved provenance boundary. Establish its unchanged target baseline before
    shared-host adoption. Do not copy game source during the audit.
 2. Adopt KVM and Win32/DOS16 services for the platforms Mine declares. Each
    app continues to own every keyboard/mouse binding and presentation choice.
@@ -52,3 +67,22 @@ and releases, palette policy, input/focus and teardown. DOS and Win16 must
 retain their actual toolchain/runtime evidence. Close only with explicit
 per-app target/capability results, source-policy receipts and no duplicate
 owners. Any missing app capability remains named work, not a supported target.
+
+S1 local snapshot: 17source/test/resource files; aggregate SHA256 `18f568c8bd57361e513d08ae3849a3988c1eeeece92a556a4224d95ce3b42600`. No Git revision exists; vendor/reference files are excluded.
+
+## S1 P1 baseline checkpoint
+
+The17-file source/test/resource snapshot remains under ignored build. No vendor
+reference tree is copied. Local Ninja/ccache builds compile the unchanged
+window/Console product for x86 and x64. The unchanged core/app/text test reports
+423checks,0failures,hash5f3c8245 on x86, x64 and actual DOSBox small-model DOS16.
+The baseline build uses installed DOSBox defaults; no CPU/cycles change. This
+proves the unchanged test corpus, not migrated-host runtime acceptance.
+
+Reviewer confirms there is no upstream Git metadata and no supplied
+redistribution licence for the XP-derived core/bitmaps. Asked the owner to
+choose local-only source material with publishable adapters/build, or an
+independent core/art replacement. That question remains pending. S1 stays
+open and S2 is not admitted. No Mine production files, bitmaps or executables
+are committed; no Mario source/product changed. This P is the bounded
+admission/provenance/baseline record only, not T closure.

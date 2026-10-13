@@ -2840,6 +2840,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T44 S11 | 0 | 0 | win16-shared-host; [record](../../docs/history/M3-T44-library-readiness-correction.md); [record](../../docs/states/CURRENT.md) |
 | M3 T44 S12 | 0 | 0 | shared-services-build; [record](../../docs/history/M3-T44-library-readiness-correction.md); [record](../../docs/states/CURRENT.md) |
 | M3 T44 S13 | 0 | 0 | library-readiness-closure; [record](../../docs/history/M3-T44-library-readiness-correction.md); [record](../../docs/states/CURRENT.md) |
+| M3 T45 | 0 | - | [record](../../docs/proposals/m3/mine-import-host-adoption.md); [record](../../docs/states/CURRENT.md) |
+| M3 T45 S1 | 0 | 0 | source-baseline; [record](../../docs/proposals/m3/mine-import-host-adoption.md); [record](../../docs/states/CURRENT.md) |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
 | M3 T6 | 0 | - | [record](../../docs/history/M3-T5-dos16-composition-root.md); [record](../../docs/history/M3-T6-opennt-mz-link.md); S not recorded |
 | M3 T7 | 0 | - | [record](../../docs/history/M3-T6-opennt-mz-link.md); [record](../../docs/history/M3-T7-dos-hardware-hooks.md); S not recorded |
@@ -4082,3 +4084,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T44 S11 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T44-library-readiness-correction.md) |
 | M3 T44 S12 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T44-library-readiness-correction.md) |
 | M3 T44 S13 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T44-library-readiness-correction.md) |
+| M3 T45 S1 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/mine-import-host-adoption.md) |
