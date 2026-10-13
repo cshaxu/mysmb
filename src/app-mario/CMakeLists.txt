@@ -1107,15 +1107,6 @@ if(WIN32)
     target_link_libraries(mysmb_win32_keyboard_smoke PRIVATE
         mygames_win32 mysmb_app_input_mapping)
     add_test(NAME mysmb.win32-keyboard-smoke COMMAND mysmb_win32_keyboard_smoke)
-    add_executable(mysmb_win32_launch_policy_smoke
-        ${CMAKE_SOURCE_DIR}/test/lib/win32/win32_launch_policy_smoke.c)
-    target_link_libraries(mysmb_win32_launch_policy_smoke PRIVATE mygames_win32)
-    add_test(NAME mysmb.win32-launch-policy-smoke COMMAND mysmb_win32_launch_policy_smoke)
-    add_executable(mysmb_win32_parent_console_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/win32_parent_console_smoke.c)
-    target_link_libraries(mysmb_win32_parent_console_smoke PRIVATE mygames_win32)
-    add_executable(mysmb_win32_console_capability_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/win32_console_capability_smoke.c)
-    target_link_libraries(mysmb_win32_console_capability_smoke PRIVATE mygames_win32)
-    add_test(NAME mysmb.win32-console-capability-smoke COMMAND mysmb_win32_console_capability_smoke)
     if(MYSMB_WIN32_ARCH STREQUAL "host")
         if(CMAKE_SIZEOF_VOID_P EQUAL 8)
             set(MYSMB_WIN32_ARCH "x64")
@@ -1151,9 +1142,6 @@ if(WIN32)
         mygames_win32 mysmb_app_input_mapping mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_snapshot user32 gdi32 winmm)
     target_link_libraries(mysmb_win32_snapshot_binding_smoke PRIVATE
         mygames_win32 mysmb_app_input_mapping mysmb_game_snapshot mysmb_game_io mysmb_io_support mysmb_text_elements user32 gdi32 winmm)
-    add_executable(mysmb_win32_frame_wait_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/win32_frame_wait_smoke.c)
-    target_link_libraries(mysmb_win32_frame_wait_smoke PRIVATE mygames_win32)
-    add_test(NAME mysmb.win32-frame-wait-smoke COMMAND mysmb_win32_frame_wait_smoke)
     add_executable(mysmb_win32_focus_pause_smoke
         ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/win32/win32_focus_pause_smoke.c
         kvm/platform/win32/focus_pause.c)
@@ -1410,13 +1398,13 @@ if(WIN32)
         COMMAND ${Python3_EXECUTABLE}
             "${CMAKE_SOURCE_DIR}/tools/Verify-Win32StartupConsole.py"
             --product "$<TARGET_FILE:mysmb_win32>"
-            --policy "$<TARGET_FILE:mysmb_win32_launch_policy_smoke>"
+            --policy "$<TARGET_FILE:mygames_win32_launch_policy_smoke>"
             --switch "$<TARGET_FILE:mysmb_win32_text_switch_smoke>"
-            --parent "$<TARGET_FILE:mysmb_win32_parent_console_smoke>"
+            --parent "$<TARGET_FILE:mygames_win32_parent_console_smoke>"
             --devices "$<TARGET_FILE:mygames_win32_devices_probe>"
             --output "${CMAKE_BINARY_DIR}/win32-host-integration"
-        DEPENDS mysmb_win32 mysmb_win32_launch_policy_smoke
-            mysmb_win32_text_switch_smoke mysmb_win32_parent_console_smoke mygames_win32_devices_probe
+        DEPENDS mysmb_win32 mygames_win32_launch_policy_smoke
+            mysmb_win32_text_switch_smoke mygames_win32_parent_console_smoke mygames_win32_devices_probe
         USES_TERMINAL
         VERBATIM)
 endif()

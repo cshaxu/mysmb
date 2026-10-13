@@ -99,13 +99,19 @@ def completed(handle):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--product", type=Path, required=True)
-    parser.add_argument("--policy", type=Path, required=True)
+    parser.add_argument("--product", type=Path)
+    parser.add_argument("--policy", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--switch", type=Path)
     parser.add_argument("--parent", type=Path)
     parser.add_argument("--devices", type=Path)
+    parser.add_argument("--devices-only", action="store_true")
     args = parser.parse_args()
+    if args.devices_only:
+        if not args.devices or args.product or args.policy or args.switch or args.parent:
+            parser.error("--devices-only requires --devices and excludes app fixtures")
+    elif not args.product or not args.policy:
+        parser.error("app routes require --product and --policy")
     output = args.output.resolve()
     require("build" in output.parts, "Evidence must remain below build")
     output.mkdir(parents=True, exist_ok=True)
@@ -114,7 +120,8 @@ def main():
     require(desktop, "Create isolated desktop")
     handles, rows = [], []
     try:
-        policy, product = args.policy.resolve(), args.product.resolve()
+        policy = args.policy.resolve() if args.policy else None
+        product = args.product.resolve() if args.product else None
         if args.devices:
             handle=start('"%s"' % args.devices.resolve(),name,output)
             handles.append(handle);completed(handle)
@@ -127,6 +134,10 @@ def main():
             handles.append(handle);completed(handle)
             require(classic_receipt.exists(),"Classic Console device receipt missing")
             rows.append(dict(route="neutral-classic-Console/scrolled-mouse-origin",exitCode=0))
+        if args.devices_only:
+            (output / "startup-close.json").write_text(json.dumps(rows, indent=2) + "\n")
+            print(json.dumps(rows))
+            return
         if args.parent:
             handle=start('cmd.exe /d /c ""%s" "%s""' % (args.parent.resolve(),output / 'parent-diagnostic.txt'),name,output)
             handles.append(handle);completed(handle)

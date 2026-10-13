@@ -17,3 +17,9 @@ The import gate requires an exact revision, ownership/distribution record,
 history-preserving import, dependency audit and the app's actual-width native
 and DOS/Win16 target matrix. This receiving seam proves none of those later
 runtime claims by itself.
+
+T44 shared-host readiness is closed; see the [capability matrix](../../docs/history/M3-T44-library-readiness-correction.md#final-bounded-capability-and-evidence-matrix).
+The library accepts physical mouse/keyboard events, variable boards and
+app-directed dirty/wakeup scheduling. Mine must supply its own bindings,
+renderers and entry composition; no Mario rendering or save codec is shared.
+Win16 window text is available; real DOS-prompt handoff is outside this seam.

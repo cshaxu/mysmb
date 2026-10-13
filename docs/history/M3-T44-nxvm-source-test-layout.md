@@ -1,8 +1,9 @@
 # M3 T44: NXVM-style source, test and product layout
 
 > Corrective status: the owner reopened T44 in S6. The whole-T readiness
-> closure below is superseded; S1-S5 scoped receipts remain historical. See
-> [active corrective proposal](../proposals/m3/t44-library-readiness-correction.md).
+> closure below is superseded; S1-S5 scoped receipts remain historical.
+> S6-S13 now close the corrected readiness scope. See
+> [completed corrective record](M3-T44-library-readiness-correction.md).
 
 ## Owner-directed destination
 

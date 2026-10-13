@@ -2,15 +2,21 @@
 
 ## Receiving baseline and admission gate
 
-T44 is reopened: directory migration is complete, but generic host readiness
-is not. Import depends on the [corrective gap register and S7-S13 exits](t44-library-readiness-correction.md). Current Win16 and KVM APIs still carry
-Mario-specific assumptions; do not treat them as complete Mine contracts.
+T44 S6-S13 closes the shared-host capability correction. The
+[fixed gap register and receipts](../../history/M3-T44-library-readiness-correction.md)
+show all12required gaps closed, independent libraries and current platform
+joins. Mine import can now be admitted separately; this does not certify the
+unimported Mine app or remove its provenance and per-app verification gates.
 
-The Mario-first ownership split closes in M3 T43; T44 supplies the final
-NXVM-style paths. `src/app-mario` owns its application;
-KVM, Win32 and DOS16 reusable owners are separate libraries. `src/app-mine`
-contains receiving documentation only, and its optional build hook defaults
-off. Win16 now provides the T44 S2 graphical host, file services and waveform queue.
+The final topology is `src/lib/{kvm,dos16,win16,win32}` and
+`src/app-mario/{core,kvm}`. Shared physical input, variable graphics,16-slot
+text colour/glyph output, Win32 Console/window lifecycle, Win16 retained
+window text, DOS mouse/VGA, PCM/file and clock mechanisms are available.
+Apps retain every input meaning, menu, save format, refresh policy and game
+logic. `src/app-mine` contains only receiving documentation; its build hook
+is off. DOS text profiles are80x25/80x50. Win16 text is in a Windows window,
+not a real DOS prompt. Small-model libraries must be built separately from
+Mario large-model objects. No Mario memory footprint is imposed on Mine.
 
 The owner limited the current goal to completing this split and preparing
 for import. The former T43 S8/S9 plan is retained here as a future unnumbered
@@ -34,7 +40,7 @@ the common owner actually lacks.
    targets and app tests; libraries acquire no app/game dependency.
 3. Adopt the existing Win16 USER/GDI, file and audio mechanisms. Qualify
    Mine's own NE/MZ entry and actual Windows 3.x behavior without duplicating
-   the Mario host. Any missing capability, including Win16 text switching,
+   the Mario host. Any newly discovered app requirement beyond the fixed readiness scope,
    needs its own scoped implementation and runtime evidence.
 
 ## Acceptance

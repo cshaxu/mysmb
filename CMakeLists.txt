@@ -2,8 +2,11 @@ cmake_minimum_required(VERSION 3.20)
 
 project(mygames LANGUAGES C)
 
-# Applications own their targets; shared libraries will be added beside them.
+# Applications own policy and products; libraries build without app resources.
 enable_testing()
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+add_test(NAME mygames.library-purity COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_SOURCE_DIR}/test/lib/test_dependency_purity.py)
 add_subdirectory(src/lib/kvm)
 add_subdirectory(src/lib/dos16)
 add_subdirectory(src/lib/win32)

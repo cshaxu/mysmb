@@ -28,6 +28,33 @@ assets/mario/                   local mysmb16.exe, mysmb32.exe, mysmb64.exe
 assets/mine/                    future local Mine products
 ```
 
+## Independent library build and tests
+
+Configure with `cmake -S . -B build/library -G Ninja -DMYGAMES_BUILD_MARIO=OFF
+-DMYGAMES_BUILD_MINE=OFF`, selecting the intended C compiler and ccache launcher.
+No ROM or app include path is needed. Build and CTest that directory; use
+`mygames_win32_host_integration` for the real private-desktop window/Console
+probe. The Mario-enabled tree adds `mysmb_win32_host_integration` for app
+bindings, Tab, snapshots and borrowed/owned session lifecycles.
+
+Shared fixtures are built by their library CMake owner and live in matching
+`test/lib` directories. The cross-library dependency gate is
+`test/lib/test_dependency_purity.py`; Mario's separate gate covers app/core/PPU
+boundaries without duplicating library assertions. Physical-host joins are
+named integration targets, not silently skipped unit tests.
+
+`Build-Dos16LibraryProbe.ps1` produces model-qualified static device libraries
+and no-game clients with separate S/L object directories and matching CRT.
+`Build-Win16LibraryProbe.ps1` qualifies the neutral USER client with the chosen
+memory model and owner-provided SDK/CRT. Never link S objects to L libraries.
+Actual Win3.x/DOS execution is a separate integration proof from host mocks.
+Temporary runtime copies and every output stay below ignored build.
+
+The reusable declarations are in `src/lib/*`; Mario `kvm/io` contains its
+own controller/save/APU/palette and presentation assembly. Its codecs and
+synthesizer are shared between Mario platforms, not imported by another app.
+Apps own every keyboard/mouse meaning and every refresh/dirty/deadline policy.
+
 ## Files And Names
 
 Translated files use subsystem names, not arbitrary ROM addresses. Every translated file or routine records its address provenance in an adjacent mapping record. Generated source remains beneath ignored `generated/`.
@@ -42,10 +69,10 @@ an owned ordered audio snapshot,
 and selected80x25/retained80x50text cells. Cells remain three bytes;the neutral
 frame retains4000-cell capacity and adds selected rows and a16-entry RGB
 palette with a source-color map. Selected glyph IDs and their Unicode/reflection
-mapping live in io/text_glyph. It contains no game state, ROM data, host API,
-or text quantizer. The shared integer audio renderer owns neutral APU-to-PCM synthesis. Shared color lookup and indexed row scaling
-consume only the neutral video contract. Its sole target-dependent representation
-is the far pointer required to address pixels with the DOS16 compiler.
+mapping live in lib/kvm/glyph. It contains no game state, ROM data, host API,
+or text quantizer. The Mario integer audio renderer owns APU-to-PCM synthesis. Shared color lookup and indexed row scaling
+consume only the neutral video contract. Its segmented borrowed views use explicit far pointers under both DOS16 and
+Win16; application state remains independent of host pointer width.
 Existing game and platform representations remain until their admitted
 adapter migrations; the boundary test checks their numeric compatibility.
 

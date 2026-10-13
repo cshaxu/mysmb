@@ -3,7 +3,7 @@
 ## Admission and evidence boundary
 
 Owner reopens T44 and admits S6 audit/design on 2026-10-13. Baseline c663c306.
-The [S1-S5 record](../../history/M3-T44-nxvm-source-test-layout.md) retains its
+The [S1-S5 record](M3-T44-nxvm-source-test-layout.md) retains its
 measured Mario results. Its whole-T closure is withdrawn: directory separation
 and Mario passes do not establish a reusable Mine-capable host. S6 changes no
 production code and imports no Mine code. S7 was subsequently admitted under owner automatic progression; see current receipts below.
@@ -30,7 +30,7 @@ Mario continues to ignore Tab on Win16 as previously approved.
 
 ## Gap register
 
-G01-G04 close with S7, G05 with S8 and G06 with S9; G07 closes with S10; G08 closes with S11; G09-G10 close with S12; G11-G12 remain open. Each receiving S attaches
+G01-G12 are closed after S13 integration and separate coordinator review. Each receiving S attaches
 changed-owner tests and operational evidence before closing its entries.
 
 | ID | Evidence and consequence | Disposition / receiver | Required proof |
@@ -78,7 +78,7 @@ Do not force Mine into Mario's memory model or cache footprint.
 ## Planned S roadmap
 
 Estimates include production/tests; actual changed files/lines are reported at
-closure. S6-S12 are closed; S13 is next. Tests ship with each changed owner, not at S13.
+closure. S6-S13 are closed. Tests ship with each changed owner, not at S13.
 
 | S | Delivery and dependencies | Estimated files / lines | Exit |
 | --- | --- | --- | --- |
@@ -89,7 +89,7 @@ closure. S6-S12 are closed; S13 is next. Tests ship with each changed owner, not
 | S10 closed | DOS mouse and physical graphics services, G07; after S9 | 12-24 /600-1400 | DOS probe and Mario regressions; PPU/cache semantics unchanged |
 | S11 closed | Win16 configurable graphics, window text and mouse, G08; after S10 | 12-22 /600-1400 | Actual Win3.x receipts; accepted Mario behavior preserved |
 | S12 closed | PCM/file/build ownership, G09-G10; after S11 | 15-30 /600-1500 | Independent no-ROM client, model ABI and product/service tests pass |
-| S13 | Full readiness joins/register reconciliation, G11-G12; after S12 | 8-16 /400-1000 | All required gaps evidenced; final checklist satisfied |
+| S13 closed | Full readiness joins/register reconciliation, G11-G12; after S12 | 8-16 /400-1000 | All required gaps evidenced; final checklist satisfied |
 
 The neutral integration client is original test code under test/lib, with no
 Mine or Mario linkage. It exercises board-sized output, mouse, commands,
@@ -455,3 +455,84 @@ must ship together. Owner units cover each changed portable decision; physical
 BIOS/ports/WinMM/USER joins use the native receipts above. Historical1992/1992,
 retained1991/1992nodes and4260/4261feasible controls unchanged; zero scope,
 expected or actual promotions. G11-G12 remain required S13 work.
+
+## S13 admission
+
+G11-G12 only. Complete independent shared-test target ownership and a no-ROM
+private-desktop integration entry, then reconcile the fixed capability matrix.
+Retain S7-S12 actual DOS/Win16 joins for unchanged owners; rerun native suites
+and host joins after build/test changes. No game code or Mine import. Review
+all four library families for reverse dependencies and app policy. Report
+explicit capability limits, local products, memory and zero ROM promotions.
+
+## S13 P1 and T44 closure
+
+The fixed G01-G12 register is complete. Coordinator reviewed the owner request,
+production ownership, changed contracts, test owners and runtime receipts
+separately from implementation. Libraries are ready for the scoped Mine
+adoption; Mine itself is neither imported nor runtime-qualified. No library
+owns an app input meaning, game frame rate, APU synthesis or NES resource.
+The only active task ends here; later queue candidates are not auto-admitted.
+
+S13 moves four remaining shared Win32 fixture targets out of Mario CMake,
+splits the library dependency gate from Mario's gate and adds a devices-only
+private-desktop target. No production C/H changes. Independent x86/x64 Ninja
+build graphs contain no app source, ROM or ROM generator. Both independent
+suites22/22 pass; each no-ROM host run passes neutral window/Console/mouse/
+capture/dirty-pixel and classic scrolled-Console routes. Both full Release
+suites307/307 pass with no skipped case, and both complete15-route product
+host matrices pass. Test counts increased because the independent dependency
+gate is separately owned; no extra ROM equivalence coverage is claimed.
+
+### Final bounded capability and evidence matrix
+
+| Gap | Implementation / owner assertion | Operational join / final disposition |
+| --- | --- | --- |
+| G01 | KVM dimensions/stride/capacity and overflow/lifetime checks, S7 contract unit | Non-Mario geometry in Win32 and actual Win16 bands; closed |
+| G02 | App owns NES maps; KVM owns standard colour and attribute mapping, S7 colour unit | VT/indexed Console plus actual VGA/Win16 projection; closed |
+| G03 | Physical vocabulary and pointer transition owner units, S7/S9/S10/S11 | Both native widths, actual DOS mouse and Win3.x mouse/cancel/commands; closed |
+| G04 | CP437 mapping including smiley/triangle and fallback, S7 glyph assertions | All256codes in actual Win16 text; Console and DOS cell projection; closed |
+| G05 | App scheduler unit; Win16 host dirty/deadline/paint lifecycle unit, S8 | Actual neutral event-driven client and Mario title/start/move/exit; closed |
+| G06 | Window/Console event, geometry, capability and lifecycle owner tests, S9 | Both15-route matrices including borrowed/owned sessions, Tab/focus/save/input; closed |
+| G07 | DOS mouse unit and existing physical device projection contracts, S10 | Actual native61440pixels0mismatch, mode/font/cursor/IRQ restore and mouse present/absent; closed |
+| G08 | Win16 retained bands/text/menu/capture/cleanup units, S11 | Actual504x323 graphics,80x25 text,320x200 graphics; result0/failure0; closed |
+| G09 | PCM fault/lifetime/capacity and file/path owner units, S12 | Actual DOS PCM and Mario audio join, actual Win3.x file join, native save/audio-reset host routes; closed |
+| G10 | Far-qualified view/copy contracts and independent build ownership, S12 | Separate small/large DOS static libraries and small/large Win16 clients; no-ROM builds; closed |
+| G11 | Mirrored shared/app test owners and distinct dependency gates, S13 | Independent22/22 eachwidth, full307/307 eachwidth, actual platform receipts retained; closed |
+| G12 | This fixed register, current architecture, queue and receiving proposal, S13 | No required open gap or reverse app dependency; explicit exclusions retained; closed |
+
+Portable decisions, failure returns and conversions are asserted by their
+named owner tests. BIOS/port/segment/WinMM/USER behavior is validated at the
+physical integration boundary; fake SDK units do not replace those joins.
+S13 changes no16-bit production source or build recipe, so S12 actual DOS and
+Win3.x receipts remain current and are not repeated solely to inflate counts.
+
+Product bytes equal S12 after final native build:16/32/64 hashes and sizes are
+in its receipt above. No new product implementation, cache or cadence change
+in S13; no performance claim. DOS page-rounded allocation remains387216minimum,
+391312bounded maximum before dynamic app caches. Win16 standard VGA Mario
+retained pixels are30720bytes rather than the old61440. A physical486 or live
+RDP/Terminal visual qualification is not inferred from private-desktop probes.
+
+The old HOST-TEXT-FIXTURE-131 and default-all Cannon Children link blockers
+are superseded by current passing complete fixtures/builds; TODO records this
+bounded closure. Remaining Win16 host work is8bpp/Win3.0/standard-mode and real
+DOS-prompt handoff qualification, not a missing window-text implementation.
+Standard Win3.x16colour reduction remains a device limitation. Mario Win16
+continues graphics-only with inert Tab. Mouse/audio device absence remains
+explicit; runtime sound-driver availability is not an audible-speaker claim.
+
+T19 bounded startup, Mine provenance/import/app bindings, physical-machine
+performance and M2 final certification remain separately queued/excluded.
+Scope=[], expectedMatches=[], actualMatches=[]; historical1992/1992,
+retained1991/1992nodes and4260/4261feasible controls (4342raw,81infeasible)
+are unchanged. This readiness closure is not a whole-ROM certificate.
+
+Task-generated build/probe/runtime copies and native build outputs are removed
+at acceptance after retaining these receipts. Local products under assets/mario
+and the qualified tools/dos16 toolchain remain. Seventeen pre-existing resource
+deletions are preserved unstaged; they are not part of this task's commits.
+
+S13 actual source/test/build/receiving-note scope: 7files, 111added/67removed lines; production C/H unchanged. Governance and history relocation are additional.
+
+Acceptance cleanup removed11generated directories and289883800bytes; build is empty. Qualified tools and all three local products remain.

@@ -1,9 +1,48 @@
 # System Architecture
 
-T44 corrective S6 distinguishes the owner topology below from complete reusable
-host readiness. The [gap register](../proposals/m3/t44-library-readiness-correction.md)
-records remaining Mario assumptions and missing host capabilities. Directory
-separation is implemented; the listed corrective interfaces are not yet implemented.
+T44 corrective S7-S12 implements the shared-host capability split; S13 closes
+its independent build and integration acceptance. The
+[gap register](../history/M3-T44-library-readiness-correction.md) records
+per-owner evidence and the final readiness decision. Mine source is not imported.
+
+## Reusable library boundary
+
+| Owner | Reusable mechanism | Application supplies |
+| --- | --- | --- |
+| lib/kvm | Bounded indexed pixels/bands/text, physical keys/pointer transitions, CP437 and standard colour conversion | Geometry, palettes, art, command meanings and borrowed storage |
+| lib/win32 | Parent Console discovery, VT/indexed output, window/GDI, mouse/capture/cancel, deadline wait, PCM and files | Window procedure/loop, menu contents, Tab/exit/focus policy, render cadence, synthesis and save transaction |
+| lib/dos16 | Keyboard/PIT/INT33, mode/font/cursor state, VGA registers/transfer, text attributes, PCM DMA/IRQ and files | Game tick, frame/PPU composition, cache allocation, pixel-mode selection, key/mouse meanings and sample generation |
+| lib/win16 | USER/GDI retained bands or window text, physical events/menu dispatch, wake timer, PCM queue and files | View, dimensions/palette, menu IDs/flags, dirty updates/deadlines, bindings, sample size/count and save schema |
+
+No library imports an app, NES resources or game state. Mario-specific paths
+below this document are relative to `src/app-mario/kvm`; their sharing between
+Mario's platforms does not make them reusable game-independent libraries.
+In particular `io/audio_renderer`, `io/snapshot`, PPU, authored text and NES
+palette/source-colour maps remain Mario-owned.
+
+All physical events preserve signed coordinates and their coordinate space.
+Capture/focus loss emits cancellation; apps interpret gestures and bindings.
+Win32 apps keep their message/update loop. Win16 apps request a next wake and
+set dirty; OS paint replays retained pixels/cells and never advances gameplay.
+Mario's60Hz/focus/catch-up scheduler lives in its Win16 adapter, not the host.
+
+KVM views carry dimensions, stride, capacity and a borrowed lifetime. Win16
+retains copied bands within65520bytes per segment; it supports variable-size
+graphics and window text. DOS text supports80x25/80x50; the Win32 Console
+supports the same maximum80columns/selected rows and clips to the visible
+host region. These are declared device profiles, not arbitrary terminal sizes.
+Win32 VT can express the RGB values of the16 active text palette slots;
+non-VT and DOS use16 hardware/Console colour indices through the same KVM
+conversion. This does not imply64simultaneous text palette slots. Applications
+choose palettes; no NES palette is in lib. Win16 text is inside its window;
+real DOS-prompt handoff is not provided. Mario Win16 Tab stays inert.
+
+Library builds do not consume ROM paths or link Mario. Small/large16-bit
+objects and their CRTs are separate builds; borrowed far pixels, palettes and
+PCM buffers retain explicit far qualifiers. Win16 segmented copies use far
+CRT operations. Device PCM accepts samples only; all APU and audio timing
+policy stays in app-mario. Missing physical mouse/audio is an explicit
+capability result, not fabricated events or sound.
 
 ## Product Shape
 
@@ -11,9 +50,9 @@ MySMB is one native product with a portable translated program and separate host
 
 ## Modules, Ownership, And Assembly
 
-The physical Mario tree is `src/app-mario/`: `core` holds game logic and `kvm` holds app-specific IO, presentation and assembly. Remaining IO/module paths are relative to `kvm`. T43 S3 adds `src/lib/kvm` as the single owner of portable fixed-width types, semantic palette and glyph algorithms, neutral cells/video contracts, and raw physical input/presentation requests. KVM contains no host API or application command meaning; Mario maps every received physical event in `src/app-mario/kvm/app/input_mapping`.
+The physical Mario tree is `src/app-mario/`: `core` holds game logic and `kvm` holds app-specific IO, presentation and assembly. Remaining IO/module paths are relative to `kvm`. T43 S3 adds `src/lib/kvm` as the single owner of portable fixed-width types, standard colour and glyph algorithms, neutral cells/video contracts, and raw physical input/presentation requests. KVM contains no host API or application command meaning; Mario maps every received physical event in `src/app-mario/kvm/app/input_mapping`.
 
-`core/` owns the original RAM container and all translated CPU/OAM/source-sound routines. `core/observation` owns source-decision receipts;`text/` owns authored scenes and receipt encoding. `test/app-mario/kvm/ppu/validate/` owns render/frame/page projections used only by tests and recorders. `assets/` owns generated, owner-local ROM derivatives. The test-only projection owner performs reference-execution comparison through local tools such as `nnes`. `src/lib/win32` owns reusable window, Console, raw-device-input and timing mechanics; `src/app-mario/kvm/platform/win32` retains the Mario composition root plus Mario-specific audio, focus and snapshot adapters. `src/lib/dos16` owns Set-1 physical decoding, keyboard IRQ lifetime, BIOS/PIT sampling, BIOS text-mode setup/restoration and indexed text cell output. Mario retains its scan-to-command mapping, VGA/PPU composition, sound and device assembly. Each target has its own small composition root.
+`core/` owns the original RAM container and all translated CPU/OAM/source-sound routines. `core/observation` owns source-decision receipts;`text/` owns authored scenes and receipt encoding. `test/app-mario/kvm/ppu/validate/` owns render/frame/page projections used only by tests and recorders. `assets/` owns generated, owner-local ROM derivatives. The test-only projection owner performs reference-execution comparison through local tools such as `nnes`. `src/lib/win32` owns reusable window, Console, raw-device-input and timing mechanics; `src/app-mario/kvm/platform/win32` retains the Mario composition root plus Mario-specific audio, focus and snapshot adapters. `src/lib/dos16` owns Set-1 physical decoding, keyboard IRQ lifetime, BIOS/PIT sampling, BIOS text-mode setup/restoration and indexed text cell output. Mario retains its scan-to-command mapping, VGA/PPU composition, sound synthesis and device assembly. Each target has its own small composition root.
 
 `ppu/state` now owns the single addressed/visible PPU storage and immutable
 CHR binding embedded in the game container. Core retains all original NMI
@@ -67,8 +106,8 @@ Win32 console preview consumes them through the same neutral IO boundary.
 
 `app/game_io` marshals the public game output at the composition boundary.
 It copies decoded input and ordered audio,borrows compositor pixels,and never
-reads original RAM,changes game state,or calls a device. Win32's audio adapter
-accepts only the neutral audio frame;its synthesis state remains host-owned.
+reads original RAM,changes game state,or calls a device. Mario's Win32 audio adapter accepts its ordered audio frame and owns
+synthesis state; the shared waveOut device accepts only PCM blocks.
 
 DOS16 uses the same logical slot pixels through a synchronous neutral row
 producer;Windows retains a full-frame view. Shared IO owns the stable64-color
@@ -178,10 +217,10 @@ before restoring. Synchronous I/O stops application ticks and rebases host
 timing without changing source pause flags or clearing held keys on save.
 Paused files restore their actual paused state. `app/game_snapshot` explicitly binds
 all mutable game fields,preserves immutable resource pointers and decides
-completed-running eligibility. Physical P/O edges and executable-directory
-discovery belong to host adapters;roots commit validated game/audio candidates,
+completed-running eligibility. Physical key delivery and executable-directory discovery belong to host
+services; Mario maps P/O edges and roots commit validated game/audio candidates,
 redraw and reset clock/input/device queues. No translated routine changes.
-DOS marks audio-renderer state absent because it has no synthesis/device owner.
+DOS marks host audio-renderer state absent in saves and restarts its integer synthesizer after a load.
 The same format is read by all targets;DOS cannot promise atomic replacement
 or PCM continuation through intervening DOS gameplay.
 

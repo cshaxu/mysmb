@@ -13,20 +13,17 @@
 
 ## Host diagnostics
 
-- [ ] **WIN16-RECEIVING-CAPABILITIES:** T44 S2 delivers a native graphical
-  entry with P3 waveform music and P/O save/load, not full Win32 device parity.
-  Win16 still has no text presenter or DOS-prompt handoff. Standard Win3.1 VGA16 colours
-  visibly approximate source colours; the 8bpp path has synthetic tests only.
-  Win3.0 and Windows standard mode are unqualified. Admission path: a later
-  owner-requested bounded Win16 receiving task, retaining the common core/PPU
-  and app-owned controls. [Scope and receipts](../history/M3-T44-nxvm-source-test-layout.md#s2-p3-delivery-receipt).
+- [ ] **WIN16-ADDITIONAL-HOST-QUALIFICATION:** T44 S11-S13 provides variable
+  graphics, window text, mouse/cancel and menu commands. Real DOS-prompt
+  handoff remains out of scope. Standard Win3.1 VGA16 colours approximate
+  source colours;8bpp,Win3.0 and Windows standard mode lack actual runtime
+  qualification. Admission path: a separate bounded owner-requested host
+  qualification task. [Current capability receipt](../history/M3-T44-library-readiness-correction.md#s13-p1-and-t44-closure).
 
-- [ ] **HOST-TEXT-FIXTURE-131:** The full current text-switch fixture exits at
-  its initial-client geometry assertion131 on the isolated host,before the
-  changed snapshot route. Direct reuse of that snapshot/text/audio route passes
-  both widths. Review the fixture's DPI/fit expectation in a bounded host task;
-  this is not complete geometry acceptance.
-  [Evidence](../history/M3-T34-native-vga-performance-proposal.md#s3-p15-single-workspace-on-demand-io).
+- [x] **HOST-TEXT-FIXTURE-131:** Superseded by T44 S13 complete15-route
+  x86/x64 private-desktop matrices, including both owned fixtures, initial
+  geometry, text/snapshot/audio and recovery. This closes the old fixture
+  blocker, not live Terminal/DPI coverage. [Receipt](../history/M3-T44-library-readiness-correction.md#s13-p1-and-t44-closure).
 
 - [ ] **HOST-T33-VISUAL,physical Terminal applicability:** T33engineering
   closure retains default Terminal80x50device/4000glyph readback and input/
@@ -68,12 +65,10 @@
   of required pixel/lifetime or playability qualification.
   [Evidence and admission](../history/M3-T28-dos-rendering-optimization.md#s6-p6-checkpoint-contained-rowwise-feasibility-and-integration-boundary).
 
-- [ ] **Default-all legacy Cannon Children harness link:** T28 S6 P4's
-  default-all build attempt fails in x86/x64 because its direct OAM sources
-  reference observation record without linking that owner. Product/focused
-  targets pass. Admit a test-binding repair before claiming default-all success;
-  no translated logic change is implied.
-  [Failure and scoped receipts](../history/M3-T28-dos-rendering-optimization.md#s6-p4-checkpoint-omit-overwritten-raw-reads-in-the-valid-chr-cache-path).
+- [x] **Default-all legacy Cannon Children harness link:** Superseded by
+  T44 S13 complete x86/x64 builds and307/307tests each, including the named
+  harness. No core semantic change or additional ROM credit is inferred.
+  [Current build receipt](../history/M3-T44-library-readiness-correction.md#s13-p1-and-t44-closure).
 
 - [ ] **DOS16 optimizer/performance qualification (M4):** T9 S5 observes slow
   graphical frames in SoftPC with accepted original compiler flags. The same

@@ -40,3 +40,26 @@ target_link_libraries(mygames_win32_file_smoke PRIVATE mygames_win32)
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/file-test")
 add_test(NAME mygames.win32-file-replace COMMAND mygames_win32_file_smoke)
 set_tests_properties(mygames.win32-file-replace PROPERTIES WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/file-test")
+
+# Library-owned fixtures also build when all applications are disabled.
+add_executable(mygames_win32_launch_policy_smoke
+        ${CMAKE_SOURCE_DIR}/test/lib/win32/win32_launch_policy_smoke.c)
+target_link_libraries(mygames_win32_launch_policy_smoke PRIVATE mygames_win32)
+add_test(NAME mygames.win32-launch-policy-smoke COMMAND mygames_win32_launch_policy_smoke)
+add_executable(mygames_win32_parent_console_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/win32_parent_console_smoke.c)
+target_link_libraries(mygames_win32_parent_console_smoke PRIVATE mygames_win32)
+add_executable(mygames_win32_console_capability_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/win32_console_capability_smoke.c)
+target_link_libraries(mygames_win32_console_capability_smoke PRIVATE mygames_win32)
+add_test(NAME mygames.win32-console-capability-smoke COMMAND mygames_win32_console_capability_smoke)
+add_executable(mygames_win32_frame_wait_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/win32_frame_wait_smoke.c)
+target_link_libraries(mygames_win32_frame_wait_smoke PRIVATE mygames_win32)
+add_test(NAME mygames.win32-frame-wait-smoke COMMAND mygames_win32_frame_wait_smoke)
+
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+add_custom_target(mygames_win32_host_integration
+    COMMAND ${Python3_EXECUTABLE}
+        "${CMAKE_SOURCE_DIR}/tools/Verify-Win32StartupConsole.py"
+        --devices-only --devices "$<TARGET_FILE:mygames_win32_devices_probe>"
+        --output "${CMAKE_BINARY_DIR}/library-host-integration"
+    DEPENDS mygames_win32_devices_probe
+    USES_TERMINAL VERBATIM)
