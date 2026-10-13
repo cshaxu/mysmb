@@ -1142,6 +1142,9 @@ if(WIN32)
         mygames_win32 mysmb_app_input_mapping mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_snapshot user32 gdi32 winmm)
     target_link_libraries(mysmb_win32_snapshot_binding_smoke PRIVATE
         mygames_win32 mysmb_app_input_mapping mysmb_game_snapshot mysmb_game_io mysmb_io_support mysmb_text_elements user32 gdi32 winmm)
+    add_test(NAME mysmb.win32-audio-exit COMMAND ${Python3_EXECUTABLE}
+        ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/win32/test_audio_exit.py
+        $<TARGET_FILE:mysmb_win32_snapshot_binding_smoke>)
     add_executable(mysmb_win32_focus_pause_smoke
         ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/win32/win32_focus_pause_smoke.c
         kvm/platform/win32/focus_pause.c)
@@ -1165,6 +1168,9 @@ if(WIN32)
         COMMAND mysmb_win32_audio_output_smoke)
     set_tests_properties(mysmb.win32-audio-output-smoke PROPERTIES
         SKIP_RETURN_CODE 77)
+    add_custom_target(mysmb_win32_audio_host_integration
+        COMMAND $<TARGET_FILE:mysmb_win32_audio_output_smoke> --device
+        DEPENDS mysmb_win32_audio_output_smoke USES_TERMINAL VERBATIM)
     set_target_properties(mysmb_win32 PROPERTIES
         OUTPUT_NAME "mysmb-win32-${MYSMB_WIN32_ARCH}"
     )

@@ -7,7 +7,7 @@ The final section, "Approved three-platform design amendment", is the current
 scope and execution authority at efd9015a. Earlier sections preserve their
 audit-time facts and rejected options; their Windows-only restrictions and
 single-S T closure plan are superseded. S1 remains active; S2-S4 are planned.
-Implementation remains outstanding; this design P claims no product repair.
+S1 P3 implements the Win32 repair below. S2-S4 remain planned and unadmitted.
 
 ## Historical suspension
 
@@ -579,3 +579,73 @@ P2 review/gates: node responsibility validation regenerated the view without
 node/custody changes; the empty-scope admission gate and documentation topology
 gate passed. Actual design diff touches three tracked documents (proposal,
 CURRENT and ledger JSON); no production build is warranted for this P.
+
+
+## S1 P3 implementation and coordinator review
+
+Closed Win32 scope: one device thread owns open/prepare/write/reset/unprepare/
+close and completion scanning; the producer borrows the same eight PCM slots.
+Interlocked slot publication and reset IDs fence stale production and late load
+acknowledgements. Device APIs never run on the game/message thread. No second
+process or second PCM queue. Close requests retain driver-owned storage;
+after250ms the app restores its host and may terminate itself without DLL
+detach when cleanup is held. No individual thread termination or early free.
+The deterministic held-exit product-root fixture proves this exceptional path.
+
+A1-A8 are resolved for the admitted Win32 contract: all six driver call sites
+have event-held responsiveness/lifetime tests, all nine allocation/handle/thread
+failures unwind, partial preparation and failed reset/unprepare/close retain
+ownership, chronological queue reuse and reset/borrow/stop joins pass. The app
+advances synthesis when unavailable/full, commits staged load only after its
+matching successful reset, rejects nested P/O while pending, and abandons a
+failed/timed-out load. Late completion cannot commit abandoned staging.
+One owner assertion per decision is in pcm_smoke or pcm_session_smoke; app
+integration covers renderer continuity, load/reset/focus and actual host exit.
+ROM game, PPU, save format and Mine behavior are unchanged.
+
+Operational receipts: x86 and x64 each313/313 default tests pass. Independent
+library23/23 passes. Named mysmb_win32_host_integration passes15/15 routes on
+each width; mine_win32_host_integration passes3/3 on each. A tiny480pixel-wide
+RDP desktop exposed two fixture assumptions: initial geometry ignored the
+existing monitor clamp, and a clipped ReadConsoleOutput rectangle was compared
+as if all requested cells were returned. Only those fixture expectations were
+repaired; production geometry and text presentation are unchanged.
+
+Real mysmb_win32_audio_host_integration passes on both widths. First x86 run
+exceeded its12second device-open observation budget; the unchanged rerun
+passed. A separate matched probe measured main/NULL1094ms, main/EVENT10110ms,
+worker/NULL10093ms, worker/EVENT32ms, all successful. This confirms a variable
+host endpoint delay, not a thread/callback-specific explanation. Keep this
+failed receipt explicit. Neither the12second diagnostic nor the rerun changes
+the2second app stall observation or250ms exit policy. Ordinary API acceptance
+is not a subjective listening receipt; capture/continuity belongs to S4.
+
+Memory: sample capacity stays11760bytes, eight headers and queue flags remain;
+new slot/order arrays add64bytes plus the session/handles. One Windows thread
+uses the executable's default stack reservation; reservation is not committed
+memory. No DOS/Win16 PCM change in S1. Both original16-bit products compile and
+link with the repository toolchain; Mario's combined MZ/NE and Mine's combined
+MZ/NE are rebuilt. A sandbox-only link execution failure was resolved by running
+the identical linker with authorized execution, not by replacing its toolchain.
+Fresh16-bit runtime qualification follows in S2/S3/S4.
+
+Executor/coordinator diff review: changed owners match S1; neutral status enums
+have no host/app dependency; APIs expose their own error/request/acceptance
+facts without an unnecessary common mutable context. Similar-issue sweep
+covers every Win32 driver call, resource acquisition, load/reset, Tab/focus and
+root exit path. No unreviewed third-party code or protected artifacts enter Git.
+All six local products refreshed; their hashes below bind this P's builds.
+Empty ROM scope/expected/actual; historical1992/1992; retained1991/1992nodes,
+4260/4261feasible controls(4342raw,81infeasible) unchanged, no new certification.
+
+- mario/mysmb16.exe: `9c00f3daacd1e3c211daf208c6196e9c8a4338eb613c82cfc22518ab31951e78`.
+
+- mario/mysmb32.exe: `0f66ff02c78adc1f86944ca15cb9e9f3a06791944b5c99581973346d6f3559f2`.
+
+- mario/mysmb64.exe: `b2f2a79c40267d6c6bdf133ab72c0ab55b53430e60450594258e5e96c9d39590`.
+
+- mine/mine16.exe: `b30d5f34c0d9b90f850ea0b132ec5f94548fb41b0ee2c255b0ea3ef66388c7e4`.
+
+- mine/mine32.exe: `ff855e856a3346826bc67a6bcdd4cea3c368bcd5a64e77702ef19e1f67e98ee6`.
+
+- mine/mine64.exe: `ea0099b94e70952e5d457e56a7b6db4cced022a536dd10ae679c599b372d87b7`.

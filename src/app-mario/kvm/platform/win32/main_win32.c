@@ -75,6 +75,10 @@ static struct mygames_win32_window_geometry g_window_geometry={16,15,16,32,0};
 static mysmb_u8 g_game_started;
 static mysmb_u8 g_audio_available;
 static mysmb_u8 g_title_paused;
+static mysmb_u8 g_title_audio=2U,g_load_pending,g_exit_wait,g_forced_exit;
+static DWORD g_load_started,g_exit_started;
+static LONG g_load_reset;
+static struct mysmb_win32_audio_renderer g_load_renderer;
 static DWORD g_pixels[MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT];
 static LRESULT CALLBACK mysmb_win32_window_proc(HWND,UINT,WPARAM,LPARAM);
 
@@ -181,7 +185,23 @@ static mysmb_u8 mysmb_win32_buttons_from_keys(unsigned int keys)
 }
 static void mysmb_win32_finish_exit(HWND window)
 {
-    if (g_control.exit_requested!=0U) DestroyWindow(window);
+    if (!g_control.exit_requested)return;
+    g_load_pending=0U;
+    if(!g_exit_wait){g_exit_wait=1U;g_exit_started=GetTickCount();}
+    if(mysmb_win32_audio_close(&g_audio_output))DestroyWindow(window);
+    else if((DWORD)(GetTickCount()-g_exit_started)>=250U) {
+        /* Restore host state on main before exceptional process termination.
+         * The blocked worker and driver-borrowed memory remain alive. */
+        g_forced_exit=1U;DestroyWindow(window);
+    }
+}
+static int mysmb_win32_finalize_exit(void)
+{
+    mygames_win32_frame_wait_close(&g_frame_wait);
+    /* Failed/stalled driver cleanup still owns its storage and may hold DLL
+     * locks. Only the exceptional path bypasses normal DLL detach. */
+    if(g_forced_exit)TerminateProcess(GetCurrentProcess(),0U);
+    return 0;
 }
 
 static void mysmb_win32_update_title(HWND window)
@@ -190,14 +210,15 @@ static void mysmb_win32_update_title(HWND window)
     const char *title;
 
     paused = mysmb_game_is_paused(&g_game);
-    if (paused == g_title_paused) return;
+    g_audio_available=(mysmb_u8)mysmb_win32_audio_available(&g_audio_output);
+    if (paused == g_title_paused && g_audio_available==g_title_audio) return;
     if (paused != 0U)
         title = g_audio_available != 0U ? "MySMB (Paused)" :
                 "MySMB (Paused) (audio unavailable)";
     else
         title = g_audio_available != 0U ? "MySMB" :
                 "MySMB (audio unavailable)";
-    if (SetWindowText(window, title) != 0) g_title_paused = paused;
+    if (SetWindowText(window, title) != 0) {g_title_paused=paused;g_title_audio=g_audio_available;}
 }
 
 
@@ -333,9 +354,21 @@ static int mysmb_win32_snapshot_capture(void)
 static int mysmb_win32_snapshot_request(HWND window)
 {
     const struct mysmb_io_snapshot *candidate;
-    struct mysmb_win32_audio_renderer audio;
+    int reset_result;
     mygames_kvm_u8 requests;
     requests=g_snapshot_requests;g_snapshot_requests=0U;
+    if(g_load_pending) {
+        reset_result=mygames_win32_pcm_session_reset_result(g_audio_output.session,g_load_reset);
+        if(reset_result==MYGAMES_AUDIO_PENDING &&
+            (DWORD)(GetTickCount()-g_load_started)<2000U)return 1;
+        g_load_pending=0U;
+        QueryPerformanceCounter(&g_last_tick);
+        if(reset_result!=MYGAMES_AUDIO_OK) {
+            g_snapshot_store.files.log(g_snapshot_store.files.context,"mysmb.log",MYSMB_SNAPSHOT_LOAD_ERROR);
+            return 1;
+        }
+        goto commit_load;
+    }
     if (!g_snapshot_ready || requests==0U || !mysmb_win32_presenter_focused(window))
         return 0;
     if ((requests&MYSMB_IO_REQUEST_LOAD)!=0U) {
@@ -343,15 +376,19 @@ static int mysmb_win32_snapshot_request(HWND window)
         QueryPerformanceCounter(&g_last_tick);
         if (!candidate) return 0;
         if (!mysmb_game_snapshot_valid(&g_game,candidate) ||
-            !mysmb_win32_audio_restore(&audio,
-                candidate->payload+MYSMB_SNAPSHOT_CORE_BYTES) ||
-            !mysmb_win32_audio_reset_queue(&g_audio_output)) {
+            !mysmb_win32_audio_restore(&g_load_renderer,
+                candidate->payload+MYSMB_SNAPSHOT_CORE_BYTES)) {
             g_snapshot_store.files.log(g_snapshot_store.files.context,
                 "mysmb.log",MYSMB_SNAPSHOT_LOAD_ERROR);
             return 0;
         }
-        (void)mysmb_game_snapshot_restore(&g_game,candidate);
-        g_audio_output.renderer=audio;
+        g_load_reset=mysmb_win32_audio_reset_queue(&g_audio_output);
+        g_load_started=GetTickCount();g_load_pending=1U;
+        /* Even an absent device acknowledges the same transaction protocol. */
+        return mysmb_win32_snapshot_request(window);
+commit_load:
+        (void)mysmb_game_snapshot_restore(&g_game,&g_snapshot_store.staging);
+        g_audio_output.renderer=g_load_renderer;
         mysmb_snapshot_keys_reset(&g_snapshot_keys);
         mysmb_win32_release_keys();
         mysmb_win32_focus_pause_initialize(&g_focus_pause);
@@ -535,7 +572,7 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
         return 0;
     }
     if (message == WM_DESTROY) {
-        mysmb_win32_audio_close(&g_audio_output);
+        mygames_win32_pcm_session_stop(g_audio_output.session);
         mygames_win32_text_console_close(&g_console);
         PostQuitMessage(0);
         return 0;
@@ -595,8 +632,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
         for(messages=0U;messages<64U &&
             PeekMessage(&message, NULL, 0U, 0U, PM_REMOVE)!=0;++messages) {
             if (message.message == WM_QUIT) {
-                mygames_win32_frame_wait_close(&g_frame_wait);
-                return 0;
+                return mysmb_win32_finalize_exit();
             }
             TranslateMessage(&message);
             DispatchMessage(&message);

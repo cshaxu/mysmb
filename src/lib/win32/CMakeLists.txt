@@ -4,6 +4,7 @@ endif()
 
 add_library(mygames_win32 STATIC
     pcm.c
+    pcm_session.c
     file.c
     frame_wait.c
     input.c
@@ -34,6 +35,10 @@ target_link_libraries(mygames_win32_devices_probe PRIVATE mygames_win32)
 add_executable(mygames_win32_pcm_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/pcm_smoke.c)
 target_link_libraries(mygames_win32_pcm_smoke PRIVATE mygames_win32)
 add_test(NAME mygames.win32-pcm-lifecycle COMMAND mygames_win32_pcm_smoke)
+add_executable(mygames_win32_pcm_session_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/pcm_session_smoke.c)
+target_link_libraries(mygames_win32_pcm_session_smoke PRIVATE mygames_win32)
+add_test(NAME mygames.win32-pcm-session COMMAND mygames_win32_pcm_session_smoke)
+set_tests_properties(mygames.win32-pcm-session PROPERTIES TIMEOUT 30)
 
 add_executable(mygames_win32_file_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/file_smoke.c)
 target_link_libraries(mygames_win32_file_smoke PRIVATE mygames_win32)

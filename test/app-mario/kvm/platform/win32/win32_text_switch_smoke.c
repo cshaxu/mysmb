@@ -134,7 +134,26 @@ static int geometry_route(HINSTANCE instance)
     if(!mygames_win32_window_initial_client(window,&g_window_geometry))return 130;
     GetClientRect(window,&client);
     w=MulDiv(32,(int)mygames_win32_window_dpi(window),96);
-    if(client.right!=w*16 || client.bottom!=w*15)return 131;
+    /* USER clamps even the initial size to WM_GETMINMAXINFO on narrow/RDP
+     * desktops. Test the exact fitted client, not an impossible screen size. */
+    monitor.cbSize=sizeof(monitor);
+    if(!GetMonitorInfo(MonitorFromWindow(window,MONITOR_DEFAULTTONEAREST),&monitor))return 129;
+    mygames_win32_window_margins(window,mygames_win32_window_dpi(window),&margins);
+    h=(monitor.rcWork.right-monitor.rcWork.left-margins.right+margins.left)/16;
+    if(w>h)w=h;
+    h=(monitor.rcWork.bottom-monitor.rcWork.top-margins.bottom+margins.top)/15;
+    if(w>h)w=h;
+    if(w<1)w=1;
+    if(client.right!=w*16 || client.bottom!=w*15) {
+        FILE *diagnostic=fopen("geometry-failure.log","w");
+        if(diagnostic) {
+            fprintf(diagnostic,"client=%ld,%ld expected=%d,%d dpi=%u screen=%d,%d\n",
+                client.right,client.bottom,w*16,w*15,mygames_win32_window_dpi(window),
+                GetSystemMetrics(SM_CXSCREEN),GetSystemMetrics(SM_CYSCREEN));
+            fclose(diagnostic);
+        }
+        return 131;
+    }
     for(dpi=96U;dpi<=192U;dpi+=48U) {
         mygames_win32_window_margins(window,dpi,&margins);
         for(edge=WMSZ_LEFT;edge<=WMSZ_BOTTOMRIGHT;++edge) {
@@ -528,9 +547,19 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
                 !g_console.borrowed)return 83;
             size.X=80;size.Y=25;origin.X=origin.Y=0;
             view.Left=view.Top=0;view.Right=79;view.Bottom=24;
+            memset(cells,0xcc,sizeof(cells));
             if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 135;
-            for(cell_index=0U;cell_index<2000U;++cell_index)
-                if(cells[cell_index].Char.UnicodeChar!=L' ' || cells[cell_index].Attributes!=0U)return 136;
+            /* ReadConsoleOutput returns the actual intersecting rectangle.
+             * A narrow host leaves the rest of the destination untouched. */
+            if(view.Right<view.Left || view.Bottom<view.Top)return 135;
+            {
+                int row,column;
+                for(row=view.Top;row<=view.Bottom;++row)
+                    for(column=view.Left;column<=view.Right;++column) {
+                        cell_index=(unsigned int)(row*80+column);
+                        if(cells[cell_index].Char.UnicodeChar!=L' ' || cells[cell_index].Attributes!=0U)return 136;
+                    }
+            }
             if(!retained_input) {
                 retained_input=g_console.input;retained_output=g_console.output;
             } else if(retained_input!=g_console.input || retained_output!=g_console.output)return 133;

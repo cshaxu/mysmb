@@ -17,6 +17,69 @@ static SHORT test_key(int key){(void)key;return 0;}
 #undef WinMain
 static struct mysmb_io_snapshot expected,actual;
 static unsigned char wire[MYSMB_SNAPSHOT_FILE_BYTES];
+static HANDLE reset_entered,reset_resume;
+static volatile LONG reset_error;
+static struct mysmb_game before_pending;
+static struct mysmb_io_snapshot staged_pending;
+static MMRESULT WINAPI pending_open(LPHWAVEOUT d,UINT id,LPCWAVEFORMATEX f,DWORD_PTR cb,DWORD_PTR c,DWORD flags)
+{(void)id;(void)f;(void)cb;(void)c;(void)flags;*d=(HWAVEOUT)1;return 0;}
+static MMRESULT WINAPI pending_header(HWAVEOUT d,LPWAVEHDR h,UINT n)
+{(void)d;(void)h;(void)n;return 0;}
+static MMRESULT WINAPI pending_reset(HWAVEOUT d)
+{(void)d;SetEvent(reset_entered);WaitForSingleObject(reset_resume,INFINITE);return reset_error?1:0;}
+static MMRESULT WINAPI pending_close(HWAVEOUT d){(void)d;return 0;}
+static int verify_pending_load(HWND window)
+{
+    static const struct mygames_win32_pcm_api api={pending_open,pending_header,pending_header,pending_reset,pending_header,pending_close};
+    DWORD start;
+    int scenario;
+    reset_entered=CreateEvent(NULL,TRUE,FALSE,NULL);reset_resume=CreateEvent(NULL,TRUE,FALSE,NULL);
+    if(!reset_entered || !reset_resume)return 60;
+    g_audio_output.session=mygames_win32_pcm_session_begin(44100,16,8,1470,&api);
+    if(!g_audio_output.session)return 61;
+    start=GetTickCount();
+    while(mygames_win32_pcm_session_phase(g_audio_output.session)!=MYGAMES_AUDIO_READY) {
+        if(GetTickCount()-start>2000U)return 62;
+        Sleep(1);
+    }
+    for(scenario=0;scenario<3;++scenario) {
+        ResetEvent(reset_entered);ResetEvent(reset_resume);reset_error=scenario==1;
+        mysmb_win32_power_on();before_pending=g_game;
+        g_snapshot_requests=MYSMB_IO_REQUEST_LOAD;
+        start=GetTickCount();
+        if(!mysmb_win32_snapshot_request(window) || !g_load_pending ||
+            memcmp(&g_game,&before_pending,sizeof(g_game)))return 63;
+        if(WaitForSingleObject(reset_entered,2000U)!=WAIT_OBJECT_0)return 64;
+        staged_pending=g_snapshot_store.staging;
+        g_snapshot_requests=MYSMB_IO_REQUEST_SAVE|MYSMB_IO_REQUEST_LOAD;
+        (void)mysmb_win32_snapshot_request(window);
+        SendMessage(window,WM_PAINT,0,0);
+        if(GetTickCount()-start>1000U ||
+            memcmp(&staged_pending,&g_snapshot_store.staging,sizeof(staged_pending)))return 65;
+        if(scenario==2) {
+            g_load_started=GetTickCount()-2001U;
+            if(!mysmb_win32_snapshot_request(window) || g_load_pending)return 66;
+        }
+        SetEvent(reset_resume);start=GetTickCount();
+        while(mygames_win32_pcm_session_reset_result(g_audio_output.session,g_load_reset)==MYGAMES_AUDIO_PENDING) {
+            if(GetTickCount()-start>2000U)return 67;
+            Sleep(1);
+        }
+        (void)mysmb_win32_snapshot_request(window);
+        if(g_load_pending)return 68;
+        if(scenario && memcmp(&g_game,&before_pending,sizeof(g_game)))return 69;
+        if(!scenario && !mysmb_game_is_paused(&g_game))return 70;
+    }
+    reset_error=0;SetEvent(reset_resume);start=GetTickCount();
+    while(!mysmb_win32_audio_close(&g_audio_output)) {
+        if(GetTickCount()-start>2000U)return 71;
+        Sleep(1);
+    }
+    CloseHandle(reset_resume);CloseHandle(reset_entered);
+    g_snapshot_requests=MYSMB_IO_REQUEST_LOAD;
+    if(!mysmb_win32_snapshot_request(window) || !mysmb_game_is_paused(&g_game))return 72;
+    return 0;
+}
 int main(int argc,char **argv)
 {
     WNDCLASS wc;
@@ -27,6 +90,7 @@ int main(int argc,char **argv)
     unsigned int i;
     LARGE_INTEGER clock_before;
     char title_before[80],title_after[80];
+    int pending_result;
     if(argc!=2)return 1;
     memset(&wc,0,sizeof(wc));wc.lpfnWndProc=mysmb_win32_window_proc;
     wc.hInstance=GetModuleHandle(NULL);wc.lpszClassName="SnapshotBindingTest";
@@ -34,6 +98,22 @@ int main(int argc,char **argv)
     owned_window=CreateWindow(wc.lpszClassName,"test",0,0,0,256,240,
         NULL,NULL,wc.hInstance,NULL);
     if(!owned_window)return 3;
+    if(!strcmp(argv[1],"--held-exit")) {
+        static const struct mygames_win32_pcm_api held_api={pending_open,pending_header,pending_header,pending_reset,pending_header,pending_close};
+        DWORD start=GetTickCount();
+        reset_entered=CreateEvent(NULL,TRUE,FALSE,NULL);reset_resume=CreateEvent(NULL,TRUE,FALSE,NULL);
+        g_audio_output.session=mygames_win32_pcm_session_begin(44100,16,8,1470,&held_api);
+        if(!g_audio_output.session)return 80;
+        SendMessage(owned_window,WM_CLOSE,0,0);
+        while(IsWindow(owned_window)) {
+            mysmb_win32_finish_exit(owned_window);
+            if(GetTickCount()-start>1000U)return 81;
+            Sleep(1);
+        }
+        if(!g_forced_exit || !g_audio_output.session)return 82;
+        fputs("host-restored; driver-storage-retained; exceptional-exit\n",stdout);fflush(stdout);
+        return mysmb_win32_finalize_exit();
+    }
     SendMessage(owned_window,WM_SETFOCUS,0,0);
     mysmb_io_control_initialize(&g_control);mysmb_win32_release_keys();
     mysmb_win32_power_on();
@@ -89,15 +169,16 @@ int main(int argc,char **argv)
     /* Load at title without Enter;pending audio flags and clock debt reset. */
     mysmb_win32_window_proc(owned_window,WM_KEYUP,'P',0);
     mysmb_win32_power_on();
-    /* Model the borrowed queue descriptors without opening an audio device. */
-    g_audio_output.pcm.queued=g_audio_output.queued;g_audio_output.pcm.count=MYSMB_WIN32_AUDIO_BUFFERS;
-    g_audio_output.pcm.next=7U;g_audio_output.queued[0]=1U;
+    /* A missing device acknowledges reset without blocking the transaction. */
+
+
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0);
     if(!mysmb_win32_snapshot_request(owned_window) || !mysmb_game_is_paused(&g_game) ||
-        !g_game_started || g_audio_output.pcm.next || g_audio_output.queued[0])return 11;
+        !g_game_started || g_load_pending)return 11;
     mysmb_game_snapshot_capture(&g_game,&actual,g_snapshot_fingerprint);
     mysmb_win32_audio_capture(&g_audio_output.renderer,actual.payload+MYSMB_SNAPSHOT_CORE_BYTES);
     if(memcmp(&expected,&actual,sizeof(actual)))return 12;
+    pending_result=verify_pending_load(owned_window);if(pending_result)return pending_result;
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0x40000000L);
     if(g_snapshot_requests)return 13;
     /* A read-only destination preserves prior file/live state/title.
@@ -139,7 +220,7 @@ int main(int argc,char **argv)
     if(g_snapshot_requests)return 14;
     sprintf(path,"%s/mysmb.log",argv[1]);file=fopen(path,"r");if(!file)return 25;
     i=0U;while(fgets(title_after,sizeof(title_after),file))++i;fclose(file);
-    if(i!=3U)return 26;
+    if(i!=5U)return 26;
     remove(path);
     return 0;
 }

@@ -1,52 +1,56 @@
 #include <string.h>
-
+#include <stdio.h>
 #include "platform/win32/audio_output.h"
-
-int main(void)
+static void dispatch(void)
+{
+    MSG message;
+    while(PeekMessage(&message,NULL,0,0,PM_REMOVE)) {
+        TranslateMessage(&message);DispatchMessage(&message);
+    }
+    Sleep(1);
+}
+int main(int argc,char **argv)
 {
     struct mysmb_io_audio_frame audio;
     struct mysmb_win32_audio_output output;
+    struct mysmb_win32_audio_renderer expected;
+    short samples[MYSMB_WIN32_AUDIO_FRAME_SAMPLES];
     unsigned int frame;
-    unsigned int index;
-    unsigned int done;
-    unsigned int wait;
-
-    if (waveOutGetNumDevs() == 0U) return 77;
-    memset(&audio, 0, sizeof(audio));
-    audio.channel_enable = 1U;
-    audio.registers[0U] = 0x9fU;
-    audio.registers[2U] = 253U;
-    audio.writes[0U].index = 21U;
-    audio.writes[0U].value = 1U;
-    audio.writes[1U].index = 0U;
-    audio.writes[1U].value = 0x9fU;
-    audio.writes[2U].index = 2U;
-    audio.writes[2U].value = 253U;
-    audio.writes[3U].index = 3U;
-    audio.writes[3U].value = 0U;
-    audio.write_count = 4U;
-    if (mysmb_win32_audio_open(&output) == 0) return 1;
-
-    for (frame = 0U; frame < MYSMB_WIN32_AUDIO_BUFFERS; ++frame)
-        mysmb_win32_audio_submit(&output, &audio);
-    audio.write_count = 0U;
-    if (output.queued[0] == 0U || output.samples[0][50U] == 0) {
-        mysmb_win32_audio_close(&output);
-        return 2;
+    DWORD start;
+    (void)argv;
+    memset(&audio,0,sizeof(audio));memset(&output,0,sizeof(output));
+    audio.channel_enable=1U;audio.registers[0]=0x9fU;audio.registers[2]=253U;
+    audio.writes[0].index=21;audio.writes[0].value=1;
+    audio.writes[1].index=0;audio.writes[1].value=0x9f;
+    audio.writes[2].index=2;audio.writes[2].value=253;
+    audio.writes[3].index=3;audio.writes[3].value=0;audio.write_count=4;
+    mysmb_win32_audio_renderer_initialize(&output.renderer);expected=output.renderer;
+    for(frame=0;frame<16;++frame) {
+        mysmb_win32_audio_render(&expected,&audio,samples,MYSMB_WIN32_AUDIO_FRAME_SAMPLES,MYSMB_WIN32_AUDIO_RATE);
+        mysmb_win32_audio_submit(&output,&audio);audio.write_count=0;
     }
-    /* Reuse completed headers while the normal 60 Hz producer continues. */
-    for (frame = 0U; frame < 24U; ++frame) {
-        Sleep(17U);
-        mysmb_win32_audio_submit(&output, &audio);
+    if(memcmp(&expected,&output.renderer,sizeof(expected)) || !mysmb_win32_audio_close(&output))return 1;
+    /* Real endpoint availability belongs to the named host integration target,
+     * not to the deterministic renderer/adapter owner test. */
+    if(argc<2)return 0;
+    if(!waveOutGetNumDevs())return 77;
+    if(!mysmb_win32_audio_open(&output))return 2;
+    start=GetTickCount();
+    while(!mysmb_win32_audio_available(&output)) {
+        if(GetTickCount()-start>12000U) {
+            fprintf(stderr,"audio phase=%d error=%u\n",mygames_win32_pcm_session_phase(output.session),
+                (unsigned)mygames_win32_pcm_session_error(output.session));
+            return 3;
+        }
+        dispatch();
     }
-    done = 0U;
-    for (wait = 0U; wait < 200U && done == 0U; ++wait) {
-        Sleep(10U);
-        done = 1U;
-        for (index = 0U; index < MYSMB_WIN32_AUDIO_BUFFERS; ++index)
-            if ((output.headers[index].dwFlags & WHDR_DONE) == 0U)
-                done = 0U;
+    for(frame=0;frame<24;++frame) {
+        mysmb_win32_audio_submit(&output,&audio);Sleep(17);
     }
-    mysmb_win32_audio_close(&output);
-    return done != 0U ? 0 : 3;
+    start=GetTickCount();
+    while(!mysmb_win32_audio_close(&output)) {
+        if(GetTickCount()-start>2000U)return 4;
+        dispatch();
+    }
+    return 0;
 }

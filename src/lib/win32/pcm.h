@@ -16,12 +16,17 @@ struct mygames_win32_pcm_api {
 struct mygames_win32_pcm {
  HWAVEOUT device;WAVEHDR *headers;unsigned char *queued,*samples;
  unsigned short count,block_bytes,prepared,next;
+ MMRESULT result;
  const struct mygames_win32_pcm_api *api;
 };
 int mygames_win32_pcm_open(struct mygames_win32_pcm *,unsigned long rate,
  unsigned short channels,unsigned short bits,WAVEHDR *,unsigned char *queued,
  void *samples,unsigned short count,unsigned short block_bytes,
  const struct mygames_win32_pcm_api *api);
+int mygames_win32_pcm_open_event(struct mygames_win32_pcm *,unsigned long rate,
+ unsigned short channels,unsigned short bits,WAVEHDR *,unsigned char *queued,
+ void *samples,unsigned short count,unsigned short block_bytes,
+ const struct mygames_win32_pcm_api *api,HANDLE completion);
 int mygames_win32_pcm_acquire(struct mygames_win32_pcm *);
 int mygames_win32_pcm_submit(struct mygames_win32_pcm *,unsigned short index);
 int mygames_win32_pcm_reset(struct mygames_win32_pcm *);

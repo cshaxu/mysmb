@@ -3972,7 +3972,7 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T17 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T17-text-object-role-audit.md) |
 | M3 T18 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T18-window-performance-executable-footprint.md) |
 | M3 T18 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T18-window-performance-executable-footprint.md) |
-| M3 T19 S1 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/bounded-windows-audio-startup.md) |
+| M3 T19 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/bounded-windows-audio-startup.md) |
 | M3 T20 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T20-text-interface-corrections.md) |
 | M3 T20 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T20-text-interface-corrections.md) |
 | M3 T20 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T20-text-interface-corrections.md) |
