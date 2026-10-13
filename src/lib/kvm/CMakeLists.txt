@@ -1,5 +1,6 @@
 add_library(mygames_kvm STATIC
     video.c
+    pointer.c
     color.c
     glyph.c
     windows_key.c
@@ -18,3 +19,7 @@ add_test(NAME mygames.kvm-contract-smoke COMMAND mygames_kvm_contract_smoke)
 add_executable(mygames_windows_key_smoke ${CMAKE_SOURCE_DIR}/test/lib/kvm/windows_key_smoke.c)
 target_link_libraries(mygames_windows_key_smoke PRIVATE mygames_kvm)
 add_test(NAME mygames.windows-key-wire COMMAND mygames_windows_key_smoke)
+
+add_executable(mygames_pointer_smoke ${CMAKE_SOURCE_DIR}/test/lib/kvm/pointer_smoke.c)
+target_link_libraries(mygames_pointer_smoke PRIVATE mygames_kvm)
+add_test(NAME mygames.pointer-transitions COMMAND mygames_pointer_smoke)

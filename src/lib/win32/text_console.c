@@ -28,6 +28,8 @@ int mygames_win32_text_console_open_profile(struct mygames_win32_text_console *c
     DWORD mode,output_mode;
     DWORD processes[2];
     if(console->opened)return 1;
+    console->pending_at=console->pending_count=0U;
+    ZeroMemory(&console->pointer,sizeof(console->pointer));
     console->rows=mygames_win32_console_rows(rows);console->colors_valid=0U;
     if(!owner)return 0;
     if(GetConsoleProcessList(processes,2U)!=0U) {
@@ -87,7 +89,7 @@ int mygames_win32_text_console_open_profile(struct mygames_win32_text_console *c
         mygames_win32_text_console_close(console);return 0;
     }
     if(!GetConsoleMode(console->input,&mode) ||
-        !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS|ENABLE_WINDOW_INPUT)&
+        !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS|ENABLE_WINDOW_INPUT|ENABLE_MOUSE_INPUT)&
             ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|
                 ENABLE_PROCESSED_INPUT|ENABLE_VIRTUAL_TERMINAL_INPUT))) {
         mygames_win32_text_console_close(console);return 0;
@@ -146,6 +148,8 @@ int mygames_win32_text_console_suspend(struct mygames_win32_text_console *consol
     }
     if(console->window_usable)(void)ShowWindow(console->window,SW_HIDE);
     console->focused=0U;console->suspended=1U;
+    console->pending_at=0U;console->pending_count=1U;
+    mygames_kvm_pointer_cancel(&console->pointer,console->pending);
     return 1;
 }
 int mygames_win32_text_console_resume(struct mygames_win32_text_console *console)
@@ -202,6 +206,8 @@ void mygames_win32_text_console_close(struct mygames_win32_text_console *console
         (void)SetConsoleCtrlHandler(mygames_win32_console_control,FALSE);
         FreeConsole();
     }
+    console->pending_at=0U;console->pending_count=1U;
+    mygames_kvm_pointer_cancel(&console->pointer,console->pending);
     console->opened=0U;console->window=NULL;
     console->input=console->output=NULL;
     console->shell_output=NULL;console->shell_title=NULL;

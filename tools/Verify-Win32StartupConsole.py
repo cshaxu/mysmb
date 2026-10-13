@@ -104,6 +104,7 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--switch", type=Path)
     parser.add_argument("--parent", type=Path)
+    parser.add_argument("--devices", type=Path)
     args = parser.parse_args()
     output = args.output.resolve()
     require("build" in output.parts, "Evidence must remain below build")
@@ -114,6 +115,18 @@ def main():
     handles, rows = [], []
     try:
         policy, product = args.policy.resolve(), args.product.resolve()
+        if args.devices:
+            handle=start('"%s"' % args.devices.resolve(),name,output)
+            handles.append(handle);completed(handle)
+            rows.append(dict(route="neutral-window/Console/mouse/capture/dirty-pixels",exitCode=0))
+            classic_receipt=output/"neutral-classic.ok";classic_receipt.unlink(missing_ok=True)
+            classic_cmd=output/"neutral-classic.cmd"
+            classic_cmd.write_text('@echo off\n"%s" classic\necho %%errorlevel%%>"%s"\n' %
+                (args.devices.resolve(),output/"neutral-classic-exit.txt"))
+            handle=start('conhost.exe cmd.exe /d /c ""%s""' % classic_cmd,name,output)
+            handles.append(handle);completed(handle)
+            require(classic_receipt.exists(),"Classic Console device receipt missing")
+            rows.append(dict(route="neutral-classic-Console/scrolled-mouse-origin",exitCode=0))
         if args.parent:
             handle=start('cmd.exe /d /c ""%s" "%s""' % (args.parent.resolve(),output / 'parent-diagnostic.txt'),name,output)
             handles.append(handle);completed(handle)

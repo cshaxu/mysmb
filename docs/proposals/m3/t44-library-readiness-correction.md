@@ -30,7 +30,7 @@ Mario continues to ignore Tab on Win16 as previously approved.
 
 ## Gap register
 
-G01-G04 close with S7 and G05 with S8 below; G06-G12 remain open. Each receiving S attaches
+G01-G04 close with S7, G05 with S8 and G06 with S9; G07-G12 remain open. Each receiving S attaches
 changed-owner tests and operational evidence before closing its entries.
 
 | ID | Evidence and consequence | Disposition / receiver | Required proof |
@@ -78,14 +78,14 @@ Do not force Mine into Mario's memory model or cache footprint.
 ## Planned S roadmap
 
 Estimates include production/tests; actual changed files/lines are reported at
-closure. S6-S8 are closed; S9 is next. Tests ship with each changed owner, not at S13.
+closure. S6-S9 are closed; S10 is next. Tests ship with each changed owner, not at S13.
 
 | S | Delivery and dependencies | Estimated files / lines | Exit |
 | --- | --- | --- | --- |
 | S6 closed | Audit, fixed register, status correction and design | Docs only, about6 files | All findings assigned; governance/admission pass |
 | S7 closed | Neutral KVM and atomic Mario adapters, G01-G04 | 20-40 /700-1600 | Both-app data/input representable; no NES maps in lib; Mario output retained |
 | S8 closed | App refresh/pause/deadlines, G05; after S7 | 8-16 /300-800 | Event-driven and60Hz clients work without host-imposed game cadence |
-| S9 | Win32/x64 host and Console/window mouse, G06; after S8 | 15-28 /800-1800 | Both widths and view/session/input lifecycle joins pass |
+| S9 closed | Win32/x64 host and Console/window mouse, G06; after S8 | 15-28 /800-1800 | Both widths and view/session/input lifecycle joins pass |
 | S10 | DOS mouse and physical graphics services, G07; after S9 | 12-24 /600-1400 | DOS probe and Mario regressions; PPU/cache semantics unchanged |
 | S11 | Win16 configurable graphics, window text and mouse, G08; after S10 | 12-22 /600-1400 | Actual Win3.x receipts; accepted Mario behavior preserved |
 | S12 | PCM/file/build ownership, G09-G10; after S11 | 15-30 /600-1500 | Independent no-ROM client, model ABI and product/service tests pass |
@@ -232,3 +232,62 @@ SHA2562cba8dc5d092fd4bc96bac82b9998c24a4eeef33a491b4e9ca02e22edcb3321a;
 32/64 retain S7 sizes/hashes. No protected products/captures committed.
 Expected/actual ROM promotions0; historical1992/1992, retained1991/1992nodes
 and4260/4261feasible controls unchanged. G06-G12 remain required T work.
+
+## S9 admission
+
+G06 scope; zero ROM promotions. Extract neutral window creation/messages/pixel
+submission, deliver Console/window mouse state with capture/cancel/resize.
+Applications keep input meanings, focus/pause, view choice and message-pump
+cadence. Portable pointer transitions serve later DOS/Win16 adapters too.
+
+## S9 P1 closure receipt
+
+G06 closes. Library window services now own class/window creation, sizing/DPI,
+physical key/mouse/focus/command/resize delivery, capture cancellation and GDI
+pixel submission. Mario keeps its loop, input meaning, focus-pause/save and
+view choice. Console polling delivers physical records through the same app
+mapper; obsolete key-only API is removed. Mouse mode is enabled without Quick
+Edit. CP437/RGB/indexed presentation and existing launch/Tab policy remain.
+
+Portable KVM pointer owner emits ordered button transitions with complete held
+masks, signed coordinates, drag movement and cancellation. Console coordinates
+subtract the actual viewport origin. Window coordinates remain client pixels,
+matching its full-client image destination; resize reports its dimensions.
+Apps decide board/cell semantics. No outside coordinate is clamped into a click.
+Suspend/close clear held mouse state; reopening cannot deliver stale gestures.
+
+Reviewer sweep found and repaired a real ownership hazard: hidden GUI focus
+messages must not pause or clear the active Console device. A root integration
+assertion now retains that behavior. Leaf paint assertions moved from a macro
+intercept in the Mario fixture to actual GDI memory-bitmap output in the neutral
+host probe; root resize/state joins remain. No core/PPU change or Mine import.
+
+Test-owner closure: pointer transition test owns chord order, drag/outside,
+release and cancel; no-game Win32 device probe owns physical window/Console
+conversion, capture/focus, Unicode-only key2, repeat/F2/menu, invalid geometry,
+actual RGB blit/readback, invalid pixel spans, mouse input mode and session
+cancel/resume. Existing owner tests cover vocabulary/palette/geometry. OS API
+failure paths use natural invalid handles/spans plus retained host-error joins;
+this is bounded capability evidence, not exhaustive OS fault injection.
+
+Release x86/x64 suites each302/302 pass including purity. Both private-desktop
+host targets pass15/15 routes: two neutral device routes and13 retained Mario
+routes. A hidden console initially could not supply a resizable visible window;
+the classic probe explicitly shows its own window on the private desktop and
+then proves nonzero scrolled origin. It does not change the system terminal.
+Direct screen GetPixel was unsuitable for an inactive desktop, so the exact
+same GDI submission is verified on an actual memory DIB, not mocked output.
+Live RDP is not claimed. No extra product process is introduced.
+
+All three products rebuilt/republished. DOS compile/link/memory and Win16
+compile/link/binder pass. DOS image hash/resident limits exactly match S7;
+Win16 source behavior is unchanged and retains S8 actual runtime receipt.
+Local sizes / SHA256:
+-16:646093 /7ef289174267359e06e52030d8bb06a4a7ec113ed067747dcf902ac474d6dd4b
+-32:418443 /05abaafabebcfb49eac2b2df130635a20fbe5a2131af631664ce3686a9d5c780
+-64:382059 /35aec024d7d6f82c2d5cc299be8f624643e7508f1768fa9f8b48a354af17c8d8
+
+Actual implementation spans17 source/test/build files (including new owners),
+about650 inserted/170 removed lines, plus governance. Products remain ignored.
+ROM scope/expected/actual promotions0; historical1992/1992, retained1991/1992
+nodes and4260/4261feasible controls unchanged. G07-G12 remain T obligations.

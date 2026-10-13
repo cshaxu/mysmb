@@ -1,3 +1,4 @@
+#include "kvm/windows_key.h"
 #include "io/video.h"
 #include "io/color.h"
 #include "platform/win32/snapshot_replace.h"
@@ -15,15 +16,6 @@ static HWND probe_foreground(void){++foreground_calls;return mismatched_foregrou
 static SHORT probe_key(int key){(void)key;++async_calls;return 0;}
 #define GetForegroundWindow probe_foreground
 #define GetAsyncKeyState probe_key
-static int painted_width,painted_height,paint_source_ok;
-static int probe_stretch(HDC dc,int x,int y,int w,int h,int sx,int sy,int sw,int sh,
-    const void *bits,const BITMAPINFO *info,UINT usage,DWORD rop)
-{
-    painted_width=w;painted_height=h;
-    paint_source_ok=x==0 && y==0 && sx==0 && sy==0 && sw==256 && sh==240;
-    return StretchDIBits(dc,x,y,w,h,sx,sy,sw,sh,bits,info,usage,rop);
-}
-#define StretchDIBits probe_stretch
 #define WinMain mysmb_unused_product_entry
 #define MYSMB_WIN32_EMBEDDED_TEST 1
 /* This is a composition-root integration fixture: its assertions cover the
@@ -36,6 +28,20 @@ static struct mysmb_win32_audio_output saved_audio;
 static DWORD saved_pixels[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
 static struct mysmb_io_snapshot expected_snapshot,restored_snapshot;
 static struct mysmb_io_text_frame expected_text;
+static int injected_key(WORD expected,unsigned char down,WORD *key,unsigned char *pressed)
+{
+    struct mygames_win32_input keys;
+    struct mygames_kvm_input_event event;
+    unsigned int remaining=64U;
+    mygames_win32_input_initialize(&keys);
+    while(remaining-- && mygames_win32_text_console_event(&g_console,&keys,&event)) {
+        if(event.kind!=MYGAMES_KVM_INPUT_KEY)continue;
+        *key=expected;*pressed=event.down;
+        return event.physical_code==mygames_kvm_windows_key(expected,0U) && event.down==down;
+    }
+    return 0;
+}
+
 static int console_shortcut(HWND window,WORD key,unsigned char down);
 
 static int console_frame_cell_matches(const CHAR_INFO *cells,unsigned int index,
@@ -155,17 +161,14 @@ static int geometry_route(HINSTANCE instance)
     if(w*15!=h*16 || limits.ptMaxSize.x>monitor.rcWork.right-monitor.rcWork.left ||
         limits.ptMaxSize.y>monitor.rcWork.bottom-monitor.rcWork.top)return 94;
     /* Real sizing messages and paint destination,including programmatic changes. */
-    ZeroMemory(&g_bitmap_info,sizeof(g_bitmap_info));
-    g_bitmap_info.bmiHeader.biSize=sizeof(g_bitmap_info.bmiHeader);
-    g_bitmap_info.bmiHeader.biWidth=256;g_bitmap_info.bmiHeader.biHeight=-240;
-    g_bitmap_info.bmiHeader.biPlanes=1;g_bitmap_info.bmiHeader.biBitCount=32;
     for(edge=0;edge<3;++edge) {
         SetWindowPos(window,NULL,0,0,501+(int)edge*73,503+(int)edge*41,
             SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE);
         GetClientRect(window,&client);
         if(client.right*15!=client.bottom*16)return 95;
         InvalidateRect(window,NULL,FALSE);SendMessage(window,WM_PAINT,0,0);
-        if(painted_width!=client.right || painted_height!=client.bottom || !paint_source_ok)return 96;
+        /* Pixel transport is exercised by the no-game host device probe;
+         * this root join owns resize/state preservation below. */
     }
     ShowWindow(window,SW_MAXIMIZE);GetClientRect(window,&client);GetWindowRect(window,&outer);
     if(!IsZoomed(window) || client.right*15!=client.bottom*16)return 97;
@@ -280,6 +283,11 @@ static int event_input_route(HWND window)
     SendMessage(window,WM_KEYDOWN,VK_TAB,0);
     input_only_step(window);
     if(!g_text_mode)return 57;
+    {
+        struct mysmb_win32_focus_pause before=g_focus_pause;
+        SendMessage(window,WM_KILLFOCUS,0,0);
+        if(memcmp(&before,&g_focus_pause,sizeof(before)))return 97;
+    }
     ShowWindow(g_console.window,SW_HIDE);owned_focus=g_console.window;
     FlushConsoleInputBuffer(g_console.input);
     if(!input_record(VK_TAB,0U,1))return 58;
@@ -331,32 +339,21 @@ static int event_input_route(HWND window)
     mysmb_win32_release_keys();
     return 0;
 }
-static int injected_key(WORD expected,unsigned char down,WORD *key,
-    unsigned char *pressed)
-{
-    unsigned int remaining=64U;
-    WORD scan;
-    /* AllocConsole may enqueue focus/window events after the explicit flush.
-     * Ignore only non-key records; an unexpected key must still fail. */
-    while(remaining--!=0U &&
-        mygames_win32_text_console_key(&g_console,key,&scan,pressed)) {
-        if(*key!=0U)return *key==expected && *pressed==down;
-    }
-    return 0;
-}
-
 static int console_shortcut(HWND window,WORD key,unsigned char down)
 {
-    INPUT_RECORD event;
+    INPUT_RECORD record;
+    struct mygames_kvm_input_event event;
     DWORD written;
-    WORD received;
-    unsigned char pressed;
-    ZeroMemory(&event,sizeof(event));event.EventType=KEY_EVENT;
-    event.Event.KeyEvent.wVirtualKeyCode=key;
-    event.Event.KeyEvent.bKeyDown=down?TRUE:FALSE;
-    if(!WriteConsoleInputA(g_console.input,&event,1U,&written) || written!=1U ||
-        !injected_key(key,down,&received,&pressed))return 0;
-    return mysmb_win32_key_event(window,received,0U,pressed);
+    unsigned int remaining=64U;
+    ZeroMemory(&record,sizeof(record));record.EventType=KEY_EVENT;
+    record.Event.KeyEvent.wVirtualKeyCode=key;record.Event.KeyEvent.bKeyDown=down?TRUE:FALSE;
+    if(!WriteConsoleInputA(g_console.input,&record,1U,&written) || written!=1U)return 0;
+    while(remaining-- && mygames_win32_text_console_event(&g_console,&g_keyboard,&event)) {
+        if(event.kind!=MYGAMES_KVM_INPUT_KEY)continue;
+        if(event.physical_code!=mygames_kvm_windows_key(key,0U) || event.down!=down)return 0;
+        mysmb_win32_physical_event(0,window,&event);return 1;
+    }
+    return 0;
 }
 
 static int text_snapshot_route(HWND window,const char *directory)

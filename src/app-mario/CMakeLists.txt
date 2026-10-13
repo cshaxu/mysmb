@@ -1419,9 +1419,10 @@ if(WIN32)
             --policy "$<TARGET_FILE:mysmb_win32_launch_policy_smoke>"
             --switch "$<TARGET_FILE:mysmb_win32_text_switch_smoke>"
             --parent "$<TARGET_FILE:mysmb_win32_parent_console_smoke>"
+            --devices "$<TARGET_FILE:mygames_win32_devices_probe>"
             --output "${CMAKE_BINARY_DIR}/win32-host-integration"
         DEPENDS mysmb_win32 mysmb_win32_launch_policy_smoke
-            mysmb_win32_text_switch_smoke mysmb_win32_parent_console_smoke
+            mysmb_win32_text_switch_smoke mysmb_win32_parent_console_smoke mygames_win32_devices_probe
         USES_TERMINAL
         VERBATIM)
 endif()

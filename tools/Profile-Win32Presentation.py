@@ -73,10 +73,6 @@ int main(int argc,char **argv)
         0,0,528,519,NULL,NULL,wc.hInstance,NULL);
     if(!window)return 4;
     owned_focus=window;
-    ZeroMemory(&g_bitmap_info,sizeof(g_bitmap_info));
-    g_bitmap_info.bmiHeader.biSize=sizeof(g_bitmap_info.bmiHeader);
-    g_bitmap_info.bmiHeader.biWidth=256;g_bitmap_info.bmiHeader.biHeight=-240;
-    g_bitmap_info.bmiHeader.biPlanes=1;g_bitmap_info.bmiHeader.biBitCount=32;
     mysmb_io_control_initialize(&g_control);mysmb_win32_power_on();
     mysmb_win32_focus_pause_initialize(&g_focus_pause);
     mysmb_win32_focus_pause_gained(&g_focus_pause);

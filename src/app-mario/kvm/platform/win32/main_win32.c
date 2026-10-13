@@ -22,6 +22,7 @@
 #include "win32/text_console.h"
 #include "win32/launch.h"
 #include "win32/input.h"
+#include "win32/window.h"
 #include "win32/frame_wait.h"
 #include "win32/window_geometry.h"
 #include "text/scene.h"
@@ -57,6 +58,7 @@ static struct mygames_win32_text_console g_console_job;
 static HANDLE g_console_thread;
 static HDESK g_console_desktop;
 static struct mygames_win32_input g_keyboard;
+static struct mygames_win32_window_input g_window_input;
 static struct mysmb_app_input_mapping g_input_mapping;
 static mysmb_u8 g_mapped_buttons;
 static struct mysmb_text_scene_workspace g_text_workspace;
@@ -73,7 +75,6 @@ static struct mygames_win32_window_geometry g_window_geometry={16,15,16,32,0};
 static mysmb_u8 g_game_started;
 static mysmb_u8 g_audio_available;
 static mysmb_u8 g_title_paused;
-static BITMAPINFO g_bitmap_info;
 static DWORD g_pixels[MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT];
 static LRESULT CALLBACK mysmb_win32_window_proc(HWND,UINT,WPARAM,LPARAM);
 
@@ -123,20 +124,37 @@ static void mysmb_win32_transfer_keys(void)
      * Suppress a make delivered by the new device until its break arrives. */
     g_control.toggle_held=tab_held;
 }
-static int mysmb_win32_key_event(HWND window,WORD key,WORD scan,
-    unsigned char pressed)
+static void mysmb_win32_physical_event(void *context,HWND window,
+    const struct mygames_kvm_input_event *event)
+{
+    struct mysmb_io_input mapped;
+    if(event->kind==MYGAMES_KVM_INPUT_FOCUS) {
+        if(!context) {
+            g_window_focused=event->down;
+            if(g_text_mode)return; /* Hidden GUI focus is not Console focus. */
+        }
+        if(!g_switching) {
+            if(event->down)mysmb_win32_focus_pause_gained(&g_focus_pause);
+            else {
+                mysmb_win32_focus_pause_lost(&g_focus_pause,g_game_started,&g_game);
+                mysmb_win32_release_keys();
+            }
+        }
+        return;
+    }
+    if(event->kind!=MYGAMES_KVM_INPUT_KEY)return;
+    if(event->down && !mysmb_win32_presenter_focused(window))return;
+    mapped.buttons=mapped.buttons2=mapped.requests=0U;
+    mysmb_app_input_mapping_event(&g_input_mapping,event,&mapped);
+    g_mapped_buttons=mapped.buttons;
+    if(!event->repeat)mysmb_win32_apply_requests(window,mapped.requests,event->down);
+}
+static int mysmb_win32_key_event(HWND window,WORD key,WORD scan,unsigned char pressed)
 {
     struct mygames_kvm_input_event event;
-    struct mysmb_io_input mapped;
-    int kind;
     if(pressed && !mysmb_win32_presenter_focused(window))return 0;
-    kind=mygames_win32_input_key(&g_keyboard,key,scan,pressed,&event);
-    if(!kind)return 0;
-    mapped.buttons=mapped.buttons2=mapped.requests=0U;
-    mysmb_app_input_mapping_event(&g_input_mapping,&event,&mapped);
-    g_mapped_buttons=mapped.buttons;
-    if(kind==1)mysmb_win32_apply_requests(window,mapped.requests,pressed);
-    return 1;
+    if(!mygames_win32_input_key(&g_keyboard,key,scan,pressed,&event))return 0;
+    mysmb_win32_physical_event(0,window,&event);return 1;
 }
 
 /* Root-local probes retain these narrow helpers.  They exercise the same
@@ -416,17 +434,8 @@ static int mysmb_win32_run_self_test(void)
 #endif
 static void mysmb_win32_paint(HWND window)
 {
-    PAINTSTRUCT paint;
-    HDC dc;
-    RECT client;
-
-    dc = BeginPaint(window, &paint);
-    GetClientRect(window,&client);
-    if(client.right>0 && client.bottom>0)
-    StretchDIBits(dc, 0, 0, client.right, client.bottom, 0, 0,
-                  MYSMB_SCREEN_WIDTH, MYSMB_SCREEN_HEIGHT, g_pixels,
-                  &g_bitmap_info, DIB_RGB_COLORS, SRCCOPY);
-    EndPaint(window, &paint);
+    (void)mygames_win32_window_paint(window,g_pixels,
+        MYSMB_SCREEN_WIDTH,MYSMB_SCREEN_HEIGHT,MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT);
 }
 static void mysmb_win32_step(HWND window)
 {
@@ -438,18 +447,14 @@ static void mysmb_win32_step(HWND window)
     mysmb_u8 physical_buttons;
     unsigned int steps;
     unsigned int events;
-    WORD key,scan;
-    int event_kind;
-    unsigned char pressed;
+    struct mygames_kvm_input_event event;
 
     mysmb_win32_console_complete(window);
     if(g_text_mode && g_text_failed && !g_console_thread)
         mysmb_win32_switch_presenter(window,1);
     for(events=0U;events<64U && g_text_mode &&
-        (event_kind=mygames_win32_text_console_key(&g_console,&key,&scan,&pressed));++events) {
-        if(event_kind==2 && !pressed)mysmb_win32_release_keys();
-        else if(event_kind==1)mysmb_win32_key_event(window,key,scan,pressed);
-    }
+        mygames_win32_text_console_event(&g_console,&g_keyboard,&event);++events)
+        mysmb_win32_physical_event(&g_console,window,&event);
     if(g_toggle_request && !g_console_thread) {
         g_toggle_request=0U;
         if(g_text_mode || g_console.opened || mygames_win32_parent_console_available())
@@ -510,54 +515,21 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
                                                   WPARAM w_param, LPARAM l_param)
 {
     struct mysmb_io_input decoded;
+    LRESULT result;
     decoded.buttons=0U;decoded.buttons2=0U;
     decoded.requests=mysmb_win32_requests_from_message(message,w_param);
     if (decoded.requests!=0U) {
         mysmb_io_control_input(&g_control,&decoded);
         return 0;
     }
-    if (message==WM_KEYDOWN || message==WM_KEYUP ||
-        message==WM_SYSKEYDOWN || message==WM_SYSKEYUP) {
-        if((message==WM_KEYDOWN || message==WM_SYSKEYDOWN) &&
-            (l_param&0x40000000L)!=0 &&
-            (w_param==VK_TAB || w_param=='P' || w_param=='O'))return 0;
-        if(mysmb_win32_key_event(window,(WORD)w_param,
-            (WORD)((l_param>>16)&255L),
-            (unsigned char)(message==WM_KEYDOWN || message==WM_SYSKEYDOWN)))return 0;
+    /* The retained hidden GUI is not the active input device in text mode. */
+    if(g_text_mode && (message==WM_KILLFOCUS || message==WM_SETFOCUS || message==WM_ACTIVATEAPP)) {
+        g_window_focused=(mygames_kvm_u8)(message==WM_SETFOCUS ||
+            (message==WM_ACTIVATEAPP && w_param && GetFocus()==window));
+        return 0;
     }
-    if (message == WM_KILLFOCUS ||
-        (message == WM_ACTIVATEAPP && w_param == 0U)) {
-        g_window_focused=0U;
-        if(!g_switching && !g_text_mode) {
-            mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
-            mysmb_win32_release_keys();
-        }
-    }
-    if (message == WM_SETFOCUS ||
-        (message == WM_ACTIVATEAPP && w_param != 0U && GetFocus() == window)) {
-        g_window_focused=1U;
-        if(!g_switching && !g_text_mode)mysmb_win32_focus_pause_gained(&g_focus_pause);
-    }
-    if(message==WM_SIZING) {
-        mygames_win32_window_size_rectangle(window,(RECT *)l_param,(UINT)w_param,0U,
-            &g_window_geometry);return TRUE;
-    }
-    if(message==WM_GETMINMAXINFO) {
-        mygames_win32_window_size_limits(window,(MINMAXINFO *)l_param,
-            &g_window_geometry);return 0;
-    }
-    if(message==0x02e0U) { /* WM_DPICHANGED,also builds with old headers. */
-        RECT rect=*(RECT *)l_param;
-        mygames_win32_window_size_rectangle(window,&rect,WMSZ_BOTTOMRIGHT,
-            LOWORD(w_param),&g_window_geometry);
-        SetWindowPos(window,NULL,rect.left,rect.top,rect.right-rect.left,
-            rect.bottom-rect.top,SWP_NOZORDER|SWP_NOACTIVATE);return 0;
-    }
-    if(message==WM_SIZE) {
-        if(w_param!=SIZE_MINIMIZED)mygames_win32_window_normalize_client(window,
-            &g_window_geometry);
-        InvalidateRect(window,NULL,FALSE);return 0;
-    }
+    if(mygames_win32_window_event(window,message,w_param,l_param,&g_window_input,
+        &g_keyboard,&g_window_geometry,mysmb_win32_physical_event,0,&result))return result;
     if (message == WM_PAINT) {
         mysmb_win32_paint(window);
         return 0;
@@ -573,12 +545,10 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
 
 int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int show)
 {
-    WNDCLASS window_class;
     HWND window;
     MSG message;
     int start_text;
     unsigned int messages;
-    RECT initial;
 
     (void)previous;
     mysmb_io_control_initialize(&g_control);
@@ -592,22 +562,6 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     mygames_win32_window_enable_dpi();
     start_text=mygames_win32_parent_console_available();
     if(!start_text)(void)FreeConsole();
-    ZeroMemory(&window_class, sizeof(window_class));
-    window_class.lpfnWndProc = mysmb_win32_window_proc;
-    window_class.hInstance = instance;
-    window_class.hCursor = LoadCursor(NULL, IDC_ARROW);
-    window_class.lpszClassName = MYSMB_CLASS_NAME;
-    if (RegisterClass(&window_class) == 0) {
-        return 1;
-    }
-
-    ZeroMemory(&g_bitmap_info, sizeof(g_bitmap_info));
-    g_bitmap_info.bmiHeader.biSize = sizeof(g_bitmap_info.bmiHeader);
-    g_bitmap_info.bmiHeader.biWidth = MYSMB_SCREEN_WIDTH;
-    g_bitmap_info.bmiHeader.biHeight = -(LONG)MYSMB_SCREEN_HEIGHT;
-    g_bitmap_info.bmiHeader.biPlanes = 1U;
-    g_bitmap_info.bmiHeader.biBitCount = 32U;
-    g_bitmap_info.bmiHeader.biCompression = BI_RGB;
     QueryPerformanceFrequency(&g_frequency);
     QueryPerformanceCounter(&g_last_tick);
     g_game_started = 0U;
@@ -618,20 +572,9 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     mygames_win32_window_geometry_initialize(&g_window_geometry,16,15,16,32);
     mysmb_win32_power_on();
     mysmb_win32_snapshot_initialize();
-    SetRect(&initial,0,0,MYSMB_SCREEN_WIDTH*MYSMB_SCALE,MYSMB_SCREEN_HEIGHT*MYSMB_SCALE);
-    AdjustWindowRectEx(&initial,WS_OVERLAPPEDWINDOW,FALSE,0U);
-    g_window_geometry.adjusting=1;
-    window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,
-                          CW_USEDEFAULT, CW_USEDEFAULT,
-                          initial.right-initial.left,initial.bottom-initial.top,
-                          NULL, NULL, instance, NULL);
-    if (window == NULL) {
-        g_window_geometry.adjusting=0;return 1;
-    }
-    if(!mygames_win32_window_initial_client(window,&g_window_geometry)) {
-        g_window_geometry.adjusting=0;DestroyWindow(window);return 1;
-    }
-    g_window_geometry.adjusting=0;
+    window=mygames_win32_window_create(instance,MYSMB_CLASS_NAME,"MySMB",
+        mysmb_win32_window_proc,&g_window_geometry);
+    if(!window)return 1;
     if(start_text)mysmb_win32_switch_presenter(window,0);
     if(g_text_mode) {
         if(g_console.window_usable) {
