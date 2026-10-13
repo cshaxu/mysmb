@@ -1,4 +1,5 @@
 #include "app/game_io.h"
+#include "io/color.h"
 
 void mysmb_game_io_input(const struct mysmb_io_input *source,
                          struct mysmb_input *input)
@@ -11,6 +12,9 @@ void mysmb_game_io_video(const struct mysmb_ppu_frame *source,
                          struct mygames_kvm_video_frame *frame)
 {
     frame->pixels = source->pixels;
+    frame->width=frame->stride=MYSMB_VIDEO_WIDTH;frame->height=MYSMB_VIDEO_HEIGHT;
+    frame->capacity=MYSMB_VIDEO_PIXELS;frame->palette=mysmb_io_source_colors;
+    frame->palette_count=64U;
 }
 
 void mysmb_game_io_audio(const struct mysmb_game *source,

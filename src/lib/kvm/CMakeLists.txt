@@ -1,4 +1,5 @@
 add_library(mygames_kvm STATIC
+    video.c
     color.c
     glyph.c
     windows_key.c

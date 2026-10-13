@@ -21,16 +21,17 @@ static const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *text_frame(void *con
 {(void)context;return &text;}
 static int graphics(void *context,struct mygames_kvm_video_band *band)
 {
-    (void)context;band->pixels=pixels;band->first=0U;band->rows=1U;return 1;
+    (void)context;band->pixels=pixels;band->first=0U;band->rows=1U;
+    band->width=band->stride=256U;band->capacity=256U;return 1;
 }
 int main(void)
 {
     struct fixture state={0U,0U,0U,0U};
     struct mygames_win16_application app={&state,"Contract fixture",
         MYGAMES_WIN16_VIEW_GRAPHICS|MYGAMES_WIN16_VIEW_TEXT,
-        input,tick,view,exiting,text_frame,graphics};
+        input,tick,view,exiting,text_frame,graphics,0,0U,256U,240U};
     struct mygames_kvm_input_event event={MYGAMES_KVM_INPUT_KEY,1U,0U,
-        MYGAMES_KVM_KEY_TAB,0U,0U,0U,0U};
+        MYGAMES_KVM_KEY_TAB,0U,0U,0U,0U,0U,MYGAMES_KVM_COORD_NONE};
     struct mygames_kvm_video_band band;
     app.input(app.context,&event);
     app.tick(app.context);

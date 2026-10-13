@@ -3,14 +3,10 @@
 
 #include "kvm/types.h"
 
-/* Stable presentation palette; indexed game pixels retain all six bits. */
-unsigned long mygames_kvm_color_rgb(mygames_kvm_u8 index);
 /* Canonical RGB for the neutral sixteen-color text attributes. */
 unsigned long mygames_kvm_color_text_rgb(mygames_kvm_u8 index);
 /* Device fallback for an arbitrary neutral RGB text palette. */
 mygames_kvm_u8 mygames_kvm_color_text_nearest(unsigned long rgb);
-/* Color reduction only; never character selection or pixel sampling. */
-mygames_kvm_u8 mygames_kvm_color_text16(mygames_kvm_u8 index);
 /* Project the neutral sixteen text slots onto fixed hardware/API attributes.
  * Source RGB slots are reduced once; canonical slots retain their identity. */
 void mygames_kvm_color_text_attributes(const unsigned long *colors,

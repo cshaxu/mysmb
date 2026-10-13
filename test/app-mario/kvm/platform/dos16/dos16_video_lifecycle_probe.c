@@ -1,3 +1,4 @@
+#include "io/video.h"
 /* Real DOS BIOS/device join with authored templates. No gameplay core or
  * owner-ROM resources are linked. */
 #include "platform/dos16/devices.h"
@@ -22,7 +23,7 @@ static int fail(int code)
 }
 int main(void)
 {
-    static struct mygames_kvm_text_frame glyph_frame;
+    static struct mysmb_io_text_frame glyph_frame;
     static const unsigned char glyph_ids[16]={
         0xb3U,0xc4U,0xdaU,0xbfU,0xc0U,0xd9U,0xc3U,0xb4U,
         0xc2U,0xc1U,0xc5U,0xdbU,0xdcU,0xdfU,0xddU,0xdeU};
@@ -56,7 +57,7 @@ int main(void)
     if(!mysmb_dos16_devices_open() || mode()!=0x13)return fail(2);
     if(!mysmb_dos16_devices_mode(1U) || mode()!=3 || rows()!=24)return fail(3);
     glyph_frame.rows=50U;glyph_frame.source_colors=1U;
-    for(i=0U;i<MYGAMES_KVM_TEXT_CELLS;++i) {
+    for(i=0U;i<MYSMB_IO_TEXT_CELLS;++i) {
         glyph_frame.cells[i].character=' ';
         glyph_frame.cells[i].foreground=15U;glyph_frame.cells[i].background=1U;
     }

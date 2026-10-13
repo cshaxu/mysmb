@@ -1,3 +1,4 @@
+#include "io/color.h"
 #include <windows.h>
 #include "win16/host.h"
 #include "win16/audio.h"
@@ -33,6 +34,7 @@ static struct mysmb_snapshot_store *snapshot_store;
 static struct mysmb_file_storage file_storage;
 static struct mysmb_snapshot_keys snapshot_keys;
 static unsigned char fingerprint[16],samples[184];
+
 
 static void snapshot_request(mygames_kvm_u8 request)
 {
@@ -110,7 +112,8 @@ static int graphics(void *context,struct mygames_kvm_video_band *band)
     if(band->first==0U)mysmb_ppu_frame_begin(&game.ppu,&workspace,&view);
     result=mysmb_ppu_frame_rows(&view,rows,sizeof(rows),band->first,band->rows);
     if(!result || band->first+band->rows==240U)mysmb_ppu_frame_end(&view);
-    band->pixels=rows;return result;
+    band->pixels=rows;band->width=band->stride=256U;
+    band->capacity=sizeof(rows);return result;
 }
 static mygames_kvm_u8 exit_requested(void *context)
 {(void)context;return control.exit_requested;}
@@ -152,6 +155,8 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     background_bytes=background?(unsigned char FAR *)GlobalLock(background):0;
     if(background_bytes)mysmb_ppu_frame_background_bind(&workspace,
         background_bytes,MYSMB_PPU_BACKGROUND_BYTES);
+    application.palette=mysmb_io_source_colors;application.palette_count=64U;
+    application.width=256U;application.height=240U;
     application.context=0;application.title="MySMB";
     application.available_views=MYGAMES_WIN16_VIEW_GRAPHICS;
     application.input=input;application.tick=tick;

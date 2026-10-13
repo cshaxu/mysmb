@@ -1,3 +1,5 @@
+#include "io/video.h"
+#include "io/color.h"
 #include "core/game.h"
 #include "core/frame_root.h"
 #include "ppu/frame.h"
@@ -22,7 +24,7 @@ static struct mysmb_text_actor_workspace actor_workspace;
 static struct mysmb_game observed,plain,before,restored;
 static struct mysmb_io_snapshot first,second;
 static struct mysmb_ppu_frame pixels1,pixels2;
-static struct mygames_kvm_text_frame text,loaded_text;
+static struct mysmb_io_text_frame text,loaded_text;
 static unsigned char snapshot_wire[MYSMB_SNAPSHOT_FILE_BYTES];
 static struct mysmb_text_background_workspace background;
 static struct mysmb_text_background_receipt caption_receipt;
@@ -389,7 +391,7 @@ static int palette_animation_case(void)
         CHECK(observed.ppu.palette[13U]==observed.area_prg[0x09c3U+i%6U]);
         before=observed;
         CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
-        expected=mygames_kvm_color_text16(observed.ppu.palette[13U]);
+        expected=mysmb_io_color_text16(observed.ppu.palette[13U]);
         colors|=(unsigned short)(1U<<expected);found_question=found_coin=0U;
         for(j=0U;j<4000U;++j)if(text.cells[j].character=='?' || text.cells[j].character=='$') {
             CHECK(text.cells[j].background==expected);

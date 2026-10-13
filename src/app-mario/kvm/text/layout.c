@@ -1,3 +1,5 @@
+#include "io/video.h"
+#include "io/color.h"
 #include "text/layout.h"
 #include "kvm/color.h"
 #include <string.h>
@@ -9,10 +11,10 @@ static unsigned long distance(unsigned long a,unsigned long b)
     v=(long)(a&255UL)-(long)(b&255UL);
     return (unsigned long)(r*r+g*g+v*v);
 }
-mygames_kvm_u8 mysmb_text_color(const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *f,
+mygames_kvm_u8 mysmb_text_color(const struct mysmb_io_text_frame MYGAMES_KVM_FAR *f,
     mygames_kvm_u8 master)
-{return f->source_colors==1U?f->master_map[master&63U]:mygames_kvm_color_text16(master);}
-mygames_kvm_u8 mysmb_text_contrast(const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *f,
+{return f->source_colors==1U?f->master_map[master&63U]:mysmb_io_color_text16(master);}
+mygames_kvm_u8 mysmb_text_contrast(const struct mysmb_io_text_frame MYGAMES_KVM_FAR *f,
     mygames_kvm_u8 background)
 {
     unsigned long rgb,brightness;
@@ -23,7 +25,7 @@ mygames_kvm_u8 mysmb_text_contrast(const struct mygames_kvm_text_frame MYGAMES_K
      * light fills. The custom palette reserves black1 and white2. */
     return brightness>=192UL?1U:2U;
 }
-void mysmb_text_frame_initialize(struct mygames_kvm_text_frame MYGAMES_KVM_FAR *f,
+void mysmb_text_frame_initialize(struct mysmb_io_text_frame MYGAMES_KVM_FAR *f,
     mygames_kvm_u8 sky,mygames_kvm_u16 rows,const mygames_kvm_u8 *palette)
 {
     unsigned short i,j,count,used,filled,n,best;
@@ -36,17 +38,17 @@ void mysmb_text_frame_initialize(struct mygames_kvm_text_frame MYGAMES_KVM_FAR *
     for(i=0U;i<64U;++i)f->master_map[i]=0U;
     if(palette==0)for(i=0U;i<16U;++i)f->colors[i]=mygames_kvm_color_text_rgb((mygames_kvm_u8)i);
     else {
-        f->colors[0U]=mygames_kvm_color_rgb(palette[0U]);
-        f->colors[1U]=mygames_kvm_color_rgb(0x0fU);
-        f->colors[2U]=mygames_kvm_color_rgb(0x30U);used=3U;
+        f->colors[0U]=mysmb_io_color_rgb(palette[0U]);
+        f->colors[1U]=mysmb_io_color_rgb(0x0fU);
+        f->colors[2U]=mysmb_io_color_rgb(0x30U);used=3U;
         for(i=0U;i<32U && used<16U;++i) {
-            color=mygames_kvm_color_rgb(palette[i]);
+            color=mysmb_io_color_rgb(palette[i]);
             for(j=0U;j<used && f->colors[j]!=color;++j){}
             if(j==used)f->colors[used++]=color;
         }
         for(i=used;i<16U;++i)f->colors[i]=f->colors[0U];
         for(i=0U;i<64U;++i) {
-            minimum=0xffffffffUL;best=0U;color=mygames_kvm_color_rgb((mygames_kvm_u8)i);
+            minimum=0xffffffffUL;best=0U;color=mysmb_io_color_rgb((mygames_kvm_u8)i);
             for(j=0U;j<used;++j) {
                 d=distance(color,f->colors[j]);
                 if(d<minimum){minimum=d;best=j;}
@@ -61,4 +63,13 @@ void mysmb_text_frame_initialize(struct mygames_kvm_text_frame MYGAMES_KVM_FAR *
         n=filled;if(n>count-filled)n=(unsigned short)(count-filled);
         memcpy(f->cells+filled,f->cells,n*sizeof(f->cells[0U]));filled=(unsigned short)(filled+n);
     }
+}
+
+void mysmb_text_frame_view(const struct mysmb_io_text_frame MYGAMES_KVM_FAR *source,
+    struct mygames_kvm_text_frame *view)
+{
+    view->cells=source->cells;view->columns=80U;
+    view->rows=MYSMB_IO_TEXT_FRAME_ROWS(source);view->stride=80U;
+    view->capacity=MYSMB_IO_TEXT_CELLS;view->source_colors=source->source_colors;
+    view->colors=source->colors;
 }

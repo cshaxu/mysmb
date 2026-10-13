@@ -1,3 +1,4 @@
+#include "io/video.h"
 #ifndef MYSMB_DOS16_DEVICES_H
 #define MYSMB_DOS16_DEVICES_H
 #include "io/input.h"
@@ -25,7 +26,7 @@ void mysmb_dos16_devices_after_load(void);
 void mysmb_dos16_devices_resume_clock(void);
 int mysmb_dos16_devices_mode(mygames_kvm_u8 text);
 void mysmb_dos16_devices_palette(const mygames_kvm_u8 MYGAMES_KVM_FAR *palette);
-void mysmb_dos16_devices_text(const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame);
+void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame);
 /* S7 background-only capability. It is intentionally not the product
  * presenter until S8 restores HUD and sprite damage over the same surface. */
 int mysmb_dos16_devices_retained_background(const struct mysmb_ppu_frame_view *view);

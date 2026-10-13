@@ -1,3 +1,4 @@
+#include "io/video.h"
 #include "text/background_scene.h"
 #include "kvm/glyph.h"
 #include <stdio.h>
@@ -5,7 +6,7 @@
 
 static struct mysmb_game game,before;
 static struct mysmb_text_background_workspace workspace;
-static struct mygames_kvm_text_frame frame,original;
+static struct mysmb_io_text_frame frame,original;
 static unsigned char prg[0x8000U];
 #define CHECK(c) do {if(!(c)){fprintf(stderr,"background check %d\n",__LINE__);return 1;}}while(0)
 

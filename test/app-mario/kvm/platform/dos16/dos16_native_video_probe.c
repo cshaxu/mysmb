@@ -1,3 +1,4 @@
+#include "io/video.h"
 /* Original16-bit toolchain hardware probe;synthetic pixels,no ROM input. */
 #include "platform/dos16/devices.h"
 #include "platform/dos16/planar_row.h"
@@ -18,7 +19,7 @@ int main(void)
     unsigned char far *storage,*video=(unsigned char far *)0xa0000000UL;
     unsigned char far *direct;
     struct mygames_kvm_video_band band;
-    struct mygames_kvm_text_frame far *text;
+    struct mysmb_io_text_frame far *text;
     union REGS r;
     unsigned char original,restored;
     FILE *f;
@@ -32,7 +33,7 @@ int main(void)
     if(mygames_dos16_text_mode(24U))return 15;
     r.h.ah=15U;int86(16,&r,&r);original=r.h.al;
     storage=(unsigned char far *)_fmalloc(8192U);
-    text=(struct mygames_kvm_text_frame far *)_fmalloc(sizeof(*text));
+    text=(struct mysmb_io_text_frame far *)_fmalloc(sizeof(*text));
     if(!storage || !text || !mysmb_dos16_devices_open())return 1;
     if(mygames_dos16_keyboard_open(ignore_scan,0))return 11;
     if(_dos_getvect(9U)==original_keyboard)return 12;

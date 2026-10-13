@@ -1,3 +1,4 @@
+#include "io/video.h"
 /* Timing is descriptive host evidence,never an acceptance threshold. */
 #include <windows.h>
 #include <stdio.h>
@@ -19,15 +20,15 @@ static struct mysmb_ppu_frame_workspace cache_workspace,other_workspace;
 static unsigned char cache_store[MYSMB_PPU_CHR_DECODED_BYTES+2U];
 static unsigned char other_store[MYSMB_PPU_CHR_DECODED_BYTES+2U],other_chr[8192];
 static struct mysmb_text_scene_workspace workspace;
-static struct mygames_kvm_text_frame text;
+static struct mysmb_io_text_frame text;
 static union borrowed_surface {
     struct mysmb_ppu_frame graphics;
     struct {
         struct mysmb_text_scene_workspace workspace;
-        struct mygames_kvm_text_frame frame;
+        struct mysmb_io_text_frame frame;
     } text;
 } borrowed;
-typedef char borrowed_text_fits[sizeof(borrowed.text)<=MYGAMES_KVM_VIDEO_PIXELS?1:-1];
+typedef char borrowed_text_fits[sizeof(borrowed.text)<=MYSMB_VIDEO_PIXELS?1:-1];
 static struct mysmb_io_snapshot snapshot;
 static struct mysmb_io_snapshot_cache cache;
 static struct mysmb_vga_frame vga;

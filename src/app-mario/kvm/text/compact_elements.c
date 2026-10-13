@@ -1,3 +1,4 @@
+#include "io/video.h"
 #include "text/compact_elements.h"
 #include "text/layout.h"
 #include "kvm/glyph.h"
@@ -164,7 +165,7 @@ static long project(short value,long scale,long extent)
     p=(long)value*scale;return p<0L?-((-p+extent-1L)/extent):p/extent;
 }
 int mysmb_text_compact_draw(const struct mysmb_text_element *e,
-    const mygames_kvm_u8 colors[3],struct mygames_kvm_text_frame MYGAMES_KVM_FAR *f,
+    const mygames_kvm_u8 colors[3],struct mysmb_io_text_frame MYGAMES_KVM_FAR *f,
     mysmb_text_cell_filter filter,const void MYGAMES_KVM_FAR *context)
 {
     const struct compact_art *a;

@@ -1,3 +1,4 @@
+#include "io/video.h"
 #include "platform/win32/snapshot_replace.h"
 #include "platform/dos16/snapshot_replace.h"
 #include <stdio.h>
@@ -14,7 +15,7 @@
 static struct mysmb_dos16_root root;
 static struct mysmb_dos16_root twin;
 static struct mysmb_text_scene_workspace workspace;
-static struct mygames_kvm_text_frame text;
+static struct mysmb_io_text_frame text;
 static struct mysmb_snapshot_store store;
 static struct mysmb_file_storage storage;
 static struct mysmb_io_snapshot expected,actual;
@@ -31,7 +32,7 @@ static void reset(void *context){++((struct host *)context)->resets;}
 static void resume_clock(void *context){++((struct host *)context)->clocks;}
 static int mode(void *context,mygames_kvm_u8 value)
 {struct host *h=(struct host *)context;(void)value;++h->modes;return !h->fail;}
-static void text_present(void *context,const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
+static void text_present(void *context,const struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame)
 {if(frame)++((struct host *)context)->texts;}
 int main(int argc,char **argv)
 {

@@ -42,9 +42,10 @@ try {
         & $python (Join-Path $PSScriptRoot 'smb_title_codegen.py') --rom $RomPath --output $generated
         if($LASTEXITCODE){throw 'Title generator failed'}
         $sources=@(Get-ChildItem -LiteralPath (Join-Path $sourceRoot 'core') -Recurse -Filter *.c | Sort-Object FullName | ForEach-Object {$_.FullName})
-        $sources+=@('kvm/ppu/state.c','kvm/ppu/frame.c','kvm/io/palette_expand.c','kvm/io/palette_pairs.c','kvm/io/input_latch.c','kvm/io/control.c','kvm/io/audio_renderer.c','kvm/io/snapshot.c','kvm/io/snapshot_store.c','kvm/io/snapshot_keys.c','kvm/io/file/snapshot_files.c','kvm/io/file/executable_path.c','kvm/app/game_io.c','kvm/app/game_snapshot.c','kvm/text/observer_snapshot.c','kvm/app/input_mapping.c','kvm/platform/win16/main_win16.c') | ForEach-Object {Join-Path $sourceRoot $_}
+        $sources+=@('kvm/ppu/state.c','kvm/ppu/frame.c','kvm/io/palette_expand.c','kvm/io/palette_pairs.c','kvm/io/input_latch.c','kvm/io/control.c','kvm/io/audio_renderer.c','kvm/io/snapshot.c','kvm/io/snapshot_store.c','kvm/io/snapshot_keys.c','kvm/io/file/snapshot_files.c','kvm/io/file/executable_path.c','kvm/io/color.c','kvm/app/game_io.c','kvm/app/game_snapshot.c','kvm/text/observer_snapshot.c','kvm/app/input_mapping.c','kvm/platform/win16/main_win16.c') | ForEach-Object {Join-Path $sourceRoot $_}
         $sources+=@((Join-Path $repository 'src/lib/kvm/color.c'),(Join-Path $repository 'src/lib/kvm/windows_key.c'),(Join-Path $repository 'src/lib/win16/host.c'),(Join-Path $generated 'smb1_local_rom.c'),(Join-Path $generated 'smb1_local_title.c'))
         $sources+=Join-Path $repository 'src/lib/win16/dib.c'
+        $sources+=Join-Path $repository 'src/lib/kvm/video.c'
         $sources+=Join-Path $repository 'src/lib/win16/clock.c'
         $sources+=@('src/lib/win16/audio.c','src/lib/win16/file.c','src/lib/win16/file_replace.c') | ForEach-Object {Join-Path $repository $_}
         $objects=@()

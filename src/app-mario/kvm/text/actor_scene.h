@@ -1,3 +1,4 @@
+#include "io/video.h"
 #ifndef MYSMB_GAME_TEXT_ACTOR_SCENE_H
 #define MYSMB_GAME_TEXT_ACTOR_SCENE_H
 
@@ -15,7 +16,7 @@ struct mysmb_text_actor_workspace { unsigned char claimed[500]; };
 int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
     struct mysmb_text_actor_workspace MYGAMES_KVM_FAR *workspace,
     const unsigned char MYGAMES_KVM_FAR *background_opaque,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame,
     struct mysmb_text_actor_receipt *receipt);
 
 #endif

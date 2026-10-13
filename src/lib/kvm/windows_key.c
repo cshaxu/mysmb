@@ -5,6 +5,15 @@ mygames_kvm_u16 mygames_kvm_windows_key(mygames_kvm_u16 key,
 {
     if(key==0x10U)key=scan==0x36U?0xa1U:0xa0U;
     switch(key) {
+    case 0x70U: return MYGAMES_KVM_KEY_F1;
+    case 0x71U: return MYGAMES_KVM_KEY_F2;
+    case '1': return MYGAMES_KVM_KEY_1;
+    case '2': return MYGAMES_KVM_KEY_2;
+    case '3': return MYGAMES_KVM_KEY_3;
+    case 'N': return MYGAMES_KVM_KEY_N;
+    case 'H': return MYGAMES_KVM_KEY_H;
+    case 'M': return MYGAMES_KVM_KEY_M;
+    case 'Q': return MYGAMES_KVM_KEY_Q;
     case 'A': return MYGAMES_KVM_KEY_A;
     case 'D': return MYGAMES_KVM_KEY_D;
     case 'W': return MYGAMES_KVM_KEY_W;

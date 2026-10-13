@@ -2,9 +2,12 @@
 int main(void)
 {
     static const unsigned short codes[]={
-        'A','D','W','S','J','K','P','O',9U,13U,0xa0U,0xa1U,27U,
+        0x70U,0x71U,'1','2','3','N','H','M','Q','A','D','W','S','J','K','P','O',9U,13U,0xa0U,0xa1U,27U,
         0x25U,0x27U,0x26U,0x28U};
     static const unsigned short expected[]={
+        MYGAMES_KVM_KEY_F1,MYGAMES_KVM_KEY_F2,MYGAMES_KVM_KEY_1,
+        MYGAMES_KVM_KEY_2,MYGAMES_KVM_KEY_3,MYGAMES_KVM_KEY_N,
+        MYGAMES_KVM_KEY_H,MYGAMES_KVM_KEY_M,MYGAMES_KVM_KEY_Q,
         MYGAMES_KVM_KEY_A,MYGAMES_KVM_KEY_D,MYGAMES_KVM_KEY_W,MYGAMES_KVM_KEY_S,
         MYGAMES_KVM_KEY_J,MYGAMES_KVM_KEY_K,MYGAMES_KVM_KEY_P,MYGAMES_KVM_KEY_O,
         MYGAMES_KVM_KEY_TAB,MYGAMES_KVM_KEY_ENTER,MYGAMES_KVM_KEY_LEFT_SHIFT,

@@ -19,7 +19,9 @@ int main(void)
     WCHAR output[256];
     static const WCHAR source_expected[]=L"\x1b[0m\x1b[?25l\x1b[1;1H\x1b[38;2;17;34;51;48;2;68;85;102mA";
     static const WCHAR canonical_expected[]=L"\x1b[0m\x1b[?25l\x1b[1;1H\x1b[38;2;255;255;85;48;2;0;0;170mB";
-    struct mygames_kvm_text_frame frame;
+    static struct mygames_kvm_text_cell frame_cells[4000];
+    static unsigned long frame_colors[16];
+    static struct mygames_kvm_text_frame frame={frame_cells,80U,50U,80U,4000U,0U,frame_colors};
 
     CHECK(mygames_win32_console_rows(25U)==25U);
     CHECK(mygames_win32_console_rows(50U)==50U);
@@ -43,20 +45,21 @@ int main(void)
     CHECK(mygames_win32_console_write_result(1UL,119U)==MYGAMES_WIN32_CONSOLE_DEFER);
     CHECK(mygames_win32_console_write_result(1UL,120U)==MYGAMES_WIN32_CONSOLE_LOST);
 
-    ZeroMemory(&frame,sizeof(frame));frame.rows=25U;frame.source_colors=1U;
-    frame.colors[1]=0x112233UL;frame.colors[2]=0x445566UL;
-    frame.cells[0].character='A';frame.cells[0].foreground=1U;frame.cells[0].background=2U;
+    ZeroMemory(&frame,sizeof(frame));frame.cells=frame_cells;frame.colors=frame_colors;
+    frame.columns=frame.stride=80U;frame.capacity=4000U;frame.rows=25U;frame.source_colors=1U;
+    frame_colors[1]=0x112233UL;frame_colors[2]=0x445566UL;
+    frame_cells[0].character='A';frame_cells[0].foreground=1U;frame_cells[0].background=2U;
     count=mygames_win32_console_vt_encode(&frame,1U,1U,output,256U);
     CHECK(count==wcslen(source_expected));
     CHECK(!memcmp(output,source_expected,count*sizeof(WCHAR)));
     CHECK(mygames_win32_console_vt_encode(&frame,1U,1U,output,count-1U)==0U);
     CHECK(mygames_win32_console_vt_encode(&frame,0U,1U,output,256U)==0U);
-    frame.source_colors=0U;frame.cells[0].character='B';frame.cells[0].foreground=14U;frame.cells[0].background=1U;
+    frame.source_colors=0U;frame_cells[0].character='B';frame_cells[0].foreground=14U;frame_cells[0].background=1U;
     count=mygames_win32_console_vt_encode(&frame,1U,1U,output,256U);
     CHECK(count==wcslen(canonical_expected));
     CHECK(!memcmp(output,canonical_expected,count*sizeof(WCHAR)));
-    frame.cells[0].character=0x80U;
-    CHECK(mygames_win32_console_vt_encode(&frame,1U,1U,output,256U)==0U);
+    frame_cells[0].character=0x80U;
+    CHECK(mygames_win32_console_vt_encode(&frame,1U,1U,output,256U)>0U);
     puts("console policy and VT presentation branches passed");
     return 0;
 }

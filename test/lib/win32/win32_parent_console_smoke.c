@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include "win32/text_console.h"
 static struct mygames_win32_text_console device;
-static struct mygames_kvm_text_frame frame;
+static struct mygames_kvm_text_cell frame_cells[4000];
+    static unsigned long frame_colors[16];
+    static struct mygames_kvm_text_frame frame={frame_cells,80U,50U,80U,4000U,0U,frame_colors};
 static CHAR_INFO rendered[4000];
 /* Neutral fixture capture only;no ROM/game pixels enter this test. */
 static int capture_window(HWND window,const char *diagnostic)
@@ -69,7 +71,7 @@ static int check_frame(void)
     if(view.Left!=0 || view.Top!=0 || view.Right!=(SHORT)(width-1U) || view.Bottom!=(SHORT)(height-1U))return 0;
     for(y=0;y<height;++y)for(x=0;x<width;++x) {
         WCHAR expected;
-        i=y*80U+x;expected=(WCHAR)frame.cells[i].character;
+        i=y*80U+x;expected=(WCHAR)frame_cells[i].character;
         if(expected==0xdaU)expected=0x250cU;
         if(expected==0xbfU)expected=0x2510U;
         if(expected==0xc0U)expected=0x2514U;
@@ -118,10 +120,10 @@ int main(int argc,char **argv)
     owner=CreateWindowA("STATIC","owned lifecycle probe",0,0,0,0,0,NULL,NULL,GetModuleHandle(NULL),NULL);
     if(!owner)return 4;
     for(i=0;i<4000;i++) {
-        frame.cells[i].character=(unsigned char)('!'+i%90U);frame.cells[i].foreground=(unsigned char)(i%16U);frame.cells[i].background=1;
+        frame_cells[i].character=(unsigned char)('!'+i%90U);frame_cells[i].foreground=(unsigned char)(i%16U);frame_cells[i].background=1;
     }
-    frame.cells[0].character=0xdaU;frame.cells[79].character=0xbfU;
-    frame.cells[3920].character=0xc0U;frame.cells[3999].character=0xd9U;
+    frame_cells[0].character=0xdaU;frame_cells[79].character=0xbfU;
+    frame_cells[3920].character=0xc0U;frame_cells[3999].character=0xd9U;
     for(cycle=0;cycle<4;cycle++) {
         {
             /* The real Console API path keeps input/output usable across

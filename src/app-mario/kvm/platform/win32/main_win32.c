@@ -1,3 +1,5 @@
+#include "io/video.h"
+#include "io/color.h"
 #include "platform/win32/snapshot_replace.h"
 #include <windows.h>
 #include <string.h>
@@ -36,7 +38,7 @@ static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
 static struct mysmb_ppu_frame g_ppu_frame;
 static struct mysmb_ppu_frame_workspace g_ppu_workspace;
-static mygames_kvm_u8 g_video_palette[MYGAMES_KVM_VIDEO_PALETTE_COLORS];
+static mygames_kvm_u8 g_video_palette[MYSMB_VIDEO_PALETTE_COLORS];
 static mygames_kvm_u8 g_chr_decoded[MYSMB_PPU_CHR_DECODED_BYTES];
 static mygames_kvm_u8 g_background_slots[MYSMB_PPU_BACKGROUND_BYTES];
 static mygames_kvm_u8 g_background_second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
@@ -58,7 +60,7 @@ static struct mygames_win32_input g_keyboard;
 static struct mysmb_app_input_mapping g_input_mapping;
 static mysmb_u8 g_mapped_buttons;
 static struct mysmb_text_scene_workspace g_text_workspace;
-static struct mygames_kvm_text_frame g_text_frame;
+static struct mysmb_io_text_frame g_text_frame;
 static mygames_kvm_u8 g_text_mode,g_switching,g_toggle_request,g_text_failed;
 static mygames_kvm_u8 g_window_focused;
 static LARGE_INTEGER g_frequency;
@@ -181,22 +183,30 @@ static void mysmb_win32_update_title(HWND window)
 }
 
 
-static void mysmb_win32_draw_gameplay(const struct mygames_kvm_palette_video_frame *frame)
+static int mysmb_win32_present_text(struct mygames_win32_text_console *console,
+    const struct mysmb_io_text_frame *frame)
 {
-    DWORD palette[MYGAMES_KVM_VIDEO_PALETTE_COLORS];
+    struct mygames_kvm_text_frame view;
+    mysmb_text_frame_view(frame,&view);
+    return mygames_win32_text_console_present(console,&view);
+}
+
+static void mysmb_win32_draw_gameplay(const struct mysmb_palette_video_frame *frame)
+{
+    DWORD palette[MYSMB_VIDEO_PALETTE_COLORS];
     unsigned int index;
-    for(index=0U;index<MYGAMES_KVM_VIDEO_PALETTE_COLORS;++index)
-        palette[index]=(DWORD)mygames_kvm_color_rgb(frame->master_colors[index]);
+    for(index=0U;index<MYSMB_VIDEO_PALETTE_COLORS;++index)
+        palette[index]=(DWORD)mysmb_io_color_rgb(frame->master_colors[index]);
     for(index=0U;index<MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT;++index)
         g_pixels[index]=palette[frame->pixels[index]];
 }
 static void mysmb_win32_build_frame(void)
 {
-    struct mygames_kvm_palette_video_frame video;
+    struct mysmb_palette_video_frame video;
 
     if(g_text_mode) {
         g_text_failed=(mygames_kvm_u8)(!mysmb_text_scene_build_profile(&g_game,&g_text_workspace,&g_text_frame,25U) ||
-            mygames_win32_text_console_present(&g_console,&g_text_frame)==MYGAMES_WIN32_CONSOLE_LOST);
+            mysmb_win32_present_text(&g_console,&g_text_frame)==MYGAMES_WIN32_CONSOLE_LOST);
         return;
     }
     mysmb_ppu_frame_palette(&g_game.ppu,g_video_palette);

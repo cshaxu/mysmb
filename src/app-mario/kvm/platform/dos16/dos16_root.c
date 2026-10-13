@@ -1,3 +1,4 @@
+#include "io/video.h"
 #include "platform/dos16/dos16_root.h"
 #include <string.h>
 #ifdef MYSMB_DOS16_TARGET
@@ -60,7 +61,7 @@ static int initialize(struct mysmb_dos16_root *root,
 int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
     const struct mysmb_dos16_hooks *hooks)
 {
-    return initialize(root,hooks,MYGAMES_KVM_VIDEO_PIXELS,0);
+    return initialize(root,hooks,MYSMB_VIDEO_PIXELS,0);
 }
 int mysmb_dos16_root_initialize_rows(struct mysmb_dos16_root *root,
     const struct mysmb_dos16_hooks *hooks,mygames_kvm_u16 storage_bytes,
@@ -98,19 +99,21 @@ static int read_rows(void *context,mygames_kvm_u16 first,mygames_kvm_u16 rows,
     band->pixels=root->ppu_frame.pixels;
 #endif
     band->first=first;band->rows=rows;
+    band->width=band->stride=MYSMB_VIDEO_WIDTH;
+    band->capacity=(mygames_kvm_u16)(rows*MYSMB_VIDEO_WIDTH);
     return 1;
 }
 
 static int present_palette(void *context,const struct mygames_kvm_video_source *source)
 {
     struct mysmb_dos16_root *root=(struct mysmb_dos16_root *)source->context;
-    struct mygames_kvm_palette_video_source view;
+    struct mysmb_palette_video_source view;
     (void)context;view.rows=*source;view.master_colors=root->video_palette;
     return root->present_palette_rows(root->hooks.context,&view);
 }
 int mysmb_dos16_root_initialize_palette_rows(struct mysmb_dos16_root *root,
     const struct mysmb_dos16_hooks *hooks,mygames_kvm_u16 storage_bytes,
-    int (*present)(void *,const struct mygames_kvm_palette_video_source *))
+    int (*present)(void *,const struct mysmb_palette_video_source *))
 {
     if(!present || !initialize(root,hooks,storage_bytes,present_palette))return 0;
     root->present_palette_rows=present;return 1;
@@ -133,9 +136,9 @@ void mysmb_dos16_root_bind_video_gate(struct mysmb_dos16_root *root,
 
 void mysmb_dos16_root_bind_text(struct mysmb_dos16_root *root,
     struct mysmb_text_scene_workspace MYGAMES_KVM_FAR *workspace,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame,
     int (*set_mode)(void *,mygames_kvm_u8),
-    void (*present_text)(void *,const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *))
+    void (*present_text)(void *,const struct mysmb_io_text_frame MYGAMES_KVM_FAR *))
 {
     if(!workspace || !frame || !set_mode || !present_text)return;
     root->text_workspace=workspace;root->text_frame=frame;
@@ -174,9 +177,9 @@ static void present_current(struct mysmb_dos16_root *root)
         /* D is required before any derived cache: without its contiguous
          * composition surface the compact VGA path is not playable. */
         root->ram_screen_attempted=1U;
-        if(root->present_ram && optional_far_block_fits(MYGAMES_KVM_VIDEO_PIXELS))
+        if(root->present_ram && optional_far_block_fits(MYSMB_VIDEO_PIXELS))
             root->ram_screen=(mysmb_u8 MYGAMES_KVM_FAR *)
-                _fmalloc(MYGAMES_KVM_VIDEO_PIXELS);
+                _fmalloc(MYSMB_VIDEO_PIXELS);
         /* Reuse the primary-block reserve before requesting another DOS block.
          * Preserve allocation provenance for the matching shutdown operation. */
         near_cache=(mysmb_u8 __near *)_nmalloc(MYSMB_PPU_CHR_DECODED_BYTES);

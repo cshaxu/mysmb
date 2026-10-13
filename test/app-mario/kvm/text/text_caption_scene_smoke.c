@@ -1,10 +1,11 @@
+#include "io/video.h"
 #include "text/caption_scene.h"
 #include <stdio.h>
 #include <string.h>
 
 static struct mysmb_game game,before;
 static struct mysmb_text_background_workspace workspace;
-static struct mygames_kvm_text_frame frame;
+static struct mysmb_io_text_frame frame;
 static unsigned char title[64],icon[8];
 #define CHECK(c) do {if(!(c)){fprintf(stderr,"caption check %d\n",__LINE__);return 1;}}while(0)
 

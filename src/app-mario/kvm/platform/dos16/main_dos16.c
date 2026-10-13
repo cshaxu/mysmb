@@ -1,3 +1,4 @@
+#include "io/video.h"
 #include "platform/dos16/planar_row.h"
 #include "platform/dos16/executable_path.h"
 #include "platform/dos16/snapshot_replace.h"
@@ -19,7 +20,7 @@ static struct mysmb_snapshot_store *snapshot_store;
 static struct mysmb_file_storage snapshot_storage;
 struct text_storage {
     struct mysmb_text_scene_workspace workspace;
-    struct mygames_kvm_text_frame frame;
+    struct mysmb_io_text_frame frame;
 };
 /* Graphics borrows only the prefix of this root-owned allocation.  The
  * snapshot store begins after the exclusive text/row storage, so graphics
@@ -29,9 +30,9 @@ struct runtime_storage {
     struct mysmb_snapshot_store snapshot;
 };
 typedef char text_storage_fits_band[sizeof(struct text_storage)>=8192U &&
-    sizeof(struct text_storage)<=MYGAMES_KVM_VIDEO_PIXELS?1:-1];
+    sizeof(struct text_storage)<=MYSMB_VIDEO_PIXELS?1:-1];
 typedef char runtime_storage_fits_band[
-    sizeof(struct runtime_storage)<=MYGAMES_KVM_VIDEO_PIXELS?1:-1];
+    sizeof(struct runtime_storage)<=MYSMB_VIDEO_PIXELS?1:-1];
 static struct runtime_storage MYGAMES_KVM_FAR *runtime_storage;
 static struct text_storage MYGAMES_KVM_FAR *text_storage;
 
@@ -42,7 +43,7 @@ static void read_input(void *context, struct mysmb_io_input *input)
 }
 static int should_present(void *context)
 {(void)context;return mysmb_dos16_devices_should_present();}
-static int present_rows(void *context,const struct mygames_kvm_palette_video_source *indexed)
+static int present_rows(void *context,const struct mysmb_palette_video_source *indexed)
 {
     mygames_kvm_u16 first;
     struct mygames_kvm_video_band band;
@@ -65,7 +66,7 @@ static int present_ram(void *context,const struct mysmb_ppu_frame_view *view,
     const mygames_kvm_u8 MYGAMES_KVM_FAR *palette,mygames_kvm_u8 MYGAMES_KVM_FAR *screen)
 {
     (void)context;
-    if(!mysmb_dos16_ram_composite(view,screen,MYGAMES_KVM_VIDEO_PIXELS))return 0;
+    if(!mysmb_dos16_ram_composite(view,screen,MYSMB_VIDEO_PIXELS))return 0;
     mysmb_dos16_devices_palette(palette);
     return mysmb_dos16_devices_present_screen(screen);
 }
@@ -82,7 +83,7 @@ static void resume_clock(void *context)
 {(void)context;mysmb_dos16_devices_resume_clock();}
 static int set_mode(void *context,mygames_kvm_u8 text)
 {(void)context;return mysmb_dos16_devices_mode(text);}
-static void present_text(void *context,const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
+static void present_text(void *context,const struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame)
 {(void)context;mysmb_dos16_devices_text(frame);}
 /* Startup scratch expires before the game loop and its render/file calls.
  * The root/store copy hooks and file services;directory bytes are copied. */

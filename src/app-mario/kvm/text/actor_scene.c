@@ -1,3 +1,4 @@
+#include "io/video.h"
 #include "text/actor_scene.h"
 #include "kvm/color.h"
 #include "text/layout.h"
@@ -111,7 +112,7 @@ static int player_pose(const struct mysmb_game *game,
  * separate boxes and holes instead of a continuous moving platform. */
 static void platform_span(const struct mysmb_text_element *element,
     const struct mysmb_text_observation *item,unsigned short entry,
-    const struct actor_clip *clip,struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
+    const struct actor_clip *clip,struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame)
 {
     unsigned short first,last,column,row,cell,columns;
     unsigned char c;
@@ -223,7 +224,7 @@ static int choose(const struct mysmb_game *game,
 /* Authored body/detail roles. Source-selected palettes remain per entry;
  * no tile/pixel census or live object selector runs during presentation. */
 static void actor_colors(const struct mysmb_game *game,
-    const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,unsigned short entry,
+    const struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame,unsigned short entry,
     unsigned short palette,struct mysmb_text_element *e)
 {
     unsigned char body,detail;
@@ -308,7 +309,7 @@ static void whole_anchor(const struct mysmb_text_observation *item,
 int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
     struct mysmb_text_actor_workspace MYGAMES_KVM_FAR *workspace,
     const unsigned char MYGAMES_KVM_FAR *background_opaque,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame,
     struct mysmb_text_actor_receipt *receipt)
 {
     const struct mysmb_text_observation *item;
@@ -351,7 +352,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 if(element.x>=0 && element.x<256)
                     element.x=component_anchor((unsigned short)element.x,80U,256U);
                 if(element.y>=0 && element.y<240)
-                    element.y=component_anchor((unsigned short)element.y,(unsigned short)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240U);
+                    element.y=component_anchor((unsigned short)element.y,(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame),240U);
             }
             selected=*item;
             if(item->family==MYSMB_TEXT_OBSERVE_PLAYER && entry>=6U &&
@@ -366,7 +367,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
             /* Keep the retainer's crown on a cell center inside its first
              * committed sprite row,including fractional vertical anchors. */
             if(element.kind==MYSMB_TEXT_RETAINER && element.y>=0 && element.y<240)
-                element.y=component_anchor((unsigned short)element.y,(unsigned short)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240U);
+                element.y=component_anchor((unsigned short)element.y,(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame),240U);
             if(item->family==MYSMB_TEXT_OBSERVE_PLAYER &&
                 (item->identity&MYSMB_TEXT_PLAYER_KICK_FLAG)!=0U &&
                 entry==6U+((item->facing&1U)==0U?1U:0U))
@@ -378,7 +379,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 if(element.x>=0 && element.x<256)
                     element.x=component_anchor((unsigned short)element.x,80U,256U);
                 if(element.y>=0 && element.y<240)
-                    element.y=component_anchor((unsigned short)element.y,(unsigned short)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240U);
+                    element.y=component_anchor((unsigned short)element.y,(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame),240U);
             }
             if(item->family==MYSMB_TEXT_OBSERVE_VINE) {
                 element.kind=item->entries[entry*4U+1U]==0xe0U?
@@ -394,7 +395,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 item->family==MYSMB_TEXT_OBSERVE_VINE ||
                 item->family==MYSMB_TEXT_OBSERVE_PLATFORM) {
                 element.x=component_anchor(game->ppu.visible_oam[priority*4U+3U],80U,256U);
-                element.y=component_anchor((unsigned short)(game->ppu.visible_oam[priority*4U]+1U),(unsigned short)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240U);
+                element.y=component_anchor((unsigned short)(game->ppu.visible_oam[priority*4U]+1U),(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame),240U);
             }
             palette=(unsigned short)((game->ppu.visible_oam[priority*4U+2U]&3U)*4U);
             actor_colors(game,frame,entry,palette,&element);
@@ -402,7 +403,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 (item->entries[entry*4U+2U]&0x40U)!=0U?1U:0U:
                 (item->facing&2U)!=0U?1U:0U;
             clip.game=game;clip.item=item;clip.mask=mask;
-            clip.rows=(unsigned short)MYGAMES_KVM_TEXT_FRAME_ROWS(frame);
+            clip.rows=(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame);
             clip.element=&element;clip.source_width=8U;clip.source_height=8U;
             mysmb_text_compact_size(&element,&clip.columns,&clip.height);
             if(item->family==MYSMB_TEXT_OBSERVE_PLAYER || item->family==MYSMB_TEXT_OBSERVE_ENEMY ||

@@ -1,3 +1,4 @@
+#include "io/video.h"
 #include "platform/dos16/ram_compositor.h"
 #include <stdio.h>
 #include <string.h>
@@ -5,7 +6,7 @@
 static mygames_kvm_u8 background[MYSMB_PPU_BACKGROUND_BYTES];
 static mygames_kvm_u8 second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
 static mygames_kvm_u8 chr[8192];
-static mygames_kvm_u8 expected[MYGAMES_KVM_VIDEO_PIXELS],actual[MYGAMES_KVM_VIDEO_PIXELS];
+static mygames_kvm_u8 expected[MYSMB_VIDEO_PIXELS],actual[MYSMB_VIDEO_PIXELS];
 
 static int frame(struct mysmb_ppu_state *state,struct mysmb_ppu_frame_workspace *work)
 {
@@ -47,6 +48,6 @@ int main(void)
     state.visible_sprite0_split=1U;state.visible_ppu_name_table=1U;
     state.visible_scroll_x=252U;state.visible_scroll_y=239U;state.visible_oam[3]=250U;
     if(!frame(&state,&work))return 4;
-    printf("ram compositor frames=4 exact=1 bytes=%u\n",MYGAMES_KVM_VIDEO_PIXELS);
+    printf("ram compositor frames=4 exact=1 bytes=%u\n",MYSMB_VIDEO_PIXELS);
     return 0;
 }

@@ -19,6 +19,9 @@ struct mygames_win16_application {
     mygames_kvm_u8 (*exit_requested)(void *);
     const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *(*text)(void *);
     int (*graphics)(void *,struct mygames_kvm_video_band *);
+    const unsigned long *palette;
+    mygames_kvm_u16 palette_count;
+    mygames_kvm_u16 width,height;
 };
 
 /* The graphical runtime entry is declared in win16/host.h. */

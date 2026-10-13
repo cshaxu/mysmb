@@ -1,3 +1,5 @@
+#include "io/video.h"
+#include "io/color.h"
 #include "kvm/glyph.h"
 #include "text/background_scene.h"
 #include "text/elements.h"
@@ -235,7 +237,7 @@ static long first_cell(short position,long scale,long extent)
 }
 static void object(const struct mysmb_game *g,
     struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,unsigned char k,
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame,unsigned char k,
     unsigned char palette,unsigned char cap,unsigned short minx,unsigned short miny,
     short left,short top,short right,short bottom)
 {
@@ -244,9 +246,9 @@ static void object(const struct mysmb_game *g,
     long dx,dy;
     unsigned short center_x,center_y,margin;
     unsigned char c,color,ink;
-    x0=first_cell(left,80L,256L);y0=first_cell(top,(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240L);
-    x1=first_cell(right,80L,256L);y1=first_cell(bottom,(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame),240L);
-    if(g->ppu.visible_sprite0_split!=0U && top>=32 && y0<(32L*MYGAMES_KVM_TEXT_FRAME_ROWS(frame)+239L)/240L)y0=(32L*MYGAMES_KVM_TEXT_FRAME_ROWS(frame)+239L)/240L;
+    x0=first_cell(left,80L,256L);y0=first_cell(top,(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
+    x1=first_cell(right,80L,256L);y1=first_cell(bottom,(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
+    if(g->ppu.visible_sprite0_split!=0U && top>=32 && y0<(32L*MYSMB_IO_TEXT_FRAME_ROWS(frame)+239L)/240L)y0=(32L*MYSMB_IO_TEXT_FRAME_ROWS(frame)+239L)/240L;
     if(x1<=x0 || y1<=y0)return;
     width=(unsigned short)(x1-x0);height=(unsigned short)(y1-y0);
     color=mysmb_text_color(frame,g->ppu.palette[palette*4U+
@@ -263,14 +265,14 @@ static void object(const struct mysmb_game *g,
     /* Visible centers fit in 16 bits. Keep signed origin differences long
      * until their nonnegative, short-origin domain has been established. */
     for(y=y0;y<y1;++y){
-      if(y<0L || y>=(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame))continue;
-      center_y=(unsigned short)(((unsigned short)y*240U+120U)/MYGAMES_KVM_TEXT_FRAME_ROWS(frame));
+      if(y<0L || y>=(long)MYSMB_IO_TEXT_FRAME_ROWS(frame))continue;
+      center_y=(unsigned short)(((unsigned short)y*240U+120U)/MYSMB_IO_TEXT_FRAME_ROWS(frame));
       if(g->ppu.visible_sprite0_split!=0U && center_y<32U)continue;
       dy=(long)center_y-top;if(dy<0L)continue;
       source_y=(unsigned short)(miny+(unsigned short)dy/16U);if(source_y>=15U)continue;
       margin=inset(k,(unsigned short)(y-y0),width,height);
       for(x=x0;x<x1;++x) {
-        if(x<0L || x>=80L || y<0L || y>=(long)MYGAMES_KVM_TEXT_FRAME_ROWS(frame))continue;
+        if(x<0L || x>=80L || y<0L || y>=(long)MYSMB_IO_TEXT_FRAME_ROWS(frame))continue;
         center_x=(unsigned short)(((unsigned short)x*256U+128U)/80U);
         if((g->ppu.visible_ppu_mask&2U)==0U && center_x<8U)continue;
         /* Only members of this connected component own cells. Bounds alone
@@ -322,7 +324,7 @@ static void object(const struct mysmb_game *g,
 
 int mysmb_text_background_scene_build_profile(const struct mysmb_game *g,
     struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame,
     struct mysmb_text_background_receipt *receipt,unsigned short rows)
 {
     unsigned short i,row,col,head,tail,n,minx,maxx,miny,maxy;
@@ -335,7 +337,7 @@ int mysmb_text_background_scene_build_profile(const struct mysmb_game *g,
     receipt->recognized=receipt->unsupported=receipt->ambiguous=0U;
     receipt->objects=receipt->letters=0U;
     for(i=0U;i<500U;++i)w->opaque[i]=0U;
-    mysmb_text_frame_initialize(frame,mygames_kvm_color_text16(g->ppu.palette[0]),rows,rows==25U?g->ppu.palette:0);
+    mysmb_text_frame_initialize(frame,mysmb_io_color_text16(g->ppu.palette[0]),rows,rows==25U?g->ppu.palette:0);
     if((g->ppu.visible_ppu_mask&8U)==0U)return 1;
     for(i=0U;i<480U;++i) {
         row=i/32U;col=i%32U;table=(unsigned char)((col/16U)^(g->ppu.visible_ppu_name_table&1U));
@@ -378,6 +380,6 @@ int mysmb_text_background_scene_build_profile(const struct mysmb_game *g,
 
 int mysmb_text_background_scene_build(const struct mysmb_game *g,
     struct mysmb_text_background_workspace MYGAMES_KVM_FAR *w,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *f,
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *f,
     struct mysmb_text_background_receipt *receipt)
 {return mysmb_text_background_scene_build_profile(g,w,f,receipt,50U);}

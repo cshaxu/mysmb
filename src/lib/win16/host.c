@@ -7,7 +7,7 @@
 #include "kvm/windows_key.h"
 
 struct win16_bitmap { BITMAPINFOHEADER header; RGBQUAD colors[256]; };
-struct win16_palette { WORD version,count; PALETTEENTRY entries[64]; };
+struct win16_palette { WORD version,count; PALETTEENTRY entries[256]; };
 static struct win16_bitmap bitmap;
 static struct win16_palette palette_description;
 static HPALETTE palette;
@@ -17,8 +17,8 @@ static unsigned char FAR *pixels;
 static struct mygames_win16_clock clock;
 static unsigned char keys[MYGAMES_KVM_PHYSICAL_KEY_COUNT];
 static int focused,ready;
-static unsigned short output_bits,row_bytes;
-static unsigned char reduced_colors[64];
+static unsigned short output_bits,row_bytes,storage_bytes;
+static unsigned char reduced_colors[256];
 
 void mygames_win16_rebase_clock(void)
 {mygames_win16_clock_reset(&clock,GetTickCount());}
@@ -27,12 +27,14 @@ static int compose(void)
 {
     struct mygames_kvm_video_band band;
     unsigned short first;
-    for(first=0U;first<240U;first+=8U) {
-        band.first=first;band.rows=8U;band.pixels=0;
+    for(first=0U;first<app->height;first=(unsigned short)(first+band.rows)) {
+        memset(&band,0,sizeof(band));
+        band.first=first;band.rows=(unsigned short)(app->height-first);
+        if(band.rows>8U)band.rows=8U;
         if(!app->graphics(app->context,&band) || !band.pixels ||
-            band.first!=first || band.rows!=8U)return 0;
-        if(!mygames_win16_dib_band(pixels,61440U,output_bits,&band,
-            reduced_colors))return 0;
+            band.first!=first || !band.rows || band.rows>8U || band.width!=app->width)return 0;
+        if(!mygames_win16_dib_band(pixels,storage_bytes,output_bits,&band,
+            reduced_colors,app->height,app->palette_count))return 0;
     }
     return 1;
 }
@@ -101,7 +103,7 @@ LRESULT FAR PASCAL __export MygamesWin16WndProc(HWND window,UINT message,
         if(palette){old_palette=SelectPalette(dc,palette,FALSE);RealizePalette(dc);}
         SetStretchBltMode(dc,COLORONCOLOR);
         if(ready && rect.right>0 && rect.bottom>0)
-            StretchDIBits(dc,0,0,rect.right,rect.bottom,0,0,256,240,
+            StretchDIBits(dc,0,0,rect.right,rect.bottom,0,0,app->width,app->height,
                 pixels,(BITMAPINFO FAR *)&bitmap,DIB_RGB_COLORS,SRCCOPY);
         if(old_palette)SelectPalette(dc,old_palette,TRUE);
         EndPaint(window,&paint);return 0;
@@ -118,32 +120,39 @@ int mygames_win16_run(HINSTANCE instance,HINSTANCE previous,int show,
     MSG message;
     RECT rect;
     unsigned short i;
-    unsigned long rgb;
+    unsigned long rgb,bytes;
     HDC screen;
     if(!application || !application->input || !application->tick ||
         !application->graphics || !application->exit_requested ||
         !(application->available_views&MYGAMES_WIN16_VIEW_GRAPHICS))return 1;
+    if(!application->palette || !application->palette_count ||
+        application->palette_count>256U || !application->width || !application->height ||
+        application->width>32767U || application->height>32767U)return 1;
     app=application;ready=focused=0;
     memset(keys,0,sizeof(keys));memset(&bitmap,0,sizeof(bitmap));
-    storage=GlobalAlloc(GMEM_MOVEABLE,61440L);
+    bytes=(((unsigned long)app->width+3UL)/4UL)*4UL*app->height;
+    if(bytes>65535UL)return 2;
+    storage_bytes=(unsigned short)bytes;
+    storage=GlobalAlloc(GMEM_MOVEABLE,bytes);
     if(!storage)return 2;
     pixels=(unsigned char FAR *)GlobalLock(storage);
     if(!pixels){GlobalFree(storage);return 2;}
     bitmap.header.biSize=sizeof(BITMAPINFOHEADER);
-    bitmap.header.biWidth=256L;bitmap.header.biHeight=240L;
+    bitmap.header.biWidth=app->width;bitmap.header.biHeight=app->height;
     screen=GetDC(0);
     if(!screen){GlobalUnlock(storage);GlobalFree(storage);return 3;}
     output_bits=GetDeviceCaps(screen,BITSPIXEL)*GetDeviceCaps(screen,PLANES)<=4?4U:8U;
-    ReleaseDC(0,screen);row_bytes=output_bits==4U?128U:256U;
+    ReleaseDC(0,screen);row_bytes=(unsigned short)((((unsigned long)app->width*output_bits+31UL)/32UL)*4UL);
     bitmap.header.biPlanes=1;bitmap.header.biBitCount=output_bits;
-    bitmap.header.biSizeImage=(unsigned long)row_bytes*240L;
+    bitmap.header.biSizeImage=(unsigned long)row_bytes*app->height;
     bitmap.header.biClrUsed=output_bits==4U?16L:256L;
     palette_description.version=0x300;
-    palette_description.count=output_bits==4U?16U:64U;
-    for(i=0U;i<64U;++i) {
-        reduced_colors[i]=mygames_kvm_color_text16((unsigned char)i);
+    palette_description.count=output_bits==4U?16U:app->palette_count;
+    for(i=0U;i<app->palette_count;++i)
+        reduced_colors[i]=mygames_kvm_color_text_nearest(app->palette[i]);
+    for(i=0U;i<palette_description.count;++i) {
         rgb=output_bits==4U?mygames_kvm_color_text_rgb((unsigned char)i):
-            mygames_kvm_color_rgb((unsigned char)i);
+            app->palette[i];
         bitmap.colors[i].rgbRed=(unsigned char)(rgb>>16);
         bitmap.colors[i].rgbGreen=(unsigned char)(rgb>>8);
         bitmap.colors[i].rgbBlue=(unsigned char)rgb;
@@ -167,7 +176,7 @@ int mygames_win16_run(HINSTANCE instance,HINSTANCE previous,int show,
         2*GetSystemMetrics(SM_CYFRAME)-16;
     if(rect.bottom>480)rect.bottom=480;
     if(rect.bottom<120)rect.bottom=120;
-    rect.right=rect.bottom*16/15;
+    rect.right=(int)((long)rect.bottom*app->width/app->height);
     AdjustWindowRect(&rect,WS_OVERLAPPEDWINDOW,FALSE);
     window=CreateWindow("MygamesWin16",app->title,WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT,CW_USEDEFAULT,rect.right-rect.left,rect.bottom-rect.top,

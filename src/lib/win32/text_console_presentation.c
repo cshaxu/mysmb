@@ -51,7 +51,7 @@ size_t mygames_win32_console_vt_encode(const struct mygames_kvm_text_frame *fram
     WCHAR glyph;
     const struct mygames_kvm_text_cell *cell;
     static const WCHAR reset[]=L"\x1b[0m\x1b[?25l";
-    if(!frame || !out || !width || width>80U || !height ||
+    if(!mygames_kvm_text_valid(frame) || !out || !width || width>frame->columns || !height ||
         height>MYGAMES_KVM_TEXT_FRAME_ROWS(frame))return 0U;
     if(!mygames_win32_console_vt_append(out,capacity,&count,reset,
         sizeof(reset)/sizeof(reset[0])-1U))return 0U;
@@ -59,7 +59,7 @@ size_t mygames_win32_console_vt_encode(const struct mygames_kvm_text_frame *fram
         length=(unsigned int)wsprintfW(sequence,L"\x1b[%u;1H",y+1U);
         if(!mygames_win32_console_vt_append(out,capacity,&count,sequence,length))return 0U;
         for(x=0U;x<width;++x) {
-            cell=&frame->cells[y*80U+x];
+            cell=&frame->cells[y*frame->stride+x];
             if(foreground!=(int)(cell->foreground&15U) ||
                 background!=(int)(cell->background&15U)) {
                 foreground=cell->foreground&15U;background=cell->background&15U;
@@ -92,7 +92,7 @@ static int mygames_win32_terminal_present(struct mygames_win32_text_console *con
     if(!out || !GetConsoleScreenBufferInfo(console->output,&info))return MYGAMES_WIN32_CONSOLE_DEFER;
     width=(unsigned int)(info.srWindow.Right-info.srWindow.Left+1);
     height=(unsigned int)(info.srWindow.Bottom-info.srWindow.Top+1);
-    if(width>80U)width=80U;
+    if(width>frame->columns)width=frame->columns;
     if(height>MYGAMES_KVM_TEXT_FRAME_ROWS(frame))height=MYGAMES_KVM_TEXT_FRAME_ROWS(frame);
     if(!width || !height)return MYGAMES_WIN32_CONSOLE_DEFER;
     count=mygames_win32_console_vt_encode(frame,width,height,out,
@@ -107,10 +107,12 @@ static int mygames_win32_terminal_present(struct mygames_win32_text_console *con
 int mygames_win32_console_present_frame(struct mygames_win32_text_console *console,
     const struct mygames_kvm_text_frame *frame)
 {
-    unsigned short i;
+    unsigned short i,x,y;
     unsigned long canonical_colors[16];
     COORD size,origin;
     SMALL_RECT view;
+    if(!mygames_kvm_text_valid(frame) || frame->columns>80U ||
+        frame->rows>console->rows)return MYGAMES_WIN32_CONSOLE_LOST;
     if(console->vt_output)return mygames_win32_terminal_present(console,frame);
     if(frame->source_colors==1U && (!console->colors_valid ||
         memcmp(console->colors,frame->colors,sizeof(console->colors))!=0)) {
@@ -121,19 +123,20 @@ int mygames_win32_console_present_frame(struct mygames_win32_text_console *conso
             memcmp(console->colors,canonical_colors,sizeof(canonical_colors))!=0)
             mygames_win32_console_palette(console,canonical_colors,0U);
     }
-    for(i=0U;i<MYGAMES_KVM_TEXT_FRAME_CELLS(frame);++i) {
-        console->cells[i].Char.UnicodeChar=(WCHAR)mygames_kvm_text_glyph_unicode(frame->cells[i].character);
+    for(y=0U;y<frame->rows;++y)for(x=0U;x<frame->columns;++x) {
+        i=(unsigned short)(y*80U+x);
+        console->cells[i].Char.UnicodeChar=(WCHAR)mygames_kvm_text_glyph_unicode(frame->cells[y*frame->stride+x].character);
         if(console->cells[i].Char.UnicodeChar==0U)return MYGAMES_WIN32_CONSOLE_LOST;
         console->cells[i].Attributes=(WORD)(console->fallback_colors[
-            frame->cells[i].foreground&15U]|(console->fallback_colors[
-            frame->cells[i].background&15U]<<4U));
+            frame->cells[y*frame->stride+x].foreground&15U]|(console->fallback_colors[
+            frame->cells[y*frame->stride+x].background&15U]<<4U));
     }
     size.X=80;size.Y=(SHORT)console->rows;origin.X=origin.Y=0;
-    view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console->rows-1U);
+    view.Left=view.Top=0;view.Right=(SHORT)(frame->columns-1U);view.Bottom=(SHORT)(frame->rows-1U);
     if(!WriteConsoleOutputW(console->output,console->cells,size,origin,&view))
         return mygames_win32_console_write_failure(console);
     console->output_failures=0U;
-    if(view.Left==0 && view.Top==0 && view.Right==79 && view.Bottom==(SHORT)(console->rows-1U))
+    if(view.Left==0 && view.Top==0 && view.Right==(SHORT)(frame->columns-1U) && view.Bottom==(SHORT)(frame->rows-1U))
         return MYGAMES_WIN32_CONSOLE_READY;
     return MYGAMES_WIN32_CONSOLE_DEFER;
 }

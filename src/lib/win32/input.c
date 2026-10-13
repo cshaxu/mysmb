@@ -20,6 +20,7 @@ int mygames_win32_input_key(struct mygames_win32_input *input,
 {
     mygames_kvm_u16 code=mygames_kvm_windows_key(key,scan);
     if(code==MYGAMES_KVM_KEY_NONE)return 0;
+    memset(event,0,sizeof(*event));
     event->kind=MYGAMES_KVM_INPUT_KEY;
     event->down=down!=0U?1U:0U;
     event->repeat=down!=0U && input->down[code]!=0U?1U:0U;

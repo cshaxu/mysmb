@@ -1,3 +1,4 @@
+#include "io/video.h"
 #include "platform/dos16/ram_compositor.h"
 
 struct ram_compositor_sprites {
@@ -24,7 +25,7 @@ int mysmb_dos16_ram_composite(const struct mysmb_ppu_frame_view *view,
 {
     struct ram_compositor_sprites sprites;
     static mygames_kvm_u8 MYGAMES_KVM_FAR sprite_slots[64];
-    if(!view || !screen || capacity<MYGAMES_KVM_VIDEO_PIXELS)return 0;
+    if(!view || !screen || capacity<MYSMB_VIDEO_PIXELS)return 0;
     /* This obtains the PPU-selected background, including the fixed HUD
      * split, scroll, mask and current palette slots. */
     if(!mysmb_ppu_frame_background_rows(view,screen,capacity,0U,

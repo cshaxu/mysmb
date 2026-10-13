@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_TEXT_ELEMENTS_H
 #define MYSMB_GAME_TEXT_ELEMENTS_H
 
-#include "kvm/video.h"
+#include "io/video.h"
 
 /* Presentation identities, not ROM object IDs or gameplay state. */
 #define MYSMB_TEXT_PLAYER_SMALL 0U
@@ -90,7 +90,7 @@ typedef int (*mysmb_text_cell_filter)(const void MYGAMES_KVM_FAR *context,
     mygames_kvm_u16 column, mygames_kvm_u16 row);
 int mysmb_text_element_draw(
     const struct mysmb_text_element MYGAMES_KVM_FAR *element,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame,
     mysmb_text_cell_filter filter, const void MYGAMES_KVM_FAR *context);
 
 /* Caller supplies visible elements in back-to-front order. Coordinates are
@@ -100,6 +100,6 @@ int mysmb_text_element_draw(
 int mysmb_text_elements_build(
     const struct mysmb_text_element MYGAMES_KVM_FAR *elements,
     mygames_kvm_u16 count, mygames_kvm_u8 sky,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame);
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame);
 
 #endif

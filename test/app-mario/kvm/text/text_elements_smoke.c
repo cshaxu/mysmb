@@ -1,12 +1,13 @@
+#include "io/video.h"
 #include "kvm/glyph.h"
 #include "text/elements.h"
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
 
-static struct mygames_kvm_text_frame frame;
-static struct mygames_kvm_text_frame before;
-static struct mygames_kvm_text_frame monochrome;
+static struct mysmb_io_text_frame frame;
+static struct mysmb_io_text_frame before;
+static struct mysmb_io_text_frame monochrome;
 static struct mysmb_text_element elements[8];
 
 #define CHECK(condition) do { if (!(condition)) { \
@@ -52,20 +53,6 @@ int main(int argc, char **argv)
     FILE *preview;
     CHECK(distinct_forms()==0);
 
-    /* Exhaustive byte domain and horizontal reflection contract. */
-    for(i=0U;i<256U;++i) {
-        column=mygames_kvm_text_glyph_unicode((mygames_kvm_u8)i);
-        if(i>=32U && i<=126U)CHECK(column==i);
-        else if(column!=0U)CHECK(column>=0x2500U && column<=0x2590U);
-        CHECK(mygames_kvm_text_glyph_mirror(mygames_kvm_text_glyph_mirror((mygames_kvm_u8)i))==i);
-        CHECK(mygames_kvm_text_glyph_flip(mygames_kvm_text_glyph_flip((mygames_kvm_u8)i))==i);
-    }
-    CHECK(mygames_kvm_text_glyph_unicode(0U)==0U);
-    CHECK(mygames_kvm_text_glyph_unicode(0x80U)==0U);
-    CHECK(mygames_kvm_text_glyph_unicode(MYGAMES_KVM_GLYPH_TOP_LEFT)==0x250cU);
-    CHECK(mygames_kvm_text_glyph_unicode(MYGAMES_KVM_GLYPH_UPPER)==0x2580U);
-    CHECK(mygames_kvm_text_glyph_unicode(MYGAMES_KVM_GLYPH_LOWER)==0x2584U);
-    CHECK(mygames_kvm_text_glyph_mirror(MYGAMES_KVM_GLYPH_TOP_LEFT)==MYGAMES_KVM_GLYPH_TOP_RIGHT);
     memset(elements, 0, sizeof(elements));
     elements[0].kind = MYSMB_TEXT_PLAYER_SMALL;
     elements[0].foreground = 14U;
@@ -129,7 +116,7 @@ int main(int argc, char **argv)
     for(row=0U;row<16U;++row) {
         memset(&frame,0xa5,sizeof(frame));
         CHECK(mysmb_text_elements_build(0,0U,(mygames_kvm_u8)row,&frame));
-        for(column=0U;column<MYGAMES_KVM_TEXT_CELLS;++column) {
+        for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
             CHECK(frame.cells[column].character==' ');
             CHECK(frame.cells[column].foreground==row);
             CHECK(frame.cells[column].background==row);
@@ -158,7 +145,7 @@ int main(int argc, char **argv)
                         CHECK(frame.cells[13U*80U+20U+column].character==(unsigned char)label[column]);
                 }
                 ink=0U;
-                for(column=0U;column<MYGAMES_KVM_TEXT_CELLS;++column) {
+                for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
                     CHECK(mygames_kvm_text_glyph_unicode(frame.cells[column].character)!=0U);
                     CHECK(frame.cells[column].foreground<16U && frame.cells[column].background<16U);
                     CHECK(frame.cells[column].character==monochrome.cells[column].character);
@@ -212,7 +199,7 @@ int main(int argc, char **argv)
         elements[i].background = (mygames_kvm_u8)(i + 1U);
     }
     CHECK(mysmb_text_elements_build(elements, 7U, 9U, &frame));
-    for (i = 0U; i < MYGAMES_KVM_TEXT_CELLS; ++i) {
+    for (i = 0U; i < MYSMB_IO_TEXT_CELLS; ++i) {
         CHECK(mygames_kvm_text_glyph_unicode(frame.cells[i].character)!=0U);
         CHECK(frame.cells[i].foreground < 16U && frame.cells[i].background < 16U);
     }

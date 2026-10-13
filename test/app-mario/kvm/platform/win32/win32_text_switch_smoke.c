@@ -1,3 +1,5 @@
+#include "io/video.h"
+#include "io/color.h"
 #include "platform/win32/snapshot_replace.h"
 #include "kvm/glyph.h"
 #include <windows.h>
@@ -33,11 +35,11 @@ static struct mysmb_game saved_game;
 static struct mysmb_win32_audio_output saved_audio;
 static DWORD saved_pixels[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
 static struct mysmb_io_snapshot expected_snapshot,restored_snapshot;
-static struct mygames_kvm_text_frame expected_text;
+static struct mysmb_io_text_frame expected_text;
 static int console_shortcut(HWND window,WORD key,unsigned char down);
 
 static int console_frame_cell_matches(const CHAR_INFO *cells,unsigned int index,
-    const struct mygames_kvm_text_frame *frame,unsigned char indexed)
+    const struct mysmb_io_text_frame *frame,unsigned char indexed)
 {
     if(cells[index].Char.UnicodeChar!=
         mygames_kvm_text_glyph_unicode(frame->cells[index].character))return 0;
@@ -188,7 +190,7 @@ static int geometry_route(HINSTANCE instance)
 
 static int presentation_clock_route(HWND window)
 {
-    struct mygames_kvm_palette_video_frame video;
+    struct mysmb_palette_video_frame video;
     LARGE_INTEGER before;
     LONGLONG period;
     unsigned int i,cell_index;
@@ -199,7 +201,7 @@ static int presentation_clock_route(HWND window)
     video.pixels=indices;video.master_colors=palette;
     mysmb_win32_draw_gameplay(&video);
     for(i=0U;i<sizeof(indices);++i)
-        if(g_pixels[i]!=(DWORD)mygames_kvm_color_rgb(palette[indices[i]]))return 70;
+        if(g_pixels[i]!=(DWORD)mysmb_io_color_rgb(palette[indices[i]]))return 70;
     /* A twelve-frame scheduling stall must retain eight frames after one
      * bounded batch. The former reset-to-now silently removed this debt. */
     QueryPerformanceCounter(&before);period=g_frequency.QuadPart/60;
@@ -451,8 +453,8 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     CONSOLE_SCREEN_BUFFER_INFOEX color_info;
     unsigned long rgb;
     UINT close_state;
-    CHAR_INFO cells[MYGAMES_KVM_TEXT_CELLS];
-    static struct mygames_kvm_text_frame glyph_frame;
+    CHAR_INFO cells[MYSMB_IO_TEXT_CELLS];
+    static struct mysmb_io_text_frame glyph_frame;
     static const unsigned char glyph_ids[16]={
         0xb3U,0xc4U,0xdaU,0xbfU,0xc0U,0xd9U,0xc3U,0xb4U,
         0xc2U,0xc1U,0xc5U,0xdbU,0xdcU,0xdfU,0xddU,0xdeU};
@@ -600,11 +602,11 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
         HANDLE input=g_console.input;
         int accepted;
         g_console.input=INVALID_HANDLE_VALUE;
-        accepted=mygames_win32_text_console_present(&g_console,&glyph_frame);
+        accepted=mysmb_win32_present_text(&g_console,&glyph_frame);
         g_console.input=input;
         if(accepted)return 132;
     }
-    if(!mygames_win32_text_console_present(&g_console,&glyph_frame))return 46;
+    if(!mysmb_win32_present_text(&g_console,&glyph_frame))return 46;
     if(!g_console.vt_output) {
         view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console_rows-1U);
         if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 47;
@@ -612,8 +614,8 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
             if(cells[i].Char.UnicodeChar!=glyph_unicode[i])return 48;
     }
     glyph_frame.cells[0].character=0x80U;
-    if(mygames_win32_text_console_present(&g_console,&glyph_frame))return 49;
-    if(!mygames_win32_text_console_present(&g_console,&g_text_frame))return 50;
+    if(!mysmb_win32_present_text(&g_console,&glyph_frame))return 49;
+    if(!mysmb_win32_present_text(&g_console,&g_text_frame))return 50;
     result=console_restore_route();if(result)return result;
     /* Real owned console input,including a held repeat and physical break. */
     FlushConsoleInputBuffer(g_console.input);

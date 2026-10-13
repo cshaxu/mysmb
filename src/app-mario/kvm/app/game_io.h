@@ -4,7 +4,7 @@
 #include "core/game.h"
 #include "ppu/frame.h"
 #include "io/input.h"
-#include "kvm/video.h"
+#include "io/video.h"
 #include "io/audio.h"
 
 /* Composition glue only: copy public output without game or device policy. */

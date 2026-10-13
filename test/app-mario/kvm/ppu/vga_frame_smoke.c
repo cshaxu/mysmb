@@ -1,7 +1,8 @@
+#include "io/video.h"
 #include "io/planar_frame.h"
 #include <stdio.h>
 #include <string.h>
-static mygames_kvm_u8 pixels[MYGAMES_KVM_VIDEO_PIXELS];
+static mygames_kvm_u8 pixels[MYSMB_VIDEO_PIXELS];
 static mygames_kvm_u8 pages[4][MYSMB_VGA_PAGE_SIZE+2];
 static mygames_kvm_u8 scratch[MYSMB_VGA_PAGE_SIZE+2];
 static unsigned char packed[5120+32],old[1280+32];
@@ -113,7 +114,7 @@ int main(void)
     struct mygames_kvm_video_frame source;
     struct mysmb_vga_frame frame;
     unsigned long i, offset, x, y, sx, sy,first,rows,batch;
-    for (i=0UL;i<MYGAMES_KVM_VIDEO_PIXELS;++i) pixels[i]=(mygames_kvm_u8)((i*7UL+i/256UL)&255UL);
+    for (i=0UL;i<MYSMB_VIDEO_PIXELS;++i) pixels[i]=(mygames_kvm_u8)((i*7UL+i/256UL)&255UL);
     for (i=0UL;i<4UL;++i) { pages[i][0]=0xa5U; pages[i][MYSMB_VGA_PAGE_SIZE+1]=0x5aU; }
     source.pixels=pixels;
     mysmb_vga_frame_initialize(&frame,pages[0]+1,pages[1]+1,pages[2]+1,pages[3]+1);

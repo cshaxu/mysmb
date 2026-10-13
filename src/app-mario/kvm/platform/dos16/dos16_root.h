@@ -1,3 +1,4 @@
+#include "io/video.h"
 #ifndef MYSMB_PLATFORM_DOS16_ROOT_H
 #define MYSMB_PLATFORM_DOS16_ROOT_H
 #include "app/game_io.h"
@@ -32,13 +33,13 @@ struct mysmb_dos16_root {
     void *reset_context;
     void (*resume_clock)(void *);
     struct mysmb_text_scene_workspace MYGAMES_KVM_FAR *text_workspace;
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *text_frame;
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *text_frame;
     int (*set_mode)(void *,mygames_kvm_u8);
-    void (*present_text)(void *,const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *);
+    void (*present_text)(void *,const struct mysmb_io_text_frame MYGAMES_KVM_FAR *);
     mygames_kvm_u8 text_mode;
     mygames_kvm_u16 video_storage_bytes;
     int (*present_rows)(void *,const struct mygames_kvm_video_source *);
-    int (*present_palette_rows)(void *,const struct mygames_kvm_palette_video_source *);
+    int (*present_palette_rows)(void *,const struct mysmb_palette_video_source *);
     int (*present_retained)(void *,const struct mysmb_ppu_frame_view *,
         const mygames_kvm_u8 MYGAMES_KVM_FAR *);
     mygames_kvm_u8 MYGAMES_KVM_FAR *ram_screen;
@@ -46,7 +47,7 @@ struct mysmb_dos16_root {
     int (*present_ram)(void *,const struct mysmb_ppu_frame_view *,
         const mygames_kvm_u8 MYGAMES_KVM_FAR *,mygames_kvm_u8 MYGAMES_KVM_FAR *);
     int (*should_present)(void *);
-    mygames_kvm_u8 video_palette[MYGAMES_KVM_VIDEO_PALETTE_COLORS];
+    mygames_kvm_u8 video_palette[MYSMB_VIDEO_PALETTE_COLORS];
 };
 int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
                                 const struct mysmb_dos16_hooks *hooks);
@@ -57,7 +58,7 @@ int mysmb_dos16_root_initialize_rows(struct mysmb_dos16_root *root,
     int (*present_rows)(void *,const struct mygames_kvm_video_source *));
 int mysmb_dos16_root_initialize_palette_rows(struct mysmb_dos16_root *root,
     const struct mysmb_dos16_hooks *hooks,mygames_kvm_u16 storage_bytes,
-    int (*present)(void *,const struct mygames_kvm_palette_video_source *));
+    int (*present)(void *,const struct mysmb_palette_video_source *));
 /* Optional DOS-only physical presenter. It receives a neutral PPU view and
  * palette only; returning false selects the normal neutral row presenter. */
 void mysmb_dos16_root_bind_retained(struct mysmb_dos16_root *root,
@@ -75,7 +76,7 @@ void mysmb_dos16_root_bind_snapshot(struct mysmb_dos16_root *root,
     struct mysmb_snapshot_store *store,void (*reset_output)(void *),void *context);
 void mysmb_dos16_root_bind_text(struct mysmb_dos16_root *root,
     struct mysmb_text_scene_workspace MYGAMES_KVM_FAR *workspace,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame,
     int (*set_mode)(void *,mygames_kvm_u8),
-    void (*present_text)(void *,const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *));
+    void (*present_text)(void *,const struct mysmb_io_text_frame MYGAMES_KVM_FAR *));
 #endif

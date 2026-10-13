@@ -22,7 +22,7 @@ struct mygames_win32_text_console {
     unsigned char colors_valid;
     unsigned long colors[16];
     unsigned char fallback_colors[16];
-    CHAR_INFO cells[MYGAMES_KVM_TEXT_CELLS];
+    CHAR_INFO cells[4000];
 };
 int mygames_win32_text_console_open(struct mygames_win32_text_console *console,
     HWND owner);

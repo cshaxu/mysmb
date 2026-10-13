@@ -6,7 +6,7 @@ Owner reopens T44 and admits S6 audit/design on 2026-10-13. Baseline c663c306.
 The [S1-S5 record](../../history/M3-T44-nxvm-source-test-layout.md) retains its
 measured Mario results. Its whole-T closure is withdrawn: directory separation
 and Mario passes do not establish a reusable Mine-capable host. S6 changes no
-production code and imports no Mine code. Later S slots are planned only.
+production code and imports no Mine code. S7 was subsequently admitted under owner automatic progression; see current receipts below.
 
 Read-only Mine comparison covers core/app, text scene, DOS main, Windows
 window, Win32 console and build script. The sibling snapshot has no established
@@ -30,7 +30,7 @@ Mario continues to ignore Tab on Win16 as previously approved.
 
 ## Gap register
 
-All twelve entries are open at design delivery. Each receiving S attaches
+G01-G04 close with S7 below; G05-G12 remain open. Each receiving S attaches
 changed-owner tests and operational evidence before closing its entries.
 
 | ID | Evidence and consequence | Disposition / receiver | Required proof |
@@ -78,12 +78,12 @@ Do not force Mine into Mario's memory model or cache footprint.
 ## Planned S roadmap
 
 Estimates include production/tests; actual changed files/lines are reported at
-closure. Only S6 is admitted. Tests ship with each changed owner, not at S13.
+closure. S6-S7 are closed; S8 is next. Tests ship with each changed owner, not at S13.
 
 | S | Delivery and dependencies | Estimated files / lines | Exit |
 | --- | --- | --- | --- |
-| S6 active | Audit, fixed register, status correction and design | Docs only, about6 files | All findings assigned; governance/admission pass |
-| S7 | Neutral KVM and atomic Mario adapters, G01-G04 | 20-40 /700-1600 | Both-app data/input representable; no NES maps in lib; Mario output retained |
+| S6 closed | Audit, fixed register, status correction and design | Docs only, about6 files | All findings assigned; governance/admission pass |
+| S7 closed | Neutral KVM and atomic Mario adapters, G01-G04 | 20-40 /700-1600 | Both-app data/input representable; no NES maps in lib; Mario output retained |
 | S8 | App refresh/pause/deadlines, G05; after S7 | 8-16 /300-800 | Event-driven and60Hz clients work without host-imposed game cadence |
 | S9 | Win32/x64 host and Console/window mouse, G06; after S8 | 15-28 /800-1800 | Both widths and view/session/input lifecycle joins pass |
 | S10 | DOS mouse and physical graphics services, G07; after S9 | 12-24 /600-1400 | DOS probe and Mario regressions; PPU/cache semantics unchanged |
@@ -129,3 +129,66 @@ Executed: node_task_ledger.py --write --admission and Verify-NodeProgress
 pass with scope0/expected0,1992 total, zero orphan nodes.
 Verify-DocumentationGovernance passes. git diff --check passes.
 No product build/test was required or claimed for this documentation-only P.
+
+## S6 closure and S7 admission
+
+Owner authorizes single-person implementation/review roles and automatic S
+progression through T closure. S6 closes with its source design and passing
+gates; no production/runtime claim. S7 admits G01-G04 with empty ROM scope
+and expected matches, baseline/maximum1992. Reviewer will separately inspect
+ABI, ownership, bounds and corpus preservation after implementation.
+
+S7 implementation note: removing app-owned text storage and palette-slot types
+requires atomic signature/include changes through about70 app/library/test/build
+files, exceeding the initial file-count estimate. Core source is unchanged.
+Win16 DIB geometry/palette consumption is updated with its contract rather than
+leaving a library-side NES compatibility path until S11. S11 still owns USER
+mouse/menu/text/lifecycle completion. This is contract propagation, not a new
+game or imported Mine scope.
+
+## S7 P1 closure receipt
+
+G01-G04 close: borrowed bounded pixel/text views replace NES storage in KVM;
+Mario owns the unchanged64-colour tables and4000-cell storage. Physical input
+now represents signed coordinates, button masks, cancellation, commands and
+both-app keys. CP437 maps all256 byte slots. Mouse delivery remains G06-G08;
+representability here is not a claim of implemented device delivery.
+
+Single-person reviewer pass checked all lib palette/geometry consumers,
+16-bit multiplication/capacity, borrowed lifetime, invalid projections and
+source ownership. No core or PPU algorithm changed. The neutral glyph test
+moved out of Mario tests; two old tests assumed a deliberately narrow glyph
+set and ignored F1 delivery. Their owner assertions were corrected; no failed
+production route was hidden. Win16 geometry/palette changes were pulled into
+this atomic contract update; USER/window-text/mouse remain S11.
+
+Test-owner closure: KVM owns span/palette/glyph invalid and success cases;
+Windows-key owner covers vocabulary; DIB owns odd widths/padding/4/8-bit
+projection and bounds; DOS text owns destination projection; Console joins
+cover borrowed palette/cells and real buffer lifecycle. Contract-only mouse
+fields are not executed routes; delivery tests belong to their receiving S.
+
+Validation: Release Ninja/ccache x86 and x64 each300/300 configured tests;
+latest added invalid-span assertions also pass both widths. Both private-desktop
+host-integration targets pass13/13 routes. DOS compiler/linker/memory gate,
+actual hidden DOSBox graphics/text/input/font/cursor/IRQ/exit probe pass.
+Win16 compile/link/MZ binding pass; owner-local Win3.1 standard-VGA runtime
+shows title, Enter into gameplay, movement and Escape termination. An early
+capture caught the progressive title-to-game draw; the later movement capture
+is fully composed. No live RDP, audio audibility or performance claim added.
+DOSBox CPU/cycle settings were not changed.
+
+DOS214segments, DGROUP53600bytes, minimum loader386816bytes excludingPSP;
+page-rounded minimum387216bytes. Compared with S5 the rounded resident minimum
+increases976bytes; DGROUP increases512bytes for complete glyph mapping. Dynamic
+caches are additional, not included in this minimum. No new frame allocation.
+
+Local products refreshed (bytes / SHA256):
+-16:645821 /60fe0eb416f7562b8dadac0105be1629cd68eba4c48b17957f150f4fcd05ab63
+-32:413835 /d6a88ac94dabdba100b8cd32d286034ddd9536395d50ca61e324f335f3126fa7
+-64:378475 /358d666c4a8857e538efefcd2c5c00e5bf84c14687c65e666c7b73050a83758a
+
+No product or protected probe image is committed. Zero node scope, expected
+and actual promotions; historical1992/1992 and retained1991/1992 nodes,
+4260/4261 feasible controls unchanged. The inherited final certificate remains
+incomplete. Unrelated resource deletions remain untouched.

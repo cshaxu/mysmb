@@ -5,7 +5,7 @@
 typedef unsigned char mygames_kvm_u8;
 typedef unsigned short mygames_kvm_u16;
 
-/* A 61,440-byte frame fits one segment, but its storage need not be in DGROUP.
+/* Bounded borrowed storage need not be in DGROUP.
  * Only the pointer representation changes for the real-mode compiler. */
 #ifdef MYGAMES_DOS16_TARGET
 #define MYGAMES_KVM_FAR __far

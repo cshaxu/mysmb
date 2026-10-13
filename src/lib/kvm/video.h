@@ -1,66 +1,42 @@
 #ifndef MYGAMES_KVM_VIDEO_H
 #define MYGAMES_KVM_VIDEO_H
-
 #include "kvm/types.h"
 
-#define MYGAMES_KVM_VIDEO_WIDTH 256U
-#define MYGAMES_KVM_VIDEO_HEIGHT 240U
-#define MYGAMES_KVM_VIDEO_PIXELS 61440U
-
-/* Borrowed row-major source color indices. The compositor owns pixels;
- * a presenter must consume the view before its next rebuild and cannot write
- * through it. No scale, palette reduction, HUD or object logic belongs here. */
+/* A borrowed index surface. Capacity/stride are bytes; RGB entries are
+ * 0x00RRGGBB. Storage and palette remain valid for synchronous presentation.
+ * Each supplied span must fit the declared16-bit capacity, including padding. */
 struct mygames_kvm_video_frame {
     const mygames_kvm_u8 MYGAMES_KVM_FAR *pixels;
+    mygames_kvm_u16 width,height,stride,capacity;
+    const unsigned long MYGAMES_KVM_FAR *palette;
+    mygames_kvm_u16 palette_count;
 };
-
-/* Synchronous read-only row producer. A returned view is valid only until the
- * next read_rows call or return from the present operation. No tick may advance
- * while the consumer borrows it. first/rows name logical256x240coordinates. */
 struct mygames_kvm_video_band {
     const mygames_kvm_u8 MYGAMES_KVM_FAR *pixels;
     mygames_kvm_u16 first,rows;
+    mygames_kvm_u16 width,stride,capacity;
 };
 struct mygames_kvm_video_source {
     void *context;
-    int (*read_rows)(void *context,mygames_kvm_u16 first,mygames_kvm_u16 rows,
-        struct mygames_kvm_video_band *band);
+    int (*read_rows)(void *,mygames_kvm_u16,mygames_kvm_u16,
+        struct mygames_kvm_video_band *);
 };
-
-#define MYGAMES_KVM_VIDEO_PALETTE_COLORS 32U
-struct mygames_kvm_palette_video_frame {
-    const mygames_kvm_u8 MYGAMES_KVM_FAR *pixels;
-    const mygames_kvm_u8 MYGAMES_KVM_FAR *master_colors;
-};
-/* Explicit slot-index view. Entries map slots to original master colors.
- * Both table and rows are immutable for the complete synchronous present. */
-struct mygames_kvm_palette_video_source {
-    struct mygames_kvm_video_source rows;
-    const mygames_kvm_u8 MYGAMES_KVM_FAR *master_colors;
-};
-
-/* Authored text output. Character IDs follow io/text_glyph.h;no quantizer. */
-#define MYGAMES_KVM_TEXT_COLUMNS 80U
-#define MYGAMES_KVM_TEXT_ROWS 50U
-#define MYGAMES_KVM_TEXT_CELLS 4000U
-
 struct mygames_kvm_text_cell {
-    mygames_kvm_u8 character;
-    mygames_kvm_u8 foreground;
-    mygames_kvm_u8 background;
+    mygames_kvm_u8 character,foreground,background;
 };
-
+/* Portable CP437 cell IDs and16 logical foreground/background slots.
+ * Capacity and stride count cells; source_colors selects caller RGB versus
+ * canonical device16. Application palette construction is not part of KVM. */
 struct mygames_kvm_text_frame {
-    struct mygames_kvm_text_cell cells[MYGAMES_KVM_TEXT_CELLS];
-    /* Retained capacity supports both layouts;only selected rows are output.
-     * Palette entries are neutral RGB,not host attributes or game state. */
-    mygames_kvm_u16 rows;
+    const struct mygames_kvm_text_cell MYGAMES_KVM_FAR *cells;
+    mygames_kvm_u16 columns,rows,stride,capacity;
     mygames_kvm_u8 source_colors;
-    unsigned long colors[16];
-    mygames_kvm_u8 master_map[64];
+    const unsigned long MYGAMES_KVM_FAR *colors;
 };
-
-#define MYGAMES_KVM_TEXT_FRAME_ROWS(f) ((f)->rows==25U?25U:50U)
-#define MYGAMES_KVM_TEXT_FRAME_CELLS(f) (80U*MYGAMES_KVM_TEXT_FRAME_ROWS(f))
-
+#define MYGAMES_KVM_TEXT_FRAME_ROWS(f) ((f)->rows)
+#define MYGAMES_KVM_TEXT_FRAME_CELLS(f) ((f)->columns*(f)->rows)
+int mygames_kvm_video_valid(const struct mygames_kvm_video_frame *frame);
+int mygames_kvm_band_valid(const struct mygames_kvm_video_band *band,
+    mygames_kvm_u16 height);
+int mygames_kvm_text_valid(const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame);
 #endif

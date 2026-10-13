@@ -1,14 +1,15 @@
+#include "io/color.h"
 #include "kvm/color.h"
 #include "io/input.h"
 #include "io/control.h"
-#include "kvm/video.h"
+#include "io/video.h"
 #include "io/audio.h"
 #include "core/game.h"
 #include "io/palette_expand.h"
 #include <string.h>
 
-static mygames_kvm_u8 MYGAMES_KVM_FAR pixels[MYGAMES_KVM_VIDEO_PIXELS];
-static struct mygames_kvm_text_frame text_frame;
+static mygames_kvm_u8 MYGAMES_KVM_FAR pixels[MYSMB_VIDEO_PIXELS];
+static struct mysmb_io_text_frame text_frame;
 
 static int palette_expansion_contract(void)
 {
@@ -78,7 +79,7 @@ static int color_contract(void)
     unsigned long rgb,text,best,distance,brightness;
     long r,g,b;
     for(index=0U;index<256U;++index) {
-        rgb=mygames_kvm_color_rgb((mygames_kvm_u8)index);
+        rgb=mysmb_io_color_rgb((mygames_kvm_u8)index);
         best=0xffffffffUL;choice=0U;
         for(i=0U;i<16U;++i) {
             text=mygames_kvm_color_text_rgb((mygames_kvm_u8)i);
@@ -88,13 +89,13 @@ static int color_contract(void)
             distance=(unsigned long)(r*r+g*g+b*b);
             if(distance<best) {best=distance;choice=i;}
         }
-        if(mygames_kvm_color_text16((mygames_kvm_u8)index)!=choice)return 1;
+        if(mysmb_io_color_text16((mygames_kvm_u8)index)!=choice)return 1;
         text=mygames_kvm_color_text_rgb((mygames_kvm_u8)index);
         brightness=((text>>16U)&255UL)*299UL+((text>>8U)&255UL)*587UL+
             (text&255UL)*114UL;
         if(mygames_kvm_color_text_contrast((mygames_kvm_u8)index)!=
             (brightness>=128000UL?0U:15U))return 2;
-        if(rgb!=mygames_kvm_color_rgb((mygames_kvm_u8)(index&63U)) ||
+        if(rgb!=mysmb_io_color_rgb((mygames_kvm_u8)(index&63U)) ||
             text!=mygames_kvm_color_text_rgb((mygames_kvm_u8)(index&15U)))return 3;
     }
     return 0;
@@ -113,8 +114,8 @@ int main(void)
     if(nibble_contract()!=0)return 12;
 
     /* Check the actual game boundary, not only duplicated IO declarations. */
-    if (MYGAMES_KVM_VIDEO_WIDTH != MYSMB_SCREEN_WIDTH ||
-        MYGAMES_KVM_VIDEO_HEIGHT != MYSMB_SCREEN_HEIGHT ||
+    if (MYSMB_VIDEO_WIDTH != MYSMB_SCREEN_WIDTH ||
+        MYSMB_VIDEO_HEIGHT != MYSMB_SCREEN_HEIGHT ||
         MYSMB_IO_AUDIO_WRITE_CAPACITY != MYSMB_APU_WRITE_CAPACITY)
         return 1;
     if ((mygames_kvm_u8)MYSMB_IO_BUTTON_RIGHT != (mygames_kvm_u8)MYSMB_BUTTON_RIGHT ||
@@ -145,7 +146,7 @@ int main(void)
     if (control.exit_requested==0U || input.buttons!=0x42U || input.buttons2!=0xa0U) return 8;
 
     /* Last row and byte offsets must remain representable by a 16-bit word. */
-    for (offset = 0U; offset < MYGAMES_KVM_VIDEO_PIXELS; ++offset)
+    for (offset = 0U; offset < MYSMB_VIDEO_PIXELS; ++offset)
         pixels[offset] = (mygames_kvm_u8)(offset & 0x3fU);
     video.pixels = pixels;
     if (video.pixels[0U] != 0U || video.pixels[61439U] != 0x3fU)
@@ -155,10 +156,10 @@ int main(void)
     text_frame.cells[3999U].background = 1U;
     if (sizeof(text_frame.cells) != 12000U || sizeof(input) != 3U) return 5;
     text_frame.rows=25U;
-    if(MYGAMES_KVM_TEXT_FRAME_ROWS(&text_frame)!=25U ||
-        MYGAMES_KVM_TEXT_FRAME_CELLS(&text_frame)!=2000U)return 5;
+    if(MYSMB_IO_TEXT_FRAME_ROWS(&text_frame)!=25U ||
+        MYSMB_IO_TEXT_FRAME_CELLS(&text_frame)!=2000U)return 5;
     text_frame.rows=50U;
-    if(MYGAMES_KVM_TEXT_FRAME_CELLS(&text_frame)!=4000U)return 5;
+    if(MYSMB_IO_TEXT_FRAME_CELLS(&text_frame)!=4000U)return 5;
 
     /* Preserve repeated timer-high writes: each can retrigger a channel. */
     audio.write_count = 2U;

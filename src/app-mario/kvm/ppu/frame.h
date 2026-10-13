@@ -2,15 +2,15 @@
 #define MYSMB_PPU_FRAME_H
 
 #include "ppu/state.h"
-#include "kvm/video.h"
+#include "io/video.h"
 #include "io/palette_pairs.h"
 #include "io/palette_expand.h"
 
 enum {
     /* Source NMI holds scroll at zero until the sprite-0 split. */
     MYSMB_PPU_STATUS_BAR_HEIGHT = 32,
-    MYSMB_PPU_FRAME_WIDTH = MYGAMES_KVM_VIDEO_WIDTH,
-    MYSMB_PPU_FRAME_HEIGHT = MYGAMES_KVM_VIDEO_HEIGHT
+    MYSMB_PPU_FRAME_WIDTH = MYSMB_VIDEO_WIDTH,
+    MYSMB_PPU_FRAME_HEIGHT = MYSMB_VIDEO_HEIGHT
 };
 
 #define MYSMB_PPU_FRAME_FAR MYGAMES_KVM_FAR
@@ -109,7 +109,7 @@ struct mysmb_ppu_frame {
 #ifdef MYSMB_DOS16_TARGET
     mygames_kvm_u8 MYSMB_PPU_FRAME_FAR *pixels;
 #else
-    mygames_kvm_u8 pixels[MYGAMES_KVM_VIDEO_PIXELS];
+    mygames_kvm_u8 pixels[MYSMB_VIDEO_PIXELS];
 #endif
 };
 #ifdef MYSMB_DOS16_TARGET

@@ -1,3 +1,5 @@
+#include "io/video.h"
+#include "io/color.h"
 #include "platform/dos16/devices.h"
 #include "platform/dos16/compact_vga_layout.h"
 #include "platform/dos16/retained_background.h"
@@ -25,7 +27,7 @@ static unsigned char present_due=1U;
 static unsigned char opened;
 static unsigned char text_mode;
 static unsigned short text_rows=25U;
-static mygames_kvm_u8 palette_shadow[MYGAMES_KVM_VIDEO_PALETTE_COLORS],palette_valid;
+static mygames_kvm_u8 palette_shadow[MYSMB_VIDEO_PALETTE_COLORS],palette_valid;
 static unsigned char retained_mode;
 static unsigned char compact_mode,compact_page;
 static unsigned char ram_mode;
@@ -508,7 +510,7 @@ static int try_mode(mygames_kvm_u8 text)
     vga_native_rows();
     outp(0x3c8,0U);
     for (i=0U;i<64U;++i) {
-        rgb=mygames_kvm_color_rgb((mygames_kvm_u8)i);
+        rgb=mysmb_io_color_rgb((mygames_kvm_u8)i);
         outp(0x3c9,(unsigned char)((rgb>>18U)&0x3fU));
         outp(0x3c9,(unsigned char)((rgb>>10U)&0x3fU));
         outp(0x3c9,(unsigned char)((rgb>>2U)&0x3fU));
@@ -532,9 +534,9 @@ void mysmb_dos16_devices_palette(const mygames_kvm_u8 MYGAMES_KVM_FAR *palette)
 {
     unsigned short i;unsigned long rgb;
     if(!video_ready || text_mode || !palette)return;
-    for(i=0U;i<MYGAMES_KVM_VIDEO_PALETTE_COLORS;++i){
+    for(i=0U;i<MYSMB_VIDEO_PALETTE_COLORS;++i){
         if(palette_valid && palette_shadow[i]==palette[i])continue;
-        rgb=mygames_kvm_color_rgb(palette[i]);outp(0x3c8,i);
+        rgb=mysmb_io_color_rgb(palette[i]);outp(0x3c8,i);
         outp(0x3c9,(unsigned char)((rgb>>18U)&63UL));
         outp(0x3c9,(unsigned char)((rgb>>10U)&63UL));
         outp(0x3c9,(unsigned char)((rgb>>2U)&63UL));
@@ -623,7 +625,7 @@ int mysmb_dos16_devices_present_screen(const mygames_kvm_u8 MYGAMES_KVM_FAR *scr
         retained_hud_valid=0U;retained_sprite_count=0U;
     }
     video=(unsigned char far *)0xa0000000UL;
-    copy_plane_dwords(video,screen,MYGAMES_KVM_VIDEO_PIXELS);
+    copy_plane_dwords(video,screen,MYSMB_VIDEO_PIXELS);
     return 1;
 }
 mygames_kvm_u8 MYGAMES_KVM_FAR *mysmb_dos16_devices_direct_band(mygames_kvm_u16 first,
@@ -633,16 +635,18 @@ mygames_kvm_u8 MYGAMES_KVM_FAR *mysmb_dos16_devices_direct_band(mygames_kvm_u16 
         rows>240U-first)return 0;
     return (mygames_kvm_u8 MYGAMES_KVM_FAR *)0xa0000000UL+first*256U;
 }
-void mysmb_dos16_devices_text(const struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
+void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame)
 {
     volatile unsigned short far *video;
+    struct mygames_kvm_text_frame view;
     if(!video_ready || !text_mode || !frame)return;
-    if(text_rows!=MYGAMES_KVM_TEXT_FRAME_ROWS(frame)) {
-        text_rows=(unsigned short)MYGAMES_KVM_TEXT_FRAME_ROWS(frame);
+    if(text_rows!=MYSMB_IO_TEXT_FRAME_ROWS(frame)) {
+        text_rows=(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame);
         if(!try_mode(1U))return;
     }
     video=(volatile unsigned short far *)0xb8000000UL;
-    mygames_dos16_text_cells(frame,video);
+    mysmb_text_frame_view(frame,&view);
+    mygames_dos16_text_cells(&view,video);
 }
 
 void mysmb_dos16_devices_wait(void)

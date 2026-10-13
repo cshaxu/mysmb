@@ -1,3 +1,4 @@
+#include "io/video.h"
 #include "text/elements.h"
 #include "kvm/glyph.h"
 #include "kvm/color.h"
@@ -209,7 +210,7 @@ static int valid_element(const struct mysmb_text_element MYGAMES_KVM_FAR *e)
 
 int mysmb_text_element_draw(
     const struct mysmb_text_element MYGAMES_KVM_FAR *element,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame,
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame,
     mysmb_text_cell_filter filter, const void MYGAMES_KVM_FAR *context)
 {
     mygames_kvm_u16 cell;
@@ -290,7 +291,7 @@ int mysmb_text_element_draw(
 int mysmb_text_elements_build(
     const struct mysmb_text_element MYGAMES_KVM_FAR *elements,
     mygames_kvm_u16 count, mygames_kvm_u8 sky,
-    struct mygames_kvm_text_frame MYGAMES_KVM_FAR *frame)
+    struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame)
 {
     mygames_kvm_u16 i;
     if (frame == 0 || sky > 15U || count > MYSMB_TEXT_ELEMENT_CAPACITY ||
