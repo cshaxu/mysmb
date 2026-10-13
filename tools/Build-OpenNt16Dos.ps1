@@ -170,7 +170,7 @@ try {
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $objects += $object
     }
-    foreach ($dos16Source in @('raw_keyboard.c','pit_clock.c','text_cells.c','host.c','video_mode.c')) {
+    foreach ($dos16Source in @('raw_keyboard.c','pit_clock.c','text_cells.c','host.c','video_mode.c','vga.c')) {
         $object = 'dos16_' + [IO.Path]::ChangeExtension($dos16Source, '.obj')
         & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fo$object /I $dos16IncludeDirectory /I $kvmIncludeDirectory /I $runtimeIncludeDirectory (Join-Path $dos16Root $dos16Source)
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

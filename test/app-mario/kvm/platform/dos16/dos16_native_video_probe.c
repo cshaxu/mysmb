@@ -59,6 +59,7 @@ int main(void)
         for(y=0U;y<rows;++y)for(x=0U;x<256U;++x)
             storage[y*256U+x]=pattern(x,(unsigned short)(first+y));
         band.pixels=storage;band.first=first;band.rows=rows;
+        band.width=256U;band.stride=256U;band.capacity=rows*256U;
         if(!mysmb_dos16_devices_present_band(&band))return 5;
     }
     for(y=0U;y<240U;++y)for(x=0U;x<256U;++x){
@@ -75,6 +76,7 @@ int main(void)
         for(y=0U;y<rows;++y)for(x=0U;x<256U;++x)
             direct[y*256U+x]=pattern(x,(unsigned short)(first+y));
         band.pixels=direct;band.first=first;band.rows=rows;
+        band.width=256U;band.stride=256U;band.capacity=rows*256U;
         if(!mysmb_dos16_devices_present_band(&band))return 9;
         direct_bytes+=(unsigned long)rows*256UL;
     }

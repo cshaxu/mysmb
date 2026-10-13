@@ -5,6 +5,7 @@
 #include "platform/dos16/retained_background.h"
 #include "platform/dos16/keyboard.h"
 #include "dos16/host.h"
+#include "dos16/vga.h"
 #include "dos16/text_cells.h"
 #include "platform/dos16/dos_audio.h"
 #include "ppu/frame.h"
@@ -54,30 +55,7 @@ static struct retained_viewport retained_sprite_view;
 /* The physical VGA adapter owns this byte move.  It is intentionally below
  * all PPU decisions: callers already selected the source slots and target
  * plane.  The byte tail handles the viewport's possible 128-byte wrap. */
-static void copy_plane_bytes(unsigned char far *video,
-    const unsigned char far *pixels,unsigned short count)
-{
-    _asm {
-        push ds
-        push es
-        push bx
-        lds si,pixels
-        les di,video
-        mov cx,count
-        mov bx,cx
-        shr cx,1
-        shr cx,1
-        cld
-        _emit 0x66
-        rep movsw
-        mov cx,bx
-        and cx,3
-        rep movsb
-        pop bx
-        pop es
-        pop ds
-    }
-}
+
 
 static void keyboard_scan(void *context,mygames_kvm_u8 scan)
 {
@@ -87,58 +65,22 @@ static void keyboard_scan(void *context,mygames_kvm_u8 scan)
 /* Independent native256x240 timing:25.175MHz,800dots/525lines,approximately
  * 60Hz. VGA repeats each stored row twice;chain4 exposes61440linear bytes.
  * BIOS13h supplies initial graphics/attribute state;restore uses original mode. */
-static void vga_register(unsigned short port,unsigned char index,unsigned char value)
-{ outp(port,index);outp((unsigned short)(port+1U),value); }
-static void vga_native_rows(void)
-{
-    unsigned char protect;
-    vga_register(0x3c4,0,1);
-    outp(0x3c2,0xe3);
-    vga_register(0x3c4,4,14);
-    outp(0x3d4,17);protect=(unsigned char)inp(0x3d5);
-    vga_register(0x3d4,17,(unsigned char)(protect&0x7fU));
-    vga_register(0x3d4,1,63);vga_register(0x3d4,2,64);
-    vga_register(0x3d4,6,13);vga_register(0x3d4,7,62);
-    vga_register(0x3d4,9,65);
-    vga_register(0x3d4,16,234);vga_register(0x3d4,17,44);
-    vga_register(0x3d4,18,223);vga_register(0x3d4,19,32);
-    vga_register(0x3d4,20,64);
-    vga_register(0x3d4,21,231);vga_register(0x3d4,22,6);
-    vga_register(0x3d4,23,0xa3);
-    vga_register(0x3c4,2,15);
-    vga_register(0x3c4,0,3);
-}
+
+
 /* The S5-proven unchained timing is retained here but not selected by the
  * ordinary presenter. S8 must first restore/draw HUD and sprites. */
-static void vga_retained_rows(void)
-{
-    unsigned char protect;
-    vga_register(0x3c4,0,1);outp(0x3c2,0xe3);vga_register(0x3c4,4,6);
-    outp(0x3d4,17);protect=(unsigned char)inp(0x3d5);
-    vga_register(0x3d4,17,(unsigned char)(protect&0x7fU));
-    vga_register(0x3d4,1,63);vga_register(0x3d4,2,64);
-    vga_register(0x3d4,6,13);vga_register(0x3d4,7,62);
-    vga_register(0x3d4,9,65);vga_register(0x3d4,16,234);
-    vga_register(0x3d4,17,44);vga_register(0x3d4,18,223);
-    vga_register(0x3d4,19,64);vga_register(0x3d4,20,64);
-    vga_register(0x3d4,21,231);vga_register(0x3d4,22,6);
-    vga_register(0x3d4,23,0xa3);vga_register(0x3d4,24,255);
-    vga_register(0x3d4,12,0);vga_register(0x3d4,13,0);
-    (void)inp(0x3da);outp(0x3c0,19);outp(0x3c0,0);outp(0x3c0,0x20);
-    vga_register(0x3c4,2,15);vga_register(0x3c4,0,3);
-}
-static void vga_retained_plane(unsigned char plane)
-{vga_register(0x3c4,2,(unsigned char)(1U<<plane));}
+
+
 static int vga_retained_tile(void *context,mygames_kvm_u8 plane,mygames_kvm_u8 table,
     mygames_kvm_u8 row,mygames_kvm_u8 column,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
-    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    volatile unsigned char far *video=mygames_dos16_vga_memory();
     unsigned char copy,expected;
     unsigned short base,y;
     (void)context;
     if(!slots)return 0;
     if(retained_tile_plane!=plane) {
-        vga_retained_plane(plane);retained_tile_plane=plane;
+        mygames_dos16_vga_plane(plane);retained_tile_plane=plane;
     }
     for(copy=0U;copy<2U;++copy) {
         if(!mysmb_dos16_retained_tile_address(table,row,column,copy,&expected,&base) ||
@@ -163,54 +105,31 @@ static void vga_retained_viewport(mygames_kvm_u8 table,mygames_kvm_u8 x,mygames_
 {
     unsigned short source=(unsigned short)((unsigned short)table*256U+x);
     unsigned short start=(unsigned short)((unsigned short)y*64U+(source>>3U));
-    vga_register(0x3d4,12,(unsigned char)(start>>8U));
-    vga_register(0x3d4,13,(unsigned char)start);
-    (void)inp(0x3da);outp(0x3c0,19);outp(0x3c0,(unsigned char)(source&7U));outp(0x3c0,0x20);
+    mygames_dos16_vga_viewport(start,(unsigned char)(source&7U));
 }
 
 /* Compact layout: one 512-by-240 cache period followed by two 264-by-240
  * composition pages.  The pages are never visible while being assembled.
  * All coordinates below are already PPU-selected output coordinates. */
-static void vga_compact_rows(void)
-{
-    unsigned char protect;
-    vga_register(0x3c4,0,1);outp(0x3c2,0xe3);vga_register(0x3c4,4,6);
-    outp(0x3d4,17);protect=(unsigned char)inp(0x3d5);
-    vga_register(0x3d4,17,(unsigned char)(protect&0x7fU));
-    vga_register(0x3d4,1,63);vga_register(0x3d4,2,64);
-    vga_register(0x3d4,6,13);vga_register(0x3d4,7,62);
-    vga_register(0x3d4,9,65);vga_register(0x3d4,16,234);
-    vga_register(0x3d4,17,44);vga_register(0x3d4,18,223);
-    /* CRTC offset is word-addressed.  A compact page row is 66 bytes per
-     * plane, so its display stride is 33 words. */
-    vga_register(0x3d4,19,33);vga_register(0x3d4,20,64);
-    vga_register(0x3d4,21,231);vga_register(0x3d4,22,6);
-    vga_register(0x3d4,23,0xa3);vga_register(0x3d4,24,255);
-    vga_register(0x3d4,12,(unsigned char)(MYSMB_DOS16_COMPACT_PAGE_A>>9U));
-    vga_register(0x3d4,13,(unsigned char)(MYSMB_DOS16_COMPACT_PAGE_A>>1U));
-    (void)inp(0x3da);outp(0x3c0,19);outp(0x3c0,0);outp(0x3c0,0x20);
-    vga_register(0x3ce,5,0);vga_register(0x3c4,2,15);vga_register(0x3c4,0,3);
-}
+
 
 static void vga_compact_viewport(mygames_kvm_u8 page,mygames_kvm_u8 pan)
 {
     mygames_kvm_u16 base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
         MYSMB_DOS16_COMPACT_PAGE_B);
     mygames_kvm_u16 start=(mygames_kvm_u16)(base>>1U);
-    vga_register(0x3d4,12,(unsigned char)(start>>8U));
-    vga_register(0x3d4,13,(unsigned char)start);
-    (void)inp(0x3da);outp(0x3c0,19);outp(0x3c0,(unsigned char)(pan&7U));outp(0x3c0,0x20);
+    mygames_dos16_vga_viewport(start,pan);
 }
 
 static int vga_compact_tile(void *context,mygames_kvm_u8 plane,mygames_kvm_u8 table,
     mygames_kvm_u8 row,mygames_kvm_u8 column,const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
-    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    volatile unsigned char far *video=mygames_dos16_vga_memory();
     mygames_kvm_u16 base,y,x;
     (void)context;
     if(!slots || table>=2U || row>=30U || column>=32U)return 0;
     if(retained_tile_plane!=plane) {
-        vga_retained_plane(plane);retained_tile_plane=plane;
+        mygames_dos16_vga_plane(plane);retained_tile_plane=plane;
     }
     x=(mygames_kvm_u16)table*256U+(mygames_kvm_u16)column*8U;
     base=(mygames_kvm_u16)((mygames_kvm_u16)row*8U*
@@ -228,12 +147,12 @@ static int vga_compact_tile(void *context,mygames_kvm_u8 plane,mygames_kvm_u8 ta
 static int vga_compact_copy_viewport(const struct retained_viewport *view,
     mygames_kvm_u8 page)
 {
-    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    volatile unsigned char far *video=mygames_dos16_vga_memory();
     mygames_kvm_u16 row,source,target,i;
     mygames_kvm_u8 first,second;
     volatile unsigned char loaded;
     target=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:MYSMB_DOS16_COMPACT_PAGE_B);
-    vga_register(0x3c4,2,15);vga_register(0x3ce,5,0x41U);
+    mygames_dos16_vga_register(0x3c4,2,15);mygames_dos16_vga_register(0x3ce,5,0x41U);
     for(row=0U;row<MYSMB_DOS16_COMPACT_PAGE_HEIGHT;++row) {
         if(!mysmb_dos16_compact_viewport_row(view->table,view->x,view->y,
             (mygames_kvm_u8)row,&source,&first,&second))goto failed;
@@ -244,9 +163,9 @@ static int vga_compact_copy_viewport(const struct retained_viewport *view,
             loaded=video[i];video[target+row*MYSMB_DOS16_COMPACT_PAGE_STRIDE+first+i]=loaded;
         }
     }
-    vga_register(0x3ce,5,0);return 1;
+    mygames_dos16_vga_register(0x3ce,5,0);return 1;
 failed:
-    vga_register(0x3ce,5,0);return 0;
+    mygames_dos16_vga_register(0x3ce,5,0);return 0;
 }
 
 static mygames_kvm_u16 compact_page_offset(mygames_kvm_u8 page,mygames_kvm_u8 pan,
@@ -262,12 +181,12 @@ static void compact_write_slots(mygames_kvm_u8 page,mygames_kvm_u8 pan,
     mygames_kvm_u8 x,mygames_kvm_u8 y,mygames_kvm_u8 width,mygames_kvm_u8 rows,
     const mygames_kvm_u8 MYGAMES_KVM_FAR *slots,mygames_kvm_u8 transparent)
 {
-    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    volatile unsigned char far *video=mygames_dos16_vga_memory();
     mygames_kvm_u16 py,i;
     mygames_kvm_u8 plane,first,logical;
     if(!slots)return;
     for(plane=0U;plane<4U;++plane) {
-        first=(mygames_kvm_u8)((plane+4U-((pan+x)&3U))&3U);vga_retained_plane(plane);
+        first=(mygames_kvm_u8)((plane+4U-((pan+x)&3U))&3U);mygames_dos16_vga_plane(plane);
         for(py=0U;py<rows;++py)for(i=first;i<width;i=(mygames_kvm_u16)(i+4U)) {
             logical=(mygames_kvm_u8)i;
             if(!transparent || slots[py*8U+logical]!=255U)
@@ -280,14 +199,14 @@ static void compact_write_slots(mygames_kvm_u8 page,mygames_kvm_u8 pan,
 static void compact_write_hud(mygames_kvm_u8 page,mygames_kvm_u8 pan,
     const mygames_kvm_u8 MYGAMES_KVM_FAR *slots)
 {
-    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    volatile unsigned char far *video=mygames_dos16_vga_memory();
     mygames_kvm_u16 base,y,i,offset;
     mygames_kvm_u8 plane,first;
     if(!slots)return;
     base=(page==0U?MYSMB_DOS16_COMPACT_PAGE_A:
         MYSMB_DOS16_COMPACT_PAGE_B);
     for(plane=0U;plane<4U;++plane) {
-        first=(mygames_kvm_u8)((plane+4U-(pan&3U))&3U);vga_retained_plane(plane);
+        first=(mygames_kvm_u8)((plane+4U-(pan&3U))&3U);mygames_dos16_vga_plane(plane);
         offset=(mygames_kvm_u16)((pan+first)>>2U);
         for(y=0U;y<32U;++y) {
             volatile unsigned char far *target=video+base+
@@ -354,7 +273,7 @@ static void retained_hud_pack(const struct retained_viewport *view,
 static void retained_hud_write_plane(const struct retained_viewport *view,
     mygames_kvm_u8 plane,const mygames_kvm_u8 MYGAMES_KVM_FAR *packed)
 {
-    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    volatile unsigned char far *video=mygames_dos16_vga_memory();
     mygames_kvm_u16 y,offset,first_count,second_count,physical;
     mygames_kvm_u8 first;
     first=retained_sprite_plane_first(view,0U,plane);
@@ -364,11 +283,11 @@ static void retained_hud_write_plane(const struct retained_viewport *view,
     first_count=(mygames_kvm_u16)(128U-offset);
     if(first_count>64U)first_count=64U;
     second_count=(mygames_kvm_u16)(64U-first_count);
-    vga_retained_plane(plane);
+    mygames_dos16_vga_plane(plane);
     for(y=0U;y<32U;++y) {
         const mygames_kvm_u8 MYGAMES_KVM_FAR *source=packed+plane*2048U+y*64U;
-        copy_plane_bytes((unsigned char far *)video+y*128U+offset,source,first_count);
-        if(second_count)copy_plane_bytes((unsigned char far *)video+y*128U,
+        mygames_dos16_copy_bytes((unsigned char far *)video+y*128U+offset,source,first_count);
+        if(second_count)mygames_dos16_copy_bytes((unsigned char far *)video+y*128U,
             source+first_count,second_count);
     }
 }
@@ -396,9 +315,9 @@ static int retained_hud_rows(const struct mysmb_ppu_frame_view *view,
     for(plane=0U;plane<4U;++plane) {
         mygames_kvm_u16 y,i;
         mygames_kvm_u8 first=retained_sprite_plane_first(viewport,0U,plane);
-        vga_retained_plane(plane);
+        mygames_dos16_vga_plane(plane);
         for(y=0U;y<32U;++y) {
-            volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+            volatile unsigned char far *video=mygames_dos16_vga_memory();
             mygames_kvm_u16 offset,first_count,second_count,physical;
             for(i=0U;i<64U;++i)retained_hud_line[i]=retained_hud_slots[y*256U+first+i*4U];
             physical=(mygames_kvm_u16)viewport->table*256U+viewport->x+first;
@@ -406,8 +325,8 @@ static int retained_hud_rows(const struct mysmb_ppu_frame_view *view,
             offset=(mygames_kvm_u16)(physical>>2U);
             first_count=(mygames_kvm_u16)(128U-offset);if(first_count>64U)first_count=64U;
             second_count=(mygames_kvm_u16)(64U-first_count);
-            copy_plane_bytes((unsigned char far *)video+y*128U+offset,retained_hud_line,first_count);
-            if(second_count)copy_plane_bytes((unsigned char far *)video+y*128U,
+            mygames_dos16_copy_bytes((unsigned char far *)video+y*128U+offset,retained_hud_line,first_count);
+            if(second_count)mygames_dos16_copy_bytes((unsigned char far *)video+y*128U,
                 retained_hud_line+first_count,second_count);
         }
     }
@@ -442,7 +361,7 @@ static void retained_mark_sprite_tiles(const struct retained_sprite_backup *item
 static int retained_repaint_tiles(const struct mysmb_ppu_frame_view *view,
     const struct retained_viewport *viewport,const mygames_kvm_u8 *marks)
 {
-    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    volatile unsigned char far *video=mygames_dos16_vga_memory();
     mygames_kvm_u16 band,row,column,offset;
     mygames_kvm_u8 plane,first,x,y;
     static mygames_kvm_u8 MYGAMES_KVM_FAR slots[64];
@@ -453,7 +372,7 @@ static int retained_repaint_tiles(const struct mysmb_ppu_frame_view *view,
                 (mygames_kvm_u8)(column*8U),(mygames_kvm_u8)(band+row),8U,8U))return 0;
             for(plane=0U;plane<4U;++plane) {
                 first=retained_sprite_plane_first(viewport,(mygames_kvm_u8)(column*8U),plane);
-                vga_retained_plane(plane);
+                mygames_dos16_vga_plane(plane);
                 for(y=0U;y<8U;++y) {
                     x=first;
                     offset=retained_offset(viewport,(mygames_kvm_u8)(column*8U+x),
@@ -472,7 +391,7 @@ static int retained_repaint_tiles(const struct mysmb_ppu_frame_view *view,
 static void retained_draw_sprites(const struct retained_viewport *view,
     const struct retained_sprite_backup *items,mygames_kvm_u8 count)
 {
-    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+    volatile unsigned char far *video=mygames_dos16_vga_memory();
     mygames_kvm_u16 n,py,offset;
     mygames_kvm_u8 plane,first,width,rows;
     for(n=0U;n<count;++n) {
@@ -481,7 +400,7 @@ static void retained_draw_sprites(const struct retained_viewport *view,
         width=8U;if((mygames_kvm_u16)item->x+width>256U)width=(mygames_kvm_u8)(256U-item->x);
         rows=8U;if((mygames_kvm_u16)item->y+rows>240U)rows=(mygames_kvm_u8)(240U-item->y);
         for(plane=0U;plane<4U;++plane) {
-            first=retained_sprite_plane_first(view,item->x,plane);vga_retained_plane(plane);
+            first=retained_sprite_plane_first(view,item->x,plane);mygames_dos16_vga_plane(plane);
             for(py=0U;py<rows;++py) {
                 if(first<width && item->pixels[py*8U+first]!=255U) {
                     offset=retained_offset(view,(mygames_kvm_u8)(item->x+first),(mygames_kvm_u8)(item->y+py));
@@ -497,24 +416,13 @@ static void retained_draw_sprites(const struct retained_viewport *view,
 }
 static int try_mode(mygames_kvm_u8 text)
 {
-    union REGS registers;
     unsigned short i;
-    unsigned long rgb;
     palette_valid=0U;
     if(text)return mygames_dos16_text_mode(text_rows);
-    registers.h.ah=0U;
-    registers.h.al=0x13U;
-    int86(0x10,&registers,&registers);
-    registers.h.ah=0x0fU;int86(0x10,&registers,&registers);
-    if(registers.h.al!=0x13U)return 0;
-    vga_native_rows();
-    outp(0x3c8,0U);
-    for (i=0U;i<64U;++i) {
-        rgb=mysmb_io_color_rgb((mygames_kvm_u8)i);
-        outp(0x3c9,(unsigned char)((rgb>>18U)&0x3fU));
-        outp(0x3c9,(unsigned char)((rgb>>10U)&0x3fU));
-        outp(0x3c9,(unsigned char)((rgb>>2U)&0x3fU));
-    }
+    if(!mygames_dos16_vga_bios_mode(0x13U))return 0;
+    mygames_dos16_vga_native();
+    for(i=0U;i<64U;++i)
+        mygames_dos16_vga_color((unsigned char)i,mysmb_io_color_rgb((mygames_kvm_u8)i));
     return 1;
 }
 int mysmb_dos16_devices_mode(mygames_kvm_u8 text)
@@ -532,14 +440,11 @@ int mysmb_dos16_devices_mode(mygames_kvm_u8 text)
 }
 void mysmb_dos16_devices_palette(const mygames_kvm_u8 MYGAMES_KVM_FAR *palette)
 {
-    unsigned short i;unsigned long rgb;
+    unsigned short i;
     if(!video_ready || text_mode || !palette)return;
     for(i=0U;i<MYSMB_VIDEO_PALETTE_COLORS;++i){
         if(palette_valid && palette_shadow[i]==palette[i])continue;
-        rgb=mysmb_io_color_rgb(palette[i]);outp(0x3c8,i);
-        outp(0x3c9,(unsigned char)((rgb>>18U)&63UL));
-        outp(0x3c9,(unsigned char)((rgb>>10U)&63UL));
-        outp(0x3c9,(unsigned char)((rgb>>2U)&63UL));
+        mygames_dos16_vga_color((unsigned char)i,mysmb_io_color_rgb(palette[i]));
         palette_shadow[i]=palette[i];
     }
     palette_valid=1U;
@@ -581,39 +486,22 @@ void mysmb_dos16_devices_input(struct mysmb_io_input *input)
 
 /* All validated plane transfers contain a multiple of four bytes.
  * USE16 addressing, DWORD operands only; original DOS segment ABI retained. */
-static void copy_plane_dwords(unsigned char far *video,
-    const unsigned char far *pixels,unsigned short count)
-{
-    _asm {
-        push ds
-        push es
-        lds si,pixels
-        les di,video
-        mov cx,count
-        shr cx,1
-        shr cx,1
-        cld
-        _emit 0x66
-        rep movsw
-        pop es
-        pop ds
-    }
-}
+
 
 
 int mysmb_dos16_devices_present_band(const struct mygames_kvm_video_band *band)
 {
     unsigned char far *video;
-    if(!video_ready || text_mode || !band || !band->pixels || !band->rows ||
-        band->first>=240U || band->rows>16U || band->rows>240U-band->first)return 0;
-    video=(unsigned char far *)0xa0000000UL;
+    if(!video_ready || text_mode || !mygames_kvm_band_valid(band,240U) ||
+        band->width!=256U || band->stride!=256U || band->rows>16U)return 0;
+    video=mygames_dos16_vga_memory();
     /* A composition root may have written this exact logical band directly
      * to the chain-4 aperture. Keep the same synchronous ownership and
      * validation contract without copying it onto itself. */
     if(band->pixels==video+band->first*256U)return 1;
     /* Chain4 handles the plane selector/address from each CPU byte address.
      * Every band fits both segments;last source pixel is A000:EFFF. */
-    copy_plane_dwords(video+band->first*256U,band->pixels,band->rows*256U);
+    mygames_dos16_copy_dwords(video+band->first*256U,band->pixels,band->rows*256U);
     return 1;
 }
 int mysmb_dos16_devices_present_screen(const mygames_kvm_u8 MYGAMES_KVM_FAR *screen)
@@ -621,11 +509,11 @@ int mysmb_dos16_devices_present_screen(const mygames_kvm_u8 MYGAMES_KVM_FAR *scr
     unsigned char far *video;
     if(!video_ready || text_mode || !screen)return 0;
     if(!ram_mode) {
-        vga_native_rows();ram_mode=1U;retained_mode=0U;compact_mode=0U;
+        mygames_dos16_vga_native();ram_mode=1U;retained_mode=0U;compact_mode=0U;
         retained_hud_valid=0U;retained_sprite_count=0U;
     }
-    video=(unsigned char far *)0xa0000000UL;
-    copy_plane_dwords(video,screen,MYSMB_VIDEO_PIXELS);
+    video=mygames_dos16_vga_memory();
+    mygames_dos16_copy_dwords(video,screen,MYSMB_VIDEO_PIXELS);
     return 1;
 }
 mygames_kvm_u8 MYGAMES_KVM_FAR *mysmb_dos16_devices_direct_band(mygames_kvm_u16 first,
@@ -633,7 +521,7 @@ mygames_kvm_u8 MYGAMES_KVM_FAR *mysmb_dos16_devices_direct_band(mygames_kvm_u16 
 {
     if(!video_ready || text_mode || !rows || first>=240U || rows>16U ||
         rows>240U-first)return 0;
-    return (mygames_kvm_u8 MYGAMES_KVM_FAR *)0xa0000000UL+first*256U;
+    return mygames_dos16_vga_memory()+first*256U;
 }
 void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYGAMES_KVM_FAR *frame)
 {
@@ -644,7 +532,7 @@ void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYGAMES_KVM_FAR *
         text_rows=(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame);
         if(!try_mode(1U))return;
     }
-    video=(volatile unsigned short far *)0xb8000000UL;
+    video=mygames_dos16_text_memory();
     mysmb_text_frame_view(frame,&view);
     mygames_dos16_text_cells(&view,video);
 }
@@ -691,7 +579,7 @@ int mysmb_dos16_devices_retained_background(const struct mysmb_ppu_frame_view *v
     struct mysmb_ppu_scene_viewport viewport;
     if(!video_ready || text_mode || !mysmb_ppu_frame_scene_viewport(view,&viewport) ||
         !viewport.background_enabled || viewport.fixed_top)return 0;
-    if(!retained_mode) {vga_retained_rows();retained_mode=1U;}
+    if(!retained_mode) {mygames_dos16_vga_planar512();retained_mode=1U;}
     if(!mysmb_dos16_retained_background_apply(view,vga_retained_tile_all,0))return 0;
     vga_retained_viewport(viewport.scene_page,viewport.output_origin_x,viewport.output_origin_y);
     return 1;
@@ -710,7 +598,7 @@ static int retained_frame_legacy(const struct mysmb_ppu_frame_view *view)
     if(!video_ready || text_mode || !mysmb_ppu_frame_scene_viewport(view,&source) ||
         !source.background_enabled)return 0;
     if(!retained_mode) {
-        vga_retained_rows();retained_mode=1U;retained_hud_valid=0U;
+        mygames_dos16_vga_planar512();retained_mode=1U;retained_hud_valid=0U;
         retained_sprite_count=0U;
     }
     /* The old sprite area is reconstructed from current PPU background below;
@@ -733,7 +621,7 @@ static int retained_frame_legacy(const struct mysmb_ppu_frame_view *view)
     vga_retained_viewport(viewport.table,viewport.x,viewport.y);
     return 1;
 fallback:
-    vga_native_rows();retained_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
+    mygames_dos16_vga_native();retained_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
     return 0;
 }
 
@@ -750,7 +638,7 @@ int mysmb_dos16_devices_retained_frame(const struct mysmb_ppu_frame_view *view)
     if(!video_ready || text_mode || !mysmb_ppu_frame_scene_viewport(view,&source) ||
         !source.background_enabled)return 0;
     if(!compact_mode) {
-        vga_compact_rows();compact_mode=1U;compact_page=0U;
+        mygames_dos16_vga_planar264(MYSMB_DOS16_COMPACT_PAGE_A);compact_mode=1U;compact_page=0U;
     }
     retained_tile_plane=0xffU;
     if(!mysmb_dos16_retained_background_apply_planes(view,vga_compact_tile,0))goto fallback;

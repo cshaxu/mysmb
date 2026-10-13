@@ -30,7 +30,7 @@ Mario continues to ignore Tab on Win16 as previously approved.
 
 ## Gap register
 
-G01-G04 close with S7, G05 with S8 and G06 with S9; G07-G12 remain open. Each receiving S attaches
+G01-G04 close with S7, G05 with S8 and G06 with S9; G07 closes with S10; G08-G12 remain open. Each receiving S attaches
 changed-owner tests and operational evidence before closing its entries.
 
 | ID | Evidence and consequence | Disposition / receiver | Required proof |
@@ -78,7 +78,7 @@ Do not force Mine into Mario's memory model or cache footprint.
 ## Planned S roadmap
 
 Estimates include production/tests; actual changed files/lines are reported at
-closure. S6-S9 are closed; S10 is next. Tests ship with each changed owner, not at S13.
+closure. S6-S10 are closed; S11 is next. Tests ship with each changed owner, not at S13.
 
 | S | Delivery and dependencies | Estimated files / lines | Exit |
 | --- | --- | --- | --- |
@@ -86,7 +86,7 @@ closure. S6-S9 are closed; S10 is next. Tests ship with each changed owner, not 
 | S7 closed | Neutral KVM and atomic Mario adapters, G01-G04 | 20-40 /700-1600 | Both-app data/input representable; no NES maps in lib; Mario output retained |
 | S8 closed | App refresh/pause/deadlines, G05; after S7 | 8-16 /300-800 | Event-driven and60Hz clients work without host-imposed game cadence |
 | S9 closed | Win32/x64 host and Console/window mouse, G06; after S8 | 15-28 /800-1800 | Both widths and view/session/input lifecycle joins pass |
-| S10 | DOS mouse and physical graphics services, G07; after S9 | 12-24 /600-1400 | DOS probe and Mario regressions; PPU/cache semantics unchanged |
+| S10 closed | DOS mouse and physical graphics services, G07; after S9 | 12-24 /600-1400 | DOS probe and Mario regressions; PPU/cache semantics unchanged |
 | S11 | Win16 configurable graphics, window text and mouse, G08; after S10 | 12-22 /600-1400 | Actual Win3.x receipts; accepted Mario behavior preserved |
 | S12 | PCM/file/build ownership, G09-G10; after S11 | 15-30 /600-1500 | Independent no-ROM client, model ABI and product/service tests pass |
 | S13 | Full readiness joins/register reconciliation, G11-G12; after S12 | 8-16 /400-1000 | All required gaps evidenced; final checklist satisfied |
@@ -291,3 +291,53 @@ Actual implementation spans17 source/test/build files (including new owners),
 about650 inserted/170 removed lines, plus governance. Products remain ignored.
 ROM scope/expected/actual promotions0; historical1992/1992, retained1991/1992
 nodes and4260/4261feasible controls unchanged. G07-G12 remain T obligations.
+
+## S10 admission
+
+G07 only; zero ROM scope. Mouse uses caller-owned driver-save storage and
+physical events; absence is explicit. VGA register/palette/span mechanisms
+move to lib/dos16; all PPU-selected geometry, scene composition and cache
+policy remain Mario-owned. Preserve existing mode/register/transfer behavior.
+
+## S10 P1 closure receipt
+
+G07 closes. DOS library owns BIOS mode selection, VGA register profiles,
+plane/DAC/viewport writes and bounded segment copy primitives. Mario retains
+PPU interpretation, viewport/cache selection and scene composition. Extracted
+register sequences and assembly copy bodies retain their original ordering;
+mode initialization programs each DAC entry explicitly. No core/PPU change.
+
+Optional mouse service preserves the caller's driver state, configures physical
+ranges, emits KVM pointer events and restores on close. Storage is caller-owned;
+Mario does not link or allocate mouse storage. Missing driver/unsupported save
+state is explicit failure, never a fabricated capability.
+
+Reviewer sweep: DOS band submission now checks neutral span capacity, width
+and stride before its fixed Mario copy. Native probe supplies those fields.
+Mouse owner-local assertions cover absence, insufficient storage, reset failure
+rollback, duplicate open/close, range configuration, scaled position, chord
+queue, visibility and restore. Shared pointer tests own detailed transitions.
+Actual BIOS/port/assembly joins are integration-only, not host mock assertions.
+
+Both Release suites303/303 pass. Actual hidden DOSBox probe reports driver
+save484bytes, position12,9, restored320,100 and absent driver0. Actual VGA probe
+compares61440pixels with0 buffered and0 direct mismatches,61440 direct bytes,
+two graphics/text round trips, font/cursor/IRQ restoration and mode3 restored.
+No CPU/cycles configuration was changed. These are runtime capability receipts,
+not physical486 performance evidence. Win16 behavior retains S8 runtime proof;
+its rebuilt hybrid binds the new DOS stub. All three local products refreshed.
+
+DOS215segments; DGROUP53600 including2048stack; minimum load386736bytes,
+page-rounded387216; bounded maximum390832/page391312, dynamic caches excluded.
+Resident DGROUP unchanged; DOS file363035bytes,80 fewer than S9. This extraction
+claims no speedup. Native host joins retain the current15-route owner matrix.
+
+Local products (bytes / SHA256):
+- 16: 646093 / 23853cc48195e0bc484372a6681338f0d27a6716d3b70061509b6b8d79a85cae
+- 32: 418443 / 05abaafabebcfb49eac2b2df130635a20fbe5a2131af631664ce3686a9d5c780
+- 64: 382059 / 35aec024d7d6f82c2d5cc299be8f624643e7508f1768fa9f8b48a354af17c8d8
+
+Implementation affects14 source/test/build files, approximately440 added and
+165 removed lines including new owners. Products remain ignored. ROM scope,
+expected and actual promotions0; historical1992/1992, retained1991/1992 nodes
+and4260/4261 feasible controls unchanged. G08-G12 remain required T work.

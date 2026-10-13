@@ -1,11 +1,12 @@
 add_library(mygames_dos16 STATIC
+    mouse.c
     raw_keyboard.c
     pit_clock.c
     text_cells.c)
 target_include_directories(mygames_dos16 PUBLIC "${CMAKE_SOURCE_DIR}/src/lib")
 target_link_libraries(mygames_dos16 PUBLIC mygames_kvm)
 if(CMAKE_SYSTEM_NAME STREQUAL "DOS")
-    target_sources(mygames_dos16 PRIVATE host.c video_mode.c)
+    target_sources(mygames_dos16 PRIVATE host.c video_mode.c vga.c mouse_dos.c)
 endif()
 if(MSVC)
     target_compile_options(mygames_dos16 PRIVATE /W4 /WX)
@@ -19,3 +20,7 @@ add_test(NAME mygames.dos16-contract-smoke COMMAND mygames_dos16_contract_smoke)
 add_executable(mygames_dos16_pit_clock_smoke ${CMAKE_SOURCE_DIR}/test/lib/dos16/pit_clock_smoke.c)
 target_link_libraries(mygames_dos16_pit_clock_smoke PRIVATE mygames_dos16)
 add_test(NAME mygames.dos16-pit-clock-smoke COMMAND mygames_dos16_pit_clock_smoke)
+
+add_executable(mygames_dos16_mouse_smoke ${CMAKE_SOURCE_DIR}/test/lib/dos16/mouse_smoke.c)
+target_link_libraries(mygames_dos16_mouse_smoke PRIVATE mygames_dos16)
+add_test(NAME mygames.dos16-mouse-lifecycle COMMAND mygames_dos16_mouse_smoke)
