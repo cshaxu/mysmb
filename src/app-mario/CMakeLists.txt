@@ -116,8 +116,8 @@ add_executable(mysmb_io_snapshot_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/io
 target_link_libraries(mysmb_io_snapshot_smoke PRIVATE mysmb_io_snapshot)
 add_test(NAME mysmb.io-snapshot-smoke COMMAND mysmb_io_snapshot_smoke)
 add_executable(mysmb_snapshot_storage_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/app/snapshot_storage_smoke.c
-    kvm/io/file/snapshot_files.c kvm/platform/win32/snapshot_replace.c)
-target_link_libraries(mysmb_snapshot_storage_smoke PRIVATE mysmb_io_snapshot)
+    kvm/io/file/snapshot_files.c )
+target_link_libraries(mysmb_snapshot_storage_smoke PRIVATE mysmb_io_snapshot mygames_win32)
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-storage-test")
 add_test(NAME mysmb.snapshot-storage-smoke COMMAND mysmb_snapshot_storage_smoke
     "${CMAKE_BINARY_DIR}/snapshot-storage-test")
@@ -771,12 +771,6 @@ target_link_libraries(mysmb_integer_audio PUBLIC mygames_kvm)
 add_executable(mysmb_integer_audio_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/io/integer_audio_smoke.c)
 target_link_libraries(mysmb_integer_audio_smoke PRIVATE mysmb_integer_audio)
 add_test(NAME mysmb.integer-audio-smoke COMMAND mysmb_integer_audio_smoke)
-add_library(mysmb_dos16_audio STATIC kvm/platform/dos16/dos_audio.c)
-target_include_directories(mysmb_dos16_audio PUBLIC . kvm)
-target_link_libraries(mysmb_dos16_audio PUBLIC mysmb_integer_audio)
-add_executable(mysmb_dos16_audio_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/dos16/dos16_audio_smoke.c)
-target_link_libraries(mysmb_dos16_audio_smoke PRIVATE mysmb_dos16_audio)
-add_test(NAME mysmb.dos16-audio-smoke COMMAND mysmb_dos16_audio_smoke)
 add_executable(mysmb_dos16_ram_compositor_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/dos16/dos16_ram_compositor_smoke.c)
 target_link_libraries(mysmb_dos16_ram_compositor_smoke PRIVATE mysmb_dos16_ram_compositor)
 add_library(mysmb_dos16_root STATIC kvm/platform/dos16/dos16_root.c kvm/platform/dos16/keyboard.c kvm/platform/dos16/slot_copy.c)
@@ -786,8 +780,8 @@ add_executable(mysmb_dos16_root_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/pla
 target_link_libraries(mysmb_dos16_root_smoke PRIVATE mysmb_dos16_root)
 add_executable(mysmb_dos_snapshot_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/app/dos_snapshot_smoke.c
     kvm/io/file/snapshot_files.c kvm/io/file/executable_path.c
-    kvm/platform/win32/snapshot_replace.c kvm/platform/dos16/snapshot_replace.c)
-target_link_libraries(mysmb_dos_snapshot_smoke PRIVATE mysmb_dos16_root)
+    )
+target_link_libraries(mysmb_dos_snapshot_smoke PRIVATE mysmb_dos16_root mygames_win32)
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
@@ -1139,19 +1133,19 @@ if(WIN32)
         )
     target_link_libraries(mysmb_win32 PRIVATE mygames_win32 mysmb_app_input_mapping mysmb_core mysmb_game_io mysmb_io_support user32 gdi32 winmm)
     target_sources(mysmb_win32 PRIVATE kvm/io/file/snapshot_files.c
-        kvm/platform/win32/snapshot_replace.c kvm/platform/win32/audio_snapshot.c
+         kvm/platform/win32/audio_snapshot.c
         kvm/platform/win32/audio_snapshot_real.c)
     target_link_libraries(mysmb_win32 PRIVATE mysmb_game_snapshot mysmb_io_snapshot mysmb_text_elements)
     add_executable(mysmb_win32_snapshot_binding_smoke
         ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/win32/win32_snapshot_binding_smoke.c kvm/platform/win32/audio_output.c
         kvm/platform/win32/audio_renderer.c kvm/platform/win32/focus_pause.c
-        kvm/io/file/snapshot_files.c kvm/platform/win32/snapshot_replace.c
+        kvm/io/file/snapshot_files.c
         kvm/platform/win32/audio_snapshot.c kvm/platform/win32/audio_snapshot_real.c)
     add_executable(mysmb_win32_text_switch_smoke WIN32
         ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/win32/win32_text_switch_smoke.c kvm/platform/win32/audio_output.c
         kvm/platform/win32/audio_renderer.c kvm/platform/win32/focus_pause.c
         kvm/io/file/snapshot_files.c
-        kvm/platform/win32/snapshot_replace.c kvm/platform/win32/audio_snapshot.c
+         kvm/platform/win32/audio_snapshot.c
         kvm/platform/win32/audio_snapshot_real.c)
     target_link_libraries(mysmb_win32_text_switch_smoke PRIVATE
         mygames_win32 mysmb_app_input_mapping mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_snapshot user32 gdi32 winmm)
@@ -1178,7 +1172,7 @@ if(WIN32)
         kvm/platform/win32/audio_output.c
         kvm/platform/win32/audio_renderer.c)
     target_include_directories(mysmb_win32_audio_output_smoke PRIVATE . kvm)
-    target_link_libraries(mysmb_win32_audio_output_smoke PRIVATE winmm)
+    target_link_libraries(mysmb_win32_audio_output_smoke PRIVATE mygames_win32 winmm)
     add_test(NAME mysmb.win32-audio-output-smoke
         COMMAND mysmb_win32_audio_output_smoke)
     set_tests_properties(mysmb.win32-audio-output-smoke PROPERTIES
@@ -1914,7 +1908,7 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_dos16_death_audio_smoke PRIVATE . kvm
         "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_dos16_death_audio_smoke PRIVATE
-        mysmb_core mysmb_game_io mysmb_dos16_audio)
+        mysmb_core mysmb_game_io mysmb_integer_audio)
     add_test(NAME mysmb.dos16-death-audio-smoke
         COMMAND mysmb_dos16_death_audio_smoke)
     add_executable(mysmb_dos16_gameplay_audio_smoke
@@ -1923,7 +1917,7 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_dos16_gameplay_audio_smoke PRIVATE . kvm
         "${MYSMB_LOCAL_ROM_DIR}")
     target_link_libraries(mysmb_dos16_gameplay_audio_smoke PRIVATE
-        mysmb_core mysmb_game_io mysmb_dos16_audio)
+        mysmb_core mysmb_game_io mysmb_integer_audio)
     add_test(NAME mysmb.dos16-gameplay-audio-smoke
         COMMAND mysmb_dos16_gameplay_audio_smoke)
     add_executable(mysmb_local_frame_summary ${CMAKE_SOURCE_DIR}/test/app-mario/core/local_frame_summary.c

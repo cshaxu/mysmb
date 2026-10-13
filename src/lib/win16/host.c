@@ -1,5 +1,5 @@
 #include <windows.h>
-#include <string.h>
+#include "win16/memory.h"
 #include "win16/host.h"
 #include "win16/dib.h"
 #include "kvm/color.h"
@@ -59,7 +59,7 @@ static int allocate_graphics(void)
     if(!descriptors)return 0;
     bands=(struct retained_band FAR *)GlobalLock(descriptors);
     if(!bands)return 0;
-    memset(bands,0,(unsigned short)bytes);
+    mygames_win16_zero(bands,0,(unsigned short)bytes);
     for(i=0;i<band_count;++i) {
         bands[i].first=first;bands[i].rows=app->height-first;
         if(bands[i].rows>rows)bands[i].rows=rows;
@@ -86,7 +86,7 @@ static int configure_graphics(void)
         bitmap.header.biWidth=app->width;
     }
     if(retained_count==app->palette_count &&
-        !memcmp(source_colors,app->palette,retained_count*sizeof(*source_colors)))return 1;
+        !mygames_win16_compare(source_colors,app->palette,retained_count*sizeof(*source_colors)))return 1;
     if(palette){DeleteObject(palette);palette=0;}
     memset(bitmap.colors,0,sizeof(bitmap.colors));
     bitmap.header.biPlanes=1;bitmap.header.biBitCount=output_bits;
@@ -110,7 +110,7 @@ static int configure_graphics(void)
     palette=output_bits==8U?CreatePalette((LOGPALETTE FAR *)&palette_description):0;
     if(output_bits==8U && !palette)return 0;
     retained_count=app->palette_count;
-    memcpy(source_colors,app->palette,retained_count*sizeof(*source_colors));
+    mygames_win16_copy(source_colors,app->palette,retained_count*sizeof(*source_colors));
     return 1;
  }
 static void cancel_pointer(HWND window)
@@ -142,7 +142,7 @@ static int compose(void)
             if(!text_cells)return 0;
             text_capacity=count;
         }
-        for(i=0;i<text->rows;++i)memcpy(text_cells+i*text->columns,
+        for(i=0;i<text->rows;++i)mygames_win16_copy(text_cells+i*text->columns,
             text->cells+i*text->stride,text->columns*sizeof(*text_cells));
         for(i=0;i<16;++i)text_colors[i]=text->source_colors?text->colors[i]:mygames_kvm_color_text_rgb((unsigned char)i);
         text_frame=*text;text_frame.cells=text_cells;text_frame.stride=text->columns;

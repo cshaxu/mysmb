@@ -1,4 +1,4 @@
-#include "platform/dos16/dos_audio.h"
+#include "dos16/pcm.h"
 #include <string.h>
 
 static int is_space(char value)
@@ -30,8 +30,8 @@ static int parse_number(const char **cursor,unsigned long radix,unsigned long *v
     *value=total;return 1;
 }
 
-int mysmb_dos16_audio_parse_blaster(const char *value,
-    struct mysmb_dos16_audio_config *config)
+int mygames_dos16_pcm_parse_blaster(const char *value,
+    struct mygames_dos16_pcm_config *config)
 {
     unsigned long number;
     unsigned char base=0U,irq=0U,dma=0U;
@@ -66,26 +66,26 @@ int mysmb_dos16_audio_parse_blaster(const char *value,
     return base && irq && dma;
 }
 
-void mysmb_dos16_audio_initialize(struct mysmb_dos16_audio_state *state)
+void mygames_dos16_pcm_initialize(struct mygames_dos16_pcm_state *state)
 {
     if(state)memset(state,0,sizeof(*state));
 }
 
-void mysmb_dos16_audio_close(struct mysmb_dos16_audio_state *state)
+void mygames_dos16_pcm_close(struct mygames_dos16_pcm_state *state)
 {
     if(!state)return;
     if(state->reserved && state->ops && state->ops->release)
         state->ops->release(state->context);
-    mysmb_dos16_audio_initialize(state);
+    mygames_dos16_pcm_initialize(state);
 }
 
-int mysmb_dos16_audio_open(struct mysmb_dos16_audio_state *state,
-    const char *blaster,const struct mysmb_dos16_audio_ops *ops,void *context)
+int mygames_dos16_pcm_open(struct mygames_dos16_pcm_state *state,
+    const char *blaster,const struct mygames_dos16_pcm_ops *ops,void *context)
 {
-    struct mysmb_dos16_audio_config config;
+    struct mygames_dos16_pcm_config config;
     if(!state || !ops || !ops->probe || !ops->reserve || !ops->release)return 0;
-    mysmb_dos16_audio_close(state);
-    if(!mysmb_dos16_audio_parse_blaster(blaster,&config))return 0;
+    mygames_dos16_pcm_close(state);
+    if(!mygames_dos16_pcm_parse_blaster(blaster,&config))return 0;
     if(!ops->probe(context,&config))return 0;
     if(!ops->reserve(context,&config))return 0;
     state->config=config;state->ops=ops;state->context=context;
@@ -93,11 +93,11 @@ int mysmb_dos16_audio_open(struct mysmb_dos16_audio_state *state,
     return 1;
 }
 
-int mysmb_dos16_audio_reprobe(struct mysmb_dos16_audio_state *state)
+int mygames_dos16_pcm_reprobe(struct mygames_dos16_pcm_state *state)
 {
     if(!state || !state->ready || !state->ops || !state->ops->probe ||
         !state->ops->probe(state->context,&state->config)) {
-        mysmb_dos16_audio_close(state);return 0;
+        mygames_dos16_pcm_close(state);return 0;
     }
     return 1;
 }

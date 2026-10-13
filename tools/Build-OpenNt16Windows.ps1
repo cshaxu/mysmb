@@ -60,7 +60,7 @@ try {
                 # retaining the Win16 Windows ABI and unchanged core compiler.
                 $renderFlags=@('/Ox','/On','/Ow')
             }
-            & $Compiler /nologo /AL /G2sw /Gs /W3 @renderFlags /c "/Fo$object" /I $SdkIncludeDirectory /I $sourceRoot /I (Join-Path $sourceRoot 'kvm') /I (Join-Path $repository 'src/lib') /I $generated $source
+            & $Compiler /nologo /AL /G2sw /Gs /D MYGAMES_WIN16_TARGET /W3 @renderFlags /c "/Fo$object" /I $SdkIncludeDirectory /I $sourceRoot /I (Join-Path $sourceRoot 'kvm') /I (Join-Path $repository 'src/lib') /I $generated $source
             if($LASTEXITCODE){throw "Win16 compile failed: $relative"}
             $objects+=$object
         }

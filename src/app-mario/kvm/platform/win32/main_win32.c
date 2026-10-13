@@ -1,6 +1,6 @@
 #include "io/video.h"
 #include "io/color.h"
-#include "platform/win32/snapshot_replace.h"
+#include "win32/file.h"
 #include <windows.h>
 #include <string.h>
 
@@ -312,13 +312,13 @@ static void mysmb_win32_snapshot_initialize(void)
     g_snapshot_ready=0U;g_snapshot_requests=0U;
     mysmb_snapshot_keys_reset(&g_snapshot_keys);
     mysmb_game_snapshot_fingerprint(&g_game,g_snapshot_fingerprint);
-    count=GetModuleFileNameA(NULL,directory,sizeof(directory));
+    count=mygames_win32_executable_path(directory,sizeof(directory));
     if (count==0U || count>=sizeof(directory)) return;
     separator=strrchr(directory,'\\');
     if (!separator) return;
     separator[1]='\0';
     if (mysmb_file_storage_initialize(&g_snapshot_files,directory,
-        mysmb_win32_snapshot_replace,&files) &&
+        mygames_win32_file_replace,&files) &&
         mysmb_snapshot_store_initialize(&g_snapshot_store,&files)) g_snapshot_ready=1U;
 }
 static int mysmb_win32_snapshot_capture(void)

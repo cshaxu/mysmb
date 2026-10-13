@@ -30,7 +30,7 @@ Mario continues to ignore Tab on Win16 as previously approved.
 
 ## Gap register
 
-G01-G04 close with S7, G05 with S8 and G06 with S9; G07 closes with S10; G08 closes with S11; G09-G12 remain open. Each receiving S attaches
+G01-G04 close with S7, G05 with S8 and G06 with S9; G07 closes with S10; G08 closes with S11; G09-G10 close with S12; G11-G12 remain open. Each receiving S attaches
 changed-owner tests and operational evidence before closing its entries.
 
 | ID | Evidence and consequence | Disposition / receiver | Required proof |
@@ -78,7 +78,7 @@ Do not force Mine into Mario's memory model or cache footprint.
 ## Planned S roadmap
 
 Estimates include production/tests; actual changed files/lines are reported at
-closure. S6-S11 are closed; S12 is next. Tests ship with each changed owner, not at S13.
+closure. S6-S12 are closed; S13 is next. Tests ship with each changed owner, not at S13.
 
 | S | Delivery and dependencies | Estimated files / lines | Exit |
 | --- | --- | --- | --- |
@@ -88,7 +88,7 @@ closure. S6-S11 are closed; S12 is next. Tests ship with each changed owner, not
 | S9 closed | Win32/x64 host and Console/window mouse, G06; after S8 | 15-28 /800-1800 | Both widths and view/session/input lifecycle joins pass |
 | S10 closed | DOS mouse and physical graphics services, G07; after S9 | 12-24 /600-1400 | DOS probe and Mario regressions; PPU/cache semantics unchanged |
 | S11 closed | Win16 configurable graphics, window text and mouse, G08; after S10 | 12-22 /600-1400 | Actual Win3.x receipts; accepted Mario behavior preserved |
-| S12 | PCM/file/build ownership, G09-G10; after S11 | 15-30 /600-1500 | Independent no-ROM client, model ABI and product/service tests pass |
+| S12 closed | PCM/file/build ownership, G09-G10; after S11 | 15-30 /600-1500 | Independent no-ROM client, model ABI and product/service tests pass |
 | S13 | Full readiness joins/register reconciliation, G11-G12; after S12 | 8-16 /400-1000 | All required gaps evidenced; final checklist satisfied |
 
 The neutral integration client is original test code under test/lib, with no
@@ -393,3 +393,65 @@ All products republished (bytes / SHA256):
 Actual source/test/build scope11files, about570 inserted/70 removed lines.
 Scope/expected/actual ROM promotions0; historical1992/1992, retained1991/1992
 nodes and4260/4261feasible controls unchanged. G09-G12 remain required work.
+
+## S12 admission
+
+G09-G10 only. Move physical PCM and file replacement out of Mario; preserve
+app synthesis, save/pause and audio overflow/tick policy. Build shared libraries
+without ROM/Mario; qualify separate16-bit memory models, never mix objects.
+No T19 startup redesign or Mine import; zero ROM node credit.
+
+## S12 P1 closure receipt
+
+G09-G10 close. Win32 waveOut queue, DOS DSP/DMA/PIC transport and file/path
+mechanisms now live in their library owners. Mario retains APU synthesis,
+sample generation/drop policy, save codec and pause/load/reset transaction.
+Win16 PCM block size/count are caller-selected; Mario still supplies184/8.
+No core/PPU change, scheduling change or Mine import.
+
+Reviewer sweep covered open/partial-prepare/write/reset/unprepare/close
+failure, borrowed-buffer lifetime, invalid capacities and retry. Failed device
+cleanup retains driver-owned memory and cannot submit an unprepared header.
+DOS file replacement retains its existing remove/rename semantics; it is not
+claimed atomic. Win32 owns MoveFileEx and executable-path mechanics. DOS PCM
+native submission now uses a16-bit sample index, so non-Mario512-byte blocks
+cannot wrap at256. No device knows APU registers or a game frame rate.
+
+Independent small-model qualification exposed missing far qualifiers and
+near CRT copies of GlobalLock data. Shared bounded views and Win16 palette,
+DIB and PCM consumers now preserve far addresses; segmented copies use the
+appropriate far CRT. Small/large objects and CRTs are built separately.
+No-ROM/Mario CMake configuration passes18/18 owner tests. Actual DOS small
+and large static-library clients each pass36 PCM blocks of512samples, reset
+and PIC restoration. Model probes report nearPointer2/4 respectively, far4,
+16cells and a palette outside DGROUP. Actual small-model mouse reports saved
+484bytes,12/9 position,320/100 restored and absent-driver0. These are device
+lifecycle receipts, not an audible-speaker claim.
+
+Actual small-model Win3.x neutral client passes result0/failure0, four phases,
+mouse2/cancel1/command1/resize1/bands66, variable graphics/window text plus
+file replacement/path. Actual large-model Mario title/start/move/exit passes.
+Win16 PCM availability is optional on a host without a waveform driver;
+fault paths are owner-unit covered, not relabelled real audio output.
+Actual DOS Mario audio integration reports passed. VGA integration compares
+61440pixels: bufferedMismatch0/directMismatch0, directBytes61440, two round
+trips and mode3/font/cursor/IRQ restored. DOSBox CPU/cycles remain unchanged.
+
+Both Release suites306/306 and both private-desktop15-route Win32 integration
+matrices pass, including save/load/audio reset and borrowed/owned Console
+teardown. All local products refreshed. DOS216segments, DGROUP53600 including
+2048stack; minimum386832/page387216, bounded maximum390928/page391312bytes,
+dynamic caches excluded. Page-rounded load requirement remains unchanged;
+no performance improvement is claimed by this extraction.
+
+Local products (bytes / SHA256):
+- 16: 652919 / c39b9d5dfa109b6ad2ff6764df30206ad7794654ebb803e43a2304fee25b1ebc
+- 32: 419979 / 7e60ccb94a6aa67d903e069b17462b0666c7b0108084815f74738a74eeca65cd
+- 64: 383595 / d47dd8630e7d6d449d5b83a45475ea0de0785de29a9600bc4b94e7f54009b812
+
+Actual58source/test/build files,929added/704removed lines; larger than the
+initial file estimate because atomic consumer moves and far-ABI correction
+must ship together. Owner units cover each changed portable decision; physical
+BIOS/ports/WinMM/USER joins use the native receipts above. Historical1992/1992,
+retained1991/1992nodes and4260/4261feasible controls unchanged; zero scope,
+expected or actual promotions. G11-G12 remain required S13 work.

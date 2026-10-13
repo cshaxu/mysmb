@@ -9,7 +9,7 @@ unsigned long mygames_kvm_color_text_rgb(mygames_kvm_u8 index);
 mygames_kvm_u8 mygames_kvm_color_text_nearest(unsigned long rgb);
 /* Project the neutral sixteen text slots onto fixed hardware/API attributes.
  * Source RGB slots are reduced once; canonical slots retain their identity. */
-void mygames_kvm_color_text_attributes(const unsigned long *colors,
+void mygames_kvm_color_text_attributes(const unsigned long MYGAMES_KVM_FAR *colors,
     mygames_kvm_u8 source_colors,mygames_kvm_u8 attributes[16]);
 
 /* Black/white ink chosen for a canonical text background. */

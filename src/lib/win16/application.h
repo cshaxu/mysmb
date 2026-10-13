@@ -29,7 +29,7 @@ struct mygames_win16_application {
     int (*graphics)(void *,struct mygames_kvm_video_band *);
     /* Geometry/palette can change during update; set dirty to publish them.
      * Menu labels/counts remain fixed during run; flags may change in update. */
-    const unsigned long *palette;
+    const unsigned long MYGAMES_KVM_FAR *palette;
     mygames_kvm_u16 palette_count;
     mygames_kvm_u16 width,height;
     const struct mygames_win16_menu *menus;

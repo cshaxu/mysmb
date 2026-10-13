@@ -3,6 +3,8 @@ if(NOT WIN32)
 endif()
 
 add_library(mygames_win32 STATIC
+    pcm.c
+    file.c
     frame_wait.c
     input.c
     launch.c
@@ -28,3 +30,13 @@ add_test(NAME mygames.win32-contract-smoke COMMAND mygames_win32_contract_smoke)
 # Actual window/Console input needs the named private-desktop integration target.
 add_executable(mygames_win32_devices_probe ${CMAKE_SOURCE_DIR}/test/lib/win32/host_devices_probe.c)
 target_link_libraries(mygames_win32_devices_probe PRIVATE mygames_win32)
+
+add_executable(mygames_win32_pcm_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/pcm_smoke.c)
+target_link_libraries(mygames_win32_pcm_smoke PRIVATE mygames_win32)
+add_test(NAME mygames.win32-pcm-lifecycle COMMAND mygames_win32_pcm_smoke)
+
+add_executable(mygames_win32_file_smoke ${CMAKE_SOURCE_DIR}/test/lib/win32/file_smoke.c)
+target_link_libraries(mygames_win32_file_smoke PRIVATE mygames_win32)
+file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/file-test")
+add_test(NAME mygames.win32-file-replace COMMAND mygames_win32_file_smoke)
+set_tests_properties(mygames.win32-file-replace PROPERTIES WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/file-test")

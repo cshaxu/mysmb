@@ -1,7 +1,7 @@
 #include "kvm/windows_key.h"
 #include "io/video.h"
 #include "io/color.h"
-#include "platform/win32/snapshot_replace.h"
+#include "win32/file.h"
 #include "kvm/glyph.h"
 #include <windows.h>
 #include <string.h>
@@ -371,7 +371,7 @@ static int text_snapshot_route(HWND window,const char *directory)
     if(!CreateDirectoryA(directory,NULL) && GetLastError()!=ERROR_ALREADY_EXISTS)return 29;
     mysmb_win32_power_on();mysmb_win32_snapshot_initialize();
     if(!mysmb_file_storage_initialize(&g_snapshot_files,directory,
-        mysmb_win32_snapshot_replace,&files) ||
+        mygames_win32_file_replace,&files) ||
         !mysmb_snapshot_store_initialize(&g_snapshot_store,&files))return 30;
     g_snapshot_ready=1U;
     mysmb_win32_audio_renderer_initialize(&g_audio_output.renderer);

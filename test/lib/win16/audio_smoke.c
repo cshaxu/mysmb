@@ -31,23 +31,28 @@ int main(void)
 {
     unsigned i;unsigned char samples[184];memset(samples,42,sizeof(samples));
     if(mygames_win16_audio_submit(samples,184) || mygames_win16_audio_reset())return 1;
-    for(fail=1;fail<=6;++fail){prepared=0;if(mygames_win16_audio_open(11025UL) || libraries || allocations || locks || opens)return 2;}
+    for(fail=1;fail<=6;++fail){prepared=0;if(mygames_win16_audio_open(11025UL,184U,8U) || libraries || allocations || locks || opens)return 2;}
     fail=0;prepared=0;
-    if(mygames_win16_audio_open(0UL) || !mygames_win16_audio_open(11025UL) || prepared!=8)return 3;
+    if(mygames_win16_audio_open(0UL,184U,8U) || !mygames_win16_audio_open(11025UL,184U,8U) || prepared!=8)return 3;
     if(mygames_win16_audio_submit(0,1) || mygames_win16_audio_submit(samples,0) || mygames_win16_audio_submit(samples,185))return 4;
     fail=7;if(mygames_win16_audio_submit(samples,183))return 5;fail=0;
     for(i=0;i<8;++i)if(!mygames_win16_audio_submit(samples,183))return 6;
     if(writes!=8 || headers[0]->dwBufferLength!=183 || memcmp(headers[0]->lpData,samples,183) || mygames_win16_audio_submit(samples,184))return 7;
     fail=8;mygames_win16_audio_close();if(!allocations || !opens)return 8;
     fail=0;if(!mygames_win16_audio_reset() || !mygames_win16_audio_submit(samples,184))return 9;
-    fail=9;mygames_win16_audio_close();if(!allocations || !opens)return 10;
+    fail=9;mygames_win16_audio_close();if(!allocations || !opens || mygames_win16_audio_submit(samples,184))return 10;
     fail=10;mygames_win16_audio_close();if(!allocations || !opens)return 11;
     fail=0;mygames_win16_audio_close();mygames_win16_audio_close();
     if(libraries || allocations || locks || opens || !closed)return 12;
     prepared=0;fail=11;stamp=100;
-    if(mygames_win16_audio_open(11025UL) || allocations || opens)return 13;
+    if(mygames_win16_audio_open(11025UL,184U,8U) || allocations || opens)return 13;
     fail=0;stamp=1099;if(mygames_win16_audio_submit(samples,184) || opens)return 14;
     stamp=1100;if(!mygames_win16_audio_submit(samples,184) || !opens)return 15;
+    mygames_win16_audio_close();
+    prepared=0;
+    if(mygames_win16_audio_open(11025UL,65535U,8U) ||
+        !mygames_win16_audio_open(11025UL,256U,3U) || prepared!=3)return 16;
+    if(!mygames_win16_audio_submit(samples,184))return 17;
     mygames_win16_audio_close();
     return libraries || allocations || locks || opens;
 }

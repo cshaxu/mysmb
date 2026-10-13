@@ -7,7 +7,7 @@ typedef unsigned short mygames_kvm_u16;
 
 /* Bounded borrowed storage need not be in DGROUP.
  * Only the pointer representation changes for the real-mode compiler. */
-#ifdef MYGAMES_DOS16_TARGET
+#if defined(MYGAMES_DOS16_TARGET) || defined(MYGAMES_WIN16_TARGET)
 #define MYGAMES_KVM_FAR __far
 #else
 #define MYGAMES_KVM_FAR

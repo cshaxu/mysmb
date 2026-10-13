@@ -114,7 +114,7 @@ dos16 = repository / "src" / "lib" / "dos16"
 for path in dos16.rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
-        if not include.startswith(("dos16/", "kvm/")) and include not in ("string.h", "dos.h", "conio.h"):
+        if not include.startswith(("dos16/", "kvm/")) and include not in ("string.h", "dos.h", "conio.h", "stdio.h", "errno.h", "stdlib.h"):
             print(f"{path.relative_to(repository)}: DOS16 host imports {include}")
             sys.exit(1)
     for token in ("MYSMB_", "mysmb_", "struct mysmb_game", "core/", "ppu/"):

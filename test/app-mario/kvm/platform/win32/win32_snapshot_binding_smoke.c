@@ -1,4 +1,4 @@
-#include "platform/win32/snapshot_replace.h"
+#include "win32/file.h"
 #include <windows.h>
 #include <stdio.h>
 static HWND owned_window;
@@ -47,7 +47,7 @@ int main(int argc,char **argv)
      * supplied build directory after this assertion. */
     if(!g_snapshot_ready || !strstr(g_snapshot_files.directory,"build"))return 4;
     if(!mysmb_file_storage_initialize(&g_snapshot_files,argv[1],
-        mysmb_win32_snapshot_replace,&files) ||
+        mygames_win32_file_replace,&files) ||
         !mysmb_snapshot_store_initialize(&g_snapshot_store,&files))return 5;
     QueryPerformanceFrequency(&g_frequency);QueryPerformanceCounter(&g_last_tick);
     mysmb_win32_focus_pause_initialize(&g_focus_pause);
@@ -88,10 +88,13 @@ int main(int argc,char **argv)
         memcmp(&expected,&actual,sizeof(expected)))return 10;
     /* Load at title without Enter;pending audio flags and clock debt reset. */
     mysmb_win32_window_proc(owned_window,WM_KEYUP,'P',0);
-    mysmb_win32_power_on();g_audio_output.next=7U;g_audio_output.queued[0]=1U;
+    mysmb_win32_power_on();
+    /* Model the borrowed queue descriptors without opening an audio device. */
+    g_audio_output.pcm.queued=g_audio_output.queued;g_audio_output.pcm.count=MYSMB_WIN32_AUDIO_BUFFERS;
+    g_audio_output.pcm.next=7U;g_audio_output.queued[0]=1U;
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0);
     if(!mysmb_win32_snapshot_request(owned_window) || !mysmb_game_is_paused(&g_game) ||
-        !g_game_started || g_audio_output.next || g_audio_output.queued[0])return 11;
+        !g_game_started || g_audio_output.pcm.next || g_audio_output.queued[0])return 11;
     mysmb_game_snapshot_capture(&g_game,&actual,g_snapshot_fingerprint);
     mysmb_win32_audio_capture(&g_audio_output.renderer,actual.payload+MYSMB_SNAPSHOT_CORE_BYTES);
     if(memcmp(&expected,&actual,sizeof(actual)))return 12;

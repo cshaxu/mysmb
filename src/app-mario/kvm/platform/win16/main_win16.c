@@ -165,7 +165,7 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
         return 2;
     }
     mysmb_audio_renderer_initialize(&renderer);
-    (void)mygames_win16_audio_open(MYSMB_AUDIO_SAMPLE_RATE);
+    (void)mygames_win16_audio_open(MYSMB_AUDIO_SAMPLE_RATE,184U,8U);
     mysmb_ppu_frame_workspace_bind(&workspace,decoded);
     background=GlobalAlloc(GMEM_MOVEABLE,MYSMB_PPU_BACKGROUND_BYTES);
     background_bytes=background?(unsigned char FAR *)GlobalLock(background):0;

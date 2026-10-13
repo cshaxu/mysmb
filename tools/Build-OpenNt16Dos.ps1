@@ -87,8 +87,8 @@ $sources = @(
     'kvm/text/elements.c', 'kvm/text/compact_elements.c', 'kvm/text/layout.c', 'kvm/text/actor_scene.c',
     'kvm/text/background_scene.c', 'kvm/text/caption_scene.c',
     'kvm/text/scene.c',
-    'kvm/io/color.c','kvm/app/game_io.c', 'kvm/app/game_snapshot.c', 'kvm/io/palette_pairs.c', 'kvm/io/palette_expand.c', 'kvm/io/scale.c', 'kvm/io/pacing.c', 'kvm/io/control.c', 'kvm/io/snapshot.c', 'kvm/io/snapshot_store.c', 'kvm/io/snapshot_keys.c', 'kvm/io/file/snapshot_files.c', 'kvm/platform/dos16/snapshot_replace.c', 'kvm/platform/dos16/keyboard.c', 'kvm/platform/dos16/dos_audio.c', 'kvm/io/audio_renderer.c', 'kvm/platform/dos16/dos_audio_dos.c', 'kvm/platform/dos16/devices.c',
-    'kvm/io/file/executable_path.c', 'kvm/platform/dos16/executable_path.c',
+    'kvm/io/color.c','kvm/app/game_io.c', 'kvm/app/game_snapshot.c', 'kvm/io/palette_pairs.c', 'kvm/io/palette_expand.c', 'kvm/io/scale.c', 'kvm/io/pacing.c', 'kvm/io/control.c', 'kvm/io/snapshot.c', 'kvm/io/snapshot_store.c', 'kvm/io/snapshot_keys.c', 'kvm/io/file/snapshot_files.c', 'kvm/platform/dos16/keyboard.c', 'kvm/io/audio_renderer.c', 'kvm/platform/dos16/dos_audio_dos.c', 'kvm/platform/dos16/devices.c',
+    'kvm/io/file/executable_path.c',
     'kvm/io/planar_frame.c', 'kvm/platform/dos16/planar_row.c', 'kvm/platform/dos16/palette_expand.c', 'kvm/platform/dos16/nibble_expand.c', 'kvm/platform/dos16/slot_copy.c', 'kvm/platform/dos16/retained_background.c', 'kvm/platform/dos16/compact_vga_layout.c', 'kvm/platform/dos16/ram_compositor.c', 'kvm/platform/dos16/dos16_root.c',
     'kvm/platform/dos16/main_dos16.c'
 )
@@ -170,7 +170,7 @@ try {
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $objects += $object
     }
-    foreach ($dos16Source in @('raw_keyboard.c','pit_clock.c','text_cells.c','host.c','video_mode.c','vga.c')) {
+    foreach ($dos16Source in @('raw_keyboard.c','pit_clock.c','text_cells.c','host.c','video_mode.c','vga.c','file.c','pcm.c','pcm_dos.c','executable_path.c')) {
         $object = 'dos16_' + [IO.Path]::ChangeExtension($dos16Source, '.obj')
         & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Fo$object /I $dos16IncludeDirectory /I $kvmIncludeDirectory /I $runtimeIncludeDirectory (Join-Path $dos16Root $dos16Source)
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

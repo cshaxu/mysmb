@@ -1,7 +1,7 @@
 #include "io/video.h"
 #include "platform/dos16/planar_row.h"
-#include "platform/dos16/executable_path.h"
-#include "platform/dos16/snapshot_replace.h"
+#include "dos16/file.h"
+#include "dos16/file.h"
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/devices.h"
 #include "platform/dos16/ram_compositor.h"
@@ -121,10 +121,10 @@ static int initialize(void)
     mysmb_game_bind_title_source(&root.game,mysmb_local_title_data,
         MYSMB_LOCAL_TITLE_DATA_SIZE,mysmb_local_title_icon_data,MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
 #endif
-    if(mysmb_dos16_executable_path(path,sizeof(path)) &&
+    if(mygames_dos16_executable_path(path,sizeof(path)) &&
         mysmb_file_executable_directory(path,directory,sizeof(directory)) &&
         mysmb_file_storage_initialize(&snapshot_storage,directory,
-            mysmb_dos16_snapshot_replace,&files) &&
+            mygames_dos16_file_replace,&files) &&
         mysmb_snapshot_store_initialize(snapshot_store,&files))
         mysmb_dos16_root_bind_snapshot(&root,snapshot_store,reset_output,0);
     /* S18's current-background sprite-union presenter passed physical VGA

@@ -1,6 +1,6 @@
 #include "io/video.h"
-#include "platform/win32/snapshot_replace.h"
-#include "platform/dos16/snapshot_replace.h"
+#include "win32/file.h"
+#include "dos16/file.h"
 #include <stdio.h>
 #include <string.h>
 #include "platform/dos16/dos16_root.h"
@@ -73,7 +73,7 @@ int main(int argc,char **argv)
     mysmb_game_bind_title_source(&root.game,mysmb_local_title_data,MYSMB_LOCAL_TITLE_DATA_SIZE,
         mysmb_local_title_icon_data,MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
 #endif
-    if(!mysmb_file_storage_initialize(&storage,argv[1],mysmb_win32_snapshot_replace,&files) ||
+    if(!mysmb_file_storage_initialize(&storage,argv[1],mygames_win32_file_replace,&files) ||
         !mysmb_snapshot_store_initialize(&store,&files))return 8;
     mysmb_dos16_root_bind_snapshot(&root,&store,reset,&host);
     mysmb_dos16_root_bind_clock(&root,resume_clock);
@@ -128,7 +128,7 @@ int main(int argc,char **argv)
         char pending[300];
         file=fopen(path,"wb");if(!file)return 13;
         fputc(1,file);fclose(file);sprintf(pending,"%s/missing.tmp",argv[1]);
-        if(mysmb_dos16_snapshot_replace(pending,path))return 14;
+        if(mygames_dos16_file_replace(pending,path))return 14;
         file=fopen(path,"rb");if(file){fclose(file);return 15;}
     }
     mysmb_dos16_root_shutdown(&root);

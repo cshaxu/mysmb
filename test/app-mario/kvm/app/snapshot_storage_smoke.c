@@ -1,4 +1,4 @@
-#include "platform/win32/snapshot_replace.h"
+#include "win32/file.h"
 #include "io/snapshot_store.h"
 #include "io/file/snapshot_files.h"
 #include <stdio.h>
@@ -175,7 +175,7 @@ int main(int argc,char **argv)
     fault=0;loaded=mysmb_snapshot_load(&store,state.fingerprint);
     if(!loaded || memcmp(&live,loaded,sizeof(live)))return 21;
     /* Actual file services: same directory despite arbitrary working dir. */
-    if (!mysmb_file_storage_initialize(&disk,argv[1],mysmb_win32_snapshot_replace,
+    if (!mysmb_file_storage_initialize(&disk,argv[1],mygames_win32_file_replace,
         &files) || !mysmb_snapshot_store_initialize(&store,&files)) return 10;
     if (!mysmb_snapshot_save(&store,&state)) return 11;
     state.payload[0]=31U;
@@ -194,7 +194,7 @@ int main(int argc,char **argv)
     if(!log_values(&files,argv[1]))return 22;
     /* A missing directory makes both save and log fail silently. */
     sprintf(path,"%s/nonexistent",argv[1]);
-    if (!mysmb_file_storage_initialize(&disk,path,mysmb_win32_snapshot_replace,
+    if (!mysmb_file_storage_initialize(&disk,path,mygames_win32_file_replace,
         &files) || !mysmb_snapshot_store_initialize(&store,&files) ||
         mysmb_snapshot_save(&store,&state)) return 19;
     return 0;

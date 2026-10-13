@@ -3,6 +3,7 @@
 
 #include <windows.h>
 #include <mmsystem.h>
+#include "win32/pcm.h"
 
 #include "platform/win32/audio_renderer.h"
 
@@ -11,12 +12,10 @@
 #define MYSMB_WIN32_AUDIO_BUFFERS 8U
 
 struct mysmb_win32_audio_output {
-    HWAVEOUT device;
+    struct mygames_win32_pcm pcm;
     WAVEHDR headers[MYSMB_WIN32_AUDIO_BUFFERS];
     short samples[MYSMB_WIN32_AUDIO_BUFFERS][MYSMB_WIN32_AUDIO_FRAME_SAMPLES];
-    unsigned int prepared;
-    unsigned int queued[MYSMB_WIN32_AUDIO_BUFFERS];
-    unsigned int next;
+    unsigned char queued[MYSMB_WIN32_AUDIO_BUFFERS];
     struct mysmb_win32_audio_renderer renderer;
 };
 

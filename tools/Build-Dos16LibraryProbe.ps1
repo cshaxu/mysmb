@@ -2,6 +2,7 @@ param(
     [Parameter(Mandatory=$true)][string]$ProbeSource,
     [Parameter(Mandatory=$true)][string[]]$Sources,
     [Parameter(Mandatory=$true)][string]$OutputDirectory,
+    [string[]]$IncludeDirectories=@(),
     [ValidateSet('S','L')][string]$MemoryModel='L',
     [switch]$CompileOnly,
     [switch]$LinkOnly
@@ -14,6 +15,7 @@ if(!$output.StartsWith($build,[StringComparison]::OrdinalIgnoreCase)){throw 'Pro
 $compiler=Join-Path $repository 'tools/dos16/cl16.exe'
 $linker=Join-Path $repository 'tools/dos16/link16.exe'
 $runtime=Join-Path $repository 'tools/dos16/runtime'
+$includes=@($IncludeDirectories | ForEach-Object {'/I';(Resolve-Path -LiteralPath $_).Path})
 $inputs=@($ProbeSource)+$Sources
 $inputs=@($inputs | ForEach-Object {(Resolve-Path -LiteralPath $_).Path})
 New-Item -ItemType Directory -Force $output | Out-Null
@@ -26,11 +28,16 @@ try {
         $objects=@()
         for($i=0;$i -lt $inputs.Count;++$i) {
             $object="unit$i.obj";$objects+=$object
-            & $compiler /nologo "/A$MemoryModel" /Gs /Oas /D MYGAMES_DOS16_TARGET /c "/Fo$object" /I (Join-Path $repository 'src/lib') /I (Join-Path $runtime 'INC') $inputs[$i]
+            & $compiler /nologo "/A$MemoryModel" /Gs /Oas /D MYGAMES_DOS16_TARGET /c "/Fo$object" @includes /I (Join-Path $repository 'src/lib') /I (Join-Path $runtime 'INC') $inputs[$i]
             if($LASTEXITCODE -ne 0){throw "Probe compilation failed: $($inputs[$i])"}
         }
         Copy-Item (Join-Path $runtime "LIB/${MemoryModel}VARSTCK.OBJ") stack.obj -Force
-        $objects+='stack.obj'
+        $library='device.lib'
+        if(Test-Path -LiteralPath $library){Remove-Item -LiteralPath $library -Force}
+        $librarian=Join-Path (Split-Path $compiler) 'lib16.exe'
+        & $librarian /NOLOGO $library @($objects[1..($objects.Count-1)] | ForEach-Object {'+'+$_}) ';'
+        if($LASTEXITCODE){throw 'Model-qualified probe library failed.'}
+        $objects=@($objects[0],$library,'stack.obj')
         @(($objects-join "+`n"),'probe.exe','probe.map',(Join-Path $runtime "LIB/${MemoryModel}LIBCE.LIB")) | Set-Content -Encoding ascii probe.rsp
     }
     if(!$CompileOnly) {

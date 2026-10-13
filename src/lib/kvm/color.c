@@ -27,7 +27,7 @@ mygames_kvm_u8 mygames_kvm_color_text_nearest(unsigned long rgb)
     return (mygames_kvm_u8)best;
 }
 
-void mygames_kvm_color_text_attributes(const unsigned long *colors,
+void mygames_kvm_color_text_attributes(const unsigned long MYGAMES_KVM_FAR *colors,
     mygames_kvm_u8 source_colors,mygames_kvm_u8 attributes[16])
 {
     unsigned short i;

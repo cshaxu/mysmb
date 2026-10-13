@@ -1,7 +1,6 @@
-#include "platform/dos16/executable_path.h"
-#include "io/file/executable_path.h"
+#include "dos16/file.h"
 #include <dos.h>
-int mysmb_dos16_executable_path(char *path,mygames_kvm_u16 capacity)
+int mygames_dos16_executable_path(char *path,mygames_kvm_u16 capacity)
 {
     union REGS registers;
     unsigned short far *environment_segment;

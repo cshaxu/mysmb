@@ -1,9 +1,8 @@
-#include "platform/dos16/snapshot_replace.h"
-#include "io/file/snapshot_files.h"
+#include "dos16/file.h"
 #include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>
-int mysmb_dos16_snapshot_replace(const char *pending,const char *final_name)
+int mygames_dos16_file_replace(const char *pending,const char *final_name)
 {
     /* DOS rename cannot atomically replace. Preserve the old slot until this
      * final close-complete window,then report any rename failure to shared IO. */
