@@ -5,7 +5,7 @@
 #include "kvm/input_event.h"
 
 struct mysmb_app_input_mapping {
-    mygames_kvm_u8 down[16];
+    mygames_kvm_u8 down[MYGAMES_KVM_PHYSICAL_KEY_COUNT];
 };
 
 void mysmb_app_input_mapping_initialize(struct mysmb_app_input_mapping *mapping);

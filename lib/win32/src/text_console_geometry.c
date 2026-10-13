@@ -1,9 +1,9 @@
-#include "platform/win32/text_console_geometry.h"
-#include "platform/win32/text_console_policy.h"
+#include "win32/text_console_geometry.h"
+#include "win32/text_console_policy.h"
 
 /* Only an actual visible host window may be shown or geometrically managed.
  * A notification HWND is not a window capability;no class-name policy. */
-unsigned char mysmb_win32_console_window(HWND window)
+unsigned char mygames_win32_console_window(HWND window)
 {
     RECT rect;
     return (unsigned char)(window && IsWindowVisible(window) &&
@@ -13,7 +13,7 @@ unsigned char mysmb_win32_console_window(HWND window)
  * no usable host window. It accepts the VT mode bit for compatibility but
  * does not expose a terminal RGB presentation surface. This is a measured
  * device capability, not a process, launcher or title classification. */
-unsigned char mysmb_win32_console_indexed_carrier(struct mysmb_win32_text_console *console)
+unsigned char mygames_win32_console_indexed_carrier(struct mygames_win32_text_console *console)
 {
     CONSOLE_FONT_INFOEX font;
     if(console->window_usable)return 0U;
@@ -21,7 +21,7 @@ unsigned char mysmb_win32_console_indexed_carrier(struct mysmb_win32_text_consol
     if(!GetCurrentConsoleFontEx(console->output,FALSE,&font))return 0U;
     return (unsigned char)(font.dwFontSize.X==2 && font.dwFontSize.Y==4);
 }
-void mysmb_win32_console_fit(struct mysmb_win32_text_console *console,
+void mygames_win32_console_fit(struct mygames_win32_text_console *console,
     unsigned char initial)
 {
     CONSOLE_FONT_INFOEX font;
@@ -34,11 +34,12 @@ void mysmb_win32_console_fit(struct mysmb_win32_text_console *console,
      * makes its viewport temporarily unrepresentable while it is sampled.
      * Font fitting is only meaningful for a visible host HWND. */
     if(!console->window_usable)return;
-    console->rows=mysmb_win32_console_rows(console->rows);
+    console->rows=mygames_win32_console_rows(console->rows);
     if(!initial && console->window_usable && GetClientRect(console->window,&client)) {
         unsigned int x=(unsigned int)(client.right-client.left)/80U;
         unsigned int y=(unsigned int)(client.bottom-client.top)/(console->rows*(console->rows==25U?2U:1U));
-        if(x<target)target=x;if(y<target)target=y;
+        if(x<target)target=x;
+        if(y<target)target=y;
         if(target<4U)target=4U;
     }
     ZeroMemory(&font,sizeof(font));font.cbSize=sizeof(font);
@@ -62,7 +63,7 @@ void mysmb_win32_console_fit(struct mysmb_win32_text_console *console,
 /* Probe device operations themselves,not the availability of a host HWND.
  * One optional entry attempt restores the former80x50contract on ConPTY too.
  * Never repeat this sequence per frame on a non-window host. */
-unsigned char mysmb_win32_console_size(struct mysmb_win32_text_console *console,
+unsigned char mygames_win32_console_size(struct mygames_win32_text_console *console,
     COORD size,const SMALL_RECT *view)
 {
     SMALL_RECT tiny={0,0,0,0};
@@ -98,16 +99,16 @@ unsigned char mysmb_win32_console_size(struct mysmb_win32_text_console *console,
 
 /* Resize is an optional geometry operation,never a device-loss signal.
  * Apply font/geometry only after a settled change,not on every video frame. */
-int mysmb_win32_console_geometry(struct mysmb_win32_text_console *console)
+int mygames_win32_console_geometry(struct mygames_win32_text_console *console)
 {
     CONSOLE_SCREEN_BUFFER_INFO info;
     COORD size,visible;
     SMALL_RECT view={0,0,79,49};
     DWORD now=GetTickCount();
-    console->rows=mysmb_win32_console_rows(console->rows);
+    console->rows=mygames_win32_console_rows(console->rows);
     view.Bottom=(SHORT)(console->rows-1U);
-    if(!GetConsoleScreenBufferInfo(console->output,&info))return MYSMB_WIN32_CONSOLE_DEFER;
-    if(console->window_usable && IsIconic(console->window))return MYSMB_WIN32_CONSOLE_DEFER;
+    if(!GetConsoleScreenBufferInfo(console->output,&info))return MYGAMES_WIN32_CONSOLE_DEFER;
+    if(console->window_usable && IsIconic(console->window))return MYGAMES_WIN32_CONSOLE_DEFER;
     visible.X=(SHORT)(info.srWindow.Right-info.srWindow.Left+1);
     visible.Y=(SHORT)(info.srWindow.Bottom-info.srWindow.Top+1);
     if(visible.X!=console->observed_view.X || visible.Y!=console->observed_view.Y) {
@@ -116,11 +117,11 @@ int mysmb_win32_console_geometry(struct mysmb_win32_text_console *console)
     }
     if(console->geometry_pending && now-console->fit_changed_at>=150U) {
         console->geometry_pending=0U;
-        mysmb_win32_console_fit(console,0U);
+        mygames_win32_console_fit(console,0U);
         if(console->window_usable && !IsZoomed(console->window)) {
             size.X=80;size.Y=(SHORT)console->rows;
-            if(mysmb_win32_console_size(console,size,&view))console->geometry_usable=1U;
+            if(mygames_win32_console_size(console,size,&view))console->geometry_usable=1U;
         }
     }
-    return MYSMB_WIN32_CONSOLE_READY;
+    return MYGAMES_WIN32_CONSOLE_READY;
 }

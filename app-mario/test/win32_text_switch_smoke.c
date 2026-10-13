@@ -123,21 +123,22 @@ static int geometry_route(HINSTANCE instance)
     window=CreateWindow("MySMBTextSwitchProbe","geometry",WS_OVERLAPPEDWINDOW,
         30,30,initial.right-initial.left,initial.bottom-initial.top,NULL,NULL,instance,NULL);
     if(!window)return 90;
-    if(!mysmb_win32_initial_client(window))return 130;
+    if(!mygames_win32_window_initial_client(window,&g_window_geometry))return 130;
     GetClientRect(window,&client);
-    w=MulDiv(32,(int)mysmb_win32_window_dpi(window),96);
+    w=MulDiv(32,(int)mygames_win32_window_dpi(window),96);
     if(client.right!=w*16 || client.bottom!=w*15)return 131;
     for(dpi=96U;dpi<=192U;dpi+=48U) {
-        mysmb_win32_window_margins(window,dpi,&margins);
+        mygames_win32_window_margins(window,dpi,&margins);
         for(edge=WMSZ_LEFT;edge<=WMSZ_BOTTOMRIGHT;++edge) {
             SetRect(&rect,40,40,813,709);
-            mysmb_win32_size_rectangle(window,&rect,edge,dpi);
+            mygames_win32_window_size_rectangle(window,&rect,edge,dpi,
+                &g_window_geometry);
             w=rect.right-rect.left-(margins.right-margins.left);
             h=rect.bottom-rect.top-(margins.bottom-margins.top);
             if(w<256 || h<240 || w*15!=h*16)return 91;
         }
     }
-    mysmb_win32_window_margins(window,mysmb_win32_window_dpi(window),&margins);
+    mygames_win32_window_margins(window,mygames_win32_window_dpi(window),&margins);
     for(edge=WMSZ_LEFT;edge<=WMSZ_BOTTOMRIGHT;++edge) {
         SetRect(&rect,40,40,43,43);
         SendMessage(window,WM_SIZING,edge,(LPARAM)&rect);
@@ -336,7 +337,7 @@ static int injected_key(WORD expected,unsigned char down,WORD *key,
     /* AllocConsole may enqueue focus/window events after the explicit flush.
      * Ignore only non-key records; an unexpected key must still fail. */
     while(remaining--!=0U &&
-        mysmb_win32_text_console_key(&g_console,key,&scan,pressed)) {
+        mygames_win32_text_console_key(&g_console,key,&scan,pressed)) {
         if(*key!=0U)return *key==expected && *pressed==down;
     }
     return 0;
@@ -468,7 +469,8 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
     HWND owned_console_window=NULL;
     int result;
     (void)previous;(void)command;(void)show;
-    mysmb_win32_enable_dpi();
+    mygames_win32_window_enable_dpi();
+    mygames_win32_window_geometry_initialize(&g_window_geometry,16,15,16,32);
     ZeroMemory(&wc,sizeof(wc));wc.lpfnWndProc=mysmb_win32_window_proc;
     wc.hInstance=instance;wc.lpszClassName="MySMBTextSwitchProbe";
     if(!RegisterClass(&wc))return 1;
@@ -598,11 +600,11 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
         HANDLE input=g_console.input;
         int accepted;
         g_console.input=INVALID_HANDLE_VALUE;
-        accepted=mysmb_win32_text_console_present(&g_console,&glyph_frame);
+        accepted=mygames_win32_text_console_present(&g_console,&glyph_frame);
         g_console.input=input;
         if(accepted)return 132;
     }
-    if(!mysmb_win32_text_console_present(&g_console,&glyph_frame))return 46;
+    if(!mygames_win32_text_console_present(&g_console,&glyph_frame))return 46;
     if(!g_console.vt_output) {
         view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console_rows-1U);
         if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 47;
@@ -610,8 +612,8 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
             if(cells[i].Char.UnicodeChar!=glyph_unicode[i])return 48;
     }
     glyph_frame.cells[0].character=0x80U;
-    if(mysmb_win32_text_console_present(&g_console,&glyph_frame))return 49;
-    if(!mysmb_win32_text_console_present(&g_console,&g_text_frame))return 50;
+    if(mygames_win32_text_console_present(&g_console,&glyph_frame))return 49;
+    if(!mygames_win32_text_console_present(&g_console,&g_text_frame))return 50;
     result=console_restore_route();if(result)return result;
     /* Real owned console input,including a held repeat and physical break. */
     FlushConsoleInputBuffer(g_console.input);

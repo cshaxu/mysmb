@@ -10,7 +10,10 @@ enum mygames_kvm_physical_key {
     MYGAMES_KVM_KEY_A, MYGAMES_KVM_KEY_D, MYGAMES_KVM_KEY_W, MYGAMES_KVM_KEY_S,
     MYGAMES_KVM_KEY_J, MYGAMES_KVM_KEY_K, MYGAMES_KVM_KEY_P, MYGAMES_KVM_KEY_O,
     MYGAMES_KVM_KEY_TAB, MYGAMES_KVM_KEY_ENTER, MYGAMES_KVM_KEY_LEFT_SHIFT,
-    MYGAMES_KVM_KEY_RIGHT_SHIFT, MYGAMES_KVM_KEY_ESCAPE
+    MYGAMES_KVM_KEY_RIGHT_SHIFT, MYGAMES_KVM_KEY_ESCAPE,
+    MYGAMES_KVM_KEY_LEFT_ARROW, MYGAMES_KVM_KEY_RIGHT_ARROW,
+    MYGAMES_KVM_KEY_UP_ARROW, MYGAMES_KVM_KEY_DOWN_ARROW,
+    MYGAMES_KVM_PHYSICAL_KEY_COUNT
 };
 
 enum mygames_kvm_physical_mouse_button {
@@ -29,6 +32,7 @@ enum mygames_kvm_input_kind {
 struct mygames_kvm_input_event {
     mygames_kvm_u8 kind;
     mygames_kvm_u8 down;
+    mygames_kvm_u8 repeat;
     mygames_kvm_u16 physical_code;
     mygames_kvm_u16 native_scan;
     mygames_kvm_u16 modifiers;

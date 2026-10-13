@@ -9651,7 +9651,7 @@
         },
         {
           "id": "M3 T43 S4",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/mygames-code-unification.md",
             "docs/states/CURRENT.md"
@@ -9661,7 +9661,21 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Admitted zero-node Win32 host extraction: the library will emit KVM physical events and presentation results only; Mario retains every command and game-state decision."
+          "technicalReceipt": "Closed zero-node Win32 host extraction: lib/win32 owns generic host mechanics and emits only KVM physical events; Mario retains command mapping and composition decisions."
+        },
+        {
+          "id": "M3 T43 S5",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/mygames-code-unification.md",
+            "docs/states/CURRENT.md"
+          ],
+          "recordKinds": [
+            "mygames-dos16-host-extraction"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Admitted zero-node DOS16 host extraction: lib/dos16 will expose neutral device mechanics while Mario retains all controls, text/graphics selection and VGA/PPU composition."
         }
       ]
     }
@@ -1010989,6 +1011003,18 @@
     },
     {
       "subtask": "M3 T43 S4",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/mygames-code-unification.md"
+    },
+    {
+      "subtask": "M3 T43 S5",
       "kind": "implementation",
       "scope": [],
       "expectedMatches": [],

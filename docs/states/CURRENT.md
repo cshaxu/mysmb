@@ -2,26 +2,26 @@
 
 ## Current Work
 
-## M3 T43 S4 Packet
+## M3 T43 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T43 S4 P1 — `lib/win32` host extraction |
-| Admission And Approval | Owner approved the Mario-first restructure and specified that applications retain all keyboard and mouse semantics. |
-| Objective | Extract generic Win32/x64 host ownership into `lib/win32`, with Mario retaining command mapping and view decisions. |
-| Non-goals | No Mine read/import, Win16/DOS extraction, ROM/PPU change, text-art change, or Mario key/mouse semantic change. |
-| Reference Baseline | T43 S3 closure: `lib/kvm` owns neutral presentation/physical-event contracts and the three Mario products build. |
+| Identifier Mode | M3 T43 S5 P1 — `lib/dos16` host extraction |
+| Admission And Approval | Owner approved the Mario-first restructure and specified that applications retain all keyboard and mouse semantics. S4 has completed its implementation closure. |
+| Objective | Extract generic DOS16 bootstrap, raw physical input, B800 text device and timer ownership into `lib/dos16`, retaining Mario's game and VGA/PPU decisions in `app-mario`. |
+| Non-goals | No Mine read/import, Win16 extraction, ROM/PPU change, text-art change, DOS graphics-compositor/sound move, or Mario key/mouse semantic change. |
+| Reference Baseline | T43 S4 closure: `lib/win32` owns reusable Win32 host mechanics while Mario maps neutral KVM events to app commands. |
 | Candidate Proposal | [M3 T43 proposal](../proposals/m3/mygames-code-unification.md). |
-| Files And ABI Surface | New `lib/win32` CMake/include/source/test ownership plus a narrow Mario host callback that consumes KVM physical events and app-requested presentation. No app command becomes a library API. |
+| Files And ABI Surface | New `lib/dos16` CMake/include/source/test ownership plus neutral KVM cell/event/timer interfaces. Mario's DOS composition root consumes the services and remains the sole mapper of app controls and selector of text/graphics. |
 | Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
-| Verification | Library contracts, dependency/purity scan, borrowed/owned Console lifecycle tests, VT/indexed tests, raw-event-to-Mario adapter test, x86/x64 builds and DOS16 link. |
-| Expected Markers | Win32 has no Mario constants or game state; it returns only KVM events and presentation results; Mario alone performs conversion and calls its own core/PPU. |
+| Verification | DOS16 library contracts, dependency/purity scan, KVM physical-event and indexed-cell adapter tests, Win32 regression builds, DOS16 Link 3.65 product link and applicable DOSBox I/O probe. |
+| Expected Markers | DOS16 has no Mario constants or game state; it returns neutral KVM events and device results; Mario alone maps controls and calls its core/PPU/VGA compositor. |
 | Asset Needs | None. No ROM, asset, disassembly, trace or Mine material enters the task. |
-| Reporting Requirements | Report exact moved files, callback surface, app-owned mapping boundary, lifecycle/colour test results and target matrix. |
-| Stop Conditions | Mario constants or game state in `lib/win32`, an app command assigned by the library, duplicate old/new host owner, behavioural change, or Mine import. |
-| Exit Criteria | `lib/win32` is the single Win32 host owner, Mario controls all command decisions, and all three products retain current behaviour. |
+| Reporting Requirements | Report exact moved files, callback surface, app-owned mapping boundary, indexed-cell/physical-event results and target matrix. |
+| Stop Conditions | Mario constants or game state in `lib/dos16`, an app command assigned by the library, duplicate old/new host owner, behavioural change, or Mine import. |
+| Exit Criteria | `lib/dos16` is the single owner of its generic DOS host mechanics, Mario controls all command and presentation decisions, and all three products retain current behaviour. |
 | Original Owner Request | Combine Mine and MySMB through reusable DOS16/Win16/Win32/KVM infrastructure while leaving each app responsible for its own controls. |
-| Similar-Issue Sweep | Scan `lib/win32` headers/sources and CMake dependency edges for Mario constants, controller commands, PPU/core access, duplicate host owners and shell/process-name special cases. |
+| Similar-Issue Sweep | Scan `lib/dos16` headers/sources and CMake dependency edges for Mario constants, controller commands, PPU/core access, duplicate host owners and text/graphics-selection special cases. |
 
 ## Current Technical Baseline
 

@@ -264,3 +264,40 @@ commands.  Acceptance covers borrowed-console start, graphical start, a
 borrowed suspend/resume round trip, an owned-console lifetime round trip,
 visible-terminal RGB VT, indexed fallback, raw-event mapping, x86/x64 product
 builds, and the unchanged DOS16 product link.
+
+### S4 closure receipt
+
+S4 creates `lib/win32` as the sole owner of reusable Win32/x64 frame timing,
+parent-console detection, borrowed/owned Console lifecycle, terminal
+capability and text presentation, raw key normalization, and generic window
+geometry. The former Mario host leaf sources were moved there and are built
+once through `mygames_win32`; no forwarding copies remain under
+`app-mario/src/platform/win32`.
+
+Mario retains the composition root, input meaning, controller state, Tab/P/O/
+Escape decisions, core/PPU calls, audio and snapshot consequences. The new
+boundary is a lossless KVM physical event followed by
+`app-mario/src/app/input_mapping`; the library has no Mario identifier,
+controller bit, PPU/core include, or application request. During the move a
+release-edge gap was found: P/O had notified the Mario snapshot gate only on
+press, leaving a key held after its first use. The app mapping now emits the
+same app request on both non-repeat edges; the root forwards `pressed` to the
+existing app-owned gate. This fixes repeated save/load without assigning a
+Mario command to `lib/win32`.
+
+Test ownership is closed as follows: `mygames.win32-contract-smoke` covers
+the library's rows/frame-wait/launch public contracts;
+`mysmb.app-input-mapping-smoke` covers Mario P/O edge semantics;
+`mysmb.win32-keyboard-smoke` covers the raw-event-to-Mario boundary; and the
+composition-root snapshot/self-test fixtures cover real window messages,
+focus, snapshot delivery and teardown. The full matrices passed: x64 258/258
+and x86 289/289. A fresh DOS16 Link 3.65 build completed with
+`mysmb-dos16.exe` at 361,067 bytes and 384,768 bytes minimum loaded memory.
+The purity sweep found no Mario/core/PPU/request symbols in `lib/win32` and
+no duplicate former leaf owner. Documentation governance passed.
+
+The run16 probe was intentionally non-authoritative: in the non-interactive
+pipe host, both an ordinary DOS command and LINK return the documented host
+status 87 before DOS execution. This neither validates nor rejects NTVDM64 or
+LINK. A later interactive Console probe may run `run16 --wait LINK /?`; this
+S makes no NTVDM64 source or configuration change.

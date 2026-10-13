@@ -1,20 +1,23 @@
-#include "platform/win32/frame_wait.h"
+#include "win32/frame_wait.h"
 #include <mmsystem.h>
-typedef HANDLE (WINAPI *mysmb_create_timer)(LPSECURITY_ATTRIBUTES,LPCWSTR,
+#include <string.h>
+typedef HANDLE (WINAPI *mygames_create_timer)(LPSECURITY_ATTRIBUTES,LPCWSTR,
     DWORD,DWORD);
-void mysmb_win32_frame_wait_open(struct mysmb_win32_frame_wait *wait)
+void mygames_win32_frame_wait_open(struct mygames_win32_frame_wait *wait)
 {
-    mysmb_create_timer create_timer;
+    mygames_create_timer create_timer;
+    FARPROC raw_timer;
     wait->timer=NULL;wait->precise_timer=0U;
     /* Resolve at runtime:old Windows still loads the same executable. Flag2
      * requests a high-resolution timer unaffected by window occlusion. */
-    create_timer=(mysmb_create_timer)GetProcAddress(GetModuleHandleA("kernel32.dll"),
+    raw_timer=GetProcAddress(GetModuleHandleA("kernel32.dll"),
         "CreateWaitableTimerExW");
+    memcpy(&create_timer,&raw_timer,sizeof(create_timer));
     if(create_timer)wait->timer=create_timer(NULL,NULL,2U,TIMER_ALL_ACCESS);
     if(!wait->timer)
         wait->precise_timer=(unsigned char)(timeBeginPeriod(1U)==TIMERR_NOERROR);
 }
-void mysmb_win32_frame_wait_close(struct mysmb_win32_frame_wait *wait)
+void mygames_win32_frame_wait_close(struct mygames_win32_frame_wait *wait)
 {
     if(wait->timer) {
         CancelWaitableTimer(wait->timer);CloseHandle(wait->timer);wait->timer=NULL;
@@ -24,7 +27,7 @@ void mysmb_win32_frame_wait_close(struct mysmb_win32_frame_wait *wait)
         wait->precise_timer=0U;
     }
 }
-DWORD mysmb_win32_frame_wait_timeout(LONGLONG remaining,LONGLONG frequency)
+DWORD mygames_win32_frame_wait_timeout(LONGLONG remaining,LONGLONG frequency)
 {
     LONGLONG milliseconds;
     if(remaining<=0 || frequency<=0)return 0U;
@@ -34,7 +37,7 @@ DWORD mysmb_win32_frame_wait_timeout(LONGLONG remaining,LONGLONG frequency)
     milliseconds=(remaining*1000+frequency-1)/frequency;
     return (DWORD)milliseconds;
 }
-void mysmb_win32_frame_wait_until(struct mysmb_win32_frame_wait *wait,
+void mygames_win32_frame_wait_until(struct mygames_win32_frame_wait *wait,
     LONGLONG deadline,LONGLONG frequency)
 {
     LARGE_INTEGER now,due;
@@ -53,5 +56,5 @@ void mysmb_win32_frame_wait_until(struct mysmb_win32_frame_wait *wait,
     /* New messages wake input immediately;pending frame debt returns at once.
      * The root pumps messages between bounded logical-update batches. */
     MsgWaitForMultipleObjects(0U,NULL,FALSE,
-        mysmb_win32_frame_wait_timeout(remaining,frequency),QS_ALLINPUT);
+        mygames_win32_frame_wait_timeout(remaining,frequency),QS_ALLINPUT);
 }

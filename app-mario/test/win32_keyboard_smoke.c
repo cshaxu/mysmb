@@ -1,38 +1,32 @@
 #include <windows.h>
-#include "platform/win32/keyboard.h"
+#include "app/input_mapping.h"
+#include "win32/input.h"
 int main(void)
 {
-    struct mysmb_win32_keyboard keyboard;
-    mysmb_win32_keyboard_reset(&keyboard);
-    if(mysmb_win32_keyboard_sample(&keyboard))return 1;
-    mysmb_win32_keyboard_event(&keyboard,'J',0U,1U);
-    mysmb_win32_keyboard_event(&keyboard,'J',0U,0U);
-    if(mysmb_win32_keyboard_sample(&keyboard)!=MYSMB_WIN32_KEY_B ||
-        mysmb_win32_keyboard_sample(&keyboard))return 2;
-    mysmb_win32_keyboard_event(&keyboard,VK_SHIFT,0x2aU,1U);
-    mysmb_win32_keyboard_event(&keyboard,VK_SHIFT,0x36U,1U);
-    if(mysmb_win32_keyboard_sample(&keyboard)!=MYSMB_WIN32_KEY_SELECT)return 3;
-    mysmb_win32_keyboard_event(&keyboard,VK_SHIFT,0x2aU,0U);
-    if(mysmb_win32_keyboard_sample(&keyboard)!=MYSMB_WIN32_KEY_SELECT)return 4;
-    mysmb_win32_keyboard_event(&keyboard,VK_SHIFT,0x36U,0U);
-    if(mysmb_win32_keyboard_sample(&keyboard))return 5;
-    mysmb_win32_keyboard_event(&keyboard,'K',0U,1U);
-    mysmb_win32_keyboard_reset(&keyboard);
-    if(mysmb_win32_keyboard_sample(&keyboard) ||
-        mysmb_win32_keyboard_event(&keyboard,256U,0U,1U) ||
-        mysmb_win32_keyboard_event(&keyboard,VK_F1,0U,1U))return 6;
-    mysmb_win32_keyboard_event(&keyboard,'A',0U,1U);
-    mysmb_win32_keyboard_event(&keyboard,VK_LEFT,0U,1U);
-    (void)mysmb_win32_keyboard_sample(&keyboard);
-    mysmb_win32_keyboard_event(&keyboard,'A',0U,0U);
-    if(mysmb_win32_keyboard_sample(&keyboard)!=MYSMB_WIN32_KEY_LEFT)return 7;
-    mysmb_win32_keyboard_event(&keyboard,VK_TAB,0U,1U);
-    mysmb_win32_keyboard_event(&keyboard,'O',0U,1U);
-    mysmb_win32_keyboard_clear_game(&keyboard);
-    if(mysmb_win32_keyboard_sample(&keyboard) ||
-        mysmb_win32_keyboard_event(&keyboard,VK_TAB,0U,1U)!=2 ||
-        mysmb_win32_keyboard_event(&keyboard,'O',0U,1U)!=2)return 8;
-    mysmb_win32_keyboard_event(&keyboard,VK_TAB,0U,0U);
-    if(mysmb_win32_keyboard_event(&keyboard,VK_TAB,0U,1U)!=1)return 9;
+    struct mygames_win32_input host;
+    struct mygames_kvm_input_event event;
+    struct mysmb_app_input_mapping mario;
+    struct mysmb_io_input input;
+    mygames_win32_input_initialize(&host);
+    mysmb_app_input_mapping_initialize(&mario);
+    input.buttons=input.buttons2=input.requests=0U;
+    if(mygames_win32_input_key(&host,'J',0U,1U,&event)!=1 ||
+        event.physical_code!=MYGAMES_KVM_KEY_J || event.repeat!=0U)return 1;
+    mysmb_app_input_mapping_event(&mario,&event,&input);
+    if((input.buttons&MYSMB_IO_BUTTON_B)==0U)return 2;
+    if(mygames_win32_input_key(&host,'J',0U,1U,&event)!=2 || event.repeat!=1U)return 3;
+    if(mygames_win32_input_key(&host,VK_SHIFT,0x2aU,1U,&event)!=1 ||
+        event.physical_code!=MYGAMES_KVM_KEY_LEFT_SHIFT)return 4;
+    mysmb_app_input_mapping_event(&mario,&event,&input);
+    if((input.buttons&MYSMB_IO_BUTTON_SELECT)==0U)return 5;
+    if(mygames_win32_input_key(&host,VK_LEFT,0U,1U,&event)!=1 ||
+        event.physical_code!=MYGAMES_KVM_KEY_LEFT_ARROW)return 6;
+    mysmb_app_input_mapping_event(&mario,&event,&input);
+    if((input.buttons&MYSMB_IO_BUTTON_LEFT)==0U)return 7;
+    if(mygames_win32_input_key(&host,VK_DOWN,0U,1U,&event)!=1 ||
+        event.physical_code!=MYGAMES_KVM_KEY_DOWN_ARROW)return 8;
+    mysmb_app_input_mapping_event(&mario,&event,&input);
+    if((input.buttons&MYSMB_IO_BUTTON_DOWN)==0U)return 9;
+    if(mygames_win32_input_key(&host,VK_F1,0U,1U,&event)!=0)return 8;
     return 0;
 }

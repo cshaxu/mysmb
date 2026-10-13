@@ -35,7 +35,12 @@ int main(int argc,char **argv)
         NULL,NULL,wc.hInstance,NULL);
     if(!owned_window)return 3;
     SendMessage(owned_window,WM_SETFOCUS,0,0);
-    mysmb_io_control_initialize(&g_control);mysmb_win32_power_on();
+    mysmb_io_control_initialize(&g_control);mysmb_win32_release_keys();
+    mysmb_win32_power_on();
+    /* The embedded fixture does not enter a real activation loop.  Its
+     * synthetic key delivery therefore declares the same focused presenter
+     * state that production receives from WM_SETFOCUS. */
+    g_window_focused=1U;
     mysmb_win32_snapshot_initialize();
     /* Production directory discovery must locate this executable,even though
      * CTest's working directory may be elsewhere. Fault tests use an isolated
@@ -70,6 +75,9 @@ int main(int argc,char **argv)
     if(!mysmb_game_is_paused(&g_game))return 8;
     if(!mysmb_game_snapshot_capture(&g_game,&expected,g_snapshot_fingerprint) ||
         !mysmb_win32_audio_capture(&g_audio_output.renderer,expected.payload+MYSMB_SNAPSHOT_CORE_BYTES))return 6;
+    if(g_keyboard.down[MYGAMES_KVM_KEY_P]!=0U ||
+        g_input_mapping.down[MYGAMES_KVM_KEY_P]!=0U)return 30;
+    if(g_window_focused==0U)return 31;
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'P',0);
     mysmb_win32_snapshot_request(owned_window);
     sprintf(path,"%s/mysmb.sav",argv[1]);file=fopen(path,"rb");

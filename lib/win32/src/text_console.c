@@ -1,14 +1,14 @@
-#include "platform/win32/text_console.h"
-#include "platform/win32/text_console_geometry.h"
-#include "platform/win32/text_console_policy.h"
-#include "platform/win32/text_console_presentation.h"
-#include "platform/win32/launch.h"
+#include "win32/text_console.h"
+#include "win32/text_console_geometry.h"
+#include "win32/text_console_policy.h"
+#include "win32/text_console_presentation.h"
+#include "win32/launch.h"
 #ifndef ENABLE_VIRTUAL_TERMINAL_INPUT
 #define ENABLE_VIRTUAL_TERMINAL_INPUT 0x0200U
 #endif
 static HWND exit_owner;
 static volatile LONG close_pending;
-static BOOL WINAPI mysmb_win32_console_control(DWORD event)
+static BOOL WINAPI mygames_win32_console_control(DWORD event)
 {
     if(event!=CTRL_CLOSE_EVENT)return FALSE;
     InterlockedExchange(&close_pending,1L);
@@ -19,8 +19,8 @@ static BOOL WINAPI mysmb_win32_console_control(DWORD event)
         (void)WaitForSingleObject(GetCurrentProcess(),4000U);
     return TRUE;
 }
-int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *console,
-    HWND owner,unsigned short rows)
+int mygames_win32_text_console_open_profile(struct mygames_win32_text_console *console,
+    HWND owner,unsigned short rows,const char *title)
 {
     COORD size;
     SMALL_RECT view;
@@ -28,12 +28,12 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     DWORD mode,output_mode;
     DWORD processes[2];
     if(console->opened)return 1;
-    console->rows=mysmb_win32_console_rows(rows);console->colors_valid=0U;
+    console->rows=mygames_win32_console_rows(rows);console->colors_valid=0U;
     if(!owner)return 0;
     if(GetConsoleProcessList(processes,2U)!=0U) {
-        if(!mysmb_win32_start_in_text())return 0;
+        if(!mygames_win32_parent_console_available())return 0;
         console->borrowed=GetConsoleProcessList(processes,2U)>1U?1U:0U;
-    } else if(mysmb_win32_start_in_text() && AttachConsole(ATTACH_PARENT_PROCESS))
+    } else if(mygames_win32_parent_console_available() && AttachConsole(ATTACH_PARENT_PROCESS))
         console->borrowed=1U;
     else {
         if(!AllocConsole())return 0;
@@ -42,17 +42,17 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     console->opened=1U;
     exit_owner=owner;
     InterlockedExchange(&close_pending,0L);
-    if(!SetConsoleCtrlHandler(mysmb_win32_console_control,TRUE)) {
-        mysmb_win32_text_console_close(console);return 0;
+    if(!SetConsoleCtrlHandler(mygames_win32_console_control,TRUE)) {
+        mygames_win32_text_console_close(console);return 0;
     }
     /* Standard handles may be redirected or absent for a GUI/RDP launcher.
      * Own explicit console devices rather than borrowing process stdio. */
     console->input=CreateFileA("CONIN$",GENERIC_READ|GENERIC_WRITE,
         FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,OPEN_EXISTING,0U,NULL);
     console->window=GetConsoleWindow();
-    console->window_usable=mysmb_win32_console_window(console->window);
+    console->window_usable=mygames_win32_console_window(console->window);
     if(console->input==INVALID_HANDLE_VALUE) {
-        mysmb_win32_text_console_close(console);return 0;
+        mygames_win32_text_console_close(console);return 0;
     }
     if(console->borrowed) {
         console->shell_output=CreateFileA("CONOUT$",GENERIC_READ|GENERIC_WRITE,
@@ -64,7 +64,7 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
         if(console->shell_output==INVALID_HANDLE_VALUE || !console->shell_title ||
             !GetConsoleMode(console->input,&console->shell_input_mode) ||
             !GetConsoleScreenBufferInfo(console->shell_output,&console->shell_info)) {
-            mysmb_win32_text_console_close(console);return 0;
+            mygames_win32_text_console_close(console);return 0;
         }
         console->mode_saved=1U;
         ZeroMemory(&console->shell_font,sizeof(console->shell_font));
@@ -79,41 +79,41 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     } else console->output=CreateFileA("CONOUT$",GENERIC_READ|GENERIC_WRITE,
         FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,OPEN_EXISTING,0U,NULL);
     if(console->output==INVALID_HANDLE_VALUE) {
-        mysmb_win32_text_console_close(console);return 0;
+        mygames_win32_text_console_close(console);return 0;
     }
     size.X=80;size.Y=(SHORT)console->rows;
     view.Left=view.Top=0;view.Right=79;view.Bottom=(SHORT)(console->rows-1U);
     if(!SetConsoleActiveScreenBuffer(console->output)) {
-        mysmb_win32_text_console_close(console);return 0;
+        mygames_win32_text_console_close(console);return 0;
     }
     if(!GetConsoleMode(console->input,&mode) ||
         !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS|ENABLE_WINDOW_INPUT)&
             ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|
                 ENABLE_PROCESSED_INPUT|ENABLE_VIRTUAL_TERMINAL_INPUT))) {
-        mysmb_win32_text_console_close(console);return 0;
+        mygames_win32_text_console_close(console);return 0;
     }
     {
-        unsigned char indexed_carrier=mysmb_win32_console_indexed_carrier(console);
+        unsigned char indexed_carrier=mygames_win32_console_indexed_carrier(console);
         unsigned char output_mode_read=(unsigned char)GetConsoleMode(console->output,&output_mode);
         unsigned char output_mode_set=0U;
         if(output_mode_read && !indexed_carrier)
             output_mode_set=(unsigned char)SetConsoleMode(console->output,
                 output_mode|ENABLE_VIRTUAL_TERMINAL_PROCESSING);
-        if(mysmb_win32_console_use_vt(indexed_carrier,output_mode_read,output_mode_set)) {
+        if(mygames_win32_console_use_vt(indexed_carrier,output_mode_read,output_mode_set)) {
         console->terminal_output=(WCHAR *)HeapAlloc(GetProcessHeap(),0U,
-            mysmb_win32_console_vt_capacity(console->rows)*sizeof(WCHAR));
+            mygames_win32_console_vt_capacity(console->rows)*sizeof(WCHAR));
         console->vt_output=(unsigned char)(console->terminal_output!=NULL);
         }
     }
     if(!console->vt_output)
-        mysmb_win32_console_initialize_indexed(console);
+        mygames_win32_console_initialize_indexed(console);
     /* Font request is attempted on every output buffer. API success may be
      * virtualized;effective physical glyph geometry still needs visual proof. */
-    mysmb_win32_console_fit(console,1U);
-    console->geometry_usable=mysmb_win32_console_size(console,size,&view);
+    mygames_win32_console_fit(console,1U);
+    console->geometry_usable=mygames_win32_console_size(console,size,&view);
     cursor.dwSize=1;cursor.bVisible=FALSE;
     (void)SetConsoleCursorInfo(console->output,&cursor);
-    (void)SetConsoleTitleA("MySMB");
+    if(title!=NULL) (void)SetConsoleTitleA(title);
     /* Close requests the same root-owned exit as Escape and the GUI button. */
     if(!console->borrowed) {
         HMENU menu=GetSystemMenu(console->window,FALSE);
@@ -123,7 +123,7 @@ int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *conso
     console->focused=1U;
     return 1;
 }
-int mysmb_win32_text_console_suspend(struct mysmb_win32_text_console *console)
+int mygames_win32_text_console_suspend(struct mygames_win32_text_console *console)
 {
     CONSOLE_SCREEN_BUFFER_INFO info;
     COORD origin={0,0};
@@ -148,7 +148,7 @@ int mysmb_win32_text_console_suspend(struct mysmb_win32_text_console *console)
     console->focused=0U;console->suspended=1U;
     return 1;
 }
-int mysmb_win32_text_console_resume(struct mysmb_win32_text_console *console)
+int mygames_win32_text_console_resume(struct mygames_win32_text_console *console)
 {
     DWORD input_mode,output_mode;
     if(!console || !console->opened ||
@@ -160,7 +160,7 @@ int mysmb_win32_text_console_resume(struct mysmb_win32_text_console *console)
     console->focused=1U;console->suspended=0U;
     return 1;
 }
-void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
+void mygames_win32_text_console_close(struct mygames_win32_text_console *console)
 {
     if(!console->opened)return;
     if(console->borrowed) {
@@ -199,7 +199,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
      * the default handler before the CRT exit. Leave attachment teardown to
      * process exit;ordinary Tab/recovery detaches immediately. */
     if(!InterlockedCompareExchange(&close_pending,0L,0L)) {
-        (void)SetConsoleCtrlHandler(mysmb_win32_console_control,FALSE);
+        (void)SetConsoleCtrlHandler(mygames_win32_console_control,FALSE);
         FreeConsole();
     }
     console->opened=0U;console->window=NULL;
@@ -207,18 +207,18 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
     console->shell_output=NULL;console->shell_title=NULL;
     console->borrowed=console->mode_saved=console->focused=console->suspended=0U;console->geometry_pending=console->output_failures=0U;
 }
-int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
+int mygames_win32_text_console_present(struct mygames_win32_text_console *console,
     const struct mygames_kvm_text_frame *frame)
 {
     int geometry;
     DWORD input_mode,output_mode;
     if(!console->opened || frame==0 ||
         !GetConsoleMode(console->input,&input_mode) ||
-        !GetConsoleMode(console->output,&output_mode))return MYSMB_WIN32_CONSOLE_LOST;
-    geometry=mysmb_win32_console_geometry(console);
-    if(geometry!=MYSMB_WIN32_CONSOLE_READY)return geometry;
-    return mysmb_win32_console_present_frame(console,frame);
+        !GetConsoleMode(console->output,&output_mode))return MYGAMES_WIN32_CONSOLE_LOST;
+    geometry=mygames_win32_console_geometry(console);
+    if(geometry!=MYGAMES_WIN32_CONSOLE_READY)return geometry;
+    return mygames_win32_console_present_frame(console,frame);
 }
 
-int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,HWND owner)
-{return mysmb_win32_text_console_open_profile(console,owner,50U);}
+int mygames_win32_text_console_open(struct mygames_win32_text_console *console,HWND owner)
+{return mygames_win32_text_console_open_profile(console,owner,50U,NULL);}

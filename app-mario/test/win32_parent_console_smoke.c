@@ -1,8 +1,8 @@
 #include <windows.h>
 #include <string.h>
 #include <stdio.h>
-#include "platform/win32/text_console.h"
-static struct mysmb_win32_text_console device;
+#include "win32/text_console.h"
+static struct mygames_win32_text_console device;
 static struct mygames_kvm_text_frame frame;
 static CHAR_INFO rendered[4000];
 /* Neutral fixture capture only;no ROM/game pixels enter this test. */
@@ -126,8 +126,8 @@ int main(int argc,char **argv)
         {
             /* The real Console API path keeps input/output usable across
              * repeated borrowed-shell lifecycle transitions. */
-            if(!mysmb_win32_text_console_open(&device,owner) || !device.borrowed ||
-                device.window!=GetConsoleWindow() || !mysmb_win32_text_console_present(&device,&frame))return 6;
+            if(!mygames_win32_text_console_open(&device,owner) || !device.borrowed ||
+                device.window!=GetConsoleWindow() || !mygames_win32_text_console_present(&device,&frame))return 6;
             if(!check_frame() || (device.geometry_usable && checked_cells!=4000U))return 21;
             {
                 FILE *log=fopen(argv[1],"a");
@@ -144,7 +144,7 @@ int main(int argc,char **argv)
                     }
                     if(wait==80)return 18;
                     for(wait=0;wait<20;++wait) {
-                        if(mysmb_win32_text_console_present(&device,&frame)==MYSMB_WIN32_CONSOLE_LOST)return 19;
+                        if(mygames_win32_text_console_present(&device,&frame)==MYGAMES_WIN32_CONSOLE_LOST)return 19;
                         Sleep(20U);
                     }
                     if(!check_frame())return 22;
@@ -164,7 +164,7 @@ int main(int argc,char **argv)
                     }
                 }
             }
-            mysmb_win32_text_console_close(&device);
+            mygames_win32_text_console_close(&device);
         }
         /* Closing a borrowed device detaches only this process. */
         if(!AttachConsole(ATTACH_PARENT_PROCESS))return 7;

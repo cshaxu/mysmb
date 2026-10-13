@@ -86,4 +86,17 @@ for path in kvm.rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(repository)}: KVM leaks {token}")
             sys.exit(1)
-print("platform, IO, PPU, core and KVM dependency purity: passed")
+win32 = repository / "lib" / "win32"
+allowed_win32_includes = ("win32/", "kvm/", "windows.h", "mmsystem.h",
+                          "tlhelp32.h", "string.h", "stddef.h")
+for path in win32.rglob("*.[ch]"):
+    text = path.read_text(encoding="utf-8")
+    for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
+        if include not in allowed_win32_includes and not include.startswith(("win32/", "kvm/")):
+            print(f"{path.relative_to(repository)}: Win32 host imports {include}")
+            sys.exit(1)
+    for token in ("MYSMB_", "mysmb_", "struct mysmb_game", "core/", "ppu/"):
+        if token in text:
+            print(f"{path.relative_to(repository)}: Win32 host leaks {token}")
+            sys.exit(1)
+print("platform, IO, PPU, core, KVM and Win32 dependency purity: passed")

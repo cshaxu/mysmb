@@ -1,5 +1,5 @@
 #include <windows.h>
-#include "platform/win32/launch.h"
+#include "win32/launch.h"
 int main(int count,char **arguments)
 {
     char command[1024];
@@ -9,7 +9,7 @@ int main(int count,char **arguments)
     (void)arguments;
     /* The child has this arbitrary test executable as its console-owning
      * parent. Its name must not affect text selection. */
-    if(count==2)return mysmb_win32_start_in_text()?0:1;
+    if(count==2)return mygames_win32_parent_console_available()?0:1;
     FreeConsole();
     if(!AllocConsole())return 2;
     if(!GetModuleFileNameA(NULL,command,sizeof(command)-16U))return 3;

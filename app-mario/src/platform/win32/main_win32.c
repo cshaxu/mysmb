@@ -4,6 +4,7 @@
 
 #include "app/game_io.h"
 #include "app/game_snapshot.h"
+#include "app/input_mapping.h"
 #include "io/snapshot_store.h"
 #include "io/snapshot_keys.h"
 #include "io/file/snapshot_files.h"
@@ -16,10 +17,11 @@
 #include "io/palette_expand.h"
 #include "platform/win32/audio_output.h"
 #include "platform/win32/focus_pause.h"
-#include "platform/win32/text_console.h"
-#include "platform/win32/launch.h"
-#include "platform/win32/keyboard.h"
-#include "platform/win32/frame_wait.h"
+#include "win32/text_console.h"
+#include "win32/launch.h"
+#include "win32/input.h"
+#include "win32/frame_wait.h"
+#include "win32/window_geometry.h"
 #include "text/scene.h"
 
 #ifdef MYSMB_LOCAL_TITLE
@@ -48,18 +50,24 @@ static struct mysmb_snapshot_keys g_snapshot_keys;
 static mygames_kvm_u8 g_snapshot_fingerprint[16];
 static mygames_kvm_u8 g_snapshot_ready;
 static mygames_kvm_u8 g_snapshot_requests;
-static struct mysmb_win32_text_console g_console;
-static struct mysmb_win32_text_console g_console_job;
+static struct mygames_win32_text_console g_console;
+static struct mygames_win32_text_console g_console_job;
 static HANDLE g_console_thread;
 static HDESK g_console_desktop;
-static struct mysmb_win32_keyboard g_keyboard;
+static struct mygames_win32_input g_keyboard;
+static struct mysmb_app_input_mapping g_input_mapping;
+static mysmb_u8 g_mapped_buttons;
 static struct mysmb_text_scene_workspace g_text_workspace;
 static struct mygames_kvm_text_frame g_text_frame;
 static mygames_kvm_u8 g_text_mode,g_switching,g_toggle_request,g_text_failed;
 static mygames_kvm_u8 g_window_focused;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
-static struct mysmb_win32_frame_wait g_frame_wait;
+static struct mygames_win32_frame_wait g_frame_wait;
+/* Window messages can arrive while CreateWindow is establishing a test or
+ * product window.  Keep the Mario-owned geometry declaration valid from
+ * process startup, then initialise the identical values in WinMain. */
+static struct mygames_win32_window_geometry g_window_geometry={16,15,16,32,0};
 static mysmb_u8 g_game_started;
 static mysmb_u8 g_audio_available;
 static mysmb_u8 g_title_paused;
@@ -74,23 +82,22 @@ static int mysmb_win32_presenter_focused(HWND window)
      * RDP/terminal hosts can expose a different or unavailable HWND. */
     return g_text_mode?g_console.opened && g_console.focused:g_window_focused;
 }
-static void mysmb_win32_shortcut(HWND window,WORD key,mygames_kvm_u8 pressed)
+static void mysmb_win32_apply_requests(HWND window,mygames_kvm_u8 requests,
+    mygames_kvm_u8 pressed)
 {
     mygames_kvm_u8 focused,request;
     focused=(mygames_kvm_u8)mysmb_win32_presenter_focused(window);
-    if(key==VK_TAB) {
+    if((requests&MYSMB_IO_REQUEST_TOGGLE)!=0U) {
         g_toggle_request|=mysmb_io_control_toggle(&g_control,pressed,focused);
-        return;
     }
-    if(key==VK_ESCAPE && pressed && focused) {
+    if((requests&MYSMB_IO_REQUEST_EXIT)!=0U && pressed && focused) {
         struct mysmb_io_input input;
         input.buttons=input.buttons2=0U;input.requests=MYSMB_IO_REQUEST_EXIT;
         mysmb_io_control_input(&g_control,&input);return;
     }
-    if(key!='P' && key!='O')return;
-    request=key=='P'?MYSMB_IO_REQUEST_SAVE:MYSMB_IO_REQUEST_LOAD;
-    g_snapshot_requests|=mysmb_snapshot_keys_transition(&g_snapshot_keys,
-        request,pressed,focused);
+    request=(mygames_kvm_u8)(requests&(MYSMB_IO_REQUEST_SAVE|MYSMB_IO_REQUEST_LOAD));
+    if(request!=0U)g_snapshot_requests|=mysmb_snapshot_keys_transition(
+        &g_snapshot_keys,request,pressed,focused);
 }
 
 static mygames_kvm_u8 mysmb_win32_requests_from_message(UINT message,WPARAM key)
@@ -100,19 +107,49 @@ static mygames_kvm_u8 mysmb_win32_requests_from_message(UINT message,WPARAM key)
 }
 static void mysmb_win32_release_keys(void)
 {
-    mysmb_win32_keyboard_reset(&g_keyboard);
+    mygames_win32_input_clear(&g_keyboard);
+    mysmb_app_input_mapping_initialize(&g_input_mapping);
+    g_mapped_buttons=0U;
     mysmb_snapshot_keys_reset(&g_snapshot_keys);g_snapshot_requests=0U;
     (void)mysmb_io_control_toggle(&g_control,0U,0U);
 }
 static int mysmb_win32_key_event(HWND window,WORD key,WORD scan,
     unsigned char pressed)
 {
+    struct mygames_kvm_input_event event;
+    struct mysmb_io_input mapped;
     int kind;
     if(pressed && !mysmb_win32_presenter_focused(window))return 0;
-    kind=mysmb_win32_keyboard_event(&g_keyboard,key,scan,pressed);
+    kind=mygames_win32_input_key(&g_keyboard,key,scan,pressed,&event);
     if(!kind)return 0;
-    if(kind==1)mysmb_win32_shortcut(window,key,pressed);
+    mapped.buttons=mapped.buttons2=mapped.requests=0U;
+    mysmb_app_input_mapping_event(&g_input_mapping,&event,&mapped);
+    g_mapped_buttons=mapped.buttons;
+    if(kind==1)mysmb_win32_apply_requests(window,mapped.requests,pressed);
     return 1;
+}
+
+/* Root-local probes retain these narrow helpers.  They exercise the same
+ * generic-event then Mario-mapping route as a delivered host key. */
+static void mysmb_win32_shortcut(HWND window,WORD key,mygames_kvm_u8 pressed)
+{
+    struct mygames_kvm_input_event event;
+    struct mysmb_io_input mapped;
+    if(!mygames_win32_input_key(&g_keyboard,key,0U,pressed,&event))return;
+    mapped.buttons=mapped.buttons2=mapped.requests=0U;
+    mysmb_app_input_mapping_event(&g_input_mapping,&event,&mapped);
+    g_mapped_buttons=mapped.buttons;
+    if(event.repeat==0U)mysmb_win32_apply_requests(window,mapped.requests,pressed);
+}
+
+static unsigned int mysmb_win32_poll_keys(void)
+{
+    return g_mapped_buttons;
+}
+
+static mysmb_u8 mysmb_win32_buttons_from_keys(unsigned int keys)
+{
+    return (mysmb_u8)keys;
 }
 static void mysmb_win32_finish_exit(HWND window)
 {
@@ -135,26 +172,6 @@ static void mysmb_win32_update_title(HWND window)
     if (SetWindowText(window, title) != 0) g_title_paused = paused;
 }
 
-static mysmb_u8 mysmb_win32_buttons_from_keys(unsigned int keys)
-{
-    mysmb_u8 buttons;
-
-    buttons = 0U;
-    if ((keys & MYSMB_WIN32_KEY_LEFT) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_LEFT);
-    if ((keys & MYSMB_WIN32_KEY_RIGHT) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_RIGHT);
-    if ((keys & MYSMB_WIN32_KEY_DOWN) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_DOWN);
-    if ((keys & MYSMB_WIN32_KEY_UP) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_UP);
-    if ((keys & MYSMB_WIN32_KEY_START) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_START);
-    if ((keys & MYSMB_WIN32_KEY_SELECT) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_SELECT);
-    if ((keys & MYSMB_WIN32_KEY_B) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_B);
-    if ((keys & MYSMB_WIN32_KEY_A) != 0U) buttons = (mysmb_u8)(buttons | MYSMB_BUTTON_A);
-    return buttons;
-}
-
-static unsigned int mysmb_win32_poll_keys(void)
-{
-    return mysmb_win32_keyboard_sample(&g_keyboard);
-}
 
 static void mysmb_win32_draw_gameplay(const struct mygames_kvm_palette_video_frame *frame)
 {
@@ -171,7 +188,7 @@ static void mysmb_win32_build_frame(void)
 
     if(g_text_mode) {
         g_text_failed=(mygames_kvm_u8)(!mysmb_text_scene_build_profile(&g_game,&g_text_workspace,&g_text_frame,25U) ||
-            mysmb_win32_text_console_present(&g_console,&g_text_frame)==MYSMB_WIN32_CONSOLE_LOST);
+            mygames_win32_text_console_present(&g_console,&g_text_frame)==MYGAMES_WIN32_CONSOLE_LOST);
         return;
     }
     mysmb_ppu_frame_palette(&g_game.ppu,g_video_palette);
@@ -182,19 +199,19 @@ static void mysmb_win32_build_frame(void)
 
 /* Host allocation can wait on an external terminal. The device thread owns
  * only its pending console; the root keeps pumping while it is acquired. */
-static DWORD WINAPI mysmb_win32_console_job(void *owner)
+static DWORD WINAPI mygames_win32_console_job(void *owner)
 {
     (void)SetThreadDesktop(g_console_desktop);
-    return mysmb_win32_text_console_open_profile(&g_console_job,(HWND)owner,25U)?1U:0U;
+    return mygames_win32_text_console_open_profile(&g_console_job,(HWND)owner,25U,"MySMB")?1U:0U;
 }
-static void mysmb_win32_console_begin(HWND window)
+static void mygames_win32_console_begin(HWND window)
 {
     if(g_console_thread)return;
     g_switching=1U;
-    mysmb_win32_keyboard_clear_game(&g_keyboard);
+    mysmb_win32_release_keys();
     ZeroMemory(&g_console_job,sizeof(g_console_job));
     g_console_desktop=GetThreadDesktop(GetCurrentThreadId());
-    g_console_thread=CreateThread(NULL,0U,mysmb_win32_console_job,window,0U,NULL);
+    g_console_thread=CreateThread(NULL,0U,mygames_win32_console_job,window,0U,NULL);
     if(!g_console_thread)g_switching=0U;
 }
 static void mysmb_win32_console_complete(HWND window)
@@ -220,12 +237,12 @@ static void mysmb_win32_console_complete(HWND window)
 static void mysmb_win32_switch_presenter(HWND window,int activate)
 {
     g_switching=1U;
-    mysmb_win32_keyboard_clear_game(&g_keyboard);
+    mysmb_win32_release_keys();
     if(!g_text_mode) {
-        if(g_console.opened && !mysmb_win32_text_console_resume(&g_console))
-            mysmb_win32_text_console_close(&g_console);
+        if(g_console.opened && !mygames_win32_text_console_resume(&g_console))
+            mygames_win32_text_console_close(&g_console);
         if((g_console.opened ||
-            mysmb_win32_text_console_open_profile(&g_console,window,25U))) {
+            mygames_win32_text_console_open_profile(&g_console,window,25U,"MySMB"))) {
             g_text_mode=1U;
             if(activate) {
                 ShowWindow(window,SW_HIDE);
@@ -240,8 +257,8 @@ static void mysmb_win32_switch_presenter(HWND window,int activate)
         /* A borrowed parent console survives Tab for an identity-preserving
          * return. A console allocated by this graphical session must close. */
         if(g_text_failed || !g_console.borrowed ||
-            !mysmb_win32_text_console_suspend(&g_console))
-            mysmb_win32_text_console_close(&g_console);
+            !mygames_win32_text_console_suspend(&g_console))
+            mygames_win32_text_console_close(&g_console);
         if(activate) {ShowWindow(window,SW_SHOW);SetForegroundWindow(window);}
     }
     g_switching=0U;
@@ -300,7 +317,7 @@ static int mysmb_win32_snapshot_request(HWND window)
         (void)mysmb_game_snapshot_restore(&g_game,candidate);
         g_audio_output.renderer=audio;
         mysmb_snapshot_keys_reset(&g_snapshot_keys);
-        mysmb_win32_keyboard_clear_game(&g_keyboard);
+        mysmb_win32_release_keys();
         mysmb_win32_focus_pause_initialize(&g_focus_pause);
         mysmb_win32_focus_pause_gained(&g_focus_pause);
         mysmb_game_snapshot_resume_frame(&g_game,&g_frame);
@@ -351,20 +368,12 @@ static int mysmb_win32_argument_is_self_test(const char *command)
 }
 
 #ifdef MYSMB_LOCAL_TITLE
-/* Platform check: it exercises only the physical keyboard adapter and the
- * common pixel submission path; translated game behavior is tested in game. */
+/* This product check exercises the root's close/message and pixel routes.
+ * Physical-event and Mario-mapping assertions have dedicated owner tests. */
 static int mysmb_win32_run_self_test(void)
 {
     WNDCLASS window_class;
     HWND window;
-    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_LEFT) != MYSMB_BUTTON_LEFT) return 14;
-    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_RIGHT) != MYSMB_BUTTON_RIGHT) return 15;
-    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_DOWN) != MYSMB_BUTTON_DOWN) return 16;
-    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_UP) != MYSMB_BUTTON_UP) return 17;
-    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_START) != MYSMB_BUTTON_START) return 18;
-    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_SELECT) != MYSMB_BUTTON_SELECT) return 19;
-    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_B) != MYSMB_BUTTON_B) return 20;
-    if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_A) != MYSMB_BUTTON_A) return 21;
     if (mysmb_win32_requests_from_message(WM_KEYUP,VK_ESCAPE)!=0U ||
         mysmb_win32_requests_from_message(WM_KEYDOWN,'K')!=0U ||
         mysmb_win32_requests_from_message(WM_CLOSE,0U)!=MYSMB_IO_REQUEST_EXIT) return 22;
@@ -387,103 +396,6 @@ static int mysmb_win32_run_self_test(void)
     return 0;
 }
 #endif
-/* The device owns window geometry;the frame remains an unchanged256x240.
- * Quantize client sizes to16:15 integer units,not outer title/border sizes. */
-static int g_geometry_adjusting;
-static UINT mysmb_win32_window_dpi(HWND window)
-{
-    typedef UINT (WINAPI *dpi_fn)(HWND);
-    dpi_fn fn=(dpi_fn)GetProcAddress(GetModuleHandleA("user32.dll"),"GetDpiForWindow");
-    UINT dpi=fn?fn(window):96U;
-    return dpi?dpi:96U;
-}
-static void mysmb_win32_window_margins(HWND window,UINT dpi,RECT *margins)
-{
-    typedef BOOL (WINAPI *adjust_fn)(LPRECT,DWORD,BOOL,DWORD,UINT);
-    adjust_fn fn=(adjust_fn)GetProcAddress(GetModuleHandleA("user32.dll"),
-        "AdjustWindowRectExForDpi");
-    DWORD style=(DWORD)GetWindowLongPtr(window,GWL_STYLE);
-    DWORD ex=(DWORD)GetWindowLongPtr(window,GWL_EXSTYLE);
-    SetRect(margins,0,0,0,0);
-    if(fn)fn(margins,style,FALSE,ex,dpi);
-    else AdjustWindowRectEx(margins,style,FALSE,ex);
-}
-/* Initial scale is in 96-DPI units, matching the former system-scaled view. */
-static int mysmb_win32_initial_client(HWND window)
-{
-    RECT margins;
-    UINT dpi=mysmb_win32_window_dpi(window);
-    int units=MulDiv(MYSMB_SCREEN_WIDTH*MYSMB_SCALE/16,(int)dpi,96);
-    if(units<1)units=1;
-    mysmb_win32_window_margins(window,dpi,&margins);
-    return SetWindowPos(window,NULL,0,0,units*16+margins.right-margins.left,
-        units*15+margins.bottom-margins.top,
-        SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE)!=0;
-}
-static int mysmb_win32_geometry_units(int width,int height,int by_height)
-{
-    int units=by_height?height/15:width/16;
-    return units<16?16:units;
-}
-static void mysmb_win32_size_rectangle(HWND window,RECT *rect,UINT edge,UINT dpi)
-{
-    RECT margins;
-    int width,height,units,dx,dy;
-    mysmb_win32_window_margins(window,dpi,&margins);
-    width=rect->right-rect->left-(margins.right-margins.left);
-    height=rect->bottom-rect->top-(margins.bottom-margins.top);
-    units=mysmb_win32_geometry_units(width,height,edge==WMSZ_TOP || edge==WMSZ_BOTTOM);
-    dx=units*16+(margins.right-margins.left)-(rect->right-rect->left);
-    dy=units*15+(margins.bottom-margins.top)-(rect->bottom-rect->top);
-    if(edge==WMSZ_LEFT || edge==WMSZ_TOPLEFT || edge==WMSZ_BOTTOMLEFT)rect->left-=dx;
-    else if(edge==WMSZ_TOP || edge==WMSZ_BOTTOM){rect->left-=dx/2;rect->right+=dx-dx/2;}
-    else rect->right+=dx;
-    if(edge==WMSZ_TOP || edge==WMSZ_TOPLEFT || edge==WMSZ_TOPRIGHT)rect->top-=dy;
-    else if(edge==WMSZ_LEFT || edge==WMSZ_RIGHT){rect->top-=dy/2;rect->bottom+=dy-dy/2;}
-    else rect->bottom+=dy;
-}
-static void mysmb_win32_size_limits(HWND window,MINMAXINFO *limits)
-{
-    MONITORINFO monitor;
-    RECT margins;
-    int units,w,h,bw,bh;
-    monitor.cbSize=sizeof(monitor);
-    if(!GetMonitorInfo(MonitorFromWindow(window,MONITOR_DEFAULTTONEAREST),&monitor))return;
-    mysmb_win32_window_margins(window,mysmb_win32_window_dpi(window),&margins);
-    bw=margins.right-margins.left;bh=margins.bottom-margins.top;
-    w=monitor.rcWork.right-monitor.rcWork.left;
-    h=monitor.rcWork.bottom-monitor.rcWork.top;
-    units=(w-bw)/16;if((h-bh)/15<units)units=(h-bh)/15;
-    if(units<1)units=1;
-    limits->ptMaxSize.x=units*16+bw;limits->ptMaxSize.y=units*15+bh;
-    limits->ptMaxPosition.x=monitor.rcWork.left-monitor.rcMonitor.left+
-        (w-limits->ptMaxSize.x)/2;
-    limits->ptMaxPosition.y=monitor.rcWork.top-monitor.rcMonitor.top+
-        (h-limits->ptMaxSize.y)/2;
-    limits->ptMinTrackSize.x=256+bw;limits->ptMinTrackSize.y=240+bh;
-    limits->ptMaxTrackSize=limits->ptMaxSize;
-}
-static void mysmb_win32_normalize_client(HWND window)
-{
-    RECT client,outer;
-    int units,w,h;
-    if(g_geometry_adjusting || !GetClientRect(window,&client))return;
-    w=client.right;h=client.bottom;
-    if(w<=0 || h<=0 || (w%16==0 && h%15==0 && w/16==h/15))return;
-    units=w/16;if(h/15<units)units=h/15;if(units<1)units=1;
-    if(!GetWindowRect(window,&outer))return;
-    g_geometry_adjusting=1;
-    SetWindowPos(window,NULL,0,0,outer.right-outer.left-w+units*16,
-        outer.bottom-outer.top-h+units*15,SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE);
-    g_geometry_adjusting=0;
-}
-static void mysmb_win32_enable_dpi(void)
-{
-    typedef BOOL (WINAPI *aware_fn)(HANDLE);
-    aware_fn fn=(aware_fn)GetProcAddress(GetModuleHandleA("user32.dll"),
-        "SetProcessDpiAwarenessContext");
-    if(!fn || !fn((HANDLE)(LONG_PTR)-4))SetProcessDPIAware();
-}
 static void mysmb_win32_paint(HWND window)
 {
     PAINTSTRUCT paint;
@@ -516,15 +428,15 @@ static void mysmb_win32_step(HWND window)
     if(g_text_mode && g_text_failed && !g_console_thread)
         mysmb_win32_switch_presenter(window,1);
     for(events=0U;events<64U && g_text_mode &&
-        (event_kind=mysmb_win32_text_console_key(&g_console,&key,&scan,&pressed));++events) {
+        (event_kind=mygames_win32_text_console_key(&g_console,&key,&scan,&pressed));++events) {
         if(event_kind==2 && !pressed)mysmb_win32_release_keys();
         else if(event_kind==1)mysmb_win32_key_event(window,key,scan,pressed);
     }
     if(g_toggle_request && !g_console_thread) {
         g_toggle_request=0U;
-        if(g_text_mode || g_console.opened || mysmb_win32_start_in_text())
+        if(g_text_mode || g_console.opened || mygames_win32_parent_console_available())
             mysmb_win32_switch_presenter(window,1);
-        else mysmb_win32_console_begin(window);
+        else mygames_win32_console_begin(window);
     }
     decoded.buttons=0U;decoded.buttons2=0U;decoded.requests=0U;
     mysmb_io_control_input(&g_control,&decoded);
@@ -549,7 +461,7 @@ static void mysmb_win32_step(HWND window)
         mysmb_win32_focus_pause_gained(&g_focus_pause);
     physical_buttons = 0U;
     if (g_focus_pause.focused != 0U)
-        physical_buttons = mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys());
+        physical_buttons = g_mapped_buttons;
     decoded.buttons2 = 0U;
     steps = 0U;
     do {
@@ -609,20 +521,23 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
         if(!g_switching && !g_text_mode)mysmb_win32_focus_pause_gained(&g_focus_pause);
     }
     if(message==WM_SIZING) {
-        mysmb_win32_size_rectangle(window,(RECT *)l_param,(UINT)w_param,
-            mysmb_win32_window_dpi(window));return TRUE;
+        mygames_win32_window_size_rectangle(window,(RECT *)l_param,(UINT)w_param,0U,
+            &g_window_geometry);return TRUE;
     }
     if(message==WM_GETMINMAXINFO) {
-        mysmb_win32_size_limits(window,(MINMAXINFO *)l_param);return 0;
+        mygames_win32_window_size_limits(window,(MINMAXINFO *)l_param,
+            &g_window_geometry);return 0;
     }
     if(message==0x02e0U) { /* WM_DPICHANGED,also builds with old headers. */
         RECT rect=*(RECT *)l_param;
-        mysmb_win32_size_rectangle(window,&rect,WMSZ_BOTTOMRIGHT,LOWORD(w_param));
+        mygames_win32_window_size_rectangle(window,&rect,WMSZ_BOTTOMRIGHT,
+            LOWORD(w_param),&g_window_geometry);
         SetWindowPos(window,NULL,rect.left,rect.top,rect.right-rect.left,
             rect.bottom-rect.top,SWP_NOZORDER|SWP_NOACTIVATE);return 0;
     }
     if(message==WM_SIZE) {
-        if(w_param!=SIZE_MINIMIZED)mysmb_win32_normalize_client(window);
+        if(w_param!=SIZE_MINIMIZED)mygames_win32_window_normalize_client(window,
+            &g_window_geometry);
         InvalidateRect(window,NULL,FALSE);return 0;
     }
     if (message == WM_PAINT) {
@@ -631,7 +546,7 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
     }
     if (message == WM_DESTROY) {
         mysmb_win32_audio_close(&g_audio_output);
-        mysmb_win32_text_console_close(&g_console);
+        mygames_win32_text_console_close(&g_console);
         PostQuitMessage(0);
         return 0;
     }
@@ -656,8 +571,8 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
         return 2;
 #endif
     }
-    mysmb_win32_enable_dpi();
-    start_text=mysmb_win32_start_in_text();
+    mygames_win32_window_enable_dpi();
+    start_text=mygames_win32_parent_console_available();
     if(!start_text)(void)FreeConsole();
     ZeroMemory(&window_class, sizeof(window_class));
     window_class.lpfnWndProc = mysmb_win32_window_proc;
@@ -679,22 +594,26 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     QueryPerformanceCounter(&g_last_tick);
     g_game_started = 0U;
     mysmb_win32_focus_pause_initialize(&g_focus_pause);
+    mygames_win32_input_initialize(&g_keyboard);
+    mysmb_app_input_mapping_initialize(&g_input_mapping);
+    g_mapped_buttons=0U;
+    mygames_win32_window_geometry_initialize(&g_window_geometry,16,15,16,32);
     mysmb_win32_power_on();
     mysmb_win32_snapshot_initialize();
     SetRect(&initial,0,0,MYSMB_SCREEN_WIDTH*MYSMB_SCALE,MYSMB_SCREEN_HEIGHT*MYSMB_SCALE);
     AdjustWindowRectEx(&initial,WS_OVERLAPPEDWINDOW,FALSE,0U);
-    g_geometry_adjusting=1;
+    g_window_geometry.adjusting=1;
     window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,
                           CW_USEDEFAULT, CW_USEDEFAULT,
                           initial.right-initial.left,initial.bottom-initial.top,
                           NULL, NULL, instance, NULL);
     if (window == NULL) {
-        g_geometry_adjusting=0;return 1;
+        g_window_geometry.adjusting=0;return 1;
     }
-    if(!mysmb_win32_initial_client(window)) {
-        g_geometry_adjusting=0;DestroyWindow(window);return 1;
+    if(!mygames_win32_window_initial_client(window,&g_window_geometry)) {
+        g_window_geometry.adjusting=0;DestroyWindow(window);return 1;
     }
-    g_geometry_adjusting=0;
+    g_window_geometry.adjusting=0;
     if(start_text)mysmb_win32_switch_presenter(window,0);
     if(g_text_mode) {
         if(g_console.window_usable) {
@@ -708,14 +627,14 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     g_audio_available = mysmb_win32_audio_open(&g_audio_output) != 0 ? 1U : 0U;
     g_title_paused = 2U;
     mysmb_win32_update_title(window);
-    mysmb_win32_frame_wait_open(&g_frame_wait);
+    mygames_win32_frame_wait_open(&g_frame_wait);
     QueryPerformanceCounter(&g_last_tick);
 
     for (;;) {
         for(messages=0U;messages<64U &&
             PeekMessage(&message, NULL, 0U, 0U, PM_REMOVE)!=0;++messages) {
             if (message.message == WM_QUIT) {
-                mysmb_win32_frame_wait_close(&g_frame_wait);
+                mygames_win32_frame_wait_close(&g_frame_wait);
                 return 0;
             }
             TranslateMessage(&message);
@@ -723,7 +642,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
         }
         if (g_control.exit_requested!=0U) mysmb_win32_finish_exit(window);
         else mysmb_win32_step(window);
-        mysmb_win32_frame_wait_until(&g_frame_wait,
+        mygames_win32_frame_wait_until(&g_frame_wait,
             g_last_tick.QuadPart+g_frequency.QuadPart/60,
             g_frequency.QuadPart);
     }

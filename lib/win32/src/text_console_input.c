@@ -1,6 +1,6 @@
-#include "platform/win32/text_console.h"
+#include "win32/text_console.h"
 
-int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,
+int mygames_win32_text_console_key(struct mygames_win32_text_console *console,
     WORD *key,WORD *scan,unsigned char *pressed)
 {
     DWORD count,read;

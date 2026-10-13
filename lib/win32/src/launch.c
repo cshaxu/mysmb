@@ -1,8 +1,8 @@
 #include <windows.h>
 #include <tlhelp32.h>
-#include "platform/win32/launch.h"
+#include "win32/launch.h"
 
-int mysmb_win32_start_in_text(void)
+int mygames_win32_parent_console_available(void)
 {
     HANDLE snapshot;
     PROCESSENTRY32 entry;

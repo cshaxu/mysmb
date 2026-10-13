@@ -1096,24 +1096,18 @@ if(WIN32)
     target_link_libraries(mysmb_presentation_performance PRIVATE
         mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_planar_frame)
     add_test(NAME mysmb.presentation-performance COMMAND mysmb_presentation_performance)
-    add_executable(mysmb_win32_keyboard_smoke
-        test/win32_keyboard_smoke.c src/platform/win32/keyboard.c)
-    target_include_directories(mysmb_win32_keyboard_smoke PRIVATE src)
+    add_executable(mysmb_win32_keyboard_smoke test/win32_keyboard_smoke.c)
+    target_link_libraries(mysmb_win32_keyboard_smoke PRIVATE
+        mygames_win32 mysmb_app_input_mapping)
     add_test(NAME mysmb.win32-keyboard-smoke COMMAND mysmb_win32_keyboard_smoke)
     add_executable(mysmb_win32_launch_policy_smoke
-        test/win32_launch_policy_smoke.c src/platform/win32/launch.c)
-    target_include_directories(mysmb_win32_launch_policy_smoke PRIVATE src)
+        test/win32_launch_policy_smoke.c)
+    target_link_libraries(mysmb_win32_launch_policy_smoke PRIVATE mygames_win32)
     add_test(NAME mysmb.win32-launch-policy-smoke COMMAND mysmb_win32_launch_policy_smoke)
-    add_executable(mysmb_win32_parent_console_smoke test/win32_parent_console_smoke.c
-        src/platform/win32/text_console.c src/platform/win32/text_console_policy.c
-        src/platform/win32/text_console_presentation.c src/platform/win32/text_console_geometry.c
-        src/platform/win32/text_console_input.c src/platform/win32/launch.c)
-    target_link_libraries(mysmb_win32_parent_console_smoke PRIVATE mysmb_io_support user32)
-    add_executable(mysmb_win32_console_capability_smoke
-        test/win32_console_capability_smoke.c
-        src/platform/win32/text_console_policy.c
-        src/platform/win32/text_console_presentation.c)
-    target_link_libraries(mysmb_win32_console_capability_smoke PRIVATE mysmb_io_support user32)
+    add_executable(mysmb_win32_parent_console_smoke test/win32_parent_console_smoke.c)
+    target_link_libraries(mysmb_win32_parent_console_smoke PRIVATE mygames_win32)
+    add_executable(mysmb_win32_console_capability_smoke test/win32_console_capability_smoke.c)
+    target_link_libraries(mysmb_win32_console_capability_smoke PRIVATE mygames_win32)
     add_test(NAME mysmb.win32-console-capability-smoke COMMAND mysmb_win32_console_capability_smoke)
     if(MYSMB_WIN32_ARCH STREQUAL "host")
         if(CMAKE_SIZEOF_VOID_P EQUAL 8)
@@ -1129,12 +1123,8 @@ if(WIN32)
         src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c
         src/platform/win32/focus_pause.c
-        src/platform/win32/text_console.c src/platform/win32/text_console_policy.c
-        src/platform/win32/text_console_presentation.c src/platform/win32/text_console_geometry.c
-        src/platform/win32/text_console_input.c
-        src/platform/win32/launch.c
-        src/platform/win32/keyboard.c)
-    target_link_libraries(mysmb_win32 PRIVATE mysmb_core mysmb_game_io mysmb_io_support user32 gdi32 winmm)
+        )
+    target_link_libraries(mysmb_win32 PRIVATE mygames_win32 mysmb_app_input_mapping mysmb_core mysmb_game_io mysmb_io_support user32 gdi32 winmm)
     target_sources(mysmb_win32 PRIVATE src/io/file/snapshot_files.c
         src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
         src/platform/win32/audio_snapshot_real.c)
@@ -1143,33 +1133,19 @@ if(WIN32)
         test/win32_snapshot_binding_smoke.c src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
         src/io/file/snapshot_files.c src/platform/win32/snapshot_replace.c
-        src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c
-        src/platform/win32/text_console.c src/platform/win32/text_console_policy.c
-        src/platform/win32/text_console_presentation.c src/platform/win32/text_console_geometry.c
-        src/platform/win32/text_console_input.c
-        src/platform/win32/launch.c
-        src/platform/win32/keyboard.c)
+        src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c)
     add_executable(mysmb_win32_text_switch_smoke WIN32
         test/win32_text_switch_smoke.c src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
-        src/platform/win32/text_console.c src/platform/win32/text_console_policy.c
-        src/platform/win32/text_console_presentation.c src/platform/win32/text_console_geometry.c
-        src/platform/win32/text_console_input.c
-        src/platform/win32/launch.c
-        src/platform/win32/keyboard.c src/io/file/snapshot_files.c
+        src/io/file/snapshot_files.c
         src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
         src/platform/win32/audio_snapshot_real.c)
     target_link_libraries(mysmb_win32_text_switch_smoke PRIVATE
-        mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_snapshot user32 gdi32 winmm)
+        mygames_win32 mysmb_app_input_mapping mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_snapshot user32 gdi32 winmm)
     target_link_libraries(mysmb_win32_snapshot_binding_smoke PRIVATE
-        mysmb_game_snapshot mysmb_game_io mysmb_io_support mysmb_text_elements user32 gdi32 winmm)
-    foreach(target mysmb_win32 mysmb_win32_snapshot_binding_smoke mysmb_win32_text_switch_smoke)
-        target_sources(${target} PRIVATE src/platform/win32/frame_wait.c)
-    endforeach()
-    add_executable(mysmb_win32_frame_wait_smoke test/win32_frame_wait_smoke.c
-        src/platform/win32/frame_wait.c)
-    target_include_directories(mysmb_win32_frame_wait_smoke PRIVATE src)
-    target_link_libraries(mysmb_win32_frame_wait_smoke PRIVATE winmm user32)
+        mygames_win32 mysmb_app_input_mapping mysmb_game_snapshot mysmb_game_io mysmb_io_support mysmb_text_elements user32 gdi32 winmm)
+    add_executable(mysmb_win32_frame_wait_smoke test/win32_frame_wait_smoke.c)
+    target_link_libraries(mysmb_win32_frame_wait_smoke PRIVATE mygames_win32)
     add_test(NAME mysmb.win32-frame-wait-smoke COMMAND mysmb_win32_frame_wait_smoke)
     add_executable(mysmb_win32_focus_pause_smoke
         test/win32_focus_pause_smoke.c
