@@ -1,10 +1,13 @@
-# Bounded Windows Audio Device Startup
+# Audio Device Lifetime Across Win32, Win16 And DOS16
 
 ## Current task status
 
-Owner resumes M3 T19 S1 at453ae52d for audit/research/design only. The latest
-2026-10-13 audit below supersedes old call-site and design assumptions.
-Implementation remains outstanding; no product repair or closure is claimed.
+Owner expands retained M3 T19 to design and repair all three host families.
+The final section, "Approved three-platform design amendment", is the current
+scope and execution authority at efd9015a. Earlier sections preserve their
+audit-time facts and rejected options; their Windows-only restrictions and
+single-S T closure plan are superseded. S1 remains active; S2-S4 are planned.
+Implementation remains outstanding; this design P claims no product repair.
 
 ## Historical suspension
 
@@ -368,3 +371,211 @@ retained1991/1992nodes and4260/4261feasible controls (4342raw,81infeasible)
 are unchanged; scope/expected/actual additions are empty. Single-person review
 checked current findings against source and did not count historical claims
 or timing samples as an implemented repair.
+
+## Approved three-platform design amendment
+
+Owner approves the audited Win32/64, Win16 and DOS16 lifecycle repair. This
+amendment retains T19/S1 and adds planned S2-S4 within T19; it does not create
+three active tasks. P2 is the reviewed design delta. Only a subsequent code P
+can claim a repair, with all three refreshed local Mario products. No core,
+PPU, original sound command, snapshot wire format or Mine sound feature change.
+
+### Fixed additional findings and receiving S
+
+The retained A1-A8 findings above belong to S1. The following source findings
+are static evidence, not reproduced real-driver stalls. Existing positive
+behaviors are constraints to preserve, not defects to rewrite.
+
+| ID | Current source/contract | Required disposition | S |
+| --- | --- | --- | --- |
+| W16-1 | lib/win16/audio.c; WinMain calls open before host run | Window must paint and begin dispatch before acquisition; submit must not reopen the device. | S2 |
+| W16-2 | audio.c retries MMSYSERR_ALLOCATED after1000ms in submit, without attempt limit | Move retry to explicit service; finite retry episode, no retry on arbitrary errors, no retry after stop. | S2 |
+| W16-3 | reset/unprepare/close errors retain memory correctly, but close returns void | Publish cleanup result and retained ownership; partial preparation/cleanup must be retryable without new allocation or premature unload. | S2 |
+| W16-4 | Mario snapshot/focus invoke synchronous reset; load commits before ignored reset result | Serialize app load/reset; failed reset cannot report a clean queue or publish a new game state over old queued sound. Close supersedes pending load. | S2 |
+| W16-5 | lib/win16/host.c service precedes first UpdateWindow and destroys directly on close | Add only generic optional startup/close lifecycle hooks if required; prevent nested device work and service pending cleanup while unfocused. Preserve Mine default behavior. | S2 |
+| D16-1 | pcm_dos.c probe1024polls, write4096polls; IRQ calls start_block | Bound a whole operation as well as individual polls; qualify a separate short IRQ budget. Poll count is not a measured millisecond bound. | S3 |
+| D16-2 | failed start_block returns a block but does not invalidate audio.ready | Latch device failure, mask DMA, acknowledge IRQ; defer cleanup to main. No endless resubmission to a failed DSP. | S3 |
+| D16-3 | IRQ and main share playing/free/ready; main can call ensure_playing concurrently | Audit and protect compound ownership publication/start decisions with short interrupt-state-preserving sections; volatile alone is insufficient. | S3 |
+| D16-4 | reset/release call stop_playback with interrupts disabled; unconditional enable follows; vector/PIC restored | Preserve incoming IF, bound critical work, handle pending IRQ and faulted playback independently of playing; prove DMA is masked before freeing. | S3 |
+| D16-5 | no completion-progress watchdog; native hardware file absent from portable PCM unit | Add main-serviced completion timeout and hardware seam coverage for lost IRQ/DSP busy/partial DMA start. Generic parse/probe tests are not hardware proof. | S3 |
+| X-1 | Win16 advances synth without device; DOS/Win32 skip when unavailable | Make app-level unavailable/recovery policy explicit and test ordered commands; no stale samples on recovery and no compulsory wasted DOS synthesis for a terminally absent device. | S1-S3 |
+| X-2 | host errors currently collapse into booleans; DOS submit may accept a prefix before failure | Distinguish ready/full/failed/pending, consumed sample count and cleanup outcome; no caller retries an already accepted prefix. | S1-S3 |
+
+### Common contract, separate host execution
+
+Use one small C90 declaration owner, proposed lib/kvm/audio.h, for neutral
+status/result facts: lifecycle phase, last error domain/code, request ID,
+accepted sample count, queue capacity and cleanup completion. Storage and
+state transitions stay with the host owner. Capability flags distinguish
+asynchronous Win32 control from cooperative Win16/direct DOS control; do not
+label every submit or service call nonblocking. Hardware/WinMM handles never
+enter this header. Add no generic thread abstraction or second PCM queue.
+
+All hosts enforce: one device owner; no wait for a free sample block; no
+overwrite of queued storage; explicit partial acceptance; stop prevents new
+production/retry; memory outlives driver/DMA references. RESETTING, STOPPING
+and CLEANUP_FAILED are not CLOSED. A timeout is an observation, never proof
+that the driver released data. Reopen requires completed old-device cleanup.
+Do not serialize handles, queue indices, clocks or pending requests into saves.
+
+Apps own synthesis, cadence, pause/focus behavior, overflow policy, retry
+configuration, recovery and user-visible status. Platform libraries receive
+PCM only. During transient opening/reset/recovery the app consumes ordered
+sound commands and advances/discards synthesis as appropriate. A terminally
+unavailable DOS device may stop synthesis to save486CPU; any later explicit
+reopen/load must resynchronize from current APU state, never replay missed
+PCM. Win16/DOS retain their existing phase-reinitialize save contract; Win32
+retains its serialized renderer. No new cross-platform save compatibility is
+claimed. Normal ready-path PCM must match each platform's current format and
+renderer reference, not falsely compare44.1kHz16-bit with11.025kHz8-bit bytes.
+
+### S1: Win32 device and application transaction
+
+Keep the preceding one-thread/eight-slot design and A1-A8 acceptance matrix.
+One worker owns all WinMM calls, completion inspection and cleanup. Main owns
+game/renderer and never waits on a worker-held mutex. Publish immutable status
+snapshots/interlocked ownership; specify the memory ordering of every slot
+transition. Test stop/reset while a producer has borrowed a slot and prohibit
+release until that producer has returned it. Generation checks discard stale
+unsubmitted blocks and abandoned load acknowledgements.
+
+The existing2second stalled observation and250msgraceful-exit budget remain
+prototype candidates. An event-held driver call must not prevent input/close
+dispatch within1second on either width. No replacement thread, extra process
+or TerminateThread. Successful cleanup precedes release. Emergency self-exit
+must pass the separate host-restoration/lifetime prototype before adoption;
+otherwise its limitation stays open, not hidden behind a longer test timeout.
+
+Estimated10-16source/test/build files,700-1200changed lines, including shared
+declarations and app load/focus/close/title integration. Preserve measured
+eight-slot PCM storage; report thread-stack reserve separately from committed
+memory. Establish this contract before adapting the two16-bit hosts.
+
+### S2: Win16 cooperative lifecycle
+
+Retain MMSYSTEM and the existing eight184-byte PCM blocks. Introduce explicit
+begin/service/status/reset-request/stop-request operations within lib/win16;
+service performs at most one driver lifecycle call per host dispatch. Submit
+may perform its single waveOutWrite, but never open/retry/reset or pump USER.
+An in-service guard prevents reentry from messages dispatched by a driver;
+nested requests set intent only. Stop outranks reset and startup retries.
+
+Start acquisition only after initial window paint, not merely after CreateWindow
+or in the first pre-paint service call. Optional neutral ready/close-request
+hooks belong in lib/win16/host; audio policy stays in Mario. Existing clients
+with no hooks keep the current close behavior. Service audio before the app's
+focus/tick guard, including pending stop while paused/unfocused. A close request
+starts cleanup; release host/app storage only after the declared result permits
+it. No game logic or audio-specific branch belongs in the generic window owner.
+
+Initial busy policy: at most three total opens, at least1000msbetween returned
+MMSYSERR_ALLOCATED failures; caller supplies this policy. Other errors end that
+episode. Stop cancels scheduled retries immediately. Failed cleanup preserves
+the module, handle, locked memory and remaining header ownership; subsequent
+service retries are bounded and explicit, never an automatic tight loop.
+Exhausted cleanup remains visible to the app, not silently classified closed.
+For returned cleanup errors, use at most three service-spaced attempts per
+episode; on exhaustion the Mario window stays alive with PCM submission
+disabled and app-owned Retry/Cancel-close feedback. Retry starts another
+explicit episode, Cancel keeps the retained device storage and returns to the
+app. Do not return from WinMain over a known live driver reference. This
+feedback cannot execute while the driver itself has not returned.
+
+For load, validate the staged save before requesting reset; keep the old game
+until reset completes or the device is safely closed with no borrowed buffers.
+Then restore/resynchronize together and re-anchor the scheduler. Failed reset
+aborts the load without a game commit. Do not add a second10KiBsave allocation;
+reuse existing staging while rejecting further P/O until resolved. Saving does
+not require a device reset solely because the current function handles both P
+and O; preserve app pause and timing semantics explicitly.
+
+Win16 cooperative execution cannot preempt a driver that never returns. A
+timer, callback or a second cooperative task is not a cancellation mechanism.
+Acceptance covers finite returned errors/delays, no unbounded app retries,
+safe buffer retention and ordinary real-driver operations. It does not claim
+hard responsiveness/exit during an arbitrary stuck driver. A failed-close
+receipt must state the app's actual user-visible outcome; no unsafe freeing or
+unconditional task exit may masquerade as a successful close.
+
+Estimated8-12files,400-750lines including mirrored tests and optional host
+hooks. Resident PCM capacity stays unchanged; control state target below1KiB.
+No new Win16 thread, helper process, full-frame or snapshot buffer.
+
+### S3: DOS16 DSP, DMA and interrupt lifecycle
+
+Retain Sound Blaster8-bit mono, two2048-byte DMA blocks, existing BLASTER and
+toolchain. Do not introduce another ring or change DOSBox cycles/hardware to
+pass. Keep fixed bounded port access in the hardware owner; test seams must not
+add per-sample indirect calls to the production path.
+
+Separate foreground device service from the short IRQ continuation. IRQ only
+acknowledges hardware, publishes completion, attempts the next block under a
+qualified small total DSP budget, records fault and sends EOI. No allocation,
+free, vector replacement, reset/reprobe, synthesis or blocking retry in IRQ.
+If continuation fails, mask DMA immediately and publish a latched fault; main
+owns stop/recovery/cleanup. Do not just move every next-block start to a slow
+game tick: that can create audible gaps and requires its own timing proof.
+
+Use short FLAGS-preserving critical sections for queue claim/publication and
+start ownership. Do not disable interrupts across sample copies, allocation,
+foreground waits or an entire cleanup retry. Both IRQ and main see each block
+as free, filling, ready or playing; failed partial publication reports exact
+consumption. Mask DMA on every failure after programming, even if playing was
+never set. Teardown must reconcile a pending IRQ and restore the prior vector
+and relevant PIC state before memory release; test cleanup at each start stage.
+
+Add service(now) with a monotonic host timestamp for progress observation,
+derived from the existing clock rather than another timer interrupt. Its
+watchdog depends on programmed samples/rate plus an explicit margin; do not
+time out while deliberately stopped. Lost completion transitions to fault,
+stops DMA and lets gameplay continue without sound. Retry/reprobe requires a
+new explicit episode, not every game tick. Preserve elapsed-wrap behavior.
+
+Measure ordinary and fault-path foreground cost and worst IRQ duration at
+unchanged DOSBox settings. Select the poll budget from measured supported DSP
+response with margin; do not relabel4096iterations as a fixed time guarantee.
+Compare underruns/audio continuity before accepting a shorter IRQ budget.
+Estimated7-11files,350-650lines; retain4KiBDMA, control-state target below1KiB.
+The DMA64KiBboundary rejection remains an explicit capability failure in this
+task; no unrelated allocator redesign is required to claim lifecycle repair.
+
+### S4: integrated acceptance and task closure
+
+| Proof owner | Required evidence |
+| --- | --- |
+| Shared contract | Single owner per decision; accepted-prefix semantics, phase/error facts, declared capabilities; no host/game dependency in kvm. |
+| Win32 session | All held driver call sites, partial prepare/cleanup failure, late return, reset epochs, queue saturation, producer/stop race, one worker and safe terminal release. |
+| Win16 lifecycle | Fake SDK covers each open attempt and timing boundary, reentry, one lifecycle call per service, close during prepare/retry, reset failure, partial cleanup and retained GlobalLock/module ownership. |
+| DOS hardware | Port/vector/IF seams cover busy DSP, absent reset signature, DMA boundary, partial start, full/prefix queue, interleaved IRQ/publication, lost IRQ, fault cleanup and repeat reset/close. |
+| App joins | Graph/text Tab, focus/pause, save/load success/failure, repeated P/O, close during startup/load, unavailable/recovery synthesis policy; Mine unchanged under optional host hooks. |
+| Operational | Complete applicable x86/x64 unit and integration suites, independent library build, native host integration, real DOS and Win3.x execution of the combined MZ/NE product, normal audio and absent-device routes. |
+| Audio evidence | Neutral known PCM verifies device transport; captured product audio verifies nonempty/nonflat output and reset/recovery continuity. Neither alone proves subjective listening quality; retain an owner listening check separately. |
+| Resource/performance | Before/after PCM/control/thread memory, device latency, DOS IRQ duration/underruns and ordinary game timing at unchanged settings. Report measured maxima as samples, not universal bounds. |
+
+Each code-changing P rebuilds local assets/mario/mysmb16.exe (DOS MZ plus
+Win16 NE), mysmb32.exe and mysmb64.exe, and reports hashes/build/run results.
+Do not commit binaries or protected captures. S4 republishes only when code
+changed or hashes/build provenance are stale. Source/test ownership and Mine
+regression are mandatory for any generic Win16 host hook.
+
+Close findings individually against their owner tests and actual integration
+joins, not a single aggregate pass count. For each S: before-work brief with
+owners/size, implementation plus similar-issue sweep, tests/products, reviewed
+commit and result report; only then admit the next S. S4 adds no new speculative
+optimization. Any unqualified lifetime or host path remains named and open;
+unsupported arbitrary-driver cancellation is an explicit platform limit, not
+a test that is silently skipped. T19 closes only when A1-A8, W16-1..5,
+D16-1..5 and X-1..2 have dispositions backed by the above evidence.
+
+P2 design review: current Win16 tests already exercise failed reset/unprepare/
+close retention; extend rather than duplicate those assertions. Current DOS
+pcm_smoke tests parse/probe/reserve/reprobe, not actual pcm_dos port/IRQ code.
+No fresh audio capture, product run or repair is claimed in this P. Only S1 is
+registered active; subsequent S admission adds its own empty-ROM ledger run.
+Historical1992/1992 and retained1991/1992nodes,4260/4261feasible controls
+(4342raw,81infeasible) are unchanged; no final ROM certification credit.
+
+P2 review/gates: node responsibility validation regenerated the view without
+node/custody changes; the empty-scope admission gate and documentation topology
+gate passed. Actual design diff touches three tracked documents (proposal,
+CURRENT and ledger JSON); no production build is warranted for this P.

@@ -8134,7 +8134,7 @@
           "canReceive": false,
           "admissionRole": "implementation",
           "state": "active",
-          "receipt": "Owner admits queue head;complete acquisition/lifetime chain,empty ROM scope. Owner suspends unfinished work and returns it to queue;research retained,no closure. Owner resumes current-source audit/research/design at453ae52d; implementation and closure remain outstanding."
+          "receipt": "Owner admits queue head;complete acquisition/lifetime chain,empty ROM scope. Owner suspends unfinished work and returns it to queue;research retained,no closure. Owner resumes current-source audit/research/design at453ae52d. At efd9015a owner approves three-platform design and repair: retained S1 owns shared contract and Win32 lifetime; planned S2 Win16, S3 DOS16 and S4 integration are admitted sequentially. P2 records the design amendment; implementation and closure remain outstanding."
         }
       ]
     },
