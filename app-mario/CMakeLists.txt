@@ -2,6 +2,10 @@ set(CMAKE_C_STANDARD 90)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
+add_executable(mysmb_input_latch_smoke test/input_latch_smoke.c src/io/input_latch.c)
+target_include_directories(mysmb_input_latch_smoke PRIVATE src)
+add_test(NAME mysmb.io-clocked-input-latch COMMAND mysmb_input_latch_smoke)
+
 # KVM is the project-wide neutral header contract.  A number of Mario's
 # owner-local checks compile a narrow source unit directly rather than link a
 # library target, so give those isolated units the same contract include root.

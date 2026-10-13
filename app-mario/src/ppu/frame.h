@@ -109,7 +109,7 @@ struct mysmb_ppu_frame {
 #ifdef MYSMB_DOS16_TARGET
     mygames_kvm_u8 MYSMB_PPU_FRAME_FAR *pixels;
 #else
-    mygames_kvm_u8 pixels[MYSMB_PPU_FRAME_WIDTH * MYSMB_PPU_FRAME_HEIGHT];
+    mygames_kvm_u8 pixels[MYGAMES_KVM_VIDEO_PIXELS];
 #endif
 };
 #ifdef MYSMB_DOS16_TARGET

@@ -4,7 +4,7 @@
 #include "kvm/input_event.h"
 #include "kvm/video.h"
 
-/* Receiving ABI only. The later USER/GDI host implementation owns devices;
+/* The USER/GDI host implementation owns devices;
  * the app owns every input meaning, view decision and frame producer. */
 #define MYGAMES_WIN16_VIEW_GRAPHICS 1U
 #define MYGAMES_WIN16_VIEW_TEXT 2U
@@ -21,5 +21,5 @@ struct mygames_win16_application {
     int (*graphics)(void *,struct mygames_kvm_video_band *);
 };
 
-/* No runtime entry is declared until the real Win16 host is admitted. */
+/* The graphical runtime entry is declared in win16/host.h. */
 #endif

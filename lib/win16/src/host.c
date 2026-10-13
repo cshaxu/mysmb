@@ -1,0 +1,183 @@
+#include <windows.h>
+#include <string.h>
+#include "win16/host.h"
+#include "win16/dib.h"
+#include "win16/clock.h"
+#include "kvm/color.h"
+#include "kvm/windows_key.h"
+
+struct win16_bitmap { BITMAPINFOHEADER header; RGBQUAD colors[256]; };
+struct win16_palette { WORD version,count; PALETTEENTRY entries[64]; };
+static struct win16_bitmap bitmap;
+static struct win16_palette palette_description;
+static HPALETTE palette;
+static const struct mygames_win16_application *app;
+static HGLOBAL storage;
+static unsigned char FAR *pixels;
+static struct mygames_win16_clock clock;
+static unsigned char keys[MYGAMES_KVM_PHYSICAL_KEY_COUNT];
+static int focused,ready;
+static unsigned short output_bits,row_bytes;
+static unsigned char reduced_colors[64];
+
+static int compose(void)
+{
+    struct mygames_kvm_video_band band;
+    unsigned short first;
+    for(first=0U;first<240U;first+=8U) {
+        band.first=first;band.rows=8U;band.pixels=0;
+        if(!app->graphics(app->context,&band) || !band.pixels ||
+            band.first!=first || band.rows!=8U)return 0;
+        if(!mygames_win16_dib_band(pixels,61440U,output_bits,&band,
+            reduced_colors))return 0;
+    }
+    return 1;
+}
+
+static void key_event(WPARAM key,LPARAM detail,int down)
+{
+    struct mygames_kvm_input_event event;
+    unsigned short scan=(unsigned short)((detail>>16)&0xffL);
+    unsigned short code=mygames_kvm_windows_key(key,scan);
+    if(!code)return;
+    memset(&event,0,sizeof(event));
+    event.kind=MYGAMES_KVM_INPUT_KEY;event.down=(unsigned char)down;
+    event.repeat=(unsigned char)(down && keys[code]);
+    event.physical_code=code;event.native_scan=scan;
+    keys[code]=(unsigned char)down;
+    app->input(app->context,&event);
+}
+
+LRESULT FAR PASCAL __export MygamesWin16WndProc(HWND window,UINT message,
+    WPARAM word,LPARAM detail)
+{
+    PAINTSTRUCT paint;
+    RECT rect;
+    HDC dc;
+    HPALETTE old_palette;
+    unsigned short ticks,i;
+    struct mygames_kvm_input_event event;
+    switch(message) {
+    case WM_QUERYNEWPALETTE:
+        if(!palette)return 0;
+        dc=GetDC(window);old_palette=SelectPalette(dc,palette,FALSE);
+        word=RealizePalette(dc);
+        if(old_palette)SelectPalette(dc,old_palette,TRUE);
+        ReleaseDC(window,dc);
+        if(word)InvalidateRect(window,0,FALSE);
+        return word!=0;
+    case WM_PALETTECHANGED:
+        if((HWND)word!=window && palette)InvalidateRect(window,0,FALSE);
+        return 0;
+    case WM_KEYDOWN: key_event(word,detail,1);return 0;
+    case WM_KEYUP: key_event(word,detail,0);return 0;
+    case WM_SETFOCUS: case WM_KILLFOCUS:
+        focused=message==WM_SETFOCUS;
+        memset(keys,0,sizeof(keys));memset(&event,0,sizeof(event));
+        event.kind=MYGAMES_KVM_INPUT_FOCUS;event.down=(unsigned char)focused;
+        app->input(app->context,&event);
+        mygames_win16_clock_reset(&clock,GetTickCount());return 0;
+    case WM_TIMER:
+        if(app->exit_requested(app->context)){DestroyWindow(window);return 0;}
+        if(!focused)return 0;
+        /* USER timer delivery is coarse. Preserve 60-Hz logical ticks and
+         * publish once after the due ticks; paint never advances the app. */
+        ticks=mygames_win16_clock_step(&clock,GetTickCount());
+        for(i=0U;i<ticks;++i)app->tick(app->context);
+        /* Catch up logical state without rebuilding an already overdue view.
+         * Input and USER messages still get a turn after each bounded batch. */
+        if(!ticks || clock.credit>=1000UL)return 0;
+        ready=compose();InvalidateRect(window,0,FALSE);
+        /* Win3 timer traffic can keep a deferred paint behind a busy queue.
+         * Submit the completed immutable frame before returning to USER. */
+        if(ready)UpdateWindow(window);
+        return 0;
+    case WM_PAINT:
+        dc=BeginPaint(window,&paint);GetClientRect(window,&rect);
+        old_palette=0;
+        if(palette){old_palette=SelectPalette(dc,palette,FALSE);RealizePalette(dc);}
+        SetStretchBltMode(dc,COLORONCOLOR);
+        if(ready && rect.right>0 && rect.bottom>0)
+            StretchDIBits(dc,0,0,rect.right,rect.bottom,0,0,256,240,
+                pixels,(BITMAPINFO FAR *)&bitmap,DIB_RGB_COLORS,SRCCOPY);
+        if(old_palette)SelectPalette(dc,old_palette,TRUE);
+        EndPaint(window,&paint);return 0;
+    case WM_DESTROY: KillTimer(window,1);PostQuitMessage(0);return 0;
+    }
+    return DefWindowProc(window,message,word,detail);
+}
+
+int mygames_win16_run(HINSTANCE instance,HINSTANCE previous,int show,
+    const struct mygames_win16_application *application)
+{
+    WNDCLASS cls;
+    HWND window;
+    MSG message;
+    RECT rect;
+    unsigned short i;
+    unsigned long rgb;
+    HDC screen;
+    if(!application || !application->input || !application->tick ||
+        !application->graphics || !application->exit_requested ||
+        !(application->available_views&MYGAMES_WIN16_VIEW_GRAPHICS))return 1;
+    app=application;ready=focused=0;
+    memset(keys,0,sizeof(keys));memset(&bitmap,0,sizeof(bitmap));
+    storage=GlobalAlloc(GMEM_MOVEABLE,61440L);
+    if(!storage)return 2;
+    pixels=(unsigned char FAR *)GlobalLock(storage);
+    if(!pixels){GlobalFree(storage);return 2;}
+    bitmap.header.biSize=sizeof(BITMAPINFOHEADER);
+    bitmap.header.biWidth=256L;bitmap.header.biHeight=240L;
+    screen=GetDC(0);
+    if(!screen){GlobalUnlock(storage);GlobalFree(storage);return 3;}
+    output_bits=GetDeviceCaps(screen,BITSPIXEL)*GetDeviceCaps(screen,PLANES)<=4?4U:8U;
+    ReleaseDC(0,screen);row_bytes=output_bits==4U?128U:256U;
+    bitmap.header.biPlanes=1;bitmap.header.biBitCount=output_bits;
+    bitmap.header.biSizeImage=(unsigned long)row_bytes*240L;
+    bitmap.header.biClrUsed=output_bits==4U?16L:256L;
+    palette_description.version=0x300;
+    palette_description.count=output_bits==4U?16U:64U;
+    for(i=0U;i<64U;++i) {
+        reduced_colors[i]=mygames_kvm_color_text16((unsigned char)i);
+        rgb=output_bits==4U?mygames_kvm_color_text_rgb((unsigned char)i):
+            mygames_kvm_color_rgb((unsigned char)i);
+        bitmap.colors[i].rgbRed=(unsigned char)(rgb>>16);
+        bitmap.colors[i].rgbGreen=(unsigned char)(rgb>>8);
+        bitmap.colors[i].rgbBlue=(unsigned char)rgb;
+        palette_description.entries[i].peRed=bitmap.colors[i].rgbRed;
+        palette_description.entries[i].peGreen=bitmap.colors[i].rgbGreen;
+        palette_description.entries[i].peBlue=bitmap.colors[i].rgbBlue;
+        palette_description.entries[i].peFlags=0;
+    }
+    palette=output_bits==8U?CreatePalette((LOGPALETTE FAR *)&palette_description):0;
+    if(output_bits==8U && !palette){GlobalUnlock(storage);GlobalFree(storage);return 3;}
+    if(!previous) {
+        memset(&cls,0,sizeof(cls));cls.style=CS_HREDRAW|CS_VREDRAW;
+        cls.lpfnWndProc=MygamesWin16WndProc;cls.hInstance=instance;
+        cls.hCursor=LoadCursor(0,IDC_ARROW);
+        cls.hbrBackground=(HBRUSH)(COLOR_WINDOW+1);
+        cls.lpszClassName="MygamesWin16";
+        if(!RegisterClass(&cls)){DeleteObject(palette);GlobalUnlock(storage);GlobalFree(storage);return 3;}
+    }
+    rect.left=rect.top=0;
+    rect.bottom=GetSystemMetrics(SM_CYSCREEN)-GetSystemMetrics(SM_CYCAPTION)-
+        2*GetSystemMetrics(SM_CYFRAME)-16;
+    if(rect.bottom>480)rect.bottom=480;
+    if(rect.bottom<120)rect.bottom=120;
+    rect.right=rect.bottom*16/15;
+    AdjustWindowRect(&rect,WS_OVERLAPPEDWINDOW,FALSE);
+    window=CreateWindow("MygamesWin16",app->title,WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT,CW_USEDEFAULT,rect.right-rect.left,rect.bottom-rect.top,
+        0,0,instance,0);
+    if(!window){DeleteObject(palette);GlobalUnlock(storage);GlobalFree(storage);return 4;}
+    mygames_win16_clock_reset(&clock,GetTickCount());
+    if(!SetTimer(window,1,16,0)) {
+        DestroyWindow(window);DeleteObject(palette);GlobalUnlock(storage);GlobalFree(storage);return 5;
+    }
+    ShowWindow(window,show);UpdateWindow(window);
+    while(GetMessage(&message,0,0,0)) {
+        TranslateMessage(&message);DispatchMessage(&message);
+    }
+    DeleteObject(palette);GlobalUnlock(storage);GlobalFree(storage);pixels=0;app=0;
+    return (int)message.wParam;
+}

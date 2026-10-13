@@ -229,7 +229,10 @@ portable uniform-row planar shortcut. Windows binds a shared pair table;
 DOS segment/ISA/VGA operations remain in dos16. No platform selects gameplay
 or original PPU state semantics through this capability.
 
-Only dos16 and win32 are children of platform. Shared planar pixel layout is
+T44 S2 adds a Win16 composition root alongside dos16 and win32. The shared
+USER/GDI host remains in lib/win16 and consumes neutral physical events and
+synchronous canonical pixel bands. Mario owns input meanings and binds the
+same core and PPU; Win16 Tab is inert. Shared planar pixel layout is
 io/planar_frame;it knows only neutral pixels,dimensions,capacity and an optional
 synchronous row encoder. The DOS root supplies its private dos16/planar_row
 encoder. Shared IO imports no host declaration or assembly. File/path services

@@ -6,17 +6,16 @@ import sys
 root = Path(__file__).resolve().parents[1]
 platform = root / "src" / "platform"
 components = {p.name for p in platform.iterdir() if p.is_dir()}
-if components != {"dos16", "win32"}:
-    print(f"platform components must be dos16/win32 only: {sorted(components)}")
+if components != {"dos16", "win32", "win16"}:
+    print(f"platform components must be dos16/win16/win32 only: {sorted(components)}")
     sys.exit(1)
 for path in platform.rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     host = path.relative_to(platform).parts[0]
-    other = "win32" if host == "dos16" else "dos16"
     includes = re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M)
-    if any(x.startswith(f"platform/{other}/") or
+    if any(any(x.startswith(f"platform/{other}/") for other in components - {host}) or
            (host == "dos16" and x == "windows.h") or
-           (host == "win32" and x in ("dos.h", "conio.h")) for x in includes):
+           (host in ("win32", "win16") and x in ("dos.h", "conio.h")) for x in includes):
         print(f"{path.relative_to(root)}: imports the other host")
         sys.exit(1)
     if path.parent == platform:
@@ -114,8 +113,8 @@ win16 = repository / "lib" / "win16"
 for path in win16.rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
-        if not include.startswith(("win16/", "kvm/")):
-            print(f"{path.relative_to(repository)}: Win16 contract imports {include}")
+        if not include.startswith(("win16/", "kvm/")) and include not in ("windows.h", "string.h"):
+            print(f"{path.relative_to(repository)}: Win16 host imports {include}")
             sys.exit(1)
     for token in ("MYSMB_", "mysmb_", "core/", "ppu/", "app-mario/", "app-mine/"):
         if token in text:

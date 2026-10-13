@@ -28,7 +28,7 @@ app-mario/test/           Mario-owned unit and integration harnesses
 lib/kvm/                   portable cells, palette/glyph algorithms, video and physical-event contracts
 lib/win32/                 reusable Windows Console/window/input and timing services
 lib/dos16/                 reusable Set-1, IRQ, BIOS text, B800 and PIT services
-lib/win16/                 receiving callback contract only; no USER/GDI host yet
+lib/win16/                 USER/GDI graphical host, neutral DIB/clock and receiving callbacks
 app-mine/                  receiving documentation only; provenance-reviewed import pending
 tools/                     local generators and governance checks
 assets/mario/              ignored local Mario outputs: mysmb16.exe, mysmb32.exe, mysmb64.exe
@@ -148,7 +148,8 @@ io/planar_frame owns the portable uniform-row fill as well as exact geometry.
 Host assembly is an equivalent encoder under the neutral span contract,not a
 separate feature path. Windows and DOS composition bind the same capabilities.
 
-Only dos16 and win32 are children of platform. Shared planar pixel layout is
+T44 S2 adds the native Win16 composition root alongside dos16 and win32.
+Shared planar pixel layout is
 io/planar_frame;it knows only neutral pixels,dimensions,capacity and an optional
 synchronous row encoder. The DOS root supplies its private dos16/planar_row
 encoder. Native bands deinterleave256x240identity coordinates into64-byte plane
