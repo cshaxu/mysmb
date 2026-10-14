@@ -23,10 +23,11 @@ void mygames_win32_window_margins(HWND window,UINT dpi,RECT *margins)
     mygames_win32_adjust_for_dpi_fn function=NULL;
     DWORD style=(DWORD)GetWindowLongPtr(window,GWL_STYLE);
     DWORD extended=(DWORD)GetWindowLongPtr(window,GWL_EXSTYLE);
+    BOOL has_menu=GetMenu(window)!=NULL;
     memcpy(&function,&raw,sizeof(function));
     SetRect(margins,0,0,0,0);
-    if(function) (void)function(margins,style,FALSE,extended,dpi);
-    else (void)AdjustWindowRectEx(margins,style,FALSE,extended);
+    if(function) (void)function(margins,style,has_menu,extended,dpi);
+    else (void)AdjustWindowRectEx(margins,style,has_menu,extended);
 }
 
 static int mygames_win32_window_units(int width,int height,int by_height,

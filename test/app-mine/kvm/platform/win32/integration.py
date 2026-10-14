@@ -34,6 +34,7 @@ g.SelectObject.restype = w.HANDLE
 g.DeleteObject.argtypes = [w.HANDLE]
 g.DeleteDC.argtypes = [w.HDC]
 g.GetDIBits.argtypes = [w.HDC, w.HANDLE, w.UINT, w.UINT, c.c_void_p, c.c_void_p, w.UINT]
+k.GetConsoleWindow.restype = w.HWND
 k.AttachConsole.argtypes = [w.DWORD]
 k.CreateFileW.argtypes = [w.LPCWSTR, w.DWORD, w.DWORD, c.c_void_p, w.DWORD, w.DWORD, w.HANDLE]
 k.CreateFileW.restype = w.HANDLE
@@ -78,6 +79,12 @@ def until(fn, label, seconds=10):
             return result
         time.sleep(.025)
     raise RuntimeError(label)
+
+
+def client_size(hwnd):
+    rect = w.RECT()
+    host.require(u.GetClientRect(hwnd, c.byref(rect)), "Get client size")
+    return rect.right, rect.bottom
 
 
 def capture(hwnd, path):
@@ -151,11 +158,13 @@ def main():
                 root = until(lambda: next((x for x in host.windows(desktop) if x[2] == "MyGamesMine"), None), "Mine root")
                 hwnd, pid = root[0], root[1]
                 child = k.OpenProcess(0x101001, False, pid)
+                initial_size = None
                 if borrowed:
                     until(lambda: not u.IsWindowVisible(hwnd), "Borrowed console initial view")
                 else:
                     until(lambda: u.IsWindowVisible(hwnd), "Graphical launch")
                     time.sleep(.3)
+                    initial_size = client_size(hwnd)
                     before = capture(hwnd, output/"window.png")
                     # Left release on the first board cell, scaled to the client.
                     rect = w.RECT();u.GetClientRect(hwnd, c.byref(rect))
@@ -202,6 +211,32 @@ def main():
                         # when its right-hand dimensions caption is clipped.
                         return "30x16" in text or "099" in text
                     until(board_visible, "Mine text content")
+                    # Same-board round trip before level changes: preserve physical
+                    # client geometry, not just a nonblank resized screenshot.
+                    attached = k.GetConsoleWindow()
+                    console_key(console_input, 9, True);console_key(console_input, 9, False)
+                    k.CloseHandle(console_input);k.CloseHandle(console_output)
+                    console_input = console_output = None
+                    k.FreeConsole()  # The probe must not keep an owned console alive.
+                    until(lambda: u.IsWindowVisible(hwnd), "Same-board graphics return")
+                    time.sleep(.3)
+                    if initial_size is not None:
+                        host.require(client_size(hwnd) == initial_size,
+                                     "Same-board client size changed: %r -> %r" % (initial_size, client_size(hwnd)))
+                    if not borrowed:
+                        # Release is observable even if Terminal has a notification HWND.
+                        host.require(not k.AttachConsole(pid), "Owned console was not released")
+                    else:
+                        host.require(k.AttachConsole(pid), "Borrowed console attachment retained")
+                        host.require(k.GetConsoleWindow() == attached, "Borrowed console identity")
+                        k.FreeConsole()
+                    u.PostMessageW(hwnd, 0x100, 9, 0)
+                    u.PostMessageW(hwnd, 0x101, 9, 0)
+                    until(lambda: not u.IsWindowVisible(hwnd), "Second text entry")
+                    until(lambda: k.AttachConsole(pid), "Attach second text console")
+                    console_input = k.CreateFileW("CONIN$", 0xc0000000, 3, None, 3, 0, None)
+                    console_output = k.CreateFileW("CONOUT$", 0xc0000000, 3, None, 3, 0, None)
+                    until(board_visible, "Board after round trip")
                     console_key(console_input, ord('3'), True);console_key(console_input, ord('3'), False)
                     until(expert_visible, "Console level key")
                     (output/("borrowed.txt" if borrowed else "owned.txt")).write_text(contents(), encoding="utf-8")
@@ -209,17 +244,26 @@ def main():
                     until(lambda: u.IsWindowVisible(hwnd), "Console to graphics")
                     time.sleep(.2)
                     capture(hwnd, output/("borrowed-return.png" if borrowed else "owned-return.png"))
-                    # Switch back into the same retained attachment.
+                    k.CloseHandle(console_input);k.CloseHandle(console_output)
+                    console_input = console_output = None
+                    k.FreeConsole()
+                    # Borrowed consoles retain identity; owned consoles are reacquired.
                     u.PostMessageW(hwnd, 0x100, 9, 0)
                     until(lambda: not u.IsWindowVisible(hwnd), "Graphics to retained console")
+                    u.PostMessageW(hwnd, 0x101, 9, 0)
+                    until(lambda: k.AttachConsole(pid), "Attach final text console")
+                    console_input = k.CreateFileW("CONIN$", 0xc0000000, 3, None, 3, 0, None)
+                    console_output = k.CreateFileW("CONOUT$", 0xc0000000, 3, None, 3, 0, None)
                     console_key(console_input, 9, False)
                     until(expert_visible, "Retained board")
                     console_key(console_input, ord('Q'), True);console_key(console_input, ord('Q'), False)
                 finally:
-                    k.CloseHandle(console_input);k.CloseHandle(console_output);k.FreeConsole()
+                    if console_input: k.CloseHandle(console_input)
+                    if console_output: k.CloseHandle(console_output)
+                    k.FreeConsole()
                 host.completed(child);host.completed(handle)
                 receipts.append(dict(route=route, launch=True,
-                                     text=True, level=True, retainedTab=True, exitCode=0))
+                                     text=True, level=True, retainedTab=True, stableGeometry=True, consoleOwnership=True, exitCode=0))
             finally:
                 for process in (child, handle):
                     if process:

@@ -1,29 +1,29 @@
 # Project Status
 
-## M3 T19 S5 Packet
+## M3 T19 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Closed: M3 T19 S5 P1; owner-directed correction complete, waiting for acceptance. |
-| Admission And Approval | Owner requests Mine Win16 duplicate-menu repair and explicitly authorizes T19 S5. Single-person executor/coordinator review. |
-| Objective | Hide the native menu in Mine Win16 text view, restore it in graphics, preserve geometry, input and menu lifetime. |
-| Non-goals | No game, audio, DOS, Win32 policy or ROM changes. |
-| Reference Baseline | 6fe73028, clean worktree. |
-| Candidate Proposal | [T19 retained record and S5 amendment](../history/M3-T19-three-platform-audio-lifetime.md#s5-owner-directed-menu-correction). |
-| Files And ABI Surface | Mine Win16 root and generic Win16 host menu mechanism, mirrored tests; estimated 3-6 source/test files, 80-160 lines. No application struct ABI change. |
+| Identifier Mode | Closed: M3 T19 S6 P1; T19 engineering scope complete, owner acceptance pending. |
+| Admission And Approval | Owner reports Mine32 shrinking after Tab return and an owned console remaining visible. Coordinator admits bounded corrective S6 under T19. |
+| Objective | Preserve menu-bearing client dimensions across Tab; release owned consoles and retain borrowed consoles. |
+| Non-goals | No game, audio, DOS16, Win16 or ROM changes. |
+| Reference Baseline | b17d024d, clean worktree. |
+| Candidate Proposal | [T19 retained record and S5 amendment](../history/M3-T19-three-platform-audio-lifetime.md#s6-mine-native-tab-return). |
+| Files And ABI Surface | Mine Win32 root, shared window geometry and mirrored host tests; estimate 3-5 files, 60-140 lines. No struct ABI change. |
 | Applicable Rules | Task Reading Set: Execution, Documentation, Architecture, Coding, source policy and current component map. |
-| Verification | Owner-local host menu lifecycle tests, native suites, original small/large-model Win16 builds, actual Win3.x graphics/text/graphics and close-in-text routes. |
+| Verification | Both native suites and private-desktop actual Mine/Mario routes; menu geometry tests; refresh four native products, preserve unchanged hybrid products. |
 | Expected Markers | Empty scope/expected/actual; historical1992/1992; no ROM equivalence credit. |
 | Asset Needs | Existing owner-local Win3.x test image and Mario ROM build input only; protected products/captures remain ignored beneath build and local assets. |
 | Reporting Requirements | Before/after menu behavior, geometry, test counts, product provenance, diff size and retained limitations. |
 | Stop Conditions | No global desktop control, sibling writes, system settings changes or app-specific policy in lib. |
-| Exit Criteria | One menu in either view, repeated switches and text-mode close safe, applicable tests/builds pass, products refreshed and reviewed commit pushed. |
-| Original Owner Request | Reopen T19, add an S to remove duplicated native menu when Mine enters character view. |
-| Similar-Issue Sweep | Menu attachment, detached ownership, restore flags and menu-dependent client sizing across Win16 clients; Win32 and DOS reviewed for analogous double menus. |
+| Exit Criteria | Stable client dimensions on same-board Tab round trips, owned console release and borrowed console identity preserved, applicable tests pass and commit pushed. |
+| Original Owner Request | Mine32 Tab back shrinks buttons/text and leaves console visible. |
+| Similar-Issue Sweep | Shared geometry callers, menu/no-menu windows, Mine/Mario owned and borrowed console transitions. |
 
 ## Current Technical Baseline
 
-T19 S1-S5 engineering scope is closed, pending owner acceptance. No active S. Its queue entry is removed; the five other candidates
+T19 S1-S6 engineering scope is closed. No active S; owner acceptance pending. Its queue entry is removed; the five other candidates
 retain their order. T45 S4 remains closed pending owner visual acceptance;
 its local products and pending acceptance materials are preserved.
 Historical1992/1992, retained1991/1992nodes and4260/4261feasible controls
@@ -79,3 +79,13 @@ through close. Both315test suites and independent24tests pass. Actual Win3.x
 single-menu/return/repeat/text-exit and Mario regression routes pass; both hybrid
 products rebuilt and locally refreshed. No audio/game/ROM change or new
 certification credit. Wait for owner acceptance before build cleanup.
+
+## S6 P1 closure checkpoint
+
+Shared Win32 margins now include the actual menu; Mine closes owned consoles
+on graphics return and retains borrowed attachment. Old-code probes fail both
+new regression assertions; fixed x86/x64 default suites315/315, library24/24,
+Mine3routes, neutral host2routes and Mario15routes per width pass. Initial
+parallel Mario maximum-console fixtures timed out; unchanged serial reruns
+pass, with no budget increase. Four native products refreshed, two unchanged
+hybrids retained. Empty ROM scope, no certification credit. Wait for acceptance.

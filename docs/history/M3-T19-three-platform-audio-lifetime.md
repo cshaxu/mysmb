@@ -2,7 +2,7 @@
 
 ## Current task status
 
-Owner-directed S5 menu correction is engineering-closed, pending acceptance.
+Owner-directed S5/S6 menu and Tab corrections are engineering-closed, pending acceptance.
 S1-S4 results remain retained.
 
 M3 T19 S1-S4 engineering scope closed on2026-10-13 after single-person
@@ -933,3 +933,72 @@ Refreshed local product receipts:
 - assets/mine/mine16.exe: `48f8c751a717641fbf3d06ca5446c2c126495ec5af8843ca429193a273b50c18` (40685bytes).
 
 - assets/mario/mysmb16.exe: `c98736885f037aaf74acaa81e64478594c1673bd9e6e80379b2bbebb638b09ec` (699349bytes).
+
+## S6 Mine native Tab return
+
+Owner reports Mine32 becomes smaller after graphics/text/graphics and leaves
+its console visible. Admit corrective S6 from b17d024d. Library margins pass
+FALSE for menu presence, causing a menu-height deficit and integer-scale
+normalization downshift. Mine suspends owned consoles instead of closing them;
+that cannot close an owned Windows Terminal host. Borrowed identity remains
+retained. Fix the neutral geometry mechanism and Mine composition policy.
+Estimate3-5files,60-140lines. Verify stable same-board client dimensions before
+changing difficulty, detached/owned release and borrowed return with actual
+private-desktop products on both widths; native suites and Mario regression.
+Empty ROM scope/expected/actual; historical1992/1992, retained1991/1992nodes,
+4260/4261feasible controls (4342raw,81infeasible) unchanged. No game/audio change.
+
+### S6 P1 implementation and coordinator closure
+
+Shared window margins query GetMenu for both DPI-aware and fallback adjustment.
+This preserves the app-requested client scale instead of subtracting a menu
+height and then rounding down an entire board unit. Mine now closes an owned
+console when returning to graphics, as Mario already does, and suspends a
+borrowed console only on successful device transition. A failed suspension
+uses normal close/restore cleanup. No new library/app state or struct ABI.
+
+Evidence separates the failures: the old published Mine32 fails the new
+owned-console-release assertion. An isolated probe links the old geometry
+source with the current menu-dimension fixture and exits28 (client dimensions
+wrong). The repaired library passes that assertion. On this test desktop the
+old product's same-board size check alone did not reproduce the owner's exact
+shrink timing; the menu-margin defect is independently demonstrated.
+
+Test-owner closure: neutral host probe owns menu and no-menu exact client
+geometry under the real USER API. Mine's existing private-desktop integration
+now checks the same board before changing difficulty, unchanged physical
+client dimensions on Tab return, owned detach and borrowed console identity,
+then new console acquisition, retained gameplay and exit. The test releases
+its own console handles/attachment before checking lifetime, so it cannot
+artificially keep the tested console alive. Game state and app input mapping
+are unchanged. Physical Windows Terminal UI remains an owner acceptance check;
+process attachment release is proven by AttachConsole failing after owned
+return and succeeding for borrowed return.
+
+Both Release Ninja/ccache builds and315/315CTest suites pass, independent
+library24/24 passes. Mine3/3routes per width, neutral host2/2routes per width,
+and Mario15/15routes per width pass. The first concurrent Mario suites hit the
+existing8second maximum-console fixture timeout; unchanged serial reruns pass.
+The original failure logs are retained locally; no retry budget, emulator or
+system setting was changed. Native products for both apps are refreshed;
+unchanged DOS/Win16 hybrids remain at S5 provenance. The running local Mine64
+was released under owner authorization to replace its locked EXE.
+
+Similar-issue sweep: shared margins cover initial size, sizing, limits and DPI
+changes. Mario has no native menu and already closes owned consoles. Mine was
+the differing app policy. Win16 has its own menu-aware S5 path; DOS has no USER
+non-client sizing. No further production hit in this bounded scope.
+Actual source/test diff4files,71insertions/6deletions (production2files,+8/-3).
+Single-person coordinator review checked ownership, old/fixed receipts and
+final diff. Empty expected/actual ROM labels; all retained counters unchanged.
+S6/T19 close pending owner acceptance; no next queued task admitted.
+
+Refreshed native product SHA256 receipts:
+
+- assets/mine/mine32.exe: `a1ddc083aa642fc50a882cbf5df7116c3cd078ce73dec278d2d25482e0d80e3f` (155548bytes).
+
+- assets/mine/mine64.exe: `45f66d8f3a849b9c88567d1f57632919c5b38f7cd154f9df3c29410265514ac7` (149220bytes).
+
+- assets/mario/mysmb32.exe: `2c779236f4562c4495ddc31b583809c1cda6576690aba8afb7fb2b380571b734` (427659bytes).
+
+- assets/mario/mysmb64.exe: `5d9e2228b54c156dfa3196d697f31017737cf8ec4f1259cd645f0637ac934ebc` (391275bytes).

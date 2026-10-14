@@ -92,7 +92,11 @@ static int text_view(void)
 }
 static void graphics_view(void)
 {
-    if(console.opened&&!console.suspended)mygames_win32_text_console_suspend(&console);
+    /* Only borrowed consoles survive a graphical interval. A Terminal-owned
+     * presentation cannot be dismissed by hiding its notification HWND. */
+    if(console.opened && (!console.borrowed ||
+        (!console.suspended && !mygames_win32_text_console_suspend(&console))))
+        mygames_win32_text_console_close(&console);
     if(console.borrowed&&console.window_usable)ShowWindow(console.window,SW_SHOWNA);
     session.text_mode=0;ShowWindow(window,SW_SHOW);SetForegroundWindow(window);
     session.app.dirty=1;

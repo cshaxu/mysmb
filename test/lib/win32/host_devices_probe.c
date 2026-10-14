@@ -31,6 +31,10 @@ static int inject(INPUT_RECORD *record)
 int main(int argc,char **argv)
 {
     HWND window;
+    HMENU menu;
+    RECT client;
+    UINT dpi;
+    int units;
     INPUT_RECORD record;
     struct mygames_kvm_input_event event;
     CONSOLE_SCREEN_BUFFER_INFO info;
@@ -56,6 +60,18 @@ int main(int argc,char **argv)
     window=mygames_win32_window_create(GetModuleHandle(NULL),"NeutralHostFixture",
         "Neutral host",procedure,&geometry);
     if(!window)return 1;
+    /* This owner tests menu-dependent non-client margins. Apps need not
+     * compensate by resetting scale on each presentation switch. */
+    menu=CreateMenu();
+    if(!menu || !AppendMenu(menu,MF_STRING,123,"Action") || !SetMenu(window,menu))return 26;
+    if(!mygames_win32_window_initial_client(window,&geometry))return 27;
+    dpi=mygames_win32_window_dpi(window);
+    units=MulDiv(geometry.initial_units,(int)dpi,96);
+    if(units<1)units=1;
+    if(!GetClientRect(window,&client) || client.right!=8*units || client.bottom!=8*units)return 28;
+    if(!SetMenu(window,NULL) || !DestroyMenu(menu) ||
+        !mygames_win32_window_initial_client(window,&geometry))return 29;
+    if(!GetClientRect(window,&client) || client.right!=8*units || client.bottom!=8*units)return 30;
     ShowWindow(window,SW_SHOW);UpdateWindow(window);seen_count=0;
     memset(&bitmap,0,sizeof(bitmap));bitmap.bmiHeader.biSize=sizeof(bitmap.bmiHeader);
     bitmap.bmiHeader.biWidth=8;bitmap.bmiHeader.biHeight=-8;

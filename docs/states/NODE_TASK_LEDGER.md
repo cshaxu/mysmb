@@ -2698,6 +2698,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T19 S3 | 0 | 0 | dos16-dsp-dma-irq-lifetime; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
 | M3 T19 S4 | 0 | 0 | three-platform-audio-product-qualification; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
 | M3 T19 S5 | 0 | 0 | win16-menu-presentation-lifetime; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
+| M3 T19 S6 | 0 | 0 | win32-mine-tab-geometry-console; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
 | M3 T2 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); [record](../../docs/history/M3-T2-win32-command-consumer.md); S not recorded |
 | M3 T20 | 0 | - | [record](../../docs/history/M3-T20-text-interface-corrections.md) |
 | M3 T20 S1 | 0 | 0 | bounded-character-interface-corrections; [record](../../docs/history/M3-T20-text-interface-corrections.md) |
@@ -4099,3 +4100,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T19 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
 | M3 T19 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
 | M3 T19 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
+| M3 T19 S6 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
