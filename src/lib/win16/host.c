@@ -25,7 +25,8 @@ static struct mygames_kvm_pointer pointer;
 static HMENU menu;
 
 static unsigned char keys[MYGAMES_KVM_PHYSICAL_KEY_COUNT];
-static int ready,closing;
+static int ready,closing,servicing,initializing,close_pending,close_reason;
+static const struct mygames_win16_lifecycle *lifecycle;
 static unsigned short output_bits,row_bytes;
 static unsigned char reduced_colors[256];
 static unsigned long source_colors[256];
@@ -197,30 +198,43 @@ static void sync_menu(HWND window)
     DrawMenuBar(window);
 }
 
+static int try_close(HWND window)
+{
+    int result;
+    if(!close_pending && !app->exit_requested(app->context))return 0;
+    close_pending=1;
+    result=lifecycle && lifecycle->close?lifecycle->close(app->context,close_reason):1;
+    if(result>0){closing=1;DestroyWindow(window);PostQuitMessage(close_reason);return 1;}
+    if(result<0){close_pending=0;close_reason=0;}
+    return 0;
+}
 static void service(HWND window)
 {
     struct mygames_win16_update update;
     unsigned char old_view;
-    if(closing)return;
+    if(closing || servicing || initializing)return;
+    servicing=1;
     if(pointer.buttons && GetCapture()!=window)cancel_pointer(window);
     KillTimer(window,1);
-    if(app->exit_requested(app->context)){closing=1;DestroyWindow(window);return;}
+    if(try_close(window)){servicing=0;return;}
     memset(&update,0,sizeof(update));
     app->update(app->context,GetTickCount(),&update);
-    if(app->exit_requested(app->context)){closing=1;DestroyWindow(window);return;}
+    if(try_close(window)){servicing=0;return;}
     sync_menu(window);
-    if(update.dirty) {
+    if(update.dirty && !close_pending) {
         old_view=view;ready=compose();
         if(ready && old_view!=view && pointer.buttons)cancel_pointer(window);
-        if(!ready){closing=1;DestroyWindow(window);PostQuitMessage(6);return;}
+        if(!ready){close_pending=1;close_reason=6;try_close(window);}
         InvalidateRect(window,0,FALSE);
         if(ready)UpdateWindow(window);
-        if(closing)return;
+        if(closing){servicing=0;return;}
     }
+    if(close_pending && !update.wake_ms)update.wake_ms=16U;
     if(update.wake_ms && !SetTimer(window,1,update.wake_ms,0)) {
         /* A requested wake cannot be silently lost. */
-        closing=1;DestroyWindow(window);PostQuitMessage(5);
+        close_pending=1;close_reason=5;try_close(window);
     }
+    servicing=0;
 }
 
 static void key_event(WPARAM key,LPARAM detail,int down)
@@ -291,6 +305,7 @@ LRESULT FAR PASCAL __export MygamesWin16WndProc(HWND window,UINT message,
         event.kind=MYGAMES_KVM_INPUT_FOCUS;
         event.down=(unsigned char)(message==WM_SETFOCUS);
         app->input(app->context,&event);service(window);return 0;
+    case WM_CLOSE: close_pending=1;service(window);return 0;
     case WM_TIMER: service(window);return 0;
     case WM_PAINT:
         dc=BeginPaint(window,&paint);GetClientRect(window,&rect);
@@ -309,15 +324,16 @@ LRESULT FAR PASCAL __export MygamesWin16WndProc(HWND window,UINT message,
         }
         if(old_palette)SelectPalette(dc,old_palette,TRUE);
         EndPaint(window,&paint);
-        if(!paint_ok){closing=1;DestroyWindow(window);PostQuitMessage(6);}
+        if(!paint_ok){close_pending=1;close_reason=6;service(window);}
         return 0;
     case WM_DESTROY: closing=1;if(pointer.buttons)cancel_pointer(window);KillTimer(window,1);PostQuitMessage(0);return 0;
     }
     return DefWindowProc(window,message,word,detail);
 }
 
-int mygames_win16_run(HINSTANCE instance,HINSTANCE previous,int show,
-    const struct mygames_win16_application *application)
+int mygames_win16_run_lifecycle(HINSTANCE instance,HINSTANCE previous,int show,
+    const struct mygames_win16_application *application,
+    const struct mygames_win16_lifecycle *hooks)
 {
     WNDCLASS cls;
     HWND window;
@@ -333,7 +349,7 @@ int mygames_win16_run(HINSTANCE instance,HINSTANCE previous,int show,
     if(!application->palette || !application->palette_count ||
         application->palette_count>256U || !application->width || !application->height ||
         application->width>32767U || application->height>32767U)return 1;
-    app=application;ready=closing=0;palette=0;menu=0;
+    app=application;lifecycle=hooks;ready=closing=servicing=close_pending=close_reason=0;initializing=1;palette=0;menu=0;
     retained_width=retained_height=retained_count=0;
     memset(&pointer,0,sizeof(pointer));
     memset(keys,0,sizeof(keys));memset(&bitmap,0,sizeof(bitmap));
@@ -368,10 +384,15 @@ int mygames_win16_run(HINSTANCE instance,HINSTANCE previous,int show,
         CW_USEDEFAULT,CW_USEDEFAULT,rect.right-rect.left,rect.bottom-rect.top,
         0,menu,instance,0);
     if(!window){if(menu)DestroyMenu(menu);DeleteObject(palette);free_surfaces();return 4;}
-    ShowWindow(window,show);service(window);UpdateWindow(window);
+    ShowWindow(window,show);initializing=0;service(window);UpdateWindow(window);
+    if(!closing && lifecycle && lifecycle->started){lifecycle->started(app->context);service(window);}
     while(GetMessage(&message,0,0,0)) {
         TranslateMessage(&message);DispatchMessage(&message);
     }
     DeleteObject(palette);free_surfaces();app=0;
     return (int)message.wParam;
 }
+
+int mygames_win16_run(HINSTANCE instance,HINSTANCE previous,int show,
+    const struct mygames_win16_application *application)
+{return mygames_win16_run_lifecycle(instance,previous,show,application,0);}

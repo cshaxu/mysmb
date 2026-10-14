@@ -153,3 +153,11 @@ int GetMessage(MSG *,HWND,int,int);
 void TranslateMessage(const MSG *);
 void DispatchMessage(const MSG *);
 #endif
+
+#ifndef MB_RETRYCANCEL
+#define MB_RETRYCANCEL 5
+#define MB_ICONEXCLAMATION 48
+#define IDRETRY 4
+#define IDCANCEL 2
+int MessageBox(HWND,const char *,const char *,UINT);
+#endif

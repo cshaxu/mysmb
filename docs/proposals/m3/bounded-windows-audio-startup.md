@@ -6,8 +6,8 @@ Owner expands retained M3 T19 to design and repair all three host families.
 The final section, "Approved three-platform design amendment", is the current
 scope and execution authority at efd9015a. Earlier sections preserve their
 audit-time facts and rejected options; their Windows-only restrictions and
-single-S T closure plan are superseded. S1 remains active; S2-S4 are planned.
-S1 P3 implements the Win32 repair below. S2-S4 remain planned and unadmitted.
+single-S T closure plan are superseded. S1-S2 are closed; S3-S4 remain planned.
+S1 P3 implements the Win32 repair below. S2 is closed by P1 below; S3-S4 remain planned and unadmitted.
 
 ## Historical suspension
 
@@ -649,3 +649,61 @@ Empty ROM scope/expected/actual; historical1992/1992; retained1991/1992nodes,
 - mine/mine32.exe: `ff855e856a3346826bc67a6bcdd4cea3c368bcd5a64e77702ef19e1f67e98ee6`.
 
 - mine/mine64.exe: `ea0099b94e70952e5d457e56a7b6db4cced022a536dd10ae679c599b372d87b7`.
+
+
+## S2 P1 implementation and coordinator review
+
+W16-1..5 resolved within the cooperative-platform contract. begin records
+intent; service executes at most one WinMM lifecycle call. The host invokes
+started after initial paint and then services it even without focus. Acquisition
+retries only ALLOCATED, at most three opens separated by1000ms. Submission
+never opens/retries, returns exact accepted count and rejects busy/full/pending
+reset/stop. Nested driver callbacks cannot reenter service; stop wins over late
+open/prepare/reset returns. Reset acknowledgement is distinct from request.
+
+Cleanup has an explicit phase/error and at most three failed calls per episode,
+spaced by the caller's delay. It retains GlobalLock/module/header ownership
+on failure. Mario stays open and offers Retry/Cancel-close on exhaustion;
+Cancel preserves the device storage and continues without PCM submission.
+No task exit over a known live driver reference. A driver that never returns
+cannot be preempted under Win16; that platform limit is unchanged and explicit.
+
+Mario validates load staging before requesting reset; it freezes logical tick
+and ignores additional P/O until success/failure. Successful acknowledgement
+commits game and resynchronized synthesis together; failure preserves the old
+game and logs the load failure. Save no longer resets audio. Focus loss requests
+reset; service continues while unfocused. No additional snapshot buffer.
+Generic host extension is a separate optional lifecycle argument, preserving
+the old application structure and Mine entry. USER callbacks cannot recursively
+run app update. Window/system close and app exit share the close hook; default
+clients retain direct close. Audio policy stays in Mario, not lib/host.
+
+Owner tests extend existing fake SDK: load/allocation/lock/proc/open/prepare/
+write/reset/unprepare/close failures, three busy attempts and timing boundary,
+stop during busy/open/prepare, reentry, retained cleanup and reset coalescing.
+Host tests prove post-paint start, deferred close, update reentry guard and
+unchanged clients. Mario app join tests use its actual root and file codec:
+save without reset, load held across P/O, successful commit, failed reset without
+commit, Tab/focus/close and allocation unwind. No included production C hack.
+
+Both default width suites313/313 passed; after final review edits each Win16
+subset9/9 passed. Independent library23/23 passed. The original toolchain builds
+both MZ/NE products; unchanged x86/x64 binaries retain S1 provenance. Real
+private Win3.x runs of final Mario and Mine pass: Mario graphical/text Tab,
+save/movement/load and Escape; Mine click/level/text/graphics and Q. Captures
+and the10035byte Mario save are local only. Audio transport capture remains S4.
+PCM capacity remains eight184byte blocks plus headers; added control state is
+below1KiB, no thread or new sample/snapshot allocation. Native16bit compiles
+confirm both small-model Mine and large-model Mario generic host ABI.
+
+Coordinator review of actual diff and similar-issue sweep: all callers of the
+old synchronous Win16 audio entry points migrated, including the neutral native
+probe. No app or original semantics in the reusable audio/host owners. Ledger
+semantic comparison proves only the new S2 subtask/run was added, despite a
+large textual diff from repeated1992label arrays. Empty ROM scope/expected/
+actual; historical1992/1992, retained1991/1992nodes and4260/4261feasible controls
+unchanged. No new certification. Six local products available; changed hashes:
+
+- mario/mysmb16.exe: `e5c76ed9ff3af88796b5958fb3979023276d1ec8af8a5a988770d2a228d390fc`.
+
+- mine/mine16.exe: `5b87aedf04da4d32af9d4361144551c32fb27662608ca59c63b309eab29fafad`.

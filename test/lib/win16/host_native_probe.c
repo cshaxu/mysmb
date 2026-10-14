@@ -30,7 +30,7 @@ static void input(void *context,const struct mygames_kvm_input_event *event)
 static void update(void *context,unsigned long now,struct mygames_win16_update *out)
 {
     HWND window;
-    (void)context;out->wake_ms=100;
+    (void)context;mygames_win16_audio_service(now);out->wake_ms=100;
     if(deadline && (long)(now-deadline)<0)return;
     deadline=now+3000UL;out->dirty=1;
     switch(phase++) {
@@ -56,22 +56,23 @@ static int graphics(void *context,struct mygames_kvm_video_band *band)
         row[y*app.width+x]=(unsigned char)(((x/16)+(band->first+y)/16)&15U);
     band->pixels=row;band->width=band->stride=app.width;band->capacity=sizeof(row);return 1;
 }
+static void started(void *p){(void)p;mygames_win16_audio_begin(11025UL,184U,8U,3U,1000UL);}
+static int close_requested(void *p,int reason){(void)p;(void)reason;mygames_win16_audio_stop();return mygames_win16_audio_phase()==MYGAMES_AUDIO_CLOSED;}
 int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
 {
-    unsigned short i;int result,audio_ready;FILE *f;char path[260];
+    struct mygames_win16_lifecycle hooks;unsigned short i;int result;FILE *f;char path[260];
     (void)command;
     if(!mygames_win16_executable_path(instance,path,sizeof(path)))return 20;
     f=fopen("C:\\pcmtmp.dat","w");if(!f)return 21;fputs("neutral",f);fclose(f);
     if(!mygames_win16_file_replace("C:\\pcmtmp.dat","C:\\pcmfinal.dat"))return 22;
-    audio_ready=mygames_win16_audio_open(11025UL,184U,8U);
+
     for(i=0;i<2000;++i){cells[i].character=(unsigned char)(i&255U);cells[i].foreground=15;cells[i].background=(unsigned char)((i/80)&15U);}
     app.title="Neutral Win16 device probe";app.available_views=3;
     app.input=input;app.update=update;app.presentation=presentation;app.exit_requested=exiting;
     app.text=text_view;app.graphics=graphics;app.palette=colors;app.palette_count=16;
     app.width=504;app.height=323;app.menus=menus;app.menu_count=1;
-    result=mygames_win16_run(instance,previous,show,&app);
-    mygames_win16_audio_close();
-    (void)audio_ready;
+    hooks.started=started;hooks.close=close_requested;
+    result=mygames_win16_run_lifecycle(instance,previous,show,&app,&hooks);
     if(!failure && (buttons!=2 || cancels<1 || commands!=1 || !resizes || !draws))failure=3;
     f=fopen(result || failure?"C:\\neutral.bad":"C:\\neutral.ok","w");
     if(f){fprintf(f,"result=%d failure=%d phases=%u mouse=%u cancel=%u command=%u resize=%u bands=%u\n",result,failure,phase,buttons,cancels,commands,resizes,draws);fclose(f);}

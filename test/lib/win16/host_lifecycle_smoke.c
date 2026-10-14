@@ -11,6 +11,7 @@ static unsigned char pixels[4032];
 static struct mygames_win16_application *active_app;
 static int fail_font,fail_text;
 static int device_bits=8,color_case;
+static int hooks_started,hooks_closed,reentrant_updates;
 static int scenario,view_kind,mouse_events,cancels,commands,text_draws,allocs;
 static unsigned long last_foreground,last_background;
 static struct mygames_kvm_input_event last_event;
@@ -32,7 +33,7 @@ static void input(void *context,const struct mygames_kvm_input_event *event)
     else if(event->down)dirty=1;
 }
 static void update(void *context,unsigned long time,struct mygames_win16_update *out)
-{(void)context;++updates;now=time;out->wake_ms=(unsigned short)wake;out->dirty=(unsigned char)dirty;dirty=0;}
+{(void)context;++updates;if(scenario==2){++reentrant_updates;procedure(window,WM_TIMER,0,0);}now=time;out->wake_ms=(unsigned short)wake;out->dirty=(unsigned char)dirty;dirty=0;}
 static int graphics(void *context,struct mygames_kvm_video_band *band)
 {(void)context;++draws;band->pixels=pixels;band->width=band->stride=active_app->width;band->capacity=sizeof(pixels);return 1;}
 static mygames_kvm_u8 exiting(void *context){(void)context;return (mygames_kvm_u8)exit_flag;}
@@ -75,6 +76,11 @@ int GetMessage(MSG *m,HWND w,int first,int last)
 {
     (void)w;(void)first;(void)last;memset(m,0,sizeof(*m));
     if(quit){m->wParam=(WPARAM)exit_code;return 0;}
+    if(scenario==2) {
+        if(!hooks_started || !paints)failure=60;
+        m->message=step++?WM_TIMER:WM_CLOSE;now+=20;
+        if(step>8){failure=61;quit=1;return 0;}return 1;
+    }
     if(scenario) {
         switch(step++) {
         case 0:
@@ -107,13 +113,13 @@ int GetMessage(MSG *m,HWND w,int first,int last)
     }
     switch(step++) {
     case 0:
-        if(timer || sets || draws || paints || !focus || updates!=2)failure=20;
+        if(timer || sets || draws || paints || !focus || updates!=1)failure=20;
         m->message=WM_KEYDOWN;m->wParam='N';return 1;
     case 1:
         if(draws!=1 || paints!=1)failure=21;
         m->message=WM_PAINT;return 1;
     case 2:
-        if(draws!=1 || paints!=2 || updates!=3)failure=22;
+        if(draws!=1 || paints!=2 || updates!=2)failure=22;
         wake=123;now=999;
         m->message=WM_KEYUP;m->wParam='N';return 1;
     case 3:
@@ -151,9 +157,12 @@ int ExtTextOut(HDC dc,int x,int y,UINT flags,const RECT *r,const char *c,UINT n,
  if(n!=1 || flags!=(ETO_OPAQUE|ETO_CLIPPED) || r->right<=r->left || r->bottom<=r->top)failure=38;
  if(!color_case && text_draws%6==0 && ((unsigned char)*c!=1 || last_foreground!=0xffffffUL || last_background!=0xaa0000UL))failure=39;
  ++text_draws;return !fail_text;}
+static void after_paint(void *p){(void)p;if(!paints)failure=62;++hooks_started;}
+static int controlled_close(void *p,int reason){(void)p;(void)reason;return ++hooks_closed>=4;}
 int main(void)
 {
     struct mygames_win16_application app;
+    struct mygames_win16_lifecycle hooks;
     int result,i;
     RECT rect;
     unsigned long source_colors[16];
@@ -198,5 +207,10 @@ int main(void)
     device_bits=8;
     if(!mygames_win16_text_paint((HDC)1,&rect,&text) ||
         last_background!=0xec7c78UL || last_foreground!=0xeeeeecUL)return 54;
+    scenario=2;quit=exit_flag=step=failed_timer=0;dirty=1;paints=0;wake=16;
+    app.width=app.height=4;app.available_views=1;view_kind=0;
+    hooks.started=after_paint;hooks.close=controlled_close;
+    if(mygames_win16_run_lifecycle(1,0,1,&app,&hooks) || failure ||
+        hooks_started!=1 || hooks_closed!=4 || !reentrant_updates || allocs)return failure?failure:63;
     return 0;
 }

@@ -22,7 +22,8 @@
 #include "smb1_local_title.h"
 
 static struct mysmb_win16_scheduler scheduler;
-static int focused;
+static int focused,audio_started,load_pending,close_notice;
+static unsigned long load_reset;
 static struct mysmb_game game;
 static struct mysmb_frame frame;
 static struct mysmb_app_input_mapping mapping;
@@ -51,6 +52,7 @@ static mygames_kvm_u8 text_mode,presentation_dirty;
 static void snapshot_request(mygames_kvm_u8 request)
 {
     const struct mysmb_io_snapshot *loaded;
+    if(load_pending || control.exit_requested)return;
     if(request&MYSMB_IO_REQUEST_SAVE) {
         if(mysmb_game_snapshot_available(&game,&frame) &&
             mysmb_game_snapshot_capture(&game,&snapshot_store->staging,fingerprint)) {
@@ -62,18 +64,49 @@ static void snapshot_request(mygames_kvm_u8 request)
         }
     } else if(request&MYSMB_IO_REQUEST_LOAD) {
         loaded=mysmb_snapshot_load(snapshot_store,fingerprint);
-        if(loaded && mysmb_game_snapshot_restore(&game,loaded)) {
-            mysmb_game_snapshot_resume_frame(&game,&frame);
-            mysmb_game_io_audio(&game,&audio_frame);
-            mysmb_audio_renderer_sync(&renderer,&audio_frame);
-            mysmb_io_input_latch_clear(&input_latch);
-            mysmb_app_input_mapping_initialize(&mapping);
-            mapped.buttons=mapped.buttons2=mapped.requests=0U;
+        if(loaded && mysmb_game_snapshot_valid(&game,loaded)) {
+            load_reset=mygames_win16_audio_reset();load_pending=1;
         }
     }
-    /* File I/O is synchronous between logical ticks. Never catch up the
-     * elapsed disk time or play stale pre-load buffers afterwards. */
-    (void)mygames_win16_audio_reset();mysmb_win16_scheduler_reset(&scheduler,GetTickCount());
+    mysmb_win16_scheduler_reset(&scheduler,GetTickCount());
+}
+
+static void load_service(void)
+{
+    int result;
+    if(!load_pending)return;
+    result=mygames_win16_audio_reset_result(load_reset);
+    if(result==MYGAMES_AUDIO_PENDING)return;
+    load_pending=0;
+    if(result==MYGAMES_AUDIO_OK && mysmb_game_snapshot_restore(&game,&snapshot_store->staging)) {
+        mysmb_game_snapshot_resume_frame(&game,&frame);
+        mysmb_game_io_audio(&game,&audio_frame);mysmb_audio_renderer_sync(&renderer,&audio_frame);
+        mysmb_io_input_latch_clear(&input_latch);mysmb_app_input_mapping_initialize(&mapping);
+        mapped.buttons=mapped.buttons2=mapped.requests=0U;presentation_dirty=1U;
+    } else snapshot_store->files.log(snapshot_store->files.context,"mysmb.log",MYSMB_SNAPSHOT_LOAD_ERROR);
+    mysmb_win16_scheduler_reset(&scheduler,GetTickCount());
+}
+static void started(void *context)
+{
+    (void)context;audio_started=1;
+    (void)mygames_win16_audio_begin(MYSMB_AUDIO_SAMPLE_RATE,184U,8U,3U,1000UL);
+}
+static int close_requested(void *context,int reason)
+{
+    int phase,answer;
+    (void)context;(void)reason;
+    load_pending=0;control.exit_requested=1U;
+    mygames_win16_audio_stop();phase=mygames_win16_audio_phase();
+    if(phase==MYGAMES_AUDIO_CLOSED)return 1;
+    if(phase==MYGAMES_AUDIO_CLEANUP_FAILED && !close_notice) {
+        close_notice=1;
+        answer=MessageBox(0,"Audio cleanup failed. Retry closing? Cancel keeps the game open without sound.",
+            "MySMB",MB_RETRYCANCEL|MB_ICONEXCLAMATION);
+        close_notice=0;
+        if(answer==IDRETRY)mygames_win16_audio_retry_cleanup();
+        else {control.exit_requested=0U;return -1;}
+    }
+    return 0;
 }
 
 
@@ -101,7 +134,7 @@ static void input(void *context,const struct mygames_kvm_input_event *event)
         event->kind==MYGAMES_KVM_INPUT_KEY && event->down && !event->repeat));
     request=mysmb_snapshot_keys_transition(&snapshot_keys,mapped.requests,
         event->down,1U);
-    if(request)snapshot_request(request);
+    if(request && !load_pending)snapshot_request(request);
     if(event->kind==MYGAMES_KVM_INPUT_KEY &&
         event->physical_code==MYGAMES_KVM_KEY_TAB &&
         (!event->down || !event->repeat) &&
@@ -129,7 +162,16 @@ static void update(void *context,unsigned long now,struct mygames_win16_update *
 {
     unsigned short ticks,i;
     result->wake_ms=0U;result->dirty=0U;
-    if(!focused)return;
+    if(audio_started)mygames_win16_audio_service(now);
+    if(control.exit_requested){result->wake_ms=16U;return;}
+    load_service();
+    if(load_pending || !focused) {
+        if(load_pending || (audio_started && mygames_win16_audio_phase()!=MYGAMES_AUDIO_READY &&
+           mygames_win16_audio_phase()!=MYGAMES_AUDIO_FAILED &&
+           mygames_win16_audio_phase()!=MYGAMES_AUDIO_CLOSED &&
+           mygames_win16_audio_phase()!=MYGAMES_AUDIO_CLEANUP_FAILED))result->wake_ms=16U;
+        return;
+    }
     result->wake_ms=16U;
     ticks=mysmb_win16_scheduler_step(&scheduler,now);
     for(i=0U;i<ticks;++i)tick(context);
@@ -167,6 +209,7 @@ static mygames_kvm_u8 exit_requested(void *context)
 int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
 {
     struct mygames_win16_application application;
+    struct mygames_win16_lifecycle lifecycle;
     HGLOBAL background,snapshot_memory,text_memory;
     struct mysmb_snapshot_files files;
     char path[260],directory[260];
@@ -183,7 +226,7 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     mysmb_app_input_mapping_initialize(&mapping);
     mysmb_io_input_latch_clear(&input_latch);
     mysmb_io_control_initialize(&control);
-    text_mode=presentation_dirty=0U;
+    text_mode=presentation_dirty=0U;audio_started=load_pending=close_notice=0;
     mysmb_snapshot_keys_reset(&snapshot_keys);
     mysmb_game_snapshot_fingerprint(&game,fingerprint);
     snapshot_memory=GlobalAlloc(GMEM_MOVEABLE,sizeof(struct mysmb_snapshot_store));
@@ -204,7 +247,7 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
         return 2;
     }
     mysmb_audio_renderer_initialize(&renderer);
-    (void)mygames_win16_audio_open(MYSMB_AUDIO_SAMPLE_RATE,184U,8U);
+
     mysmb_ppu_frame_workspace_bind(&workspace,decoded);
     background=GlobalAlloc(GMEM_MOVEABLE,MYSMB_PPU_BACKGROUND_BYTES);
     background_bytes=background?(unsigned char FAR *)GlobalLock(background):0;
@@ -218,8 +261,8 @@ int PASCAL WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     application.input=input;application.update=update;
     application.presentation=presentation;application.exit_requested=exit_requested;
     application.text=text;application.graphics=graphics;
-    result=mygames_win16_run(instance,previous,show,&application);
-    mygames_win16_audio_close();
+    lifecycle.started=started;lifecycle.close=close_requested;
+    result=mygames_win16_run_lifecycle(instance,previous,show,&application,&lifecycle);
     GlobalUnlock(text_memory);GlobalFree(text_memory);text_storage=0;
     GlobalUnlock(snapshot_memory);GlobalFree(snapshot_memory);snapshot_store=0;
     if(background_bytes)GlobalUnlock(background);
