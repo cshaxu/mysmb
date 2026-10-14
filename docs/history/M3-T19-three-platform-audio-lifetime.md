@@ -2,7 +2,9 @@
 
 ## Current task status
 
-Owner-directed S5/S6 menu and Tab corrections are engineering-closed, pending acceptance.
+Owner accepts S6 on2026-10-13 and explicitly keeps T19 open. No S is active.
+Prior engineering T-closure wording is superseded by this owner disposition.
+S5 retains its recorded engineering closure; S6 is accepted and closed.
 S1-S4 results remain retained.
 
 M3 T19 S1-S4 engineering scope closed on2026-10-13 after single-person
@@ -1002,3 +1004,13 @@ Refreshed native product SHA256 receipts:
 - assets/mario/mysmb32.exe: `2c779236f4562c4495ddc31b583809c1cda6576690aba8afb7fb2b380571b734` (427659bytes).
 
 - assets/mario/mysmb64.exe: `5d9e2228b54c156dfa3196d697f31017737cf8ec4f1259cd645f0637ac934ebc` (391275bytes).
+
+### S6 owner acceptance
+
+Owner accepts S6, closes that S and directs T19 to remain open. No new S is
+admitted and no implementation is rolled back. Accepted product baseline is
+6d505085. The bounded S6 build/probe/log workspace is cleaned; product EXEs
+remain available under the existing local asset boundary. Pending prior-task
+evidence and shared build trees are retained for their separate acceptance.
+The historical T19 identity survives its suspension/resumption; task IDs are
+repository-wide within M3, not separate counters per application.

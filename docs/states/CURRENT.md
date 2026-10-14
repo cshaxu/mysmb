@@ -4,12 +4,12 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Closed: M3 T19 S6 P1; T19 engineering scope complete, owner acceptance pending. |
+| Identifier Mode | S6 accepted and closed; T19 remains open by explicit owner direction. No active S. |
 | Admission And Approval | Owner reports Mine32 shrinking after Tab return and an owned console remaining visible. Coordinator admits bounded corrective S6 under T19. |
 | Objective | Preserve menu-bearing client dimensions across Tab; release owned consoles and retain borrowed consoles. |
 | Non-goals | No game, audio, DOS16, Win16 or ROM changes. |
 | Reference Baseline | b17d024d, clean worktree. |
-| Candidate Proposal | [T19 retained record and S5 amendment](../history/M3-T19-three-platform-audio-lifetime.md#s6-mine-native-tab-return). |
+| Candidate Proposal | [T19 retained record and S6 amendment](../history/M3-T19-three-platform-audio-lifetime.md#s6-mine-native-tab-return). |
 | Files And ABI Surface | Mine Win32 root, shared window geometry and mirrored host tests; estimate 3-5 files, 60-140 lines. No struct ABI change. |
 | Applicable Rules | Task Reading Set: Execution, Documentation, Architecture, Coding, source policy and current component map. |
 | Verification | Both native suites and private-desktop actual Mine/Mario routes; menu geometry tests; refresh four native products, preserve unchanged hybrid products. |
@@ -23,7 +23,7 @@
 
 ## Current Technical Baseline
 
-T19 S1-S6 engineering scope is closed. No active S; owner acceptance pending. Its queue entry is removed; the five other candidates
+Owner accepts and closes S6 on2026-10-13. T19 remains open; no S is active. Its queue entry is removed; the five other candidates
 retain their order. T45 S4 remains closed pending owner visual acceptance;
 its local products and pending acceptance materials are preserved.
 Historical1992/1992, retained1991/1992nodes and4260/4261feasible controls
@@ -89,3 +89,15 @@ Mine3routes, neutral host2routes and Mario15routes per width pass. Initial
 parallel Mario maximum-console fixtures timed out; unchanged serial reruns
 pass, with no budget increase. Four native products refreshed, two unchanged
 hybrids retained. Empty ROM scope, no certification credit. Wait for acceptance.
+
+## S6 owner acceptance and T19 retained opening
+
+Owner accepts S6 and explicitly keeps T19 open. This supersedes the prior
+engineering T-closure wording; S6 stays closed and no S7 is admitted. The S6
+ignored build workspace is removed after its conclusions are retained here
+and in the task record; assets keep the accepted products. Other pending
+acceptance evidence and shared build trees are not deleted by this acceptance.
+T19 is the original repository-wide M3 audio task, suspended and later resumed
+with its identifier retained, then extended with owner-directed S5/S6. It is
+not a Mine-local numbering sequence or a source rollback. Current product
+baseline remains6d505085; no code, EXE or queue ordering changes.
