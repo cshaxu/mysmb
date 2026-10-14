@@ -2,12 +2,10 @@
 
 ## Current task status
 
-Owner expands retained M3 T19 to design and repair all three host families.
-The final section, "Approved three-platform design amendment", is the current
-scope and execution authority at efd9015a. Earlier sections preserve their
-audit-time facts and rejected options; their Windows-only restrictions and
-single-S T closure plan are superseded. S1-S2 are closed; S3-S4 remain planned.
-S1 P3 implements the Win32 repair below. S2 is closed by P1 below; S3-S4 remain planned and unadmitted.
+M3 T19 S1-S4 engineering scope closed on2026-10-13 after single-person
+executor/coordinator review. Final S4 receipt below owns the current result;
+earlier audit/suspension/planned sections are historical, not outstanding work.
+Owner play/listening acceptance is pending. No next queue task is admitted.
 
 ## Historical suspension
 
@@ -762,3 +760,112 @@ ROM scope/expected/actual: historical1992/1992, retained1991/1992nodes and
 4260/4261feasible controls(4342raw,81infeasible) unchanged, no certification credit.
 
 - mario/mysmb16.exe: `3086cfdf69e3ca2d2ece2b8e9cf46421821af3f9b3e0d672f049215bd44af18b`.
+
+
+## S4 P1 final qualification and T closure
+
+### Fixed findings disposition
+
+| Register | Closed implementation and proof |
+| --- | --- |
+| A1-A8 | S1 one WinMM worker owns every driver call and retained PCM storage; held-call/resource/queue/reset/terminal-exit owner tests plus native host routes. Normal real-device acceptance retained from S1; current endpoint absence is explicit below. |
+| W16-1..5 | S2 cooperative service, bounded busy/cleanup episodes, reentry guards, matching load/reset commit and safe close; fake SDK and app/host tests plus actual Win3.x product routes and S4 nonflat driver capture. |
+| D16-1..5 | S3 bounded DSP operations, IF-preserving DMA ownership, pending IRQ drain, latched fault and watchdog; hardware seam, original-toolchain native PCM/IRQ probe and final DOS product capture. |
+| X-1..2 | Neutral library status/accepted-prefix contract; synthesis, save commit, cadence and input remain app-owned. Single-owner tests and both apps' native product integration cover joins. No library imports game/ROM semantics. |
+| S3 integration transfer | Persistent DOS lateness previously suppressed every frame, including on the retained old executable. Shared app I/O publication helper now limits voluntary suppression to100ms; normal on-time frames publish immediately. A separate publication clock never rebases logical tick debt or skips game/audio state. DOS binding also makes mode changes eligible immediately. |
+
+Publication owner tests cover sustained lateness, exact boundary, on-time
+recovery,32bit wrap and clock discontinuity. Existing root frameskip test
+retains equal game RAM/frame/audio updates with suppressed video. This is a
+progress correction, not a60FPS guarantee: slow rendering and logical ticks
+can exceed100ms. No ROM, PPU, audio-rate or DOSBox CPU/device-setting edit.
+
+### Operational evidence and honest exclusions
+
+Both Release Ninja/ccache width suites pass315/315; final changed adapter/
+pacing subset passes2/2 on each width. Independent library passes24/24.
+Named Mario Win32 private-desktop integration passes15/15 each; Mine passes
+3/3 each. The first Mine x64 run failed because the current42column by14row
+RDP console clipped its centered title. Its fixture now observes the visible
+menu/face/010counter and the099expert transition when captions are clipped;
+no production Mine behavior changes. Corrected x86/x64 reruns both pass.
+
+Win32 current native adapter/session capture into an accepting test sink
+passes on both widths:24writes,5299nonzero samples, signed16range-3810..6750.
+The same named real-device target attempts actual WinMM, but both final host
+runs return77: waveOutGetNumDevs reports no endpoint in the current session.
+This is an unavailable capability, NOT a passing current hardware capture.
+S1's earlier real WinMM runs remain the normal-device transport receipt for
+unchanged driver-owner code, including its initial timeout and successful
+unchanged rerun. Current nonflat adapter data, deterministic held/failure tests
+and actual no-device product operation complete the engineering evidence;
+current physical Windows sound/listening remains an owner acceptance item.
+No service, driver or session was changed to manufacture an endpoint.
+
+Actual final combined MZ/NE Mario runs in DOS and Win3.x. DOS has title/game
+pixels,80x25text and return to pixels,10035byte save/load and normal Escape
+exit. Win3.x has graphics/window-text, movement,save/load and normal exit.
+The first DOS scripts sent Tab during slow synchronous load; load correctly
+clears stale input. A build-only transition trace distinguished that fixture
+error from a failed mode switch; the final uninstrumented product route waits
+for load completion and proves both directions. No retained diagnostic hook.
+
+DOSBox wave capture of the product is nonflat:113.265s, range-12240..20898,
+441986nonzero signed16samples. Win3.x capture is63.998s, range-16808..32512,
+3266348nonzero samples. Both have nonzero windows before/after load and mode
+changes. These prove emitted sound and recovery, not gap-free or subjective
+quality. At unchanged low DOSBox cycles the game is CPU-limited and PCM can
+underrun; this task does not close the queued performance qualification.
+The earlier Win3.x all-zero captures used an image without a wave endpoint.
+An owner-provided Microsoft Windows3.1 SNDBLST driver was expanded only into
+the private ignored test image and configured to existing A220/I7/D1 hardware;
+no emulator setting or host installation changed. Proprietary driver/media and
+all product screenshots/audio remain local, uncommitted. Final initialized
+wave driver and disabled/unavailable routes have separate receipts.
+
+Mine's final combined MZ/NE product runs in DOS (text board/level/Q, its
+existing DOS capability) and Win3.x (click, level, window-text/graphics/Q).
+No music feature was added to Mine. All six products compile/link with their
+actual original16bit and native-width toolchains and are refreshed locally.
+No executable, ROM, derived resource, protected recording or SDK is committed.
+
+### Resource, review and delivery
+
+Win32 sample storage remains11760bytes/eight slots; the worker's reserved
+stack is distinct from actual committed memory. Win16 keeps eight184byte
+sample blocks plus headers. DOS retains4096byte DMA; bounded publication adds
+one8byte app clock (alignment included in map totals), not a frame buffer.
+Final DOS standalone static minimum388496bytes, bounded maximum392592bytes;
+combined MZ/NE load header adds256bytes, minimum388752/maximum392848.
+These figures exclude dynamic game caches, are not EXE file sizes, and do not
+claim measured total resident high-water. Relative S1 minimum increase1664bytes.
+S3 native IRQ/copy timing remains its own measurement; no claimed speedup.
+
+Executor and coordinator independently review the actual diff, fixed findings,
+source/test ownership and product receipts. S4 production changes are only
+app I/O publication helper and its DOS binding; test corrections cover the
+Win32 adapter dataflow and the clipped Mine fixture. Actual code/test diff is
+sixfiles (about110added/changed lines), smaller than the planned150-300lines.
+Similar-issue sweep covers all publication/reset/mode callers and all driver
+call/failure/cleanup paths named by S1-S3. No unrelated owner change or new
+ROM-match claim. Historical1992/1992; retained1991/1992nodes and4260/4261
+feasible controls(4342raw,81infeasible), unchanged. Node/documentation gates
+and whitespace check pass before final commit.
+
+T19 is engineered and reviewed; owner listening/play acceptance remains.
+Build evidence is retained only until that acceptance, then cleaned per policy.
+The five queued candidates keep their order; stop and wait for owner instruction.
+
+Final local products (SHA256):
+
+- assets/mario/mysmb16.exe: `43efe7b74c92e79ca21b4c1c5f1283db7c319fcf298b9c1fea20a6e42b0ee1b2` (699189bytes).
+
+- assets/mario/mysmb32.exe: `a606e32ada2bee75893e8e0bd8fc5164904836ebe9036e88c0e50a5727be585b` (427659bytes).
+
+- assets/mario/mysmb64.exe: `86acdc15d19b79da9ecd84637f8c5aadca142e3925945093698bdc7d126f6713` (391275bytes).
+
+- assets/mine/mine16.exe: `5b87aedf04da4d32af9d4361144551c32fb27662608ca59c63b309eab29fafad` (40493bytes).
+
+- assets/mine/mine32.exe: `ff855e856a3346826bc67a6bcdd4cea3c368bcd5a64e77702ef19e1f67e98ee6` (155358bytes).
+
+- assets/mine/mine64.exe: `ea0099b94e70952e5d457e56a7b6db4cced022a536dd10ae679c599b372d87b7` (149044bytes).

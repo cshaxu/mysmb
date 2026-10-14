@@ -12,4 +12,8 @@ void mysmb_io_pacing_advance(struct mysmb_io_pacing *pacing,
     unsigned long now);
 unsigned long mysmb_io_pacing_remaining(struct mysmb_io_pacing *pacing,
     unsigned long now);
+/* A separate publication clock bounds suppression during sustained lateness.
+ * This never rebases the logical tick clock or drops game/audio updates. */
+int mysmb_io_pacing_video_due(struct mysmb_io_pacing *publication,
+    unsigned long now, int on_time);
 #endif

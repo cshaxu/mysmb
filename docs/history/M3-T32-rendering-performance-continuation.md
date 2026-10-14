@@ -415,7 +415,7 @@ readiness,both pass three native31x30clipped text entries,two graphic returns,
 input andEscape. These later routes are valid scoped operational evidence;
 longer observation is NOT a repaired/passing startup responsiveness gate.
 Attach this recurrence to the already retained
-[suspended T19audio task](../proposals/m3/bounded-windows-audio-startup.md).
+[suspended T19audio task](M3-T19-three-platform-audio-lifetime.md).
 No new global audit/finding universe or silent resumption of T19.
 
 Publish existing owner-authorized products with explicit startup limitation:

@@ -22,9 +22,10 @@ static unsigned char video_ready;
 /* DOS binds this shared deadline to a frame-dropping policy.  Other hosts may
  * retain ordinary pacing without binding a video gate. */
 static struct mysmb_io_pacing pacing;
-/* The current logical tick may compose only when it was reached at its
- * scheduled deadline.  Catch-up ticks preserve game/audio/input timing but
- * leave their already-stale images unpublished. */
+static struct mysmb_io_pacing publication;
+/* On-time ticks compose normally. Catch-up ticks preserve game/audio/input
+ * timing while suppressing stale images. A separate publication clock
+ * prevents indefinite suppression when every tick is late. */
 static unsigned char present_due=1U;
 static unsigned char opened;
 static unsigned char text_mode;
@@ -433,6 +434,7 @@ int mysmb_dos16_devices_mode(mygames_kvm_u8 text)
     if(text==text_mode)return 1;
     if(try_mode(text)) {
         text_mode=text;retained_mode=0U;compact_mode=0U;ram_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
+        present_due=1U;
         return 1;
     }
     /* A failed BIOS setup may already have changed the physical mode. */
@@ -461,6 +463,9 @@ int mysmb_dos16_devices_open(void)
         mygames_dos16_video_restore(&old_video);video_ready=0U;return 0;
     }
     mysmb_io_pacing_initialize(&pacing,mygames_dos16_clock_stamp(),19886UL);
+    /* At most100ms of voluntary video suppression. Slow composition may
+     * exceed this interval; it is a progress bound, not an FPS guarantee. */
+    mysmb_io_pacing_initialize(&publication,pacing.last,119318UL);
     /* Audio is independent of graphics/text mode.  An absent Sound Blaster is
      * nonfatal; S3 will make a prepared device audible. */
     (void)mysmb_dos16_audio_dos_open();
@@ -563,7 +568,8 @@ void mysmb_dos16_devices_wait(void)
 }
 int mysmb_dos16_devices_should_present(void)
 {
-    return present_due!=0U;
+    return mysmb_io_pacing_video_due(&publication,
+        mygames_dos16_clock_stamp(),present_due!=0U);
 }
 void mysmb_dos16_devices_after_load(void)
 {

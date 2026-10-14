@@ -190,9 +190,20 @@ def main():
                         result="\n".join(lines)
                         (output/"console-last.txt").write_text(repr((info.size.x,info.size.y,info.top,info.bottom))+"\n"+result,encoding="utf-8")
                         return result
-                    until(lambda: "MINE" in contents(), "Mine text content")
+                    def board_visible():
+                        text=contents()
+                        # A small RDP monitor can clip the centered title.
+                        # The menu, counter and face remain visible together.
+                        return "MINE" in text or ("Game" in text and
+                            "Help" in text and "010" in text and "[\u263a]" in text)
+                    def expert_visible():
+                        text=contents()
+                        # Expert changes the mine counter from010to099 even
+                        # when its right-hand dimensions caption is clipped.
+                        return "30x16" in text or "099" in text
+                    until(board_visible, "Mine text content")
                     console_key(console_input, ord('3'), True);console_key(console_input, ord('3'), False)
-                    until(lambda: "30x16" in contents(), "Console level key")
+                    until(expert_visible, "Console level key")
                     (output/("borrowed.txt" if borrowed else "owned.txt")).write_text(contents(), encoding="utf-8")
                     console_key(console_input, 9, True);console_key(console_input, 9, False)
                     until(lambda: u.IsWindowVisible(hwnd), "Console to graphics")
@@ -202,7 +213,7 @@ def main():
                     u.PostMessageW(hwnd, 0x100, 9, 0)
                     until(lambda: not u.IsWindowVisible(hwnd), "Graphics to retained console")
                     console_key(console_input, 9, False)
-                    until(lambda: "30x16" in contents(), "Retained board")
+                    until(expert_visible, "Retained board")
                     console_key(console_input, ord('Q'), True);console_key(console_input, ord('Q'), False)
                 finally:
                     k.CloseHandle(console_input);k.CloseHandle(console_output);k.FreeConsole()

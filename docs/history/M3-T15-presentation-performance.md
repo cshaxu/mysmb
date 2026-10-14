@@ -103,7 +103,7 @@ Running;cause unknown. Later unchanged products passed all host routes. No
 audio fix or service restart occurred. The probe now waits for its owned root
 message owner,prints route identity and retains completed routes on failure;
 its8-second budget and exit assertions are retained. A named unnumbered
-[follow-up](../proposals/m3/bounded-windows-audio-startup.md) retains this incident.
+[follow-up](M3-T19-three-platform-audio-lifetime.md) retains this incident.
 
 S2 code/tests/tool4files,+66/-8lines;architecture and governance are separate.
 Three local products16/32/64=361803/445454/462144bytes. Windows products remain

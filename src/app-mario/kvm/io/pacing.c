@@ -1,4 +1,12 @@
 #include "io/pacing.h"
+int mysmb_io_pacing_video_due(struct mysmb_io_pacing *publication,
+    unsigned long now, int on_time)
+{
+    unsigned long elapsed=(now-publication->last)&0xffffffffUL;
+    if(!on_time && elapsed<publication->period)return 0;
+    publication->last=now&0xffffffffUL;
+    return 1;
+}
 void mysmb_io_pacing_initialize(struct mysmb_io_pacing *pacing,
     unsigned long now, unsigned long period)
 {

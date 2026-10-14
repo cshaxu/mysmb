@@ -2692,10 +2692,11 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T18 | 0 | - | [record](../../docs/history/M3-T18-window-performance-executable-footprint.md) |
 | M3 T18 S1 | 0 | 0 | window-performance; [record](../../docs/history/M3-T18-window-performance-executable-footprint.md) |
 | M3 T18 S2 | 0 | 0 | executable-footprint; [record](../../docs/history/M3-T18-window-performance-executable-footprint.md) |
-| M3 T19 | 0 | - | [record](../../docs/proposals/m3/bounded-windows-audio-startup.md) |
-| M3 T19 S1 | 0 | 0 | bounded-audio-device-lifetime; [record](../../docs/proposals/m3/bounded-windows-audio-startup.md) |
-| M3 T19 S2 | 0 | 0 | win16-cooperative-audio-lifetime; [record](../../docs/proposals/m3/bounded-windows-audio-startup.md) |
-| M3 T19 S3 | 0 | 0 | dos16-dsp-dma-irq-lifetime; [record](../../docs/proposals/m3/bounded-windows-audio-startup.md) |
+| M3 T19 | 0 | - | [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
+| M3 T19 S1 | 0 | 0 | bounded-audio-device-lifetime; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
+| M3 T19 S2 | 0 | 0 | win16-cooperative-audio-lifetime; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
+| M3 T19 S3 | 0 | 0 | dos16-dsp-dma-irq-lifetime; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
+| M3 T19 S4 | 0 | 0 | three-platform-audio-product-qualification; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
 | M3 T2 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); [record](../../docs/history/M3-T2-win32-command-consumer.md); S not recorded |
 | M3 T20 | 0 | - | [record](../../docs/history/M3-T20-text-interface-corrections.md) |
 | M3 T20 S1 | 0 | 0 | bounded-character-interface-corrections; [record](../../docs/history/M3-T20-text-interface-corrections.md) |
@@ -3974,7 +3975,7 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T17 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T17-text-object-role-audit.md) |
 | M3 T18 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T18-window-performance-executable-footprint.md) |
 | M3 T18 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T18-window-performance-executable-footprint.md) |
-| M3 T19 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/bounded-windows-audio-startup.md) |
+| M3 T19 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
 | M3 T20 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T20-text-interface-corrections.md) |
 | M3 T20 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T20-text-interface-corrections.md) |
 | M3 T20 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T20-text-interface-corrections.md) |
@@ -4093,5 +4094,6 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T45 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T45-mine-import-host-adoption.md) |
 | M3 T45 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T45-mine-import-host-adoption.md) |
 | M3 T45 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T45-mine-import-host-adoption.md) |
-| M3 T19 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/bounded-windows-audio-startup.md) |
-| M3 T19 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/bounded-windows-audio-startup.md) |
+| M3 T19 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
+| M3 T19 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
+| M3 T19 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |

@@ -1,6 +1,44 @@
 #include <string.h>
 #include <stdio.h>
 #include "platform/win32/audio_output.h"
+static unsigned long written,nonzero;
+static short minimum,maximum;
+static int real_device;
+static MMRESULT WINAPI accepting_open(LPHWAVEOUT out,UINT id,LPCWAVEFORMATEX format,
+    DWORD_PTR callback,DWORD_PTR instance,DWORD flags)
+{
+    (void)id;(void)callback;(void)instance;(void)flags;
+    if(format->wBitsPerSample!=16 || format->nChannels!=1)return WAVERR_BADFORMAT;
+    *out=(HWAVEOUT)(UINT_PTR)1;return MMSYSERR_NOERROR;
+}
+static MMRESULT WINAPI accepting_header(HWAVEOUT device,LPWAVEHDR header,UINT bytes)
+{(void)device;(void)header;(void)bytes;return MMSYSERR_NOERROR;}
+static MMRESULT WINAPI accepting_device(HWAVEOUT device)
+{(void)device;return MMSYSERR_NOERROR;}
+static MMRESULT WINAPI capture_write(HWAVEOUT device,LPWAVEHDR header,UINT bytes)
+{
+    MMRESULT result=real_device?waveOutWrite(device,header,bytes):MMSYSERR_NOERROR;
+    unsigned long i;
+    short *pcm=(short *)header->lpData;
+    if(!real_device)header->dwFlags|=WHDR_DONE;
+    if(result==MMSYSERR_NOERROR) {
+        ++written;
+        for(i=0;i<header->dwBufferLength/sizeof(short);++i) {
+            if(pcm[i])++nonzero;
+            if(pcm[i]<minimum)minimum=pcm[i];
+            if(pcm[i]>maximum)maximum=pcm[i];
+        }
+    }
+    return result;
+}
+static const struct mygames_win32_pcm_api capture_api={
+    waveOutOpen,waveOutPrepareHeader,capture_write,waveOutReset,
+    waveOutUnprepareHeader,waveOutClose
+};
+static const struct mygames_win32_pcm_api accepting_api={
+    accepting_open,accepting_header,capture_write,accepting_device,
+    accepting_header,accepting_device
+};
 static void dispatch(void)
 {
     MSG message;
@@ -32,9 +70,13 @@ int main(int argc,char **argv)
     if(memcmp(&expected,&output.renderer,sizeof(expected)) || !mysmb_win32_audio_close(&output))return 1;
     /* Real endpoint availability belongs to the named host integration target,
      * not to the deterministic renderer/adapter owner test. */
-    if(argc<2)return 0;
-    if(!waveOutGetNumDevs())return 77;
-    if(!mysmb_win32_audio_open(&output))return 2;
+    real_device=argc>1;
+    if(real_device && !waveOutGetNumDevs())return 77;
+    mysmb_win32_audio_renderer_initialize(&output.renderer);
+    output.session=mygames_win32_pcm_session_begin(MYSMB_WIN32_AUDIO_RATE,16,
+        MYSMB_WIN32_AUDIO_BUFFERS,MYSMB_WIN32_AUDIO_FRAME_SAMPLES*sizeof(short),
+        real_device?&capture_api:&accepting_api);
+    if(!output.session)return 2;
     start=GetTickCount();
     while(!mysmb_win32_audio_available(&output)) {
         if(GetTickCount()-start>12000U) {
@@ -44,13 +86,17 @@ int main(int argc,char **argv)
         }
         dispatch();
     }
+    audio.write_count=4;
     for(frame=0;frame<24;++frame) {
         mysmb_win32_audio_submit(&output,&audio);Sleep(17);
+        audio.write_count=0;
     }
     start=GetTickCount();
     while(!mysmb_win32_audio_close(&output)) {
         if(GetTickCount()-start>2000U)return 4;
         dispatch();
     }
-    return 0;
+    printf("%s writes=%lu nonzero_samples=%lu range=%d..%d\n",
+        real_device?"real WinMM":"accepting PCM sink",written,nonzero,(int)minimum,(int)maximum);
+    return written>=8 && nonzero && minimum<maximum ? 0:5;
 }
