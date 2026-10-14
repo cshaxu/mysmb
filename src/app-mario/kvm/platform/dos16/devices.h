@@ -6,7 +6,7 @@
 #include "io/planar_frame.h"
 struct mysmb_ppu_frame_view;
 int mysmb_dos16_devices_open(void);
-void mysmb_dos16_devices_close(void);
+int mysmb_dos16_devices_close(void);
 void mysmb_dos16_devices_input(struct mysmb_io_input *input);
 /* Native256x240 chain4 row-major view;never accepts a scaled/plane frame. */
 int mysmb_dos16_devices_present_band(const struct mygames_kvm_video_band *band);

@@ -142,11 +142,16 @@ static int initialize(void)
 int main(void)
 {
     if(!initialize())return 1;
-    while (root.control.exit_requested==0U) {
+    for (;;) {
+        /* A latched IRQ may finish after stop intent. Keep the application
+         * and vector alive until the device reports completed cleanup. */
+        if(root.control.exit_requested) {
+            if(mysmb_dos16_devices_close())break;
+            mysmb_dos16_devices_wait();continue;
+        }
         mysmb_dos16_root_step(&root);
         if (root.control.exit_requested==0U) mysmb_dos16_devices_wait();
     }
-    mysmb_dos16_devices_close();
     mysmb_dos16_root_shutdown(&root);
     runtime_storage=0;text_storage=0;snapshot_store=0;
     return 0;

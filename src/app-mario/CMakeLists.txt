@@ -2235,3 +2235,10 @@ if(TARGET mysmb_local_title_data)
         mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_snapshot)
     add_test(NAME mysmb.win16-window-text COMMAND mysmb_win16_window_text_join)
 endif()
+
+add_executable(mysmb_dos_audio_adapter_smoke
+    ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/dos16/dos_audio_adapter_smoke.c
+    kvm/platform/dos16/dos_audio_dos.c)
+target_include_directories(mysmb_dos_audio_adapter_smoke PRIVATE . kvm ${CMAKE_SOURCE_DIR}/src/lib)
+target_link_libraries(mysmb_dos_audio_adapter_smoke PRIVATE mysmb_integer_audio)
+add_test(NAME mysmb.dos16-audio-adapter COMMAND mysmb_dos_audio_adapter_smoke)

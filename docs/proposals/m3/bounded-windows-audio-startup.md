@@ -707,3 +707,58 @@ unchanged. No new certification. Six local products available; changed hashes:
 - mario/mysmb16.exe: `e5c76ed9ff3af88796b5958fb3979023276d1ec8af8a5a988770d2a228d390fc`.
 
 - mine/mine16.exe: `5b87aedf04da4d32af9d4361144551c32fb27662608ca59c63b309eab29fafad`.
+
+
+## S3 P1 implementation and coordinator review
+
+D16-1..5: the original two2048byte DMA blocks remain. Claim/publication/start
+use short FLAGS-preserving sections; sample copies keep caller interrupts.
+Submission returns an exact accepted prefix. The app consumes each synthesis
+frame once, drops only unaccepted output, and restarts synthesis after load.
+DSP start/IRQ share128polls per operation; cleanup shares512; probe retains1024.
+Faults mask DMA immediately and latch failure. Main service, using the existing
+PIT clock, owns watchdog and cleanup. No added timer, thread or per-tick retry.
+The watchdog is block duration plus500ms and handles wrap/midnight reset.
+
+Pending PIC edges drain through the installed suspended ISR before vector,
+mask and DMA storage release. A caller with IF clear cannot be forced enabled;
+close reports pending and app exit waits through normal service. Only owned
+PIC mask bits are restored. The first diagnostic PIC-poll approach was rejected
+because ordinary DOSBox does not implement it; no such command remains.
+
+Port/FLAGS owner tests cover six partial DSP starts, queue saturation/prefix,
+copy/IRQ interleaving, spurious IRQ, masked/latched cleanup, lost completion,
+wrap, missing hardware, DMA boundary, allocation, slave IRQ and reset/close.
+The app adapter test owns renderer continuity and partial consumption. Both
+width suites315/315 and independent library24/24 pass. Native original-toolchain
+PCM probe at unchanged DOSBox settings completes60periods,18IRQs, zero gaps in
+its prefilled workload, and restores masks. Observed normal IRQ max672PIT ticks
+(0.563ms), baseline611(0.512ms); submit62919(52.73ms) versus62890; service151
+(0.127ms). Injected busy IRQ consumes128polls,1815ticks(1.521ms); subsequent
+cleanup consumes512additional polls. These are workload measurements, not
+universal timing bounds or a normal-path speedup. No production probe hooks.
+
+DOS static minimum388288bytes, bounded maximum392384; DMA remains4096bytes.
+Compared with S1 static minimum adds1456bytes and DGROUP adds16. Dynamic game
+caches are excluded. Final DOS/Win16 hybrid binds successfully; the other five
+products retain reviewed S1/S2 provenance. Actual product DOS capture after a
+late Start contains nonflat PCM (52.896s, signed16 range -11848..19933).
+The earlier all-zero capture pressed Start before title initialization and
+is retained as a failed fixture, not a claimed audio pass.
+
+A separate integrated-product defect is explicitly assigned to S4: at unchanged
+DOSBox default cycles, persistent lateness permanently suppresses presentation.
+The old retained executable reproduces the same empty graphics/text result;
+a build-only forced-publication probe shows valid pixels. S3 audio ownership
+scope closes, but T acceptance remains blocked until S4 repairs and tests bounded
+presentation progress, then repeats final product/audio/save/load routes.
+Coordinator authorizes that narrow app scheduling correction as necessary to
+this task's requested usable-product acceptance. Do not alter core/PPU, logical
+tick sequence, audio rate, or DOSBox configuration. No performance parity claim.
+
+Executor/coordinator review: all DOS PCM API callers migrated; failure cleanup
+cannot free driver-owned storage, no DOS policy enters shared game logic. Empty
+ROM scope/expected/actual: historical1992/1992, retained1991/1992nodes and
+4260/4261feasible controls(4342raw,81infeasible) unchanged, no certification credit.
+
+- mario/mysmb16.exe: `3086cfdf69e3ca2d2ece2b8e9cf46421821af3f9b3e0d672f049215bd44af18b`.

@@ -7,11 +7,11 @@ int mysmb_dos16_audio_dos_open(void)
     mysmb_audio_renderer_initialize(&renderer);
     return mygames_dos16_pcm_dos_open(MYSMB_AUDIO_SAMPLE_RATE);
 }
-void mysmb_dos16_audio_dos_close(void){mygames_dos16_pcm_dos_close();}
+int mysmb_dos16_audio_dos_close(void){return mygames_dos16_pcm_dos_close();}
 void mysmb_dos16_audio_dos_after_load(void)
 {
     mygames_dos16_pcm_dos_reset();
-    if(mygames_dos16_pcm_dos_prepared())mysmb_audio_renderer_initialize(&renderer);
+    mysmb_audio_renderer_initialize(&renderer);
 }
 int mysmb_dos16_audio_dos_prepared(void){return mygames_dos16_pcm_dos_prepared();}
 mygames_kvm_u8 mysmb_dos16_audio_dos_submit(const struct mysmb_io_audio_frame *frame)
@@ -19,5 +19,6 @@ mygames_kvm_u8 mysmb_dos16_audio_dos_submit(const struct mysmb_io_audio_frame *f
     unsigned short count;
     if(!frame || !mygames_dos16_pcm_dos_prepared())return MYSMB_IO_AUDIO_UNAVAILABLE;
     count=mysmb_audio_renderer_render(&renderer,frame,samples,sizeof(samples));
-    return mygames_dos16_pcm_dos_submit(samples,count);
+    return mygames_dos16_pcm_dos_submit(samples,count)==count?MYSMB_IO_AUDIO_AVAILABLE:
+        MYSMB_IO_AUDIO_UNAVAILABLE;
 }

@@ -8,6 +8,7 @@
 #include "dos16/vga.h"
 #include "dos16/text_cells.h"
 #include "platform/dos16/dos_audio.h"
+#include "dos16/pcm.h"
 #include "ppu/frame.h"
 #include "kvm/color.h"
 #include "io/pacing.h"
@@ -468,12 +469,13 @@ int mysmb_dos16_devices_open(void)
     return 1;
 }
 
-void mysmb_dos16_devices_close(void)
+int mysmb_dos16_devices_close(void)
 {
-    if (opened==0U) return;
-    mysmb_dos16_audio_dos_close();
+    if (opened==0U) return 1;
+    if(!mysmb_dos16_audio_dos_close())return 0;
     mygames_dos16_keyboard_close();
     mygames_dos16_video_restore(&old_video);opened=video_ready=text_mode=retained_mode=compact_mode=ram_mode=retained_hud_valid=retained_sprite_count=0U;
+    return 1;
 }
 
 void mysmb_dos16_devices_input(struct mysmb_io_input *input)
@@ -546,6 +548,7 @@ void mysmb_dos16_devices_wait(void)
      * The signed-half-range check also treats the BIOS midnight reset as a
      * new clock origin rather than a catch-up burst. */
     now=mygames_dos16_clock_stamp();
+    mygames_dos16_pcm_dos_service(now);
     elapsed=(now-pacing.last)&0xffffffffUL;
     if(elapsed>0x7fffffffUL)pacing.last=now;
     pacing.last=(pacing.last+pacing.period)&0xffffffffUL;
