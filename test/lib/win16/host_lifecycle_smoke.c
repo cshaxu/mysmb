@@ -13,6 +13,8 @@ static int fail_font,fail_text;
 static int device_bits=8,color_case;
 static int hooks_started,hooks_closed,reentrant_updates;
 static int scenario,view_kind,mouse_events,cancels,commands,text_draws,allocs;
+static HMENU attached_menu;
+static int menu_sets,menu_destroys,menu_fail,menu_result,menu_visible=1;
 static unsigned long last_foreground,last_background;
 static struct mygames_kvm_input_event last_event;
 static struct mygames_kvm_text_cell cells[6]={{1,15,1},{16,14,2},{219,12,3},{179,11,4},{32,10,5},{2,9,6}};
@@ -33,7 +35,7 @@ static void input(void *context,const struct mygames_kvm_input_event *event)
     else if(event->down)dirty=1;
 }
 static void update(void *context,unsigned long time,struct mygames_win16_update *out)
-{(void)context;++updates;if(scenario==2){++reentrant_updates;procedure(window,WM_TIMER,0,0);}now=time;out->wake_ms=(unsigned short)wake;out->dirty=(unsigned char)dirty;dirty=0;}
+{(void)context;++updates;if(scenario==2){++reentrant_updates;procedure(window,WM_TIMER,0,0);}if(scenario>=3)menu_result=mygames_win16_menu_visible(window,menu_visible);now=time;out->wake_ms=(unsigned short)wake;out->dirty=(unsigned char)dirty;dirty=0;}
 static int graphics(void *context,struct mygames_kvm_video_band *band)
 {(void)context;++draws;band->pixels=pixels;band->width=band->stride=active_app->width;band->capacity=sizeof(pixels);return 1;}
 static mygames_kvm_u8 exiting(void *context){(void)context;return (mygames_kvm_u8)exit_flag;}
@@ -46,7 +48,7 @@ int KillTimer(HWND w,unsigned short id){(void)w;(void)id;timer=0;return 1;}
 int SetTimer(HWND w,unsigned short id,unsigned short ms,void *proc)
 {(void)w;(void)id;(void)proc;++sets;if(failed_timer)return 0;timer=ms;return 1;}
 void PostQuitMessage(int code){quit=1;exit_code=code;}
-int DestroyWindow(HWND w){procedure(w,WM_KILLFOCUS,0,0);procedure(w,WM_DESTROY,0,0);return 1;}
+int DestroyWindow(HWND w){procedure(w,WM_KILLFOCUS,0,0);procedure(w,WM_DESTROY,0,0);if(attached_menu){DestroyMenu(attached_menu);attached_menu=0;}return 1;}
 void InvalidateRect(HWND w,const RECT *r,int erase){(void)w;(void)r;(void)erase;}
 void UpdateWindow(HWND w){procedure(w,WM_PAINT,0,0);}
 HDC GetDC(HWND w){(void)w;return (HDC)1;}
@@ -68,7 +70,7 @@ int RegisterClass(const WNDCLASS *cls){procedure=cls->lpfnWndProc;return 1;}
 int GetSystemMetrics(int index){return index==SM_CYSCREEN?480:index==SM_CXSCREEN?640:8;}
 int AdjustWindowRect(RECT *r,long style,int menu){(void)r;(void)style;(void)menu;return 1;}
 HWND CreateWindow(const char *c,const char *title,long style,int x,int y,int width,int height,HWND parent,HMENU menu,HINSTANCE instance,void *data)
-{(void)c;(void)title;(void)style;(void)x;(void)y;(void)width;(void)height;(void)parent;(void)menu;(void)instance;(void)data;return window;}
+{(void)c;(void)title;(void)style;(void)x;(void)y;(void)width;(void)height;(void)parent;attached_menu=menu;(void)instance;(void)data;return window;}
 void ShowWindow(HWND w,int show){(void)show;procedure(w,WM_SETFOCUS,0,0);}
 void TranslateMessage(const MSG *m){(void)m;}
 void DispatchMessage(const MSG *m){procedure(window,m->message,m->wParam,m->lParam);}
@@ -80,6 +82,30 @@ int GetMessage(MSG *m,HWND w,int first,int last)
         if(!hooks_started || !paints)failure=60;
         m->message=step++?WM_TIMER:WM_CLOSE;now+=20;
         if(step>8){failure=61;quit=1;return 0;}return 1;
+    }
+    if(scenario>=3) {
+        m->message=WM_TIMER;
+        switch(step++) {
+        case 0:
+            if(!menu_result || attached_menu!=1 || menu_sets)failure=70;
+            menu_visible=0;view_kind=1;dirty=1;return 1;
+        case 1:
+            if(!menu_result || attached_menu || menu_sets!=1 || menu_destroys)failure=71;
+            return 1; /* Repeated hidden request must not call USER again. */
+        case 2:
+            if(menu_sets!=1)failure=72;
+            menu_visible=1;menu_fail=1;return 1;
+        case 3:
+            if(menu_result || attached_menu || menu_sets!=2 || menu_destroys)failure=73;
+            menu_fail=0;view_kind=0;dirty=1;return 1;
+        case 4:
+            if(!menu_result || attached_menu!=1 || menu_sets!=3)failure=74;
+            if(scenario==3){menu_visible=0;view_kind=1;dirty=1;return 1;}
+            /* The other run exits with the menu attached. */
+        case 5:
+            m->message=WM_CLOSE;return 1;
+        default:failure=75;quit=1;return 0;
+        }
     }
     if(scenario) {
         switch(step++) {
@@ -143,7 +169,9 @@ void ReleaseCapture(void){captured=0;}
 HMENU CreateMenu(void){return 1;}
 HMENU CreatePopupMenu(void){return 2;}
 int AppendMenu(HMENU m,unsigned short f,UINT id,const char *label){(void)m;(void)f;(void)id;(void)label;return 1;}
-int DestroyMenu(HMENU m){(void)m;return 1;}
+HMENU GetMenu(HWND w){(void)w;return attached_menu;}
+int SetMenu(HWND w,HMENU m){(void)w;++menu_sets;if(menu_fail)return 0;attached_menu=m;return 1;}
+int DestroyMenu(HMENU m){(void)m;++menu_destroys;return 1;}
 int CheckMenuItem(HMENU m,UINT id,UINT f){(void)m;(void)id;(void)f;return 1;}
 int EnableMenuItem(HMENU m,UINT id,UINT f){(void)m;(void)id;(void)f;return 1;}
 void DrawMenuBar(HWND w){(void)w;}
@@ -164,6 +192,8 @@ int main(void)
     struct mygames_win16_application app;
     struct mygames_win16_lifecycle hooks;
     int result,i;
+    static const struct mygames_win16_menu_item item={"Action",42,0,0};
+    static const struct mygames_win16_menu group={"Menu",&item,1};
     RECT rect;
     unsigned long source_colors[16];
     memset(&app,0,sizeof(app));app.title="Neutral idle client";
@@ -174,6 +204,7 @@ int main(void)
     result=mygames_win16_run(1,0,1,&app);
     if(failure)return failure;
     if(result || !exit_flag || draws!=1 || paints!=2 || inputs!=6)return 1;
+    if(!mygames_win16_menu_visible(window,0) || mygames_win16_menu_visible(0,1) || menu_sets)return 69;
     /* Requested timer failure must terminate, not strand the client. */
     quit=exit_flag=step=0;wake=1;failed_timer=1;
     if(mygames_win16_run(1,0,1,&app)!=5)return 2;
@@ -212,5 +243,12 @@ int main(void)
     hooks.started=after_paint;hooks.close=controlled_close;
     if(mygames_win16_run_lifecycle(1,0,1,&app,&hooks) || failure ||
         hooks_started!=1 || hooks_closed!=4 || !reentrant_updates || allocs)return failure?failure:63;
+    app.menus=&group;app.menu_count=1;app.available_views=3;
+    for(scenario=3;scenario<=4;++scenario) {
+        quit=exit_flag=step=failed_timer=0;dirty=1;wake=0;view_kind=0;
+        menu_visible=1;menu_sets=menu_destroys=menu_fail=0;
+        if(mygames_win16_run(1,0,1,&app) || failure || allocs ||
+            menu_destroys!=1 || attached_menu)return failure?failure:76;
+    }
     return 0;
 }

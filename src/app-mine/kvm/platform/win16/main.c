@@ -24,8 +24,9 @@ static void size_view(void)
     if(sized_width==application.width&&sized_height==application.height&&sized_view==session.text_mode)return;
     window=GetActiveWindow();
     if(!window||!GetClassName(window,name,sizeof(name))||strcmp(name,"MygamesWin16"))return;
+    if(!mygames_win16_menu_visible(window,!session.text_mode))return;
     rect.left=rect.top=rect.right=rect.bottom=0;
-    AdjustWindowRect(&rect,WS_OVERLAPPEDWINDOW,TRUE);
+    AdjustWindowRect(&rect,WS_OVERLAPPEDWINDOW,GetMenu(window)!=0);
     maximum_w=GetSystemMetrics(SM_CXSCREEN)-(rect.right-rect.left)-8;
     maximum_h=GetSystemMetrics(SM_CYSCREEN)-(rect.bottom-rect.top)-8;
     w=session.text_mode?640:application.width;

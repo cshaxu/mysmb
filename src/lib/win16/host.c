@@ -185,6 +185,17 @@ static int create_menu(void)
 fail:
     DestroyMenu(menu);menu=0;return 0;
 }
+int mygames_win16_menu_visible(HWND window,int visible)
+{
+    HMENU wanted;
+    if(!window)return 0;
+    if(!menu)return 1;
+    wanted=visible?menu:0;
+    if(GetMenu(window)==wanted)return 1;
+    if(!SetMenu(window,wanted))return 0;
+    DrawMenuBar(window);
+    return 1;
+}
 static void sync_menu(HWND window)
 {
     unsigned short g,i;
@@ -195,7 +206,7 @@ static void sync_menu(HWND window)
         CheckMenuItem(menu,item->command,MF_BYCOMMAND|(item->checked?MF_CHECKED:MF_UNCHECKED));
         EnableMenuItem(menu,item->command,MF_BYCOMMAND|(item->disabled?MF_GRAYED:MF_ENABLED));
     }
-    DrawMenuBar(window);
+    if(GetMenu(window)==menu)DrawMenuBar(window);
 }
 
 static int try_close(HWND window)
@@ -326,7 +337,14 @@ LRESULT FAR PASCAL __export MygamesWin16WndProc(HWND window,UINT message,
         EndPaint(window,&paint);
         if(!paint_ok){close_pending=1;close_reason=6;service(window);}
         return 0;
-    case WM_DESTROY: closing=1;if(pointer.buttons)cancel_pointer(window);KillTimer(window,1);PostQuitMessage(0);return 0;
+    case WM_DESTROY:
+        closing=1;
+        /* USER destroys an attached menu with its window. A detached menu
+         * remains ours, including a close initiated from a text view. */
+        if(menu && GetMenu(window)!=menu)DestroyMenu(menu);
+        menu=0;
+        if(pointer.buttons)cancel_pointer(window);
+        KillTimer(window,1);PostQuitMessage(0);return 0;
     }
     return DefWindowProc(window,message,word,detail);
 }

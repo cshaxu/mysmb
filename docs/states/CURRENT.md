@@ -1,29 +1,29 @@
 # Project Status
 
-## M3 T19 S4 Packet
+## M3 T19 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Closed: M3 T19 S4 P1 and T19 engineering scope; waiting for owner acceptance/instruction. |
-| Admission And Approval | Owner approves a suitable design and repair of Win32/64, Win16 and DOS16 audio based on the audit. Retain T19; admit S4 after reviewed S3 closure. |
-| Objective | Qualify all platform audio and six products; repair the integrated DOS presentation-starvation finding through app scheduling only. Owner authorizes autonomous single-person coordinator/executor review through T closure and six-product build/test delivery. |
-| Non-goals | No additional production process, host driver/service manipulation, game/APU/PPU rewrite, new audio backend, Mine music feature or save-format change. |
-| Reference Baseline | 82d6da42; T45 S4 closed pending owner play acceptance. |
-| Candidate Proposal | [T19 audio lifetime](../history/M3-T19-three-platform-audio-lifetime.md). |
-| Files And ABI Surface | Mario I/O presentation scheduling and DOS binding, mirrored tests and final receipts;5-8files,150-300lines estimate. Library device/session and app transaction interfaces change; core and save wire ABI remain stable. |
+| Identifier Mode | Closed: M3 T19 S5 P1; owner-directed correction complete, waiting for acceptance. |
+| Admission And Approval | Owner requests Mine Win16 duplicate-menu repair and explicitly authorizes T19 S5. Single-person executor/coordinator review. |
+| Objective | Hide the native menu in Mine Win16 text view, restore it in graphics, preserve geometry, input and menu lifetime. |
+| Non-goals | No game, audio, DOS, Win32 policy or ROM changes. |
+| Reference Baseline | 6fe73028, clean worktree. |
+| Candidate Proposal | [T19 retained record and S5 amendment](../history/M3-T19-three-platform-audio-lifetime.md#s5-owner-directed-menu-correction). |
+| Files And ABI Surface | Mine Win16 root and generic Win16 host menu mechanism, mirrored tests; estimated 3-6 source/test files, 80-160 lines. No application struct ABI change. |
 | Applicable Rules | Task Reading Set: Execution, Documentation, Architecture, Coding, source policy and current component map. |
-| Verification | S3 hardware port/FLAGS/queue/fault/lost IRQ owner tests and actual DOS PCM, both native-width suites and host integration, six local product builds across both apps, ledger/documentation gates. Matrix and platform limits are in the proposal. |
-| Expected Markers | Empty ROM scope/expected/actual; historical1992/1992; no new equivalence credit. |
-| Asset Needs | Owner local ROM for products only. Owner-provided Windows3.1 installation media supplies its Microsoft Sound Blaster driver solely to an ignored private test image; proprietary, not redistributed or committed. Neutral PCM probes and protected captures remain under build. Microsoft API docs are references only. |
-| Reporting Requirements | Distinguish measured normal calls, static defects, unreproduced historical stalls, proposed behavior and outstanding proof. |
-| Stop Conditions | No forced thread termination, freed driver-owned buffers, sibling writes, hidden retry loops or unsupported hard-cancellation claims. Only the active S may change product owners. |
-| Exit Criteria | S4 closes only after the fixed acceptance register, product runtime and audio evidence pass; T19 closes only after S2 Win16, S3 DOS16 and S4 integration fulfill the fixed findings/acceptance register. Design completion is not repair completion. |
-| Original Owner Request | Design and resolve audio problems on all three platforms from the audit conclusions. |
-| Similar-Issue Sweep | All host calls, partial cleanup, queues, renderer continuity, reset/load, focus/Tab, teardown, Win16 retry/reentrancy and DOS DMA/IRQ/polling; each finding has a receiving S. |
+| Verification | Owner-local host menu lifecycle tests, native suites, original small/large-model Win16 builds, actual Win3.x graphics/text/graphics and close-in-text routes. |
+| Expected Markers | Empty scope/expected/actual; historical1992/1992; no ROM equivalence credit. |
+| Asset Needs | Existing owner-local Win3.x test image and Mario ROM build input only; protected products/captures remain ignored beneath build and local assets. |
+| Reporting Requirements | Before/after menu behavior, geometry, test counts, product provenance, diff size and retained limitations. |
+| Stop Conditions | No global desktop control, sibling writes, system settings changes or app-specific policy in lib. |
+| Exit Criteria | One menu in either view, repeated switches and text-mode close safe, applicable tests/builds pass, products refreshed and reviewed commit pushed. |
+| Original Owner Request | Reopen T19, add an S to remove duplicated native menu when Mine enters character view. |
+| Similar-Issue Sweep | Menu attachment, detached ownership, restore flags and menu-dependent client sizing across Win16 clients; Win32 and DOS reviewed for analogous double menus. |
 
 ## Current Technical Baseline
 
-T19 S4 and T19 engineering scope are closed. No active S. Its queue entry is removed; the five other candidates
+T19 S1-S5 engineering scope is closed, pending owner acceptance. No active S. Its queue entry is removed; the five other candidates
 retain their order. T45 S4 remains closed pending owner visual acceptance;
 its local products and pending acceptance materials are preserved.
 Historical1992/1992, retained1991/1992nodes and4260/4261feasible controls
@@ -70,3 +70,12 @@ current accepting-sink nonflat data and explicit owner listening qualification.
 No current physical audio pass is claimed. ROM counters unchanged. The fixed
 findings register and caveats are in the archived T19 record. Five queue items
 unchanged; wait for owner. Clean this build evidence after owner acceptance.
+
+## S5 P1 closure checkpoint
+
+Mine Win16 hides its native menu in text view and restores the same menu in
+graphics; sizing uses the actual attachment. The host retains detached ownership
+through close. Both315test suites and independent24tests pass. Actual Win3.x
+single-menu/return/repeat/text-exit and Mario regression routes pass; both hybrid
+products rebuilt and locally refreshed. No audio/game/ROM change or new
+certification credit. Wait for owner acceptance before build cleanup.

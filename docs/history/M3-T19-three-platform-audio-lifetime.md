@@ -2,6 +2,9 @@
 
 ## Current task status
 
+Owner-directed S5 menu correction is engineering-closed, pending acceptance.
+S1-S4 results remain retained.
+
 M3 T19 S1-S4 engineering scope closed on2026-10-13 after single-person
 executor/coordinator review. Final S4 receipt below owns the current result;
 earlier audit/suspension/planned sections are historical, not outstanding work.
@@ -869,3 +872,64 @@ Final local products (SHA256):
 - assets/mine/mine32.exe: `ff855e856a3346826bc67a6bcdd4cea3c368bcd5a64e77702ef19e1f67e98ee6` (155358bytes).
 
 - assets/mine/mine64.exe: `ea0099b94e70952e5d457e56a7b6db4cced022a536dd10ae679c599b372d87b7` (149044bytes).
+
+## S5 owner-directed menu correction
+
+Admitted on2026-10-13 from6fe73028 by explicit owner instruction. Empty ROM
+scope and expected matches; historical1992/1992, retained1991/1992nodes and
+4260/4261feasible controls (4342raw,81infeasible) remain unchanged.
+
+Root cause: Mine changes its in-window presentation but leaves the native
+menu attached, while its authored text scene already contains Game/Help.
+Its size calculation also unconditionally reserves native-menu space.
+
+Mine owns the menu-visible decision. The Win16 host will expose a neutral
+attachment operation retaining the same menu and cleaning up detached menus
+on window destruction. No view policy enters the library. S5 tests detachment,
+restoration, no-op calls, failure, menu-less clients and close in either view;
+actual Win3.x checks geometry, input and a single menu in each view.
+Estimated3-6source/test files,80-160lines. Refresh both Win16 hybrid products;
+four unaffected native products retain their verified provenance.
+
+### S5 P1 implementation and coordinator closure
+
+Production change: Mine requests visibility before sizing; the generic host
+retains the menu while detached, updates flags without drawing an absent bar,
+restores the same handle and frees a detached menu on window destruction.
+USER retains attached-menu destruction ownership. No application struct ABI,
+DOS, native Windows, game, audio, core or PPU change.
+
+Test-owner closure: host lifecycle test covers null HWND, menu-less no-op,
+visible/hidden idempotence, successful detach/restore, failed SetMenu and retry,
+and exactly one destruction for attached and detached close. The app policy
+and non-client sizing are integration joins with actual Win3.x USER/GDI.
+The existing graphical-exit script and new Mine menu-cycle.script prove
+initial graphics, expert sizing, text with only authored Game/Help, graphical
+native-menu restoration, repeated Tab, Marks keyboard command and Q in text.
+The exploratory SDL mouse-capture route produced an incomplete host capture;
+it is not counted as new text-pointer evidence. Pointer conversion code is
+unchanged; the existing app gesture and physical-host tests remain applicable.
+Mario's actual Win3.x startup/held-Tab/return/P/O/text/exit route also passes.
+
+Both native Release Ninja/ccache builds and315/315CTest suites pass, as does
+independent library24/24. Original compiler/linker small-model Mine and
+large-model Mario MZ/NE builds pass. Both products refreshed locally; four
+native products remain unchanged and current after their Ninja builds.
+No new physical audio or native-console integration claim is made for this UI
+repair. Documentation and node-accounting gates pass; empty expected/actual
+ROM scope, counters unchanged. Single-person coordinator reviewed ownership,
+source/test diff, actual captures and product receipts; S5 and T19 engineering
+scope close pending owner acceptance. Queue order is unchanged.
+
+Similar-issue sweep: Mine is the only current Win16 menu client. Mario declares
+zero menus. Mine Win32 uses a separate console and hides its graphical window
+in text mode, so its native menu is not duplicated. DOS has no USER menu.
+No other production hit requires a change. The source change is3files,
+26insertions/3deletions; tests add the host assertions, SDK declarations and
+one neutral input route. No third-party source or protected output is committed.
+
+Refreshed local product receipts:
+
+- assets/mine/mine16.exe: `48f8c751a717641fbf3d06ca5446c2c126495ec5af8843ca429193a273b50c18` (40685bytes).
+
+- assets/mario/mysmb16.exe: `c98736885f037aaf74acaa81e64478594c1673bd9e6e80379b2bbebb638b09ec` (699349bytes).

@@ -1,0 +1,17 @@
+5000 key 13 1
+5100 key 13 0
+9000 key 9 1
+9100 key 9 0
+12000 capture text-first.bmp 0
+16000 key 109 1
+16100 key 109 0
+17000 key 9 1
+17100 key 9 0
+20000 capture graphics-return.bmp 0
+21000 key 9 1
+21100 key 9 0
+24000 capture text-again.bmp 0
+25000 key 113 1
+25100 key 113 0
+30000 quit 0 0
+

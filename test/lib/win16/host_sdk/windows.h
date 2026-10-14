@@ -135,6 +135,8 @@ HWND GetCapture(void);
 HWND SetCapture(HWND);
 void ReleaseCapture(void);
 HMENU CreateMenu(void);
+HMENU GetMenu(HWND);
+int SetMenu(HWND,HMENU);
 HMENU CreatePopupMenu(void);
 int AppendMenu(HMENU,unsigned short,UINT,const char *);
 int DestroyMenu(HMENU);
