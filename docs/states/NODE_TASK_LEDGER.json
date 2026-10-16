@@ -8121,7 +8121,7 @@
       "evidence": [
         "docs/history/M3-T19-three-platform-audio-lifetime.md"
       ],
-      "state": "active",
+      "state": "closed",
       "subtasks": [
         {
           "id": "M3 T19 S1",
@@ -8199,7 +8199,7 @@
           "canReceive": false,
           "admissionRole": "implementation",
           "state": "closed",
-          "receipt": "Owner Mine32 Tab regression; coordinator corrective admission. Stable geometry and owned/borrowed console lifecycle; empty ROM scope. Closed: old geometry fails new assertion28; old Mine32 fails owned-release assertion. Fixed both widths315tests, library24tests, Mine3routes per width, library2routes and Mario15routes per width. Native products refreshed; owner acceptance pending. Owner accepts S6 on2026-10-13; S6 closed, T19 explicitly remains open without an active S. Scoped S6 build evidence cleaned; accepted products retained."
+          "receipt": "Owner Mine32 Tab regression; coordinator corrective admission. Stable geometry and owned/borrowed console lifecycle; empty ROM scope. Closed: old geometry fails new assertion28; old Mine32 fails owned-release assertion. Fixed both widths315tests, library24tests, Mine3routes per width, library2routes and Mario15routes per width. Native products refreshed; owner acceptance pending. Owner accepts S6 on2026-10-13; S6 closed, T19 explicitly remains open without an active S. Scoped S6 build evidence cleaned; accepted products retained. Owner approves final T19 closure on2026-10-16; prior keep-open direction superseded. No active S; no new implementation or equivalence credit."
         }
       ]
     },

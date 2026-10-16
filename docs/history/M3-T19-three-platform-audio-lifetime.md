@@ -2,15 +2,11 @@
 
 ## Current task status
 
-Owner accepts S6 on2026-10-13 and explicitly keeps T19 open. No S is active.
-Prior engineering T-closure wording is superseded by this owner disposition.
-S5 retains its recorded engineering closure; S6 is accepted and closed.
-S1-S4 results remain retained.
-
-M3 T19 S1-S4 engineering scope closed on2026-10-13 after single-person
-executor/coordinator review. Final S4 receipt below owns the current result;
-earlier audit/suspension/planned sections are historical, not outstanding work.
-Owner play/listening acceptance is pending. No next queue task is admitted.
+Owner approves T19 closure on2026-10-16. S1-S6 are closed, including original
+audio work and appended menu/Tab corrections. This supersedes the prior
+instruction to keep T19 open. No new task is admitted. Engineering receipts
+and their limits below remain unchanged; no new physical-listening pass is
+claimed by this governance action.
 
 ## Historical suspension
 
@@ -1014,3 +1010,13 @@ remain available under the existing local asset boundary. Pending prior-task
 evidence and shared build trees are retained for their separate acceptance.
 The historical T19 identity survives its suspension/resumption; task IDs are
 repository-wide within M3, not separate counters per application.
+
+### T19 owner-approved final closure
+
+On2026-10-16 owner approves task closure after the distinction between completed
+audio engineering verification and physical listening was explained. Preserve
+all S1-S6 receipts and their platform limitations. T19 is closed, no active S,
+and five queued candidates keep their order. Source/products remain6d505085.
+Build inspection found no remaining T19 directories (build was empty);
+only temporary governance verification output is generated and then removed.
+No new build/test of unchanged products or ROM-equivalence credit is claimed.
