@@ -310,3 +310,41 @@ performance-parity claim or emulator setting drift. Documentation/admission
 gates apply; no unit/integration/product rebuild is required for this
 research-only P. Scope/expected/actual remain empty, historical1992/1992,
 retained1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81).
+
+## S1 P2 — owner-requested original0.2 at fixed3000
+
+Owner explicitly permits this temporary fixed-cycle session after the max
+MySMB launch proved unusable in their test and they reported a host restart.
+No further max test is authorized by this amendment. Persistent DOSBox config
+remains unchanged; only a private secondary configuration sets fixed3000.
+
+Retrieved the historical distribution from [Internet Archive item nestc020](https://archive.org/details/nestc020).
+The archive is381553bytes,SHA256
+`a3f3f6f87ce44e8ed2029297e71b1a46bcf035fd1916aa4015ea7426e55fa8a2`;
+its downloaded SHA1 matches the archive catalog. The original bundled README
+identifies Version0.2(4/2/97), with unchanged freeware/no-ROM distribution
+terms. Local reference only, no tracked executable, archive, GUI art or palette.
+It contains no game ROM. The unmodified DOS executable is342115bytes,SHA256
+`c41c36e3bb422ac33f5312a41392282009d61f2ce49f50e621b5eb597af29c98`.
+Bundled DOS4GW matches the prior owner runtime. This is the original release,
+not a newly compiled source tree or proof of source/binary byte identity.
+
+Launch requests native256x224, no-sound, hidden emulator GUI, ShowFPS and the
+existing owner Mario ROM. Default core/video/memory settings are retained;
+no frameskip/VSync override unavailable in this version is invented. The
+process remains live seven seconds after startup, with DOSBox title showing
+3000cycles,Frameskip0,Program NESTICLE. A secondary startup observer confirms
+fixed3000 remains selected after protected-mode entry rather than switching
+to max. The title's Frameskip0 describes DOSBox, not an independently measured
+internal NESticle publication rate. User now has the interactive window.
+No input was injected; no subjective gameplay/FPS result is fabricated.
+
+The README's Enter/Tab are Start/Select; Space disables GUI/maximizes the NES
+viewport, and Escape toggles emulator menus. Other mappings remain the release
+defaults and can be inspected in its Settings/RedefineInput UI.
+
+This establishes a fixed3000 historical release launch, not an equal-output
+240-row performance ratio or a25MHz486qualification. S1 remains open for the
+remaining actual video/publication receipt. Scope and ROM counts unchanged;
+no product build/test change or EXE refresh. All inputs and records are under
+the active ignored research workspace, below the16MiB amendment budget.
