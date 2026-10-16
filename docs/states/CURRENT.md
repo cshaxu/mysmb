@@ -76,3 +76,28 @@ release unchanged, not a build claimed identical to the leaked source.
 Launch at its supported native256x224 VGA resolution with ShowFPS and no-sound;
 CPU cycles explicitly fixed3000 for this session, default core unchanged.
 No comparison with MySMB240-row output is claimed normalized yet.
+
+## Owner correction — automated fixed3000 measurement
+
+Owner requires the agent to measure, not ask them to read FPS or report frame
+milliseconds. Extend S1's fixed3000 execution receipt with a bounded automated
+startup/title measurement for original0.2. Read only the owned DOSBox process,
+match the historical profile counter layout before interpreting counters,
+then sample counter deltas against host monotonic time. If profile identity
+cannot be bound, record that limit rather than converting unqualified GUI
+FPS into wall milliseconds. No resident guest probe, max setting, user-input
+request or product modification. Private host script and neutral summaries
+below build/t47-s1/nesticle02-fixed3000; no raw process dump. At most180seconds
+per run/two identical failed attempts. Product/core equivalence credit zero.
+
+## S1 P3 automatic timing result
+
+Agent completed seven bounded original0.2/fixed3000runs,707samples including
+three title and three stable-gameplay repeats plus a separate transition.
+Stable game samples all mode1/task3:104display-loop increments and389virtual
+frames in about20.05host seconds, approximately193ms/display interval and
+51.6ms/virtual-frame interval. Visible-window control reproduces the same
+counts. Internal FPS fields are not wall-time rates. No owner hand timing,
+max launch, product change or new ROM credit. S1 still open for actual video
+path; this is not rendering-only time or a matched MySMB performance ratio.
+[Automatic measurement](../proposals/m3/nesticle-forensic-performance-audit.md#s1-p3--agent-measured-original02-fixed3000-cadence).

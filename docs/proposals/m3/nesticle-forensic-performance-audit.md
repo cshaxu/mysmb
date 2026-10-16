@@ -348,3 +348,106 @@ This establishes a fixed3000 historical release launch, not an equal-output
 remaining actual video/publication receipt. Scope and ROM counts unchanged;
 no product build/test change or EXE refresh. All inputs and records are under
 the active ignored research workspace, below the16MiB amendment budget.
+
+## S1 P3 — agent-measured original0.2 fixed3000 cadence
+
+Owner corrects P2's handoff: the agent must collect elapsed time/counters and
+report milliseconds itself, not ask the owner to read FPS. This P completes
+that bounded automated measurement. It does not close the whole mechanism
+census or claim MySMB parity. No product/third-party executable was patched,
+compiled, rebuilt or imported for this measurement.
+
+### Method and counter binding
+
+Use the qualified original0.2 binary and bundled DOS4GW. The session override
+is fixed3000cycles; core stays auto, resolution256x224, no-sound, GUI hidden,
+no ShowFPS overlay. The default configuration hash remains the P1 hash.
+There is no max launch, resident guest probe or emulator device change.
+
+A host observer reads only its own DOSBox process. It locates exactly one
+historical anesprofile layout using the200tick update duration, million-cycle
+divisor and neighbouring1/1/10/10/10divisors, then samples named counter values
+against host perf_counter monotonic time. The reference owners are PROF.H,
+MAIN.CPP updatescreen's frame increment and CPU.CPP tickemu's virtual-frame
+increment. These are specific counter-layout bindings, not a claim that the
+entire source tree is byte-identical to this executable.
+
+Each run obtains101samples at roughly200ms spacing over20seconds, after warmup.
+The observer does not freeze the guest or write its memory. Counters remain
+monotonic; every adjacent cycle/virtual-frame delta in all707samples has the
+same26500cycles-per-virtual-frame ratio. The signature match is unique in each
+process. Where independently collected, exactly one original NES RAM image
+matches the emulator reset sentinels. Its game frame byte tracks the virtual
+counter with at most one frame of phase uncertainty due to asynchronous
+sampling and the NMI boundary. Mode/task reads independently classify the
+measured scene. No whole RAM/process image is stored or committed.
+
+Three title runs and three steady-gameplay runs are the qualified scene rows;
+one additional Start-transition run is retained separately. The agent sends
+Enter make/break messages only to its owned DOSBox window, with no foreground
+input injection. The subsequent RAM mode/task change confirms Start worked.
+After the life-screen transition, wait twelve seconds before the steady sample.
+Every steady sample has mode1/task3; verified title runs have mode0/task3.
+
+### Actual counter deltas and wall-clock intervals
+
+| Scene/run | Host seconds | Display-loop delta | Virtual-frame delta | Display loops/s | Virtual frames/s | Mean display interval ms | Mean virtual interval ms |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Title1 |20.046060|117|377|5.837|18.807|171.334|53.173|
+| Title2 |20.055086|117|377|5.834|18.798|171.411|53.197|
+| Title3 |20.054832|118|378|5.884|18.848|169.956|53.055|
+| Steady gameplay1 |20.055810|104|389|5.186|19.396|192.844|51.557|
+| Steady gameplay2 |20.052229|104|389|5.186|19.399|192.810|51.548|
+| Steady gameplay, visible window |20.056507|104|389|5.185|19.395|192.851|51.559|
+| Start transition, excluded from steady result |20.053479|108|391|5.386|19.498|185.680|51.288|
+
+Title runs use SDL dummy host video. Steady gameplay1/2 use the Windows SDL
+backend with the host window hidden after startup; the last steady run leaves
+its actual window visible for all101samples. This final control produces the
+same104/389deltas. Its foreground-only intervals cover10.830seconds with55
+display loops/211virtual frames; background-only intervals cover9.026seconds
+with48/175, excluding the focus-transition interval. No materially different
+cadence emerges from that finite visibility/focus check. All process instances
+are stopped by their creating observer after collection; none is left running.
+
+The mean interval is1000*host_elapsed/counter_delta. It is end-to-end cadence,
+including work between updates, not exclusive drawing-function CPU time.
+The display-loop counter is incremented before its publication completes;
+endpoint phase can therefore differ from completed VGA publications by at
+most one loop under the reference path. Do not call this a hardware scanout
+measurement, a measured VSync policy, or an exact internal frameskip setting.
+Report rounded practical results, approximately170-171ms/title display loop
+and193ms/steady-game display loop, rather than implying microsecond accuracy.
+
+### Why directly reading the on-screen FPS would be wrong here
+
+The profiler's own rate fields eventually report virtual60.0 and display
+about15.9-18.6, while host-time counter deltas are approximately19.4virtual
+frames/s and5.19steady display loops/s. Historical PROF.CPP computes rates
+from the configured200tick duration/TIMERSPEED and uutimer follows game-timer
+advancement; it does not use the observer's wall clock. Those internal rate
+fields are therefore not accepted as wall-time FPS. This is precisely why
+the observer reads cumulative increments and an independent monotonic clock,
+instead of asking the owner to convert the displayed number into milliseconds.
+
+### Conclusion and limits
+
+Original0.2 is also slow at fixed3000in this measured route: approximately
+5.2steady display updates/s and19.4NES virtual frames/s. There are roughly
+3.74virtual frames per display loop; this establishes different work cadence,
+not a user-selected skip setting or a reason to suppress core ticks in MySMB.
+It does not prove that MySMB is faster, equivalent or qualified: the retained
+MySMB24-27ms number is a rendering-kernel receipt, not the same end-to-end
+counter/time measurement. Nor does it measure the later x.xx binary at fixed
+3000, full-game playability, audio-on behavior, or actual25MHz486hardware.
+The finite original0.2 result must not be substituted for any of those claims.
+
+Review/verification: seven bounded runs,707samples, unique profiler signatures,
+cycle-delta checks, independent RAM phase/mode checks where collected,
+visible-window control and unchanged configuration pass. The transition row
+is explicitly excluded from steady results. No unit/integration/product
+suite rebuild is applicable to this private research-only observer. Existing
+three Mario EXEs are unchanged. Historical1992/1992,retained1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81) unchanged; no ROM credit.
+S1 remains open for actual video-path binding; the automatic fixed3000 timing
+question is now measured rather than delegated to owner testing.
