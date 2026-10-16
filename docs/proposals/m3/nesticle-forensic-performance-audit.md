@@ -75,7 +75,7 @@ README option alone.
 
 Use the same route entry/exit criteria, DOSBox cycle setting and measurement
 window for MySMB.  Separate translated game tick, shared PPU preparation,
-background cache work, sprite composition, RAM-screen writes, final VGA copy,
+background cache work, sprite composition, RAM-band writes, band VGA copies,
 waits and skipped publication.  Retain exact PPU-output checks; no source
 change is required for an audit-only result.
 
@@ -105,3 +105,36 @@ the owner executable and MySMB on comparable routes:
 The result must explicitly distinguish executable observation from public-source
 interpretation, and must not claim NESticle performance parity without a matched
 route receipt.
+
+## Preparation after accepted T46
+
+This is the next queue candidate after owner acceptance of T46 on2026-10-16.
+It remains unnumbered and unadmitted. T46 removed D; the current product is
+AB-required/C-optional RAM-band composition/publication, not the older retained
+or full-screen presenter. S1 confirms the exact local input identities and
+existing evidence before any new executable/source observation.
+
+Reuse [T46 evidence](../../history/M3-T46-dos16-ram-presenter-memory-tiers.md):
+seven current allocation/lifetime joins, accepted source-pixel equivalence,
+S4 complete historical ranking and S5 removal/space account. Current ABC
+finite diagnostic route measured24.285ms calibrated/26.914ms raw rendering;
+AB59.026ms. These exclude logical tick/audio/waits and are not product FPS.
+ABC cache130KiB, AB70KiB; known conventional-memory arithmetic subtotals are
+541.105KiB/481.105KiB plus allocator/environment/rounding overhead. The20ms
+objective remains unmet. Do not repeat the cache factorial matrix, reopen
+accepted ROM chains or restore D merely to compare a different work model.
+
+| Planned S | Entry and responsibility | Reviewable output |
+| --- | --- | --- |
+| S1 | Check owner executable/archive and historical-source identities, prior receipts, legal/build boundaries, actual launch/video options | Input/path manifest with executable observations separated from source interpretations; list only the evidence still missing |
+| S2 | Observe NESticle under unchanged DOSBox settings on reachable bounded routes | Publication/cadence/retrace/frameskip and memory-transfer census; unknown counters explicitly unknown, no inferred totals |
+| S3 | Match current AB/ABC MySMB route and dimensions to S2; reuse applicable T46 proof | Per-stage/tick/publication work and directly comparable costs, with exclusions and any fixture mismatch |
+| S4 | Reconcile differences and decide the next implementation | Ranked compatible mechanisms with saved-work units/memory cost; select at most one bounded successor or state no justified candidate |
+
+Start with reproducible title/steady-overworld routes; water/castle/dense
+scenes require explicit reachable entry/exit and comparable observations,
+not an assumed counterpart. Do not call incomparable routes a matched result.
+The admitted packet fixes actual input hashes, fixture boundaries, budgets,
+no-progress limit and evidence applicability. A missing instrumentation counter
+is a named gap, never an invented measurement. There is no new code/source
+import, source compilation or probe execution in this preparation pass.

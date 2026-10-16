@@ -4,10 +4,10 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T46 S5 closed after review; T46 closed for owner acceptance, no active S or new T. |
+| Identifier Mode | M3 T46 accepted/closed by owner2026-10-16; S1-S5 closed. Administrative acceptance cleanup only; no active S or new T. |
 | Admission And Approval | Owner accepts existing no-D evidence and directs cancellation of D and deletion of its code. |
 | Objective | Remove D and exclusive full-screen path; route product through existing RAM bands, A/B required and C optional. |
-| Non-goals | No core/PPU semantics, caching policy, emulator setting or20ms guarantee. |
+| Non-goals | No further product/core/PPU/cache-policy/emulator changes or20ms guarantee during acceptance cleanup. |
 | Reference Baseline | 88cc72cf; retained S3/S4 exact pixel/performance receipts and accepted products. |
 | Candidate Proposal | [S5 D removal](../history/M3-T46-dos16-ram-presenter-memory-tiers.md#s5-owner-directed-d-removal). |
 | Files And ABI Surface | DOS root/main/devices/compositor deletion, build references and owner tests/tools. Estimated8-12files, mostly deletions. |
@@ -23,7 +23,7 @@
 
 ## Current Technical Baseline
 
-T46 S5 closes owner-directed D removal. No active work. Three candidates retain
+T46 is owner-accepted and closed after S5 D removal. No active implementation work. Three candidates retain
 order; the D-only full-screen-copy candidate is withdrawn. Product uses ordinary
 16-row RAM bands; A/B required,C optional. D allocation/API/compositor/build
 path is gone. Existing S4 ABC24.285ms calibrated/26.914ms raw route evidence is
@@ -41,3 +41,15 @@ matrix/ROM trace. Cache payload70KiB required/130KiB with C. Known conventional
 memory subtotal ABC541.105KiB/AB481.105KiB, plus rounding/allocator/environment
 overhead; not a production live census. Saved63008bytes versus prior ABCD.
 [Closure detail](../history/M3-T46-dos16-ram-presenter-memory-tiers.md#s5-p1-closure-d-removed-ram-bands-selected).
+
+## Acceptance and next-task preparation
+
+Owner accepts T46 and directs final cleanup on2026-10-16. Remove remaining
+3506task-generated build files/212287632bytes; retain all three local Mario
+EXEs and saves. The acceptance-check workspace is removed after gates/commit.
+[Accepted result and cleanup](../history/M3-T46-dos16-ram-presenter-memory-tiers.md#owner-acceptance-and-final-cleanup).
+
+The next unnumbered candidate is [NESticle mechanism comparison](../proposals/m3/nesticle-forensic-performance-audit.md#preparation-after-accepted-t46).
+Its S responsibilities are ready: input/path identity, actual NESticle work,
+matched MySMB work, then one evidence-backed implementation opportunity.
+No new T/S admission, source research or benchmark execution occurs here.

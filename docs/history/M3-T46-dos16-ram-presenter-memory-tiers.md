@@ -985,3 +985,31 @@ acceptance; no next S/T is automatically admitted. Cleanup on acceptance.
 Scope/expected/actual[],new0,transfers0;historical1992/1992,retained1991/1992
 nodes and4260/4261feasible controls(raw4342,infeasible81) unchanged. No final
 whole-game certificate is issued.
+
+## Owner acceptance and final cleanup
+
+Owner approves full T46 closure on2026-10-16 after S5. S1-S5 remain closed;
+no unfinished subtask, node transfer or implementation item remains in T46.
+The20ms objective remains outside this bounded task's achieved result and
+continues through the existing performance candidate, not a hidden T46 backlog.
+
+Coordinator inventories the remaining task-owned ignored build trees:
+3506files/212287632bytes (about202.45MiB). Resolve each cleanup target beneath
+the repository build root, reject reparse-point targets, then remove generated
+builds, objects, probes, raw files, logs and compiler temporary storage. Retain
+only the brief acceptance-check workspace until gates/commit finish, then
+remove it as well. No local product EXE, save file, owner input, toolchain,
+repository source or external cache is part of this deletion. Final evidence
+is the tracked S1-S5 neutral record; ignored trees are not retained as proof.
+
+Queue remains three unnumbered candidates. The first NESticle mechanism-audit
+proposal is prepared with four S responsibilities and the accepted AB/ABC
+baseline; it is not admitted here and receives no T number. No new source
+research, trace run, performance measurement, code change or artifact rebuild
+is performed during acceptance cleanup. The next task reuses retained proof
+within its actual applicability and does not restart the cache matrix.
+
+Acceptance changes only governance/planning records and cleanup. Documentation
+and ledger gates pass; product/test results remain those of S5. Historical
+1992/1992,retained1991/1992nodes and4260/4261feasible controls(raw4342,
+infeasible81) unchanged; no new ROM or final-certificate credit.
