@@ -23,6 +23,30 @@ set(MYSMB_ROM_PATH "" CACHE FILEPATH "Owner-local SMB1 NROM image")
 set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
+set(MYSMB_CACHE_PRODUCT_DIR "" CACHE PATH "Existing optimized DOS16 product objects for cache qualification")
+set(MYSMB_DOSBOX_EXECUTABLE "" CACHE FILEPATH "Installed DOSBox for explicit host qualification")
+set(MYSMB_DOSBOX_CONFIG "" CACHE FILEPATH "Unmodified owner DOSBox configuration")
+add_test(NAME mysmb.dos16-cache-receipt COMMAND ${Python3_EXECUTABLE}
+    "${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/dos16/test_cache_receipt.py")
+if(WIN32)
+    add_custom_target(mysmb_dos16_cache_integration
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_SOURCE_DIR}/tools/Build-Dos16CacheProbe.ps1"
+            -ProductDirectory "${MYSMB_CACHE_PRODUCT_DIR}"
+            -OutputDirectory "${CMAKE_BINARY_DIR}/dos16-cache-probe"
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_SOURCE_DIR}/tools/Build-Dos16CacheProbe.ps1"
+            -ProductDirectory "${MYSMB_CACHE_PRODUCT_DIR}"
+            -OutputDirectory "${CMAKE_BINARY_DIR}/dos16-cache-probe" -LinkOnly
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_SOURCE_DIR}/tools/Invoke-Dos16CacheProbe.ps1"
+            -ProbeDirectory "${CMAKE_BINARY_DIR}/dos16-cache-probe"
+            -DosBoxExecutable "${MYSMB_DOSBOX_EXECUTABLE}"
+            -DosBoxConfiguration "${MYSMB_DOSBOX_CONFIG}"
+        COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/VerifyDos16CacheReceipt.py"
+            "${CMAKE_BINARY_DIR}/dos16-cache-probe"
+        USES_TERMINAL VERBATIM)
+endif()
 
 set(MYSMB_CORE_SOURCES core/boot.c core/dispatcher.c core/engine.c core/engine_slots.c core/engine_tail.c core/frame_root.c core/title_modes.c core/terminal_modes.c core/game.c core/audio.c core/area.c core/status.c core/area/block_metatile.c core/enemy/stream.c core/enemy/group.c core/enemy/init.c core/enemy/init_targets.c core/enemy/loop.c core/enemy/core.c core/enemy/dispatch_targets.c core/enemy/movement.c core/enemy/frenzy.c core/player.c core/objects.c core/fireball/fireball_spawn.c core/fireball/fireball_core.c core/world/movement.c core/world/gravity.c core/world/collision.c core/world/block_buffer.c core/world/bounding_box.c core/world/geometry.c core/bridge.c core/oam/bullet_bill_gfx.c core/oam/hammer_gfx.c core/oam/firebar_gfx.c core/oam/vine_gfx.c core/oam/sprite_stacker.c core/oam/sprite_dump.c core/enemy_bounds.c core/oam/power_up_gfx.c core/oam/object_position.c core/oam/sprite_row.c core/oam/player_gfx.c core/oam/fireball_gfx.c core/oam/block_gfx.c core/oam/goomba_gfx.c core/fireball/bubble.c core/oam/piranha_gfx.c core/oam/cheep_gfx.c core/oam/bloober_gfx.c core/oam/podoboo_gfx.c core/oam/normal_enemy_gfx.c core/oam/spiny_gfx.c core/oam/hammer_bro_gfx.c core/oam/bowser_gfx.c core/oam/bowser_flame_gfx.c core/endgame_objects.c core/oam/flagpole_gfx.c core/oam/small_platform_gfx.c )
 list(APPEND MYSMB_CORE_SOURCES core/oam/enemy_offscreen.c core/oam/sprite_draw.c core/oam/block_offscreen.c)

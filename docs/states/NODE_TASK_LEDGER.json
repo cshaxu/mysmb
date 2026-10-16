@@ -10049,8 +10049,8 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "state": "active",
-          "receipt": "Owner admits queue position3; new T46 after T45. S1 runtime cache retention/ownership/fault qualification; empty ROM scope. S2 timing planned only."
+          "state": "closed",
+          "receipt": "Owner admits queue position3; new T46 after T45. S1 runtime cache retention/ownership/fault qualification; empty ROM scope. S2 timing planned only. S1 P2 closes nine-case runtime/fault and natural64KiB pressure evidence; all root blocks freed. Native315+1CTest, original loader17cases, parser units and corrected named DOS integration target pass. No product code/EXE change. Owner expands S2 to12profiles/20marginal pairs."
         }
       ]
     }
@@ -1053551,7 +1053551,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m3/dos16-ram-presenter-memory-tiers.md",
-      "state": "active"
+      "state": "closed"
     }
   ]
 }

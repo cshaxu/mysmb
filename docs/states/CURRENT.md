@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New M3 T46; S1 active, S2 planned. Highest prior M3 identifier is T45. |
+| Identifier Mode | M3 T46 S1 closed after implementation/review; S2 planned, not yet active. |
 | Admission And Approval | Owner admits former queue position3, DOS16 cache allocation/performance qualification, and directs continuation. Single-person coordinator/executor. |
 | Objective | Establish actual D/A/B/C allocation, near/far ownership, failure cleanup and natural versus injected memory-tier receipts. |
 | Non-goals | No game/PPU semantics, cache policy, audio, Mine, Win32/Win16 behavior, DOSBox settings or extra cache changes. |
@@ -23,7 +23,7 @@
 
 ## Current Technical Baseline
 
-T19 is accepted and closed. T46 S1 alone is active; four other candidates
+T19 is accepted and closed. T46 remains open; S1 is closed, S2 awaits admission. Four other candidates
 retain their order. ABD is mandatory, C optional. Static source inspection
 confirms the intended request order but is not runtime verification.
 Historical1992/1992, retained1991/1992nodes and4260/4261feasible controls
@@ -32,5 +32,16 @@ Historical1992/1992, retained1991/1992nodes and4260/4261feasible controls
 ## S roadmap
 
 S1: actual allocation/ownership/failure receipts and cleanup.
-S2: matched warmed title/gameplay ABD-versus-ABCD exact pixels and timing.
+S2: owner-amended12valid profiles and20marginal comparisons, warmed title/gameplay pixels and timing.
 S2 is admitted only after S1 closure; no policy change is implied by measurement.
+
+## S1 measured checkpoint
+
+The nine-case natural/injected DOS matrix and a separate64KiB natural-pressure
+case pass. Required failures exit; optional C retains ABD; all tracked root
+blocks are released. Root-owned peak220140bytes ABCD/158700bytes ABD, including
+25580bytes common workspace. Original MZ loader max392592bytes excludes PSP
+and dynamic allocations; probe PSP399920bytes is explicitly diagnostic.
+Receipt unit3tests and existing loader contract17cases plus idempotence pass.
+Native315/315 plus the added receipt CTest1/1 pass; corrected host integration target passes. S1 is closed after review.
+No timing result and no new ROM equivalence credit. See proposal for details.

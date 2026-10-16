@@ -4103,4 +4103,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T19 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
 | M3 T19 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
 | M3 T19 S6 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T19-three-platform-audio-lifetime.md) |
-| M3 T46 S1 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/dos16-ram-presenter-memory-tiers.md) |
+| M3 T46 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/dos16-ram-presenter-memory-tiers.md) |
