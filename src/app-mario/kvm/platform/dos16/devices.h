@@ -10,9 +10,6 @@ int mysmb_dos16_devices_close(void);
 void mysmb_dos16_devices_input(struct mysmb_io_input *input);
 /* Native256x240 chain4 row-major view;never accepts a scaled/plane frame. */
 int mysmb_dos16_devices_present_band(const struct mygames_kvm_video_band *band);
-/* Commit one complete, native 256x240 slot surface in one Chain-4 transfer.
- * PPU selection and composition are complete before this physical call. */
-int mysmb_dos16_devices_present_screen(const mygames_kvm_u8 MYGAMES_KVM_FAR *screen);
 /* Borrow the native chain-4 destination for one validated logical band.
  * The caller may write the original 256-wide color indices directly, then
  * still calls present_band to complete the ordinary synchronous contract. */

@@ -28,7 +28,7 @@ if($ConventionalPressureKiB) {
 }
 Copy-Item -LiteralPath (Join-Path $output 'mysmb-dos16.exe') -Destination (Join-Path $output 'CACHE.EXE') -Force
 $batch=@('@echo off','if exist CACHE.LOG del CACHE.LOG','if exist FAILED del FAILED','if exist DONE del DONE')
-$modes=0..8
+$modes=0..6
 if($ConventionalPressureKiB){$batch+='MEMHOLD.COM';$modes=@(0)}
 foreach($mode in $modes){$batch+="CACHE.EXE $mode";$batch+='if errorlevel 1 goto failed'}
 $batch+=@('echo done>DONE','goto end',':failed','echo failed>FAILED',':end','exit')

@@ -1,5 +1,5 @@
 /* Independent diagnostic composition; never linked as a product entry.
- * Mask bits A=1,B=2,C=4,D=8. C needs B; other diagnostic bits are independent. */
+ * Mask bits A=1,B=2,C=4. C needs B; A is independently selectable. */
 #include <dos.h>
 #include <malloc.h>
 #include <stdlib.h>
@@ -9,7 +9,6 @@
 #include "core/observation.h"
 #include "app/game_io.h"
 #include "platform/dos16/devices.h"
-#include "platform/dos16/ram_compositor.h"
 #include "platform/dos16/nibble_expand.h"
 #include "platform/dos16/slot_copy.h"
 #include "dos16/host.h"
@@ -22,7 +21,7 @@ static struct mysmb_frame frame;
 static struct mysmb_ppu_frame_workspace workspace;
 static struct mysmb_io_audio_frame audio;
 static unsigned char far band[4096];
-static unsigned char far *a,*b,*c,*d;
+static unsigned char far *a,*b,*c;
 static unsigned char palette[32];
 static unsigned long overhead,raw_prepare,raw_compose,raw_publish;
 static unsigned long prepare,compose,publish;
@@ -48,14 +47,7 @@ static int draw(unsigned phase,unsigned sample)
     mysmb_ppu_frame_palette(&game.ppu,palette);
     mysmb_dos16_devices_palette(palette);
     publish+=elapsed(start,&raw_publish);
-    if(d) {
-        start=mygames_dos16_clock_stamp();
-        if(!mysmb_dos16_ram_composite(&view,d,61440U))return 0;
-        compose=elapsed(start,&raw_compose);
-        start=mygames_dos16_clock_stamp();
-        if(!mysmb_dos16_devices_present_screen(d))return 0;
-        publish+=elapsed(start,&raw_publish);
-    } else for(first=0;first<240U;first+=16U) {
+    for(first=0;first<240U;first+=16U) {
         start=mygames_dos16_clock_stamp();
         if(!mysmb_ppu_frame_slot_rows(&view,band,sizeof(band),first,16U))return 0;
         compose+=elapsed(start,&raw_compose);
@@ -94,8 +86,7 @@ static int run(void)
     if(mask&1U)a=(unsigned char far *)_fmalloc(8192U);
     if(mask&2U)b=(unsigned char far *)_fmalloc(63488U);
     if(mask&4U)c=(unsigned char far *)_fmalloc(61440U);
-    if(mask&8U)d=(unsigned char far *)_fmalloc(61440U);
-    if(((mask&1U)&&!a)||((mask&2U)&&!b)||((mask&4U)&&!c)||((mask&8U)&&!d))return 2;
+    if(((mask&1U)&&!a)||((mask&2U)&&!b)||((mask&4U)&&!c))return 2;
     mysmb_ppu_frame_workspace_bind(&workspace,a);
     if(c)mysmb_ppu_frame_background_byte_bind(&workspace,b,63488U,c,61440U);
     else mysmb_ppu_frame_background_bind(&workspace,b,63488U);
@@ -135,7 +126,7 @@ int main(void)
     unsigned length=*(unsigned char far *)(((unsigned long)_psp<<16)|0x80UL);
     for(i=0;i<length;++i)if(tail[i]!=' ') {
         value=(unsigned)(tail[i]>='A'?tail[i]-'A'+10:tail[i]-'0');
-        if(value>15U)return 10;mask=value;break;
+        if(value>7U)return 10;mask=value;break;
     }
     if((mask&4U)&&!(mask&2U))return 11;
     pixels=fopen("FRAME.BIN","wb");timing=fopen("TIME.LOG","w");
@@ -143,7 +134,7 @@ int main(void)
     if(!mysmb_dos16_devices_open())return 13;
     result=(unsigned)run();
     while(!mysmb_dos16_devices_close())mysmb_dos16_devices_wait();
-    if(a)_ffree(a);if(b)_ffree(b);if(c)_ffree(c);if(d)_ffree(d);
+    if(a)_ffree(a);if(b)_ffree(b);if(c)_ffree(c);
     if(fclose(pixels) || fclose(timing))return 14;
     return (int)result;
 }

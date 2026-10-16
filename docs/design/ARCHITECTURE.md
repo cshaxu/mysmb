@@ -64,7 +64,9 @@ game-container dependency. The read-only compositor is separate from CPU decisio
 The shared compositor can borrow63488bytes for two packed background
 palette-slot surfaces and their2048-byte nametable snapshot. A second61440-byte
 allocation selects byte-slot surfaces(total124928bytes),on both Windows widths
-and DOS. DOS allocation failure retains packed or uncached output. It alone owns
+and DOS. DOS requires decoded CHR A and packed background B; failure exits
+cleanly. Optional byte-background C failure retains AB. No final RAM-screen D
+is allocated. The compositor alone owns
 tile/attribute/resource invalidation and raw opacity;current palette and
 scroll are applied when output is composed. Roots only allocate/bind storage.
 DOS attempts this optional far allocation after mandatory initialization;
@@ -114,8 +116,9 @@ producer;Windows retains a full-frame view. Shared IO owns the stable64-color
 master RGB lookup and bounded row scaling;each frame supplies its32-entry
 slot-to-master table. VGA owns fixed
 native256x240output without source-row loss. Chain4 exposes the complete
-61440-byte VGA aperture;the4096-byte borrowed16row source is submitted
-directly,without planar scratch or resampling. Hardware scan repetition gives
+61440-byte VGA aperture;the4096-byte borrowed16row RAM source is composed
+then copied to VGA,without a separate full-screen RAM surface, planar scratch
+or resampling. The product does not select retained or direct-VGA composition. Hardware scan repetition gives
 512x480scanout;physical LCD filling is a separate display qualification.
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local

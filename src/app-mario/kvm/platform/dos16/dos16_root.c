@@ -13,7 +13,7 @@
  * deliberately impossible FFFFh-paragraph request fails. This avoids a
  * costly far-heap scan for C when B+A already leave too little contiguous
  * storage. It does not reserve memory and a later allocation may still fail. */
-static int optional_far_block_fits(mygames_kvm_u16 bytes)
+static int far_block_fits(mygames_kvm_u16 bytes)
 {
     union REGS input,output;
     unsigned short paragraphs=(unsigned short)((bytes+15U)/16U);
@@ -36,8 +36,6 @@ static int initialize(struct mysmb_dos16_root *root,
     root->initialized=0U;
     root->present_rows=0;root->video_storage_bytes=storage_bytes;
     root->present_palette_rows=0;
-    root->present_retained=0;
-    root->ram_screen=0;root->ram_screen_attempted=0U;root->present_ram=0;
     root->should_present=0;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;root->resume_clock=0;
     root->text_workspace=0;root->text_frame=0;root->set_mode=0;
@@ -74,30 +72,13 @@ static int read_rows(void *context,mygames_kvm_u16 first,mygames_kvm_u16 rows,
     struct mygames_kvm_video_band *band)
 {
     struct mysmb_dos16_root *root=(struct mysmb_dos16_root *)context;
-#ifdef MYSMB_DOS16_TARGET
-    mysmb_u8 MYGAMES_KVM_FAR *pixels;
-#endif
     if(band==0)return 0;
-#ifdef MYSMB_DOS16_TARGET
-    /* DOS graphics owns this aperture only while its device is in graphics
-     * mode. The PPU still generates the same logical 256-pixel rows; the
-     * ordinary RAM band remains the safe fallback for tests and transitions. */
-    pixels=mysmb_dos16_devices_direct_band(first,rows);
-    if(!pixels)pixels=root->ppu_frame.pixels;
-    if(!(root->present_palette_rows?
-        mysmb_ppu_frame_slot_rows(&root->ppu_view,pixels,
-            root->video_storage_bytes,first,rows):
-        mysmb_ppu_frame_rows(&root->ppu_view,pixels,
-            root->video_storage_bytes,first,rows)))return 0;
-    band->pixels=pixels;
-#else
     if(!(root->present_palette_rows?
         mysmb_ppu_frame_slot_rows(&root->ppu_view,root->ppu_frame.pixels,
             root->video_storage_bytes,first,rows):
         mysmb_ppu_frame_rows(&root->ppu_view,root->ppu_frame.pixels,
             root->video_storage_bytes,first,rows)))return 0;
     band->pixels=root->ppu_frame.pixels;
-#endif
     band->first=first;band->rows=rows;
     band->width=band->stride=MYSMB_VIDEO_WIDTH;
     band->capacity=(mygames_kvm_u16)(rows*MYSMB_VIDEO_WIDTH);
@@ -117,18 +98,6 @@ int mysmb_dos16_root_initialize_palette_rows(struct mysmb_dos16_root *root,
 {
     if(!present || !initialize(root,hooks,storage_bytes,present_palette))return 0;
     root->present_palette_rows=present;return 1;
-}
-void mysmb_dos16_root_bind_retained(struct mysmb_dos16_root *root,
-    int (*present)(void *,const struct mysmb_ppu_frame_view *,
-        const mygames_kvm_u8 MYGAMES_KVM_FAR *))
-{
-    if(root)root->present_retained=present;
-}
-void mysmb_dos16_root_bind_ram(struct mysmb_dos16_root *root,
-    int (*present)(void *,const struct mysmb_ppu_frame_view *,
-        const mygames_kvm_u8 MYGAMES_KVM_FAR *,mygames_kvm_u8 MYGAMES_KVM_FAR *))
-{
-    if(root)root->present_ram=present;
 }
 void mysmb_dos16_root_bind_video_gate(struct mysmb_dos16_root *root,
     int (*should_present)(void *))
@@ -174,31 +143,22 @@ static void present_current(struct mysmb_dos16_root *root)
      * Derived presentation storage must never displace required root storage. */
     if(!root->ppu_cache_attempted) {
         root->ppu_cache_attempted=1U;
-        /* D is required before any derived cache: without its contiguous
-         * composition surface the compact VGA path is not playable. */
-        root->ram_screen_attempted=1U;
-        if(root->present_ram && optional_far_block_fits(MYSMB_VIDEO_PIXELS))
-            root->ram_screen=(mysmb_u8 MYGAMES_KVM_FAR *)
-                _fmalloc(MYSMB_VIDEO_PIXELS);
         /* Reuse the primary-block reserve before requesting another DOS block.
          * Preserve allocation provenance for the matching shutdown operation. */
         near_cache=(mysmb_u8 __near *)_nmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
         root->ppu_cache_near=(mygames_kvm_u8)(near_cache!=0);
         decoded=near_cache?(mysmb_u8 __far *)near_cache:
             (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
-        /* B is the compact two-nametable background required behind D. */
-        background=decoded && optional_far_block_fits(MYSMB_PPU_BACKGROUND_BYTES) ?
+        /* B is the required compact two-nametable background. */
+        background=decoded && far_block_fits(MYSMB_PPU_BACKGROUND_BYTES) ?
             (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES) : 0;
         mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,decoded);
         mysmb_ppu_frame_background_bind(&root->ppu_workspace,
             background,
             MYSMB_PPU_BACKGROUND_BYTES);
-        /* The byte-background upgrade is permitted only after both the
-         * compact background tier and decoded CHR tier were retained.  If
-         * decoded CHR fails, preserve the compact tier and do not spend a
-         * second background block. */
-        if(root->ram_screen && root->ppu_workspace.bg && decoded &&
-            optional_far_block_fits(MYSMB_PPU_BACKGROUND_SECOND_BYTES))
+        /* C is optional and attempted only after required A/B succeeded. */
+        if(root->ppu_workspace.bg && decoded &&
+            far_block_fits(MYSMB_PPU_BACKGROUND_SECOND_BYTES))
             mysmb_ppu_frame_background_byte_bind(&root->ppu_workspace,
                 root->ppu_workspace.bg,MYSMB_PPU_BACKGROUND_BYTES,
                 (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_SECOND_BYTES),
@@ -217,8 +177,8 @@ static void present_current(struct mysmb_dos16_root *root)
     }
 #endif
 #ifdef MYSMB_DOS16_TARGET
-    /* D+A+B are mandatory for graphical DOS presentation. */
-    if(root->present_ram && (!root->ram_screen || !root->ppu_workspace.decoded ||
+    /* A+B are mandatory for graphical DOS presentation; C is optional. */
+    if(root->present_palette_rows && (!root->ppu_workspace.decoded ||
         !root->ppu_workspace.bg)) {
         failure.buttons=0U;failure.buttons2=0U;failure.requests=MYSMB_IO_REQUEST_EXIT;
         mysmb_io_control_input(&root->control,&failure);
@@ -229,14 +189,6 @@ static void present_current(struct mysmb_dos16_root *root)
         if(root->present_palette_rows)
             mysmb_ppu_frame_palette(&root->game.ppu,root->video_palette);
         mysmb_ppu_frame_begin(&root->game.ppu,&root->ppu_workspace,&root->ppu_view);
-        if(root->present_ram && root->ram_screen && root->present_ram(root->hooks.context,
-            &root->ppu_view,root->video_palette,root->ram_screen)) {
-            mysmb_ppu_frame_end(&root->ppu_view);return;
-        }
-        if(root->present_retained && root->present_retained(root->hooks.context,
-            &root->ppu_view,root->video_palette)) {
-            mysmb_ppu_frame_end(&root->ppu_view);return;
-        }
         source.context=root;source.read_rows=read_rows;
         if(!root->present_rows(root->hooks.context,&source)) {
             failure.buttons=0U;failure.buttons2=0U;failure.requests=MYSMB_IO_REQUEST_EXIT;
@@ -322,8 +274,6 @@ void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
     }
     root->ppu_cache_near=0U;
     mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,0);
-    if(root->ram_screen)_ffree(root->ram_screen);
-    root->ram_screen=0;root->ram_screen_attempted=0U;
     _ffree(root->ppu_frame.pixels);
     root->ppu_frame.pixels=0;
 #endif

@@ -89,7 +89,7 @@ $sources = @(
     'kvm/text/scene.c',
     'kvm/io/color.c','kvm/app/game_io.c', 'kvm/app/game_snapshot.c', 'kvm/io/palette_pairs.c', 'kvm/io/palette_expand.c', 'kvm/io/scale.c', 'kvm/io/pacing.c', 'kvm/io/control.c', 'kvm/io/snapshot.c', 'kvm/io/snapshot_store.c', 'kvm/io/snapshot_keys.c', 'kvm/io/file/snapshot_files.c', 'kvm/platform/dos16/keyboard.c', 'kvm/io/audio_renderer.c', 'kvm/platform/dos16/dos_audio_dos.c', 'kvm/platform/dos16/devices.c',
     'kvm/io/file/executable_path.c',
-    'kvm/io/planar_frame.c', 'kvm/platform/dos16/planar_row.c', 'kvm/platform/dos16/palette_expand.c', 'kvm/platform/dos16/nibble_expand.c', 'kvm/platform/dos16/slot_copy.c', 'kvm/platform/dos16/retained_background.c', 'kvm/platform/dos16/compact_vga_layout.c', 'kvm/platform/dos16/ram_compositor.c', 'kvm/platform/dos16/dos16_root.c',
+    'kvm/io/planar_frame.c', 'kvm/platform/dos16/planar_row.c', 'kvm/platform/dos16/palette_expand.c', 'kvm/platform/dos16/nibble_expand.c', 'kvm/platform/dos16/slot_copy.c', 'kvm/platform/dos16/retained_background.c', 'kvm/platform/dos16/compact_vga_layout.c', 'kvm/platform/dos16/dos16_root.c',
     'kvm/platform/dos16/main_dos16.c'
 )
 if (!(Test-Path -LiteralPath $runtimeLibrary) -or !(Test-Path -LiteralPath $stackObject) -or

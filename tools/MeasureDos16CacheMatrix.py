@@ -9,8 +9,8 @@ import statistics
 import subprocess
 import time
 
-PROFILES = (0, 1, 2, 3, 6, 7, 8, 9, 10, 11, 14, 15)
-SIZES = {1: 8192, 2: 63488, 4: 61440, 8: 61440}
+PROFILES = (0, 1, 2, 3, 6, 7)
+SIZES = {1: 8192, 2: 63488, 4: 61440}
 RECORD_BYTES = 32 + 2048 + 61440
 
 
@@ -60,7 +60,7 @@ def summarize(rows):
                 metrics[metric] = {"median": statistics.median(values), "min": min(values), "max": max(values)}
             profiles[mask]["phases"][phase] = metrics
     margins = []
-    for bit, name in ((1, "A"), (2, "B"), (4, "C"), (8, "D")):
+    for bit, name in ((1, "A"), (2, "B"), (4, "C")):
         for without in PROFILES:
             with_cache = without | bit
             if without & bit or with_cache not in profiles or without not in profiles:
@@ -82,7 +82,7 @@ def summarize(rows):
 
 
 def label(mask):
-    return "".join(name for bit, name in ((1, "A"), (2, "B"), (4, "C"), (8, "D")) if mask & bit) or "none"
+    return "".join(name for bit, name in ((1, "A"), (2, "B"), (4, "C")) if mask & bit) or "none"
 
 
 def write_report(output, result):
@@ -114,8 +114,8 @@ def write_report(output, result):
                         f"{costs['total']['min']:.3f} to {costs['total']['max']:.3f} | "
                         f"{costs['raw_total']['median']:.3f} |")
     text += ["", "## Paired timing sensitivity", "",
-             "D changes the complete composition/publication path. Its margins are not passive-buffer costs.",
-             "Band output has more PIT boundaries. Small raw/calibrated sign changes are inconclusive.", "",
+             "All profiles use the same bounded RAM-band composition/publication path.",
+             "Raw costs retain PIT boundary overhead; calibrated costs subtract it.", "",
              "| Added | Context | Phase | Saved range ms | Raw saved ms |",
              "| --- | --- | --- | --- | ---: |"]
     for pair in result["margins"]:
@@ -135,7 +135,7 @@ def finalize(output):
     result = json.loads((output/"matrix.json").read_text())
     rows = result["runs"]
     if sorted((r["mask"], r["repeat"]) for r in rows) != sorted((m, r) for m in PROFILES for r in range(3)):
-        raise ValueError("Final qualification requires all12profiles and three repeats")
+        raise ValueError("Final qualification requires all6profiles and three repeats")
     if len({r["logical_ticks"] for r in rows}) != 1:
         raise ValueError("Different logical route lengths")
     reference = None
@@ -154,7 +154,7 @@ def finalize(output):
             row["approx_launch_to_done_seconds"] = ((directory/"DONE").stat().st_mtime_ns
                                                     -(directory/"RUN.BAT").stat().st_mtime_ns)/1e9
     result.update(summarize(rows))
-    if {name: sum(p["cache"] == name for p in result["margins"]) for name in "ABCD"} != dict(A=6, B=4, C=4, D=6):
+    if {name: sum(p["cache"] == name for p in result["margins"]) for name in "ABC"} != dict(A=3, B=2, C=2):
         raise ValueError("Incomplete marginal-pair universe")
     result["complete"] = True
     result["exact_frame_records"] = len(rows)*16

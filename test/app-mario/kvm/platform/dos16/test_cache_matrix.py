@@ -17,7 +17,7 @@ class CacheMatrixTest(unittest.TestCase):
         self.rows = []
         for repeat in range(3):
             for mask in matrix.PROFILES:
-                cost = 100 + repeat - 5*bool(mask&1) - 20*bool(mask&2) - 10*bool(mask&4) - 8*bool(mask&8)
+                cost = 100 + repeat - 5*bool(mask&1) - 20*bool(mask&2) - 10*bool(mask&4)
                 cost += 7*bool(mask&1)*bool(mask&2)  # A becomes slower with B.
                 self.rows.append(dict(mask=mask, repeat=repeat,
                     phases={name: {k: cost for k in ("prepare", "compose", "publish", "total", "raw_total")}
@@ -25,7 +25,7 @@ class CacheMatrixTest(unittest.TestCase):
 
     def test_pair_universe(self):
         result = matrix.summarize(self.rows)
-        self.assertEqual({k: sum(p["cache"]==k for p in result["margins"]) for k in "ABCD"}, dict(A=6,B=4,C=4,D=6))
+        self.assertEqual({k: sum(p["cache"]==k for p in result["margins"]) for k in "ABC"}, dict(A=3,B=2,C=2))
         self.assertFalse(any(m&4 and not m&2 for m in result["profiles"]))
 
     def test_signed_interaction_and_paired_spread(self):
@@ -39,7 +39,7 @@ class CacheMatrixTest(unittest.TestCase):
 
     def test_explicit_empty_baseline(self):
         self.assertEqual(matrix.label(0), "none")
-        self.assertEqual(matrix.label(15), "ABCD")
+        self.assertEqual(matrix.label(7), "ABC")
 
     def test_timing_receipt_contract(self):
         lines = ["mask=0 overhead=1 PIT_HZ=1193182"]

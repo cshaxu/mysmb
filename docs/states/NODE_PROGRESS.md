@@ -11,6 +11,15 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T46 S5 - owner-directed D removal
+
+Scope/expected/actual[],new0;historical1992/1992,retained1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81) unchanged. Reuse S3/S4 accepted
+no-D pixel/performance evidence; no repeated matrix. Changed AB/C allocation,
+cleanup and RAM-band joins pass; native316perwidth and local products build.
+No shared core/PPU change or new ROM/final certificate credit.
+[Removal and limits](../history/M3-T46-dos16-ram-presenter-memory-tiers.md#s5-p1-closure-d-removed-ram-bands-selected).
+
 ## M3 T46 S4 - current-build complete cache ranking
 
 Scope/expected/actual[],new0;historical1992/1992,retained1991/1992nodes and

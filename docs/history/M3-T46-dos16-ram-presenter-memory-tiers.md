@@ -825,3 +825,163 @@ calibrated path. This report does not claim486hardware or NESticle parity.
 Scope/expected/actual[],new0,transfers0. Historical1992/1992,retained1991/1992
 nodes and4260/4261feasible controls(raw4342,infeasible81) unchanged; no whole-game
 certificate or new ROM equivalence credit.
+
+## S5 owner-directed D removal
+
+Owner accepts the existing D=0 pixel/performance evidence and explicitly
+requests removal of D and its code, without repeating cache qualification.
+Admit corrective T46 S5 from88cc72cf. Remove the exclusive final RAM screen,
+mandatory-D/fits/free bookkeeping, DOS RAM compositor, full-screen publication,
+root callback and build/test references. Select the already-qualified bounded
+RAM-band compositor; do not accidentally select old retained rendering or
+write PPU pixels directly to VGA. Keep A/B required, C optional; remove D from
+live allocation/timing tools and assertions. Historical S1-S4 tables remain
+as historical evidence and are not rewritten. Withdraw the queued D-only full-
+frame-copy candidate as superseded; other queue candidates retain order.
+
+No ROM/core/shared PPU semantic, Win32/Win16 gameplay, cadence or emulator config
+changes. No new cache or replacement full screen. Reuse S3/S4 exact finite
+pixel/performance proof; do not rerun the12profile matrix. Verify only changed
+allocation/failure/cleanup and band dispatch, configured native regressions,
+original optimized DOS/hybrid builds and three local Mario EXEs. The fixed
+fixture does not issue new ROM or whole-game certification. Root expected
+cache reduction61440bytes, possible additional loader saving from dead code.
+Estimated8-12production/build/test files, primarily deletions plus receipt
+updates. All generated products/logs/neutral probes below ignored build;
+180seconds per DOS run, raw new output budget2MiB. Owner-local ROM is a build
+input only, no protected material/binary or third-party code committed.
+
+S5 exit: no D allocation/owner/API/implementation/build path, correct ABC/AB
+retention and required-A/B exit/cleanup, actual product chooses ordinary RAM
+bands; applicable tests/builds pass and three artifacts are current. No new
+performance claim beyond retained route evidence. Single-person executor and
+coordinator review before commit/push. Scope/expected/actual[],historical
+1992/1992,retained1991/1992nodes and4260/4261feasible controls(raw4342,
+infeasible81) unchanged. Clean accepted-task build outputs while retaining
+only reusable product/build inputs now owned by S5; remove on acceptance.
+
+## S5 P1 closure: D removed, RAM bands selected
+
+Owner direction removes D directly using the retained S3/S4 evidence. There
+is no new performance matrix, game trace or render-equivalence audit round.
+The sole graphical DOS product path now prepares one shared PPU view and
+composes15successive16-row RAM bands in its existing root workspace, publishing
+each with the existing native256x240 device transfer. It does not select the
+older retained presenter or request the direct-VGA write aperture.
+
+Deleted the D61,440-byte allocation/preflight/failure/free state; root RAM
+pointer/attempt flag/present callback/bind API; RAM compositor source/header;
+full-screen devices_present_screen and ram_mode; its dedicated native test
+and all build references. Also removed the root's obsolete alternate retained
+binding/dispatch so deleting D cannot activate a different fallback. Standalone
+older retained/device probe capabilities remain outside the product binding;
+they are not a replacement D implementation. Windows/Win16 full-frame device
+storage is independent and unchanged. The shared ROM/core/PPU code is unchanged.
+
+New DOS cache rule: A8KiB and B62KiB required, C60KiB optional. Missing A/B
+latches clean root exit; no unqualified uncached fallback. C is attempted only
+after A/B succeed; failure retains AB. Allocation provenance and matching
+near/far frees are preserved. Maximum cache payload drops190to130KiB; minimum
+required payload drops130to70KiB. No new cache/workspace/surface was added.
+
+Similar-issue sweep covers D names, allocation/free checks, all callback binds,
+full-screen device mode, compositor source/tests/build inputs and live cache
+scripts. No ram_screen/present_ram/bind_ram/ram_compositor/present_screen/
+ram_mode production/test/tool reference remains. Generic full-frame APIs used
+by Windows and older non-product validation remain valid independent contracts.
+The legacy DOS full-frame root initializer is not the product entry and was
+not mistaken for the deleted extra D allocation. Product initialization uses
+only its existing25580-byte combined text/runtime/save allocation.
+
+Updated live diagnostic code to A/B/C only: six valid masks/seven marginal
+pairs; unit expectations reject obsolete D masks. Historical12mask results
+remain in S2-S4, not rewritten. The D-specific queued contiguous-full-screen-
+copy proposal is withdrawn into history, without allocating a T; the other
+three queue candidates retain order. The general band-copy primitive remains.
+
+### Changed-boundary verification
+
+The separately compiled real product main/root probe runs seven natural/fault
+cases, observing the public palette-source join rather than reimplementing
+composition. Every successful source band must point to root.ppu_frame.pixels;
+the original product presenter/device still executes. Successful cases read
+15RAM bands and return without root error; required failures publish none.
+All tracked root-owned blocks free cleanly. No pixel/timing matrix is repeated.
+
+| Case | Retained A/B/C | Required exit | RAM bands |
+| --- | --- | ---: | ---: |
+| 0 | 1/1/1 | 0 | 15 |
+| 1 | 0/0/0 | 1 | 0 |
+| 2 | 1/0/0 | 1 | 0 |
+| 3 | 1/1/0 | 0 | 15 |
+| 4 | 1/1/1 | 0 | 15 |
+| 5 | 1/0/0 | 1 | 0 |
+| 6 | 1/1/0 | 0 | 15 |
+
+Modes:0natural,1deny both A allocators,2denyB,3denyC,4deny nearA,
+5denyBpreflight,6denyCpreflight. Natural root peak158700bytes=133120cache+
+25580workspace; optional-C failure peak97260bytes=71680+25580. Successful A
+uses far storage in this4096near-reserve profile. Diagnostic PSP398368bytes
+and its MCB before/during/after values are diagnostic, not production live
+usage; CRT may retain freed pools until process exit. No leak is inferred
+from retained free pools. Source-binding claims remain scoped to this join.
+
+Native full suites x86 and x64 each316/316 pass; the removed D-only test
+accounts for the decrease from317. Final incremental builds and four focused
+root/snapshot/cache tests per width pass after the last DOS helper-name cleanup.
+Receipt owner units still have3methods (now including invalid band-count
+rejection); factorial arithmetic/receipt owner has4methods for the reduced
+universe. Existing tests retain ownership of unchanged source pixel semantics.
+No repeated Win32 host lifecycle run is needed: product Win32 code and the
+accepted host contracts are unchanged. No new ROM-node/edge credit is claimed.
+
+The old CL driver could not accept an additional long command-line macro;
+its attempted forced-include option is unsupported. Those diagnostic attempts
+were discarded. The final probe uses only the original supported symbol
+substitutions and observes bands through the public callback. It compiles,
+links and runs all seven cases successfully with no extra production seam.
+The remaining ABC benchmark also compiles/links against current product objects
+without D; it is not executed. Thus no unperformed timing result is inferred.
+
+### Product builds and conventional memory
+
+Original optimized DOS build compiles184objects and links214segments, largest
+32768bytes. DGROUP53600bytes includes2048stack; loader minimum386944/maximum
+391040bytes includes4096near reserve, excludes PSP and dynamic memory. The
+removed code/static fields reduce that bound1568bytes versus S3. The combined
+saving versus ABCD is63008bytes=61.531KiB (61440cache+1568loaded image).
+
+| Current category | ABC bytes | AB bytes |
+| --- | ---: | ---: |
+| Loaded code/static data/stack/near reserve |391040|391040|
+| Root runtime/text/save workspace |25580|25580|
+| A/B/C cache payload |133120|71680|
+| Sound Blaster DMA when available |4096|4096|
+| PSP |256|256|
+| Known arithmetic subtotal |554092|492652|
+| Known subtotal KiB |541.105|481.105|
+
+Page rounding can add272bytes; heap/MCB/environment/alignment overhead is
+additional. These are useful category totals, not an exact production live
+census or universal minimum-free threshold. The existing S4 ABC route measured
+24.285ms calibrated/26.914ms raw rendering; retained scope and instrumentation
+limits apply. No new product FPS,20ms or real486claim is issued.
+
+Reused unchanged Win16 OMF components, relinked with the new DOS stub and ran
+bind_win16_mz repair/verification. DOS image, relocation table, CS/IP/SS/SP and
+resident allocation bounds are preserved; appended NE starts at363520and the
+hybrid is697301bytes. No Win16 source/ABI change or new Win3.x runtime claim.
+Current x86/x64 products build through Ninja/ccache with owner-local resources;
+Package-MySMB validates PE widths and ROM bindings then refreshes all three
+assets/mario outputs. No ROM/generated data/local EXE is staged or committed.
+Accepted prior-task raw probe trees are removed; native build trees are reused
+as current S5 inputs and retained only until owner acceptance.
+
+Single-person executor/coordinator reviews the deleted path, unchanged shared
+PPU/core identities, RAM-band source join, AB/C failure and cleanup, removed
+D build/test/tool references, queue retirement, evidence reuse, tests and local
+products. Node and documentation gates pass. S5 and T46 close for owner
+acceptance; no next S/T is automatically admitted. Cleanup on acceptance.
+Scope/expected/actual[],new0,transfers0;historical1992/1992,retained1991/1992
+nodes and4260/4261feasible controls(raw4342,infeasible81) unchanged. No final
+whole-game certificate is issued.

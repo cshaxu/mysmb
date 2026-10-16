@@ -12,9 +12,9 @@
 struct allocation {void far *pointer;unsigned bytes;unsigned char near_heap;};
 struct census {unsigned long free_bytes,largest,psp_bytes;unsigned valid;};
 static struct allocation blocks[16];
-static unsigned mode,live,errors,denials,near_attempts,far_attempts,fit_count;
-static unsigned retained[4],near_a,attempted,exited,observed;
-static unsigned long peak,requested,largest_fit[3];
+static unsigned mode,live,errors,denials,near_attempts,far_attempts,fit_count,bands;
+static unsigned retained[3],near_a,exited,observed;
+static unsigned long peak,requested,largest_fit[2];
 static struct census before,during,after;
 int cache_product_main(void);
 
@@ -66,7 +66,7 @@ void near * cdecl cache_nmalloc(size_t bytes)
     void near *p;
     if(bytes==MYSMB_PPU_CHR_DECODED_BYTES) {
         ++near_attempts;
-        if(mode==2U || mode==5U){++denials;return 0;}
+        if(mode==1U || mode==4U){++denials;return 0;}
     }
     p=_nmalloc(bytes);
     /* A null near pointer cast may become DS:0000, not a null far pointer. */
@@ -77,13 +77,11 @@ void far * cdecl cache_fmalloc(size_t bytes)
 {
     void far *p;
     if(bytes==MYSMB_PPU_CHR_DECODED_BYTES)++far_attempts;
-    if((mode==1U && bytes==MYSMB_VIDEO_PIXELS && !attempted) ||
-        (mode==2U && bytes==MYSMB_PPU_CHR_DECODED_BYTES) ||
-        (mode==3U && bytes==MYSMB_PPU_BACKGROUND_BYTES) ||
-        (mode==4U && bytes==MYSMB_PPU_BACKGROUND_SECOND_BYTES && attempted)) {
-        ++denials;if(bytes==MYSMB_VIDEO_PIXELS)attempted=1U;return 0;
+    if((mode==1U && bytes==MYSMB_PPU_CHR_DECODED_BYTES) ||
+        (mode==2U && bytes==MYSMB_PPU_BACKGROUND_BYTES) ||
+        (mode==3U && bytes==MYSMB_PPU_BACKGROUND_SECOND_BYTES)) {
+        ++denials;return 0;
     }
-    if(bytes==MYSMB_VIDEO_PIXELS)attempted=1U;
     p=_fmalloc(bytes);track(p,bytes,0U);return p;
 }
 void cdecl cache_nfree(void near *p){untrack((void far *)p,1U);_nfree(p);}
@@ -92,22 +90,41 @@ int cdecl cache_intdos(union REGS *in,union REGS *out)
 {
     int result=intdos(in,out);
     if(in->h.ah==0x48U && in->x.bx==0xffffU) {
-        if(fit_count<3U)largest_fit[fit_count]=(unsigned long)out->x.bx*16UL;
-        ++fit_count;
-        if((mode==6U && fit_count==1U) || (mode==7U && fit_count==2U) ||
-            (mode==8U && fit_count==3U)) {out->x.bx=0U;++denials;}
+        if(fit_count<2U)largest_fit[fit_count]=(unsigned long)out->x.bx*16UL;
+        ++fit_count,bands;
+        if((mode==5U && fit_count==1U) || (mode==6U && fit_count==2U)) {out->x.bx=0U;++denials;}
     }
     return result;
 }
+static struct mysmb_dos16_root *observed_root;
+static int (*original_palette)(void *,const struct mysmb_palette_video_source *);
+static int (*original_rows)(void *,mygames_kvm_u16,mygames_kvm_u16,
+    struct mygames_kvm_video_band *);
+static int observe_rows(void *context,mygames_kvm_u16 first,mygames_kvm_u16 rows,
+    struct mygames_kvm_video_band *band)
+{
+    if(!original_rows(context,first,rows,band))return 0;
+    if(band->pixels!=observed_root->ppu_frame.pixels){++errors;return 0;}
+    ++bands;return 1;
+}
+static int observe_palette(void *context,const struct mysmb_palette_video_source *source)
+{
+    struct mysmb_palette_video_source copy=*source;
+    original_rows=source->rows.read_rows;copy.rows.read_rows=observe_rows;
+    return original_palette(context,&copy);
+}
 void cache_observed_step(struct mysmb_dos16_root *root)
 {
+    if(root->present_palette_rows!=observe_palette) {
+        observed_root=root;original_palette=root->present_palette_rows;
+        root->present_palette_rows=observe_palette;
+    }
     mysmb_dos16_root_step(root);
     if(root->ppu_cache_attempted && !observed) {
         observed=1U;memory_census(&during);
-        retained[0]=root->ram_screen!=0;
-        retained[1]=root->ppu_workspace.decoded!=0;
-        retained[2]=root->ppu_workspace.bg!=0;
-        retained[3]=root->ppu_workspace.bg_second!=0;
+        retained[0]=root->ppu_workspace.decoded!=0;
+        retained[1]=root->ppu_workspace.bg!=0;
+        retained[2]=root->ppu_workspace.bg_second!=0;
         near_a=root->ppu_cache_near;exited=root->control.exit_requested;
         /* Bounded diagnostic only; capture the root's decision before exit. */
         root->control.exit_requested=1U;
@@ -119,18 +136,18 @@ int main(void)
     char far *tail=(char far *)MK_FP(_psp,0x81);
     FILE *log;
     for(i=0;i<*(unsigned char far *)MK_FP(_psp,0x80);++i)
-        if(tail[i]>='0' && tail[i]<='8'){mode=(unsigned)(tail[i]-'0');break;}
+        if(tail[i]>='0' && tail[i]<='6'){mode=(unsigned)(tail[i]-'0');break;}
     memory_census(&before);
     result=(unsigned)cache_product_main();
     memory_census(&after);
     log=fopen("CACHE.LOG","a");if(!log)return 90;
-    fprintf(log,"mode=%u result=%u observed=%u D=%u A=%u B=%u C=%u nearA=%u exit=%u live=%u errors=%u denied=%u near_try=%u far_try=%u peak=%lu\n",
-        mode,result,observed,retained[0],retained[1],retained[2],retained[3],near_a,
-        exited,live,errors,denials,near_attempts,far_attempts,peak);
+    fprintf(log,"mode=%u result=%u observed=%u A=%u B=%u C=%u nearA=%u exit=%u live=%u errors=%u denied=%u near_try=%u far_try=%u bands=%u peak=%lu\n",
+        mode,result,observed,retained[0],retained[1],retained[2],near_a,
+        exited,live,errors,denials,near_attempts,far_attempts,bands,peak);
     fprintf(log,"before valid=%u psp=%lu free=%lu largest=%lu\n",before.valid,before.psp_bytes,before.free_bytes,before.largest);
     fprintf(log,"during valid=%u psp=%lu free=%lu largest=%lu\n",during.valid,during.psp_bytes,during.free_bytes,during.largest);
     fprintf(log,"after valid=%u psp=%lu free=%lu largest=%lu\n",after.valid,after.psp_bytes,after.free_bytes,after.largest);
-    fprintf(log,"fit count=%u D=%lu B=%lu C=%lu\n",fit_count,largest_fit[0],largest_fit[1],largest_fit[2]);
+    fprintf(log,"fit count=%u B=%lu C=%lu\n",fit_count,largest_fit[0],largest_fit[1]);
     fclose(log);
     return !observed || live || errors || !before.valid || !during.valid || !after.valid?91:result;
 }

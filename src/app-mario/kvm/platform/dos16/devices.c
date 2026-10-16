@@ -33,7 +33,6 @@ static unsigned short text_rows=25U;
 static mygames_kvm_u8 palette_shadow[MYSMB_VIDEO_PALETTE_COLORS],palette_valid;
 static unsigned char retained_mode;
 static unsigned char compact_mode,compact_page;
-static unsigned char ram_mode;
 struct retained_viewport {mygames_kvm_u8 table,x,y;};
 struct retained_sprite_backup {mygames_kvm_u8 x,y,active,pixels[64];};
 /* Bounded transient coverage only: 32*256 fixed-HUD bytes plus at most
@@ -433,7 +432,7 @@ int mysmb_dos16_devices_mode(mygames_kvm_u8 text)
     text=(mygames_kvm_u8)(text!=0U);
     if(text==text_mode)return 1;
     if(try_mode(text)) {
-        text_mode=text;retained_mode=0U;compact_mode=0U;ram_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
+        text_mode=text;retained_mode=0U;compact_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;
         present_due=1U;
         return 1;
     }
@@ -457,7 +456,7 @@ int mysmb_dos16_devices_open(void)
     if(opened)return video_ready;
     mygames_dos16_video_capture(&old_video);
     if(!try_mode(0U)) {mygames_dos16_video_restore(&old_video);return 0;}
-    text_mode=0U;retained_mode=0U;compact_mode=0U;ram_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;video_ready=1U;
+    text_mode=0U;retained_mode=0U;compact_mode=0U;retained_hud_valid=0U;retained_sprite_count=0U;video_ready=1U;
     mysmb_dos16_keyboard_initialize(&keyboard);
     if(!mygames_dos16_keyboard_open(keyboard_scan,&keyboard)) {
         mygames_dos16_video_restore(&old_video);video_ready=0U;return 0;
@@ -479,7 +478,7 @@ int mysmb_dos16_devices_close(void)
     if (opened==0U) return 1;
     if(!mysmb_dos16_audio_dos_close())return 0;
     mygames_dos16_keyboard_close();
-    mygames_dos16_video_restore(&old_video);opened=video_ready=text_mode=retained_mode=compact_mode=ram_mode=retained_hud_valid=retained_sprite_count=0U;
+    mygames_dos16_video_restore(&old_video);opened=video_ready=text_mode=retained_mode=compact_mode=retained_hud_valid=retained_sprite_count=0U;
     return 1;
 }
 
@@ -509,18 +508,6 @@ int mysmb_dos16_devices_present_band(const struct mygames_kvm_video_band *band)
     /* Chain4 handles the plane selector/address from each CPU byte address.
      * Every band fits both segments;last source pixel is A000:EFFF. */
     mygames_dos16_copy_dwords(video+band->first*256U,band->pixels,band->rows*256U);
-    return 1;
-}
-int mysmb_dos16_devices_present_screen(const mygames_kvm_u8 MYGAMES_KVM_FAR *screen)
-{
-    unsigned char far *video;
-    if(!video_ready || text_mode || !screen)return 0;
-    if(!ram_mode) {
-        mygames_dos16_vga_native();ram_mode=1U;retained_mode=0U;compact_mode=0U;
-        retained_hud_valid=0U;retained_sprite_count=0U;
-    }
-    video=mygames_dos16_vga_memory();
-    mygames_dos16_copy_dwords(video,screen,MYSMB_VIDEO_PIXELS);
     return 1;
 }
 mygames_kvm_u8 MYGAMES_KVM_FAR *mysmb_dos16_devices_direct_band(mygames_kvm_u16 first,

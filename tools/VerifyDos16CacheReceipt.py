@@ -11,29 +11,30 @@ def fields(line):
 
 def verify(text):
     lines = text.splitlines()
-    if len(lines) != 45:
-        raise ValueError("Expected nine bounded five-line cases")
-    # Fault0/5 require naturally available ABCD; fault4/8 admit ABD.
-    expected = ((1, 1, 1, 1), (0, 1, 1, 0), (1, 0, 0, 0),
-                (1, 1, 0, 0), (1, 1, 1, 0), (1, 1, 1, 1),
-                (0, 1, 1, 0), (1, 1, 0, 0), (1, 1, 1, 0))
+    if len(lines) != 35:
+        raise ValueError("Expected seven bounded five-line cases")
+    # Natural/near-denied retain ABC; optional allocation/preflight retain AB.
+    expected = ((1, 1, 1), (0, 0, 0), (1, 0, 0),
+                (1, 1, 0), (1, 1, 1), (1, 0, 0), (1, 1, 0))
     rows = []
     base = None
-    for mode in range(9):
+    for mode in range(7):
         group = lines[mode*5:mode*5+5]
         row = fields(group[0])
         for key, value in dict(mode=mode, result=0, observed=1, live=0, errors=0).items():
             if row.get(key) != value:
                 raise ValueError(f"case{mode}: {key}={row.get(key)}, expected{value}")
-        if tuple(row[key] for key in "DABC") != expected[mode]:
+        if tuple(row[key] for key in "ABC") != expected[mode]:
             raise ValueError(f"case{mode}: wrong retained tier")
-        if row["exit"] != int(mode in (1, 2, 3, 6, 7)):
+        if row["exit"] != int(mode in (1, 2, 5)):
             raise ValueError(f"case{mode}: required-cache failure was not propagated")
-        if row["near_try"] != 1 or (mode in (2, 5) and row["far_try"] != 1):
+        if row["near_try"] != 1 or (mode in (1, 4) and row["far_try"] != 1):
             raise ValueError(f"case{mode}: near/far fallback missing")
-        if row["denied"] != (2 if mode == 2 else int(mode != 0)):
+        if row["denied"] != (2 if mode == 1 else int(mode != 0)):
             raise ValueError(f"case{mode}: wrong injected failure count")
-        storage = sum(row[key]*size for key, size in zip("DABC", (61440, 8192, 63488, 61440)))
+        if row.get("bands") != (0 if row["exit"] else 15):
+            raise ValueError(f"case{mode}: product did not use ordinary RAM bands")
+        storage = sum(row[key]*size for key, size in zip("ABC", (8192, 63488, 61440)))
         row["cache_bytes"] = storage
         root_bytes = row["peak"] - storage
         if base is None:
@@ -48,7 +49,7 @@ def verify(text):
         row["fit"] = fields(group[4])
         rows.append(row)
     return {"cases": rows, "root_workspace_bytes": base,
-            "required_cache_bytes": 133120, "full_cache_bytes": 194560,
+            "required_cache_bytes": 71680, "full_cache_bytes": 133120,
             "all_root_owned_allocations_released": True,
             "production_psp_measured": False, "rom_equivalence_credit": 0}
 
@@ -68,10 +69,10 @@ def main():
         if len(lines) != 5:
             raise ValueError("Expected one natural memory-pressure case")
         row = fields(lines[0])
-        expected = dict(mode=0, result=0, observed=1, D=1, A=1, B=1, C=0,
+        expected = dict(mode=0, result=0, observed=1, A=1, B=1, bands=15,
                         exit=0, live=0, errors=0, denied=0)
-        if any(row.get(key) != value for key, value in expected.items()):
-            raise ValueError("Natural pressure did not retain a clean ABD presenter")
+        if any(row.get(key) != value for key, value in expected.items()) or row.get("C") not in (0,1):
+            raise ValueError("Natural pressure did not retain a clean AB presenter")
         for i, name in enumerate(("before", "during", "after"), 1):
             row[name] = fields(lines[i])
             if row[name].get("valid") != 1:

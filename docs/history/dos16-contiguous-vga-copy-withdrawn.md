@@ -1,3 +1,9 @@
+# Withdrawn: DOS16 full-screen VGA-copy candidate
+
+Owner-directed T46 S5 removes D and the full-screen presenter. This unadmitted
+candidate is superseded and removed from QUEUE; no T identifier was allocated.
+The accepted band-copy primitive remains. Original proposal follows as history.
+
 # DOS16 contiguous VGA-copy code-generation qualification
 
 ## Objective

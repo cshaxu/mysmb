@@ -41,7 +41,7 @@ commands without local paths, and conclusions.
 - Measure frame production, display publication, video mode/register policy,
   memory transfer work, cache invalidation work, vertical-retrace waits and
   actual frameskip behavior.
-- Repeat the same census against MySMB's accepted ABD/ABCD presentation tiers.
+- Repeat the same census against MySMB's accepted AB/ABC RAM-band presentation tiers after T46 S5 removes D.
 
 ## Non-goals
 

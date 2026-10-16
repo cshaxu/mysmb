@@ -1,10 +1,8 @@
 #include "io/video.h"
 #include "platform/dos16/planar_row.h"
 #include "dos16/file.h"
-#include "dos16/file.h"
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/devices.h"
-#include "platform/dos16/ram_compositor.h"
 #include "core/area.h"
 #include <stdio.h>
 #include <malloc.h>
@@ -55,20 +53,6 @@ static int present_rows(void *context,const struct mysmb_palette_video_source *i
         if(!mysmb_dos16_devices_present_band(&band))return 0;
     }
     return 1;
-}
-static int present_retained(void *context,const struct mysmb_ppu_frame_view *view,
-    const mygames_kvm_u8 MYGAMES_KVM_FAR *palette)
-{
-    (void)context;mysmb_dos16_devices_palette(palette);
-    return mysmb_dos16_devices_retained_frame(view);
-}
-static int present_ram(void *context,const struct mysmb_ppu_frame_view *view,
-    const mygames_kvm_u8 MYGAMES_KVM_FAR *palette,mygames_kvm_u8 MYGAMES_KVM_FAR *screen)
-{
-    (void)context;
-    if(!mysmb_dos16_ram_composite(view,screen,MYSMB_VIDEO_PIXELS))return 0;
-    mysmb_dos16_devices_palette(palette);
-    return mysmb_dos16_devices_present_screen(screen);
 }
 static mygames_kvm_u8 submit_audio(void *context, const struct mysmb_io_audio_frame *frame)
 {
@@ -127,11 +111,6 @@ static int initialize(void)
             mygames_dos16_file_replace,&files) &&
         mysmb_snapshot_store_initialize(snapshot_store,&files))
         mysmb_dos16_root_bind_snapshot(&root,snapshot_store,reset_output,0);
-    /* S18's current-background sprite-union presenter passed physical VGA
-     * readback before it is selected here. The root retains Chain-4 as the
-     * synchronous fallback if this device-only presenter declines a frame. */
-    mysmb_dos16_root_bind_ram(&root,present_ram);
-    mysmb_dos16_root_bind_retained(&root,present_retained);
     /* Synchronous presenters are exclusive. Graphics rebuilds every band on
      * return from text;only the root owns and frees this shared allocation. */
     mysmb_dos16_root_bind_text(&root,&text_storage->workspace,
