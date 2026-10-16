@@ -2,9 +2,11 @@ param(
     [Parameter(Mandatory=$true)][string]$ProductDirectory,
     [Parameter(Mandatory=$true)][string]$OutputDirectory,
     [switch]$LinkOnly,
-    [switch]$Benchmark
+    [switch]$Benchmark,
+    [switch]$SlotCopy
 )
 $ErrorActionPreference='Stop'
+if($Benchmark -and $SlotCopy){throw 'Select one diagnostic entry.'}
 $repository=Split-Path -Parent $PSScriptRoot
 $build=[IO.Path]::GetFullPath((Join-Path $repository 'build'))+'\'
 $output=[IO.Path]::GetFullPath($OutputDirectory)
@@ -27,6 +29,19 @@ $env:TEMP=$compileTemp;$env:TMP=$compileTemp
 Push-Location $output
 try {
     if(!$LinkOnly) {
+        if($SlotCopy) {
+            & $compiler /nologo /AL /Gs /W3 /D MYSMB_DOS16_TARGET /D MYGAMES_DOS16_TARGET /c /Foprobe.obj /I $include /I (Join-Path $repository 'src/lib') /I (Join-Path $repository 'src/app-mario/kvm') (Join-Path $repository 'test/app-mario/kvm/platform/dos16/slot_copy_probe.c')
+            if($LASTEXITCODE){throw 'Slot-copy probe compilation failed.'}
+            Copy-Item -LiteralPath (Join-Path $product 'kvm_platform_dos16_slot_copy.c') -Destination slot.obj -Force
+            foreach($member in @('mysmb-startup.obj','mysmb-stack.obj')) {
+                Copy-Item -LiteralPath (Join-Path $product $member) -Destination $member -Force
+            }
+            Copy-Item -LiteralPath (Join-Path $repository 'tools/dos16/runtime/LIB/LLIBCE.LIB') -Destination RT.LIB -Force
+            & $python (Join-Path $repository 'tools/VerifyDos16StartupConsumers.py') probe.obj slot.obj
+            if($LASTEXITCODE){throw 'Unsupported copy-probe startup consumer.'}
+            @("mysmb-startup.obj+`nprobe.obj+`nslot.obj+`nmysmb-stack.obj",'mysmb-dos16.exe','mysmb-dos16.map','RT.LIB;') | Set-Content -Encoding ascii probe.rsp
+            return
+        }
         foreach($pattern in @('smbgrp*.lib','mysmb-startup.obj','mysmb-stack.obj')) {
             Get-ChildItem -LiteralPath $product -Filter $pattern | Copy-Item -Destination $output -Force
         }

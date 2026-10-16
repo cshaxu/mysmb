@@ -438,3 +438,185 @@ Band output has more PIT boundaries. Small raw/calibrated sign changes are incon
 Approximate batch-launch-to-DONE intervals: 17.484 to 32.737 seconds.
 These are filesystem timestamp intervals, not stopwatch samples or per-frame costs.
 They include startup, game/audio work, warmup and file output; no pacing wait was requested.
+
+## Owner-directed reopening: S3 full-span copy repair
+
+Owner explicitly reopens T46 and admits S3, continuing the measured bottleneck
+rather than allocating a new T. S1/S2 acceptance remains retained. The mistaken
+uncommitted new-task admission is withdrawn; no subsequent T is allocated.
+Baseline736020ea. Existing compile/measurement jobs belong to this S3 and are
+retained as active-task generated work; no completed task's stale trees remain.
+
+### S3 scope and exit
+
+The sole product owner is app-mario/kvm/platform/dos16/slot_copy. The unchanged
+shared PPU can submit up to240rows, split by HUD/scroll/wrap. Its DOS callback
+rejects rows over16 although its DWORD count can fit240*64=15360in16bits.
+Qualify complete spans and permit valid full-height requests. Preserve neutral
+slot values, source/destination bounds, source immutability and the C ABI's
+callee-preserved registers.
+Reject invalid counts including16-bit count-sum overflow; no new allocation.
+Search all callback binds and alternate row-limit checks for the same defect.
+No game/core, PPU pixel decision, policy, memory tier, emulator setting, frame
+cadence or third-party import changes. Source is project-authored; owner ROM
+is local-only comparison/build input, never committed or distributed.
+
+Use one owner-local actual-DOS neutral copy probe: contiguous/split widths,
+odd tails,1/16/17/32/208/240rows, sentinel boundaries and rejected parameters.
+First show the old callback fails the larger cases. Then prove success with
+the actual DOS assembly. Existing native exact-compositor tests own PPU/OAM
+joins; do not replace their owner contracts with another implementation.
+
+Compare old/new optimized diagnostic executables for ABC/ABD/ABCD, three
+repeats, identical8warm+8measured title/gameplay phases. Retain raw/calibrated
+phase costs and byte-identical VGA/palette/original RAM. Streams below ignored
+the active ignored build workspace only,48MiB total,180seconds per run; owner config read unchanged.
+Keep only current-task build inputs from accepted T46, delete its stale trees.
+The fixed fixture is not actual486hardware or end-to-end FPS.20ms is the user
+objective, not a promised outcome of this one repair; record the remaining gap.
+
+Run configured native unit/integration suites, original optimized DOS compile/
+link, actual copy/runtime comparisons, dependency purity, node/document gates.
+Refresh the three local Mario EXEs, preserving the MZ+NE hybrid; no binaries
+or protected generated data enter Git. Report loader+root caches/workspace,
+DMA,PSP and unmeasured allocator/environment overhead separately. Do not add
+loader reserve twice or describe a probe's live PSP as production usage.
+
+Estimated product change1file/under10lines; fixture/build integration roughly
+4-6files/200-300lines. S3 closes when valid spans are accepted with exact bytes,
+invalid inputs fail safely, before/after timing improves reproducibly without
+new cache allocation, all relevant tests pass and local products are current.
+Single-person executor/coordinator reviews the complete diff before closure.
+ROM scope/expected/actual[],historical1992/1992,retained1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81) unchanged; no new certification.
+
+## S3 P1 closure: full-height acceleration and space account
+
+Owner-directed T46 reopening and S3 admission supersede the mistaken
+uncommitted new-task allocation. No new T was allocated. Coordinator closes S3
+and T46 for owner acceptance after the following repair/verification; S1/S2
+accepted evidence remains retained within its original scope.
+
+The only product change is DOS slot_copy.c and its header contract. Valid
+1..240row PPU-selected spans now use the existing DWORD loop;240*64=15360fits
+its16-bit count. Widths over256are rejected individually before adding, avoiding
+16-bit sum wrap. No ROM/game/shared-PPU decisions, source values, output order,
+cache binding/policy or emulator setting changed. No new allocation. Existing
+loop/register code is unchanged; the real large-model assembly is exercised.
+
+Similar-issue sweep: every slot_rows_copy bind is either the DOS root/current
+diagnostic or a neutral PPU fixture. The shared PPU already permits240rows and
+splits at HUD/scroll/wrap boundaries. The remaining two devices.c limits of16
+belong to bounded4096-byte band/pixel I/O, not this full-screen RAM transfer;
+they remain correct and unchanged. Frame/planar bounds already permit the
+appropriate full240-row/source geometry. No second erroneous callback cap found.
+
+The old optimized object rejects the first17-row case after passing1/16rows.
+The fixed actual-DOS fixture passes36height/split combinations, nine invalid
+arguments and optional unused second source. Synthetic sources are immutable;
+destination guard/tail bytes stay intact. Tests cover heights1,16,17,32,208,240
+and widths0,1,3,128,255,256. This is the single owner for new guard/copy decisions;
+existing native compositor fixtures continue to own PPU/OAM joins. Initially
+naming the diagnostic COPY.EXE collided with DOSBox's internal COPY command;
+renaming it SPAN.EXE resolves that harness issue. The old/fixed receipts were
+rerun successfully; no application workaround was needed.
+
+Matched ABC/ABD/ABCD routes each run three times before/after:18launches,
+288compared records (16distinct positions),18293760protected bytes. All final
+VGA slots, palette and original RAM match byte-for-byte;309logical ticks per
+run. Same original optimized core/PPU objects and unchanged owner DOSBox config.
+Raw files stay ignored under the active task's build workspace, below48MiB and
+180seconds per-run. No third-party source or raw/generated data enters Git.
+
+| Profile | Title before ms | Title after ms | Gameplay before ms | Gameplay after ms | Gameplay saved ms |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| ABC | 23.976 | 23.988 | 24.265 | 24.285 | -0.021 |
+| ABD | 75.171 | 75.171 | 61.265 | 61.265 | +0.000 |
+| ABCD | 40.965 | 25.318 | 41.370 | 25.746 | +15.624 |
+
+Three repeat means have no observed spread in this deterministic emulation
+profile; no real-hardware statistical certainty is inferred. The ABC control
+has about0.021ms extra gameplay cost from the two width checks; ABD is unchanged
+because the C-dependent callback is not used. ABCD saves15.624ms/about37.8%.
+The additional C60KiB now saves35.519ms versus ABD in this route, rather than
+the old19.895ms. Do not add marginal savings from unrelated contexts.
+
+| ABCD gameplay phase | Before ms | After ms | Saved ms |
+| --- | ---: | ---: | ---: |
+| prepare | 0.587 | 0.588 | -0.001 |
+| compose | 35.349 | 19.724 | +15.625 |
+| publish | 5.434 | 5.434 | -0.000 |
+| raw_total | 41.702 | 26.078 | +15.624 |
+
+Clock methodology and timestamp sensitivity remain as S2. These are warmed
+rendering kernels, excluding logical game/audio ticks, startup, file dumping
+and waits; they are not playable FPS. The25.746ms result still misses20ms by
+5.746ms before logical tick/audio cost. That broader performance objective is
+not closed by this bounded repair. Residual cost is mostly composition, then
+physical publication; no further optimization or new S was silently admitted.
+Existing queued performance work retains its original order.
+
+### S3 DOS conventional memory
+
+All numbers below describe RAM, not the699349-byte hybrid EXE file. The native
+Win16 NE payload is byte-identical to the accepted product; the DOS loader does
+not load that appended Windows payload. The repaired optimized DOS product
+links216segments, largest32768bytes, DGROUP53632bytes, stack2048bytes. Its
+MZ loader minimum388512/maximum392608bytes includes the4096near reserve and
+excludes PSP/dynamic memory. The patch adds16loader bytes, no resident cache.
+
+| Category | Bytes | KiB | Basis |
+| --- | ---: | ---: | --- |
+| A decoded CHR |8192|8| unchanged requested block |
+| B packed background/snapshot |63488|62| unchanged requested block |
+| C byte-background upgrade |61440|60| unchanged optional block |
+| D final RAM screen |61440|60| unchanged required block |
+| ABCD subtotal |194560|190| no additional surface |
+| Root text/runtime/save workspace |25580|24.980| retained S1 live-allocation receipt, unchanged owner |
+| Loaded code/static data/stack/near reserve |392608|383.406| new MZ/map receipt |
+| Audio DMA when available |4096|4| lib/dos16/pcm_dos.c,256paragraphs |
+| PSP |256|0.250| DOS process block |
+| Known arithmetic subtotal |617100|602.637| before heap/MCB/environment overhead |
+
+Page-rounding allowance adds up to272bytes in this image (loader bound392880),
+so that conservative subtotal is602.902KiB. Heap/MCB headers/alignment, process
+environment and optional CRT retention are additional. A useful planning figure
+is around603KiB plus environment/allocator headroom, not a universal exact live
+PSP census or startup threshold. Without C, the known subtotal drops exactly
+60KiB to542.637KiB before the same overhead. ABD-required/C-optional remains
+unchanged; fragmentation and driver-resident memory can still prevent allocation.
+No new production live-MCB measurement is claimed from a larger diagnostic.
+
+### S3 operational review and local products
+
+Original DOS build185objects compiles/links with existing toolchain and Safe
+render flags. Actual copy fixture and matched output/timing checks pass. Full
+x86 and x64 native suites each pass317/317, including Mine/library regressions.
+Both named Win32 host-integration targets pass15launch/input/Tab/close routes
+on private desktops, including interactive CMD. The first sandboxed private-
+desktop attempt failed with access-denied; the authorized qualified host run
+passes on each width. No app defect was inferred from that host-capability error.
+
+Win16+MZ links and bind_win16_mz verifies DOS code/relocations/CS/IP/SS/SP and
+resident allocation preservation. The appended NE payload is byte-for-byte
+identical to the accepted local EXE; no new Win3.x gameplay run is claimed.
+Package-MySMB validates ROM-bound Ninja configurations and PE machine types,
+then publishes all three local assets/mario products. No local EXE, ROM or
+protected output is committed. Mine products are unchanged.
+
+The named mysmb_dos16_slot_copy_integration target records the same original-
+object compile/link/host commands; this task invokes its equivalent commands
+manually against old and new optimized objects. The test build tool's SlotCopy
+entry links only the neutral fixture/object/CRT; no game resources are needed.
+Existing Benchmark/allocation modes retain their separate composition paths.
+
+Single-person executor/coordinator reviews product scope, neutral fixture,
+count/segment bounds, unchanged loop ABI, absence of allocations, exact frames,
+phase timing, memory categories, local artifacts, original-toolchain/source
+policy and governance. S3 product delta is two small DOS source/header changes;
+remaining changes are test/tool/host-target integration and task evidence.
+Generated active-task work is removed after owner acceptance.
+
+Scope/expected/actual[],new0,deferred0,transferred0. Historical1992/1992,
+retained1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81)
+unchanged. No whole-game current-build certificate is issued.

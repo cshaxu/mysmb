@@ -63,6 +63,21 @@ if(WIN32)
             --configuration "${MYSMB_DOSBOX_CONFIG}"
             --output "${CMAKE_BINARY_DIR}/dos16-cache-matrix"
         USES_TERMINAL VERBATIM)
+    add_custom_target(mysmb_dos16_slot_copy_integration
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_SOURCE_DIR}/tools/Build-Dos16CacheProbe.ps1"
+            -ProductDirectory "${MYSMB_CACHE_PRODUCT_DIR}"
+            -OutputDirectory "${CMAKE_BINARY_DIR}/dos16-slot-copy" -SlotCopy
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_SOURCE_DIR}/tools/Build-Dos16CacheProbe.ps1"
+            -ProductDirectory "${MYSMB_CACHE_PRODUCT_DIR}"
+            -OutputDirectory "${CMAKE_BINARY_DIR}/dos16-slot-copy" -SlotCopy -LinkOnly
+        COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/RunDos16SlotCopyProbe.py"
+            --probe "${CMAKE_BINARY_DIR}/dos16-slot-copy/mysmb-dos16.exe"
+            --dosbox "${MYSMB_DOSBOX_EXECUTABLE}"
+            --configuration "${MYSMB_DOSBOX_CONFIG}"
+            --output "${CMAKE_BINARY_DIR}/dos16-slot-copy-run"
+        USES_TERMINAL VERBATIM)
 endif()
 
 set(MYSMB_CORE_SOURCES core/boot.c core/dispatcher.c core/engine.c core/engine_slots.c core/engine_tail.c core/frame_root.c core/title_modes.c core/terminal_modes.c core/game.c core/audio.c core/area.c core/status.c core/area/block_metatile.c core/enemy/stream.c core/enemy/group.c core/enemy/init.c core/enemy/init_targets.c core/enemy/loop.c core/enemy/core.c core/enemy/dispatch_targets.c core/enemy/movement.c core/enemy/frenzy.c core/player.c core/objects.c core/fireball/fireball_spawn.c core/fireball/fireball_core.c core/world/movement.c core/world/gravity.c core/world/collision.c core/world/block_buffer.c core/world/bounding_box.c core/world/geometry.c core/bridge.c core/oam/bullet_bill_gfx.c core/oam/hammer_gfx.c core/oam/firebar_gfx.c core/oam/vine_gfx.c core/oam/sprite_stacker.c core/oam/sprite_dump.c core/enemy_bounds.c core/oam/power_up_gfx.c core/oam/object_position.c core/oam/sprite_row.c core/oam/player_gfx.c core/oam/fireball_gfx.c core/oam/block_gfx.c core/oam/goomba_gfx.c core/fireball/bubble.c core/oam/piranha_gfx.c core/oam/cheep_gfx.c core/oam/bloober_gfx.c core/oam/podoboo_gfx.c core/oam/normal_enemy_gfx.c core/oam/spiny_gfx.c core/oam/hammer_bro_gfx.c core/oam/bowser_gfx.c core/oam/bowser_flame_gfx.c core/endgame_objects.c core/oam/flagpole_gfx.c core/oam/small_platform_gfx.c )

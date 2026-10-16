@@ -11,6 +11,14 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T46 S3 - full-height DOS copy acceleration
+
+Scope/expected/actual[],new0;historical1992/1992,retained1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81) unchanged. Actual copy/guard
+contract and18old/new routes preserve final bytes. DOS rendering improves
+41.370to25.746ms on this route;20ms not attained. No ROM/final certificate credit.
+[Results and limits](../history/M3-T46-dos16-ram-presenter-memory-tiers.md#s3-p1-closure-full-height-acceleration-and-space-account).
+
 ## M3 T46 - DOS16 cache allocation and factorial timing
 
 Scope/expected/actual[],new0;historical1992/1992,retained1991/1992nodes and

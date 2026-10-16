@@ -66,3 +66,19 @@ totals; band submission has more timer boundaries than full-screen submission.
 Small D margins within that difference cannot establish a real speedup.
 test_cache_matrix.py owns the valid-pair universe, signed marginal arithmetic,
 paired-repeat aggregation and neutral labels; it uses invented timing records.
+
+slot_copy_probe.c owns the actual DOS copy contract using invented byte patterns:
+36height/width combinations, guard bytes, immutable sources, nine invalid inputs
+and the optional unused second source. It links the optimized slot-copy object
+from the selected product build, not a host reimplementation. Heights include
+1,16,17,32,208,240; widths include0,1,3,128,255,256. The source and destination
+remain non-overlapping and within their64KiB segments.
+
+The named mysmb_dos16_slot_copy_integration target uses the same configuration
+variables and Build-Dos16CacheProbe.ps1 -SlotCopy, followed by -SlotCopy -LinkOnly
+and RunDos16SlotCopyProbe.py. The runner uses an unchanged owner configuration,
+a private hidden DOSBox process,180second timeout and only neutral receipts.
+Its --expect-span-rejection option demonstrates the old16-row limit using the
+old product object: the first17-row test must be rejected. Run the fixed object
+without that option; all valid and invalid decisions must pass. The executable
+is named SPAN.EXE to avoid DOSBox's internal COPY command name.

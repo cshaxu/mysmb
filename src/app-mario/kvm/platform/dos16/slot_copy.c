@@ -68,7 +68,10 @@ int mysmb_dos16_slot_rows_copy(const mygames_kvm_u8 MYGAMES_KVM_FAR *first,
     const mygames_kvm_u8 MYGAMES_KVM_FAR *second,mygames_kvm_u8 MYGAMES_KVM_FAR *destination,
     mygames_kvm_u16 first_count,mygames_kvm_u16 second_count,mygames_kvm_u16 rows)
 {
-    if(!first || !destination || !rows || rows>16U || first_count+second_count!=256U ||
+    /* A complete prepared PPU span can cover all240rows. The contiguous
+     * DWORD count is at most240*64=15360; no16-bit counter can wrap. */
+    if(!first || !destination || !rows || rows>240U ||
+        first_count>256U || second_count>256U || first_count+second_count!=256U ||
         (second_count && !second))return 0;
 #ifdef MYSMB_DOS16_TARGET
     copy_rows(first,second,destination,first_count,second_count,rows);
