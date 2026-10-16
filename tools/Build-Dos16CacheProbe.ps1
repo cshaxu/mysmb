@@ -1,7 +1,8 @@
 param(
     [Parameter(Mandatory=$true)][string]$ProductDirectory,
     [Parameter(Mandatory=$true)][string]$OutputDirectory,
-    [switch]$LinkOnly
+    [switch]$LinkOnly,
+    [switch]$Benchmark
 )
 $ErrorActionPreference='Stop'
 $repository=Split-Path -Parent $PSScriptRoot
@@ -32,7 +33,7 @@ try {
         # LINK consumes these libraries in its object field. Remove the old
         # root module rather than relying on lazy archive extraction.
         $removed=$false
-        foreach($group in Get-ChildItem -Filter 'smbgrp*.lib') {
+        if(!$Benchmark){foreach($group in Get-ChildItem -Filter 'smbgrp*.lib') {
             & (Join-Path $repository 'tools/dos16/lib16.exe') /nologo ($group.Name+',members.txt')
             if($LASTEXITCODE){throw 'Unable to inspect product archive.'}
             if((Get-Content members.txt -Raw) -match 'kvm_platform_dos16_dos16_root') {
@@ -40,11 +41,18 @@ try {
                 if($LASTEXITCODE){throw 'Unable to remove replaced root module.'}
                 $removed=$true
             }
-        }
-        if(!$removed){throw 'Product root archive member was not found.'}
+        }}
+        if(!$Benchmark -and !$removed){throw 'Product root archive member was not found.'}
         $flags=@('/nologo','/AL','/Gs','/W3','/D','MYSMB_DOS16_TARGET','/D','MYGAMES_DOS16_TARGET',
             '/I',$include,'/I',(Join-Path $repository 'src/lib'),'/I',(Join-Path $repository 'src/app-mario'),
             '/I',(Join-Path $repository 'src/app-mario/kvm'))
+        if($Benchmark) {
+            & $compiler @flags /D MYSMB_LOCAL_TITLE /I (Join-Path $product 'local-rom') /c /Foprobe.obj (Join-Path $repository 'test/app-mario/kvm/platform/dos16/cache_factorial_probe.c')
+            if($LASTEXITCODE){throw 'Factorial benchmark compilation failed.'}
+            & $python (Join-Path $repository 'tools/VerifyDos16StartupConsumers.py') probe.obj
+            if($LASTEXITCODE){throw 'Unsupported benchmark startup consumer.'}
+            $replacement='probe.obj+'
+        } else {
         & $compiler @flags /c /Foprobe.obj (Join-Path $repository 'test/app-mario/kvm/platform/dos16/cache_allocation_probe.c')
         if($LASTEXITCODE){throw 'Probe compilation failed.'}
         & $compiler @flags /D main=cache_product_main /D mysmb_dos16_root_step=cache_observed_step /D MYSMB_LOCAL_TITLE /I (Join-Path $product 'local-rom') /c /Foentry.obj (Join-Path $repository 'src/app-mario/kvm/platform/dos16/main_dos16.c')
@@ -53,8 +61,10 @@ try {
         if($LASTEXITCODE){throw 'Observed root compilation failed.'}
         & $python (Join-Path $repository 'tools/VerifyDos16StartupConsumers.py') probe.obj entry.obj root.obj
         if($LASTEXITCODE){throw 'Probe introduced an unsupported startup vector consumer.'}
+        $replacement="probe.obj+`nentry.obj+`nroot.obj+"
+        }
         $rsp=Get-Content -LiteralPath (Join-Path $product 'mysmb-dos16.rsp') -Raw
-        $rsp=$rsp.Replace('kvm_platform_dos16_main_dos16.c+',"probe.obj+`nentry.obj+`nroot.obj+")
+        $rsp=$rsp.Replace('kvm_platform_dos16_main_dos16.c+',$replacement)
         $rsp | Set-Content -Encoding ascii probe.rsp
     } else {
         & $linker /nologo /NOE /NOD /SEGMENTS:2048 '@probe.rsp'

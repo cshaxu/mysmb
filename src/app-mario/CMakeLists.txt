@@ -28,6 +28,8 @@ set(MYSMB_DOSBOX_EXECUTABLE "" CACHE FILEPATH "Installed DOSBox for explicit hos
 set(MYSMB_DOSBOX_CONFIG "" CACHE FILEPATH "Unmodified owner DOSBox configuration")
 add_test(NAME mysmb.dos16-cache-receipt COMMAND ${Python3_EXECUTABLE}
     "${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/dos16/test_cache_receipt.py")
+add_test(NAME mysmb.dos16-cache-matrix COMMAND ${Python3_EXECUTABLE}
+    "${CMAKE_SOURCE_DIR}/test/app-mario/kvm/platform/dos16/test_cache_matrix.py")
 if(WIN32)
     add_custom_target(mysmb_dos16_cache_integration
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
@@ -45,6 +47,21 @@ if(WIN32)
             -DosBoxConfiguration "${MYSMB_DOSBOX_CONFIG}"
         COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/VerifyDos16CacheReceipt.py"
             "${CMAKE_BINARY_DIR}/dos16-cache-probe"
+        USES_TERMINAL VERBATIM)
+    add_custom_target(mysmb_dos16_cache_matrix_integration
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_SOURCE_DIR}/tools/Build-Dos16CacheProbe.ps1"
+            -ProductDirectory "${MYSMB_CACHE_PRODUCT_DIR}"
+            -OutputDirectory "${CMAKE_BINARY_DIR}/dos16-cache-matrix-probe" -Benchmark
+        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
+            "${CMAKE_SOURCE_DIR}/tools/Build-Dos16CacheProbe.ps1"
+            -ProductDirectory "${MYSMB_CACHE_PRODUCT_DIR}"
+            -OutputDirectory "${CMAKE_BINARY_DIR}/dos16-cache-matrix-probe" -Benchmark -LinkOnly
+        COMMAND ${Python3_EXECUTABLE} "${CMAKE_SOURCE_DIR}/tools/MeasureDos16CacheMatrix.py"
+            --probe "${CMAKE_BINARY_DIR}/dos16-cache-matrix-probe/mysmb-dos16.exe"
+            --dosbox "${MYSMB_DOSBOX_EXECUTABLE}"
+            --configuration "${MYSMB_DOSBOX_CONFIG}"
+            --output "${CMAKE_BINARY_DIR}/dos16-cache-matrix"
         USES_TERMINAL VERBATIM)
 endif()
 

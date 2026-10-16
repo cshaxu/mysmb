@@ -818,4 +818,4 @@ presenter probe remains 267,964 compact ticks versus 48,934 RAM-composition
 ticks; it is not an end-to-end performance-parity claim.  No ROM node, control
 edge, shared game, shared PPU, text, or Win32 behavior changed.  Actual runtime
 allocation receipts and a matched whole-route ABD-versus-ABCD cost comparison
-are deferred to [DOS16 RAM presenter memory-tier qualification](dos16-ram-presenter-memory-tiers.md).
+are recorded in [DOS16 RAM presenter memory-tier qualification](../../history/M3-T46-dos16-ram-presenter-memory-tiers.md).

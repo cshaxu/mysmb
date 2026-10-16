@@ -11,6 +11,14 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T46 - DOS16 cache allocation and factorial timing
+
+Scope/expected/actual[],new0;historical1992/1992,retained1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81) unchanged. Actual allocation,
+required-failure/optional retention/cleanup and12profile/20pair finite output
+comparison pass; no translated logic change or whole-game certificate.
+[Results and limits](../history/M3-T46-dos16-ram-presenter-memory-tiers.md#s2-p1-closure-and-coordinator-review).
+
 ## M3 T28 S5 - exclusive presenter storage and lifetime decisions
 
 Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and

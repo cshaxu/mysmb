@@ -37,3 +37,32 @@ required-cache exit, optional-cache retention, and cleanup boundaries. Neither
 proves ROM semantics, exact PPU pixels or performance; those have separate
 owners. Report the diagnostic PSP separately from the original MZ loader bound
 and from root-owned live allocation bytes. Never equate EXE size to DOS usage.
+
+cache_factorial_probe.c is a separate diagnostic composition root, linked to
+the original optimized game/PPU/device objects. It requests exactly the selected
+A/B/C/D buffers; C requires B. The production ABD-required/C-optional policy
+is unchanged. Without D it submits bounded16-row bands; with D it uses the
+current full RAM compositor and screen publication. Thus a D comparison
+measures these two complete output paths, not an isolated passive allocation.
+
+The named mysmb_dos16_cache_matrix_integration target uses the same host
+configuration variables above. Equivalent manual commands are
+Build-Dos16CacheProbe.ps1 -Benchmark, then -Benchmark -LinkOnly, followed by
+MeasureDos16CacheMatrix.py --probe <diagnostic-exe> --dosbox <installed-exe>
+--configuration <owner-config> --output <ignored-build-directory>.
+The diagnostic and matrix tools never publish product executables.
+
+The full matrix runs12valid profiles three times. Each run warms8title and
+8gameplay frames and measures the next8of each phase. Preparation, composition
+and publication are timed with the original PIT clock; file dumping, startup,
+logical game/audio ticks and pacing are outside the measured kernels.
+Full palette/original RAM/final VGA streams must match byte-for-byte across
+all36runs. Protected streams stay below build, with a48MiB total matrix budget
+and180second per-run timeout. This finite route is not a ROM certificate or
+an end-to-end playable-frame-rate measurement.
+
+Clock reads have measurable cost. Reports retain both raw and calibrated
+totals; band submission has more timer boundaries than full-screen submission.
+Small D margins within that difference cannot establish a real speedup.
+test_cache_matrix.py owns the valid-pair universe, signed marginal arithmetic,
+paired-repeat aggregation and neutral labels; it uses invented timing records.

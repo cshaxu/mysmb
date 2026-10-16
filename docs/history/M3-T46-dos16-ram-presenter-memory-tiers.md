@@ -1,0 +1,440 @@
+# M3 T46: DOS16 RAM presenter memory-tier qualification
+
+## Objective
+
+Qualify the accepted DOS16 RAM-composition presenter on real allocation tiers
+without changing the translated game, shared PPU decisions, or final pixels.
+The product policy is fixed: D/A/B must exist for graphical presentation, and
+C is optional.
+
+| Tier | Storage | Bytes | Policy |
+| --- | --- | ---: | --- |
+| D | Final 256-by-240 RAM screen | 61,440 | required |
+| A | Decoded CHR cache | 8,192 | required |
+| B | Packed two-nametable background | 63,488 | required |
+| C | Byte-background upgrade | 61,440 | optional |
+
+The derived presentation allocation is 133,120bytes (130 KiB) for ABD and194,560bytes (190 KiB)
+for ABCD.  The candidate must report actual DOS allocation receipts instead of
+claiming a universal conventional-memory threshold from estimates.
+
+## Scope
+
+- `src/app-mario/kvm/platform/dos16` owns cache assembly and measurement;
+  `src/lib/dos16` supplies neutral DOS allocation/video/timing mechanisms.
+- Mirrored fixtures under `test/app-mario/kvm/platform/dos16`; generated
+  probes, listings, ROM-derived products and logs remain under ignored build.
+- Existing exact PPU byte oracle, actual DOS16 link, and ignored DOSBox probes.
+- The same warmed graphical route with pacing waits excluded from cost figures.
+
+## Non-goals
+
+- No core, ROM, shared PPU, input, audio, Win32, text, DOS4GW, emulator
+  configuration, or extra full-frame cache.
+- No changed allocation policy or hidden compact-presenter fallback.
+
+## Planned S tasks
+
+### S1 — runtime allocation receipt
+
+Record whether D, A, B and C were actually retained across the admitted DOS16
+launch configurations.  Verify that a missing required D/A/B follows the clean
+exit path and that C failure retains the ABD presenter.
+
+### S2 — matched memory-tier route comparison
+
+Measure the same warmed title and gameplay route under all12valid cache profiles, excluding
+pacing waits and recording logical ticks, submitted frames, pixels and bytes.
+Report whether the measured benefit justifies its additional61,440bytes.
+Keep C optional under the accepted policy; any policy change requires a
+separate explicit owner decision.
+
+## Acceptance
+
+All measured profiles must produce byte-identical final PPU output, link and launch through the
+existing DOS16 route, and preserve the owner-approved D/A/B-required rule.
+The resulting receipt states measured cost, allocation outcome and the chosen
+C policy; it does not make a NESticle-parity claim.
+
+## Admission and bounded execution
+
+Owner selects queue position3 on2026-10-16. Allocate M3 T46 after the highest
+existing M3 T45; this is a new task, not a continuation of closed T19.
+Baseline4b962237, clean workspace. S1 is admitted; S2 is planned, not active.
+Remove only this candidate from QUEUE; other candidates preserve order.
+
+S1 first reads the actual root allocation path and records D/A/B/C pointer
+retention, near/far provenance, requested bytes, failed stage, cleanup and
+DOS free/largest-block readings. Current source requests D first, A via near
+then far allocation, B after A, and C only after D/A/B. Missing required
+storage requests clean exit; no compact fallback is accepted. This static
+reading is not a runtime pass. The preflight fit test and real allocation
+must both be observed; a fit estimate does not prove retained storage.
+
+Use the original tools/dos16 compiler/linker, optimized existing build profile,
+and unchanged DOSBox configuration. Test-only bounded allocation denial may
+force D/A/B/C failure, but must be labelled fault injection, not a measured
+natural memory tier. Distinguish loader minimum/reserve, dynamic live bytes,
+conventional free memory and fragmentation. Do not publish a universal DOS
+startup threshold from EXE size or injected cases.
+
+S1 acceptance matrix: natural launch allocation receipt; denied D; denied A
+including near and far attempts; denied B; denied C retaining ABD; successful
+ABCD when naturally available; cleanup/no leaked owned blocks for each case.
+Expected changes:3-6test/tool files,150-300lines; no production policy change.
+An actual production defect requires a visible scope amendment before repair.
+
+S2 compares title and a fixed gameplay input route after identical warmup:
+logical ticks, composed/submitted frames, exact final pixel bytes, composed
+bytes, composition/output CPU cost excluding waits, and total elapsed time
+including waits reported separately. ABD vs ABCD must use the same compiler,
+DOSBox cycles/device settings, input/audio/pacing and renderer; no NESticle
+performance-parity claim. Record repeat count and spread, not only one mean.
+
+ROM scope[], expectedMatches[], actualMatches[] for this task: no translated
+logic modification or new certification credit. Historical1992/1992,
+retained1991/1992nodes and4260/4261feasible controls(4342raw,81infeasible)
+remain unchanged. Owner-local ROM supplies build input only; no ROM bytes,
+third-party code or generated products enter commits. Separate exact-pixel
+operational proof from unperformed original-ROM logic certification.
+
+Each S reports its bounded result before the next is admitted. Product changes
+refresh the required local executables; test/governance-only commits do not
+replace accepted products with diagnostic builds. Performance work does not
+reopen unrelated game audit or Mine functionality.
+
+## S1 runtime checkpoint
+
+The optimized original DOS product builds185objects and links216segments.
+Its MZ/map receipt reports388496minimum and392592maximum loaded image bytes,
+including a4096-byte near reserve; it excludes the PSP and all dynamic heaps.
+The diagnostic probe links217segments and reports395152minimum/399248maximum
+loaded bytes. Its measured live PSP block is399920bytes. These are separate
+figures: the diagnostic is larger and is not an exact production live census.
+
+Actual DOSBox uses the unmodified owner configuration (svga_s3, core=auto,
+cycles=auto, SB16/220/7/1); only mounting/commands are supplemented. SDL dummy
+host drivers avoid desktop/audio interference without changing emulated devices.
+
+| Case | Retained D/A/B/C | Root exit before diagnostic request | Owned live blocks after shutdown |
+| --- | --- | --- | --- |
+| Natural |1/1/1/1|0|0|
+| Denied D allocation |0/1/1/0|1|0|
+| Denied both A allocators |1/0/0/0|1|0|
+| Denied B allocation |1/1/0/0|1|0|
+| Denied C allocation |1/1/1/0|0|0|
+| Denied near A only |1/1/1/1, far A retained|0|0|
+| Denied D preflight |0/1/1/0|1|0|
+| Denied B preflight |1/1/0/0|1|0|
+| Denied C preflight |1/1/1/0|0|0|
+| Natural64KiB DOS resident pressure |1/1/1/0, no denial|0|0|
+
+The pressure helper frees its copied environment and keeps65536bytes including
+PSP plus a16-byte DOS MCB; measured initial free memory drops249056to183504.
+Normal largest-block preflights are219264(D),149568(B),86048(C). With pressure,
+they become153712,84016,20496; C is naturally skipped because20496<61440.
+Near A cannot fit in this4096-reserve profile, so real successful A uses the
+far heap. Do not describe this as successful near-A allocation coverage.
+
+Root-owned peak requested bytes are220140(ABCD) and158700(ABD):194560or133120
+cache bytes plus25580runtime/text/snapshot workspace. Allocation headers,
+alignment, device DMA and CRT pools are additional. Normal diagnostic MCB free
+bytes before/during/after root shutdown are249056/24640/28736; pressured ABD
+is183504/20560/24656. Root free operations leave no live tracked pointers,
+but the CRT may retain free pools until DOS process exit; the after-shutdown
+MCB value is not proof of a leak or of complete return to DOS while still live.
+No universal real-machine conventional-memory threshold or timing is claimed.
+
+The initial probe incorrectly converted a null near pointer to a far pointer,
+creating a phantom DS:0000 allocation receipt. The probe now checks near null
+before conversion; the complete corrected matrix passes. A separate DOSBox
+batch issue created empty failure files before evaluating redirection; the
+runner now uses a conditional branch before file creation. Neither defect was
+in production code. The deep CMake probe path also exposed the old compiler's
+temporary-name length limit; the existing short build/tmp16 convention is used.
+
+The named non-default mysmb_dos16_cache_integration target contains the same
+compile/link/runtime/receipt commands. Its initial deep-temp compile failed;
+the corrected command sequence passes. The original loader receipt contract
+passes7neutral MZ/map cases and10loader-bound cases plus idempotence. Receipt
+parser unit checks pass3tests including six contradiction variants. Native
+full regression is still running at this checkpoint; no result is inferred.
+
+All test/probe source is project-authored; no third-party code import. The DOS
+COM pressure helper is generated from its documented17-byte instruction stream
+under ignored build, not installed on the host. No production behavior or
+asset publication changes. Actual harness scope is larger than the initial
+estimate because real MCB census, preflight/far/near failures, pressure and
+reproducible host-target integration are all needed for the admitted matrix.
+S2 still owns pixels and matched performance; S1 adds no ROM-node credit.
+
+## Owner S2 factorial amendment
+
+Owner clarifies that independent marginal benefit and interactions are the
+objective, not only ABD versus ABCD. With C requiring B, valid masks (A=1,B=2,
+C=4,D=8) are0,1,2,3,6,7,8,9,10,11,14,15:12profiles, not16independent profiles.
+
+| Added cache | Fixed context | Marginal pairs |
+| --- | --- | ---: |
+| A | B/C=00,10,11; each with D=0or1 |6|
+| B | C=0; each A/D combination |4|
+| C | B=1; each A/D combination |4|
+| D | A=0or1; B/C=00,10,11 |6|
+
+The20pairs are computed from matched measurements of those12profiles. Report
+per-frame composition/preparation, physical publish and total CPU cost, spread
+and signed saved milliseconds, including zero/negative benefit; marginal
+memory cost and milliseconds saved per KiB are descriptive, not new policy.
+Repeat the same warmed title and active-gameplay source-input route, with exact
+final pixels and original RAM outputs checked across profiles. Timing excludes
+pacing/file-dump waits; elapsed run time is separately labelled. Calibration
+must state whether video is forced for every measured logical frame; it must
+not describe a controlled kernel cost as natural gameplay FPS.
+
+Some diagnostic profiles intentionally lack production-required A/B/D. Use a
+separate bounded test composition with existing unchanged public game/PPU/
+DOS device APIs, not a permissive production-root fallback or a changed product
+allocation policy. D denotes full-screen RAM composition/publication; D=0 uses
+the equivalent bounded row/band output. Report this enabled-path difference
+rather than pretending D is a passive unused buffer. Bind the existing shared
+nibble/slot accelerators identically for all applicable profiles.
+
+### S1 P2 closure and review
+
+S1 runtime and ownership matrix is closed after9natural/injected cases plus
+one natural64KiB pressure case. Corrected named host target passes end to end;
+its first missing Get-FileHash PowerShell-module failure is resolved with a
+bounded .NET SHA256 call. Configuration hash is stable before/after every run.
+Native default suite315/315 plus newly registered receipt CTest1/1 pass after
+final configuration; parser has3unit methods/six contradictory evidence cases.
+Existing memory receipt17cases plus idempotence pass. No product C or device
+logic changed; no diagnostic replaces an accepted local EXE. Original DOS
+product build and217segment probe qualify16-bit ABI; x86 product code is
+unchanged and no fresh x86 suite is claimed for this test-only work.
+
+Single-person executor/coordinator reviewed old probe failures, bounded COM
+memory pressure, actual near/far/frees, request/MCB/loader distinctions, source
+policy and all diffs. Exact expected/actual node sets[]; no transfers or credit.
+S2 has not yet run. Its expanded20pair objective is owner-approved above.
+
+### S2 admission
+
+Coordinator admits S2 from9701a9d1 under the owner's start and factorial
+instructions. Diagnostic-only composition calls the unchanged public native
+core and PPU APIs; it can bind B without A and D without A/B, independently
+of production root admission. It uses the same game startup and source inputs,
+standard audio submission and device open/close. Rendering only the matched
+warmup/sample frames is an explicit benchmark schedule, not a gameplay frame
+skip policy. D=0 uses4096-byte bounded rows; D=1 uses existing RAM compositor
+and complete-screen publication. Output comparison reads the completed VGA
+surface plus palette and original RAM, outside timed kernels. Three repeats,
+eight measured title and eight gameplay frames per run; raw protected stream
+budget48MiB, per-run180second budget. Report clock calibration and both raw
+and adjusted costs because row-path timestamps have more boundaries. No extra
+full-screen measurement cache or production change. S1 generated evidence is
+retained for pending task acceptance; S2 runtime outputs stay separately scoped.
+
+## S2 P1 closure and coordinator review
+
+All12valid masks completed three repeats:36successful launches,16measured
+frames per launch,576compared frame records (16distinct route positions),
+and1152submitted frames including warmup. All final61440VGA slot pixels,
+32active palette entries and2048original RAM bytes match byte-for-byte across
+all profiles/repeats. All runs end at logical tick309. Protected streams total
+36587520bytes, within48MiB. No emulator CPU/memory/device setting changed;
+configuration SHA256 remains
+0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917.
+
+The independent diagnostic main uses the same original optimized product
+objects. It links217segments, largest32768bytes, DGROUP53968bytes; diagnostic
+MZ bounds are397664minimum/401760maximum including4096near reserve. These are
+not production live-memory numbers. No product C implementation or publication
+changed. Accepted local executables remain unchanged; no diagnostic replaces
+any Mario or Mine artifact. No additional x86 execution is claimed.
+
+Each phase reports the median of three repeat means, each mean covering eight
+warmed frames. PIT frequency1193182Hz; minimum of32clock pairs calibrates
+98-99ticks per boundary. D=0 uses32timed kernels per frame (frame preparation,
+palette and15compose/publish pairs); D=1 uses4. Thus calibration removes up to
+2.655ms versus0.332ms. Repeat means have no observed spread under this
+deterministic emulation clock; this is not real-hardware statistical certainty.
+Raw and corrected margins are retained. No per-frame
+logical game/audio tick, startup, file dump or pacing wait is included in the
+rendering costs. Approximate batch-launch-to-DONE filesystem intervals are
+reported separately; these are not stopwatch samples or gameplay FPS.
+
+The strongest measured production-policy comparison is ABD to ABCD:
+C costs60KiB and saves19.895ms/gameplay render (61.265to41.370ms), about32.5%.
+A with BD saves1.731ms for8KiB; B with AD saves186.764ms for62KiB. Benefits are
+context-dependent and cannot be added from unrelated baselines. Without B,
+A saves about286.6ms/gameplay render; with B/C it saves only about1.7to1.9ms.
+
+D compares complete output algorithms, not merely buffer allocation. With
+none/A/B/AB, corrected D costs about2.1to2.4ms but raw differences are near zero:
+those small margins are inconclusive because clock-boundary counts differ.
+With BC or ABC, the existing row path is about17ms faster than the D-enabled
+compositor even before choosing a production policy. This identifies a future
+full-compositor/byte-row integration opportunity; it does not qualify removal
+of required D or the retained-VGA production fallback. Static source follow-up
+locates the boundary: ppu/frame.c groups background rows across the fixed HUD
+and scroll spans; platform/dos16/slot_copy.c rejects groups over16rows. The
+D-enabled compositor requests240rows at once, so groups over16are rejected
+and fall back to the exact slower row loop. The16-row diagnostic path stays
+within the accelerator contract. Splitting that full-frame request into
+bounded groups is a concrete future candidate, not a measured product fix in
+this task. No source or binary patch was made to obtain these numbers.
+ABD-required/C-optional
+remains unchanged. This task measures finite title/early-game routes, not all
+areas, natural frame cadence, actual25MHz hardware or NESticle parity.
+
+The named non-default mysmb_dos16_cache_matrix_integration target contains
+compile, link and runtime commands. This qualification ran the same commands
+manually with bounded build-local paths, rather than claiming an invocation
+of that complete named target. Full current native suite317/317 passes; the
+factorial arithmetic/receipt owner has4unit methods, including six malformed
+receipt variants. Exact-output integration owns the real game/PPU/device join;
+S1 retains actual allocator/failure/cleanup ownership. No duplicate production
+assertion or new production branch was introduced. Postprocessing verifies
+all12profiles, three paired repeats, all20pairs and timing/raw-stream receipts
+before declaring completion.
+
+Single-person executor/coordinator review checked the fixed20pair universe,
+cache dependency, requested allocation failures, matched input/warmup,
+original optimized bindings, band/full-path distinction, timing boundaries,
+raw/calibrated sensitivity, resource containment, test ownership and source
+policy. The code/build-tool diff is diagnostic-only. Both S tasks and T46 are
+closed for owner acceptance. Generated S1/S2 evidence remains only until that
+acceptance, then is removed under the cleanup rule. Other queued candidates
+retain their order; no next T is admitted automatically.
+
+ROM scope/expected/actual[],completed0,deferred0,transferred0. Historical
+1992/1992,retained1991/1992nodes and4260/4261feasible controls(raw4342,
+infeasible81) unchanged. No current-build whole-game certificate is issued.
+
+## S2 measured matrix
+
+Controlled warmed rendering costs, milliseconds per frame; not gameplay FPS.
+PIT boundary overhead is calibrated. File I/O, startup and pacing are excluded.
+
+| Profile | Cache KiB | Title total ms | Gameplay total ms |
+| --- | ---: | ---: | ---: |
+| none | 0 | 532.094 | 532.345 |
+| A | 8 | 300.766 | 245.680 |
+| B | 62 | 74.932 | 60.944 |
+| AB | 70 | 73.162 | 59.026 |
+| BC | 122 | 25.778 | 26.042 |
+| ABC | 130 | 23.976 | 24.265 |
+| D | 60 | 534.222 | 534.622 |
+| AD | 68 | 302.988 | 248.029 |
+| BD | 122 | 76.894 | 62.996 |
+| ABD | 130 | 75.171 | 61.265 |
+| BCD | 182 | 42.587 | 43.064 |
+| ABCD | 190 | 40.965 | 41.370 |
+
+Positive savings mean faster; negative savings mean slower.
+
+| Added | Context | Added KiB | Title saved ms | Gameplay saved ms | Gameplay ms/KiB |
+| --- | --- | ---: | ---: | ---: | ---: |
+| A | none | 8 | +231.328 | +286.665 | +35.8331 |
+| A | B | 8 | +1.770 | +1.918 | +0.2398 |
+| A | BC | 8 | +1.802 | +1.777 | +0.2222 |
+| A | D | 8 | +231.234 | +286.593 | +35.8242 |
+| A | BD | 8 | +1.723 | +1.731 | +0.2164 |
+| A | BCD | 8 | +1.622 | +1.695 | +0.2118 |
+| B | none | 62 | +457.162 | +471.401 | +7.6032 |
+| B | A | 62 | +227.604 | +186.654 | +3.0105 |
+| B | D | 62 | +457.329 | +471.626 | +7.6069 |
+| B | AD | 62 | +227.817 | +186.764 | +3.0123 |
+| C | B | 60 | +49.155 | +34.902 | +0.5817 |
+| C | AB | 60 | +49.186 | +34.761 | +0.5794 |
+| C | BD | 60 | +34.307 | +19.932 | +0.3322 |
+| C | ABD | 60 | +34.206 | +19.895 | +0.3316 |
+| D | none | 60 | -2.128 | -2.278 | -0.0380 |
+| D | A | 60 | -2.223 | -2.349 | -0.0392 |
+| D | B | 60 | -1.962 | -2.052 | -0.0342 |
+| D | AB | 60 | -2.009 | -2.239 | -0.0373 |
+| D | BC | 60 | -16.809 | -17.022 | -0.2837 |
+| D | ABC | 60 | -16.989 | -17.105 | -0.2851 |
+
+## Phase costs and repeat spread
+
+Three repeats; each phase is the mean of eight measured frames. Ranges below are repeat means.
+
+| Profile | Phase | Prepare ms | Compose ms | Publish ms | Total range ms | Raw total ms |
+| --- | --- | ---: | ---: | ---: | --- | ---: |
+| none | title | 0.218 | 525.392 | 6.484 | 532.094 to 532.094 | 534.749 |
+| none | gameplay | 0.218 | 525.641 | 6.486 | 532.345 to 532.345 | 535.000 |
+| A | title | 0.222 | 294.059 | 6.485 | 300.766 to 300.766 | 303.421 |
+| A | gameplay | 0.222 | 238.972 | 6.486 | 245.680 to 245.680 | 248.335 |
+| B | title | 0.481 | 67.966 | 6.485 | 74.932 to 74.932 | 77.587 |
+| B | gameplay | 0.570 | 53.889 | 6.485 | 60.944 to 60.944 | 63.599 |
+| AB | title | 0.472 | 66.205 | 6.484 | 73.162 to 73.162 | 75.817 |
+| AB | gameplay | 0.481 | 52.058 | 6.487 | 59.026 to 59.026 | 61.681 |
+| BC | title | 0.542 | 18.750 | 6.486 | 25.778 to 25.778 | 28.433 |
+| BC | gameplay | 0.551 | 19.005 | 6.487 | 26.042 to 26.042 | 28.697 |
+| ABC | title | 0.474 | 17.003 | 6.498 | 23.976 to 23.976 | 26.604 |
+| ABC | gameplay | 0.575 | 17.192 | 6.498 | 24.265 to 24.265 | 26.893 |
+| D | title | 0.218 | 528.569 | 5.435 | 534.222 to 534.222 | 534.554 |
+| D | gameplay | 0.218 | 528.970 | 5.435 | 534.622 to 534.622 | 534.954 |
+| AD | title | 0.222 | 297.332 | 5.434 | 302.988 to 302.988 | 303.320 |
+| AD | gameplay | 0.222 | 242.372 | 5.435 | 248.029 to 248.029 | 248.361 |
+| BD | title | 0.534 | 70.926 | 5.434 | 76.894 to 76.894 | 77.226 |
+| BD | gameplay | 0.570 | 56.991 | 5.435 | 62.996 to 62.996 | 63.328 |
+| ABD | title | 0.476 | 69.259 | 5.435 | 75.171 to 75.171 | 75.503 |
+| ABD | gameplay | 0.588 | 55.242 | 5.435 | 61.265 to 61.265 | 61.597 |
+| BCD | title | 0.448 | 36.703 | 5.436 | 42.587 to 42.587 | 42.915 |
+| BCD | gameplay | 0.524 | 37.104 | 5.436 | 43.064 to 43.064 | 43.393 |
+| ABCD | title | 0.497 | 35.034 | 5.434 | 40.965 to 40.965 | 41.297 |
+| ABCD | gameplay | 0.587 | 35.349 | 5.434 | 41.370 to 41.370 | 41.702 |
+
+## Paired timing sensitivity
+
+D changes the complete composition/publication path. Its margins are not passive-buffer costs.
+Band output has more PIT boundaries. Small raw/calibrated sign changes are inconclusive.
+
+| Added | Context | Phase | Saved range ms | Raw saved ms |
+| --- | --- | --- | --- | ---: |
+| A | none | title | +231.328 to +231.328 | +231.328 |
+| A | none | gameplay | +286.665 to +286.665 | +286.665 |
+| A | B | title | +1.770 to +1.770 | +1.770 |
+| A | B | gameplay | +1.918 to +1.918 | +1.918 |
+| A | BC | title | +1.802 to +1.802 | +1.828 |
+| A | BC | gameplay | +1.777 to +1.777 | +1.804 |
+| A | D | title | +231.234 to +231.234 | +231.234 |
+| A | D | gameplay | +286.593 to +286.593 | +286.593 |
+| A | BD | title | +1.723 to +1.723 | +1.723 |
+| A | BD | gameplay | +1.731 to +1.731 | +1.731 |
+| A | BCD | title | +1.622 to +1.622 | +1.618 |
+| A | BCD | gameplay | +1.695 to +1.695 | +1.691 |
+| B | none | title | +457.162 to +457.162 | +457.162 |
+| B | none | gameplay | +471.401 to +471.401 | +471.401 |
+| B | A | title | +227.604 to +227.604 | +227.604 |
+| B | A | gameplay | +186.654 to +186.654 | +186.654 |
+| B | D | title | +457.329 to +457.329 | +457.329 |
+| B | D | gameplay | +471.626 to +471.626 | +471.626 |
+| B | AD | title | +227.817 to +227.817 | +227.817 |
+| B | AD | gameplay | +186.764 to +186.764 | +186.764 |
+| C | B | title | +49.155 to +49.155 | +49.155 |
+| C | B | gameplay | +34.902 to +34.902 | +34.902 |
+| C | AB | title | +49.186 to +49.186 | +49.213 |
+| C | AB | gameplay | +34.761 to +34.761 | +34.788 |
+| C | BD | title | +34.307 to +34.307 | +34.311 |
+| C | BD | gameplay | +19.932 to +19.932 | +19.935 |
+| C | ABD | title | +34.206 to +34.206 | +34.206 |
+| C | ABD | gameplay | +19.895 to +19.895 | +19.895 |
+| D | none | title | -2.128 to -2.128 | +0.195 |
+| D | none | gameplay | -2.278 to -2.278 | +0.046 |
+| D | A | title | -2.223 to -2.223 | +0.101 |
+| D | A | gameplay | -2.349 to -2.349 | -0.026 |
+| D | B | title | -1.962 to -1.962 | +0.362 |
+| D | B | gameplay | -2.052 to -2.052 | +0.271 |
+| D | AB | title | -2.009 to -2.009 | +0.314 |
+| D | AB | gameplay | -2.239 to -2.239 | +0.084 |
+| D | BC | title | -16.809 to -16.809 | -14.482 |
+| D | BC | gameplay | -17.022 to -17.022 | -14.696 |
+| D | ABC | title | -16.989 to -16.989 | -14.692 |
+| D | ABC | gameplay | -17.105 to -17.105 | -14.809 |
+
+Approximate batch-launch-to-DONE intervals: 17.484 to 32.737 seconds.
+These are filesystem timestamp intervals, not stopwatch samples or per-frame costs.
+They include startup, game/audio work, warmup and file output; no pacing wait was requested.
