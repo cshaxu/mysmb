@@ -620,3 +620,208 @@ Generated active-task work is removed after owner acceptance.
 Scope/expected/actual[],new0,deferred0,transferred0. Historical1992/1992,
 retained1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81)
 unchanged. No whole-game current-build certificate is issued.
+
+## S4 owner-requested current-build ranking
+
+Owner asks every valid cache combination ordered by speed and memory value.
+Admit continuation T46 S4 (audit/evidence only) from1e5e3163 to avoid mixing
+S2 pre-repair numbers with S3's three-profile correction. Product/test/tool
+source and accepted executables remain unchanged. Existing fixed diagnostic,
+unchanged configuration,12profiles and three repeats,16measured frames/run,
+48MiB raw-output budget and180seconds/run. Protected output below ignored
+build/t46-s4; no third-party import or redistribution. Retain S3 current-build
+inputs until pending owner acceptance; delete all task evidence on acceptance.
+
+Publish calibrated and raw costs, ordering uncertainty from different timer
+boundaries, cache KiB, relative speed and diminishing benefit. Do not describe
+synthetic D=0 output as a qualified production fallback or assume ABCD fastest.
+No policy change, new resident allocation, code repair or ROM conformance credit.
+Exit: same-current-build full12profile/20pair receipts, byte-identical output,
+ranked report, scope/expected/actual[],gate/review/commit. No product rebuild is
+needed for an evidence-only P. Historical1992/1992,retained1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81) unchanged.
+
+## S4 P1 closure: ranked current-build cache results
+
+All12valid profiles run three times using the fixed S3 executable, not a mix
+of S2 pre-repair and S3 post-repair values.36launches/576frame records match
+byte-for-byte across active palette, original RAM and final VGA slots. There
+are16distinct source positions per repeat; this is finite route evidence,
+not all-input proof. All20marginal pairs are complete; protected stream bytes
+36587520remain below48MiB. Every run completes309logical ticks, within180seconds.
+Owner configuration hash remains
+0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917.
+Original optimized diagnostic/product bindings, slot accelerators, audio and
+scripted input remain unchanged. No production/test/tool source or EXE changed.
+
+Ranking below sorts calibrated gameplay render costs. Raw totals include PIT
+reads. Band and full-screen paths have different clock-boundary counts, so
+adjacent calibrated versus raw ranks can reverse. Do not infer a true speed
+winner between near-tied paths from this instrumentation. Repeat means are
+identical in this deterministic emulator profile, not a hardware confidence
+interval. Costs exclude game/audio ticks, startup, raw dumping and pacing;
+relative speed is rendering-kernel throughput only, not playable FPS.
+
+Cache bytes are requested cache payload only, not complete program memory.
+Saved ms per cache KiB means(no-cache calibrated cost minus combination cost)
+divided by its cache KiB; this is cumulative efficiency against one baseline,
+not the incremental value of each cache or an allocation priority rule.
+C requires B: twelve valid combinations, including none; four C-without-B
+combinations are invalid and omitted. D=0 uses diagnostic bounded-band output;
+it is not a qualified replacement for the mandatory production D presenter.
+
+| Rank | Profile | Cache KiB | Gameplay ms | Raw gameplay ms | Relative kernel speed | Saved ms per cache KiB |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: |
+| 1 | ABC | 130 | 24.285 | 26.914 | 21.92 | 3.908 |
+| 2 | ABCD | 190 | 25.746 | 26.078 | 20.68 | 2.666 |
+| 3 | BC | 122 | 26.063 | 28.718 | 20.43 | 4.150 |
+| 4 | BCD | 182 | 27.461 | 27.789 | 19.39 | 2.774 |
+| 5 | AB | 70 | 59.026 | 61.681 | 9.02 | 6.762 |
+| 6 | B | 62 | 60.944 | 63.599 | 8.73 | 7.603 |
+| 7 | ABD | 130 | 61.265 | 61.597 | 8.69 | 3.624 |
+| 8 | BD | 122 | 62.996 | 63.328 | 8.45 | 3.847 |
+| 9 | A | 8 | 245.680 | 248.335 | 2.17 | 35.833 |
+| 10 | AD | 68 | 248.029 | 248.361 | 2.15 | 4.181 |
+| 11 | none | 0 | 532.345 | 535.000 | 1.00 | - |
+| 12 | D | 60 | 534.622 | 534.954 | 1.00 | -0.038 |
+
+### Current-build full phase and marginal receipts
+
+Controlled warmed rendering costs, milliseconds per frame; not gameplay FPS.
+PIT boundary overhead is calibrated. File I/O, startup and pacing are excluded.
+
+| Profile | Cache KiB | Title total ms | Gameplay total ms |
+| --- | ---: | ---: | ---: |
+| none | 0 | 532.094 | 532.345 |
+| A | 8 | 300.766 | 245.680 |
+| B | 62 | 74.932 | 60.944 |
+| AB | 70 | 73.162 | 59.026 |
+| BC | 122 | 25.795 | 26.063 |
+| ABC | 130 | 23.988 | 24.285 |
+| D | 60 | 534.222 | 534.622 |
+| AD | 68 | 302.988 | 248.029 |
+| BD | 122 | 76.894 | 62.996 |
+| ABD | 130 | 75.171 | 61.265 |
+| BCD | 182 | 27.027 | 27.461 |
+| ABCD | 190 | 25.318 | 25.746 |
+
+Positive savings mean faster; negative savings mean slower.
+
+| Added | Context | Added KiB | Title saved ms | Gameplay saved ms | Gameplay ms/KiB |
+| --- | --- | ---: | ---: | ---: | ---: |
+| A | none | 8 | +231.328 | +286.665 | +35.8331 |
+| A | B | 8 | +1.770 | +1.918 | +0.2398 |
+| A | BC | 8 | +1.806 | +1.778 | +0.2222 |
+| A | D | 8 | +231.234 | +286.593 | +35.8242 |
+| A | BD | 8 | +1.723 | +1.731 | +0.2164 |
+| A | BCD | 8 | +1.709 | +1.715 | +0.2143 |
+| B | none | 62 | +457.162 | +471.401 | +7.6032 |
+| B | A | 62 | +227.604 | +186.654 | +3.0105 |
+| B | D | 62 | +457.329 | +471.626 | +7.6069 |
+| B | AD | 62 | +227.817 | +186.764 | +3.0123 |
+| C | B | 60 | +49.137 | +34.881 | +0.5814 |
+| C | AB | 60 | +49.174 | +34.740 | +0.5790 |
+| C | BD | 60 | +49.867 | +35.535 | +0.5923 |
+| C | ABD | 60 | +49.853 | +35.519 | +0.5920 |
+| D | none | 60 | -2.128 | -2.278 | -0.0380 |
+| D | A | 60 | -2.223 | -2.349 | -0.0392 |
+| D | B | 60 | -1.962 | -2.052 | -0.0342 |
+| D | AB | 60 | -2.009 | -2.239 | -0.0373 |
+| D | BC | 60 | -1.232 | -1.398 | -0.0233 |
+| D | ABC | 60 | -1.330 | -1.461 | -0.0243 |
+
+## Phase costs and repeat spread
+
+Three repeats; each phase is the mean of eight measured frames. Ranges below are repeat means.
+
+| Profile | Phase | Prepare ms | Compose ms | Publish ms | Total range ms | Raw total ms |
+| --- | --- | ---: | ---: | ---: | --- | ---: |
+| none | title | 0.218 | 525.392 | 6.484 | 532.094 to 532.094 | 534.749 |
+| none | gameplay | 0.218 | 525.641 | 6.486 | 532.345 to 532.345 | 535.000 |
+| A | title | 0.222 | 294.059 | 6.485 | 300.766 to 300.766 | 303.421 |
+| A | gameplay | 0.222 | 238.972 | 6.486 | 245.680 to 245.680 | 248.335 |
+| B | title | 0.481 | 67.966 | 6.485 | 74.932 to 74.932 | 77.587 |
+| B | gameplay | 0.570 | 53.889 | 6.485 | 60.944 to 60.944 | 63.599 |
+| AB | title | 0.472 | 66.205 | 6.484 | 73.162 to 73.162 | 75.817 |
+| AB | gameplay | 0.481 | 52.058 | 6.487 | 59.026 to 59.026 | 61.681 |
+| BC | title | 0.539 | 18.770 | 6.486 | 25.795 to 25.795 | 28.450 |
+| BC | gameplay | 0.551 | 19.025 | 6.487 | 26.063 to 26.063 | 28.718 |
+| ABC | title | 0.467 | 17.023 | 6.498 | 23.988 to 23.988 | 26.617 |
+| ABC | gameplay | 0.575 | 17.212 | 6.499 | 24.285 to 24.285 | 26.914 |
+| D | title | 0.218 | 528.569 | 5.435 | 534.222 to 534.222 | 534.554 |
+| D | gameplay | 0.218 | 528.970 | 5.435 | 534.622 to 534.622 | 534.954 |
+| AD | title | 0.222 | 297.332 | 5.434 | 302.988 to 302.988 | 303.320 |
+| AD | gameplay | 0.222 | 242.372 | 5.435 | 248.029 to 248.029 | 248.361 |
+| BD | title | 0.534 | 70.926 | 5.434 | 76.894 to 76.894 | 77.226 |
+| BD | gameplay | 0.570 | 56.991 | 5.435 | 62.996 to 62.996 | 63.328 |
+| ABD | title | 0.476 | 69.259 | 5.435 | 75.171 to 75.171 | 75.503 |
+| ABD | gameplay | 0.588 | 55.242 | 5.435 | 61.265 to 61.265 | 61.597 |
+| BCD | title | 0.517 | 21.074 | 5.436 | 27.027 to 27.027 | 27.356 |
+| BCD | gameplay | 0.545 | 21.479 | 5.437 | 27.461 to 27.461 | 27.789 |
+| ABCD | title | 0.477 | 19.406 | 5.436 | 25.318 to 25.318 | 25.650 |
+| ABCD | gameplay | 0.588 | 19.724 | 5.434 | 25.746 to 25.746 | 26.078 |
+
+## Paired timing sensitivity
+
+D changes the complete composition/publication path. Its margins are not passive-buffer costs.
+Band output has more PIT boundaries. Small raw/calibrated sign changes are inconclusive.
+
+| Added | Context | Phase | Saved range ms | Raw saved ms |
+| --- | --- | --- | --- | ---: |
+| A | none | title | +231.328 to +231.328 | +231.328 |
+| A | none | gameplay | +286.665 to +286.665 | +286.665 |
+| A | B | title | +1.770 to +1.770 | +1.770 |
+| A | B | gameplay | +1.918 to +1.918 | +1.918 |
+| A | BC | title | +1.806 to +1.806 | +1.833 |
+| A | BC | gameplay | +1.778 to +1.778 | +1.804 |
+| A | D | title | +231.234 to +231.234 | +231.234 |
+| A | D | gameplay | +286.593 to +286.593 | +286.593 |
+| A | BD | title | +1.723 to +1.723 | +1.723 |
+| A | BD | gameplay | +1.731 to +1.731 | +1.731 |
+| A | BCD | title | +1.709 to +1.709 | +1.706 |
+| A | BCD | gameplay | +1.715 to +1.715 | +1.711 |
+| B | none | title | +457.162 to +457.162 | +457.162 |
+| B | none | gameplay | +471.401 to +471.401 | +471.401 |
+| B | A | title | +227.604 to +227.604 | +227.604 |
+| B | A | gameplay | +186.654 to +186.654 | +186.654 |
+| B | D | title | +457.329 to +457.329 | +457.329 |
+| B | D | gameplay | +471.626 to +471.626 | +471.626 |
+| B | AD | title | +227.817 to +227.817 | +227.817 |
+| B | AD | gameplay | +186.764 to +186.764 | +186.764 |
+| C | B | title | +49.137 to +49.137 | +49.137 |
+| C | B | gameplay | +34.881 to +34.881 | +34.881 |
+| C | AB | title | +49.174 to +49.174 | +49.200 |
+| C | AB | gameplay | +34.740 to +34.740 | +34.767 |
+| C | BD | title | +49.867 to +49.867 | +49.870 |
+| C | BD | gameplay | +35.535 to +35.535 | +35.539 |
+| C | ABD | title | +49.853 to +49.853 | +49.853 |
+| C | ABD | gameplay | +35.519 to +35.519 | +35.519 |
+| D | none | title | -2.128 to -2.128 | +0.195 |
+| D | none | gameplay | -2.278 to -2.278 | +0.046 |
+| D | A | title | -2.223 to -2.223 | +0.101 |
+| D | A | gameplay | -2.349 to -2.349 | -0.026 |
+| D | B | title | -1.962 to -1.962 | +0.362 |
+| D | B | gameplay | -2.052 to -2.052 | +0.271 |
+| D | AB | title | -2.009 to -2.009 | +0.314 |
+| D | AB | gameplay | -2.239 to -2.239 | +0.084 |
+| D | BC | title | -1.232 to -1.232 | +1.094 |
+| D | BC | gameplay | -1.398 to -1.398 | +0.929 |
+| D | ABC | title | -1.330 to -1.330 | +0.967 |
+| D | ABC | gameplay | -1.461 to -1.461 | +0.836 |
+### S4 review and closure
+
+Single-person executor/coordinator review checks12mask identities, three paired
+repeats,20marginal pairs, same executable/config and complete output equality.
+Old tables are retained explicitly as historical S2/S3 receipts; this S4 table
+owns the current all-profile ranking. No product policy decision is inferred
+from diagnostic speed. Retain ABD required/C optional pending an independently
+qualified replacement; accepted local artifacts remain at S3 revision.
+Evidence-only work reuses accepted source/ABI unit and integration results;
+no new production decision or unit assertion is introduced. Documentation and
+node accounting gates pass. S4 and T46 close for owner acceptance; no next T
+or S is automatically admitted. Cleanup removes task-generated outputs after
+owner acceptance. The20ms objective remains unmet even by the fastest tested
+calibrated path. This report does not claim486hardware or NESticle parity.
+Scope/expected/actual[],new0,transfers0. Historical1992/1992,retained1991/1992
+nodes and4260/4261feasible controls(raw4342,infeasible81) unchanged; no whole-game
+certificate or new ROM equivalence credit.

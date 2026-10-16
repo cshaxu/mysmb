@@ -11,6 +11,14 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T46 S4 - current-build complete cache ranking
+
+Scope/expected/actual[],new0;historical1992/1992,retained1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81) unchanged.12profiles/three
+repeats/576records preserve finite VGA/palette/RAM outputs; no logic or new
+whole-game certification claim. No source/policy/artifact change.
+[Ranked results and limits](../history/M3-T46-dos16-ram-presenter-memory-tiers.md#s4-p1-closure-ranked-current-build-cache-results).
+
 ## M3 T46 S3 - full-height DOS copy acceleration
 
 Scope/expected/actual[],new0;historical1992/1992,retained1991/1992nodes and
