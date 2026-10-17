@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New M3 T47 S1; next after owner-accepted T46. Only S1 active. |
+| Identifier Mode | M3 T47 S1 closed with bounded identity/startup/cadence receipt; owner-prioritized S2 next, no concurrent execution. |
 | Admission And Approval | Owner approves queue-head NESticle performance-mechanism research2026-10-16; single-person executor/coordinator review. |
 | Objective | Identify actual owner executable/source inputs and establish reproducible unchanged-DOSBox execution path before mechanism census. |
 | Non-goals | No product/core/PPU/ABI change, third-party import, cache matrix rerun, persistent emulator setting edit or parity claim; owner now explicitly permits a temporary fixed3000cycle NESticle0.2 launch. |
@@ -33,11 +33,11 @@ remain scoped evidence, not a whole-game certificate.
 
 ## T47 execution sequence
 
-S1 input/path identity now; S2 actual NESticle work/cadence; S3 matched MySMB
-work; S4 normalized mechanism matrix and at most one implementation candidate.
-No concurrent S and no implementation authorized within this research T.
+S1 input/path and bounded cadence closed; S2 owner-requested DOS turbo option;
+S3 actual NESticle work, S4 matched MySMB work, S5 normalized mechanism matrix.
+No concurrent S. Owner authorizes only the bounded S2 policy implementation.
 
-## S1 P1 checkpoint — not closed
+## Retained S1 P1 checkpoint
 
 Owner executable/help/header/source identities recorded. Live startup title
 and DOSBox log show NESticle auto-switching3000cycles to max100%, while
@@ -49,55 +49,22 @@ record and are stopped. S1 stays open for actual execution-path/video-mode
 receipt; S2-S4 remain planned. No product/test/source import or EXE refresh.
 [Interim findings](../proposals/m3/nesticle-forensic-performance-audit.md#s1-p1-findings--identities-and-unequal-automatic-cpu-budgets).
 
-## Owner-directed fixed3000 historical0.2 launch
 
-Owner explicitly requests historical0.2 NESticle at fixed3000cycles after the
-max-mode interactive MySMB test was reported unusable and associated with a
-host restart. Do not repeat max launches. This amendment permits only a
-private session override cycles=fixed3000, not any persistent configuration
-change. Locate a historical0.2 distribution first; if obtained, record archive
-origin/hash and bundled README/version before executing. Legacy freeware
-research only, no redistribution/import. All download/extraction/launch logs
-below build/t47-s1/nesticle02-fixed3000, at most16MiB new inputs/output.
-Same owner-local Mario ROM; no ROM acquisition. Retain DOSBox core/audio/video
-settings and use the program's supported standard VGA mode; version0.2 results
-are not attributed to owner x.xx. This requested interactive test is distinct
-from a timed matched census. Source builds remain private diagnostics only.
+## S1 P4 closure and next admission
 
-Historical0.2 distribution located at Internet Archive item nestc020, file
-nestc020.zip,381553bytes,SHA256
-a3f3f6f87ce44e8ed2029297e71b1a46bcf035fd1916aa4015ea7426e55fa8a2.
-Its bundled original README identifies Version0.2(4/2/97) and permits unchanged
-freeware distribution without ROMs; local research only, no tracked binaries.
-NESTICLE.EXE342115bytes,SHA256
-c41c36e3bb422ac33f5312a41392282009d61f2ce49f50e621b5eb597af29c98.
-Bundled DOS4GW matches the existing runtime hash. This test uses the original
-release unchanged, not a build claimed identical to the leaked source.
-Launch at its supported native256x224 VGA resolution with ShowFPS and no-sound;
-CPU cycles explicitly fixed3000 for this session, default core unchanged.
-No comparison with MySMB240-row output is claimed normalized yet.
+Two settled MySMB actual-product windows at fixed3000 give approximately
+60ticks/s and14.1admitted displays/s(70.9ms); original NESticle0.2 gives
+19.4virtual frames/s and5.19display loops/s(192.8ms). Native modes differ:
+MySMB256x240 versus NESticle256x224, both physical audio off. This finite
+cadence advantage is not50/60display FPS, x.xx parity or hardware qualification.
+The first73tick/s sample was startup catch-up debt and is excluded.
+Source identity, independent clocks, scene state and repeat receipts are in
+[S1 closure](../proposals/m3/nesticle-forensic-performance-audit.md#s1-p4--unchanged-mysmb-peer-result-and-bounded-s1-closure).
+Detailed VGA transfers/retrace/mode-register binding remain explicit census
+work, not completed proof. S1 zero-credit closure accepted by coordinator.
 
-## Owner correction — automated fixed3000 measurement
-
-Owner requires the agent to measure, not ask them to read FPS or report frame
-milliseconds. Extend S1's fixed3000 execution receipt with a bounded automated
-startup/title measurement for original0.2. Read only the owned DOSBox process,
-match the historical profile counter layout before interpreting counters,
-then sample counter deltas against host monotonic time. If profile identity
-cannot be bound, record that limit rather than converting unqualified GUI
-FPS into wall milliseconds. No resident guest probe, max setting, user-input
-request or product modification. Private host script and neutral summaries
-below build/t47-s1/nesticle02-fixed3000; no raw process dump. At most180seconds
-per run/two identical failed attempts. Product/core equivalence credit zero.
-
-## S1 P3 automatic timing result
-
-Agent completed seven bounded original0.2/fixed3000runs,707samples including
-three title and three stable-gameplay repeats plus a separate transition.
-Stable game samples all mode1/task3:104display-loop increments and389virtual
-frames in about20.05host seconds, approximately193ms/display interval and
-51.6ms/virtual-frame interval. Visible-window control reproduces the same
-counts. Internal FPS fields are not wall-time rates. No owner hand timing,
-max launch, product change or new ROM credit. S1 still open for actual video
-path; this is not rendering-only time or a matched MySMB performance ratio.
-[Automatic measurement](../proposals/m3/nesticle-forensic-performance-audit.md#s1-p3--agent-measured-original02-fixed3000-cadence).
+Owner supersedes always-skipping: normal DOS mode waits for each tick's image;
+only mysmb16 --turbo uses the previous skip/catch-up policy. S2 implements
+that bounded option next. The unadmitted old census slots shift to S3-S5;
+no task number changes or concurrent S. Product code remains unchanged at S1
+closure; historical1992/1992,retained1991/1992nodes and4260/4261feasible controls.

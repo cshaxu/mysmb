@@ -4114,4 +4114,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T46 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T46-dos16-ram-presenter-memory-tiers.md) |
 | M3 T46 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T46-dos16-ram-presenter-memory-tiers.md) |
 | M3 T46 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T46-dos16-ram-presenter-memory-tiers.md) |
-| M3 T47 S1 | 0 | 1992 | none / 0 | none / 0 | open; [record](../../docs/proposals/m3/nesticle-forensic-performance-audit.md) |
+| M3 T47 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/nesticle-forensic-performance-audit.md) |

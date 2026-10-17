@@ -10123,8 +10123,8 @@
           ],
           "canReceive": false,
           "admissionRole": "audit",
-          "state": "open",
-          "receipt": "Owner approves queue-head NESticle mechanism audit; S1 artifact/path receipt only; zero ROM scope; source and binaries local-only. P1 records executable/source identity mismatch and observed auto3000-to-max NESticle versus MySMB3000; failed register probes receive no credit. S1 remains open, no product or ROM-credit changes."
+          "state": "closed",
+          "receipt": "Owner approves queue-head NESticle mechanism audit; S1 artifact/path receipt only; zero ROM scope; source and binaries local-only. P1 records executable/source identity mismatch and observed auto3000-to-max NESticle versus MySMB3000; failed register probes receive no credit. S1 remains open, no product or ROM-credit changes. S1 closes bounded identities/startup/cadence; detailed video costs explicitly retained for S3 after owner-prioritized S2 turbo implementation. MySMB settled60tick/14.1display versus original0.2 19.4/5.19 at fixed3000; no parity/ROM credit."
         }
       ]
     }
@@ -1063650,7 +1063650,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m3/nesticle-forensic-performance-audit.md",
-      "state": "open"
+      "state": "closed"
     }
   ]
 }

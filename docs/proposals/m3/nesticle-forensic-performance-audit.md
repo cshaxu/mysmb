@@ -451,3 +451,102 @@ three Mario EXEs are unchanged. Historical1992/1992,retained1991/1992nodes,
 4260/4261feasible controls(raw4342,infeasible81) unchanged; no ROM credit.
 S1 remains open for actual video-path binding; the automatic fixed3000 timing
 question is now measured rather than delegated to owner testing.
+
+## S1 P4 — unchanged MySMB peer result and bounded S1 closure
+
+Owner requests a same-clock comparison and then explicitly requests a DOS
+command-line turbo option: normal execution must publish every game tick;
+only mysmb16 --turbo may retain catch-up/skipping. Preserve the measured old
+product baseline before that change. S1 closes its artifact/path and finite
+cadence question here; detailed VGA transfer/retrace costs remain explicitly
+assigned to the still-unadmitted mechanism census, not marked verified.
+
+The original DOS compiler supplies metadata-only sizeof/offsetof constants;
+no product was patched/rebuilt. A read-only observer finds exactly one live
+root through original warm-boot state, matching CHR/workspace pointers/sizes,
+initialized flags and compiler-derived offsets, and one pair of pacing clocks
+with periods19886/119318PIT ticks. Core frame_number counts game ticks;
+publication.last changes when the existing gate admits a presentation. That
+is an admitted-start count, not a hardware scanout completion counter. The
+root's original CPU frame byte tracks the core counter with one frame of NMI
+phase uncertainty. Native output remains256x240, versus NESticle's256x224.
+
+Both runs use fixed3000, default core=auto, Windows SDL host video and visible
+windows. The game's BLASTER environment value is unset only in its private DOS
+shell, disabling optional physical PCM through its existing capability path,
+matching NESticle's no-sound test without changing emulated SB hardware.
+Observed audio_available=0; A/B/C all allocated. The default configuration and
+accepted EXE SHA256 remain unchanged. No additional cache or resident probe.
+
+The first20second window observed1464ticks/187admitted displays, but is
+**excluded from steady comparisons**: publication clock versus tick deadline
+showed roughly9.8seconds initial startup debt, reducing to5.4seconds. Its
+73.2ticks/s is catch-up, not steady game speed or evidence of a faulty PIT.
+Publication clock elapsed tracks wall time within about0.3percent in this
+window. Wait for debt to settle and a three-second recent57-63tick/s rate
+before starting the qualified20second window.
+
+| Settled run | Seconds | Game ticks | Admitted displays | Tick/s | Display/s | Tick interval ms | Display interval ms |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| MySMB1 |19.997834|1199|282|59.956|14.102|16.679|70.914|
+| MySMB2 |19.999137|1198|282|59.903|14.101|16.694|70.919|
+
+Both complete windows retain mode1/task3. Warmup required about38.3/50.0seconds
+beyond the initial startup/Start delay. No owner testing was needed. The first
+window has8098polls, maximum10.8ms gap and at most one tick between polls;
+its observed publication-stamp increments are66.0-84.0ms. The second tighter
+polling window has maximum6.1ms gap and at most one tick between polls.
+Publication deltas are observed continuously, not inferred from changing art.
+As with NESticle's pre-copy loop counter, an endpoint can differ by one in-flight
+publication; use rounded cadence results rather than sub-millisecond claims.
+
+Finite native-mode comparison: MySMB approximately60logic ticks/s and14.1
+admitted images/s, NESticle0.2 approximately19.4virtual frames/s and5.19display
+loops/s. MySMB updates about2.72times as frequently in this route, while doing
+240rather than224output rows. This supports a limited product-cadence advantage,
+not a pixel-normalized renderer ratio, x.xx comparison,50/60display FPS,
+whole-game/audio-on guarantee or25MHz486qualification. Both still have skipped
+intermediate visible states; original per-tick logic proof receives zero credit.
+
+Source audit confirms the UX mechanism: DOS root always ticks then optionally
+presents; the wait routine marks lateness and the gate suppresses intermediate
+renders. Rendering is synchronous, not a separate producer thread. Owner's
+new preference supersedes the old always-skip policy. No implementation in S1.
+
+S1 review: identity/startup/cadence evidence complete within this bounded scope;
+actual transfer work/VSync/mode-register binding still missing and retained for
+later census. Historical1992/1992,retained1991/1992nodes and4260/4261feasible
+controls unchanged. Expected/actual node sets empty, no transfers of ROM nodes.
+Three products unchanged. Close S1 and admit the owner-prioritized S2 below;
+shift only the unadmitted old S2-S4 census slots to S3-S5.
+
+## S2 admission — DOS normal and --turbo presentation policy
+
+Owner explicitly requires mysmb16 --turbo to enable the previous skip/catch-up
+behavior; without the flag, one original tick must complete one presentation,
+and slow output must not accumulate hidden catch-up debt. Scope is DOS
+application option parsing/assembly and shared pacing arithmetic plus generic
+DOS command-tail access. No ROM core/PPU/art/cache change, no new thread or
+emulator setting. Win32/Win16 behavior remains unchanged in this DOS CLI S;
+all three Mario product artifacts still refresh for the implementation P.
+
+Expected size:8-14production/build files,100-180production lines plus focused
+owner tests. Generic command-tail mechanics belong to lib/dos16; --turbo means
+something only in app-mario. Shared C90 pacing helper retains/rebases debt
+according to its declared caller parameter. Startup command buffer is bounded
+and transient; one policy flag, no new resident image cache.
+
+Checks: exact/unknown/empty/whitespace option ownership; bounded DOS tail copies;
+normal late/on-time/wrap/reset and turbo legacy pacing; native x86/x64 suites;
+original optimized DOS compile/link and preserved native NE payload; automatic
+actual-EXE default and --turbo joins, one tick per admitted frame in normal,
+legacy suppression/catch-up in turbo, Enter/Tab/exit and cache/audio state;
+three current local products. No repeat NESticle or cache factorial matrix.
+
+Incoming historical1992/1992; scope=[],expectedMatches=[],maximum1992/1992.
+The S remains implementation-only zero-credit infrastructure. App mode changes
+are not an original-ROM equivalence claim. Evidence/output under ignored
+build/t47-s2; bounded180seconds/run and16MiB raw counter budget, no max tests.
+Implementation outcome and all actual changed branches must be reviewed before
+closure. S3 retains original NESticle detailed census, S4 matched work census,
+S5 normalized mechanism/next-candidate decision; none is concurrently admitted.
