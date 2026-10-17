@@ -8,6 +8,12 @@ The first graphical product is a native Win32 window built for x86 and x64. It l
 
 The later DOS graphical product targets a 25 MHz 486SX. MS-DOS 5.0 is the required baseline; DOS 3.3 compatibility is pursued when it requires no compromise.
 
+`mysmb16` publishes one image for every game tick in either DOS presentation
+mode. If drawing is late, gameplay slows with it rather than advancing through
+unseen actions. `mysmb16 --turbo` opts into logical catch-up and skips stale
+images, retaining the bounded publication interval. Unknown arguments print
+usage and exit before devices open. Native Win16 and Win32 pacing is unchanged.
+
 ## Text Presentation
 
 The text product defaults to an 80x25 colored character scene. The retained

@@ -45,7 +45,7 @@ commands without local paths, and conclusions.
 
 ## Non-goals
 
-- No product-code change, MySMB cache policy change, DOS4GW adoption, emulator
+- Except the owner-approved S2 option/pacing change, no product-code change; no MySMB cache policy change, DOS4GW adoption, emulator
   configuration edit, ROM logic change, shared PPU change, Win32 change, or
   third-party code/data import.
 - No inference that a public source revision is byte-identical to the owner
@@ -63,7 +63,12 @@ executable.  Establish a repeatable local benchmark launch without changing
 DOSBox settings.  Record whether a source build is possible only as a local
 diagnostic aid; do not treat success as proof of executable identity.
 
-### S2 — NESticle per-frame presentation census
+### S2 — owner-requested DOS turbo option
+
+Implement the explicit owner amendment below: normal DOS tick/presentation
+synchronization, with legacy skipping/catch-up only under --turbo.
+
+### S3 — NESticle per-frame presentation census
 
 For each reachable matched route, record logical emulation frames, published
 frames, skipped frames, completed software-screen bytes, VGA bytes, cache/tile
@@ -71,7 +76,7 @@ updates, palette updates, retrace/page-handoff events and elapsed/PIT timing.
 Classify frameskip from observed counters and display publication, not from a
 README option alone.
 
-### S3 — MySMB matched census
+### S4 — MySMB matched census
 
 Use the same route entry/exit criteria, DOSBox cycle setting and measurement
 window for MySMB.  Separate translated game tick, shared PPU preparation,
@@ -79,7 +84,7 @@ background cache work, sprite composition, RAM-band writes, band VGA copies,
 waits and skipped publication.  Retain exact PPU-output checks; no source
 change is required for an audit-only result.
 
-### S4 — mechanism matrix and next implementation gate
+### S5 — mechanism matrix and next implementation gate
 
 Compare only normalized same-route work.  For every material difference, state
 whether it is: already implemented, compatible DOS16 platform work, incompatible
@@ -127,9 +132,9 @@ accepted ROM chains or restore D merely to compare a different work model.
 | Planned S | Entry and responsibility | Reviewable output |
 | --- | --- | --- |
 | S1 | Check owner executable/archive and historical-source identities, prior receipts, legal/build boundaries, actual launch/video options | Input/path manifest with executable observations separated from source interpretations; list only the evidence still missing |
-| S2 | Observe NESticle under unchanged DOSBox settings on reachable bounded routes | Publication/cadence/retrace/frameskip and memory-transfer census; unknown counters explicitly unknown, no inferred totals |
-| S3 | Match current AB/ABC MySMB route and dimensions to S2; reuse applicable T46 proof | Per-stage/tick/publication work and directly comparable costs, with exclusions and any fixture mismatch |
-| S4 | Reconcile differences and decide the next implementation | Ranked compatible mechanisms with saved-work units/memory cost; select at most one bounded successor or state no justified candidate |
+| S3 | Observe NESticle under unchanged DOSBox settings on reachable bounded routes | Publication/cadence/retrace/frameskip and memory-transfer census; unknown counters explicitly unknown, no inferred totals |
+| S4 | Match current AB/ABC MySMB route and dimensions to S2; reuse applicable T46 proof | Per-stage/tick/publication work and directly comparable costs, with exclusions and any fixture mismatch |
+| S5 | Reconcile differences and decide the next implementation | Ranked compatible mechanisms with saved-work units/memory cost; select at most one bounded successor or state no justified candidate |
 
 Start with reproducible title/steady-overworld routes; water/castle/dense
 scenes require explicit reachable entry/exit and comparable observations,
@@ -550,3 +555,124 @@ build/t47-s2; bounded180seconds/run and16MiB raw counter budget, no max tests.
 Implementation outcome and all actual changed branches must be reviewed before
 closure. S3 retains original NESticle detailed census, S4 matched work census,
 S5 normalized mechanism/next-candidate decision; none is concurrently admitted.
+
+
+## S2 P1 implementation and closure
+
+Owner syntax is `mysmb16 --turbo`. Default has no option and publishes after
+every completed game tick, in DOS graphics and authored text alike. Late
+normal frames rebase their next logical deadline instead of accumulating
+catch-up debt. On-time frames still wait for the nominal tick deadline.
+Turbo opts into the previous logical catch-up and bounded video suppression.
+The logical ROM tick itself, original execution order and audio-command
+production are unchanged; slow normal mode intentionally slows game time.
+
+Ownership: lib/dos16 copies the current PSP command tail with explicit bounds;
+it has no option names. Mario app/runtime_options owns exact-token parsing,
+whitespace, idempotent repetition and unknown-argument rejection. The DOS root
+selects the policy before opening devices. A transient128-byte startup buffer
+expires before the loop. App IO owns the pure C90 finish-frame arithmetic;
+DOS clock/sleep binds it and keeps one policy byte. Existing Win32/Win16
+pacing functions and their bindings are unchanged. No core/PPU/art/cache diff,
+new thread or emulator persistent change.
+
+### Test-owner and similar-issue closure
+
+- lib/dos16 command-line unit owns null output, zero capacity, absent tail,
+  empty input, exact capacity, insufficient capacity, maximum126-byte tail
+  and malformed length. Physical PSP retrieval is covered by actual DOS
+  empty/valid/invalid command joins, not a duplicate host mock.
+- Mario options unit owns null/empty/whitespace input, --turbo, repetition,
+  unknown tokens/prefixes/case and excessive token length. Unknown arguments
+  return DOS code2 and print usage before any graphics/device initialization.
+- IO pacing unit owns normal on-time/overdue and turbo debt, period guards,
+  32-bit wrap and BIOS reset. Actual product counter joins cover default
+  always-publish versus turbo suppression and title-to-game startup debt.
+- Search of product-main callers found the cache-allocation diagnostic as
+  the sole numeric-tail consumer. It now consumes its own numeric option
+  before invoking product main; production does not accept diagnostic digits.
+  The original compiler/linker rebuilt this diagnostic and actual DOS mode0
+  reports result0, observed1, A/B/C1, live0, errors0. This is an entry/cleanup
+  check, not a repeat performance factorial matrix.
+- Shared host link consumers were searched; the Mine DOS build adds only
+  the neutral tail-copy member needed by host.c. No Mine game/input policy
+  changes. Native Mine tests pass in both complete suites.
+- Pause/load/resume retain their original clock resets; normal publication
+  bypasses the gate regardless of stale present_due, while turbo keeps the
+  original clock formula. Text and graphics share the same root gate.
+
+Ninja/ccache Release builds pass both widths. CTest passes318/318 x86 and
+318/318 x64. Named private-desktop host integration passes15routes per width,
+including delivered game startup, owned/borrowed console lifecycle, Tab,
+snapshots, focus and interactive CMD prompt restoration. Initial sandbox
+CreateDesktop error5 is resolved by running the same isolated target with the
+existing host permission; no user desktop input is injected.
+
+Original optimized DOS build passes in the qualified short build output
+path: the old compiler returns4 with a deeply nested CMake temporary path.
+The short-path retry uses the same source/flags/runtime/linker and succeeds.
+No alternate compiler, emulator settings or product behavior bypass. There
+are216segments, largest32768bytes, DGROUP53648bytes including2048stack;
+minimum loaded bytes388544, maximum392640 including4096near reserve,
+excluding PSP/dynamic allocations. Both loaded bounds grow1600bytes versus
+S1; no new persistent cache. The command buffer is startup-stack scratch.
+
+The unchanged accepted Win16 payload is rebound to the new DOS image rather
+than falsely claiming a fresh Win16 source build. Eight segment byte ranges
+and the full NE tail, after normalization of nine absolute file addresses,
+match the accepted payload exactly; there are no resources. Its payload hash
+is c29dae2fa85eec9ee8e4321117003fa7cc613e4b43eeb3bd53d7b7aa2c0f462e.
+DOS relocations move within existing header padding to leave e_lfanew free;
+all2694relocation entries, loaded bytes and CS/IP/SS/SP remain identical to
+the freshly linked DOS stub. bind_win16_mz verifies resident bounds and the
+new NE offset365568. No new Win3.x runtime qualification is claimed.
+
+### Actual product policy joins
+
+Read-only host polling uses the same compiled root offsets and publication
+clock as S1. Each fixed3000 run binds one root/clock signature, verifies the
+actual executable hash and no physical audio, and confirms A/B/C enabled.
+No max run or third-party rerun. Counters count admissions to the synchronous
+presenter, not physical scanout or renderer-only CPU time.
+
+| Route | Window seconds | Logic ticks | Images admitted | Tick/s | Images/s |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Default steady graphics |19.999119|573|573|28.651|28.651|
+| --turbo after startup debt settles |19.998978|1199|280|59.953|14.001|
+| Default graphics lifecycle check |1.998632|57|57|28.520|28.520|
+
+Every graphics sample remains mode1/task3; polling observes at most one tick
+between samples. Default text additionally advances8ticks and8publication
+stamps over a four-second join, then Tab returns to graphics. Both policies
+pass Enter start, Tab text/graphics and Esc exit. The first normal run's probe
+asserted a key-up against an already exited window; corrected lifecycle
+checking accepts successful process exit on Esc key-down and passes. This
+was not a product hang or patch. Invalid --turbo=1 exits2; DOSBox exits0.
+The initial invalid-option batch lacked its own exit and incorrectly treated
+empty redirected files as failed conditions; corrected batch checking passes.
+Persistent DOSBox configuration hash stays unchanged throughout.
+
+### Local artifacts and review
+
+All three products are repackaged below assets/mario; local-only and ignored:
+
+| Artifact | Bytes | SHA256 |
+| --- | ---: | --- |
+| mysmb16.exe |699349|360daa8448394326d5ec5b804678e1d6a407289539ff870a9954149bfaec3891|
+| mysmb32.exe |427659|7cbc8b25929dd4cf2a00e420764a4235e66984f5e2891a8a83ba1a95f9e9ff12|
+| mysmb64.exe |391275|bad201751b9ca7f2c2a029c7a4b945720a6ddd1a93758edfccb712ecb2d43c8b5|
+
+Actual implementation size:14production/build files,118added/16removed lines;
+four owner test files,70added/1removed lines. Five governance/UX records are
+updated separately; the ledger adds the explicit empty-scope S2 run.
+
+Single-person executor/coordinator review confirms the owner switch/default,
+no core/PPU/platform-Windows source changes, bounded parsing, normal debt
+rebase, equivalent turbo branch, test owners, diagnostic-tail ownership,
+unchanged native NE payload and fresh three artifacts. The ledger semantic
+comparison retains all unrelated nodes/events/runs/tasks. S2 closes for owner
+acceptance; T47 remains open. Detailed NESticle transfer/retrace census S3,
+matched MySMB work census S4 and mechanism decision S5 remain unadmitted.
+Scope/expected/actual[],new0,transfers0. Historical1992/1992; retained exact
+1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81), unchanged.
+These local counts are not a final whole-game equivalence certificate.

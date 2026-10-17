@@ -40,3 +40,14 @@ unsigned long mysmb_io_pacing_remaining(struct mysmb_io_pacing *pacing,
     else pacing->last=now;
     return 0UL;
 }
+void mysmb_io_pacing_finish_frame(struct mysmb_io_pacing *pacing,
+    unsigned long now,int catch_up)
+{
+    unsigned long elapsed=(now-pacing->last)&0xffffffffUL;
+    if(pacing->period==0UL || pacing->period>0x7fffffffUL)return;
+    /* Preserve the DOS clock-reset contract: reset, then one full period. */
+    if(elapsed>0x7fffffffUL)pacing->last=now&0xffffffffUL;
+    pacing->last=(pacing->last+pacing->period)&0xffffffffUL;
+    elapsed=(now-pacing->last)&0xffffffffUL;
+    if(!catch_up && elapsed<=0x7fffffffUL)pacing->last=now&0xffffffffUL;
+}

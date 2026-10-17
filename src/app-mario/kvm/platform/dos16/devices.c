@@ -19,14 +19,14 @@
 static struct mysmb_dos16_keyboard keyboard;
 static struct mygames_dos16_video_state old_video;
 static unsigned char video_ready;
-/* DOS binds this shared deadline to a frame-dropping policy.  Other hosts may
- * retain ordinary pacing without binding a video gate. */
+/* App-owned DOS policy. Other hosts retain their existing bindings. */
 static struct mysmb_io_pacing pacing;
 static struct mysmb_io_pacing publication;
 /* On-time ticks compose normally. Catch-up ticks preserve game/audio/input
  * timing while suppressing stale images. A separate publication clock
  * prevents indefinite suppression when every tick is late. */
 static unsigned char present_due=1U;
+static unsigned char turbo;
 static unsigned char opened;
 static unsigned char text_mode;
 static unsigned short text_rows=25U;
@@ -534,16 +534,11 @@ void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYGAMES_KVM_FAR *
 void mysmb_dos16_devices_wait(void)
 {
     unsigned long now,elapsed;
-    /* Move one logical deadline at a time.  If composition made this tick
-     * late, following root steps catch up game/input/audio state without
-     * composing stale images.  Rebasing here slows the game to the renderer.
-     * The signed-half-range check also treats the BIOS midnight reset as a
-     * new clock origin rather than a catch-up burst. */
+    /* Only turbo retains missed logical deadlines. Normal mode waits for
+     * each presentation and discards debt accumulated during composition. */
     now=mygames_dos16_clock_stamp();
     mygames_dos16_pcm_dos_service(now);
-    elapsed=(now-pacing.last)&0xffffffffUL;
-    if(elapsed>0x7fffffffUL)pacing.last=now;
-    pacing.last=(pacing.last+pacing.period)&0xffffffffUL;
+    mysmb_io_pacing_finish_frame(&pacing,now,turbo!=0U);
     now=mygames_dos16_clock_stamp();
     elapsed=(now-pacing.last)&0xffffffffUL;
     if(elapsed<=0x7fffffffUL) {present_due=0U;return;}
@@ -553,10 +548,12 @@ void mysmb_dos16_devices_wait(void)
     } while(elapsed>0x7fffffffUL);
     present_due=1U;
 }
+void mysmb_dos16_devices_set_turbo(int enabled)
+{turbo=(unsigned char)(enabled!=0);}
 int mysmb_dos16_devices_should_present(void)
 {
     return mysmb_io_pacing_video_due(&publication,
-        mygames_dos16_clock_stamp(),present_due!=0U);
+        mygames_dos16_clock_stamp(),!turbo || present_due!=0U);
 }
 void mysmb_dos16_devices_after_load(void)
 {

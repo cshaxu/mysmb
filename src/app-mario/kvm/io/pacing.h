@@ -10,6 +10,10 @@ int mysmb_io_pacing_late(const struct mysmb_io_pacing *pacing,
     unsigned long now);
 void mysmb_io_pacing_advance(struct mysmb_io_pacing *pacing,
     unsigned long now);
+/* Finish one frame. Catch-up retains debt; synchronous presentation discards
+ * overdue debt so the next tick cannot overtake its displayed predecessor. */
+void mysmb_io_pacing_finish_frame(struct mysmb_io_pacing *pacing,
+    unsigned long now,int catch_up);
 unsigned long mysmb_io_pacing_remaining(struct mysmb_io_pacing *pacing,
     unsigned long now);
 /* A separate publication clock bounds suppression during sustained lateness.

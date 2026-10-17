@@ -1,5 +1,6 @@
 add_library(mygames_dos16 STATIC
     pcm.c
+    command_line.c
     file.c
     mouse.c
     raw_keyboard.c
@@ -10,6 +11,10 @@ target_link_libraries(mygames_dos16 PUBLIC mygames_kvm)
 if(CMAKE_SYSTEM_NAME STREQUAL "DOS")
     target_sources(mygames_dos16 PRIVATE host.c video_mode.c vga.c mouse_dos.c pcm_dos.c executable_path.c)
 endif()
+
+add_executable(mygames_dos16_command_line_smoke ${CMAKE_SOURCE_DIR}/test/lib/dos16/command_line_smoke.c)
+target_link_libraries(mygames_dos16_command_line_smoke PRIVATE mygames_dos16)
+add_test(NAME mygames.dos16-command-line COMMAND mygames_dos16_command_line_smoke)
 if(MSVC)
     target_compile_options(mygames_dos16 PRIVATE /W4 /WX)
 else()

@@ -1,6 +1,8 @@
 #include "io/video.h"
 #include "platform/dos16/planar_row.h"
 #include "dos16/file.h"
+#include "dos16/command_line.h"
+#include "app/runtime_options.h"
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/devices.h"
 #include "core/area.h"
@@ -118,8 +120,22 @@ static int initialize(void)
     return 1;
 }
 
+static int configure_options(void)
+{
+    char command[128];
+    int policy;
+    if(!mygames_dos16_command_line(command,sizeof(command)))return 0;
+    policy=mysmb_app_runtime_options(command);
+    if(policy<0)return 0;
+    mysmb_dos16_devices_set_turbo(policy);
+    return 1;
+}
+
 int main(void)
 {
+    if(!configure_options()) {
+        fputs("Usage: MYSMB16 [--turbo]\n",stderr);return 2;
+    }
     if(!initialize())return 1;
     for (;;) {
         /* A latched IRQ may finish after stop intent. Keep the application

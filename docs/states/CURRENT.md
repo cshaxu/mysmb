@@ -1,70 +1,49 @@
 # Project Status
 
-## M3 T47 S1 Packet
+## M3 T47 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T47 S1 closed with bounded identity/startup/cadence receipt; owner-prioritized S2 next, no concurrent execution. |
-| Admission And Approval | Owner approves queue-head NESticle performance-mechanism research2026-10-16; single-person executor/coordinator review. |
-| Objective | Identify actual owner executable/source inputs and establish reproducible unchanged-DOSBox execution path before mechanism census. |
-| Non-goals | No product/core/PPU/ABI change, third-party import, cache matrix rerun, persistent emulator setting edit or parity claim; owner now explicitly permits a temporary fixed3000cycle NESticle0.2 launch. |
-| Reference Baseline | c5f5ab4a; accepted T46 AB-required/C-optional RAM-band product and T37 reference launch. |
-| Candidate Proposal | [T47 audit and S1 admission](../proposals/m3/nesticle-forensic-performance-audit.md#m3-t47-s1-admission--2026-10-16). |
-| Files And ABI Surface | CURRENT, QUEUE, proposal and generated node/task ledger; estimated100-180 neutral documentation lines, zero product/test/ABI lines. |
-| Applicable Rules | Task Reading Set, source policy, documentation rules, bounded ignored research outputs, continuable probes. |
-| Verification | Input hashes/headers/options, historical source revision/notices, prior receipt applicability, unchanged DOSBox config, admission/documentation gates. |
-| Expected Markers | Incoming1992/1992; scope=[],expectedMatches=[],actualMatches=[],maximum1992/1992; zero node/edge credit. |
-| Asset Needs | Owner-local NESticle ZIP/EXE and DOS4GW freeware research inputs, no modification/redistribution; athros/NESticle historical source conceptual local-only reference, record revision/notices before use. Existing owner ROM local research launch only. All copies/output below ignored build/t47-s1;64MiB outputs plus64MiB checkout budget. No E-drive writes. |
-| Reporting Requirements | Distinguish executable observation, README option and source interpretation; list actual identities/path and missing counters. Counts remain historical1992/1992,retained1991/1992nodes,4260/4261feasible controls. |
-| Stop Conditions |180seconds/run,30seconds no progress,two identical failed routes,128MiB total raw/source budget; stop affected experiment on device/config drift or unqualified evidence. |
-| Exit Criteria | Bounded artifact/execution-path receipt, source/executable identity distinction, explicit missing evidence and review; no claim of S2 census completion. |
-| Original Owner Request | Admit and conduct NESticle performance mechanism research. |
-| Similar-Issue Sweep | Check duplicate input copies, source/binary revision mismatch, old retained/full-screen assumptions, frameskip/audio/resolution/auto-cycle comparison confounders. |
+| Identifier Mode | Continuation M3 T47 S2 after S1 P4 e3296c80; S2 closed for owner acceptance; T47 remains open. |
+| Admission And Approval | Owner explicitly requests mysmb16 --turbo: skip/catch-up only when enabled; default publishes every tick. Single-person executor/coordinator review. |
+| Objective | Add bounded DOS command-tail access and Mario-owned option parsing; default tick/presentation synchronization, legacy policy under --turbo. |
+| Non-goals | No ROM core/PPU/art/cache alteration, third-party import, emulator edit, max test, Win32/Win16 behavior change or hardware/parity claim. |
+| Reference Baseline | e3296c80; unchanged product SHA/settled fixed3000 baseline: MySMB60ticks/s and14.1admitted displays/s. |
+| Candidate Proposal | [Owner S2 admission](../proposals/m3/nesticle-forensic-performance-audit.md#s2-admission--dos-normal-and---turbo-presentation-policy). |
+| Files And ABI Surface | Generic DOS command tail, Mario parser/assembly, shared pacing arithmetic, build lists and owner tests. Estimate8-14production/build files,100-180production lines plus tests; one policy flag and transient bounded command buffer. |
+| Applicable Rules | Task Reading Set, C90/segmented ABI, source policy, library/app boundary, test-owner closure, continuable build/test, ignored generated outputs. |
+| Verification | Parser/tail/pacing branch tests, full native x86/x64 suites, optimized DOS build, preserved unchanged NE payload, actual-EXE default/turbo/invalid arguments and Enter/Tab/exit, three current Mario artifacts. |
+| Expected Markers | Historical1992/1992,scope=[],expectedMatches=[],actualMatches=[],maximum1992/1992; no new node/edge credit. |
+| Asset Needs | Existing owner-local ROM only for original build/local joins; no publication/import. Existing NE product payload reused only if unchanged Win16 code binding verifies. No NESticle run required. Generated build/t47-s2,16MiB raw counters,180seconds/run; no max or E-drive writes. |
+| Reporting Requirements | Actual normal versus turbo tick/display counts, startup debt behavior, code size/resident cost, test owners, three artifact hashes and unchanged ROM counts. |
+| Stop Conditions | Core/PPU diff, wrong-option policy, normal skipped frame, segment/loader overrun, unreviewed shared-library game semantics, unexplained test failure; two identical failed probe attempts. |
+| Exit Criteria | Met: default ticks all publish with no stale-debt catch-up; --turbo preserves existing suppression; clear bounded parse failure; focused/full checks and three packaged local products. |
+| Original Owner Request | If turbo enabled use skipping; otherwise wait for every frame; mysmb16 --turbo. |
+| Similar-Issue Sweep | Startup/midnight/reset pacing, transient parser lifetime, quoted DOS tail bounds, cache probe command ownership, graphics/text policy, unchanged Windows/Win16 linkage. |
 
 ## Current Technical Baseline
 
-T46 accepted/closed. DOS product uses15 ordinary16-row RAM bands; A/B required,
-C optional, D removed. Historical ABC24.285ms calibrated/26.914ms raw finite
-rendering-only receipt excludes game tick/audio/waits;20ms remains unmet.
-Known ABC conventional-memory arithmetic subtotal541.105KiB plus overhead.
-Three accepted local EXEs remain unchanged by this audit. Historical1992/1992,
-retained1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81)
-remain scoped evidence, not a whole-game certificate.
+S1 bounded comparison closed. At fixed3000/no physical audio and stationary
+mode1/task3, unchanged MySMB gives approximately60ticks/s and14.1admitted images/s;
+original NESticle0.2 gives19.4virtual frames/s and5.19display loops/s. Native
+outputs differ256x240/256x224. No x.xx/hardware/whole-game or renderer-only ratio.
+The first73tick/s sample was startup catch-up debt, excluded from steady data.
+Detailed transfer/retrace/mode binding remains unverified S3-S5 census work.
 
-## T47 execution sequence
-
-S1 input/path and bounded cadence closed; S2 owner-requested DOS turbo option;
-S3 actual NESticle work, S4 matched MySMB work, S5 normalized mechanism matrix.
-No concurrent S. Owner authorizes only the bounded S2 policy implementation.
-
-## Retained S1 P1 checkpoint
-
-Owner executable/help/header/source identities recorded. Live startup title
-and DOSBox log show NESticle auto-switching3000cycles to max100%, while
-MySMB remains3000cycles under the same unchanged auto configuration. No fair
-cross-program speed ratio follows from those launches; prior scoped T46
-within-product cache evidence remains applicable. Source0.2 is not bound to
-owner x.xx binary. Two private register-collection attempts yielded no valid
-record and are stopped. S1 stays open for actual execution-path/video-mode
-receipt; S2-S4 remain planned. No product/test/source import or EXE refresh.
-[Interim findings](../proposals/m3/nesticle-forensic-performance-audit.md#s1-p1-findings--identities-and-unequal-automatic-cpu-budgets).
+User now supersedes always-skipping with normal per-tick presentation and
+optional legacy turbo. Shared ROM state/order stay unchanged. Historical1992/1992,
+retained exact1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81).
 
 
-## S1 P4 closure and next admission
+## S2 Closure
 
-Two settled MySMB actual-product windows at fixed3000 give approximately
-60ticks/s and14.1admitted displays/s(70.9ms); original NESticle0.2 gives
-19.4virtual frames/s and5.19display loops/s(192.8ms). Native modes differ:
-MySMB256x240 versus NESticle256x224, both physical audio off. This finite
-cadence advantage is not50/60display FPS, x.xx parity or hardware qualification.
-The first73tick/s sample was startup catch-up debt and is excluded.
-Source identity, independent clocks, scene state and repeat receipts are in
-[S1 closure](../proposals/m3/nesticle-forensic-performance-audit.md#s1-p4--unchanged-mysmb-peer-result-and-bounded-s1-closure).
-Detailed VGA transfers/retrace/mode-register binding remain explicit census
-work, not completed proof. S1 zero-credit closure accepted by coordinator.
-
-Owner supersedes always-skipping: normal DOS mode waits for each tick's image;
-only mysmb16 --turbo uses the previous skip/catch-up policy. S2 implements
-that bounded option next. The unadmitted old census slots shift to S3-S5;
-no task number changes or concurrent S. Product code remains unchanged at S1
-closure; historical1992/1992,retained1991/1992nodes and4260/4261feasible controls.
+`mysmb16` now publishes every game tick; `mysmb16 --turbo` retains old catch-up
+and video suppression. At fixed3000/no physical audio, normal573ticks/573images
+in19.999s; turbo1199ticks/280images in19.999s after startup debt settles. DOS
+Tab/exit, default text1:1 and invalid arguments pass. Native318/318tests and
+15private-desktop host joins pass per width. Three local assets/mario EXEs
+refreshed; original DOS build and unchanged accepted native NE payload binding
+verified. Loaded bounds increase1600bytes, no new persistent cache. Core/PPU
+and Windows/Win16 bindings unchanged. Full evidence/test-owner review is in
+the proposal. Node counts unchanged. No successor admitted before owner
+acceptance; S3-S5 remain the existing bounded research plan.

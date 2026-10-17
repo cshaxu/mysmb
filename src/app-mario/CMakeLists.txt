@@ -206,6 +206,11 @@ target_link_libraries(mysmb_app_input_mapping PUBLIC mygames_kvm)
 add_executable(mysmb_app_input_mapping_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/app/app_input_mapping_smoke.c)
 target_link_libraries(mysmb_app_input_mapping_smoke PRIVATE mysmb_app_input_mapping)
 add_test(NAME mysmb.app-input-mapping-smoke COMMAND mysmb_app_input_mapping_smoke)
+add_library(mysmb_app_runtime_options STATIC kvm/app/runtime_options.c)
+target_include_directories(mysmb_app_runtime_options PUBLIC . kvm)
+add_executable(mysmb_app_runtime_options_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/app/runtime_options_smoke.c)
+target_link_libraries(mysmb_app_runtime_options_smoke PRIVATE mysmb_app_runtime_options)
+add_test(NAME mysmb.app-runtime-options COMMAND mysmb_app_runtime_options_smoke)
 
 # IO contracts have no device or translated-game implementation dependency.
 add_executable(mysmb_io_contract_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/io/io_contract_smoke.c)

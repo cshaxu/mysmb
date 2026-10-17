@@ -137,6 +137,8 @@ int main(void)
     FILE *log;
     for(i=0;i<*(unsigned char far *)MK_FP(_psp,0x80);++i)
         if(tail[i]>='0' && tail[i]<='6'){mode=(unsigned)(tail[i]-'0');break;}
+    /* This probe owns its numeric option, not the product option parser. */
+    *(unsigned char far *)MK_FP(_psp,0x80)=0U;
     memory_census(&before);
     result=(unsigned)cache_product_main();
     memory_census(&after);

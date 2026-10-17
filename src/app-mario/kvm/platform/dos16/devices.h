@@ -16,8 +16,8 @@ int mysmb_dos16_devices_present_band(const struct mygames_kvm_video_band *band);
 mygames_kvm_u8 MYGAMES_KVM_FAR *mysmb_dos16_devices_direct_band(mygames_kvm_u16 first,
     mygames_kvm_u16 rows);
 void mysmb_dos16_devices_wait(void);
-/* Default DOS presentation policy: logical work continues while a late
- * display frame is dropped. */
+/* App option, selected before open. Normal mode publishes every tick. */
+void mysmb_dos16_devices_set_turbo(int enabled);
 int mysmb_dos16_devices_should_present(void);
 void mysmb_dos16_devices_after_load(void);
 void mysmb_dos16_devices_resume_clock(void);

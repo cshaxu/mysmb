@@ -33,5 +33,27 @@ int main(void)
     /* BIOS midnight/reset is a discontinuity,not a huge catch-up loop. */
     if (mysmb_io_pacing_remaining(&clock,0UL)!=0UL || clock.last!=0UL) return 9;
     mysmb_io_pacing_initialize(&clock,1UL,0UL);
-    return mysmb_io_pacing_remaining(&clock,1UL)==0UL ? 0:10;
+    if(mysmb_io_pacing_remaining(&clock,1UL)!=0UL)return 10;
+    mysmb_io_pacing_finish_frame(&clock,200UL,0);
+    if(clock.last!=1UL)return 17;
+    clock.period=0x80000000UL;
+    mysmb_io_pacing_finish_frame(&clock,200UL,1);
+    if(clock.last!=1UL)return 18;
+    mysmb_io_pacing_initialize(&clock,1000UL,100UL);
+    mysmb_io_pacing_finish_frame(&clock,1030UL,0);
+    if(clock.last!=1100UL)return 19;
+    mysmb_io_pacing_finish_frame(&clock,1700UL,0);
+    if(clock.last!=1700UL)return 20;
+    mysmb_io_pacing_finish_frame(&clock,2300UL,1);
+    if(clock.last!=1800UL)return 21;
+    mysmb_io_pacing_initialize(&clock,0xfffffff0UL,32UL);
+    mysmb_io_pacing_finish_frame(&clock,0UL,0);
+    if(clock.last!=0x10UL)return 22;
+    mysmb_io_pacing_finish_frame(&clock,0x80UL,0);
+    if(clock.last!=0x80UL)return 23;
+    mysmb_io_pacing_finish_frame(&clock,0UL,1);
+    if(clock.last!=32UL)return 24;
+    mysmb_io_pacing_finish_frame(&clock,0UL,0);
+    if(clock.last!=32UL)return 25;
+    return 0;
 }

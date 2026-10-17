@@ -1,5 +1,6 @@
 #include "dos16/host.h"
 #include "dos16/pit_clock.h"
+#include "dos16/command_line.h"
 #include <dos.h>
 #include <conio.h>
 
@@ -7,6 +8,17 @@ static void (interrupt far *previous_keyboard)();
 static mygames_dos16_scan_sink scan_sink;
 static void *scan_context;
 static unsigned char keyboard_open;
+
+int mygames_dos16_command_line(char *output,unsigned short capacity)
+{
+    union REGS registers;
+    unsigned long address;
+    registers.h.ah=0x62U;
+    intdos(&registers,&registers);
+    address=((unsigned long)registers.x.bx<<16U)|0x80UL;
+    return mygames_dos16_command_tail_copy(
+        (const mygames_kvm_u8 far *)address,output,capacity);
+}
 
 static void interrupt far keyboard_interrupt(void)
 {

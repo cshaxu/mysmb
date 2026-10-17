@@ -16,7 +16,7 @@ $SdkIncludeDirectory=(Resolve-Path $SdkIncludeDirectory).Path
 $WindowsLibrary=(Resolve-Path $WindowsLibrary).Path
 $RuntimeLibrary=(Resolve-Path $RuntimeLibrary).Path
 $common=@('src/app-mine/core/mine.c','src/app-mine/kvm/app/app.c','src/app-mine/kvm/app/session.c','src/app-mine/kvm/text/scene.c','src/app-mine/kvm/graphics/scene.c','src/app-mine/kvm/io/number.c','src/lib/kvm/color.c','src/lib/kvm/video.c','src/lib/kvm/pointer.c')
-$dos=@('src/app-mine/kvm/platform/dos16/main.c')+$common+@('src/lib/dos16/host.c','src/lib/dos16/video_mode.c','src/lib/dos16/pit_clock.c','src/lib/dos16/raw_keyboard.c','src/lib/dos16/mouse.c','src/lib/dos16/mouse_dos.c','src/lib/dos16/text_cells.c')
+$dos=@('src/app-mine/kvm/platform/dos16/main.c')+$common+@('src/lib/dos16/host.c','src/lib/dos16/command_line.c','src/lib/dos16/video_mode.c','src/lib/dos16/pit_clock.c','src/lib/dos16/raw_keyboard.c','src/lib/dos16/mouse.c','src/lib/dos16/mouse_dos.c','src/lib/dos16/text_cells.c')
 $windows=@('src/app-mine/kvm/platform/win16/main.c')+$common+@('src/lib/kvm/windows_key.c','src/lib/win16/host.c','src/lib/win16/dib.c','src/lib/win16/text.c')
 New-Item -ItemType Directory -Force $output | Out-Null
 $oldPath=$env:PATH;$oldTemp=$env:TEMP;$oldTmp=$env:TMP
