@@ -24,7 +24,7 @@ test/app-mario/{core,kvm}/       tests nested by their production owner
 test/app-mario/kvm/ppu/validate/ test-only reference projections
 test/app-mine/{core,kvm}/        independent rule, presentation and platform-join tests
 tools/                          generators and governance/build entry points
-assets/mario/                   local mysmb16.exe, mysmb32.exe, mysmb64.exe
+assets/mario/                   local mysmb16c.exe, mysmb16w.exe, mysmb32.exe, mysmb64.exe
 assets/mine/                    local mine16.exe, mine32.exe, mine64.exe
 ```
 

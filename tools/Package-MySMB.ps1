@@ -1,5 +1,6 @@
 param(
     [Parameter(Mandatory = $true)][string]$Dos16Executable,
+    [Parameter(Mandatory = $true)][string]$Win16Executable,
     [Parameter(Mandatory = $true)][string]$Win32Executable,
     [Parameter(Mandatory = $true)][string]$Win64Executable,
     [Parameter(Mandatory = $true)][string]$Win32BuildDirectory,
@@ -8,7 +9,7 @@ param(
 )
 
 if ($OutputDirectory -eq '') {
-    $OutputDirectory = Join-Path (Split-Path -Parent $PSCommandPath) '..\assets'
+    $OutputDirectory = Join-Path (Split-Path -Parent $PSCommandPath) '..\assets\mario'
 }
 
 function Require-File([string]$Path, [string]$Label) {
@@ -48,6 +49,24 @@ function Assert-PeMachine([string]$Path, [UInt16]$ExpectedMachine, [string]$Labe
     }
 }
 
+function Assert-16BitKind([string]$Path, [bool]$Hybrid) {
+    Assert-DosMz $Path
+    $header = [System.IO.File]::ReadAllBytes($Path)
+    if ($header.Length -lt 64) { throw 'Truncated 16-bit executable header' }
+    $offset = Read-UInt32 $header 60
+    $signature = ''
+    if ($offset -ge 64 -and $offset -le $header.Length - 2) {
+        $signature = [Text.Encoding]::ASCII.GetString($header, $offset, 2)
+    }
+    if ($Hybrid) {
+        if ($signature -ne 'NE' -or $offset -gt $header.Length - 64) {
+            throw 'Win16 executable must contain a native NE header'
+        }
+    } elseif ($signature -in @('NE','PE','LE','LX')) {
+        throw 'DOS executable must be a pure MZ, not a native hybrid'
+    }
+}
+
 function Assert-LocalResourceBuild([string]$BuildDirectory, [string]$Label) {
     $cache = Join-Path $BuildDirectory 'CMakeCache.txt'
     $ninja = Join-Path $BuildDirectory 'build.ninja'
@@ -64,15 +83,26 @@ function Assert-LocalResourceBuild([string]$BuildDirectory, [string]$Label) {
 }
 
 Require-File $Dos16Executable 'DOS executable'
+Require-File $Win16Executable 'Win16 executable'
 Require-File $Win32Executable 'Win32 executable'
 Require-File $Win64Executable 'Win64 executable'
-Assert-DosMz $Dos16Executable
+Assert-16BitKind $Dos16Executable $false
+Assert-16BitKind $Win16Executable $true
 Assert-PeMachine $Win32Executable 0x014c 'Win32 executable'
 Assert-PeMachine $Win64Executable 0x8664 'Win64 executable'
 Assert-LocalResourceBuild $Win32BuildDirectory 'Win32 build'
 Assert-LocalResourceBuild $Win64BuildDirectory 'Win64 build'
 
+# A hybrid must contain this exact DOS program, including resident bounds.
+& python (Join-Path $PSScriptRoot 'bind_win16_mz.py') --stub $Dos16Executable --hybrid $Win16Executable
+if ($LASTEXITCODE -ne 0) { throw 'Win16 hybrid does not preserve the DOS program' }
+
 New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
-Copy-Item -LiteralPath $Dos16Executable -Destination (Join-Path $OutputDirectory 'mysmb16.exe') -Force
+Copy-Item -LiteralPath $Dos16Executable -Destination (Join-Path $OutputDirectory 'mysmb16c.exe') -Force
+Copy-Item -LiteralPath $Win16Executable -Destination (Join-Path $OutputDirectory 'mysmb16w.exe') -Force
 Copy-Item -LiteralPath $Win32Executable -Destination (Join-Path $OutputDirectory 'mysmb32.exe') -Force
 Copy-Item -LiteralPath $Win64Executable -Destination (Join-Path $OutputDirectory 'mysmb64.exe') -Force
+$legacy = Join-Path $OutputDirectory 'mysmb16.exe'
+if (Test-Path -LiteralPath $legacy -PathType Leaf) {
+    Remove-Item -LiteralPath $legacy -Force
+}

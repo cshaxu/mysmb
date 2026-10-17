@@ -660,7 +660,7 @@ All three products are repackaged below assets/mario; local-only and ignored:
 | --- | ---: | --- |
 | mysmb16.exe |699349|360daa8448394326d5ec5b804678e1d6a407289539ff870a9954149bfaec3891|
 | mysmb32.exe |427659|7cbc8b25929dd4cf2a00e420764a4235e66984f5e2891a8a83ba1a95f9e9ff12|
-| mysmb64.exe |391275|bad201751b9ca7f2c2a029c7a4b945720a6ddd1a93758edfccb712ecb2d43c8b5|
+| mysmb64.exe |391275|bad201751b9ca7f2c2a029c7a4b945720a6ddd1a93758edfcb712ecb2d43c8b5|
 
 Actual implementation size:14production/build files,118added/16removed lines;
 four owner test files,70added/1removed lines. Five governance/UX records are
@@ -676,3 +676,74 @@ matched MySMB work census S4 and mechanism decision S5 remain unadmitted.
 Scope/expected/actual[],new0,transfers0. Historical1992/1992; retained exact
 1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81), unchanged.
 These local counts are not a final whole-game equivalence certificate.
+
+
+## S2 P2 owner-directed four-product packaging admission
+
+Before owner acceptance, reopen this same S for the requested delivery split:
+mysmb16c.exe is the original linked pure DOS MZ, mysmb16w.exe is the accepted
+MZ/NE hybrid; mysmb32.exe/mysmb64.exe retain their names. Packaging must take
+both16-bit inputs explicitly and reject a hybrid in the pure-DOS slot or a
+non-NE Windows16 input; verify their DOS loaded bytes/relocations/entry/loader
+bounds match with the existing binder. The old mysmb16.exe delivery alias is
+retired after successful packaging. Scope: packaging tool, app-owned packaging
+test/registration, current delivery rules and product-path documentation.
+No game/host runtime source or third-party input change; reuse qualified S2 P1
+builds. Original ROM inputs/products remain local-only under source policy.
+Estimated under100tool lines plus contract test; temp artifacts build/t47-s2.
+Scope/expected/actual[],historical1992/1992; no changed node/edge credit.
+Single-person executor/coordinator accepts this owner-authorized packaging
+addendum, not an admission of the reserved S3 performance research.
+
+
+## S2 P2 four-product packaging closure
+
+Delivery now requires two explicit16-bit inputs. The packager accepts pure DOS
+MZ only in Dos16Executable and native NE hybrid only in Win16Executable. It
+then invokes the existing binder to verify identical DOS loaded bytes,
+relocations, entry/stack and resident bounds. PE widths and owner-local
+resource build receipts remain required. Four products are copied only after
+validation; successful packaging removes the retired mysmb16.exe alias.
+The default output directory is assets/mario. Internal compiler/link output
+names remain private build artifacts, not extra published aliases.
+
+Changed owners: tools/Package-MySMB, one Windows-only app product-packaging
+CTest registered by the app CMake owner, current delivery rules, source-layout
+and UX documentation. No runtime C source changes. The project-owned synthetic
+header test covers two successful packages (with/without the retired alias)
+and ten rejected joins: NE/PE in pure DOS, MZ in Win16, wrong PE architecture,
+missing input, mismatched DOS payload, short MZ/NE headers, missing Ninja
+resource binding and missing CMake resource binding. It uses no ROM or copied
+program bytes. The existing binder unit owns its arithmetic; this test owns
+only packaging joins and output identities. All generated test files stay
+below build; package/readme products below assets remain ignored/local.
+
+Ninja/ccache builds pass, with unchanged C objects. Complete native CTest now
+passes319/319 per width, including the new package contract. P1's15private-host
+joins per width and default/turbo runtime evidence remain applicable because
+all runtime inputs are byte-unchanged. The final local package verifies all
+2694DOS relocation entries and resident bounds. Four current products:
+
+| Artifact | Kind | Bytes | SHA256 |
+| --- | --- | ---: | --- |
+| mysmb16c.exe |pure DOS MZ|365339|c806c1b047e00350d702852673edfabe43a7b11f99ed3890e3b4cba8d16b14c3|
+| mysmb16w.exe |DOS/Win16 NE hybrid|699349|360daa8448394326d5ec5b804678e1d6a407289539ff870a9954149bfaec3891|
+| mysmb32.exe |Win32 x86|427659|7cbc8b25929dd4cf2a00e420764a4235e66984f5e2891a8a83ba1a95f9e9ff12|
+| mysmb64.exe |Win32 x64|391275|bad201751b9ca7f2c2a029c7a4b945720a6ddd1a93758edfcb712ecb2d43c8b5|
+
+The16c bytes are exactly the freshly qualified S2 P1 standalone DOS link;16w
+is exactly the qualified S2 P1 hybrid. Both PE outputs are also unchanged.
+An actual DOS16c launch checks the full8-character executable name and same
+root/clock/cache signatures, Enter start, default per-tick publication,
+Tab text/graphics and Esc exit. The original ten-second title assumption
+observed DOSBox before guest launch; a bounded wait for the owned product
+window replaces that harness assumption, not a game-code change.
+
+Single-person executor/coordinator review covers four-file identity, explicit
+MZ versus NE validation, no runtime diff, old alias retirement and caller
+sweep (no other active Package-MySMB caller). Historical proposals and build
+intermediate names are preserved as history, not rewritten into new evidence.
+Current rule applies to subsequent Mario implementation deliveries; Mine keeps
+its separate product boundary. S2 closes for owner acceptance; T47 remains
+open, S3-S5 not admitted. Zero new ROM scope/matches/transfers; historical
+1992/1992, retained1991/1992nodes and4260/4261feasible controls remain unchanged.

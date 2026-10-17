@@ -8,11 +8,12 @@ The first graphical product is a native Win32 window built for x86 and x64. It l
 
 The later DOS graphical product targets a 25 MHz 486SX. MS-DOS 5.0 is the required baseline; DOS 3.3 compatibility is pursued when it requires no compromise.
 
-`mysmb16` publishes one image for every game tick in either DOS presentation
+`mysmb16c` publishes one image for every game tick in either DOS presentation
 mode. If drawing is late, gameplay slows with it rather than advancing through
-unseen actions. `mysmb16 --turbo` opts into logical catch-up and skips stale
+unseen actions. `mysmb16c --turbo` opts into logical catch-up and skips stale
 images, retaining the bounded publication interval. Unknown arguments print
-usage and exit before devices open. Native Win16 and Win32 pacing is unchanged.
+usage and exit before devices open. The same DOS switches work for the DOS
+entry of `mysmb16w`, whose NE entry opens the Win3.x window. Native Win16 and Win32 pacing is unchanged.
 
 ## Text Presentation
 

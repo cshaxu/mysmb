@@ -211,6 +211,11 @@ target_include_directories(mysmb_app_runtime_options PUBLIC . kvm)
 add_executable(mysmb_app_runtime_options_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/app/runtime_options_smoke.c)
 target_link_libraries(mysmb_app_runtime_options_smoke PRIVATE mysmb_app_runtime_options)
 add_test(NAME mysmb.app-runtime-options COMMAND mysmb_app_runtime_options_smoke)
+if(WIN32)
+    add_test(NAME mysmb.product-packaging COMMAND ${Python3_EXECUTABLE}
+        ${CMAKE_SOURCE_DIR}/test/app-mario/test_product_packaging.py
+        --output ${CMAKE_CURRENT_BINARY_DIR}/product-packaging-test)
+endif()
 
 # IO contracts have no device or translated-game implementation dependency.
 add_executable(mysmb_io_contract_smoke ${CMAKE_SOURCE_DIR}/test/app-mario/kvm/io/io_contract_smoke.c)
