@@ -1,3 +1,10 @@
+#if defined(MYGAMES_DOS16_8086)
+#include "platform/dos16/palette_expand.h"
+#include "io/palette_expand.h"
+int mysmb_dos16_palette_expand(void *context,const mygames_kvm_u8 far *packed,
+    mygames_kvm_u8 far *pixels,mygames_kvm_u16 count,const mygames_kvm_u8 far *palette)
+{return mysmb_io_palette_expand_portable(context,packed,pixels,count,palette);}
+#else
 #include "platform/dos16/palette_expand.h"
 #include <dos.h>
 /* 486SX real-mode DWORD bulk operations; addressing remains USE16.
@@ -110,3 +117,4 @@ pairs_done:
     }
     return 1;
 }
+#endif

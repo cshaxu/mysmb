@@ -1,3 +1,60 @@
+#if defined(MYGAMES_DOS16_8086)
+#include "platform/dos16/nibble_expand.h"
+int mysmb_dos16_nibble_expand(const mygames_kvm_u8 far *packed,
+    mygames_kvm_u8 far *pixels,mygames_kvm_u16 count)
+{
+    if(!packed || !pixels || count>256U || (count&1U))return 0;
+    _asm {
+        push ds
+        push es
+        lds si,packed
+        les di,pixels
+        mov bx,di
+        push es
+        push ds
+        pop es
+        mov di,si
+        xor ax,ax
+        mov cx,count
+        shr cx,1
+        mov dx,cx
+        and dx,1
+        shr cx,1
+        cld
+        repe scasw
+        jnz scan_done
+        mov cx,dx
+        repe scasb
+scan_done:
+        pop es
+        mov di,bx
+        jnz colored
+        mov cx,count
+        shr cx,1
+        rep stosw
+        jmp done
+colored:
+        lds si,packed
+        mov cx,count
+        shr cx,1
+        jcxz done
+next_byte:
+        lodsb
+        mov ah,al
+        and al,15
+        shr ah,1
+        shr ah,1
+        shr ah,1
+        shr ah,1
+        stosw
+        loop next_byte
+done:
+        pop es
+        pop ds
+    }
+    return 1;
+}
+#else
 #include "platform/dos16/nibble_expand.h"
 #include "io/palette_expand.h"
 int mysmb_dos16_nibble_expand(const mygames_kvm_u8 far *packed,
@@ -102,3 +159,4 @@ done:
     }
     return 1;
 }
+#endif

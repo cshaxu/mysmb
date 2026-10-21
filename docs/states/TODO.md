@@ -211,3 +211,13 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
   [remaining current certification](../proposals/m2/remaining-current-certification.md).
   The strict full-registry checker still rejects the historical dependency
   snapshot; path-only migration does not certify those old bindings.
+
+
+## 8086 hardware qualification
+
+- [ ] **I86-PC-XT-DEVICES:** The new86c/86w profiles qualify application/CRT
+  instruction encoding, not original8088 hardware. DOS still requires VGA;
+  its clock adapter uses8254 read-back at port43h (commandC2h). Original8253
+  compatibility and real8088 keyboard/timing/memory/device operation remain
+  unqualified. Admit a separate device-qualification candidate if original
+  PC/XT support is requested. Win16 retains Windows3.1 OS requirements.

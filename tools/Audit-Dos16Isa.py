@@ -4,6 +4,7 @@ Linear disassembly can encounter inline tables; candidates require review.
 This is an instruction inventory, not an all-control-path execution proof.
 """
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -13,21 +14,40 @@ import subprocess
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--directory', type=Path, required=True)
+    parser.add_argument('--directory', type=Path)
+    parser.add_argument('--ne', type=Path)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     repository = Path(__file__).resolve().parents[1]
     args.output.resolve().relative_to(repository / 'build')
-    binary = args.directory / 'mysmb-dos16.exe'
+    if bool(args.directory) == bool(args.ne):
+        parser.error('Select exactly one MZ directory or NE executable')
+    binary = args.ne if args.ne else args.directory / 'mysmb-dos16.exe'
     data = binary.read_bytes()
-    header = struct.unpack_from('<H', data, 8)[0] * 16
     segments = []
-    for match in re.finditer(r'^\s*([0-9A-F]+)H\s+([0-9A-F]+)H\s+([0-9A-F]+)H\s+(\S+)\s+CODE\s*$',
-                            (args.directory / 'mysmb-dos16.map').read_text(), re.M):
-        if int(match[3], 16):
-            segments.append((int(match[1], 16), int(match[3], 16), match[4]))
-    assert segments, 'No CODE segments in map'
+    if args.ne:
+        ne = struct.unpack_from('<I', data, 60)[0]
+        assert data[ne:ne+2] == b'NE', 'Missing NE header'
+        count = struct.unpack_from('<H', data, ne+0x1c)[0]
+        table = ne + struct.unpack_from('<H', data, ne+0x22)[0]
+        shift = struct.unpack_from('<H', data, ne+0x32)[0]
+        for i in range(count):
+            sector, length, flags, _ = struct.unpack_from('<4H', data, table+i*8)
+            if sector and not flags & 1:
+                begin = sector << shift
+                length = length or 65536
+                assert begin+length <= len(data), 'Truncated NE code segment'
+                segments.append((begin, length, 'NE'+str(i+1)))
+        header = 0
+    else:
+        header = struct.unpack_from('<H', data, 8)[0] * 16
+        for match in re.finditer(r'^\s*([0-9A-F]+)H\s+([0-9A-F]+)H\s+([0-9A-F]+)H\s+(\S+)\s+CODE\s*$',
+                                (args.directory / 'mysmb-dos16.map').read_text(), re.M):
+            if int(match[3], 16):
+                segments.append((int(match[1], 16), int(match[3], 16), match[4]))
+    assert segments, 'No executable CODE segments'
     candidates = []
+    runtime_data = []
     instructions = 0
     tables = []
     for start, length, name in segments:
@@ -36,6 +56,19 @@ def main():
         # the immediately following CS word table. Prove extent and targets;
         # never discard an opcode merely because its value resembles data.
         spans = []
+        if args.ne and binary.with_suffix('.map').exists():
+            # LLIBCEW exports a two-byte __wflags variable inside its CODE
+            # contribution. Its initial FFFF is data, not an FF opcode.
+            # Require an exact map symbol and validate the bytes/bounds.
+            mapping = binary.with_suffix('.map').read_text()
+            for segment, offset in set(re.findall(r'^\s*([0-9A-F]+):([0-9A-F]+)\s+__wflags\s*$', mapping, re.M)):
+                if int(segment, 16) != int(name[2:]):
+                    continue
+                first = begin + int(offset, 16)
+                if begin <= first and first+2 <= end and data[first:first+2] == b'\xff\xff':
+                    spans.append((first, first+2))
+                    runtime_data.append(dict(segment=name, symbol='__wflags', first=first, end=first+2))
+
         patterns = (
             rb'\x3d(..)\x76\x03\xe9..\xd1\xe0\x8b\xd8\x2e\xff\xa7(..)',
             rb'\x3d(..)\x76\x03\xe9..\x03\xc0\x93\x2e\xff\xa7(..)')
@@ -44,7 +77,7 @@ def main():
         for kind, match in matches:
             maximum = struct.unpack('<H', match[1])[0]
             offset = struct.unpack('<H', match[2])[0]
-            base = begin - (start & 15)
+            base = begin if args.ne else begin - (start & 15)
             first = base + offset
             last = first + (maximum + 1) * 2
             if maximum > 511 or first < begin or last > end:
@@ -81,12 +114,12 @@ def main():
             for line in result.stdout.splitlines():
                 inspect_line(line, name, candidates)
             instructions += sum(bool(re.match(r'\s*[0-9a-f]+:\s+', line)) for line in result.stdout.splitlines())
-    report = dict(codeSegments=len(segments), codeBytes=sum(s[1] for s in segments),
+    report = dict(binarySha256=hashlib.sha256(data).hexdigest(), format='NE' if args.ne else 'MZ', codeSegments=len(segments), codeBytes=sum(s[1] for s in segments),
                   decodedInstructions=instructions, candidateCount=len(candidates),
-                  candidates=candidates, provenSwitchTables=tables,
+                  candidates=candidates, provenSwitchTables=tables, provenRuntimeData=runtime_data,
                   scope='CODE scan excluding range/target-proven switch tables; not dynamic execution coverage')
     args.output.write_text(json.dumps(report, indent=2) + '\n')
-    print(json.dumps({k: v for k, v in report.items() if k not in ('candidates', 'provenSwitchTables')}))
+    print(json.dumps({k: v for k, v in report.items() if k not in ('candidates', 'provenSwitchTables', 'provenRuntimeData')}))
 
 
 def inspect_line(line, name, candidates):

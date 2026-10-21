@@ -1,5 +1,5 @@
 #include "platform/dos16/planar_row.h"
-/* 486SX real-mode DWORD bulk operations; addressing remains USE16.
+/* 8086 word or 386 DWORD bulk operations; addressing remains USE16.
  * Neutral row packing:borrow source/destination segments once, restore them
  * before returning to C. Plane stride is bounded by the validated caller. */
 void mysmb_dos16_pack_planar_row(const mygames_kvm_u8 MYGAMES_KVM_FAR *source,
@@ -24,14 +24,22 @@ void mysmb_dos16_pack_planar_row(const mygames_kvm_u8 MYGAMES_KVM_FAR *source,
         mov ah,al
         mov dx,ax
         /* SHL EAX,16: explicit operand size in a USE16 segment. */
+#if !defined(MYGAMES_DOS16_8086)
         _emit 0x66
         _emit 0xc1
         _emit 0xe0
         _emit 0x10
+#endif
         mov ax,dx
+#if defined(MYGAMES_DOS16_8086)
+        mov cx,128
+#else
         mov cx,64
+#endif
         cld
+#if !defined(MYGAMES_DOS16_8086)
         _emit 0x66
+#endif
         repe scasw
         pop es
         mov di,bx
@@ -40,17 +48,23 @@ void mysmb_dos16_pack_planar_row(const mygames_kvm_u8 MYGAMES_KVM_FAR *source,
         mov ah,al
         mov dx,ax
         /* SHL EAX,16: explicit operand size in a USE16 segment. */
+#if !defined(MYGAMES_DOS16_8086)
         _emit 0x66
         _emit 0xc1
         _emit 0xe0
         _emit 0x10
+#endif
         mov ax,dx
         mov bx,stride
         sub bx,80
         mov dx,4
 row_uniform:
+#if defined(MYGAMES_DOS16_8086)
+        mov cx,40
+#else
         mov cx,20
         _emit 0x66
+#endif
         rep stosw
         add di,bx
         dec dx
@@ -122,6 +136,9 @@ plane_done:
     }
 }
 
+#if defined(MYGAMES_DOS16_8086)
+#define PACK_FOUR(dst,a,b,c,d) PACK_TWO(dst,a,b) PACK_TWO(dst+2,c,d)
+#else
 #define PACK_FOUR(dst,a,b,c,d) \
     _asm mov al,[si+c] \
     _asm mov ah,[si+d] \
@@ -139,6 +156,7 @@ plane_done:
     _asm _emit 0x3f \
     _asm _emit 0x66 \
     _asm mov es:[di+dst],ax
+#endif
 #define PACK_TWO(dst,a,b) \
     _asm mov al,[si+a] \
     _asm mov ah,[si+b] \
@@ -285,9 +303,15 @@ band_repeat:
         sub bx,80
         mov dx,4
 band_copy:
+#if defined(MYGAMES_DOS16_8086)
+        mov cx,40
+#else
         mov cx,20
+#endif
         cld
+#if !defined(MYGAMES_DOS16_8086)
         _emit 0x66
+#endif
         rep movsw
         add si,bx
         add di,bx
@@ -314,14 +338,22 @@ band_pack:
         mov ah,al
         mov dx,ax
         /* SHL EAX,16: explicit operand size in a USE16 segment. */
+#if !defined(MYGAMES_DOS16_8086)
         _emit 0x66
         _emit 0xc1
         _emit 0xe0
         _emit 0x10
+#endif
         mov ax,dx
+#if defined(MYGAMES_DOS16_8086)
+        mov cx,128
+#else
         mov cx,64
+#endif
         cld
+#if !defined(MYGAMES_DOS16_8086)
         _emit 0x66
+#endif
         repe scasw
         pop es
         mov di,bx
@@ -330,17 +362,23 @@ band_pack:
         mov ah,al
         mov dx,ax
         /* SHL EAX,16: explicit operand size in a USE16 segment. */
+#if !defined(MYGAMES_DOS16_8086)
         _emit 0x66
         _emit 0xc1
         _emit 0xe0
         _emit 0x10
+#endif
         mov ax,dx
         mov bx,stride
         sub bx,80
         mov dx,4
 row_uniform:
+#if defined(MYGAMES_DOS16_8086)
+        mov cx,40
+#else
         mov cx,20
         _emit 0x66
+#endif
         rep stosw
         add di,bx
         dec dx

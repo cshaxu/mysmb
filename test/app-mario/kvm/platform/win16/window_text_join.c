@@ -65,6 +65,9 @@ int mygames_win16_run_lifecycle(HINSTANCE instance,HINSTANCE previous,int show,
     CHECK(audio_begins==0);a->update(a->context,now,&u);CHECK(audio_services==0);
     hooks->started(a->context);CHECK(audio_begins==1);
     event(a,MYGAMES_KVM_INPUT_FOCUS,0,1,0);
+    /* A slow batch retains debt but must still publish its current image. */
+    now+=200UL;a->update(a->context,now,&u);CHECK(u.dirty && u.wake_ms);
+    event(a,MYGAMES_KVM_INPUT_FOCUS,0,1,0);
     for(i=0;i<120U;++i){now+=17UL;a->update(a->context,now,&u);}
     event(a,MYGAMES_KVM_INPUT_KEY,MYGAMES_KVM_KEY_ENTER,1,0);
     now+=17;a->update(a->context,now,&u);

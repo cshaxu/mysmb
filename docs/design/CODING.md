@@ -24,7 +24,7 @@ test/app-mario/{core,kvm}/       tests nested by their production owner
 test/app-mario/kvm/ppu/validate/ test-only reference projections
 test/app-mine/{core,kvm}/        independent rule, presentation and platform-join tests
 tools/                          generators and governance/build entry points
-assets/mario/                   local mysmb16c.exe, mysmb16w.exe, mysmb32.exe, mysmb64.exe
+assets/mario/                   local mysmb16c.exe, mysmb16w.exe, mysmb86c.exe, mysmb86w.exe, mysmb32.exe, mysmb64.exe
 assets/mine/                    local mine16.exe, mine32.exe, mine64.exe
 ```
 
@@ -54,6 +54,40 @@ The reusable declarations are in `src/lib/*`; Mario `kvm/io` contains its
 own controller/save/APU/palette and presentation assembly. Its codecs and
 synthesizer are shared between Mario platforms, not imported by another app.
 Apps own every keyboard/mouse meaning and every refresh/dirty/deadline policy.
+
+## Additional8086 products
+
+`tools/Build-MarioProducts.ps1` builds/tests both configured Ninja widths,
+builds both DOS/Win16 ISA pairs and publishes all six products together. It
+accepts the same SDK/runtime/ROM inputs as the8086-only builder below.
+
+`tools/Build-Mario8086.ps1` accepts `SdkIncludeDirectory`, `WindowsLibrary`,
+`RuntimeLibrary` (large-model Windows EXE CRT) and owner-local `RomPath`.
+It builds `build/86c/mysmb-dos16.exe` and `build/86w/mysmb16.exe` with
+`InstructionSet 8086`, then creates code/CRT ISA receipts beside them. The
+ordinary builders retain `Accelerated` DOS and `286` Win16 defaults. All
+sources remain common; ISA alternatives exist only in DOS host accelerators.
+
+The SDK must contain mutually compatible Windows3.1 and16-bit CRT headers,
+including errno declarations, plus mmsystem.h. No DLL CRT or32-bit SDK substitute
+is accepted. SDK/runtime resources remain owner-local, never committed.
+
+`tools/Package-MySMB.ps1` requires the original four inputs and the additional
+`Dos86Executable`, `Win86Executable`, `Dos86IsaReceipt`, `Win86IsaReceipt`.
+The optional `mysmb_win16_product_host_integration` target uses
+`tools/Verify-Win16Product.py`: provide `MYSMB_WIN16_SDK`, `WINDOWS_LIBRARY`,
+`RUNTIME_LIBRARY`, `WINDOWS_DIRECTORY`, `DOSBOX`, `CONFIG` (each with the
+`MYSMB_WIN16_` prefix) and `MYSMB_OPENNT_CL16`. It compiles the neutral probe,
+boots a private Windows3.1 copy with the current86w product, checks first
+pixels, Tab both ways and exit. Its fixed3000 runtime check is not a hardware
+performance comparison; persistent emulator/Windows inputs are unchanged.
+
+Publication checks architecture, resource binding, each hybrid's exact DOS
+payload and SHA-bound zero-candidate ISA receipts before copying any output.
+The inventory checks executable code/CRT and excludes only proven inline
+switch tables and symbol-bound runtime data. It does not establish every
+runtime branch or original PC/XT peripheral compatibility. Windows itself
+retains its existing operating-system requirements.
 
 ## Files And Names
 

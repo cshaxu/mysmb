@@ -49,3 +49,9 @@ The `dos16` build preset uses the x64 Ninja configuration only as the CMake
 driver; its product is still built by the configured OpenNT 16-bit toolchain.
 It requires `MYSMB_OPENNT_CL16`, `MYSMB_DOS_RUNTIME_DIR`, and the owner-local
 ROM path. `ccache -s` reports local compiler-cache reuse.
+
+The additional8086 targets are `mysmb86c.exe` (pure DOS) and `mysmb86w.exe`
+(DOS/Win16 hybrid). Existing accelerated16c/16w and32/64 products remain.
+Use `tools/Build-Mario8086.ps1` with a complete owner-local Win16 SDK and
+large-model EXE runtime; see [build and publication](docs/design/CODING.md#additional8086-products).
+The application ISA is8086; Windows and VGA/peripheral requirements remain.

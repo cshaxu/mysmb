@@ -175,9 +175,10 @@ static void update(void *context,unsigned long now,struct mygames_win16_update *
     result->wake_ms=16U;
     ticks=mysmb_win16_scheduler_step(&scheduler,now);
     for(i=0U;i<ticks;++i)tick(context);
-    /* Original app cadence: drain bounded debt and compose only current state. */
+    /* Publish current state after every bounded batch, including slow hosts.
+     * Waiting for debt to disappear can leave the first window gray forever. */
     result->dirty=(mygames_kvm_u8)(presentation_dirty ||
-        (ticks && scheduler.credit<1000UL));
+        ticks);
     presentation_dirty=0U;
 }
 static mygames_kvm_u8 presentation(void *context)

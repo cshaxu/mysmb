@@ -1,6 +1,10 @@
 param(
     [Parameter(Mandatory = $true)][string]$Dos16Executable,
     [Parameter(Mandatory = $true)][string]$Win16Executable,
+    [Parameter(Mandatory = $true)][string]$Dos86Executable,
+    [Parameter(Mandatory = $true)][string]$Win86Executable,
+    [Parameter(Mandatory = $true)][string]$Dos86IsaReceipt,
+    [Parameter(Mandatory = $true)][string]$Win86IsaReceipt,
     [Parameter(Mandatory = $true)][string]$Win32Executable,
     [Parameter(Mandatory = $true)][string]$Win64Executable,
     [Parameter(Mandatory = $true)][string]$Win32BuildDirectory,
@@ -82,10 +86,27 @@ function Assert-LocalResourceBuild([string]$BuildDirectory, [string]$Label) {
     }
 }
 
+function Assert-8086Receipt([string]$Path, [string]$Receipt, [string]$Format) {
+    Require-File $Path '8086 executable'
+    Require-File $Receipt '8086 ISA receipt'
+    $record = Get-Content -Raw -LiteralPath $Receipt | ConvertFrom-Json
+    $sha = [Security.Cryptography.SHA256]::Create()
+    try { $hash = [BitConverter]::ToString($sha.ComputeHash([IO.File]::ReadAllBytes($Path))).Replace('-','') }
+    finally { $sha.Dispose() }
+    if ($record.binarySha256 -ne $hash -or $record.format -ne $Format -or
+        $record.candidateCount -ne 0 -or $record.codeSegments -lt 1 -or $record.codeBytes -lt 1) {
+        throw 'Missing, mismatched or unsuccessful8086 code/CRT inventory'
+    }
+}
+
 Require-File $Dos16Executable 'DOS executable'
 Require-File $Win16Executable 'Win16 executable'
 Require-File $Win32Executable 'Win32 executable'
 Require-File $Win64Executable 'Win64 executable'
+Assert-16BitKind $Dos86Executable $false
+Assert-16BitKind $Win86Executable $true
+Assert-8086Receipt $Dos86Executable $Dos86IsaReceipt 'MZ'
+Assert-8086Receipt $Win86Executable $Win86IsaReceipt 'NE'
 Assert-16BitKind $Dos16Executable $false
 Assert-16BitKind $Win16Executable $true
 Assert-PeMachine $Win32Executable 0x014c 'Win32 executable'
@@ -97,11 +118,16 @@ Assert-LocalResourceBuild $Win64BuildDirectory 'Win64 build'
 & python (Join-Path $PSScriptRoot 'bind_win16_mz.py') --stub $Dos16Executable --hybrid $Win16Executable
 if ($LASTEXITCODE -ne 0) { throw 'Win16 hybrid does not preserve the DOS program' }
 
+& python (Join-Path $PSScriptRoot 'bind_win16_mz.py') --stub $Dos86Executable --hybrid $Win86Executable
+if ($LASTEXITCODE -ne 0) { throw '8086 hybrid does not preserve the8086 DOS program' }
+
 New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
 Copy-Item -LiteralPath $Dos16Executable -Destination (Join-Path $OutputDirectory 'mysmb16c.exe') -Force
 Copy-Item -LiteralPath $Win16Executable -Destination (Join-Path $OutputDirectory 'mysmb16w.exe') -Force
 Copy-Item -LiteralPath $Win32Executable -Destination (Join-Path $OutputDirectory 'mysmb32.exe') -Force
 Copy-Item -LiteralPath $Win64Executable -Destination (Join-Path $OutputDirectory 'mysmb64.exe') -Force
+Copy-Item -LiteralPath $Dos86Executable -Destination (Join-Path $OutputDirectory 'mysmb86c.exe') -Force
+Copy-Item -LiteralPath $Win86Executable -Destination (Join-Path $OutputDirectory 'mysmb86w.exe') -Force
 $legacy = Join-Path $OutputDirectory 'mysmb16.exe'
 if (Test-Path -LiteralPath $legacy -PathType Leaf) {
     Remove-Item -LiteralPath $legacy -Force

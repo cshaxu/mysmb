@@ -50,3 +50,7 @@ target_compile_definitions(mygames_dos16_pcm_hardware_smoke PRIVATE MYGAMES_DOS1
 target_link_libraries(mygames_dos16_pcm_hardware_smoke PRIVATE mygames_dos16)
 set_target_properties(mygames_dos16_pcm_hardware_smoke PROPERTIES C_STANDARD 90 C_STANDARD_REQUIRED ON C_EXTENSIONS OFF)
 add_test(NAME mygames.dos16-pcm-hardware COMMAND mygames_dos16_pcm_hardware_smoke)
+
+# Neutral executable fixtures; no DOSBox, ROM or legacy toolchain required.
+add_test(NAME mygames.dos16-isa-inventory
+    COMMAND ${Python3_EXECUTABLE} -B ${CMAKE_SOURCE_DIR}/test/lib/dos16/test_isa_audit.py)

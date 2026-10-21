@@ -1,5 +1,7 @@
 """Mario delivery contract; synthetic, independently authored headers only."""
 import argparse
+import hashlib
+import json
 from pathlib import Path
 import struct
 import subprocess
@@ -35,11 +37,17 @@ def main():
     pe64 = bytearray(pe)
     word(pe64, 68, 0x8664)
     inputs = {'Dos16Executable': pure, 'Win16Executable': hybrid,
-              'Win32Executable': pe, 'Win64Executable': pe64}
+              'Win32Executable': pe, 'Win64Executable': pe64,
+              'Dos86Executable': pure, 'Win86Executable': hybrid}
     paths = {}
     for name, data in inputs.items():
         paths[name] = output / (name + '.exe')
         paths[name].write_bytes(data)
+    for name, product, kind in [('Dos86IsaReceipt', 'Dos86Executable', 'MZ'),
+                                 ('Win86IsaReceipt', 'Win86Executable', 'NE')]:
+        paths[name] = output / (name + '.json')
+        paths[name].write_text(json.dumps(dict(binarySha256=hashlib.sha256(inputs[product]).hexdigest(),
+            format=kind, candidateCount=0, codeSegments=1, codeBytes=64)))
     for name in ('Win32BuildDirectory', 'Win64BuildDirectory'):
         paths[name] = output / name
         paths[name].mkdir(exist_ok=True)
@@ -57,10 +65,16 @@ def main():
 
     (products / 'mysmb16.exe').write_bytes(b'retired alias')
     invoke(True)
-    for name, source in zip(('mysmb16c.exe', 'mysmb16w.exe', 'mysmb32.exe', 'mysmb64.exe'), inputs):
+    for name, source in zip(('mysmb16c.exe', 'mysmb16w.exe', 'mysmb32.exe', 'mysmb64.exe', 'mysmb86c.exe', 'mysmb86w.exe'), inputs):
         assert (products / name).read_bytes() == inputs[source]
     assert not (products / 'mysmb16.exe').exists()
     invoke(True)
+    invoke(False, Dos86IsaReceipt=paths['Win86IsaReceipt'])
+    invoke(False, Win86Executable=paths['Win32Executable'])
+    bad_receipt = output / 'bad-isa.json'
+    bad_receipt.write_text(json.dumps(dict(binarySha256=hashlib.sha256(pure).hexdigest(),
+        format='MZ', candidateCount=1, codeSegments=1, codeBytes=64)))
+    invoke(False, Dos86IsaReceipt=bad_receipt)
     invoke(False, Dos16Executable=paths['Win16Executable'])
     invoke(False, Win16Executable=paths['Dos16Executable'])
     invoke(False, Dos16Executable=paths['Win32Executable'])
@@ -81,7 +95,7 @@ def main():
     (paths['Win32BuildDirectory'] / 'build.ninja').write_text('MYSMB_LOCAL_TITLE=1\n')
     (paths['Win32BuildDirectory'] / 'CMakeCache.txt').write_text('no resource binding\n')
     invoke(False)
-    print('Four-product packaging: two positive and ten negative joins passed')
+    print('Six-product packaging: two positive and thirteen negative joins passed')
 
 
 if __name__ == '__main__':

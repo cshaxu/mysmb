@@ -58,7 +58,9 @@ A milestone closes only when its roadmap exit criteria, task evidence, deferred 
 
 The [M2 ROM-node progress report](../states/NODE_PROGRESS.md), its linked inventory, and the [node-backfill validation matrix](../etc/architecture/m2-node-backfill-validation-matrix.md) are the sole quantitative basis for M2 conformance progress. Before work starts, every S admission must record its incoming ROM-match-complete / total fraction, the exact inventory labels in scope, the exact subset expected to become matches, the maximum expected resulting fraction, and its focused CTest plus original-ROM route baseline. An S closure must record the resulting fraction, every completed and deferred label by name, and the ROM-reference evidence that justifies each newly completed node. A C owner, source move, unit test, or build alone remains unfinished.
 
-Every implementation P that changes Mario product code refreshes and reports all four product artifacts: `assets/mario/mysmb16c.exe` (pure DOS MZ), `assets/mario/mysmb16w.exe` (DOS/Win16 NE hybrid), `assets/mario/mysmb32.exe`, and `assets/mario/mysmb64.exe`, with their build/validation results. Audit-only, documentation-only and test-evidence-only P work does not require an artifact refresh. This delivery requirement is additive to, and cannot be substituted for, the node accounting and ordinary P evidence. Mine products use their own `assets/mine/` output boundary.
+Every Mario version builds, validates and publishes all six profiles:86c,86w,16c,16w,32,64. Incremental builds may reuse unchanged objects; a missing profile is not a complete version. The single entry is `tools/Build-MarioProducts.ps1`.
+
+Every implementation P that changes Mario product code refreshes and reports all six product artifacts: `assets/mario/mysmb16c.exe` (pure DOS MZ), `assets/mario/mysmb16w.exe` (DOS/Win16 NE hybrid), `assets/mario/mysmb32.exe`, and `assets/mario/mysmb64.exe`, plus8086 ISA `assets/mario/mysmb86c.exe` and `assets/mario/mysmb86w.exe`, with their build/validation and ISA-inventory results. Audit-only, documentation-only and test-evidence-only P work does not require an artifact refresh. This delivery requirement is additive to, and cannot be substituted for, the node accounting and ordinary P evidence. Mine products use their own `assets/mine/` output boundary.
 
 ### Current-equivalence re-audit
 
@@ -114,11 +116,11 @@ shared-C migration, ROM logic-equivalence comparison, and operational proof.
 Node accounting remains individual: the inventory and ledger record every
 label's control flow, reads, writes, data binding, caller/successor and final
 status.  A chain-level ROM replay, focused tests, x86/x64 builds, DOS16 link,
-platform-purity check, and refreshed four executable artifacts are run once
+platform-purity check, and refreshed six executable artifacts are run once
 per implementation P, rather than recreated for each member label.  An S may
 credit only the members proven by both tracks and transfers the rest by exact
 name.  T closure adds a cross-chain route matrix and one final integrated
-four-product regression; it does not repeat each member's already accepted
+six-product regression; it does not repeat each member's already accepted
 chain proof.
 
 ### M2 Chain Admission And Closure Reports
@@ -143,13 +145,13 @@ predecessor/successor dependency and the two verification plans. The
 **ROM-logic track** proves table binding, control branches, reads, writes and
 call order against a source-reachable or controlled original-ROM route. The
 separate **operational track** proves focused tests, x86/x64 builds, DOS16
-link, platform purity and the required four artifacts. One replay and one
+link, platform purity and the required six artifacts. One replay and one
 build/package pass cover the chain; they are not recreated per member.
 
 At closure, update the tracker and report each scoped label as ROM-match
 complete, deferred with its failed track, or transferred by exact name. T
 closure combines its S results in a cross-chain matrix and one integrated
-four-product regression. It does not reopen accepted member proof unless a
+six-product regression. It does not reopen accepted member proof unless a
 regression identifies a concrete discrepancy.
 
 ## Per-Task Node Contract And Dual Verification
@@ -247,7 +249,7 @@ unrelated accepted chain. CURRENT and the active proposal own the remaining
 gap register;new discoveries require visible scope/impact amendments.
 Reports give total/local dispositions and resolved/pending clauses,never a
 reset counter or aggregate exact count presented as whole-game correctness.
-Scope and operational proof remain separate;code repair requires the four
+Scope and operational proof remain separate;code repair requires the six
 product artifacts. No guarantee of bug absence or all-input equivalence is
 inferred from a finite test manifest.
 

@@ -907,3 +907,135 @@ S3 closes for owner acceptance. S4-S6 remain unadmitted NESticle census,
 matched work census and mechanism decision. Scope/expected/actual[],new0,
 transfers0; historical1992/1992, retained1991/1992nodes and4260/4261feasible
 controls(raw4342,infeasible81), unchanged. No final ROM certificate.
+
+## S4 admission - formal 8086 DOS and Win16 products
+
+Owner requests mysmb86c and mysmb86w in addition to the four existing products.
+S3 is accepted; retained inputs become S4 dependencies only. Unadmitted census,
+matched census and mechanism decision slots shift to S5-S7. S4 alone is active.
+
+Promote the already measured equivalent word-copy/nibble implementations as a
+DOS host ISA build profile; compile all DOS units with G0. Recompile the Win16
+NE code with G0sw, including a code/runtime ISA inventory. Keep shared core and
+PPU semantics, default accelerated products and cache policy unchanged. Add
+six-product packaging, explicit ISA receipts and owner-local tests. Expected
+change: five DOS accelerator owners, two builders, packaging/audit tools and
+focused tests/docs; no game rules or resource changes. Windows runtime/platform
+requirements are distinct from the application's instruction set.
+
+Acceptance: both additional local products built and checked; pure MZ and NE
+binding valid; no unresolved post8086 executable-code candidates; applicable
+unit/integration checks and current four-product regression pass. A discovered
+CRT/OS limitation remains explicit and blocks the affected product claim.
+No actual8088 hardware-speed or Windows3.1-on8088 claim. Original owner ROM and
+existing tool/runtime inputs remain local-only under source policy. All generated
+material remains below build or ignored assets/mario. Historical1992/1992;
+retained1991/1992 nodes and4260/4261 feasible controls unchanged; scope and
+expected matches empty, maximum1992. Original S3 route remains the output oracle
+for promoted DOS operations; no new ROM-node credit.
+
+### S4 scope amendment - slow Win16 startup starvation
+
+The actual8086 Win3.1/fixed3000 probe opens a gray window until Tab forces
+publication. The first graphics sample has one color; text and return graphics
+work. App-owned update gates every publication on scheduler.credit<1000;
+sustained tick debt therefore starves presentation indefinitely. This is a host
+cadence defect, not a ROM or ISA mismatch. Extend S4 to publish the current
+state after each nonempty bounded tick batch, on both Win16 ISA targets. Keep
+tick count/order, scheduler debt and shared core unchanged. Add a late-batch
+assertion to the existing real-root controlled-host integration test and rerun
+the same actual Win3.1 startup/Tab/exit probe. No library policy is introduced.
+
+## S4 P1 implementation and closure
+
+Six local profiles are now mandatory for every version:86c,86w,16c,16w,32,64.
+`Build-MarioProducts.ps1` is the complete build/test/publication entry;
+`Build-Mario8086.ps1` also builds just the additional ISA pair. The independent
+builder parameters preserve the old accelerated DOS/286 Win16 defaults.
+Packaging requires all six images and hash-bound zero-candidate ISA receipts;
+both NE products must preserve their corresponding DOS program and resident
+bounds. Protected products remain ignored/local, never pushed.
+
+### Source and binary review
+
+Only five DOS accelerator owners gain an8086 profile: neutral VGA copying,
+Mario slot copying, planar rows, palette expansion and nibble expansion.
+Word operations preserve byte counts/tails and packed color ordering. All
+other game/PPU source remains shared. CompilerG0/G0sw applies to every unit,
+not just hot render files. The repeated historical path-buffer issue is handled
+by short build-only TEMP and relative compiler arguments. The benchmark tool
+now selects this production profile instead of editing copied source code.
+
+Final pure DOS inventory:180 CODE/CRT ranges,292743bytes,106023 decoded
+instructions,zero post8086/FPU candidates. Final native NE inventory:5 CODE
+segments,283608bytes,105493 decoded instructions,zero candidates. 12/12
+proven switch tables respectively and the symbol-bound two-byte __wflags
+runtime variable are data exclusions, not suppressed instruction findings.
+The two-byte exclusion is map- and bounds-checked; its neighboring instruction
+boundary has a focused negative fixture. ISA scanning is not dynamic all-path
+or original PC/XT hardware qualification. The DOS8254 read-back/VGA device
+requirements and Windows3.1 OS requirement remain explicit in TODO.
+
+### Verification and test ownership
+
+- Both current Ninja release builds pass their full320/320 CTest suites,
+  including the newly registered three-case ISA tool unit suite. Packaging's
+  two positive/thirteen negative synthetic joins pass on each width. Assertions
+  own MZ/NE/PE shape, exact DOS binding, resource and ISA receipt failure paths.
+- Production DOS objects versus accelerated objects run one fixed3000 AB/ABC
+  matrix:64 measured title/game samples,32 each variant,full RAM2048bytes,
+  palette32bytes and VGA61440bytes per sample. All corresponding records match;
+  both route digests remain
+  `b663d0c5d4ef3d656f1ad04fac9069db227af3a4377dfec8ae5f657db4ccd667`.
+- The real Win16-root controlled-host test first failed the new late-batch
+  assertion,then passed the fix on both widths. It owns debt-with-publication;
+  the scheduler still owns four-tick bounds/debt and no game rule changed.
+- Actual final86w boots in a private Windows3.1 enhanced-mode copy under the
+  same fixed3000 budget. Initial graphics6colors,text4,return graphics6,Escape
+  exits; no initial gray starvation remains. `Verify-Win16Product.py` and
+  `isa_runtime_probe.c` retain this finite capability join,also exposed as
+  the optional `mysmb_win16_product_host_integration` CMake target. Real USER,
+  GDI,activation,clock and NE loader behavior belongs to this integration
+  check;normal CTest uses the existing controlled host. No global configuration
+  changes or actual8088 speed claims. Baseline emulator config hash unchanged.
+- The default16c binary is byte-identical to accepted formal16c;32/64 likewise
+  retain their prior hashes.16w is rebuilt with the common app-owned Win16
+  late-publication fix;86w is separately compiled G0sw,not an old NE payload
+  renamed. The successful actual86w run joins the same source/ABI as16w;
+  default16w has compile/binding and controlled-host regression evidence.
+
+### Local artifact receipt
+
+| Product | Bytes | SHA256 |
+| --- | ---: | --- |
+| mysmb16c.exe | 365339 | `c806c1b047e00350d702852673edfabe43a7b11f99ed3890e3b4cba8d16b14c3` |
+| mysmb16w.exe | 699301 | `dc815e2c105ef57b4f52788638f5fbbefcf1be3bafa008ccefd3d22b4b24be3d` |
+| mysmb32.exe | 427659 | `7cbc8b25929dd4cf2a00e420764a4235e66984f5e2891a8a83ba1a95f9e9ff12` |
+| mysmb64.exe | 391275 | `bad201751b9ca7f2c2a029c7a4b945720a6ddd1a93758edfcb712ecb2d43c8b5` |
+| mysmb86c.exe | 364955 | `8c867363cde5fb9c989835b8ffd374f5d802800742390f41f59b5d7de66cca9d` |
+| mysmb86w.exe | 700965 | `f9351fe5875a785cf2109e92c1152b0ed7d26606e2d8b1e5a45fa86f3e7d5f68` |
+
+### Review and limits
+
+Executor/coordinator review confirms no shared core/PPU rule changes, no
+resource import or tracked protected artifact, and no unreviewed third-party
+source. Original compiler, LLIBCE and LLIBCEW remain the existing local tool
+inputs. Win16 SDK staging combines the qualified Windows3.1 headers and
+matching16-bit CRT/multimedia declarations below ignored build. The original
+SDK/runtime trees are read-only. Default Win16 late publication is the only
+additional user-visible change; source scope amendment above owns its cause,
+root repair, regression and runtime proof.
+
+S4 closes for owner acceptance; T47 remains open with unadmitted S5 NESticle
+census,S6 matched census,S7 mechanism decision. No automatic research admission
+in this delivery. Zero ROM labels attempted/completed/deferred/transferred;
+historical1992/1992 and retained local1991/1992nodes,4260/4261feasible controls
+remain unchanged. These are retained scoped dispositions,not full-game proof.
+
+
+Actual product-source change is six C owners:five DOS ISA accelerators and
+one Win16 presentation gate;core and PPU implementation files are untouched.
+The additional build/test/governance surface establishes six-profile delivery.
+Accepted S1-S3 generated trees and the isolated pre-release i86 tree are removed;
+neutral conclusions remain here. Only current S4 build/qualification outputs
+are retained pending owner acceptance,with formal EXEs in ignored assets/mario.

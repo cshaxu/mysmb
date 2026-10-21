@@ -7,10 +7,23 @@ param(
     [Parameter(Mandatory=$true)][string]$DosStub,
     [Parameter(Mandatory=$true)][string]$RomPath,
     [Parameter(Mandatory=$true)][string]$OutputDirectory,
+    [ValidateSet('286','8086')][string]$InstructionSet = '286',
     [switch]$CompileOnly,
     [switch]$LinkOnly
 )
 $ErrorActionPreference='Stop'
+function Invoke-ShortCompiler {
+    $base=[Uri]((Get-Location).Path+'\')
+    $short=@($args | ForEach-Object {
+        if ($_ -match '^[A-Za-z]:[\\/]') {
+            [Uri]::UnescapeDataString($base.MakeRelativeUri([Uri]$_).ToString()).Replace('/','\')
+        } else { $_ }
+    })
+    & $Compiler @short
+    $script:LASTEXITCODE=$LASTEXITCODE
+}
+$cpuFlag='/G2sw'
+if($InstructionSet -eq '8086') {$cpuFlag='/G0sw'}
 $repository=Split-Path -Parent $PSScriptRoot
 $sourceRoot=Join-Path $repository 'src/app-mario'
 $output=[IO.Path]::GetFullPath($OutputDirectory)
@@ -34,7 +47,8 @@ $python=(Get-Command python -ErrorAction Stop).Source
 Push-Location $output
 try {
     $env:PATH=(Split-Path -Parent $Compiler)+';'+(Join-Path $env:SystemRoot 'System32')
-    $env:TEMP=$output;$env:TMP=$output
+    $env:TEMP=Join-Path $repository 'build/tmp16';$env:TMP=$env:TEMP
+    New-Item -ItemType Directory -Force -Path $env:TEMP | Out-Null
     if(!$LinkOnly) {
         $generated=Join-Path $output 'local-rom'
         & $python (Join-Path $PSScriptRoot 'smb_rom_codegen.py') --rom $RomPath --output $generated
@@ -63,7 +77,7 @@ try {
                 # retaining the Win16 Windows ABI and unchanged core compiler.
                 $renderFlags=@('/Ox','/On','/Ow')
             }
-            & $Compiler /nologo /AL /G2sw /Gs /D MYGAMES_WIN16_TARGET /W3 @renderFlags /c "/Fo$object" /I $SdkIncludeDirectory /I $sourceRoot /I (Join-Path $sourceRoot 'kvm') /I (Join-Path $repository 'src/lib') /I $generated $source
+            Invoke-ShortCompiler /nologo /AL $cpuFlag /Gs /D MYGAMES_WIN16_TARGET /W3 @renderFlags /c "/Fo$object" /I $SdkIncludeDirectory /I $sourceRoot /I (Join-Path $sourceRoot 'kvm') /I (Join-Path $repository 'src/lib') /I $generated $source
             if($LASTEXITCODE){throw "Win16 compile failed: $relative"}
             $objects+=$object
         }
@@ -92,7 +106,7 @@ try {
         Copy-Item -LiteralPath $DosStub -Destination 'dos-stub.exe' -Force
     }
     if(!$CompileOnly) {
-        & $Linker /nologo /NOE /NOD /ALIGN:16 /SEGMENTS:2048 '@mysmb-win16.rsp'
+        & $Linker /nologo /NOE /NOD /MAP /ALIGN:16 /SEGMENTS:2048 '@mysmb-win16.rsp'
         if($LASTEXITCODE){throw 'Win16 link failed'}
         & $python (Join-Path $PSScriptRoot 'bind_win16_mz.py') --stub dos-stub.exe --hybrid mysmb16.exe --repair
         if($LASTEXITCODE){throw 'Win16 MZ preservation failed'}

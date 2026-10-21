@@ -1,6 +1,6 @@
 #include "platform/dos16/slot_copy.h"
 /* The PPU has selected bounded, non-overlapping source slots. The adapter
- * only moves these already-decided bytes;each row uses DWORD bulk copies and
+ * only moves these already-decided bytes;each row uses ISA-selected word/DWORD copies and
  * no game, PPU-state, palette, or frame-policy decision. */
 #ifdef MYSMB_DOS16_TARGET
 static void copy_rows(const mygames_kvm_u8 MYGAMES_KVM_FAR *first,
@@ -24,7 +24,11 @@ static void copy_rows(const mygames_kvm_u8 MYGAMES_KVM_FAR *first,
         shl cx,1
         shl cx,1
         shl cx,1
+#if defined(MYGAMES_DOS16_8086)
+        shl cx,1
+#else
         _emit 0x66
+#endif
         rep movsw
         jmp done
 split_rows:
@@ -33,11 +37,17 @@ row_part:
         lds si,first
         mov cx,first_count
         shr cx,1
+#if !defined(MYGAMES_DOS16_8086)
         shr cx,1
         _emit 0x66
+#endif
         rep movsw
         mov cx,first_count
+#if defined(MYGAMES_DOS16_8086)
+        and cx,1
+#else
         and cx,3
+#endif
         jz next_part
         rep movsb
 next_part:
@@ -47,11 +57,17 @@ next_part:
         lds si,second
         mov cx,second_count
         shr cx,1
+#if !defined(MYGAMES_DOS16_8086)
         shr cx,1
         _emit 0x66
+#endif
         rep movsw
         mov cx,second_count
+#if defined(MYGAMES_DOS16_8086)
+        and cx,1
+#else
         and cx,3
+#endif
         rep movsb
         pop ds
         add word ptr second,256

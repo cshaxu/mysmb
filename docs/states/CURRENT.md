@@ -1,45 +1,43 @@
 # Project Status
 
-## M3 T47 S3 Packet
+## M3 T47 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation M3 T47 S3; S3 closed for owner acceptance; T47 remains open. |
-| Admission And Approval | Owner explicitly requests pure8086 build/run performance benchmark; single-person executor/coordinator. |
-| Objective | Measure isolated8086 ISA fallback versus current386-accelerated DOS, same routes/cache/cycle budget. |
-| Non-goals | No product source/EXE replacement, core semantic change, cache policy change, Win16 rollout, max test or real8088 timing claim. |
-| Reference Baseline | dca5db47; current four delivered products retained; existing original DOS objects and compiler/runtime. |
-| Candidate Proposal | [S3 admission](../proposals/m3/nesticle-forensic-performance-audit.md#s3-admission---isolated-8086-instruction-cost-benchmark). |
-| Files And ABI Surface | Neutral benchmark preparation/audit tooling and evidence; private copied source/harness; no product ABI changes. |
-| Applicable Rules | Task Reading Set, source policy, bounded local artifacts, ISA/output equivalence and continuable builds/tests. |
-| Verification | G0 compiler and adapter/CRT code audit; same-input AB/ABC title/game RAM/palette/full-output comparison and stage timers; instruction compatibility limits explicit. |
-| Expected Markers | Historical1992/1992;scope=[],expectedMatches=[],actualMatches=[],maximum1992; retained1991/1992nodes,4260/4261controls unchanged. |
-| Asset Needs | Owner-local ROM, current local EXEs/objects and original compiler/runtime; generated source/binary/log below ignored build only; no redistribution. |
-| Reporting Requirements | Measured median/range stage and total cost, ratios, code/memory size, cache conditions, output hashes, ISA proof limits; do not extrapolate to actual8088. |
-| Stop Conditions | Output mismatch, unexplained post8086 code, memory violation, two identical probe failures; no global emulator setting changes. |
-| Exit Criteria | Met: reproducible bounded current/i86 benchmark, output agreement and explicit ISA/runtime evidence or named remaining blocker. |
-| Original Owner Request | Compile/run pure8086 ISA and benchmark how much performance changes. |
-| Similar-Issue Sweep | Inline raw opcodes, compiler defaults/all objects, CRT code, segment copy word/tail counts, cache-dependent paths, startup and timing overhead. |
-
+| Identifier Mode | Continuation M3 T47 S4; S4 closed for owner acceptance; T47 remains open. |
+| Admission And Approval | Owner explicitly requests formal mysmb86c and mysmb86w; single-person executor/coordinator. |
+| Objective | Deliver additional8086 ISA pure DOS and DOS/Win16 hybrid products; require six profiles for every version. |
+| Non-goals | No core/PPU semantic changes, real8088 qualification or Windows OS ISA downgrade. |
+| Reference Baseline | 7eafd717; accepted S3 ISA/output evidence and existing four formal products. |
+| Candidate Proposal | [S4 admission](../proposals/m3/nesticle-forensic-performance-audit.md#s4-admission---formal-8086-dos-and-win16-products). |
+| Files And ABI Surface | DOS accelerator ISA profile, DOS/Win16 builders, ISA checker, six-product packaging, owner tests and the app-owned Win16 late-publication fix. |
+| Applicable Rules | Task Reading Set, source policy, one active S, bounded generated artifacts. |
+| Verification | G0/G0sw build; MZ/NE binding; code/CRT ISA audit; matched DOS output; native unit/integration regression and actual Win3.1 cold graphics/Tab/exit. |
+| Expected Markers | Historical1992/1992; scope=[],expectedMatches=[],actualMatches=[],maximum1992; retained1991/1992nodes,4260/4261controls. |
+| Asset Needs | Owner-local ROM and existing original compiler/runtime/SDK; ignored local outputs only. |
+| Reporting Requirements | Six artifacts, ISA/build/test results, instruction versus OS/hardware limits and actual change size. |
+| Stop Conditions | Output mismatch or unresolved newer executable instruction; no mislabelled old NE payload. |
+| Exit Criteria | Met: both additional products and six-profile publication validated; reviewed source-only P commit/push. |
+| Original Owner Request | Publish mysmb86c and mysmb86w as pure8086 DOS and Win16 programs. |
+| Similar-Issue Sweep | All raw-opcode owners, all compilation units and CRT code, Win16 stub pairing and default profile regression. |
 
 ## Current Technical Baseline
 
-Formal products remain dca5db47: pure DOS16c, DOS/Win16 hybrid16w and32/64,
-with S2 normal per-tick publication and opt-in turbo. Only the isolated build
-uses8086 replacements. S3 below records finite same-budget comparisons, not
-a product ISA downgrade or actual8088 qualification. Historical1992/1992,
-retained1991/1992nodes and4260/4261feasible controls remain unchanged.
+Six formal local products are published:8086 DOS86c and Win16-hybrid86w,
+accelerated DOS16c and Win16-hybrid16w,32 and64. One shared core/PPU; ISA
+alternatives stay in DOS adapters. Win16 now publishes after a slow tick batch
+instead of waiting indefinitely for debt to vanish. S5-S7 research unadmitted.
+Historical1992/1992;retained local1991/1992nodes and4260/4261feasible controls
+unchanged,not an end-to-end certificate.
 
-## S3 Closure
+## S4 Closure
 
-Isolated /G0 candidate and timed probe pass CODE/CRT scanning with zero newer
-ISA candidates after proven switch-data exclusions. Three repeated AB/ABC
-comparisons retain identical RAM/palette/full VGA output (192measured samples).
-ABC gameplay raw instrumented frame40.030to50.282ms(+25.61%); AB74.909to
-103.971ms(+38.80%). Calibrated game tick remains9.05ms; composition and VGA
-word copying explain the increase. Uninstrumented ready-title process28.202to
-21.251images/s, average35.459to47.057ms(+32.71%). No actual8088 hardware or
-Win16-window speed claim. Pure MZ/loader448bytes smaller, no added cache.
-Two ISA tool unit tests pass. All product source and four published EXEs
-remain unchanged. Detailed finite evidence and reproduction are in the
-proposal. S3 closed, T47 open; S4-S6 not admitted. ROM counts unchanged.
+G0/G0sw DOS/NE code and CRT inventories have zero unresolved newer-ISA/FPU
+candidates. AB/ABC fixed3000 title/game full RAM/palette/VGA records match.
+Native x86/x64 each320/320 tests pass;late Win16 publication test fails before
+and passes after repair. Actual final86w in private Win3.1 passes cold graphics,
+Tab to text/back and Escape exit,with persistent emulator config unchanged.
+All six products built/packaged locally;source only is committed. New defaults
+require six products each version. Original8088 hardware remains unqualified;
+VGA/8254 and Windows3.1 requirements remain. S4 closes for owner acceptance;
+T47 stays open. Details and local artifact hashes are in the proposal.

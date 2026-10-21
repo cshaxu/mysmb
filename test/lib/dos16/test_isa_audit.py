@@ -29,7 +29,7 @@ class IsaAuditTest(unittest.TestCase):
         self.assertEqual(hits[0]['fileOffset'], 5)
 
     def test_switch_data_and_code_boundaries(self):
-        parent = REPOSITORY / 'build/t47-s3'
+        parent = REPOSITORY / 'build/isa-audit-unit'
         parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(dir=parent) as temporary:
             root = Path(temporary)
@@ -60,6 +60,43 @@ class IsaAuditTest(unittest.TestCase):
             changed[17:19] = struct.pack('<H', 17)
             (root / 'mysmb-dos16.exe').write_bytes(header + changed)
             self.assertEqual(invoke()['provenSwitchTables'], [])
+
+    def test_ne_executable_code_not_data(self):
+        parent = REPOSITORY / 'build/isa-audit-unit'
+        parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=parent) as temporary:
+            root = Path(temporary)
+            data = bytearray(512)
+            data[:2] = b'MZ'
+            struct.pack_into('<I', data, 60, 64)
+            data[64:66] = b'NE'
+            struct.pack_into('<H', data, 64+0x1c, 2)
+            struct.pack_into('<H', data, 64+0x22, 64)
+            struct.pack_into('<H', data, 64+0x32, 4)
+            struct.pack_into('<4H', data, 128, 16, 2, 0, 2)
+            struct.pack_into('<4H', data, 136, 20, 2, 1, 2)
+            data[256:258] = bytes.fromhex('90cb')
+            data[320:322] = bytes.fromhex('6a01')
+            binary = root / 'app.exe'
+            report = root / 'isa.json'
+            def invoke():
+                binary.write_bytes(data)
+                subprocess.run([sys.executable, str(REPOSITORY / 'tools/Audit-Dos16Isa.py'),
+                    '--ne', str(binary), '--output', str(report)], check=True, capture_output=True)
+                return json.loads(report.read_text())
+            result = invoke()
+            self.assertEqual((result['format'], result['codeSegments'], result['codeBytes'], result['candidateCount']),
+                ('NE', 1, 2, 0))
+            data[256:258] = bytes.fromhex('6a01')
+            self.assertEqual(invoke()['candidateCount'], 1)
+            # A named CRT data word may be excluded, never adjacent code.
+            struct.pack_into('<H', data, 130, 5)
+            data[256:261] = bytes.fromhex('ffff6a01cb')
+            binary.with_suffix('.map').write_text('0001:0000       __wflags\n')
+            result = invoke()
+            self.assertEqual(result['candidateCount'], 1)
+            self.assertEqual(len(result['provenRuntimeData']), 1)
+
 
 
 if __name__ == '__main__':

@@ -14,12 +14,20 @@ void mygames_dos16_copy_bytes(unsigned char far *video,
         mov cx,count
         mov bx,cx
         shr cx,1
+#if !defined(MYGAMES_DOS16_8086)
         shr cx,1
+#endif
         cld
+#if !defined(MYGAMES_DOS16_8086)
         _emit 0x66
+#endif
         rep movsw
         mov cx,bx
+#if defined(MYGAMES_DOS16_8086)
+        and cx,1
+#else
         and cx,3
+#endif
         rep movsb
         pop bx
         pop es
@@ -37,9 +45,13 @@ void mygames_dos16_copy_dwords(unsigned char far *video,
         les di,video
         mov cx,count
         shr cx,1
+#if !defined(MYGAMES_DOS16_8086)
         shr cx,1
+#endif
         cld
+#if !defined(MYGAMES_DOS16_8086)
         _emit 0x66
+#endif
         rep movsw
         pop es
         pop ds

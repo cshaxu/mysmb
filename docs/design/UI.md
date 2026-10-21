@@ -15,6 +15,12 @@ images, retaining the bounded publication interval. Unknown arguments print
 usage and exit before devices open. The same DOS switches work for the DOS
 entry of `mysmb16w`, whose NE entry opens the Win3.x window. Native Win16 and Win32 pacing is unchanged.
 
+Additional local `mysmb86c` and `mysmb86w` products compile application and
+linked runtime code for the8086 instruction set; DOS has the same dual views
+and turbo option, Win16 has the same native window. These do not lower Windows
+itself to an8086 operating-system target or qualify original PC/XT peripherals.
+Existing `16c`/`16w` accelerated products retain their instruction requirements.
+
 ## Text Presentation
 
 The text product defaults to an 80x25 colored character scene. The retained

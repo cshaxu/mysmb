@@ -2302,3 +2302,16 @@ add_executable(mysmb_dos_audio_adapter_smoke
 target_include_directories(mysmb_dos_audio_adapter_smoke PRIVATE . kvm ${CMAKE_SOURCE_DIR}/src/lib)
 target_link_libraries(mysmb_dos_audio_adapter_smoke PRIVATE mysmb_integer_audio)
 add_test(NAME mysmb.dos16-audio-adapter COMMAND mysmb_dos_audio_adapter_smoke)
+
+# Optional real Win3.1 capability join; normal CTest uses controlled host mocks.
+foreach(setting IN ITEMS SDK WINDOWS_LIBRARY RUNTIME_LIBRARY WINDOWS_DIRECTORY DOSBOX CONFIG)
+    set(MYSMB_WIN16_${setting} "" CACHE STRING "Owner-local Win16 qualification ${setting}")
+endforeach()
+add_custom_target(mysmb_win16_product_host_integration
+    COMMAND ${Python3_EXECUTABLE} -B ${CMAKE_SOURCE_DIR}/tools/Verify-Win16Product.py
+        --compiler "${MYSMB_OPENNT_CL16}" --sdk "${MYSMB_WIN16_SDK}"
+        --windows-library "${MYSMB_WIN16_WINDOWS_LIBRARY}" --runtime-library "${MYSMB_WIN16_RUNTIME_LIBRARY}"
+        --windows-directory "${MYSMB_WIN16_WINDOWS_DIRECTORY}" --dosbox "${MYSMB_WIN16_DOSBOX}"
+        --config "${MYSMB_WIN16_CONFIG}" --product "${CMAKE_SOURCE_DIR}/build/86w/mysmb16.exe"
+        --output "${CMAKE_SOURCE_DIR}/build/win16-product-probe"
+    USES_TERMINAL VERBATIM)
