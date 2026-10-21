@@ -747,3 +747,163 @@ Current rule applies to subsequent Mario implementation deliveries; Mine keeps
 its separate product boundary. S2 closes for owner acceptance; T47 remains
 open, S3-S5 not admitted. Zero new ROM scope/matches/transfers; historical
 1992/1992, retained1991/1992nodes and4260/4261feasible controls remain unchanged.
+
+
+## S3 admission - isolated 8086 instruction-cost benchmark
+
+Owner asks to compile/run pure8086 instructions and measure the performance
+cost. Single-person coordinator admits the bounded comparison before the
+unadmitted NESticle census; its old S3-S5 plan slots become S4-S6. No sibling
+work or third-party code import. Existing original compiler/runtime/owner ROM
+are local-only inputs under the source policy. Copy source and substitute
+host accelerators only below ignored build; set /G0 for every copied unit.
+No product source changes or refresh/overwrite of delivered four EXEs.
+
+Compare current DOS and8086 candidate on the same DOSBox0.74-3 profile,
+fixed3000 CPU budget, optional physical PCM disabled identically. AB/ABC,
+scripted title/gameplay, warmed samples and per-stage PIT raw/calibrated cost;
+compare RAM, active palette and complete output bytes. Inspect emitted CODE
+segments including CRT for newer-ISA obligations, distinguishing actual code
+from embedded tables. Runtime in a386-capable emulator alone is not proof of
+8086 compatibility, nor a cycle-accurate8088 hardware speed prediction.
+
+Sources/harness/probes/logs/builds below build/t47-s3 and short owned build
+paths as necessary; each run capped180seconds and64MiB output. No cycles=max,
+no persistent DOSBox changes. Expected production diff0; neutral tooling and
+results only. Stop on mismatched output, unexplained later-ISA instructions,
+loader/segment violation or two identical failed probes. Current historical
+1992/1992;scope/expected/actual[],retained1991/1992nodes and4260/4261feasible
+controls unchanged. No new ROM conformance credit.
+
+
+## S3 P1 closure - isolated 8086 benchmark
+
+### Candidate and instruction evidence
+
+Prepare-Dos16I86Benchmark copies source under ignored build, applies /G0 to
+all DOS units/startup and uses the same original large-model compiler/CRT.
+Only five copied DOS accelerator owners differ: VGA DWORD-to-word copies,
+slot-row word copies with corrected counts/tails, an8086 nibble expander with
+zero-span shortcut, word planar gathers and the dormant palette portable
+fallback. Shared core/PPU/IO C source is byte-identical; no product source,
+cache allocation policy, scheduler or delivered executable is changed.
+Only private original compiler argument paths are shortened to avoid its
+fixed command buffer; no mapped drive or system setting. The copied memory
+validator initially rejected a sibling output path; the prepared builder now
+uses the original build-root validator and the linked candidate passes.
+
+Audit-Dos16Isa scans link-map CODE ranges including CRT. Candidate product:
+180nonemptyCODE segments,292681bytes,106027decoded instructions; zero
+post8086/FPU candidates after excluding12compiler-generated switch tables.
+Their range checks, CS displacements, extents and outside-table code targets
+are checked rather than deleting suspicious bytes. An initial linear scan's
+14hits were all switch-data misdecodes. Current product retains220actual
+newer-ISA candidates under the same exclusions. The timed8086 probe also
+scans clean:296780CODE bytes,107419instructions,13proven switch tables.
+Its one apparent LEAVE was a misaligned decode after a CRT inline dispatch
+table; the CRT range-checked dispatch, data extent/targets and preceding
+unconditional table-skipping jump are explicitly recognized. Two neutral
+owner-local unit tests exercise opcode classification and synthetic table
+exclusion, code-boundary resumption and rejection of an invalid table target.
+No opcode is waived merely because a test route did not execute it.
+
+This supports the private8086 ISA candidate, not an all-input proof or an
+actual8088-machine qualification. DOSBox0.74 remains386-capable; no claim of
+8088 bus timings, instruction prefetch or PC/XT peripheral compatibility.
+Win16 NE runtime is not rebuilt or benchmarked as an8088 Windows target.
+
+### Matched instrumented game experiment
+
+Same DOSBox0.74-3 configuration/hardware, temporary fixed3000cycles, physical
+PCM disabled identically, no max or persistent edit. The common diagnostic
+adds PIT stage timers to the existing deterministic title/Start/right+jump
+route. AB has70KiB cache payload; ABC130KiB. Each executable submits32full
+256x240frames: eight warm-up and eight measured frames per title/game phase.
+Three repetitions, alternating variant order: twelve executable runs and
+192measured samples total. Clock overhead is calibrated per process; file I/O
+and VGA readback are outside all timed kernels. All requested caches allocate.
+
+Each pair compares original2048-byte RAM,32palette entries and61440physical
+VGA slot bytes at all16sampled frames. All six pair comparisons and all three
+repetitions are byte-identical, including cross-cache output. Every record
+stream has1016320bytes and SHA256
+b663d0c5d4ef3d656f1ad04fac9069db227af3a4377dfec8ae5f657db4ccd667.
+Owner-local frame bytes remain ignored, not committed as fixtures.
+
+| Cache | Phase | Current raw frame median ms |8086 raw frame median ms |Time increase |
+| --- | --- | ---: | ---: | ---: |
+| AB |title|88.692|131.503|48.27%|
+| AB |gameplay|74.909|103.971|38.80%|
+| ABC |title|39.494|49.737|25.93%|
+| ABC |gameplay|40.030|50.282|25.61%|
+
+These raw whole-frame intervals include diagnostic timer overhead and the
+normal work between stages, but exclude output-file writes. They are not
+published-product FPS. Measured gameplay ranges: current AB74.582-75.071ms,
+8086AB103.931-104.151ms; current ABC39.938-40.178ms,
+8086ABC49.954-50.423ms.
+
+| ABC gameplay calibrated stage |Current median ms |8086 median ms |
+| --- | ---: | ---: |
+| Original game tick |9.051|9.050|
+| PPU/cache preparation |0.622|0.622|
+| Band composition |17.203|22.329|
+| Palette/VGA publication |6.491|11.600|
+
+AB gameplay composition increases52.064to76.026ms; publication6.484to11.600ms.
+The game tick stays9.052ms. Thus this candidate's cost is overwhelmingly in
+platform expansion/copy work, not translated game logic. A byte background
+cache reduces sensitivity to the nibble-expansion fallback. The alternative
+8086 routines are reasonable equivalent implementations, not a proof of the
+fastest possible hand-tuned8086 implementation.
+
+### Uninstrumented complete-program cross-check
+
+Read-only host polling uses the S1 compiler-derived unchanged large-model
+root/clock layout, verifies one initialized root/clock signature, physical
+PCM0and ABC present, and counts frame/publication stamps at2ms/1ms sampling.
+Both private pure MZ and unchanged product run normal mode, not --turbo.
+Automatic native Enter injection did not reliably establish gameplay in the
+initial supplementary attempts; those incomplete routes are excluded. The
+qualified cross-check observes the ready title phase directly with no key
+injection. The common scripted diagnostic above remains the gameplay result.
+
+| Complete ready-title process |Wall seconds |Ticks/images |Images/s |Average interval ms |
+| --- | ---: | ---: | ---: | ---: |
+| Current |19.998934|564/564|28.202|35.459|
+|8086 candidate |19.999121|425/425|21.251|47.057|
+
+All samples remain mode0/task3, at most one tick per polling interval. This
+uninstrumented route has32.71%more time per frame, or24.65%less throughput.
+It independently supports a roughly one-third cost in this scenario; do not
+mix its uninstrumented average with the diagnostic gameplay medians.
+It is not a real8088 speed prediction, Win16 result or hardware scanout proof.
+
+### Memory, reproducibility and review
+
+Private pure MZ365339to364891bytes, loaded minimum388544to388096bytes and
+maximum392640to392192bytes; saving448bytes. DGROUP53648including2048stack
+is unchanged, as are cache sizes and allocation strategy. A local test copy
+is build/t47-s3/I86.EXE. All four assets/mario products retain their accepted
+P2 hashes; no publication refresh is required for this audit/tool-only P.
+
+Reproduce: run tools/Prepare-Dos16I86Benchmark.py with --output build/t47-s3;
+use original Build-OpenNt16Dos for the baseline and its prepared copy for
+SourceRoot build/t47-s3/tree/src/app-mario, with the original tools/dos16
+compiler/runtime, owner MYSMB_ROM_PATH and short output build/i86. Use the
+prepared Build-Probe.ps1 with -Benchmark then -LinkOnly against each product
+object directory, outputs build/t47-s3/current and build/t47-s3/i86. Run
+Run-Dos16IsaBenchmark.py --directory build/t47-s3 --runs 3, supplying the
+existing --dosbox and --config; run Audit-Dos16Isa.py for product/probe maps.
+Run the neutral owner unit at
+test/lib/dos16/test_isa_audit.py. No protected source/data is in these tools.
+
+Single-person executor/coordinator reviews copied-owner scope,8086 opcodes,
+word/tail byte accounting, /G0 coverage and CRT, same-cache/input/output
+identity, PIT overhead, excluded incomplete native-input routes and the
+hardware inference boundary. ISA unit and matched integration checks pass;
+unchanged published-source hash checks retain prior native/host receipts.
+S3 closes for owner acceptance. S4-S6 remain unadmitted NESticle census,
+matched work census and mechanism decision. Scope/expected/actual[],new0,
+transfers0; historical1992/1992, retained1991/1992nodes and4260/4261feasible
+controls(raw4342,infeasible81), unchanged. No final ROM certificate.
